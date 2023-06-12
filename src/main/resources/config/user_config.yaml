@@ -1,0 +1,4 @@
+rmq:
+  host: 127.0.0.1
+  user: aispace2023
+  password: aispace2023_pw
