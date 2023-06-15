@@ -1,6 +1,5 @@
 package com.aispace.erksystem.rmq.module;
 
-import com.aispace.rmq.module.RmqService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
@@ -19,19 +18,16 @@ public class RmqServiceTest {
     @Test
     void rmqTest() throws Exception {
 
-        // RMQ 연결
+        // RMQ 연결 및 Queue 생성
         try (RmqService rmqService = new RmqService(HOST, USER, PW)) {
-            // RMQ Queue 생성
+            rmqService.connect();
             rmqService.queueDeclare(QUEUE_NAME);
         }
 
-
+        // RMQ 연결 및 메시지 핸들러 등록
         new Thread(() -> {
-            try {
-                // RMQ 연결
-                RmqService consumer = new RmqService(HOST, USER, PW);
-
-                // Consumer 등록
+            try (RmqService consumer = new RmqService(HOST, USER, PW)){
+                consumer.connect();
                 consumer.registerStringConsumer(QUEUE_NAME, (message) -> log.debug("Consumed Message : {}", message));
                 Thread.sleep(1000);
                 consumer.close();
@@ -41,12 +37,10 @@ public class RmqServiceTest {
         }, "Consumer").start();
 
 
+        // RMQ 연결 및 메시지 메시지 전송
         new Thread(() -> {
-            try {
-                // RMQ 연결
-                RmqService producer = new RmqService(HOST, USER, PW);
-
-                // Message 전송
+            try (RmqService producer = new RmqService(HOST, USER, PW)){
+                producer.connect();
                 producer.sendMessage(QUEUE_NAME, "TEST_MESSAGE");
             } catch (Exception e) {
                 log.warn("Err Occurs", e);
@@ -54,7 +48,5 @@ public class RmqServiceTest {
         }, "Producer").start();
 
         Thread.sleep(1000);
-
-
     }
 }

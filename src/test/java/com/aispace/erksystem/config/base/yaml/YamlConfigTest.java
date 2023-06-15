@@ -12,7 +12,7 @@ class YamlConfigTest {
     @Test
     void configReadTest() throws IOException, NoSuchFieldException {
         UserConfig config = new UserConfig();
-        config.init(getClass().getClassLoader().getResource("config/test.yaml").getPath());
+        config.init(getClass().getClassLoader().getResource("config/user_config.yaml").getPath());
 
         System.out.println(config);
     }

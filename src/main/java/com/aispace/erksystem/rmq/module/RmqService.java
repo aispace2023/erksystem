@@ -1,4 +1,4 @@
-package com.aispace.rmq.module;
+package com.aispace.erksystem.rmq.module;
 
 import com.rabbitmq.client.*;
 import lombok.Getter;
@@ -31,20 +31,14 @@ public class RmqService implements AutoCloseable {
     // RabbitMQ 서버와 연결을 시도하는 최대 시간(단위:ms)
     private static final int CONNECTION_TIMEOUT = 2000;
 
-    // RabbitMQ 서버와의 연결과 채널을 관리하기 위한 변수
-    private final Connection connection;
-    private final Channel channel;
+    private String host;
+    private String userName;
+    private String password;
+    private SSLContext sslContext;
 
-    /**
-     * RabbitMQ 서버와의 비SSL 연결을 설정하는 생성자
-     *
-     * @param host     RabbitMQ 서버의 호스트
-     * @param userName RabbitMQ 서버에 연결할 사용자 이름
-     * @param password 해당 사용자의 비밀번호
-     */
-    public RmqService(String host, String userName, String password) {
-        this(host, userName, password, null);
-    }
+    // RabbitMQ 서버와의 연결과 채널을 관리하기 위한 변수
+    private Connection connection;
+    private Channel channel;
 
     /**
      * RabbitMQ 서버와의 SSL 연결을 설정하는 생성자
@@ -55,6 +49,17 @@ public class RmqService implements AutoCloseable {
      * @param sslContext SSL 연결을 위한 SSLContext (null이면 SSL을 사용하지 않는다)
      */
     public RmqService(String host, String userName, String password, SSLContext sslContext) {
+        this.host = host;
+        this.userName = userName;
+        this.password = password;
+        this.sslContext = sslContext;
+    }
+
+    public RmqService(String host, String userName, String password) {
+        this(host, userName, password, null);
+    }
+
+    public void connect() {
         ConnectionFactory factory = new ConnectionFactory();
 
         // RabbitMQ 서버 정보 설정
@@ -172,10 +177,8 @@ public class RmqService implements AutoCloseable {
     /**
      * RabbitMQ 서버와의 연결 및 채널을 종료한다.
      * 연결이나 채널 종료 과정에서 오류가 발생하면 로그에 출력하고 해당 예외를 던진다.
-     *
-     * @throws Exception 연결 혹은 채널 종료에 실패한 경우
      */
-    public synchronized void close() throws Exception {
+    public synchronized void close() {
         Exception exception = null;
 
         try {
@@ -201,7 +204,7 @@ public class RmqService implements AutoCloseable {
         }
 
         if (exception != null) {
-            throw exception;
+            throw new RuntimeException(exception);
         }
     }
 }
