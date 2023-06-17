@@ -2,6 +2,7 @@ package com.aispace.erksystem.service;
 
 import com.aispace.erksystem.common.SystemLock;
 import com.aispace.erksystem.rmq.RmqManager;
+import com.aispace.erksystem.service.database.DBManager;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
@@ -24,6 +25,9 @@ public class ServiceManager {
     @Setter
     private static boolean isQuit = true;
 
+    private ServiceManager() {
+    }
+
     public static void startService(String configPath) throws IOException, NoSuchFieldException, InterruptedException, TimeoutException {
         // 프로세스 중복 실행 방지
         SystemLock.lock(PROCESS_NAME + ".lock");
@@ -38,6 +42,8 @@ public class ServiceManager {
 
         // RMQ 서버 연결 및 RMQ Consumer 등록
         RmqManager.start();
+        // DATABASE 연결
+        //DBManager.getInstance().start();
 
         isQuit = false;
         log.info("Process startup succeeded");
@@ -53,6 +59,7 @@ public class ServiceManager {
     }
 
     public static void stopService() {
+        //DBManager.getInstance().stop();
         RmqManager.stop();
         isQuit = true;
     }

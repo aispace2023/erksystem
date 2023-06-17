@@ -19,11 +19,11 @@ public class MainTest {
         });
         mainThread.start();
 
-        Thread.sleep(3_000);
+        Thread.sleep(3000);
 
-//         RMQ Message 송신 (로그로 수신 확인)
+        // RMQ Message 송신 (로그로 수신 확인)
         RmqManager.sendMessage("INCOMING_QUEUE_TEST", "Hello World!".getBytes());
 
-        Thread.sleep(3_000);
+        Thread.sleep(3000);
     }
 }

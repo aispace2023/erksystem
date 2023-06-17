@@ -32,9 +32,23 @@ public class UserConfig extends YamlConfig {
     @ConfigValue("performance.rmq-consumer-count")
     Integer rmqConsumerCount;
 
+    @ConfigValue("dbms.host")
+    String dbHost;
+    @ConfigValue("dbms.user")
+    String dbUser;
+    @ConfigValue("dbms.password")
+    String dbPassword;
+    @ConfigValue("dbms.database")
+    String dbName;
+    @ConfigValue("dbms.jdbc-params")
+    String jdbcParam;
+    @ConfigValue("dbms.port")
+    Integer dbPort;
+
     @Override
     public void afterFieldSetting() {
         rmqPassword = PasswdUtil.decrypt(rmqPassword);
+        dbPassword = PasswdUtil.decrypt(dbPassword);
 
         ValidationUtil.validCheck(this);
     }
