@@ -2,7 +2,9 @@ rmq:
   host: 127.0.0.1
   user: aispace2023
   password: bkH/BKmkuGDiFeSJY0oN5Uv6EJofzunk
-  incoming-queue: INCOMING_QUEUE
+  incoming-queues:
+    - INCOMING_QUEUE_TEST
+    - INCOMING_QUEUE_TEST_2
 
 performance:
   rmq-consumer-count: 8

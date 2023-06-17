@@ -2,7 +2,9 @@ rmq:
   host: 192.168.7.33
   user: acs
   password: 4D0mYegufy2CeEVmwoo1LA==
-  incoming-queue: INCOMING_QUEUE
+  incoming-queues:
+    - INCOMING_QUEUE_TEST
+    - INCOMING_QUEUE_TEST_2
 
 performance:
   rmq-consumer-count: 8

@@ -2,6 +2,7 @@ package com.aispace.erksystem.rmq.module;
 
 import com.rabbitmq.client.*;
 import lombok.Getter;
+import lombok.Synchronized;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.net.ssl.SSLContext;
@@ -23,7 +24,7 @@ import java.util.function.Consumer;
  */
 @Slf4j
 @Getter
-public class RmqService implements AutoCloseable {
+public class RmqService implements AutoCloseable{
     // RabbitMQ 서버와의 연결을 재시도하는 간격(단위:ms)
     private static final int RECOVERY_INTERVAL = 1000;
     // RabbitMQ 서버에게 전송하는 heartbeat 요청의 간격(단위:sec)
@@ -31,10 +32,10 @@ public class RmqService implements AutoCloseable {
     // RabbitMQ 서버와 연결을 시도하는 최대 시간(단위:ms)
     private static final int CONNECTION_TIMEOUT = 2000;
 
-    private String host;
-    private String userName;
-    private String password;
-    private SSLContext sslContext;
+    private final String host;
+    private final String userName;
+    private final String password;
+    private final SSLContext sslContext;
 
     // RabbitMQ 서버와의 연결과 채널을 관리하기 위한 변수
     private Connection connection;
@@ -59,7 +60,8 @@ public class RmqService implements AutoCloseable {
         this(host, userName, password, null);
     }
 
-    public void connect() {
+    @Synchronized
+    public void connect() throws IOException, TimeoutException {
         ConnectionFactory factory = new ConnectionFactory();
 
         // RabbitMQ 서버 정보 설정
@@ -79,27 +81,22 @@ public class RmqService implements AutoCloseable {
         }
 
         // 연결과 채널 생성 시도
-        try {
-            this.connection = factory.newConnection();
-            this.channel = connection.createChannel();
+        this.connection = factory.newConnection();
+        this.channel = connection.createChannel();
 
-            // 블로킹 리스너 추가
-            this.connection.addBlockedListener(new BlockedListener() {
-                @Override
-                public void handleBlocked(String reason) {
-                    log.error("RabbitMQ connection is now blocked, reason: " + reason);
-                }
+        // 블로킹 리스너 추가
+        this.connection.addBlockedListener(new BlockedListener() {
+            @Override
+            public void handleBlocked(String reason) {
+                log.error("RabbitMQ connection is now blocked, reason: " + reason);
+            }
 
-                @Override
-                public void handleUnblocked() {
-                    log.info("RabbitMQ connection is unblocked");
-                }
-            });
+            @Override
+            public void handleUnblocked() {
+                log.info("RabbitMQ connection is unblocked");
+            }
+        });
 
-        } catch (IOException | TimeoutException e) {
-            // 연결 생성 실패 시 예외 던짐
-            throw new RuntimeException("Failed to create RabbitMQ connection.", e);
-        }
     }
 
     /**
@@ -108,7 +105,8 @@ public class RmqService implements AutoCloseable {
      * @param queueName 생성할 큐의 이름
      * @throws IOException 큐 생성에 실패한 경우
      */
-    public synchronized void queueDeclare(String queueName) throws IOException {
+    @Synchronized
+    public void queueDeclare(String queueName) throws IOException {
         channel.queueDeclare(queueName, false, false, false, null);
     }
 
@@ -119,7 +117,8 @@ public class RmqService implements AutoCloseable {
      * @param message   전송할 메시지
      * @throws IOException 메시지 전송에 실패한 경우
      */
-    public synchronized void sendMessage(String queueName, String message) throws IOException {
+    @Synchronized
+    public void sendMessage(String queueName, String message) throws IOException {
         channel.basicPublish("", queueName, MessageProperties.PERSISTENT_TEXT_PLAIN, message.getBytes());
         log.info("Sent message: {} to queue: {}", message, queueName);
     }
@@ -131,7 +130,8 @@ public class RmqService implements AutoCloseable {
      * @param message   전송할 메시지 (바이트 배열)
      * @throws IOException 메시지 전송에 실패한 경우
      */
-    public synchronized void sendMessage(String queueName, byte[] message) throws IOException {
+    @Synchronized
+    public void sendMessage(String queueName, byte[] message) throws IOException {
         channel.basicPublish("", queueName, MessageProperties.PERSISTENT_TEXT_PLAIN, message);
         log.info("Sent message to queue: {}", queueName);
     }
@@ -144,7 +144,8 @@ public class RmqService implements AutoCloseable {
      * @param deliverCallback 메시지가 수신될 때 호출되는 콜백
      * @throws IOException 소비자 등록에 실패한 경우
      */
-    public synchronized void registerConsumer(String queueName, DeliverCallback deliverCallback) throws IOException {
+    @Synchronized
+    public void registerConsumer(String queueName, DeliverCallback deliverCallback) throws IOException {
         channel.basicConsume(queueName, true, deliverCallback, consumerTag -> {
         });
     }
@@ -178,7 +179,8 @@ public class RmqService implements AutoCloseable {
      * RabbitMQ 서버와의 연결 및 채널을 종료한다.
      * 연결이나 채널 종료 과정에서 오류가 발생하면 로그에 출력하고 해당 예외를 던진다.
      */
-    public synchronized void close() {
+    @Override
+    public void close() {
         Exception exception = null;
 
         try {

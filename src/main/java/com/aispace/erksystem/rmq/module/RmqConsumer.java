@@ -7,8 +7,11 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 public class RmqConsumer {
-    public static void consumeMessage(String message) {
-        log.info("Message Received [{}]", message);
+    private RmqConsumer() {
+    }
+
+    public static void consumeMessage(byte[] message) {
+        log.info("Message Received [{}]", new String(message));
         // TODO : Add consume job
     }
 }
