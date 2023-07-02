@@ -1,8 +1,8 @@
 package com.aispace.erksystem.service;
 
 import com.aispace.erksystem.common.SystemLock;
+import com.aispace.erksystem.config.UserConfig;
 import com.aispace.erksystem.rmq.RmqManager;
-import com.aispace.erksystem.service.database.DBManager;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
@@ -10,6 +10,8 @@ import lombok.extern.slf4j.Slf4j;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.concurrent.TimeoutException;
+
+import static spark.Spark.*;
 
 /**
  * Created by Ai_Space
@@ -20,6 +22,7 @@ public class ServiceManager {
     private static final String CONFIG_FILE_NAME = "user_config.yaml";
     private static final String PROCESS_NAME = "erk_service";
     private static final AppInstance appInstance = AppInstance.getInstance();
+    private static final UserConfig config = appInstance.getConfig();
 
     @Getter
     @Setter
@@ -38,12 +41,19 @@ public class ServiceManager {
         }));
 
         // Config 초기화
-        appInstance.getConfig().init(Path.of(configPath).resolve(CONFIG_FILE_NAME).toString());
+        config.init(Path.of(configPath).resolve(CONFIG_FILE_NAME).toString());
 
         // RMQ 서버 연결 및 RMQ Consumer 등록
         RmqManager.start();
         // DATABASE 연결
         //DBManager.getInstance().start();
+
+
+        // Prometheus 연동
+        if (config.isPrometheusActivate()) {
+            port(config.getPrometheusPort());
+            get(config.getPrometheusMetricsPath(), (req, res) -> PrometheusManager.getInstance().registry.scrape());
+        }
 
         isQuit = false;
         log.info("Process startup succeeded");

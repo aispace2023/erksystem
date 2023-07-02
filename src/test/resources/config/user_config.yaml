@@ -16,3 +16,8 @@ dbms:
   password: L7ZD94NgdCA/yf+2euiSPQ==
   database: ERK_SYS
   jdbc-params: serverTimezone=UTC&connectTimeout=3000&socketTimeout=2000
+
+prometheus:
+  activate: true
+  port: 8080
+  metrics_path: /metrics/prometheus

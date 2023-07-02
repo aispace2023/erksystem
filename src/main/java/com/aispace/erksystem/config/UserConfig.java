@@ -45,11 +45,20 @@ public class UserConfig extends YamlConfig {
     @ConfigValue("dbms.port")
     Integer dbPort;
 
+    @ConfigValue("prometheus.activate")
+    boolean prometheusActivate = false;
+    @ConfigValue("prometheus.port")
+    Integer prometheusPort;
+    @ConfigValue("prometheus.metrics_path")
+    String prometheusMetricsPath;
+
     @Override
     public void afterFieldSetting() {
         rmqPassword = PasswdUtil.decrypt(rmqPassword);
         dbPassword = PasswdUtil.decrypt(dbPassword);
-
+        if (prometheusMetricsPath != null && !prometheusMetricsPath.startsWith("/")) {
+            prometheusMetricsPath = "/" + prometheusMetricsPath;
+        }
         ValidationUtil.validCheck(this);
     }
 }
