@@ -2,7 +2,7 @@ package com.aispace.erksystem.rmq;
 
 import com.aispace.erksystem.config.UserConfig;
 import com.aispace.erksystem.rmq.module.RmqConsumer;
-import com.aispace.erksystem.rmq.module.RmqService;
+import com.aispace.erksystem.rmq.module.RmqModule;
 import com.aispace.erksystem.service.AppInstance;
 import lombok.Synchronized;
 import lombok.extern.slf4j.Slf4j;
@@ -16,36 +16,36 @@ import java.util.concurrent.TimeoutException;
 @Slf4j
 public class RmqManager {
     private static final UserConfig config = AppInstance.getInstance().getConfig();
-    private static RmqService rmqService;
+    private static RmqModule rmqModule;
 
     private RmqManager() {
     }
 
     @Synchronized
     public static void start() throws IOException, TimeoutException, IllegalStateException {
-        if (rmqService != null) {
+        if (rmqModule != null) {
             throw new IllegalStateException("Already Started");
         }
 
-        rmqService = new RmqService(config.getRmqHost(), config.getRmqUser(), config.getRmqPassword());
-        rmqService.connect();
+        rmqModule = new RmqModule(config.getRmqHost(), config.getRmqUser(), config.getRmqPassword());
+        rmqModule.connect(() -> log.info("RMQ Conneted"), () -> log.warn("RMQ Disconnected"));
         for (String incomingQueue : config.getIncomingQueues()) {
-            rmqService.queueDeclare(incomingQueue);
-            rmqService.registerByteConsumer(incomingQueue, RmqConsumer::consumeMessage);
+            rmqModule.queueDeclare(incomingQueue);
+            rmqModule.registerByteConsumer(incomingQueue, RmqConsumer::consumeMessage);
         }
     }
 
     @Synchronized
     public static void stop() {
         try {
-            rmqService.close();
-            rmqService = null;
+            rmqModule.close();
+            rmqModule = null;
         } catch (Exception e) {
             log.warn("Fail to close RMQ", e);
         }
     }
 
     public static void sendMessage(String queueName, byte[] message) throws IOException {
-        rmqService.sendMessage(queueName, message);
+        rmqModule.sendMessage(queueName, message);
     }
 }
