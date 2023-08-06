@@ -1,7 +1,7 @@
 rmq:
   host: 127.0.0.1
-  user: aispace2023
-  password: bkH/BKmkuGDiFeSJY0oN5Uv6EJofzunk
+  user: erksystem
+  password: mHrLhkGcg3QhvtvFEe71/Y5PYUEj7iy4
   incoming-queues:
     - INCOMING_QUEUE_TEST
     - INCOMING_QUEUE_TEST_2

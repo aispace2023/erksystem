@@ -12,6 +12,12 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <jar.finalName>${project.artifactId}</jar.finalName>
+        <rpm.homeDir>/home/erksystem/erksystem</rpm.homeDir>
+        <rpm.groupName>erksystem</rpm.groupName>
+        <rpm.userName>erksystem</rpm.userName>
+        <rpm.release.version>1</rpm.release.version>
     </properties>
 
     <dependencies>
@@ -121,4 +127,152 @@
         </dependency>
     </dependencies>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.2.4</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <filters>
+                                <filter>
+                                    <artifact>*:*</artifact>
+                                    <excludes>
+                                        <exclude>META-INF/*.SF</exclude>
+                                        <exclude>META-INF/*.DSA</exclude>
+                                        <exclude>META-INF/*.RSA</exclude>
+                                    </excludes>
+                                </filter>
+                            </filters>
+                            <transformers>
+                                <transformer
+                                        implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer">
+                                </transformer>
+                                <transformer
+                                        implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <mainClass>com.aispace.erksystem.ErkSystemMain</mainClass>
+                                </transformer>
+                            </transformers>
+                            <finalName>${jar.finalName}</finalName>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>rpm-maven-plugin</artifactId>
+                <version>2.0.1</version>
+                <executions>
+                    <execution>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>rpm</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <copyright>2023, Uangel</copyright>
+                    <group>Service Dev</group>
+                    <description>VCMM Module</description>
+                    <release>${rpm.release.version}</release>
+                    <autoRequires>false</autoRequires>
+                    <targetOS>linux</targetOS>
+                    <defaultDirmode>755</defaultDirmode>
+                    <defaultFilemode>644</defaultFilemode>
+                    <defaultUsername>${rpm.userName}</defaultUsername>
+                    <defaultGroupname>${rpm.groupName}</defaultGroupname>
+                    <defineStatements>
+                        <defineStatement>_binaries_in_noarch_packages_terminate_build 0</defineStatement>
+                    </defineStatements>
+
+                    <mappings>
+                        <mapping>
+                            <directory>${rpm.homeDir}/</directory>
+                        </mapping>
+                        <mapping>
+                            <directory>${rpm.homeDir}/lib/</directory>
+                            <filemode>755</filemode>
+                            <sources>
+                                <source>
+                                    <location>${project.basedir}/target/${jar.finalName}.jar</location>
+                                </source>
+                            </sources>
+                        </mapping>
+                        <mapping>
+                            <directory>${rpm.homeDir}/bin/</directory>
+                            <filemode>755</filemode>
+                        </mapping>
+                        <mapping>
+                            <directory>${rpm.homeDir}/bin/</directory>
+                            <filemode>700</filemode>
+                            <directoryIncluded>false</directoryIncluded>
+                            <sources>
+                                <source>
+                                    <location>${project.basedir}/src/main/resources/bin/</location>
+                                </source>
+                            </sources>
+                        </mapping>
+                        <mapping>
+                            <configuration>noreplace</configuration>
+                            <directory>${rpm.homeDir}/config/</directory>
+                            <sources>
+                                <source>
+                                    <location>${project.basedir}/src/main/resources/config/</location>
+                                </source>
+                            </sources>
+                        </mapping>
+                        <mapping>
+                            <directory>${rpm.homeDir}/logs</directory>
+                        </mapping>
+                    </mappings>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>3.0.0</version>
+                <executions>
+                    <execution>
+                        <id>move-rpm</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <target>
+                                <move todir="${project.build.directory}">
+                                    <fileset dir="${project.build.directory}/rpm/${project.artifactId}/RPMS/noarch/"/>
+                                </move>
+                            </target>
+                        </configuration>
+                    </execution>
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.apache.ant</groupId>
+                        <artifactId>ant-jsch</artifactId>
+                        <version>1.10.11</version>
+                        <exclusions>
+                            <exclusion>
+                                <groupId>com.jcraft</groupId>
+                                <artifactId>jsch</artifactId>
+                            </exclusion>
+                        </exclusions>
+                    </dependency>
+                    <dependency>
+                        <groupId>com.jcraft</groupId>
+                        <artifactId>jsch</artifactId>
+                        <version>0.1.55</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>
 </project>
