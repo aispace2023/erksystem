@@ -1,0 +1,169 @@
+syntax = "proto3";
+
+option java_package = "com.erksystem.protobuf";
+option java_outer_classname = "Erksystem";
+option java_multiple_files = true;
+
+enum EngineType {
+  ENGINE_UNKNOWN = 0;
+  ENGINE_PHYSIOLOGY = 1;
+  ENGINE_SPEECH = 2;
+  ENGINE_FACE = 3;
+  ENGINE_EMO_RECOG_ALL = 4;
+  ENGINE_KNOWLEDGE = 5;
+}
+
+enum EngineCondition {
+  ENGINE_UNKNOWN_CONDITION = 0;
+  ENGINE_AVAILABLE = 1;
+  ENGINE_NOT_AVAILABLE = 2;
+}
+
+enum ServiceType {
+  SERVICE_UNKNOWN = 0;
+  SERVICE_PHYSIOLOGY = 1;
+  SERVICE_SPEECH = 2;
+  SERVICE_VIDEO = 3;
+  SERVICE_PHYSIOLOGY_SPEECH = 4;
+  SERVICE_PHYSIOLOGY_VIDEO = 5;
+  SERVICE_SPEECH_VIDEO = 6;
+  SERVICE_PHYSIOLOGY_SPEECH_VIDEO = 7;
+  SERVICE_KNOWLEDGE = 8;
+  SERVICE_ALL = 9;
+  SERVICE_RESERVED1 = 10;
+  SERVICE_RESERVED2 = 11;
+}
+
+enum Emotion{
+  EMOTION_UNKNOWN = 0;
+  EMOTION_NEUTRAL = 1;
+  EMOTION_POSITIVE = 2;
+  EMOTION_NEGATIVE = 3;
+  EMOTION_STRESS = 4;
+  EMOTION_JOY = 5;
+  EMOTION_HAPPY = 6;
+  EMOTION_SADNESS = 7;
+  EMOTION_ANGER = 8;
+  EMOTION_AROUSAL = 9;
+  EMOTION_RELAXATION = 10;
+  EMOTION_PEACE = 11;
+  EMOTION_ANXIETY = 12;
+  EMOTION_FEAR = 13;
+  EMOTION_DISGUST = 14;
+  EMOTION_ETC = 15;
+}
+
+
+// Header
+message ErkMsgHeader{
+  string MsgType = 1;
+  int32 OrgId = 2;
+  string UserId = 3;
+  int64 MsgTimeStamp = 4;
+  string DevPlatform = 5;
+}
+
+message ErkMsgDataHeader{
+  EngineType ExternalMsgType = 1;
+  int32 OrgId = 2;
+  string UserId = 3;
+  string DevPlatform = 4;
+}
+
+
+// Body
+message ErkEngineInfo{
+  EngineType EngineType = 1;
+  EngineCondition EngineCondition = 2;
+  string IpAddr = 3;
+  int32 Port = 4;
+}
+
+message ErkServiceConnRQ{
+}
+message ErkServiceConnRP{
+  int32 Result = 1;
+  string Reason = 2;
+  ServiceType ServiceType = 3;
+}
+message ErkServiceDisConnRQ{
+  ServiceType ServiceType = 1;
+}
+message ErkServiceDisConnRP{
+  int32 ReasonCode = 1;
+  string Reason = 2;
+}
+
+message HB_RQ{
+}
+message HB_RP{
+  int32 Status = 1;
+}
+
+message EmoRecogCreateRQ{
+  ServiceType ServiceType = 1;
+}
+message EmoRecogCreateRP{
+  int32 ReasonCode = 1;
+  string Reason = 2;
+  ErkEngineInfo PhysioEngineInfo = 3;
+  ErkEngineInfo SpeechEngineInfo = 4;
+  ErkEngineInfo FaceEngineInfo = 5;
+  ErkEngineInfo Reserved1EngineInfo = 6;
+  ErkEngineInfo Reserved2EngineInfo = 7;
+}
+message EmoRecogDeleteRQ{
+  ServiceType ServiceType = 1;
+}
+message EmoRecogDeleteRP{
+  int32 ReasonCode = 1;
+  string Reason = 2;
+  ErkEngineInfo PhysioEngineInfo = 3;
+  ErkEngineInfo SpeechEngineInfo = 4;
+  ErkEngineInfo FaceEngineInfo = 5;
+  ErkEngineInfo Reserved1EngineInfo = 6;
+  ErkEngineInfo Reserved2EngineInfo = 7;
+}
+
+message EmoRecogRQ{
+  int64 DataTimeStamp = 1;
+  int32 MsgDataLength = 2;
+  bytes MsgDataFrame = 3;
+}
+message EmoRecogRP{
+  int32 ReasonCode = 1;
+  string Reason = 2;
+  int64 EmoRecogTime = 3;
+  Emotion Emotion = 4;
+  float Accuracy = 5;
+}
+message EmoRecogNoti{
+  int64 EmoRecogTime = 1;
+  Emotion Emotion = 2;
+  float Accuracy = 3;
+}
+
+message ErkApiMsg{
+  ErkMsgHeader ErkMsgHeader = 1;
+  oneof body{
+    HB_RQ HB_RQ = 2;
+    HB_RP HB_RP = 3;
+    ErkServiceConnRQ ErkServiceConnRQ = 4;
+    ErkServiceConnRP ErkServiceConnRP = 5;
+    ErkServiceDisConnRQ ErkServiceDisConnRQ = 6;
+    ErkServiceDisConnRP ErkServiceDisConnRP = 7;
+    EmoRecogCreateRQ EmoRecogCreateRQ = 8;
+    EmoRecogCreateRP EmoRecogCreateRP = 9;
+    EmoRecogDeleteRQ EmoRecogDeleteRQ = 10;
+    EmoRecogDeleteRP EmoRecogDeleteRP = 11;
+  }
+}
+
+message ErkDataMsg{
+  ErkMsgDataHeader ErkMsgDataHeader = 1;
+  oneof body{
+    EmoRecogRQ EmoRecogRQ = 2;
+    EmoRecogRP EmoRecogRP = 3;
+    EmoRecogNoti EmoRecogNoti = 4;
+  }
+}
