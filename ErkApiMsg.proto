@@ -1,7 +1,6 @@
 syntax = "proto3";
 
 option java_package = "com.erksystem.protobuf";
-option java_outer_classname = "Erksystem";
 option java_multiple_files = true;
 
 enum EngineType {
@@ -165,5 +164,12 @@ message ErkDataMsg{
     EmoRecogRQ EmoRecogRQ = 2;
     EmoRecogRP EmoRecogRP = 3;
     EmoRecogNoti EmoRecogNoti = 4;
+  }
+}
+
+message ErkMessage{
+  oneof Message{
+    ErkApiMsg ErkApiMsg = 1;
+    ErkDataMsg ErkDataMsg = 2;
   }
 }

@@ -1,8 +1,8 @@
 syntax = "proto3";
 
 option java_package = "com.erksystem.protobuf";
-option java_outer_classname = "Erksystem";
 option java_multiple_files = true;
+
 
 enum ServiceType {
   SERVICE_UNKNOWN = 0;
