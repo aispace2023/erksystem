@@ -2,9 +2,11 @@ rmq:
   host: 127.0.0.1
   user: erksystem
   password: mHrLhkGcg3QhvtvFEe71/Y5PYUEj7iy4
-  incoming-queues:
-    - INCOMING_QUEUE_TEST
-    - INCOMING_QUEUE_TEST_2
+  port: 10001
+  incoming-queue:
+    api: ERK_API_QUEUE
+    provision: ERK_PROVISION_QUEUE
+  api-queue-name: ERK_TEST
 
 performance:
   rmq-consumer-count: 8

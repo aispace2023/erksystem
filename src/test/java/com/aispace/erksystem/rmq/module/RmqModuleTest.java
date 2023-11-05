@@ -19,14 +19,14 @@ public class RmqModuleTest {
     void rmqTest() {
         try {
             // RMQ 연결 및 Queue 생성
-            try (RmqModule rmqModule = new RmqModule(HOST, USER, PW)) {
-                rmqModule.connect(() -> log.info("RMQ Conneted"), () -> log.warn("RMQ Disconnected"));
-                rmqModule.queueDeclare(QUEUE_NAME);
-            }
+            RmqStreamModule rmqModule = new RmqStreamModule(HOST, USER, PW);
+            rmqModule.connect(() -> log.info("RMQ Conneted"), () -> log.warn("RMQ Disconnected"));
+            rmqModule.queueDeclare(QUEUE_NAME);
 
             // RMQ 연결 및 메시지 핸들러 등록
             new Thread(() -> {
-                try (RmqModule consumer = new RmqModule(HOST, USER, PW)){
+                try {
+                    RmqStreamModule consumer = new RmqStreamModule(HOST, USER, PW);
                     consumer.connect(() -> log.info("RMQ Conneted"), () -> log.warn("RMQ Disconnected"));
                     consumer.registerStringConsumer(QUEUE_NAME, (message) -> log.debug("Consumed Message : {}", message));
                     Thread.sleep(1000);
@@ -39,7 +39,8 @@ public class RmqModuleTest {
 
             // RMQ 연결 및 메시지 메시지 전송
             new Thread(() -> {
-                try (RmqModule producer = new RmqModule(HOST, USER, PW)){
+                try {
+                    RmqStreamModule producer = new RmqStreamModule(HOST, USER, PW);
                     producer.connect(() -> log.info("RMQ Conneted"), () -> log.warn("RMQ Disconnected"));
                     producer.sendMessage(QUEUE_NAME, "TEST_MESSAGE");
                 } catch (Exception e) {
@@ -48,7 +49,7 @@ public class RmqModuleTest {
             }, "Producer").start();
 
             Thread.sleep(1000);
-        } catch (Exception e){
+        } catch (Exception e) {
             log.warn("Test Fail");
         }
     }

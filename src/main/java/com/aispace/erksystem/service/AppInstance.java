@@ -9,7 +9,7 @@ import lombok.Data;
 @Data
 public class AppInstance {
     private static final AppInstance INSTANCE = new AppInstance();
-    private UserConfig config = new UserConfig();
+    private UserConfig userConfig = new UserConfig();
 
     private AppInstance() {
     }

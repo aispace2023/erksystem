@@ -18,6 +18,7 @@ import java.util.List;
 @Setter
 @ToString
 public class UserConfig extends YamlConfig {
+    public static final String RMQ_KEY = "RMQ";
 
     @ConfigValue("rmq.host")
     String rmqHost;
@@ -25,8 +26,18 @@ public class UserConfig extends YamlConfig {
     String rmqUser;
     @ConfigValue("rmq.password")
     String rmqPassword;
-    @ConfigValue("rmq.incoming-queues")
-    List<String> incomingQueues;
+    @ConfigValue("rmq.port")
+    int rmqPort;
+    @ConfigValue("rmq.incoming-queue.api")
+    String rmqApiQueueName;
+    @ConfigValue("rmq.incoming-queue.provision")
+    String rmqProvQueueName;
+    @ConfigValue("rmq.api-queue-name")
+    String apiQueue;
+
+    @Min(0)
+    @ConfigValue("timer.connection-timeout")
+    int connectionTimeout;
 
     @Min(0)
     @ConfigValue("performance.rmq-consumer-count")

@@ -23,7 +23,7 @@ import java.sql.SQLException;
 @Setter
 @Slf4j
 public class DBManager {
-    private static final UserConfig config = AppInstance.getInstance().getConfig();
+    private static final UserConfig config = AppInstance.getInstance().getUserConfig();
     private static final String DBCP_CONF = "/config/hikari.properties";
     private static final DBManager dbManager = new DBManager();
     private HikariDataSource dataSource = null;

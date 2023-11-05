@@ -1,0 +1,275 @@
+syntax = "proto3";
+
+option java_package = "com.erksystem.protobuf.erkmsg";
+option java_multiple_files = true;
+
+enum ErkMsgType_e{
+  Unknown = 0;
+  ErkServiceConnRQ_e = 1;
+  ErkServiceConnRP_e = 2;
+  ErkServiceDisConnRQ_e = 3;
+  ErkServiceDisConnRP_e = 4;
+  AddServiceProviderInfoRQ_e = 5;
+  AddServiceProviderInfoRP_e = 6;
+  DelServiceProviderInfoRQ_e = 7;
+  DelServiceProviderInfoRP_e = 8;
+  UpdServiceProviderInfoRQ_e = 9;
+  UpdServiceProviderInfoRP_e = 10;
+  AddUserInfoRQ_e = 11;
+  AddUserInfoRP_e = 12;
+  DelUserInfoRQ_e = 13;
+  DelUserInfoRP_e = 14;
+  UpdUserInfoRQ_e = 15;
+  UpdUserInfoRP_e = 16;
+  EmoRecogCreateRQ_e = 17;
+  EmoRecogCreateRP_e = 18;
+  EmoRecogDeleteRQ_e = 19;
+  EmoRecogDeleteRP_e = 20;
+  PhysioEmoRecogRQ_e = 21;
+  SpeechEmoRecogRQ_e = 22;
+  FaceEmoRecogRQ_e = 23;
+  EmoRecogRQ_e = 24;
+  EmoRecogRP_e = 25;
+  reserved1_e = 26;
+  reserved2_e = 27;
+}
+
+enum ReturnCode_e {
+  unknown = 0;
+  ok = 1;
+  nok_Org = 2;
+  nok_User = 3;
+  nok_MsgType = 4;
+  nok_EngineType = 5;
+  nok_EngineCondition = 6;
+  nok_PhysioEngineCondition = 7;
+  nok_SpeechEngineCondition = 8;
+  nok_FaceEmoEngineCondition = 9;
+  nok_DevPlatform = 10;
+  nok_EmotionType = 11;
+  nok_reason1 = 12;
+  nok_reason2 = 13;
+}
+
+enum EngineType_e {
+  ENGINE_UNKNOWN = 0;
+  ENGINE_PHYSIOLOGY = 1;
+  ENGINE_SPEECH = 2;
+  ENGINE_FACE = 3;
+  ENGINE_EMO_RECOG_ALL = 4;
+  ENGINE_KNOWLEDGE = 5;
+  ENGINE_RESERVED1 = 6;
+  ENGINE_RESERVED2 = 7;
+}
+
+enum EngineCondition_e {
+  ENGINE_UNKNOWN_CONDITION = 0;
+  ENGINE_AVAILABLE = 1;
+  ENGINE_NOT_AVAILABLE = 2;
+}
+
+enum ServiceType_e {
+  SERVICE_UNKNOWN = 0;
+  SERVICE_PHYSIOLOGY = 1;
+  SERVICE_SPEECH = 2;
+  SERVICE_VIDEO = 3;
+  SERVICE_PHYSIOLOGY_SPEECH = 4;
+  SERVICE_PHYSIOLOGY_VIDEO = 5;
+  SERVICE_SPEECH_VIDEO = 6;
+  SERVICE_PHYSIOLOGY_SPEECH_VIDEO = 7;
+  SERVICE_KNOWLEDGE = 8;
+  SERVICE_ALL = 9;
+  SERVICE_RESERVED1 = 10;
+  SERVICE_RESERVED2 = 11;
+}
+
+enum EmotionType_e{
+  EMOTION_UNKNOWN = 0;
+  EMOTION_NEUTRAL = 1;
+  EMOTION_POSITIVE = 2;
+  EMOTION_NEGATIVE = 3;
+  EMOTION_STRESS = 4;
+  EMOTION_JOY = 5;
+  EMOTION_HAPPY = 6;
+  EMOTION_SADNESS = 7;
+  EMOTION_ANGER = 8;
+  EMOTION_AROUSAL = 9;
+  EMOTION_RELAXATION = 10;
+  EMOTION_PEACE = 11;
+  EMOTION_ANXIETY = 12;
+  EMOTION_FEAR = 13;
+  EMOTION_DISGUST = 14;
+  EMOTION_ETC = 15;
+}
+
+enum OrgProfileResult_e{
+  ORG_PROFILE_UNKNOWN = 0;
+  ORG_PROFILE_OK = 1;
+  ORG_PROFILE_NOK_OrgName = 2;
+  ORG_PROFILE_NOK_OrgPwd = 3;
+  ORG_PROFILE_NOK_ServiceDuration = 4;
+  ORG_PROFILE_NOK_UserNumber = 5;
+  ORG_PROFILE_NOK_ServiceType = 6;
+  ORG_PROFILE_NOK_DB = 7;
+  ORG_PROFILE_NOK_REASON1 = 8;
+  ORG_PROFILE_NOK_REASON2 = 9;
+}
+
+enum  UserProfileResult_e{
+  USER_PROFILE_UNKNOWN = 0;
+  USER_PROFILE_OK = 1;
+  USER_PROFILE_NOK_ORGNAME = 2;
+  USER_PROFILE_NOK_USERNAME = 3;
+  USER_PROFILE_NOK_USERPWD = 4;
+  USER_PROFILE_NOK_SERVICEDURATION = 5;
+  USER_PROFILE_NOK_AGE = 6;
+  USER_PROFILE_NOK_SEX = 7;
+  USER_PROFILE_NOK_USERTYPE = 8;
+  USER_PROFILE_NOK_SERVICETYPE = 9;
+  USER_PROFILE_NOK_DB = 10;
+  USER_PROFILE_NOK_REASON1 = 11;
+  USER_PROFILE_NOK_REASON2 = 12;
+}
+
+
+
+message AddServiceProviderInfoRQ{
+  string OrgName = 1;
+  string OrgPwd = 2;
+  uint32 ServiceDuration = 3;
+  int64 UserNumber = 4;
+  ServiceType_e ServiceType = 5;
+}
+
+message AddServiceProviderInfoRP{
+  string OrgName = 1;
+  OrgProfileResult_e ResultType = 2;
+  int32 OrgId = 3;
+  string OrgPwd = 4;
+  string ServiceDuration = 5;
+  int32 UserNumber = 6;
+  ServiceType_e ServiceType = 7;
+}
+
+message UpdateServiceProviderInfoRQ{
+  string OrgName = 1;
+  string Old_OrgPwd = 2;
+  string Old_ServiceDuration = 3;
+  int32 Old_UserNumber = 4;
+  ServiceType_e Old_ServiceType = 5;
+  string New_OrgPwd = 6;
+  string New_ServiceDuration = 7;
+  int32 New_UserNumber = 8;
+  ServiceType_e New_ServiceType = 9;
+}
+
+message UpdateServiceProviderInfoRP{
+  string OrgName = 1;
+  OrgProfileResult_e ResultType = 2;
+  string Old_OrgPwd = 3;
+  string Old_ServiceDuration = 4;
+  int32 Old_UserNumber = 5;
+  ServiceType_e Old_ServiceType = 6;
+  string New_OrgPwd = 7;
+  string New_ServiceDuration = 8;
+  int32 New_UserNumber = 9;
+  ServiceType_e New_ServiceType = 10;
+}
+
+message DelServiceProviderInfoRQ{
+  string OrgName = 1;
+  string OrgPwd = 2;
+}
+message DelServiceProviderInfoRP{
+  string OrgName = 1;
+  OrgProfileResult_e ResultType = 2;
+}
+
+message AddUserInfoRQ{
+  string OrgName = 1;
+  string UserName = 2;
+  string UserPwd = 3;
+  string ServiceDuration = 4;
+  int32 Age = 5;
+  int32 Sex = 6;
+  int32 UserType = 7;
+  ServiceType_e ServiceType = 8;
+}
+
+message AddUserInfoRP{
+  string OrgName = 1;
+  string UserName = 2;
+  UserProfileResult_e ResultType = 3;
+  int32 UserId = 4;
+  string UserPwd = 5;
+  string ServiceDuration = 6;
+  int32 Age = 7;
+  int32 Sex = 8;
+  int32 UserType = 9;
+  ServiceType_e ServiceType = 10;
+}
+
+message UpdateUserInfoRQ{
+  string OrgName = 1;
+  string UserName = 2;
+  string Old_UserPwd = 3;
+  string Old_ServiceDuration = 4;
+  int32 Old_Age = 5;
+  int32 Old_Sex = 6;
+  int32 Old_UserType = 7;
+  ServiceType_e Old_ServiceType = 8;
+  string New_UserPwd = 9;
+  string New_ServiceDuration = 10;
+  int32 New_Age = 11;
+  int32 New_Sex = 12;
+  int32 New_UserType = 13;
+  ServiceType_e New_ServiceType = 14;
+}
+
+message UpdateUserInfoRP{
+  string OrgName = 1;
+  string UserName = 2;
+  UserProfileResult_e ResultType = 3;
+  string Old_UserPwd = 4;
+  string Old_ServiceDuration = 5;
+  int32 Old_Age = 6;
+  int32 Old_Sex = 7;
+  int32 Old_UserType = 8;
+  ServiceType_e Old_ServiceType = 9;
+  string New_UserPwd = 10;
+  string New_ServiceDuration = 11;
+  int32 New_Age = 12;
+  int32 New_Sex = 13;
+  int32 New_UserType = 14;
+  ServiceType_e New_ServiceType = 15;
+}
+
+message DelUserInfoRQ{
+  string OrgName = 1;
+  string UserName = 2;
+  string UserPwd = 3;
+}
+
+message DelUserInfoRP{
+  string OrgName = 1;
+  string UserName = 2;
+  UserProfileResult_e ResultType = 3;
+  string Return = 4;
+}
+
+message ErkProvMsg{
+  oneof msg{
+    AddServiceProviderInfoRQ addServiceProviderInfoRq = 1;
+    AddServiceProviderInfoRP addServiceProviderInfoRp = 2;
+    UpdateServiceProviderInfoRQ updateServiceProviderInfoRq = 3;
+    UpdateServiceProviderInfoRP updateServiceProviderInfoRp = 4;
+    DelServiceProviderInfoRQ delServiceProviderInfoRq = 5;
+    DelServiceProviderInfoRP delServiceProviderInfoRp = 6;
+    AddUserInfoRQ addUserInfoRq = 7;
+    AddUserInfoRP addUserInfoRp = 8;
+    UpdateUserInfoRQ updateUserInfoRq = 9;
+    UpdateUserInfoRP updateUserInfoRp = 10;
+    DelUserInfoRQ delUserInfoRq = 11;
+    DelUserInfoRP delUserInfoRp = 12;
+  }
+}

@@ -3,6 +3,10 @@ package com.aispace.erksystem.service;
 import com.aispace.erksystem.common.SystemLock;
 import com.aispace.erksystem.config.UserConfig;
 import com.aispace.erksystem.rmq.RmqManager;
+import com.aispace.erksystem.rmq.module.ErkApiMsgRmqConsumer;
+import com.aispace.erksystem.rmq.module.ErkProvMsgRmqConsumer;
+import com.aispace.erksystem.rmq.module.RmqStreamModule;
+import com.erksystem.protobuf.api.ErkApiMsg;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
@@ -11,7 +15,8 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.util.concurrent.TimeoutException;
 
-import static spark.Spark.*;
+import static spark.Spark.get;
+import static spark.Spark.port;
 
 /**
  * Created by Ai_Space
@@ -22,7 +27,7 @@ public class ServiceManager {
     private static final String CONFIG_FILE_NAME = "user_config.yaml";
     private static final String PROCESS_NAME = "erk_service";
     private static final AppInstance appInstance = AppInstance.getInstance();
-    private static final UserConfig config = appInstance.getConfig();
+    private static final UserConfig config = appInstance.getUserConfig();
 
     @Getter
     @Setter
@@ -44,7 +49,18 @@ public class ServiceManager {
         config.init(Path.of(configPath).resolve(CONFIG_FILE_NAME).toString());
 
         // RMQ 서버 연결 및 RMQ Consumer 등록
-        RmqManager.start();
+        RmqManager rmqManager = RmqManager.getInstance();
+        rmqManager.addRmqModule(config.getRmqApiQueueName(), new RmqStreamModule(config.getRmqHost(), config.getRmqUser(), config.getRmqPassword(), config.getRmqPort()), config.getRmqApiQueueName(),
+                () -> log.info("RMQ API QUEUE Connected"),
+                () -> log.warn("RMQ API QUEUE Disconnected"));
+
+        rmqManager.addRmqModule(config.getRmqProvQueueName(), new RmqStreamModule(config.getRmqHost(), config.getRmqUser(), config.getRmqPassword(), config.getRmqPort()), config.getRmqProvQueueName(),
+                () -> log.info("RMQ PROVISION QUEUE Connected"),
+                () -> log.warn("RMQ PROVISION QUEUE Disconnected"));
+
+        rmqManager.connectRmqModule(config.getRmqApiQueueName(), ErkApiMsgRmqConsumer::consumeMessage);
+        rmqManager.connectRmqModule(config.getRmqProvQueueName(), ErkProvMsgRmqConsumer::consumeMessage);
+
         // DATABASE 연결
         //DBManager.getInstance().start();
 
@@ -70,7 +86,7 @@ public class ServiceManager {
 
     public static void stopService() {
         //DBManager.getInstance().stop();
-        RmqManager.stop();
+        RmqManager.getInstance().stop();
         isQuit = true;
     }
 }
