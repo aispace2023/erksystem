@@ -4,7 +4,7 @@ import com.aispace.erksystem.rmq.module.handler.base.RmqIncomingHandler;
 import com.erksystem.protobuf.prov.AddServiceProviderInfoRP;
 import com.erksystem.protobuf.prov.AddServiceProviderInfoRQ;
 
-import static com.aispace.erksystem.rmq.module.handler.base.RmqOutgoingHandler.sendToApi;
+import static com.aispace.erksystem.rmq.module.handler.base.RmqOutgoingHandler.*;
 
 /**
  * Created by Ai_Space
@@ -48,6 +48,6 @@ public class AddServiceProviderInfoRQHandler extends RmqIncomingHandler<AddServi
                 // .setOrgId() // TODO
                 .build();
 
-        sendToApi(res);
+        sendErkProvMsg2API(res);
     }
 }

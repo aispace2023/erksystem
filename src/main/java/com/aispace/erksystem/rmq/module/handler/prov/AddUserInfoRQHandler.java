@@ -4,6 +4,7 @@ import com.aispace.erksystem.rmq.module.handler.base.RmqIncomingHandler;
 import com.erksystem.protobuf.prov.AddUserInfoRP;
 import com.erksystem.protobuf.prov.AddUserInfoRQ;
 
+import static com.aispace.erksystem.rmq.module.handler.base.RmqOutgoingHandler.sendErkProvMsg2API;
 import static com.aispace.erksystem.rmq.module.handler.base.RmqOutgoingHandler.sendToApi;
 
 /**
@@ -56,6 +57,7 @@ public class AddUserInfoRQHandler extends RmqIncomingHandler<AddUserInfoRQ> {
                 //.setResultType() // TODO
                 //.setUserId() // TODO
                 .build();
-        sendToApi(res);
+
+        sendErkProvMsg2API(res);
     }
 }

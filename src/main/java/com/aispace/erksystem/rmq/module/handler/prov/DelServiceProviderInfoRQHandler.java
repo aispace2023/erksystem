@@ -3,6 +3,8 @@ package com.aispace.erksystem.rmq.module.handler.prov;
 import com.aispace.erksystem.rmq.module.handler.base.RmqIncomingHandler;
 import com.erksystem.protobuf.prov.DelServiceProviderInfoRP;
 import com.erksystem.protobuf.prov.DelServiceProviderInfoRQ;
+
+import static com.aispace.erksystem.rmq.module.handler.base.RmqOutgoingHandler.sendErkProvMsg2API;
 import static com.aispace.erksystem.rmq.module.handler.base.RmqOutgoingHandler.sendToApi;
 
 /**
@@ -32,6 +34,6 @@ public class DelServiceProviderInfoRQHandler extends RmqIncomingHandler<DelServi
                 // .setResultType() // TODO
                 .build();
 
-        sendToApi(res);
+        sendErkProvMsg2API(res);
     }
 }

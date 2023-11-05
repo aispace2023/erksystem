@@ -1,6 +1,5 @@
 package com.aispace.erksystem.rmq.module.handler.base;
 
-import com.aispace.erksystem.common.SafeExecutor;
 import com.aispace.erksystem.config.UserConfig;
 import com.aispace.erksystem.connection.ConnectionManager;
 import com.aispace.erksystem.service.AppInstance;
@@ -8,7 +7,7 @@ import com.google.protobuf.GeneratedMessageV3;
 import com.google.protobuf.Message;
 import lombok.extern.slf4j.Slf4j;
 
-import static com.aispace.erksystem.common.SafeExecutor.*;
+import static com.aispace.erksystem.common.SafeExecutor.tryRun;
 
 
 /**

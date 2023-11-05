@@ -3,6 +3,7 @@ package com.aispace.erksystem.rmq.module.handler.api;
 import com.aispace.erksystem.rmq.module.handler.base.RmqIncomingHandler;
 import com.erksystem.protobuf.api.*;
 
+import static com.aispace.erksystem.rmq.module.handler.base.RmqOutgoingHandler.sendErkApiMsg2API;
 import static com.aispace.erksystem.rmq.module.handler.base.RmqOutgoingHandler.sendToApi;
 
 /**
@@ -38,6 +39,6 @@ public class EmoRecogRqHandler extends RmqIncomingHandler<EmoRecogRQ> {
                 // .setReturnCode() // TODO
                 .build();
 
-        sendToApi(res);
+        sendErkApiMsg2API(res);
     }
 }

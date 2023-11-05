@@ -3,6 +3,8 @@ package com.aispace.erksystem.rmq.module.handler.prov;
 import com.aispace.erksystem.rmq.module.handler.base.RmqIncomingHandler;
 import com.erksystem.protobuf.prov.UpdateServiceProviderInfoRP;
 import com.erksystem.protobuf.prov.UpdateServiceProviderInfoRQ;
+
+import static com.aispace.erksystem.rmq.module.handler.base.RmqOutgoingHandler.sendErkProvMsg2API;
 import static com.aispace.erksystem.rmq.module.handler.base.RmqOutgoingHandler.sendToApi;
 
 /**
@@ -43,7 +45,7 @@ public class UpdateServiceProviderInfoRQHandler extends RmqIncomingHandler<Updat
 
     @Override
     protected void onFail() {
-        UpdateServiceProviderInfoRP.newBuilder()
+        UpdateServiceProviderInfoRP res = UpdateServiceProviderInfoRP.newBuilder()
                 .setOrgName(msg.getOrgName())
                 .setOldOrgPwd(msg.getOldOrgPwd())
                 .setOldServiceDuration(msg.getOldServiceDuration())
@@ -56,5 +58,6 @@ public class UpdateServiceProviderInfoRQHandler extends RmqIncomingHandler<Updat
                 // .setResultType() // TODO
                 .build();
 
+        sendErkProvMsg2API(res);
     }
 }

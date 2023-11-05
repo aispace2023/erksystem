@@ -4,6 +4,7 @@ import com.aispace.erksystem.connection.ConnectionInfo;
 import com.aispace.erksystem.rmq.module.handler.base.RmqIncomingHandler;
 import com.erksystem.protobuf.api.*;
 
+import static com.aispace.erksystem.rmq.module.handler.base.RmqOutgoingHandler.sendErkApiMsg2API;
 import static com.aispace.erksystem.rmq.module.handler.base.RmqOutgoingHandler.sendToApi;
 
 /**
@@ -42,6 +43,6 @@ public class EmoRecogCreateRqHandler extends RmqIncomingHandler<EmoRecogCreateRQ
                 // .setReturnCode() // TODO
                 .build();
 
-        sendToApi(res);
+        sendErkApiMsg2API(res);
     }
 }

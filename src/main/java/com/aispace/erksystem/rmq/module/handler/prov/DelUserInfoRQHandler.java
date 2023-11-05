@@ -4,6 +4,7 @@ import com.aispace.erksystem.rmq.module.handler.base.RmqIncomingHandler;
 import com.erksystem.protobuf.prov.DelUserInfoRP;
 import com.erksystem.protobuf.prov.DelUserInfoRQ;
 
+import static com.aispace.erksystem.rmq.module.handler.base.RmqOutgoingHandler.sendErkProvMsg2API;
 import static com.aispace.erksystem.rmq.module.handler.base.RmqOutgoingHandler.sendToApi;
 
 /**
@@ -39,6 +40,6 @@ public class DelUserInfoRQHandler extends RmqIncomingHandler<DelUserInfoRQ> {
                 // .setReturn() // TODO
                 .build();
 
-        sendToApi(res);
+        sendErkProvMsg2API(res);
     }
 }

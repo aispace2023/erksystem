@@ -2,7 +2,6 @@ package com.aispace.erksystem.rmq.module.handler.base;
 
 import com.aispace.erksystem.config.UserConfig;
 import com.aispace.erksystem.rmq.RmqManager;
-import com.aispace.erksystem.rmq.module.RmqLogPrinter;
 import com.aispace.erksystem.service.AppInstance;
 import com.google.protobuf.Message;
 import lombok.extern.slf4j.Slf4j;
@@ -36,4 +35,11 @@ public class RmqOutgoingHandler {
         send(msg, userConfig.getRmqApiQueueName(), userConfig.getApiQueue());
     }
 
+    public static void sendErkApiMsg2API(Message msg) {
+        sendToApi(ErkMsgWrapper.wrap2ErkApiMsg(msg));
+    }
+
+    public static void sendErkProvMsg2API(Message msg) {
+        sendToApi(ErkMsgWrapper.wrap2ErkProvMsg(msg));
+    }
 }

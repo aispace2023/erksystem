@@ -6,6 +6,7 @@ import com.erksystem.protobuf.api.ErkMsgDataHeader;
 import com.erksystem.protobuf.api.FaceEmoRecogRP;
 import com.erksystem.protobuf.api.FaceEmoRecogRQ;
 
+import static com.aispace.erksystem.rmq.module.handler.base.RmqOutgoingHandler.sendErkApiMsg2API;
 import static com.aispace.erksystem.rmq.module.handler.base.RmqOutgoingHandler.sendToApi;
 
 /**
@@ -41,6 +42,6 @@ public class FaceEmoRecogRqHandler extends RmqIncomingHandler<FaceEmoRecogRQ> {
                 // .setReturnCode() // TODO
                 .build();
 
-        sendToApi(res);
+        sendErkApiMsg2API(res);
     }
 }

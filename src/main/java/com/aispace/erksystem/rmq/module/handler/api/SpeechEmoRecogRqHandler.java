@@ -6,6 +6,7 @@ import com.erksystem.protobuf.api.PhysioEmoRecogRP;
 import com.erksystem.protobuf.api.SpeechEmoRecogRP;
 import com.erksystem.protobuf.api.SpeechEmoRecogRQ;
 
+import static com.aispace.erksystem.rmq.module.handler.base.RmqOutgoingHandler.sendErkApiMsg2API;
 import static com.aispace.erksystem.rmq.module.handler.base.RmqOutgoingHandler.sendToApi;
 
 /**
@@ -41,6 +42,6 @@ public class SpeechEmoRecogRqHandler extends RmqIncomingHandler<SpeechEmoRecogRQ
                 // .setReturnCode() // TODO
                 .build();
 
-        sendToApi(res);
+        sendErkApiMsg2API(res);
     }
 }
