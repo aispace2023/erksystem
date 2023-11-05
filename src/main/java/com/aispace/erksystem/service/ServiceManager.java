@@ -6,7 +6,7 @@ import com.aispace.erksystem.rmq.RmqManager;
 import com.aispace.erksystem.rmq.module.ErkApiMsgRmqConsumer;
 import com.aispace.erksystem.rmq.module.ErkProvMsgRmqConsumer;
 import com.aispace.erksystem.rmq.module.RmqStreamModule;
-import com.erksystem.protobuf.api.ErkApiMsg;
+import com.aispace.erksystem.service.scheduler.IntervalTaskManager;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
@@ -61,6 +61,7 @@ public class ServiceManager {
         rmqManager.connectRmqModule(config.getRmqApiQueueName(), ErkApiMsgRmqConsumer::consumeMessage);
         rmqManager.connectRmqModule(config.getRmqProvQueueName(), ErkProvMsgRmqConsumer::consumeMessage);
 
+        IntervalTaskManager.startAll();
         // DATABASE 연결
         //DBManager.getInstance().start();
 
@@ -87,6 +88,7 @@ public class ServiceManager {
     public static void stopService() {
         //DBManager.getInstance().stop();
         RmqManager.getInstance().stop();
+        IntervalTaskManager.stopAll();
         isQuit = true;
     }
 }

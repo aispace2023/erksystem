@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option java_package = "com.erksystem.protobuf";
+option java_package = "com.erksystem.protobuf.api";
 option java_multiple_files = true;
 
 message ErkMsgHeader{
@@ -146,7 +146,7 @@ enum  UserProfileResult_e{
 message ErkEngineInfo_s{
   EngineType_e EngineType = 1;
   EngineCondition_e EngineCondition = 2;
-  string  IpAddr = 3;
+  string IpAddr = 3;
 }
 
 message ErkServiceConnRQ{
@@ -154,16 +154,11 @@ message ErkServiceConnRQ{
   int64 MsgTime = 2;
 }
 
-
 message ErkServiceConnRP{
   ErkMsgHeader ErkMsgHead = 1;
   int64 MsgTime = 2;
   ReturnCode_e ReturnCode = 3;
   ServiceType_e ServiceType = 4;
-}
-
-message ErkServiceDisConn{
-
 }
 
 message ErkServiceDisConnRQ{
@@ -193,10 +188,6 @@ message EmoRecogCreateRP{
   ErkEngineInfo_s FaceEngineInfo = 6;
   ErkEngineInfo_s Reserved1EngineInfo = 7;
   ErkEngineInfo_s Reserved2EngineInfo = 8;
-}
-
-message EmoRecogDelete{
-
 }
 
 message EmoRecogDeleteRQ{
@@ -293,29 +284,26 @@ message EmoRecogNoti{
   float Accuracy = 4;
 }
 
-message ErkMsg{
+message ErkApiMsg{
   oneof msg{
-    ErkEngineInfo_s erkEngineInfoS = 3;
-    ErkServiceConnRQ erkServiceConnRq = 4;
-    ErkServiceConnRP erkServiceConnRp = 5;
-    ErkServiceDisConn erkServiceDisConn = 6;
-    ErkServiceDisConnRQ erkServiceDisConnRq = 7;
-    ErkServiceDisConnRP erkServiceDisConnRp = 8;
-    EmoRecogCreateRQ emoRecogCreateRq = 9;
-    EmoRecogCreateRP emoRecogCreateRp = 10;
-    EmoRecogDelete emoRecogDelete = 11;
-    EmoRecogDeleteRQ emoRecogDeleteRq = 12;
-    EmoRecogDeleteRP emoRecogDeleteRp = 13;
-    HB_RQ hbRq = 14;
-    HB_RP hbRp = 15;
-    EmoRecogRQ emoRecogRq = 16;
-    EmoRecogRP emoRecogRp = 17;
-    PhysioEmoRecogRQ physioEmoRecogRq = 18;
-    PhysioEmoRecogRP physioEmoRecogRp = 19;
-    SpeechEmoRecogRQ speechEmoRecogRq = 20;
-    SpeechEmoRecogRP speechEmoRecogRp = 21;
-    FaceEmoRecogRQ faceEmoRecogRq = 22;
-    FaceEmoRecogRP faceEmoRecogRp = 23;
-    EmoRecogNoti emoRecogNoti = 24;
+    ErkServiceConnRQ erkServiceConnRq = 1;
+    ErkServiceConnRP erkServiceConnRp = 2;
+    ErkServiceDisConnRQ erkServiceDisConnRq = 3;
+    ErkServiceDisConnRP erkServiceDisConnRp = 4;
+    EmoRecogCreateRQ emoRecogCreateRq = 5;
+    EmoRecogCreateRP emoRecogCreateRp = 6;
+    EmoRecogDeleteRQ emoRecogDeleteRq = 7;
+    EmoRecogDeleteRP emoRecogDeleteRp = 8;
+    HB_RQ hbRq = 9;
+    HB_RP hbRp = 10;
+    EmoRecogRQ emoRecogRq = 11;
+    EmoRecogRP emoRecogRp = 12;
+    PhysioEmoRecogRQ physioEmoRecogRq = 13;
+    PhysioEmoRecogRP physioEmoRecogRp = 14;
+    SpeechEmoRecogRQ speechEmoRecogRq = 15;
+    SpeechEmoRecogRP speechEmoRecogRp = 16;
+    FaceEmoRecogRQ faceEmoRecogRq = 17;
+    FaceEmoRecogRP faceEmoRecogRp = 18;
+    EmoRecogNoti emoRecogNoti = 19;
   }
 }

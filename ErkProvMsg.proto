@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option java_package = "com.erksystem.protobuf.erkmsg";
+option java_package = "com.erksystem.protobuf.prov";
 option java_multiple_files = true;
 
 enum ErkMsgType_e{
@@ -136,8 +136,8 @@ enum  UserProfileResult_e{
 message AddServiceProviderInfoRQ{
   string OrgName = 1;
   string OrgPwd = 2;
-  uint32 ServiceDuration = 3;
-  int64 UserNumber = 4;
+  string ServiceDuration = 3;
+  int32 UserNumber = 4;
   ServiceType_e ServiceType = 5;
 }
 
