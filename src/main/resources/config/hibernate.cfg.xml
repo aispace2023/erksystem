@@ -1,0 +1,31 @@
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database connection settings -->
+        <property name="hibernate.connection.driver_class">com.mariadb.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/ERK_SYS?serverTimezone=UTC&connectTimeout=3000&socketTimeout=2000</property>
+        <property name="hibernate.connection.username">erksys</property>
+        <property name="hibernate.connection.password">o7Uf4SN8rQ5tHpkIv8E7FoofKAHpuZeB</property>
+        <property name="hibernate.connection.charSet">UTF-8</property>
+        <property name="hibernate.connection.characterEncoding">UTF-8</property>
+        <property name="hibernate.connection.useUnicode">true</property>
+
+        <!-- Specify HikariCP as the connection pool provider -->
+        <property name="hibernate.connection.provider_class">org.hibernate.hikaricp.internal.HikariCPConnectionProvider</property>
+        <!-- HikariCP specific settings -->
+        <property name="hibernate.hikaricp.minimumPoolSize">5</property>
+        <property name="hibernate.hikaricp.maximumPoolSize">10</property>
+        <property name="hibernate.hikaricp.idleTimeout">30000</property>
+        <property name="hibernate.hikaricp.autoCommit">true</property>
+
+        <!-- Enable logging (optional) -->
+        <property name="hibernate.show_sql">true</property>
+
+        <!-- Mapping files -->
+        <!-- Add your entity class mapping here -->
+        <mapping class="com.aispace.erksystem.service.database.table.ServiceProvider"/>
+        <mapping class="com.aispace.erksystem.service.database.table.ServiceUser"/>
+
+    </session-factory>
+</hibernate-configuration>

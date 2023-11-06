@@ -62,9 +62,7 @@ public class ServiceManager {
         rmqManager.connectRmqModule(config.getRmqProvQueueName(), ErkProvMsgRmqConsumer::consumeMessage);
 
         IntervalTaskManager.startAll();
-        // DATABASE 연결
-        //DBManager.getInstance().start();
-
+        DBManager.getInstance().start();
 
         // Prometheus 연동
         if (config.isPrometheusActivate()) {
@@ -86,9 +84,10 @@ public class ServiceManager {
     }
 
     public static void stopService() {
-        //DBManager.getInstance().stop();
+        DBManager.getInstance().stop();
         RmqManager.getInstance().stop();
         IntervalTaskManager.stopAll();
         isQuit = true;
     }
+
 }
