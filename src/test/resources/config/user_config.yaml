@@ -10,14 +10,6 @@ rmq:
 performance:
   rmq-consumer-count: 8
 
-dbms:
-  host: 127.0.0.1
-  port: 3306
-  user: erk
-  password: L7ZD94NgdCA/yf+2euiSPQ==
-  database: ERK_SYS
-  jdbc-params: serverTimezone=UTC&connectTimeout=3000&socketTimeout=2000
-
 prometheus:
   activate: false
   port: 8080

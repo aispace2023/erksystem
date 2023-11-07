@@ -21,7 +21,7 @@ import java.util.Properties;
 public class DBManager {
     private static final DBManager INSTANCE = new DBManager();
     private SessionFactory sessionFactory;
-    private static final String CFG_XML = "hibernate.cfg.xml";
+    private static final String CFG_XML = "config/hibernate.cfg.xml";
 
     private DBManager() {
         // do nothing
@@ -41,16 +41,15 @@ public class DBManager {
 
     public boolean start() {
         try {
-            Configuration config= new Configuration().configure(CFG_XML);
-            Properties props = config.getProperties();
-            String pwd = PasswdUtil.decrypt(props.getProperty("hibernate.connection.password"));
-            props.setProperty("hibernate.connection.password", pwd);
-
-            StandardServiceRegistryBuilder registryBuilder = new StandardServiceRegistryBuilder();
-            registryBuilder.applySettings(props);
-            StandardServiceRegistry standardServiceRegistry = registryBuilder.build();
-            sessionFactory = config.buildSessionFactory(standardServiceRegistry);
-
+            Configuration configuration= new Configuration().configure(CFG_XML);
+            Properties props = configuration.getProperties();
+            String pwd = PasswdUtil.decrypt(props.getProperty("hibernate.hikari.password"));
+            props.setProperty("hibernate.hikari.password", pwd);
+            sessionFactory = configuration.buildSessionFactory();
+//            StandardServiceRegistryBuilder registryBuilder = new StandardServiceRegistryBuilder();
+//            registryBuilder.applySettings(props);
+//            StandardServiceRegistry standardServiceRegistry = registryBuilder.build();
+//            sessionFactory = config.buildSessionFactory(standardServiceRegistry);
             return true;
         } catch (Exception e) {
             log.error("Initial SessionFactory creation failed", e);

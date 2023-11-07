@@ -4,12 +4,13 @@ import com.aispace.erksystem.service.database.type.ServiceType;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.sql.Timestamp;
 
 @Entity
 @Table(name = "service_user_tbl")
 @Data
-public class ServiceUser {
+public class ServiceUser implements Serializable {
     @Id
     @Column(name = "user_id")
     private int userId;

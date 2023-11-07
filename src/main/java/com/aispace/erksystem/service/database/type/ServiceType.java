@@ -1,10 +1,10 @@
 package com.aispace.erksystem.service.database.type;
 
 public enum ServiceType {
-    SPEECH,
-    PHYSIOLOGY,
-    FACE,
-    PHYSIOLOGY_SPEECH,
-    PHYSIOLOGY_FACE,
-    PHYSIOLOGY_SPEECH_FACE
+    speech,
+    physiology,
+    face,
+    physiology_speech,
+    physiology_face,
+    physiology_speech_face
 }
