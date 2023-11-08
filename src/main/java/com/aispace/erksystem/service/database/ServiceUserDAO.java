@@ -1,26 +1,25 @@
 package com.aispace.erksystem.service.database;
 
 import com.aispace.erksystem.service.DBManager;
-import com.aispace.erksystem.service.database.table.ServiceProvider;
+import com.aispace.erksystem.service.database.table.ServiceUser;
+import com.aispace.erksystem.service.database.type.ServiceUserId;
 import lombok.extern.slf4j.Slf4j;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
 @Slf4j
-public class ServiceProviderDAO {
+public class ServiceUserDAO {
     private static final SessionFactory sessionFactory = DBManager.getInstance().getSessionFactory();
 
-    private ServiceProviderDAO() {}
-
-    public static long create(ServiceProvider serviceProvider) {
+    public static long create(ServiceUser serviceUser) {
         Session session = sessionFactory.openSession();
         Transaction tx = null;
         try {
             tx = session.beginTransaction();
-            session.save(serviceProvider);
+            session.save(serviceUser);
             tx.commit();
-            return serviceProvider.getOrgId();
+            return serviceUser.getUserId();
         } catch (Exception e) {
             if (tx != null) tx.rollback();
             log.warn("create error", e);
@@ -31,12 +30,13 @@ public class ServiceProviderDAO {
         }
     }
 
-    public static ServiceProvider read(long orgId) {
+    public static ServiceUser read(long userId, long orgId) {
         Session session = sessionFactory.openSession();
         try {
-            return session.get(ServiceProvider.class, orgId);
+            // TODO key object 정의한 경우 ServiceUser class 정의를 맞추어야 함.
+            return session.get(ServiceUser.class, new ServiceUserId(userId, orgId));
         } catch (Exception e) {
-            log.warn("read error", e);
+            log.error("read error", e);
             return null;
         } finally {
             if (session != null && session.isOpen())
@@ -44,12 +44,12 @@ public class ServiceProviderDAO {
         }
     }
 
-    public static void update(ServiceProvider serviceProvider) {
+    public static void update(ServiceUser serviceUser) {
         Session session = sessionFactory.openSession();
         Transaction tx = null;
         try {
             tx = session.beginTransaction();
-            session.update(serviceProvider);
+            session.update(serviceUser);
             tx.commit();
         } catch (Exception e) {
             if (tx != null) tx.rollback();
@@ -60,14 +60,14 @@ public class ServiceProviderDAO {
         }
     }
 
-    public static void delete(long orgId) {
+    public static void delete(int userId, int orgId) {
         Session session = sessionFactory.openSession();
         Transaction tx = null;
         try {
             tx = session.beginTransaction();
-            ServiceProvider serviceProvider = session.get(ServiceProvider.class, orgId);
-            if (serviceProvider != null) {
-                session.delete(serviceProvider);
+            ServiceUser serviceUser = session.get(ServiceUser.class, new ServiceUserId(userId, orgId));
+            if (serviceUser != null) {
+                session.delete(serviceUser);
             }
             tx.commit();
         } catch (Exception e) {

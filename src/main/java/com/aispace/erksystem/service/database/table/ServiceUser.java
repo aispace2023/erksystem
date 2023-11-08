@@ -11,13 +11,13 @@ import java.sql.Timestamp;
 @Table(name = "service_user_tbl")
 @Data
 public class ServiceUser implements Serializable {
-    @Id
-    @Column(name = "user_id")
-    private int userId;
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "user_id", updatable = false, nullable = false)
+    private Long userId;
 
     @Id
-    @Column(name = "org_id")
-    private int orgId;
+    @Column(name = "org_id", nullable = false)
+    private Long orgId;
 
     @Column(name = "user_name")
     private String userName;
@@ -25,23 +25,23 @@ public class ServiceUser implements Serializable {
     @Column(name = "user_pwd")
     private String userPwd;
 
-    @Column(name = "service_duration")
+    @Column(name = "service_duration", nullable = false)
     private String serviceDuration;
 
     @Column(name = "age")
-    private Byte age;
+    private Integer age;
 
     @Column(name = "user_type")
     private String userType;
 
-    @Column(name = "service_type")
+    @Column(name = "service_type", nullable = false)
     @Enumerated(EnumType.STRING)
     private ServiceType serviceType;
 
-    @Column(name = "ts")
+    @Column(name = "ts", nullable = false)
     private Timestamp timestamp;
 
-    @ManyToOne
-    @JoinColumn(name = "org_id", referencedColumnName = "org_id", insertable = false, updatable = false)
-    private ServiceProvider serviceProvider; // FK on service_provider_tbl
+//    @ManyToOne
+//    @JoinColumn(name = "org_id", referencedColumnName = "org_id", insertable = false, updatable = false)
+//    private ServiceProvider serviceProvider; // FK on service_provider_tbl
 }

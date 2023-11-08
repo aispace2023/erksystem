@@ -1,8 +1,13 @@
 package com.aispace.erksystem.rmq.module.handler.prov;
 
 import com.aispace.erksystem.rmq.module.handler.base.RmqIncomingHandler;
+import com.aispace.erksystem.service.database.ServiceProviderDAO;
+import com.aispace.erksystem.service.database.table.ServiceProvider;
+import com.aispace.erksystem.service.database.type.ServiceType;
 import com.erksystem.protobuf.prov.AddServiceProviderInfoRP;
 import com.erksystem.protobuf.prov.AddServiceProviderInfoRQ;
+import com.erksystem.protobuf.prov.OrgProfileResult_e;
+import com.erksystem.protobuf.prov.ServiceType_e;
 
 import static com.aispace.erksystem.rmq.module.handler.base.RmqOutgoingHandler.*;
 
@@ -32,8 +37,29 @@ public class AddServiceProviderInfoRQHandler extends RmqIncomingHandler<AddServi
      */
     @Override
     protected void handle() {
-        throw new IllegalStateException("FAIL");
-        // TODO 개발 필요
+        ServiceProvider provider = new ServiceProvider();
+        provider.setOrgName(msg.getOrgName());
+        provider.setOrgPwd(msg.getOrgPwd());
+        provider.setServiceDuration(msg.getServiceDuration());
+        provider.setUserNumber(msg.getUserNumber());
+        provider.setServiceType(ServiceType.speech);    // TODO enum mapping
+
+        long orgId = ServiceProviderDAO.create(provider);
+        if (orgId == 0) {
+            throw new IllegalStateException("FAIL");
+        }
+
+        AddServiceProviderInfoRP res = AddServiceProviderInfoRP.newBuilder()
+                .setOrgId((int)orgId)  // TODO check long -> int
+                .setOrgName(msg.getOrgName())
+                .setOrgPwd(msg.getOrgPwd())
+                .setServiceDuration(msg.getServiceDuration())
+                .setUserNumber(msg.getUserNumber())
+                .setServiceType(msg.getServiceType())
+                .setResultType(OrgProfileResult_e.ORG_PROFILE_OK)
+                .build();
+
+        sendErkProvMsg2API(res);
     }
 
     @Override

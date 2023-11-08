@@ -11,9 +11,9 @@ import java.sql.Timestamp;
 @Table(name = "service_provider_tbl")
 @Data
 public class ServiceProvider implements Serializable {
-    @Id
-    @Column(name = "org_id")
-    private int orgId;
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "org_id", updatable = false, nullable = false)
+    private Long orgId;
 
     @Column(name = "org_name", nullable = false)
     private String orgName;
@@ -25,7 +25,7 @@ public class ServiceProvider implements Serializable {
     private String serviceDuration;
 
     @Column(name = "user_number", nullable = false)
-    private int userNumber;
+    private Integer userNumber;
 
     @Column(name = "service_type")
     @Enumerated(EnumType.STRING)
