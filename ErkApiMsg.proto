@@ -10,7 +10,10 @@ message ErkMsgHeader{
 }
 
 message ErkMsgDataHeader{
-
+  EngineType_e EngineType = 1;
+  int32 OrgId = 2;
+  string UserId = 3;
+  string DevPlatform = 4;
 }
 
 enum ErkMsgType_e{

@@ -23,8 +23,9 @@ public class ServiceProviderDAO {
             return serviceProvider.getOrgId();
         } catch (Exception e) {
             if (tx != null) tx.rollback();
-            log.warn("create error", e);
-            return 0;
+            throw e;
+//            log.warn("create error", e);
+//            return 0;
         } finally {
             if (session != null && session.isOpen())
                 session.close();
