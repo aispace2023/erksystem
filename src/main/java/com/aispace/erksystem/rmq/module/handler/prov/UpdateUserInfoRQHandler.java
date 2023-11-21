@@ -1,8 +1,8 @@
 package com.aispace.erksystem.rmq.module.handler.prov;
 
 import com.aispace.erksystem.rmq.module.handler.base.RmqIncomingHandler;
-import com.erksystem.protobuf.prov.UpdateUserInfoRP;
-import com.erksystem.protobuf.prov.UpdateUserInfoRQ;
+import com.erksystem.protobuf.prov.UpdateUserInfoRP_m;
+import com.erksystem.protobuf.prov.UpdateUserInfoRQ_m;
 
 import static com.aispace.erksystem.rmq.module.handler.base.RmqOutgoingHandler.sendErkProvMsg2API;
 import static com.aispace.erksystem.rmq.module.handler.base.RmqOutgoingHandler.sendToApi;
@@ -10,7 +10,7 @@ import static com.aispace.erksystem.rmq.module.handler.base.RmqOutgoingHandler.s
 /**
  * Created by Ai_Space
  */
-public class UpdateUserInfoRQHandler extends RmqIncomingHandler<UpdateUserInfoRQ> {
+public class UpdateUserInfoRQHandler extends RmqIncomingHandler<UpdateUserInfoRQ_m> {
     /*
     message UpdateUserInfoRQ{
       string OrgName = 1;
@@ -55,7 +55,7 @@ public class UpdateUserInfoRQHandler extends RmqIncomingHandler<UpdateUserInfoRQ
 
     @Override
     protected void onFail() {
-        UpdateUserInfoRP res = UpdateUserInfoRP.newBuilder()
+        UpdateUserInfoRP_m res = UpdateUserInfoRP_m.newBuilder()
                 .setOrgName(msg.getOrgName())
                 .setUserName(msg.getUserName())
                 .setOldUserPwd(msg.getOldUserPwd())

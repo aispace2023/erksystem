@@ -52,88 +52,89 @@ enum ReturnCode_e {
 }
 
 enum EngineType_e {
-  ENGINE_UNKNOWN = 0;
-  ENGINE_PHYSIOLOGY = 1;
-  ENGINE_SPEECH = 2;
-  ENGINE_FACE = 3;
-  ENGINE_EMO_RECOG_ALL = 4;
-  ENGINE_KNOWLEDGE = 5;
-  ENGINE_RESERVED1 = 6;
-  ENGINE_RESERVED2 = 7;
+  Engine_Unknown = 0;
+  Engine_Physiology = 1;
+  Engine_Speech = 2;
+  Engine_Face = 3;
+  Engine_EmoRecogAll = 4;
+  Engine_Knowledge = 5;
+  Engine_Reserved1 = 6;
+  Engine_Reserved2 = 7;
 }
 
 enum EngineCondition_e {
-  ENGINE_UNKNOWN_CONDITION = 0;
-  ENGINE_AVAILABLE = 1;
-  ENGINE_NOT_AVAILABLE = 2;
+  Engine_UnknownCondition = 0;
+  Engine_Available = 1;
+  Engine_NotAvailable = 2;
 }
 
 enum ServiceType_e {
-  SERVICE_UNKNOWN = 0;
-  SERVICE_PHYSIOLOGY = 1;
-  SERVICE_SPEECH = 2;
-  SERVICE_VIDEO = 3;
-  SERVICE_PHYSIOLOGY_SPEECH = 4;
-  SERVICE_PHYSIOLOGY_VIDEO = 5;
-  SERVICE_SPEECH_VIDEO = 6;
-  SERVICE_PHYSIOLOGY_SPEECH_VIDEO = 7;
-  SERVICE_KNOWLEDGE = 8;
-  SERVICE_ALL = 9;
-  SERVICE_RESERVED1 = 10;
-  SERVICE_RESERVED2 = 11;
+  Service_Unknown = 0;
+  Service_Physiology = 1;
+  Service_Speech = 2;
+  Service_Video = 3;
+  Service_PhysiologySPEECH = 4;
+  Service_PhysiologyVideo = 5;
+  Service_SpeechVideo = 6;
+  Service_PhysiologySpeechVideo = 7;
+  Service_Knowledge = 8;
+  Service_All = 9;
+  Service_Reserved1 = 10;
+  Service_Reserved2 = 11;
 }
 
 enum EmotionType_e{
-  EMOTION_UNKNOWN = 0;
-  EMOTION_NEUTRAL = 1;
-  EMOTION_POSITIVE = 2;
-  EMOTION_NEGATIVE = 3;
-  EMOTION_STRESS = 4;
-  EMOTION_JOY = 5;
-  EMOTION_HAPPY = 6;
-  EMOTION_SADNESS = 7;
-  EMOTION_ANGER = 8;
-  EMOTION_AROUSAL = 9;
-  EMOTION_RELAXATION = 10;
-  EMOTION_PEACE = 11;
-  EMOTION_ANXIETY = 12;
-  EMOTION_FEAR = 13;
-  EMOTION_DISGUST = 14;
-  EMOTION_ETC = 15;
+  Emotion_Unknown = 0;
+  Emotion_Neutral = 1;
+  Emotion_Positive = 2;
+  Emotion_Negative = 3;
+  Emotion_Stress = 4;
+  Emotion_Joy = 5;
+  Emotion_Happy = 6;
+  Emotion_Sadness = 7;
+  Emotion_Anger = 8;
+  Emotion_Arousal = 9;
+  Emotion_Relaxation = 10;
+  Emotion_Peace = 11;
+  Emotion_Anxiety = 12;
+  Emotion_Fear = 13;
+  Emotion_Disgust = 14;
+  Emotion_Reserved1 = 15;
+  Emotion_Reserved2 = 16;
 }
 
 enum OrgProfileResult_e{
-  ORG_PROFILE_UNKNOWN = 0;
-  ORG_PROFILE_OK = 1;
-  ORG_PROFILE_NOK_OrgName = 2;
-  ORG_PROFILE_NOK_OrgPwd = 3;
-  ORG_PROFILE_NOK_ServiceDuration = 4;
-  ORG_PROFILE_NOK_UserNumber = 5;
-  ORG_PROFILE_NOK_ServiceType = 6;
-  ORG_PROFILE_NOK_DB = 7;
-  ORG_PROFILE_NOK_REASON1 = 8;
-  ORG_PROFILE_NOK_REASON2 = 9;
+  Org_Profile_Unknown = 0;
+  Org_Profile_Ok = 1;
+  Org_Profile_Nok_OrgName = 2;
+  Org_Profile_Nok_OrgPwd = 3;
+  Org_Profile_Nok_ServiceDuration = 4;
+  Org_Profile_Nok_UserNumber = 5;
+  Org_Profile_Nok_ServiceType = 6;
+  Org_Profile_Nok_DB = 7;
+  Org_Profile_Nok_Reason1 = 8;
+  Org_Profile_Nok_Reason2 = 9;
 }
 
 enum  UserProfileResult_e{
-  USER_PROFILE_UNKNOWN = 0;
-  USER_PROFILE_OK = 1;
-  USER_PROFILE_NOK_ORGNAME = 2;
-  USER_PROFILE_NOK_USERNAME = 3;
-  USER_PROFILE_NOK_USERPWD = 4;
-  USER_PROFILE_NOK_SERVICEDURATION = 5;
-  USER_PROFILE_NOK_AGE = 6;
-  USER_PROFILE_NOK_SEX = 7;
-  USER_PROFILE_NOK_USERTYPE = 8;
-  USER_PROFILE_NOK_SERVICETYPE = 9;
-  USER_PROFILE_NOK_DB = 10;
-  USER_PROFILE_NOK_REASON1 = 11;
-  USER_PROFILE_NOK_REASON2 = 12;
+  User_ProfileUSER_PROFILE_UNKNOWN = 0;
+  User_Profile_Ok = 1;
+  User_Profile_Nok_OrgName = 2;
+  User_Profile_Nok_UserName = 3;
+  User_Profile_Nok_UserPwd = 4;
+  User_Profile_Nok_ServiceDuration = 5;
+  User_Profile_Nok_Age = 6;
+  User_Profile_Nok_Sex = 7;
+  User_Profile_Nok_UserType = 8;
+  User_Profile_Nok_ServiceType = 9;
+  User_Profile_Nok_DB = 10;
+  User_Profile_Nok_Reason1 = 11;
+  User_Profile_Nok_Reason2 = 12;
 }
 
 
 
-message AddServiceProviderInfoRQ{
+message AddServiceProviderInfoRQ_m{
   string OrgName = 1;
   string OrgPwd = 2;
   string ServiceDuration = 3;
@@ -141,7 +142,7 @@ message AddServiceProviderInfoRQ{
   ServiceType_e ServiceType = 5;
 }
 
-message AddServiceProviderInfoRP{
+message AddServiceProviderInfoRP_m{
   string OrgName = 1;
   OrgProfileResult_e ResultType = 2;
   int32 OrgId = 3;
@@ -151,7 +152,7 @@ message AddServiceProviderInfoRP{
   ServiceType_e ServiceType = 7;
 }
 
-message UpdateServiceProviderInfoRQ{
+message UpdateServiceProviderInfoRQ_m{
   string OrgName = 1;
   string Old_OrgPwd = 2;
   string Old_ServiceDuration = 3;
@@ -163,7 +164,7 @@ message UpdateServiceProviderInfoRQ{
   ServiceType_e New_ServiceType = 9;
 }
 
-message UpdateServiceProviderInfoRP{
+message UpdateServiceProviderInfoRP_m{
   string OrgName = 1;
   OrgProfileResult_e ResultType = 2;
   string Old_OrgPwd = 3;
@@ -176,16 +177,16 @@ message UpdateServiceProviderInfoRP{
   ServiceType_e New_ServiceType = 10;
 }
 
-message DelServiceProviderInfoRQ{
+message DelServiceProviderInfoRQ_m{
   string OrgName = 1;
   string OrgPwd = 2;
 }
-message DelServiceProviderInfoRP{
+message DelServiceProviderInfoRP_m{
   string OrgName = 1;
   OrgProfileResult_e ResultType = 2;
 }
 
-message AddUserInfoRQ{
+message AddUserInfoRQ_m{
   string OrgName = 1;
   string UserName = 2;
   string UserPwd = 3;
@@ -196,7 +197,7 @@ message AddUserInfoRQ{
   ServiceType_e ServiceType = 8;
 }
 
-message AddUserInfoRP{
+message AddUserInfoRP_m{
   string OrgName = 1;
   string UserName = 2;
   UserProfileResult_e ResultType = 3;
@@ -209,7 +210,7 @@ message AddUserInfoRP{
   ServiceType_e ServiceType = 10;
 }
 
-message UpdateUserInfoRQ{
+message UpdateUserInfoRQ_m{
   string OrgName = 1;
   string UserName = 2;
   string Old_UserPwd = 3;
@@ -226,7 +227,7 @@ message UpdateUserInfoRQ{
   ServiceType_e New_ServiceType = 14;
 }
 
-message UpdateUserInfoRP{
+message UpdateUserInfoRP_m{
   string OrgName = 1;
   string UserName = 2;
   UserProfileResult_e ResultType = 3;
@@ -244,13 +245,13 @@ message UpdateUserInfoRP{
   ServiceType_e New_ServiceType = 15;
 }
 
-message DelUserInfoRQ{
+message DelUserInfoRQ_m{
   string OrgName = 1;
   string UserName = 2;
   string UserPwd = 3;
 }
 
-message DelUserInfoRP{
+message DelUserInfoRP_m{
   string OrgName = 1;
   string UserName = 2;
   UserProfileResult_e ResultType = 3;
@@ -259,17 +260,17 @@ message DelUserInfoRP{
 
 message ErkProvMsg{
   oneof msg{
-    AddServiceProviderInfoRQ addServiceProviderInfoRq = 1;
-    AddServiceProviderInfoRP addServiceProviderInfoRp = 2;
-    UpdateServiceProviderInfoRQ updateServiceProviderInfoRq = 3;
-    UpdateServiceProviderInfoRP updateServiceProviderInfoRp = 4;
-    DelServiceProviderInfoRQ delServiceProviderInfoRq = 5;
-    DelServiceProviderInfoRP delServiceProviderInfoRp = 6;
-    AddUserInfoRQ addUserInfoRq = 7;
-    AddUserInfoRP addUserInfoRp = 8;
-    UpdateUserInfoRQ updateUserInfoRq = 9;
-    UpdateUserInfoRP updateUserInfoRp = 10;
-    DelUserInfoRQ delUserInfoRq = 11;
-    DelUserInfoRP delUserInfoRp = 12;
+    AddServiceProviderInfoRQ_m addServiceProviderInfoRq = 1;
+    AddServiceProviderInfoRP_m addServiceProviderInfoRp = 2;
+    UpdateServiceProviderInfoRQ_m updateServiceProviderInfoRq = 3;
+    UpdateServiceProviderInfoRP_m updateServiceProviderInfoRp = 4;
+    DelServiceProviderInfoRQ_m delServiceProviderInfoRq = 5;
+    DelServiceProviderInfoRP_m delServiceProviderInfoRp = 6;
+    AddUserInfoRQ_m addUserInfoRq = 7;
+    AddUserInfoRP_m addUserInfoRp = 8;
+    UpdateUserInfoRQ_m updateUserInfoRq = 9;
+    UpdateUserInfoRP_m updateUserInfoRp = 10;
+    DelUserInfoRQ_m delUserInfoRq = 11;
+    DelUserInfoRP_m delUserInfoRp = 12;
   }
 }

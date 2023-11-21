@@ -1,10 +1,9 @@
 package com.aispace.erksystem.rmq.module.handler.api;
 
 import com.aispace.erksystem.rmq.module.handler.base.RmqIncomingHandler;
-import com.erksystem.protobuf.api.EmoRecogRP;
 import com.erksystem.protobuf.api.ErkMsgDataHeader;
-import com.erksystem.protobuf.api.FaceEmoRecogRP;
-import com.erksystem.protobuf.api.FaceEmoRecogRQ;
+import com.erksystem.protobuf.api.FaceEmoRecogRP_m;
+import com.erksystem.protobuf.api.FaceEmoRecogRQ_m;
 
 import static com.aispace.erksystem.rmq.module.handler.base.RmqOutgoingHandler.sendErkApiMsg2API;
 import static com.aispace.erksystem.rmq.module.handler.base.RmqOutgoingHandler.sendToApi;
@@ -12,7 +11,7 @@ import static com.aispace.erksystem.rmq.module.handler.base.RmqOutgoingHandler.s
 /**
  * Created by Ai_Space
  */
-public class FaceEmoRecogRqHandler extends RmqIncomingHandler<FaceEmoRecogRQ> {
+public class FaceEmoRecogRqHandler extends RmqIncomingHandler<FaceEmoRecogRQ_m> {
     /*
     message FaceEmoRecogRQ{
       ErkMsgDataHeader ErkMsgDataHead = 1;
@@ -37,7 +36,7 @@ public class FaceEmoRecogRqHandler extends RmqIncomingHandler<FaceEmoRecogRQ> {
 
     @Override
     protected void onFail() {
-        FaceEmoRecogRP res = FaceEmoRecogRP.newBuilder()
+        FaceEmoRecogRP_m res = FaceEmoRecogRP_m.newBuilder()
                 .setErkMsgDataHead(ErkMsgDataHeader.newBuilder(msg.getErkMsgDataHead()))
                 // .setReturnCode() // TODO
                 .build();

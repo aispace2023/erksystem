@@ -10,7 +10,7 @@ import static com.aispace.erksystem.rmq.module.handler.base.RmqOutgoingHandler.s
 /**
  * Created by Ai_Space
  */
-public class EmoRecogCreateRqHandler extends RmqIncomingHandler<EmoRecogCreateRQ> {
+public class EmoRecogCreateRqHandler extends RmqIncomingHandler<EmoRecogCreateRQ_m> {
     /*
     message EmoRecogCreateRQ{
       ErkMsgHeader ErkMsgHead = 1;
@@ -37,7 +37,7 @@ public class EmoRecogCreateRqHandler extends RmqIncomingHandler<EmoRecogCreateRQ
 
     @Override
     protected void onFail() {
-        EmoRecogCreateRP res = EmoRecogCreateRP.newBuilder()
+        EmoRecogCreateRP_m res = EmoRecogCreateRP_m.newBuilder()
                 .setErkMsgHead(ErkMsgHeader.newBuilder(msg.getErkMsgHead()).setMsgType(ErkMsgType_e.emoRecogCreateRp))
                 .setMsgTime(System.currentTimeMillis())
                 // .setReturnCode() // TODO

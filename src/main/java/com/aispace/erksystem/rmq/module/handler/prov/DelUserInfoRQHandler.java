@@ -1,8 +1,8 @@
 package com.aispace.erksystem.rmq.module.handler.prov;
 
 import com.aispace.erksystem.rmq.module.handler.base.RmqIncomingHandler;
-import com.erksystem.protobuf.prov.DelUserInfoRP;
-import com.erksystem.protobuf.prov.DelUserInfoRQ;
+import com.erksystem.protobuf.prov.DelUserInfoRP_m;
+import com.erksystem.protobuf.prov.DelUserInfoRQ_m;
 
 import static com.aispace.erksystem.rmq.module.handler.base.RmqOutgoingHandler.sendErkProvMsg2API;
 import static com.aispace.erksystem.rmq.module.handler.base.RmqOutgoingHandler.sendToApi;
@@ -10,7 +10,7 @@ import static com.aispace.erksystem.rmq.module.handler.base.RmqOutgoingHandler.s
 /**
  * Created by Ai_Space
  */
-public class DelUserInfoRQHandler extends RmqIncomingHandler<DelUserInfoRQ> {
+public class DelUserInfoRQHandler extends RmqIncomingHandler<DelUserInfoRQ_m> {
     /*
     message DelUserInfoRQ{
       string OrgName = 1;
@@ -33,7 +33,7 @@ public class DelUserInfoRQHandler extends RmqIncomingHandler<DelUserInfoRQ> {
 
     @Override
     protected void onFail() {
-        DelUserInfoRP res = DelUserInfoRP.newBuilder()
+        DelUserInfoRP_m res = DelUserInfoRP_m.newBuilder()
                 .setOrgName(msg.getOrgName())
                 .setUserName(msg.getUserName())
                 // .setResultType() // TODO

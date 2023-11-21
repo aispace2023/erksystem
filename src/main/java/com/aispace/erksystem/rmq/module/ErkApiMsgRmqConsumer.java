@@ -24,7 +24,7 @@ public class ErkApiMsgRmqConsumer {
                 case ERKSERVICEDISCONNRQ -> new ErkServiceDisConnRqHandler().proc(msg);
                 case EMORECOGCREATERQ -> new EmoRecogCreateRqHandler().proc(msg);
                 case EMORECOGDELETERQ -> new EmoRecogDeleteRqHandler().proc(msg);
-                case HBRQ -> new HbRqHandler().proc(msg);
+                case HEARTBEATRQ -> new HeartBeatRqHandler().proc(msg);
                 case EMORECOGRQ -> new EmoRecogRqHandler().proc(msg);
                 case PHYSIOEMORECOGRQ -> new PhysioEmoRecogRqHandler().proc(msg);
                 case SPEECHEMORECOGRQ -> new SpeechEmoRecogRqHandler().proc(msg);

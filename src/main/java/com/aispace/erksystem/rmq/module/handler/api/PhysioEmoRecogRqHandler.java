@@ -9,7 +9,7 @@ import static com.aispace.erksystem.rmq.module.handler.base.RmqOutgoingHandler.s
 /**
  * Created by Ai_Space
  */
-public class PhysioEmoRecogRqHandler extends RmqIncomingHandler<PhysioEmoRecogRQ> {
+public class PhysioEmoRecogRqHandler extends RmqIncomingHandler<PhysioEmoRecogRQ_m> {
     /*
     message PhysioEmoRecogRQ{
       ErkMsgDataHeader ErkMsgDataHead = 1;
@@ -34,7 +34,7 @@ public class PhysioEmoRecogRqHandler extends RmqIncomingHandler<PhysioEmoRecogRQ
 
     @Override
     protected void onFail() {
-        PhysioEmoRecogRP res = PhysioEmoRecogRP.newBuilder()
+        PhysioEmoRecogRP_m res = PhysioEmoRecogRP_m.newBuilder()
                 .setErkMsgDataHead(ErkMsgDataHeader.newBuilder(msg.getErkMsgDataHead()))
                 // .setReturnCode() // TODO
                 .build();

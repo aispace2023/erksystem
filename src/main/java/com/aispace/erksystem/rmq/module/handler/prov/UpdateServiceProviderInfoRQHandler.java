@@ -1,8 +1,8 @@
 package com.aispace.erksystem.rmq.module.handler.prov;
 
 import com.aispace.erksystem.rmq.module.handler.base.RmqIncomingHandler;
-import com.erksystem.protobuf.prov.UpdateServiceProviderInfoRP;
-import com.erksystem.protobuf.prov.UpdateServiceProviderInfoRQ;
+import com.erksystem.protobuf.prov.UpdateServiceProviderInfoRP_m;
+import com.erksystem.protobuf.prov.UpdateServiceProviderInfoRQ_m;
 
 import static com.aispace.erksystem.rmq.module.handler.base.RmqOutgoingHandler.sendErkProvMsg2API;
 import static com.aispace.erksystem.rmq.module.handler.base.RmqOutgoingHandler.sendToApi;
@@ -10,7 +10,7 @@ import static com.aispace.erksystem.rmq.module.handler.base.RmqOutgoingHandler.s
 /**
  * Created by Ai_Space
  */
-public class UpdateServiceProviderInfoRQHandler extends RmqIncomingHandler<UpdateServiceProviderInfoRQ> {
+public class UpdateServiceProviderInfoRQHandler extends RmqIncomingHandler<UpdateServiceProviderInfoRQ_m> {
     /*
     message UpdateServiceProviderInfoRQ{
       string OrgName = 1;
@@ -45,7 +45,7 @@ public class UpdateServiceProviderInfoRQHandler extends RmqIncomingHandler<Updat
 
     @Override
     protected void onFail() {
-        UpdateServiceProviderInfoRP res = UpdateServiceProviderInfoRP.newBuilder()
+        UpdateServiceProviderInfoRP_m res = UpdateServiceProviderInfoRP_m.newBuilder()
                 .setOrgName(msg.getOrgName())
                 .setOldOrgPwd(msg.getOldOrgPwd())
                 .setOldServiceDuration(msg.getOldServiceDuration())

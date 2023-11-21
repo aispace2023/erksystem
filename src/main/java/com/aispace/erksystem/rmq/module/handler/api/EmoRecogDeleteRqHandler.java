@@ -9,7 +9,7 @@ import static com.aispace.erksystem.rmq.module.handler.base.RmqOutgoingHandler.s
 /**
  * Created by Ai_Space
  */
-public class EmoRecogDeleteRqHandler extends RmqIncomingHandler<EmoRecogDeleteRQ> {
+public class EmoRecogDeleteRqHandler extends RmqIncomingHandler<EmoRecogDeleteRQ_m> {
     /*
     message EmoRecogDeleteRQ{
       ErkMsgHeader ErkMsgHead = 1;
@@ -36,7 +36,7 @@ public class EmoRecogDeleteRqHandler extends RmqIncomingHandler<EmoRecogDeleteRQ
 
     @Override
     protected void onFail() {
-        EmoRecogDeleteRP res = EmoRecogDeleteRP.newBuilder()
+        EmoRecogDeleteRP_m res = EmoRecogDeleteRP_m.newBuilder()
                 .setErkMsgHead(ErkMsgHeader.newBuilder(msg.getErkMsgHead()).setMsgType(ErkMsgType_e.emoRecogDeleteRp))
                 .setMsgTime(System.currentTimeMillis())
                 // .setReturnCode() // TODO

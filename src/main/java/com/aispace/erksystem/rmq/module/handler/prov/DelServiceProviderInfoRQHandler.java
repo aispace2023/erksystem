@@ -1,8 +1,8 @@
 package com.aispace.erksystem.rmq.module.handler.prov;
 
 import com.aispace.erksystem.rmq.module.handler.base.RmqIncomingHandler;
-import com.erksystem.protobuf.prov.DelServiceProviderInfoRP;
-import com.erksystem.protobuf.prov.DelServiceProviderInfoRQ;
+import com.erksystem.protobuf.prov.DelServiceProviderInfoRP_m;
+import com.erksystem.protobuf.prov.DelServiceProviderInfoRQ_m;
 
 import static com.aispace.erksystem.rmq.module.handler.base.RmqOutgoingHandler.sendErkProvMsg2API;
 import static com.aispace.erksystem.rmq.module.handler.base.RmqOutgoingHandler.sendToApi;
@@ -10,7 +10,7 @@ import static com.aispace.erksystem.rmq.module.handler.base.RmqOutgoingHandler.s
 /**
  * Created by Ai_Space
  */
-public class DelServiceProviderInfoRQHandler extends RmqIncomingHandler<DelServiceProviderInfoRQ> {
+public class DelServiceProviderInfoRQHandler extends RmqIncomingHandler<DelServiceProviderInfoRQ_m> {
     /*
     message DelServiceProviderInfoRQ{
       string OrgName = 1;
@@ -29,7 +29,7 @@ public class DelServiceProviderInfoRQHandler extends RmqIncomingHandler<DelServi
 
     @Override
     protected void onFail() {
-        DelServiceProviderInfoRP res = DelServiceProviderInfoRP.newBuilder()
+        DelServiceProviderInfoRP_m res = DelServiceProviderInfoRP_m.newBuilder()
                 .setOrgName(msg.getOrgName())
                 // .setResultType() // TODO
                 .build();

@@ -9,7 +9,7 @@ import static com.aispace.erksystem.rmq.module.handler.base.RmqOutgoingHandler.s
 /**
  * Created by Ai_Space
  */
-public class ErkServiceConnRqHandler extends RmqIncomingHandler<ErkServiceConnRQ> {
+public class ErkServiceConnRqHandler extends RmqIncomingHandler<ErkServiceConnRQ_m> {
     /*
     message ErkServiceConnRQ{
       ErkMsgHeader ErkMsgHead = 1;
@@ -31,7 +31,7 @@ public class ErkServiceConnRqHandler extends RmqIncomingHandler<ErkServiceConnRQ
 
     @Override
     protected void onFail() {
-        ErkServiceConnRP res = ErkServiceConnRP.newBuilder()
+        ErkServiceConnRP_m res = ErkServiceConnRP_m.newBuilder()
                 .setErkMsgHead(ErkMsgHeader.newBuilder(msg.getErkMsgHead()).setMsgType(ErkMsgType_e.erkServiceConnRp))
                 .setMsgTime(System.currentTimeMillis())
                 // .setReturnCode() // TODO
