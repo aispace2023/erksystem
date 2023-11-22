@@ -9,14 +9,14 @@ import java.util.Objects;
 @Getter
 @Setter
 public class ServiceUserId implements Serializable {
-    private Long userId;
-    private Long orgId;
+    private Integer userId;
+    private Integer orgId;
 
     public ServiceUserId() {
         // 기본 생성자
     }
 
-    public ServiceUserId(long userId, long orgId) {
+    public ServiceUserId(Integer userId, Integer orgId) {
         this.userId = userId;
         this.orgId = orgId;
     }

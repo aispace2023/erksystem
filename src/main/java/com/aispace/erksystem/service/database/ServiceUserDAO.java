@@ -8,33 +8,39 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
+import java.util.Random;
+
 @Slf4j
 public class ServiceUserDAO {
     private static final SessionFactory sessionFactory = DBManager.getInstance().getSessionFactory();
 
-    public static long create(ServiceUser serviceUser) {
+    public static boolean create(ServiceUser serviceUser) {
+        serviceUser.setUserId(1 + new Random().nextInt(999999998));
         Session session = sessionFactory.openSession();
         Transaction tx = null;
         try {
             tx = session.beginTransaction();
             session.save(serviceUser);
             tx.commit();
-            return serviceUser.getUserId();
+            return true;
         } catch (Exception e) {
             if (tx != null) tx.rollback();
-            log.warn("create error", e);
-            return 0;
+            log.warn("insert error", e);
+            return false;
         } finally {
             if (session != null && session.isOpen())
                 session.close();
         }
     }
 
-    public static ServiceUser read(long userId, long orgId) {
+    public static ServiceUser read(Integer userId, Integer orgId) {
         Session session = sessionFactory.openSession();
         try {
-            // TODO key object 정의한 경우 ServiceUser class 정의를 맞추어야 함.
-            return session.get(ServiceUser.class, new ServiceUserId(userId, orgId));
+            // key object 정의한 경우 ServiceUser class 정의를 맞추어야 함.
+            ServiceUser user = new ServiceUser();
+            user.setOrgId(orgId);
+            user.setUserId(userId);
+            return session.get(ServiceUser.class, user);
         } catch (Exception e) {
             log.error("read error", e);
             return null;
@@ -53,7 +59,7 @@ public class ServiceUserDAO {
             tx.commit();
         } catch (Exception e) {
             if (tx != null) tx.rollback();
-            log.warn("update error", e);
+            throw e;
         } finally {
             if (session != null && session.isOpen())
                 session.close();

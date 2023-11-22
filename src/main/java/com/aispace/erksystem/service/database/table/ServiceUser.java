@@ -1,6 +1,5 @@
 package com.aispace.erksystem.service.database.table;
 
-import com.aispace.erksystem.service.database.type.ServiceType;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -11,13 +10,13 @@ import java.sql.Timestamp;
 @Table(name = "service_user_tbl")
 @Data
 public class ServiceUser implements Serializable {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "user_id", updatable = false, nullable = false)
-    private Long userId;
+    @Id
+    @Column(name = "user_id", nullable = false)
+    private Integer userId;
 
     @Id
     @Column(name = "org_id", nullable = false)
-    private Long orgId;
+    private Integer orgId;
 
     @Column(name = "user_name")
     private String userName;
@@ -35,8 +34,7 @@ public class ServiceUser implements Serializable {
     private String userType;
 
     @Column(name = "service_type", nullable = false)
-    @Enumerated(EnumType.STRING)
-    private ServiceType serviceType;
+    private String serviceType;
 
     @Column(name = "ts", nullable = false)
     private Timestamp timestamp;
