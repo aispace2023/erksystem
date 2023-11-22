@@ -10,120 +10,120 @@ package com.erksystem.protobuf.api;
 public enum ReturnCode_e
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
-   * <code>unknown = 0;</code>
+   * <code>ReturnCode_unknown = 0;</code>
    */
-  unknown(0),
+  ReturnCode_unknown(0),
   /**
-   * <code>ok = 1;</code>
+   * <code>ReturnCode_ok = 1;</code>
    */
-  ok(1),
+  ReturnCode_ok(1),
   /**
-   * <code>nok_Org = 2;</code>
+   * <code>ReturnCode_nok_Org = 2;</code>
    */
-  nok_Org(2),
+  ReturnCode_nok_Org(2),
   /**
-   * <code>nok_User = 3;</code>
+   * <code>ReturnCode_nok_User = 3;</code>
    */
-  nok_User(3),
+  ReturnCode_nok_User(3),
   /**
-   * <code>nok_MsgType = 4;</code>
+   * <code>ReturnCode_nok_MsgType = 4;</code>
    */
-  nok_MsgType(4),
+  ReturnCode_nok_MsgType(4),
   /**
-   * <code>nok_EngineType = 5;</code>
+   * <code>ReturnCode_nok_EngineType = 5;</code>
    */
-  nok_EngineType(5),
+  ReturnCode_nok_EngineType(5),
   /**
-   * <code>nok_EngineCondition = 6;</code>
+   * <code>ReturnCode_nok_EngineCondition = 6;</code>
    */
-  nok_EngineCondition(6),
+  ReturnCode_nok_EngineCondition(6),
   /**
-   * <code>nok_PhysioEngineCondition = 7;</code>
+   * <code>ReturnCode_nok_PhysioEngineCondition = 7;</code>
    */
-  nok_PhysioEngineCondition(7),
+  ReturnCode_nok_PhysioEngineCondition(7),
   /**
-   * <code>nok_SpeechEngineCondition = 8;</code>
+   * <code>ReturnCode_nok_SpeechEngineCondition = 8;</code>
    */
-  nok_SpeechEngineCondition(8),
+  ReturnCode_nok_SpeechEngineCondition(8),
   /**
-   * <code>nok_FaceEmoEngineCondition = 9;</code>
+   * <code>ReturnCode_nok_FaceEmoEngineCondition = 9;</code>
    */
-  nok_FaceEmoEngineCondition(9),
+  ReturnCode_nok_FaceEmoEngineCondition(9),
   /**
-   * <code>nok_DevPlatform = 10;</code>
+   * <code>ReturnCode_nok_DevPlatform = 10;</code>
    */
-  nok_DevPlatform(10),
+  ReturnCode_nok_DevPlatform(10),
   /**
-   * <code>nok_EmotionType = 11;</code>
+   * <code>ReturnCode_nok_EmotionType = 11;</code>
    */
-  nok_EmotionType(11),
+  ReturnCode_nok_EmotionType(11),
   /**
-   * <code>nok_reason1 = 12;</code>
+   * <code>ReturnCode_nok_reason1 = 12;</code>
    */
-  nok_reason1(12),
+  ReturnCode_nok_reason1(12),
   /**
-   * <code>nok_reason2 = 13;</code>
+   * <code>ReturnCode_nok_reason2 = 13;</code>
    */
-  nok_reason2(13),
+  ReturnCode_nok_reason2(13),
   UNRECOGNIZED(-1),
   ;
 
   /**
-   * <code>unknown = 0;</code>
+   * <code>ReturnCode_unknown = 0;</code>
    */
-  public static final int unknown_VALUE = 0;
+  public static final int ReturnCode_unknown_VALUE = 0;
   /**
-   * <code>ok = 1;</code>
+   * <code>ReturnCode_ok = 1;</code>
    */
-  public static final int ok_VALUE = 1;
+  public static final int ReturnCode_ok_VALUE = 1;
   /**
-   * <code>nok_Org = 2;</code>
+   * <code>ReturnCode_nok_Org = 2;</code>
    */
-  public static final int nok_Org_VALUE = 2;
+  public static final int ReturnCode_nok_Org_VALUE = 2;
   /**
-   * <code>nok_User = 3;</code>
+   * <code>ReturnCode_nok_User = 3;</code>
    */
-  public static final int nok_User_VALUE = 3;
+  public static final int ReturnCode_nok_User_VALUE = 3;
   /**
-   * <code>nok_MsgType = 4;</code>
+   * <code>ReturnCode_nok_MsgType = 4;</code>
    */
-  public static final int nok_MsgType_VALUE = 4;
+  public static final int ReturnCode_nok_MsgType_VALUE = 4;
   /**
-   * <code>nok_EngineType = 5;</code>
+   * <code>ReturnCode_nok_EngineType = 5;</code>
    */
-  public static final int nok_EngineType_VALUE = 5;
+  public static final int ReturnCode_nok_EngineType_VALUE = 5;
   /**
-   * <code>nok_EngineCondition = 6;</code>
+   * <code>ReturnCode_nok_EngineCondition = 6;</code>
    */
-  public static final int nok_EngineCondition_VALUE = 6;
+  public static final int ReturnCode_nok_EngineCondition_VALUE = 6;
   /**
-   * <code>nok_PhysioEngineCondition = 7;</code>
+   * <code>ReturnCode_nok_PhysioEngineCondition = 7;</code>
    */
-  public static final int nok_PhysioEngineCondition_VALUE = 7;
+  public static final int ReturnCode_nok_PhysioEngineCondition_VALUE = 7;
   /**
-   * <code>nok_SpeechEngineCondition = 8;</code>
+   * <code>ReturnCode_nok_SpeechEngineCondition = 8;</code>
    */
-  public static final int nok_SpeechEngineCondition_VALUE = 8;
+  public static final int ReturnCode_nok_SpeechEngineCondition_VALUE = 8;
   /**
-   * <code>nok_FaceEmoEngineCondition = 9;</code>
+   * <code>ReturnCode_nok_FaceEmoEngineCondition = 9;</code>
    */
-  public static final int nok_FaceEmoEngineCondition_VALUE = 9;
+  public static final int ReturnCode_nok_FaceEmoEngineCondition_VALUE = 9;
   /**
-   * <code>nok_DevPlatform = 10;</code>
+   * <code>ReturnCode_nok_DevPlatform = 10;</code>
    */
-  public static final int nok_DevPlatform_VALUE = 10;
+  public static final int ReturnCode_nok_DevPlatform_VALUE = 10;
   /**
-   * <code>nok_EmotionType = 11;</code>
+   * <code>ReturnCode_nok_EmotionType = 11;</code>
    */
-  public static final int nok_EmotionType_VALUE = 11;
+  public static final int ReturnCode_nok_EmotionType_VALUE = 11;
   /**
-   * <code>nok_reason1 = 12;</code>
+   * <code>ReturnCode_nok_reason1 = 12;</code>
    */
-  public static final int nok_reason1_VALUE = 12;
+  public static final int ReturnCode_nok_reason1_VALUE = 12;
   /**
-   * <code>nok_reason2 = 13;</code>
+   * <code>ReturnCode_nok_reason2 = 13;</code>
    */
-  public static final int nok_reason2_VALUE = 13;
+  public static final int ReturnCode_nok_reason2_VALUE = 13;
 
 
   public final int getNumber() {
@@ -150,20 +150,20 @@ public enum ReturnCode_e
    */
   public static ReturnCode_e forNumber(int value) {
     switch (value) {
-      case 0: return unknown;
-      case 1: return ok;
-      case 2: return nok_Org;
-      case 3: return nok_User;
-      case 4: return nok_MsgType;
-      case 5: return nok_EngineType;
-      case 6: return nok_EngineCondition;
-      case 7: return nok_PhysioEngineCondition;
-      case 8: return nok_SpeechEngineCondition;
-      case 9: return nok_FaceEmoEngineCondition;
-      case 10: return nok_DevPlatform;
-      case 11: return nok_EmotionType;
-      case 12: return nok_reason1;
-      case 13: return nok_reason2;
+      case 0: return ReturnCode_unknown;
+      case 1: return ReturnCode_ok;
+      case 2: return ReturnCode_nok_Org;
+      case 3: return ReturnCode_nok_User;
+      case 4: return ReturnCode_nok_MsgType;
+      case 5: return ReturnCode_nok_EngineType;
+      case 6: return ReturnCode_nok_EngineCondition;
+      case 7: return ReturnCode_nok_PhysioEngineCondition;
+      case 8: return ReturnCode_nok_SpeechEngineCondition;
+      case 9: return ReturnCode_nok_FaceEmoEngineCondition;
+      case 10: return ReturnCode_nok_DevPlatform;
+      case 11: return ReturnCode_nok_EmotionType;
+      case 12: return ReturnCode_nok_reason1;
+      case 13: return ReturnCode_nok_reason2;
       default: return null;
     }
   }

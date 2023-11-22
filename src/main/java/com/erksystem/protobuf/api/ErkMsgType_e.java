@@ -10,232 +10,232 @@ package com.erksystem.protobuf.api;
 public enum ErkMsgType_e
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
-   * <code>UNKNOWN = 0;</code>
+   * <code>ErkMsgType_unknown = 0;</code>
    */
-  UNKNOWN(0),
+  ErkMsgType_unknown(0),
   /**
-   * <code>erkServiceConnRq = 1;</code>
+   * <code>ErkServiceConnRQ = 1;</code>
    */
-  erkServiceConnRq(1),
+  ErkServiceConnRQ(1),
   /**
-   * <code>erkServiceConnRp = 2;</code>
+   * <code>ErkServiceConnRP = 2;</code>
    */
-  erkServiceConnRp(2),
+  ErkServiceConnRP(2),
   /**
-   * <code>erkServiceDisConnRq = 3;</code>
+   * <code>ErkServiceDisConnRQ = 3;</code>
    */
-  erkServiceDisConnRq(3),
+  ErkServiceDisConnRQ(3),
   /**
-   * <code>erkServiceDisConnRp = 4;</code>
+   * <code>ErkServiceDisConnRP = 4;</code>
    */
-  erkServiceDisConnRp(4),
+  ErkServiceDisConnRP(4),
   /**
-   * <code>addServiceProviderInfoRq = 5;</code>
+   * <code>AddServiceProviderInfoRQ = 5;</code>
    */
-  addServiceProviderInfoRq(5),
+  AddServiceProviderInfoRQ(5),
   /**
-   * <code>addServiceProviderInfoRp = 6;</code>
+   * <code>AddServiceProviderInfoRP = 6;</code>
    */
-  addServiceProviderInfoRp(6),
+  AddServiceProviderInfoRP(6),
   /**
-   * <code>delServiceProviderInfoRq = 7;</code>
+   * <code>DelServiceProviderInfoRQ = 7;</code>
    */
-  delServiceProviderInfoRq(7),
+  DelServiceProviderInfoRQ(7),
   /**
-   * <code>delServiceProviderInfoRp = 8;</code>
+   * <code>DelServiceProviderInfoRP = 8;</code>
    */
-  delServiceProviderInfoRp(8),
+  DelServiceProviderInfoRP(8),
   /**
-   * <code>updServiceProviderInfoRq = 9;</code>
+   * <code>UpdServiceProviderInfoRQ = 9;</code>
    */
-  updServiceProviderInfoRq(9),
+  UpdServiceProviderInfoRQ(9),
   /**
-   * <code>updServiceProviderInfoRp = 10;</code>
+   * <code>UpdServiceProviderInfoRP = 10;</code>
    */
-  updServiceProviderInfoRp(10),
+  UpdServiceProviderInfoRP(10),
   /**
-   * <code>addUserInfoRq = 11;</code>
+   * <code>AddUserInfoRQ = 11;</code>
    */
-  addUserInfoRq(11),
+  AddUserInfoRQ(11),
   /**
-   * <code>addUserInfoRp = 12;</code>
+   * <code>AddUserInfoRP = 12;</code>
    */
-  addUserInfoRp(12),
+  AddUserInfoRP(12),
   /**
-   * <code>delUserInfoRq = 13;</code>
+   * <code>DelUserInfoRQ = 13;</code>
    */
-  delUserInfoRq(13),
+  DelUserInfoRQ(13),
   /**
-   * <code>delUserInfoRp = 14;</code>
+   * <code>DelUserInfoRP = 14;</code>
    */
-  delUserInfoRp(14),
+  DelUserInfoRP(14),
   /**
-   * <code>updUserInfoRq = 15;</code>
+   * <code>UpdUserInfoRQ = 15;</code>
    */
-  updUserInfoRq(15),
+  UpdUserInfoRQ(15),
   /**
-   * <code>updUserInfoRp = 16;</code>
+   * <code>UpdUserInfoRP = 16;</code>
    */
-  updUserInfoRp(16),
+  UpdUserInfoRP(16),
   /**
-   * <code>emoRecogCreateRq = 17;</code>
+   * <code>EmoRecogCreateRQ = 17;</code>
    */
-  emoRecogCreateRq(17),
+  EmoRecogCreateRQ(17),
   /**
-   * <code>emoRecogCreateRp = 18;</code>
+   * <code>EmoRecogCreateRP = 18;</code>
    */
-  emoRecogCreateRp(18),
+  EmoRecogCreateRP(18),
   /**
-   * <code>emoRecogDeleteRq = 19;</code>
+   * <code>EmoRecogDeleteRQ = 19;</code>
    */
-  emoRecogDeleteRq(19),
+  EmoRecogDeleteRQ(19),
   /**
-   * <code>emoRecogDeleteRp = 20;</code>
+   * <code>EmoRecogDeleteRP = 20;</code>
    */
-  emoRecogDeleteRp(20),
+  EmoRecogDeleteRP(20),
   /**
-   * <code>physioEmoRecogRq = 21;</code>
+   * <code>PhysioEmoRecogRQ = 21;</code>
    */
-  physioEmoRecogRq(21),
+  PhysioEmoRecogRQ(21),
   /**
-   * <code>speechEmoRecogRq = 22;</code>
+   * <code>SpeechEmoRecogRQ = 22;</code>
    */
-  speechEmoRecogRq(22),
+  SpeechEmoRecogRQ(22),
   /**
-   * <code>faceEmoRecogRq = 23;</code>
+   * <code>FaceEmoRecogRQ = 23;</code>
    */
-  faceEmoRecogRq(23),
+  FaceEmoRecogRQ(23),
   /**
-   * <code>emoRecogRq = 24;</code>
+   * <code>EmoRecogRQ = 24;</code>
    */
-  emoRecogRq(24),
+  EmoRecogRQ(24),
   /**
-   * <code>emoRecogRp = 25;</code>
+   * <code>EmoRecogRP = 25;</code>
    */
-  emoRecogRp(25),
+  EmoRecogRP(25),
   /**
-   * <code>reserved1 = 26;</code>
+   * <code>ErkMsgType_reserved1 = 26;</code>
    */
-  reserved1(26),
+  ErkMsgType_reserved1(26),
   /**
-   * <code>reserved2 = 27;</code>
+   * <code>ErkMsgType_reserved2 = 27;</code>
    */
-  reserved2(27),
+  ErkMsgType_reserved2(27),
   UNRECOGNIZED(-1),
   ;
 
   /**
-   * <code>UNKNOWN = 0;</code>
+   * <code>ErkMsgType_unknown = 0;</code>
    */
-  public static final int UNKNOWN_VALUE = 0;
+  public static final int ErkMsgType_unknown_VALUE = 0;
   /**
-   * <code>erkServiceConnRq = 1;</code>
+   * <code>ErkServiceConnRQ = 1;</code>
    */
-  public static final int erkServiceConnRq_VALUE = 1;
+  public static final int ErkServiceConnRQ_VALUE = 1;
   /**
-   * <code>erkServiceConnRp = 2;</code>
+   * <code>ErkServiceConnRP = 2;</code>
    */
-  public static final int erkServiceConnRp_VALUE = 2;
+  public static final int ErkServiceConnRP_VALUE = 2;
   /**
-   * <code>erkServiceDisConnRq = 3;</code>
+   * <code>ErkServiceDisConnRQ = 3;</code>
    */
-  public static final int erkServiceDisConnRq_VALUE = 3;
+  public static final int ErkServiceDisConnRQ_VALUE = 3;
   /**
-   * <code>erkServiceDisConnRp = 4;</code>
+   * <code>ErkServiceDisConnRP = 4;</code>
    */
-  public static final int erkServiceDisConnRp_VALUE = 4;
+  public static final int ErkServiceDisConnRP_VALUE = 4;
   /**
-   * <code>addServiceProviderInfoRq = 5;</code>
+   * <code>AddServiceProviderInfoRQ = 5;</code>
    */
-  public static final int addServiceProviderInfoRq_VALUE = 5;
+  public static final int AddServiceProviderInfoRQ_VALUE = 5;
   /**
-   * <code>addServiceProviderInfoRp = 6;</code>
+   * <code>AddServiceProviderInfoRP = 6;</code>
    */
-  public static final int addServiceProviderInfoRp_VALUE = 6;
+  public static final int AddServiceProviderInfoRP_VALUE = 6;
   /**
-   * <code>delServiceProviderInfoRq = 7;</code>
+   * <code>DelServiceProviderInfoRQ = 7;</code>
    */
-  public static final int delServiceProviderInfoRq_VALUE = 7;
+  public static final int DelServiceProviderInfoRQ_VALUE = 7;
   /**
-   * <code>delServiceProviderInfoRp = 8;</code>
+   * <code>DelServiceProviderInfoRP = 8;</code>
    */
-  public static final int delServiceProviderInfoRp_VALUE = 8;
+  public static final int DelServiceProviderInfoRP_VALUE = 8;
   /**
-   * <code>updServiceProviderInfoRq = 9;</code>
+   * <code>UpdServiceProviderInfoRQ = 9;</code>
    */
-  public static final int updServiceProviderInfoRq_VALUE = 9;
+  public static final int UpdServiceProviderInfoRQ_VALUE = 9;
   /**
-   * <code>updServiceProviderInfoRp = 10;</code>
+   * <code>UpdServiceProviderInfoRP = 10;</code>
    */
-  public static final int updServiceProviderInfoRp_VALUE = 10;
+  public static final int UpdServiceProviderInfoRP_VALUE = 10;
   /**
-   * <code>addUserInfoRq = 11;</code>
+   * <code>AddUserInfoRQ = 11;</code>
    */
-  public static final int addUserInfoRq_VALUE = 11;
+  public static final int AddUserInfoRQ_VALUE = 11;
   /**
-   * <code>addUserInfoRp = 12;</code>
+   * <code>AddUserInfoRP = 12;</code>
    */
-  public static final int addUserInfoRp_VALUE = 12;
+  public static final int AddUserInfoRP_VALUE = 12;
   /**
-   * <code>delUserInfoRq = 13;</code>
+   * <code>DelUserInfoRQ = 13;</code>
    */
-  public static final int delUserInfoRq_VALUE = 13;
+  public static final int DelUserInfoRQ_VALUE = 13;
   /**
-   * <code>delUserInfoRp = 14;</code>
+   * <code>DelUserInfoRP = 14;</code>
    */
-  public static final int delUserInfoRp_VALUE = 14;
+  public static final int DelUserInfoRP_VALUE = 14;
   /**
-   * <code>updUserInfoRq = 15;</code>
+   * <code>UpdUserInfoRQ = 15;</code>
    */
-  public static final int updUserInfoRq_VALUE = 15;
+  public static final int UpdUserInfoRQ_VALUE = 15;
   /**
-   * <code>updUserInfoRp = 16;</code>
+   * <code>UpdUserInfoRP = 16;</code>
    */
-  public static final int updUserInfoRp_VALUE = 16;
+  public static final int UpdUserInfoRP_VALUE = 16;
   /**
-   * <code>emoRecogCreateRq = 17;</code>
+   * <code>EmoRecogCreateRQ = 17;</code>
    */
-  public static final int emoRecogCreateRq_VALUE = 17;
+  public static final int EmoRecogCreateRQ_VALUE = 17;
   /**
-   * <code>emoRecogCreateRp = 18;</code>
+   * <code>EmoRecogCreateRP = 18;</code>
    */
-  public static final int emoRecogCreateRp_VALUE = 18;
+  public static final int EmoRecogCreateRP_VALUE = 18;
   /**
-   * <code>emoRecogDeleteRq = 19;</code>
+   * <code>EmoRecogDeleteRQ = 19;</code>
    */
-  public static final int emoRecogDeleteRq_VALUE = 19;
+  public static final int EmoRecogDeleteRQ_VALUE = 19;
   /**
-   * <code>emoRecogDeleteRp = 20;</code>
+   * <code>EmoRecogDeleteRP = 20;</code>
    */
-  public static final int emoRecogDeleteRp_VALUE = 20;
+  public static final int EmoRecogDeleteRP_VALUE = 20;
   /**
-   * <code>physioEmoRecogRq = 21;</code>
+   * <code>PhysioEmoRecogRQ = 21;</code>
    */
-  public static final int physioEmoRecogRq_VALUE = 21;
+  public static final int PhysioEmoRecogRQ_VALUE = 21;
   /**
-   * <code>speechEmoRecogRq = 22;</code>
+   * <code>SpeechEmoRecogRQ = 22;</code>
    */
-  public static final int speechEmoRecogRq_VALUE = 22;
+  public static final int SpeechEmoRecogRQ_VALUE = 22;
   /**
-   * <code>faceEmoRecogRq = 23;</code>
+   * <code>FaceEmoRecogRQ = 23;</code>
    */
-  public static final int faceEmoRecogRq_VALUE = 23;
+  public static final int FaceEmoRecogRQ_VALUE = 23;
   /**
-   * <code>emoRecogRq = 24;</code>
+   * <code>EmoRecogRQ = 24;</code>
    */
-  public static final int emoRecogRq_VALUE = 24;
+  public static final int EmoRecogRQ_VALUE = 24;
   /**
-   * <code>emoRecogRp = 25;</code>
+   * <code>EmoRecogRP = 25;</code>
    */
-  public static final int emoRecogRp_VALUE = 25;
+  public static final int EmoRecogRP_VALUE = 25;
   /**
-   * <code>reserved1 = 26;</code>
+   * <code>ErkMsgType_reserved1 = 26;</code>
    */
-  public static final int reserved1_VALUE = 26;
+  public static final int ErkMsgType_reserved1_VALUE = 26;
   /**
-   * <code>reserved2 = 27;</code>
+   * <code>ErkMsgType_reserved2 = 27;</code>
    */
-  public static final int reserved2_VALUE = 27;
+  public static final int ErkMsgType_reserved2_VALUE = 27;
 
 
   public final int getNumber() {
@@ -262,34 +262,34 @@ public enum ErkMsgType_e
    */
   public static ErkMsgType_e forNumber(int value) {
     switch (value) {
-      case 0: return UNKNOWN;
-      case 1: return erkServiceConnRq;
-      case 2: return erkServiceConnRp;
-      case 3: return erkServiceDisConnRq;
-      case 4: return erkServiceDisConnRp;
-      case 5: return addServiceProviderInfoRq;
-      case 6: return addServiceProviderInfoRp;
-      case 7: return delServiceProviderInfoRq;
-      case 8: return delServiceProviderInfoRp;
-      case 9: return updServiceProviderInfoRq;
-      case 10: return updServiceProviderInfoRp;
-      case 11: return addUserInfoRq;
-      case 12: return addUserInfoRp;
-      case 13: return delUserInfoRq;
-      case 14: return delUserInfoRp;
-      case 15: return updUserInfoRq;
-      case 16: return updUserInfoRp;
-      case 17: return emoRecogCreateRq;
-      case 18: return emoRecogCreateRp;
-      case 19: return emoRecogDeleteRq;
-      case 20: return emoRecogDeleteRp;
-      case 21: return physioEmoRecogRq;
-      case 22: return speechEmoRecogRq;
-      case 23: return faceEmoRecogRq;
-      case 24: return emoRecogRq;
-      case 25: return emoRecogRp;
-      case 26: return reserved1;
-      case 27: return reserved2;
+      case 0: return ErkMsgType_unknown;
+      case 1: return ErkServiceConnRQ;
+      case 2: return ErkServiceConnRP;
+      case 3: return ErkServiceDisConnRQ;
+      case 4: return ErkServiceDisConnRP;
+      case 5: return AddServiceProviderInfoRQ;
+      case 6: return AddServiceProviderInfoRP;
+      case 7: return DelServiceProviderInfoRQ;
+      case 8: return DelServiceProviderInfoRP;
+      case 9: return UpdServiceProviderInfoRQ;
+      case 10: return UpdServiceProviderInfoRP;
+      case 11: return AddUserInfoRQ;
+      case 12: return AddUserInfoRP;
+      case 13: return DelUserInfoRQ;
+      case 14: return DelUserInfoRP;
+      case 15: return UpdUserInfoRQ;
+      case 16: return UpdUserInfoRP;
+      case 17: return EmoRecogCreateRQ;
+      case 18: return EmoRecogCreateRP;
+      case 19: return EmoRecogDeleteRQ;
+      case 20: return EmoRecogDeleteRP;
+      case 21: return PhysioEmoRecogRQ;
+      case 22: return SpeechEmoRecogRQ;
+      case 23: return FaceEmoRecogRQ;
+      case 24: return EmoRecogRQ;
+      case 25: return EmoRecogRP;
+      case 26: return ErkMsgType_reserved1;
+      case 27: return ErkMsgType_reserved2;
       default: return null;
     }
   }

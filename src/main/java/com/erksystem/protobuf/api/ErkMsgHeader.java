@@ -94,7 +94,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (msgType_ != com.erksystem.protobuf.api.ErkMsgType_e.UNKNOWN.getNumber()) {
+    if (msgType_ != com.erksystem.protobuf.api.ErkMsgType_e.ErkMsgType_unknown.getNumber()) {
       output.writeEnum(1, msgType_);
     }
     if (orgId_ != 0) {
@@ -112,7 +112,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (msgType_ != com.erksystem.protobuf.api.ErkMsgType_e.UNKNOWN.getNumber()) {
+    if (msgType_ != com.erksystem.protobuf.api.ErkMsgType_e.ErkMsgType_unknown.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(1, msgType_);
     }

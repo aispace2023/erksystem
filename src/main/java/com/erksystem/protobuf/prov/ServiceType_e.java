@@ -10,104 +10,104 @@ package com.erksystem.protobuf.prov;
 public enum ServiceType_e
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
-   * <code>Service_Unknown = 0;</code>
+   * <code>ServiceType_unknown = 0;</code>
    */
-  Service_Unknown(0),
+  ServiceType_unknown(0),
   /**
-   * <code>Service_Physiology = 1;</code>
+   * <code>ServiceType_physiology = 1;</code>
    */
-  Service_Physiology(1),
+  ServiceType_physiology(1),
   /**
-   * <code>Service_Speech = 2;</code>
+   * <code>ServiceType_speech = 2;</code>
    */
-  Service_Speech(2),
+  ServiceType_speech(2),
   /**
-   * <code>Service_Video = 3;</code>
+   * <code>ServiceType_video = 3;</code>
    */
-  Service_Video(3),
+  ServiceType_video(3),
   /**
-   * <code>Service_PhysiologySPEECH = 4;</code>
+   * <code>ServiceType_physiology_speech = 4;</code>
    */
-  Service_PhysiologySPEECH(4),
+  ServiceType_physiology_speech(4),
   /**
-   * <code>Service_PhysiologyVideo = 5;</code>
+   * <code>ServiceType_physiology_video = 5;</code>
    */
-  Service_PhysiologyVideo(5),
+  ServiceType_physiology_video(5),
   /**
-   * <code>Service_SpeechVideo = 6;</code>
+   * <code>ServiceType_speech_video = 6;</code>
    */
-  Service_SpeechVideo(6),
+  ServiceType_speech_video(6),
   /**
-   * <code>Service_PhysiologySpeechVideo = 7;</code>
+   * <code>ServiceType_physiology_speech_video = 7;</code>
    */
-  Service_PhysiologySpeechVideo(7),
+  ServiceType_physiology_speech_video(7),
   /**
-   * <code>Service_Knowledge = 8;</code>
+   * <code>ServiceType_knowledge = 8;</code>
    */
-  Service_Knowledge(8),
+  ServiceType_knowledge(8),
   /**
-   * <code>Service_All = 9;</code>
+   * <code>ServiceType_service_all = 9;</code>
    */
-  Service_All(9),
+  ServiceType_service_all(9),
   /**
-   * <code>Service_Reserved1 = 10;</code>
+   * <code>ServiceType_reserved1 = 10;</code>
    */
-  Service_Reserved1(10),
+  ServiceType_reserved1(10),
   /**
-   * <code>Service_Reserved2 = 11;</code>
+   * <code>ServiceType_reserved2 = 11;</code>
    */
-  Service_Reserved2(11),
+  ServiceType_reserved2(11),
   UNRECOGNIZED(-1),
   ;
 
   /**
-   * <code>Service_Unknown = 0;</code>
+   * <code>ServiceType_unknown = 0;</code>
    */
-  public static final int Service_Unknown_VALUE = 0;
+  public static final int ServiceType_unknown_VALUE = 0;
   /**
-   * <code>Service_Physiology = 1;</code>
+   * <code>ServiceType_physiology = 1;</code>
    */
-  public static final int Service_Physiology_VALUE = 1;
+  public static final int ServiceType_physiology_VALUE = 1;
   /**
-   * <code>Service_Speech = 2;</code>
+   * <code>ServiceType_speech = 2;</code>
    */
-  public static final int Service_Speech_VALUE = 2;
+  public static final int ServiceType_speech_VALUE = 2;
   /**
-   * <code>Service_Video = 3;</code>
+   * <code>ServiceType_video = 3;</code>
    */
-  public static final int Service_Video_VALUE = 3;
+  public static final int ServiceType_video_VALUE = 3;
   /**
-   * <code>Service_PhysiologySPEECH = 4;</code>
+   * <code>ServiceType_physiology_speech = 4;</code>
    */
-  public static final int Service_PhysiologySPEECH_VALUE = 4;
+  public static final int ServiceType_physiology_speech_VALUE = 4;
   /**
-   * <code>Service_PhysiologyVideo = 5;</code>
+   * <code>ServiceType_physiology_video = 5;</code>
    */
-  public static final int Service_PhysiologyVideo_VALUE = 5;
+  public static final int ServiceType_physiology_video_VALUE = 5;
   /**
-   * <code>Service_SpeechVideo = 6;</code>
+   * <code>ServiceType_speech_video = 6;</code>
    */
-  public static final int Service_SpeechVideo_VALUE = 6;
+  public static final int ServiceType_speech_video_VALUE = 6;
   /**
-   * <code>Service_PhysiologySpeechVideo = 7;</code>
+   * <code>ServiceType_physiology_speech_video = 7;</code>
    */
-  public static final int Service_PhysiologySpeechVideo_VALUE = 7;
+  public static final int ServiceType_physiology_speech_video_VALUE = 7;
   /**
-   * <code>Service_Knowledge = 8;</code>
+   * <code>ServiceType_knowledge = 8;</code>
    */
-  public static final int Service_Knowledge_VALUE = 8;
+  public static final int ServiceType_knowledge_VALUE = 8;
   /**
-   * <code>Service_All = 9;</code>
+   * <code>ServiceType_service_all = 9;</code>
    */
-  public static final int Service_All_VALUE = 9;
+  public static final int ServiceType_service_all_VALUE = 9;
   /**
-   * <code>Service_Reserved1 = 10;</code>
+   * <code>ServiceType_reserved1 = 10;</code>
    */
-  public static final int Service_Reserved1_VALUE = 10;
+  public static final int ServiceType_reserved1_VALUE = 10;
   /**
-   * <code>Service_Reserved2 = 11;</code>
+   * <code>ServiceType_reserved2 = 11;</code>
    */
-  public static final int Service_Reserved2_VALUE = 11;
+  public static final int ServiceType_reserved2_VALUE = 11;
 
 
   public final int getNumber() {
@@ -134,18 +134,18 @@ public enum ServiceType_e
    */
   public static ServiceType_e forNumber(int value) {
     switch (value) {
-      case 0: return Service_Unknown;
-      case 1: return Service_Physiology;
-      case 2: return Service_Speech;
-      case 3: return Service_Video;
-      case 4: return Service_PhysiologySPEECH;
-      case 5: return Service_PhysiologyVideo;
-      case 6: return Service_SpeechVideo;
-      case 7: return Service_PhysiologySpeechVideo;
-      case 8: return Service_Knowledge;
-      case 9: return Service_All;
-      case 10: return Service_Reserved1;
-      case 11: return Service_Reserved2;
+      case 0: return ServiceType_unknown;
+      case 1: return ServiceType_physiology;
+      case 2: return ServiceType_speech;
+      case 3: return ServiceType_video;
+      case 4: return ServiceType_physiology_speech;
+      case 5: return ServiceType_physiology_video;
+      case 6: return ServiceType_speech_video;
+      case 7: return ServiceType_physiology_speech_video;
+      case 8: return ServiceType_knowledge;
+      case 9: return ServiceType_service_all;
+      case 10: return ServiceType_reserved1;
+      case 11: return ServiceType_reserved2;
       default: return null;
     }
   }
@@ -176,7 +176,7 @@ public enum ServiceType_e
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.erksystem.protobuf.prov.ErkProvMsgOuterClass.getDescriptor().getEnumTypes().get(4);
+    return com.erksystem.protobuf.prov.ErkProvMsg.getDescriptor().getEnumTypes().get(4);
   }
 
   private static final ServiceType_e[] VALUES = values();

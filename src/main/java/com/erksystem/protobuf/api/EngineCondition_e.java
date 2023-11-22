@@ -10,32 +10,32 @@ package com.erksystem.protobuf.api;
 public enum EngineCondition_e
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
-   * <code>Engine_UnknownCondition = 0;</code>
+   * <code>EngineCondition_unknown = 0;</code>
    */
-  Engine_UnknownCondition(0),
+  EngineCondition_unknown(0),
   /**
-   * <code>Engine_Available = 1;</code>
+   * <code>EngineCondition_available = 1;</code>
    */
-  Engine_Available(1),
+  EngineCondition_available(1),
   /**
-   * <code>Engine_NotAvailable = 2;</code>
+   * <code>EngineCondition_not_available = 2;</code>
    */
-  Engine_NotAvailable(2),
+  EngineCondition_not_available(2),
   UNRECOGNIZED(-1),
   ;
 
   /**
-   * <code>Engine_UnknownCondition = 0;</code>
+   * <code>EngineCondition_unknown = 0;</code>
    */
-  public static final int Engine_UnknownCondition_VALUE = 0;
+  public static final int EngineCondition_unknown_VALUE = 0;
   /**
-   * <code>Engine_Available = 1;</code>
+   * <code>EngineCondition_available = 1;</code>
    */
-  public static final int Engine_Available_VALUE = 1;
+  public static final int EngineCondition_available_VALUE = 1;
   /**
-   * <code>Engine_NotAvailable = 2;</code>
+   * <code>EngineCondition_not_available = 2;</code>
    */
-  public static final int Engine_NotAvailable_VALUE = 2;
+  public static final int EngineCondition_not_available_VALUE = 2;
 
 
   public final int getNumber() {
@@ -62,9 +62,9 @@ public enum EngineCondition_e
    */
   public static EngineCondition_e forNumber(int value) {
     switch (value) {
-      case 0: return Engine_UnknownCondition;
-      case 1: return Engine_Available;
-      case 2: return Engine_NotAvailable;
+      case 0: return EngineCondition_unknown;
+      case 1: return EngineCondition_available;
+      case 2: return EngineCondition_not_available;
       default: return null;
     }
   }

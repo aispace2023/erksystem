@@ -9,124 +9,124 @@ public interface ErkApiMsgOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.ErkServiceConnRQ_m erkServiceConnRq = 1;</code>
-   * @return Whether the erkServiceConnRq field is set.
+   * <code>.ErkServiceConnRQ_m ErkServiceConnRQ = 1;</code>
+   * @return Whether the erkServiceConnRQ field is set.
    */
-  boolean hasErkServiceConnRq();
+  boolean hasErkServiceConnRQ();
   /**
-   * <code>.ErkServiceConnRQ_m erkServiceConnRq = 1;</code>
-   * @return The erkServiceConnRq.
+   * <code>.ErkServiceConnRQ_m ErkServiceConnRQ = 1;</code>
+   * @return The erkServiceConnRQ.
    */
-  com.erksystem.protobuf.api.ErkServiceConnRQ_m getErkServiceConnRq();
+  com.erksystem.protobuf.api.ErkServiceConnRQ_m getErkServiceConnRQ();
   /**
-   * <code>.ErkServiceConnRQ_m erkServiceConnRq = 1;</code>
+   * <code>.ErkServiceConnRQ_m ErkServiceConnRQ = 1;</code>
    */
-  com.erksystem.protobuf.api.ErkServiceConnRQ_mOrBuilder getErkServiceConnRqOrBuilder();
+  com.erksystem.protobuf.api.ErkServiceConnRQ_mOrBuilder getErkServiceConnRQOrBuilder();
 
   /**
-   * <code>.ErkServiceConnRP_m erkServiceConnRp = 2;</code>
-   * @return Whether the erkServiceConnRp field is set.
+   * <code>.ErkServiceConnRP_m ErkServiceConnRP = 2;</code>
+   * @return Whether the erkServiceConnRP field is set.
    */
-  boolean hasErkServiceConnRp();
+  boolean hasErkServiceConnRP();
   /**
-   * <code>.ErkServiceConnRP_m erkServiceConnRp = 2;</code>
-   * @return The erkServiceConnRp.
+   * <code>.ErkServiceConnRP_m ErkServiceConnRP = 2;</code>
+   * @return The erkServiceConnRP.
    */
-  com.erksystem.protobuf.api.ErkServiceConnRP_m getErkServiceConnRp();
+  com.erksystem.protobuf.api.ErkServiceConnRP_m getErkServiceConnRP();
   /**
-   * <code>.ErkServiceConnRP_m erkServiceConnRp = 2;</code>
+   * <code>.ErkServiceConnRP_m ErkServiceConnRP = 2;</code>
    */
-  com.erksystem.protobuf.api.ErkServiceConnRP_mOrBuilder getErkServiceConnRpOrBuilder();
+  com.erksystem.protobuf.api.ErkServiceConnRP_mOrBuilder getErkServiceConnRPOrBuilder();
 
   /**
-   * <code>.ErkServiceDisConnRQ_m erkServiceDisConnRq = 3;</code>
-   * @return Whether the erkServiceDisConnRq field is set.
+   * <code>.ErkServiceDisConnRQ_m ErkServiceDisConnRQ = 3;</code>
+   * @return Whether the erkServiceDisConnRQ field is set.
    */
-  boolean hasErkServiceDisConnRq();
+  boolean hasErkServiceDisConnRQ();
   /**
-   * <code>.ErkServiceDisConnRQ_m erkServiceDisConnRq = 3;</code>
-   * @return The erkServiceDisConnRq.
+   * <code>.ErkServiceDisConnRQ_m ErkServiceDisConnRQ = 3;</code>
+   * @return The erkServiceDisConnRQ.
    */
-  com.erksystem.protobuf.api.ErkServiceDisConnRQ_m getErkServiceDisConnRq();
+  com.erksystem.protobuf.api.ErkServiceDisConnRQ_m getErkServiceDisConnRQ();
   /**
-   * <code>.ErkServiceDisConnRQ_m erkServiceDisConnRq = 3;</code>
+   * <code>.ErkServiceDisConnRQ_m ErkServiceDisConnRQ = 3;</code>
    */
-  com.erksystem.protobuf.api.ErkServiceDisConnRQ_mOrBuilder getErkServiceDisConnRqOrBuilder();
+  com.erksystem.protobuf.api.ErkServiceDisConnRQ_mOrBuilder getErkServiceDisConnRQOrBuilder();
 
   /**
-   * <code>.ErkServiceDisConnRP_m erkServiceDisConnRp = 4;</code>
-   * @return Whether the erkServiceDisConnRp field is set.
+   * <code>.ErkServiceDisConnRP_m ErkServiceDisConnRP = 4;</code>
+   * @return Whether the erkServiceDisConnRP field is set.
    */
-  boolean hasErkServiceDisConnRp();
+  boolean hasErkServiceDisConnRP();
   /**
-   * <code>.ErkServiceDisConnRP_m erkServiceDisConnRp = 4;</code>
-   * @return The erkServiceDisConnRp.
+   * <code>.ErkServiceDisConnRP_m ErkServiceDisConnRP = 4;</code>
+   * @return The erkServiceDisConnRP.
    */
-  com.erksystem.protobuf.api.ErkServiceDisConnRP_m getErkServiceDisConnRp();
+  com.erksystem.protobuf.api.ErkServiceDisConnRP_m getErkServiceDisConnRP();
   /**
-   * <code>.ErkServiceDisConnRP_m erkServiceDisConnRp = 4;</code>
+   * <code>.ErkServiceDisConnRP_m ErkServiceDisConnRP = 4;</code>
    */
-  com.erksystem.protobuf.api.ErkServiceDisConnRP_mOrBuilder getErkServiceDisConnRpOrBuilder();
+  com.erksystem.protobuf.api.ErkServiceDisConnRP_mOrBuilder getErkServiceDisConnRPOrBuilder();
 
   /**
-   * <code>.EmoRecogCreateRQ_m emoRecogCreateRq = 5;</code>
-   * @return Whether the emoRecogCreateRq field is set.
+   * <code>.EmoRecogCreateRQ_m EmoRecogCreateRQ = 5;</code>
+   * @return Whether the emoRecogCreateRQ field is set.
    */
-  boolean hasEmoRecogCreateRq();
+  boolean hasEmoRecogCreateRQ();
   /**
-   * <code>.EmoRecogCreateRQ_m emoRecogCreateRq = 5;</code>
-   * @return The emoRecogCreateRq.
+   * <code>.EmoRecogCreateRQ_m EmoRecogCreateRQ = 5;</code>
+   * @return The emoRecogCreateRQ.
    */
-  com.erksystem.protobuf.api.EmoRecogCreateRQ_m getEmoRecogCreateRq();
+  com.erksystem.protobuf.api.EmoRecogCreateRQ_m getEmoRecogCreateRQ();
   /**
-   * <code>.EmoRecogCreateRQ_m emoRecogCreateRq = 5;</code>
+   * <code>.EmoRecogCreateRQ_m EmoRecogCreateRQ = 5;</code>
    */
-  com.erksystem.protobuf.api.EmoRecogCreateRQ_mOrBuilder getEmoRecogCreateRqOrBuilder();
+  com.erksystem.protobuf.api.EmoRecogCreateRQ_mOrBuilder getEmoRecogCreateRQOrBuilder();
 
   /**
-   * <code>.EmoRecogCreateRP_m emoRecogCreateRp = 6;</code>
-   * @return Whether the emoRecogCreateRp field is set.
+   * <code>.EmoRecogCreateRP_m EmoRecogCreateRP = 6;</code>
+   * @return Whether the emoRecogCreateRP field is set.
    */
-  boolean hasEmoRecogCreateRp();
+  boolean hasEmoRecogCreateRP();
   /**
-   * <code>.EmoRecogCreateRP_m emoRecogCreateRp = 6;</code>
-   * @return The emoRecogCreateRp.
+   * <code>.EmoRecogCreateRP_m EmoRecogCreateRP = 6;</code>
+   * @return The emoRecogCreateRP.
    */
-  com.erksystem.protobuf.api.EmoRecogCreateRP_m getEmoRecogCreateRp();
+  com.erksystem.protobuf.api.EmoRecogCreateRP_m getEmoRecogCreateRP();
   /**
-   * <code>.EmoRecogCreateRP_m emoRecogCreateRp = 6;</code>
+   * <code>.EmoRecogCreateRP_m EmoRecogCreateRP = 6;</code>
    */
-  com.erksystem.protobuf.api.EmoRecogCreateRP_mOrBuilder getEmoRecogCreateRpOrBuilder();
+  com.erksystem.protobuf.api.EmoRecogCreateRP_mOrBuilder getEmoRecogCreateRPOrBuilder();
 
   /**
-   * <code>.EmoRecogDeleteRQ_m emoRecogDeleteRq = 7;</code>
-   * @return Whether the emoRecogDeleteRq field is set.
+   * <code>.EmoRecogDeleteRQ_m EmoRecogDeleteRQ = 7;</code>
+   * @return Whether the emoRecogDeleteRQ field is set.
    */
-  boolean hasEmoRecogDeleteRq();
+  boolean hasEmoRecogDeleteRQ();
   /**
-   * <code>.EmoRecogDeleteRQ_m emoRecogDeleteRq = 7;</code>
-   * @return The emoRecogDeleteRq.
+   * <code>.EmoRecogDeleteRQ_m EmoRecogDeleteRQ = 7;</code>
+   * @return The emoRecogDeleteRQ.
    */
-  com.erksystem.protobuf.api.EmoRecogDeleteRQ_m getEmoRecogDeleteRq();
+  com.erksystem.protobuf.api.EmoRecogDeleteRQ_m getEmoRecogDeleteRQ();
   /**
-   * <code>.EmoRecogDeleteRQ_m emoRecogDeleteRq = 7;</code>
+   * <code>.EmoRecogDeleteRQ_m EmoRecogDeleteRQ = 7;</code>
    */
-  com.erksystem.protobuf.api.EmoRecogDeleteRQ_mOrBuilder getEmoRecogDeleteRqOrBuilder();
+  com.erksystem.protobuf.api.EmoRecogDeleteRQ_mOrBuilder getEmoRecogDeleteRQOrBuilder();
 
   /**
-   * <code>.EmoRecogDeleteRP_m emoRecogDeleteRp = 8;</code>
-   * @return Whether the emoRecogDeleteRp field is set.
+   * <code>.EmoRecogDeleteRP_m EmoRecogDeleteRP = 8;</code>
+   * @return Whether the emoRecogDeleteRP field is set.
    */
-  boolean hasEmoRecogDeleteRp();
+  boolean hasEmoRecogDeleteRP();
   /**
-   * <code>.EmoRecogDeleteRP_m emoRecogDeleteRp = 8;</code>
-   * @return The emoRecogDeleteRp.
+   * <code>.EmoRecogDeleteRP_m EmoRecogDeleteRP = 8;</code>
+   * @return The emoRecogDeleteRP.
    */
-  com.erksystem.protobuf.api.EmoRecogDeleteRP_m getEmoRecogDeleteRp();
+  com.erksystem.protobuf.api.EmoRecogDeleteRP_m getEmoRecogDeleteRP();
   /**
-   * <code>.EmoRecogDeleteRP_m emoRecogDeleteRp = 8;</code>
+   * <code>.EmoRecogDeleteRP_m EmoRecogDeleteRP = 8;</code>
    */
-  com.erksystem.protobuf.api.EmoRecogDeleteRP_mOrBuilder getEmoRecogDeleteRpOrBuilder();
+  com.erksystem.protobuf.api.EmoRecogDeleteRP_mOrBuilder getEmoRecogDeleteRPOrBuilder();
 
   /**
    * <code>.HeartBeatRQ_m HeartBeatRQ = 9;</code>
@@ -159,137 +159,137 @@ public interface ErkApiMsgOrBuilder extends
   com.erksystem.protobuf.api.HeartBeatRP_mOrBuilder getHeartBeatRPOrBuilder();
 
   /**
-   * <code>.EmoRecogRQ_m emoRecogRq = 11;</code>
-   * @return Whether the emoRecogRq field is set.
+   * <code>.EmoRecogRQ_m EmoRecogRQ = 11;</code>
+   * @return Whether the emoRecogRQ field is set.
    */
-  boolean hasEmoRecogRq();
+  boolean hasEmoRecogRQ();
   /**
-   * <code>.EmoRecogRQ_m emoRecogRq = 11;</code>
-   * @return The emoRecogRq.
+   * <code>.EmoRecogRQ_m EmoRecogRQ = 11;</code>
+   * @return The emoRecogRQ.
    */
-  com.erksystem.protobuf.api.EmoRecogRQ_m getEmoRecogRq();
+  com.erksystem.protobuf.api.EmoRecogRQ_m getEmoRecogRQ();
   /**
-   * <code>.EmoRecogRQ_m emoRecogRq = 11;</code>
+   * <code>.EmoRecogRQ_m EmoRecogRQ = 11;</code>
    */
-  com.erksystem.protobuf.api.EmoRecogRQ_mOrBuilder getEmoRecogRqOrBuilder();
+  com.erksystem.protobuf.api.EmoRecogRQ_mOrBuilder getEmoRecogRQOrBuilder();
 
   /**
-   * <code>.EmoRecogRP_m emoRecogRp = 12;</code>
-   * @return Whether the emoRecogRp field is set.
+   * <code>.EmoRecogRP_m EmoRecogRP = 12;</code>
+   * @return Whether the emoRecogRP field is set.
    */
-  boolean hasEmoRecogRp();
+  boolean hasEmoRecogRP();
   /**
-   * <code>.EmoRecogRP_m emoRecogRp = 12;</code>
-   * @return The emoRecogRp.
+   * <code>.EmoRecogRP_m EmoRecogRP = 12;</code>
+   * @return The emoRecogRP.
    */
-  com.erksystem.protobuf.api.EmoRecogRP_m getEmoRecogRp();
+  com.erksystem.protobuf.api.EmoRecogRP_m getEmoRecogRP();
   /**
-   * <code>.EmoRecogRP_m emoRecogRp = 12;</code>
+   * <code>.EmoRecogRP_m EmoRecogRP = 12;</code>
    */
-  com.erksystem.protobuf.api.EmoRecogRP_mOrBuilder getEmoRecogRpOrBuilder();
+  com.erksystem.protobuf.api.EmoRecogRP_mOrBuilder getEmoRecogRPOrBuilder();
 
   /**
-   * <code>.PhysioEmoRecogRQ_m physioEmoRecogRq = 13;</code>
-   * @return Whether the physioEmoRecogRq field is set.
+   * <code>.PhysioEmoRecogRQ_m PhysioEmoRecogRQ = 13;</code>
+   * @return Whether the physioEmoRecogRQ field is set.
    */
-  boolean hasPhysioEmoRecogRq();
+  boolean hasPhysioEmoRecogRQ();
   /**
-   * <code>.PhysioEmoRecogRQ_m physioEmoRecogRq = 13;</code>
-   * @return The physioEmoRecogRq.
+   * <code>.PhysioEmoRecogRQ_m PhysioEmoRecogRQ = 13;</code>
+   * @return The physioEmoRecogRQ.
    */
-  com.erksystem.protobuf.api.PhysioEmoRecogRQ_m getPhysioEmoRecogRq();
+  com.erksystem.protobuf.api.PhysioEmoRecogRQ_m getPhysioEmoRecogRQ();
   /**
-   * <code>.PhysioEmoRecogRQ_m physioEmoRecogRq = 13;</code>
+   * <code>.PhysioEmoRecogRQ_m PhysioEmoRecogRQ = 13;</code>
    */
-  com.erksystem.protobuf.api.PhysioEmoRecogRQ_mOrBuilder getPhysioEmoRecogRqOrBuilder();
+  com.erksystem.protobuf.api.PhysioEmoRecogRQ_mOrBuilder getPhysioEmoRecogRQOrBuilder();
 
   /**
-   * <code>.PhysioEmoRecogRP_m physioEmoRecogRp = 14;</code>
-   * @return Whether the physioEmoRecogRp field is set.
+   * <code>.PhysioEmoRecogRP_m PhysioEmoRecogRP = 14;</code>
+   * @return Whether the physioEmoRecogRP field is set.
    */
-  boolean hasPhysioEmoRecogRp();
+  boolean hasPhysioEmoRecogRP();
   /**
-   * <code>.PhysioEmoRecogRP_m physioEmoRecogRp = 14;</code>
-   * @return The physioEmoRecogRp.
+   * <code>.PhysioEmoRecogRP_m PhysioEmoRecogRP = 14;</code>
+   * @return The physioEmoRecogRP.
    */
-  com.erksystem.protobuf.api.PhysioEmoRecogRP_m getPhysioEmoRecogRp();
+  com.erksystem.protobuf.api.PhysioEmoRecogRP_m getPhysioEmoRecogRP();
   /**
-   * <code>.PhysioEmoRecogRP_m physioEmoRecogRp = 14;</code>
+   * <code>.PhysioEmoRecogRP_m PhysioEmoRecogRP = 14;</code>
    */
-  com.erksystem.protobuf.api.PhysioEmoRecogRP_mOrBuilder getPhysioEmoRecogRpOrBuilder();
+  com.erksystem.protobuf.api.PhysioEmoRecogRP_mOrBuilder getPhysioEmoRecogRPOrBuilder();
 
   /**
-   * <code>.SpeechEmoRecogRQ_m speechEmoRecogRq = 15;</code>
-   * @return Whether the speechEmoRecogRq field is set.
+   * <code>.SpeechEmoRecogRQ_m SpeechEmoRecogRQ = 15;</code>
+   * @return Whether the speechEmoRecogRQ field is set.
    */
-  boolean hasSpeechEmoRecogRq();
+  boolean hasSpeechEmoRecogRQ();
   /**
-   * <code>.SpeechEmoRecogRQ_m speechEmoRecogRq = 15;</code>
-   * @return The speechEmoRecogRq.
+   * <code>.SpeechEmoRecogRQ_m SpeechEmoRecogRQ = 15;</code>
+   * @return The speechEmoRecogRQ.
    */
-  com.erksystem.protobuf.api.SpeechEmoRecogRQ_m getSpeechEmoRecogRq();
+  com.erksystem.protobuf.api.SpeechEmoRecogRQ_m getSpeechEmoRecogRQ();
   /**
-   * <code>.SpeechEmoRecogRQ_m speechEmoRecogRq = 15;</code>
+   * <code>.SpeechEmoRecogRQ_m SpeechEmoRecogRQ = 15;</code>
    */
-  com.erksystem.protobuf.api.SpeechEmoRecogRQ_mOrBuilder getSpeechEmoRecogRqOrBuilder();
+  com.erksystem.protobuf.api.SpeechEmoRecogRQ_mOrBuilder getSpeechEmoRecogRQOrBuilder();
 
   /**
-   * <code>.SpeechEmoRecogRP_m speechEmoRecogRp = 16;</code>
-   * @return Whether the speechEmoRecogRp field is set.
+   * <code>.SpeechEmoRecogRP_m SpeechEmoRecogRP = 16;</code>
+   * @return Whether the speechEmoRecogRP field is set.
    */
-  boolean hasSpeechEmoRecogRp();
+  boolean hasSpeechEmoRecogRP();
   /**
-   * <code>.SpeechEmoRecogRP_m speechEmoRecogRp = 16;</code>
-   * @return The speechEmoRecogRp.
+   * <code>.SpeechEmoRecogRP_m SpeechEmoRecogRP = 16;</code>
+   * @return The speechEmoRecogRP.
    */
-  com.erksystem.protobuf.api.SpeechEmoRecogRP_m getSpeechEmoRecogRp();
+  com.erksystem.protobuf.api.SpeechEmoRecogRP_m getSpeechEmoRecogRP();
   /**
-   * <code>.SpeechEmoRecogRP_m speechEmoRecogRp = 16;</code>
+   * <code>.SpeechEmoRecogRP_m SpeechEmoRecogRP = 16;</code>
    */
-  com.erksystem.protobuf.api.SpeechEmoRecogRP_mOrBuilder getSpeechEmoRecogRpOrBuilder();
+  com.erksystem.protobuf.api.SpeechEmoRecogRP_mOrBuilder getSpeechEmoRecogRPOrBuilder();
 
   /**
-   * <code>.FaceEmoRecogRQ_m faceEmoRecogRq = 17;</code>
-   * @return Whether the faceEmoRecogRq field is set.
+   * <code>.FaceEmoRecogRQ_m FaceEmoRecogRQ = 17;</code>
+   * @return Whether the faceEmoRecogRQ field is set.
    */
-  boolean hasFaceEmoRecogRq();
+  boolean hasFaceEmoRecogRQ();
   /**
-   * <code>.FaceEmoRecogRQ_m faceEmoRecogRq = 17;</code>
-   * @return The faceEmoRecogRq.
+   * <code>.FaceEmoRecogRQ_m FaceEmoRecogRQ = 17;</code>
+   * @return The faceEmoRecogRQ.
    */
-  com.erksystem.protobuf.api.FaceEmoRecogRQ_m getFaceEmoRecogRq();
+  com.erksystem.protobuf.api.FaceEmoRecogRQ_m getFaceEmoRecogRQ();
   /**
-   * <code>.FaceEmoRecogRQ_m faceEmoRecogRq = 17;</code>
+   * <code>.FaceEmoRecogRQ_m FaceEmoRecogRQ = 17;</code>
    */
-  com.erksystem.protobuf.api.FaceEmoRecogRQ_mOrBuilder getFaceEmoRecogRqOrBuilder();
+  com.erksystem.protobuf.api.FaceEmoRecogRQ_mOrBuilder getFaceEmoRecogRQOrBuilder();
 
   /**
-   * <code>.FaceEmoRecogRP_m faceEmoRecogRp = 18;</code>
-   * @return Whether the faceEmoRecogRp field is set.
+   * <code>.FaceEmoRecogRP_m FaceEmoRecogRP = 18;</code>
+   * @return Whether the faceEmoRecogRP field is set.
    */
-  boolean hasFaceEmoRecogRp();
+  boolean hasFaceEmoRecogRP();
   /**
-   * <code>.FaceEmoRecogRP_m faceEmoRecogRp = 18;</code>
-   * @return The faceEmoRecogRp.
+   * <code>.FaceEmoRecogRP_m FaceEmoRecogRP = 18;</code>
+   * @return The faceEmoRecogRP.
    */
-  com.erksystem.protobuf.api.FaceEmoRecogRP_m getFaceEmoRecogRp();
+  com.erksystem.protobuf.api.FaceEmoRecogRP_m getFaceEmoRecogRP();
   /**
-   * <code>.FaceEmoRecogRP_m faceEmoRecogRp = 18;</code>
+   * <code>.FaceEmoRecogRP_m FaceEmoRecogRP = 18;</code>
    */
-  com.erksystem.protobuf.api.FaceEmoRecogRP_mOrBuilder getFaceEmoRecogRpOrBuilder();
+  com.erksystem.protobuf.api.FaceEmoRecogRP_mOrBuilder getFaceEmoRecogRPOrBuilder();
 
   /**
-   * <code>.EmoRecogNoti_m emoRecogNoti = 19;</code>
+   * <code>.EmoRecogNoti_m EmoRecogNoti = 19;</code>
    * @return Whether the emoRecogNoti field is set.
    */
   boolean hasEmoRecogNoti();
   /**
-   * <code>.EmoRecogNoti_m emoRecogNoti = 19;</code>
+   * <code>.EmoRecogNoti_m EmoRecogNoti = 19;</code>
    * @return The emoRecogNoti.
    */
   com.erksystem.protobuf.api.EmoRecogNoti_m getEmoRecogNoti();
   /**
-   * <code>.EmoRecogNoti_m emoRecogNoti = 19;</code>
+   * <code>.EmoRecogNoti_m EmoRecogNoti = 19;</code>
    */
   com.erksystem.protobuf.api.EmoRecogNoti_mOrBuilder getEmoRecogNotiOrBuilder();
 

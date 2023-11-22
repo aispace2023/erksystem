@@ -211,10 +211,10 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (engineType_ != com.erksystem.protobuf.api.EngineType_e.Engine_Unknown.getNumber()) {
+    if (engineType_ != com.erksystem.protobuf.api.EngineType_e.EngineType_unknown.getNumber()) {
       output.writeEnum(1, engineType_);
     }
-    if (engineCondition_ != com.erksystem.protobuf.api.EngineCondition_e.Engine_UnknownCondition.getNumber()) {
+    if (engineCondition_ != com.erksystem.protobuf.api.EngineCondition_e.EngineCondition_unknown.getNumber()) {
       output.writeEnum(2, engineCondition_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ipAddr_)) {
@@ -235,11 +235,11 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (engineType_ != com.erksystem.protobuf.api.EngineType_e.Engine_Unknown.getNumber()) {
+    if (engineType_ != com.erksystem.protobuf.api.EngineType_e.EngineType_unknown.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(1, engineType_);
     }
-    if (engineCondition_ != com.erksystem.protobuf.api.EngineCondition_e.Engine_UnknownCondition.getNumber()) {
+    if (engineCondition_ != com.erksystem.protobuf.api.EngineCondition_e.EngineCondition_unknown.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(2, engineCondition_);
     }

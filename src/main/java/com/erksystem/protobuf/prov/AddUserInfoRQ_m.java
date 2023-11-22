@@ -33,13 +33,13 @@ private static final long serialVersionUID = 0L;
 
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.erksystem.protobuf.prov.ErkProvMsgOuterClass.internal_static_AddUserInfoRQ_m_descriptor;
+    return com.erksystem.protobuf.prov.ErkProvMsg.internal_static_AddUserInfoRQ_m_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.erksystem.protobuf.prov.ErkProvMsgOuterClass.internal_static_AddUserInfoRQ_m_fieldAccessorTable
+    return com.erksystem.protobuf.prov.ErkProvMsg.internal_static_AddUserInfoRQ_m_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.erksystem.protobuf.prov.AddUserInfoRQ_m.class, com.erksystem.protobuf.prov.AddUserInfoRQ_m.Builder.class);
   }
@@ -286,7 +286,7 @@ private static final long serialVersionUID = 0L;
     if (userType_ != 0) {
       output.writeInt32(7, userType_);
     }
-    if (serviceType_ != com.erksystem.protobuf.prov.ServiceType_e.Service_Unknown.getNumber()) {
+    if (serviceType_ != com.erksystem.protobuf.prov.ServiceType_e.ServiceType_unknown.getNumber()) {
       output.writeEnum(8, serviceType_);
     }
     getUnknownFields().writeTo(output);
@@ -322,7 +322,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(7, userType_);
     }
-    if (serviceType_ != com.erksystem.protobuf.prov.ServiceType_e.Service_Unknown.getNumber()) {
+    if (serviceType_ != com.erksystem.protobuf.prov.ServiceType_e.ServiceType_unknown.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(8, serviceType_);
     }
@@ -489,13 +489,13 @@ private static final long serialVersionUID = 0L;
       com.erksystem.protobuf.prov.AddUserInfoRQ_mOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.erksystem.protobuf.prov.ErkProvMsgOuterClass.internal_static_AddUserInfoRQ_m_descriptor;
+      return com.erksystem.protobuf.prov.ErkProvMsg.internal_static_AddUserInfoRQ_m_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.erksystem.protobuf.prov.ErkProvMsgOuterClass.internal_static_AddUserInfoRQ_m_fieldAccessorTable
+      return com.erksystem.protobuf.prov.ErkProvMsg.internal_static_AddUserInfoRQ_m_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.erksystem.protobuf.prov.AddUserInfoRQ_m.class, com.erksystem.protobuf.prov.AddUserInfoRQ_m.Builder.class);
     }
@@ -528,7 +528,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.erksystem.protobuf.prov.ErkProvMsgOuterClass.internal_static_AddUserInfoRQ_m_descriptor;
+      return com.erksystem.protobuf.prov.ErkProvMsg.internal_static_AddUserInfoRQ_m_descriptor;
     }
 
     @java.lang.Override

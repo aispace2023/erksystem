@@ -22,4 +22,16 @@ public interface HeartBeatRQ_mOrBuilder extends
    * <code>.ErkMsgHeader ErkMsgHead = 1;</code>
    */
   com.erksystem.protobuf.api.ErkMsgHeaderOrBuilder getErkMsgHeadOrBuilder();
+
+  /**
+   * <code>string QueueName = 2;</code>
+   * @return The queueName.
+   */
+  java.lang.String getQueueName();
+  /**
+   * <code>string QueueName = 2;</code>
+   * @return The bytes for queueName.
+   */
+  com.google.protobuf.ByteString
+      getQueueNameBytes();
 }

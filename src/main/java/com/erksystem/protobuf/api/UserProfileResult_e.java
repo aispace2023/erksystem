@@ -10,112 +10,112 @@ package com.erksystem.protobuf.api;
 public enum UserProfileResult_e
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
-   * <code>User_ProfileUSER_PROFILE_UNKNOWN = 0;</code>
+   * <code>UserProfileResult_unknown = 0;</code>
    */
-  User_ProfileUSER_PROFILE_UNKNOWN(0),
+  UserProfileResult_unknown(0),
   /**
-   * <code>User_Profile_Ok = 1;</code>
+   * <code>UserProfileResult_ok = 1;</code>
    */
-  User_Profile_Ok(1),
+  UserProfileResult_ok(1),
   /**
-   * <code>User_Profile_Nok_OrgName = 2;</code>
+   * <code>UserProfileResult_nok_OrgName = 2;</code>
    */
-  User_Profile_Nok_OrgName(2),
+  UserProfileResult_nok_OrgName(2),
   /**
-   * <code>User_Profile_Nok_UserName = 3;</code>
+   * <code>UserProfileResult_nok_UserName = 3;</code>
    */
-  User_Profile_Nok_UserName(3),
+  UserProfileResult_nok_UserName(3),
   /**
-   * <code>User_Profile_Nok_UserPwd = 4;</code>
+   * <code>UserProfileResult_nok_UserPwd = 4;</code>
    */
-  User_Profile_Nok_UserPwd(4),
+  UserProfileResult_nok_UserPwd(4),
   /**
-   * <code>User_Profile_Nok_ServiceDuration = 5;</code>
+   * <code>UserProfileResult_nok_ServiceDuration = 5;</code>
    */
-  User_Profile_Nok_ServiceDuration(5),
+  UserProfileResult_nok_ServiceDuration(5),
   /**
-   * <code>User_Profile_Nok_Age = 6;</code>
+   * <code>UserProfileResult_nok_Age = 6;</code>
    */
-  User_Profile_Nok_Age(6),
+  UserProfileResult_nok_Age(6),
   /**
-   * <code>User_Profile_Nok_Sex = 7;</code>
+   * <code>UserProfileResult_nok_Sex = 7;</code>
    */
-  User_Profile_Nok_Sex(7),
+  UserProfileResult_nok_Sex(7),
   /**
-   * <code>User_Profile_Nok_UserType = 8;</code>
+   * <code>UserProfileResult_nok_UserType = 8;</code>
    */
-  User_Profile_Nok_UserType(8),
+  UserProfileResult_nok_UserType(8),
   /**
-   * <code>User_Profile_Nok_ServiceType = 9;</code>
+   * <code>UserProfileResult_nok_ServiceType = 9;</code>
    */
-  User_Profile_Nok_ServiceType(9),
+  UserProfileResult_nok_ServiceType(9),
   /**
-   * <code>User_Profile_Nok_DB = 10;</code>
+   * <code>UserProfileResult_nok_DB = 10;</code>
    */
-  User_Profile_Nok_DB(10),
+  UserProfileResult_nok_DB(10),
   /**
-   * <code>User_Profile_Nok_Reason1 = 11;</code>
+   * <code>UserProfileResult_nok_reason1 = 11;</code>
    */
-  User_Profile_Nok_Reason1(11),
+  UserProfileResult_nok_reason1(11),
   /**
-   * <code>User_Profile_Nok_Reason2 = 12;</code>
+   * <code>UserProfileResult_nok_reason2 = 12;</code>
    */
-  User_Profile_Nok_Reason2(12),
+  UserProfileResult_nok_reason2(12),
   UNRECOGNIZED(-1),
   ;
 
   /**
-   * <code>User_ProfileUSER_PROFILE_UNKNOWN = 0;</code>
+   * <code>UserProfileResult_unknown = 0;</code>
    */
-  public static final int User_ProfileUSER_PROFILE_UNKNOWN_VALUE = 0;
+  public static final int UserProfileResult_unknown_VALUE = 0;
   /**
-   * <code>User_Profile_Ok = 1;</code>
+   * <code>UserProfileResult_ok = 1;</code>
    */
-  public static final int User_Profile_Ok_VALUE = 1;
+  public static final int UserProfileResult_ok_VALUE = 1;
   /**
-   * <code>User_Profile_Nok_OrgName = 2;</code>
+   * <code>UserProfileResult_nok_OrgName = 2;</code>
    */
-  public static final int User_Profile_Nok_OrgName_VALUE = 2;
+  public static final int UserProfileResult_nok_OrgName_VALUE = 2;
   /**
-   * <code>User_Profile_Nok_UserName = 3;</code>
+   * <code>UserProfileResult_nok_UserName = 3;</code>
    */
-  public static final int User_Profile_Nok_UserName_VALUE = 3;
+  public static final int UserProfileResult_nok_UserName_VALUE = 3;
   /**
-   * <code>User_Profile_Nok_UserPwd = 4;</code>
+   * <code>UserProfileResult_nok_UserPwd = 4;</code>
    */
-  public static final int User_Profile_Nok_UserPwd_VALUE = 4;
+  public static final int UserProfileResult_nok_UserPwd_VALUE = 4;
   /**
-   * <code>User_Profile_Nok_ServiceDuration = 5;</code>
+   * <code>UserProfileResult_nok_ServiceDuration = 5;</code>
    */
-  public static final int User_Profile_Nok_ServiceDuration_VALUE = 5;
+  public static final int UserProfileResult_nok_ServiceDuration_VALUE = 5;
   /**
-   * <code>User_Profile_Nok_Age = 6;</code>
+   * <code>UserProfileResult_nok_Age = 6;</code>
    */
-  public static final int User_Profile_Nok_Age_VALUE = 6;
+  public static final int UserProfileResult_nok_Age_VALUE = 6;
   /**
-   * <code>User_Profile_Nok_Sex = 7;</code>
+   * <code>UserProfileResult_nok_Sex = 7;</code>
    */
-  public static final int User_Profile_Nok_Sex_VALUE = 7;
+  public static final int UserProfileResult_nok_Sex_VALUE = 7;
   /**
-   * <code>User_Profile_Nok_UserType = 8;</code>
+   * <code>UserProfileResult_nok_UserType = 8;</code>
    */
-  public static final int User_Profile_Nok_UserType_VALUE = 8;
+  public static final int UserProfileResult_nok_UserType_VALUE = 8;
   /**
-   * <code>User_Profile_Nok_ServiceType = 9;</code>
+   * <code>UserProfileResult_nok_ServiceType = 9;</code>
    */
-  public static final int User_Profile_Nok_ServiceType_VALUE = 9;
+  public static final int UserProfileResult_nok_ServiceType_VALUE = 9;
   /**
-   * <code>User_Profile_Nok_DB = 10;</code>
+   * <code>UserProfileResult_nok_DB = 10;</code>
    */
-  public static final int User_Profile_Nok_DB_VALUE = 10;
+  public static final int UserProfileResult_nok_DB_VALUE = 10;
   /**
-   * <code>User_Profile_Nok_Reason1 = 11;</code>
+   * <code>UserProfileResult_nok_reason1 = 11;</code>
    */
-  public static final int User_Profile_Nok_Reason1_VALUE = 11;
+  public static final int UserProfileResult_nok_reason1_VALUE = 11;
   /**
-   * <code>User_Profile_Nok_Reason2 = 12;</code>
+   * <code>UserProfileResult_nok_reason2 = 12;</code>
    */
-  public static final int User_Profile_Nok_Reason2_VALUE = 12;
+  public static final int UserProfileResult_nok_reason2_VALUE = 12;
 
 
   public final int getNumber() {
@@ -142,19 +142,19 @@ public enum UserProfileResult_e
    */
   public static UserProfileResult_e forNumber(int value) {
     switch (value) {
-      case 0: return User_ProfileUSER_PROFILE_UNKNOWN;
-      case 1: return User_Profile_Ok;
-      case 2: return User_Profile_Nok_OrgName;
-      case 3: return User_Profile_Nok_UserName;
-      case 4: return User_Profile_Nok_UserPwd;
-      case 5: return User_Profile_Nok_ServiceDuration;
-      case 6: return User_Profile_Nok_Age;
-      case 7: return User_Profile_Nok_Sex;
-      case 8: return User_Profile_Nok_UserType;
-      case 9: return User_Profile_Nok_ServiceType;
-      case 10: return User_Profile_Nok_DB;
-      case 11: return User_Profile_Nok_Reason1;
-      case 12: return User_Profile_Nok_Reason2;
+      case 0: return UserProfileResult_unknown;
+      case 1: return UserProfileResult_ok;
+      case 2: return UserProfileResult_nok_OrgName;
+      case 3: return UserProfileResult_nok_UserName;
+      case 4: return UserProfileResult_nok_UserPwd;
+      case 5: return UserProfileResult_nok_ServiceDuration;
+      case 6: return UserProfileResult_nok_Age;
+      case 7: return UserProfileResult_nok_Sex;
+      case 8: return UserProfileResult_nok_UserType;
+      case 9: return UserProfileResult_nok_ServiceType;
+      case 10: return UserProfileResult_nok_DB;
+      case 11: return UserProfileResult_nok_reason1;
+      case 12: return UserProfileResult_nok_reason2;
       default: return null;
     }
   }

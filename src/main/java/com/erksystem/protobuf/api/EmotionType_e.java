@@ -10,144 +10,144 @@ package com.erksystem.protobuf.api;
 public enum EmotionType_e
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
-   * <code>Emotion_Unknown = 0;</code>
+   * <code>EmotionType_unknown = 0;</code>
    */
-  Emotion_Unknown(0),
+  EmotionType_unknown(0),
   /**
-   * <code>Emotion_Neutral = 1;</code>
+   * <code>EmotionType_neutral = 1;</code>
    */
-  Emotion_Neutral(1),
+  EmotionType_neutral(1),
   /**
-   * <code>Emotion_Positive = 2;</code>
+   * <code>EmotionType_positive = 2;</code>
    */
-  Emotion_Positive(2),
+  EmotionType_positive(2),
   /**
-   * <code>Emotion_Negative = 3;</code>
+   * <code>EmotionType_negative = 3;</code>
    */
-  Emotion_Negative(3),
+  EmotionType_negative(3),
   /**
-   * <code>Emotion_Stress = 4;</code>
+   * <code>EmotionType_stress = 4;</code>
    */
-  Emotion_Stress(4),
+  EmotionType_stress(4),
   /**
-   * <code>Emotion_Joy = 5;</code>
+   * <code>EmotionType_joy = 5;</code>
    */
-  Emotion_Joy(5),
+  EmotionType_joy(5),
   /**
-   * <code>Emotion_Happy = 6;</code>
+   * <code>EmotionType_happy = 6;</code>
    */
-  Emotion_Happy(6),
+  EmotionType_happy(6),
   /**
-   * <code>Emotion_Sadness = 7;</code>
+   * <code>EmotionType_sadness = 7;</code>
    */
-  Emotion_Sadness(7),
+  EmotionType_sadness(7),
   /**
-   * <code>Emotion_Anger = 8;</code>
+   * <code>EmotionType_anger = 8;</code>
    */
-  Emotion_Anger(8),
+  EmotionType_anger(8),
   /**
-   * <code>Emotion_Arousal = 9;</code>
+   * <code>EmotionType_arousal = 9;</code>
    */
-  Emotion_Arousal(9),
+  EmotionType_arousal(9),
   /**
-   * <code>Emotion_Relaxation = 10;</code>
+   * <code>EmotionType_relaxation = 10;</code>
    */
-  Emotion_Relaxation(10),
+  EmotionType_relaxation(10),
   /**
-   * <code>Emotion_Peace = 11;</code>
+   * <code>EmotionType_peace = 11;</code>
    */
-  Emotion_Peace(11),
+  EmotionType_peace(11),
   /**
-   * <code>Emotion_Anxiety = 12;</code>
+   * <code>EmotionType_anxiety = 12;</code>
    */
-  Emotion_Anxiety(12),
+  EmotionType_anxiety(12),
   /**
-   * <code>Emotion_Fear = 13;</code>
+   * <code>EmotionType_fear = 13;</code>
    */
-  Emotion_Fear(13),
+  EmotionType_fear(13),
   /**
-   * <code>Emotion_Disgust = 14;</code>
+   * <code>EmotionType_disgust = 14;</code>
    */
-  Emotion_Disgust(14),
+  EmotionType_disgust(14),
   /**
-   * <code>Emotion_Reserved1 = 15;</code>
+   * <code>EmotionType_reserved1 = 15;</code>
    */
-  Emotion_Reserved1(15),
+  EmotionType_reserved1(15),
   /**
-   * <code>Emotion_Reserved2 = 16;</code>
+   * <code>EmotionType_reserved2 = 16;</code>
    */
-  Emotion_Reserved2(16),
+  EmotionType_reserved2(16),
   UNRECOGNIZED(-1),
   ;
 
   /**
-   * <code>Emotion_Unknown = 0;</code>
+   * <code>EmotionType_unknown = 0;</code>
    */
-  public static final int Emotion_Unknown_VALUE = 0;
+  public static final int EmotionType_unknown_VALUE = 0;
   /**
-   * <code>Emotion_Neutral = 1;</code>
+   * <code>EmotionType_neutral = 1;</code>
    */
-  public static final int Emotion_Neutral_VALUE = 1;
+  public static final int EmotionType_neutral_VALUE = 1;
   /**
-   * <code>Emotion_Positive = 2;</code>
+   * <code>EmotionType_positive = 2;</code>
    */
-  public static final int Emotion_Positive_VALUE = 2;
+  public static final int EmotionType_positive_VALUE = 2;
   /**
-   * <code>Emotion_Negative = 3;</code>
+   * <code>EmotionType_negative = 3;</code>
    */
-  public static final int Emotion_Negative_VALUE = 3;
+  public static final int EmotionType_negative_VALUE = 3;
   /**
-   * <code>Emotion_Stress = 4;</code>
+   * <code>EmotionType_stress = 4;</code>
    */
-  public static final int Emotion_Stress_VALUE = 4;
+  public static final int EmotionType_stress_VALUE = 4;
   /**
-   * <code>Emotion_Joy = 5;</code>
+   * <code>EmotionType_joy = 5;</code>
    */
-  public static final int Emotion_Joy_VALUE = 5;
+  public static final int EmotionType_joy_VALUE = 5;
   /**
-   * <code>Emotion_Happy = 6;</code>
+   * <code>EmotionType_happy = 6;</code>
    */
-  public static final int Emotion_Happy_VALUE = 6;
+  public static final int EmotionType_happy_VALUE = 6;
   /**
-   * <code>Emotion_Sadness = 7;</code>
+   * <code>EmotionType_sadness = 7;</code>
    */
-  public static final int Emotion_Sadness_VALUE = 7;
+  public static final int EmotionType_sadness_VALUE = 7;
   /**
-   * <code>Emotion_Anger = 8;</code>
+   * <code>EmotionType_anger = 8;</code>
    */
-  public static final int Emotion_Anger_VALUE = 8;
+  public static final int EmotionType_anger_VALUE = 8;
   /**
-   * <code>Emotion_Arousal = 9;</code>
+   * <code>EmotionType_arousal = 9;</code>
    */
-  public static final int Emotion_Arousal_VALUE = 9;
+  public static final int EmotionType_arousal_VALUE = 9;
   /**
-   * <code>Emotion_Relaxation = 10;</code>
+   * <code>EmotionType_relaxation = 10;</code>
    */
-  public static final int Emotion_Relaxation_VALUE = 10;
+  public static final int EmotionType_relaxation_VALUE = 10;
   /**
-   * <code>Emotion_Peace = 11;</code>
+   * <code>EmotionType_peace = 11;</code>
    */
-  public static final int Emotion_Peace_VALUE = 11;
+  public static final int EmotionType_peace_VALUE = 11;
   /**
-   * <code>Emotion_Anxiety = 12;</code>
+   * <code>EmotionType_anxiety = 12;</code>
    */
-  public static final int Emotion_Anxiety_VALUE = 12;
+  public static final int EmotionType_anxiety_VALUE = 12;
   /**
-   * <code>Emotion_Fear = 13;</code>
+   * <code>EmotionType_fear = 13;</code>
    */
-  public static final int Emotion_Fear_VALUE = 13;
+  public static final int EmotionType_fear_VALUE = 13;
   /**
-   * <code>Emotion_Disgust = 14;</code>
+   * <code>EmotionType_disgust = 14;</code>
    */
-  public static final int Emotion_Disgust_VALUE = 14;
+  public static final int EmotionType_disgust_VALUE = 14;
   /**
-   * <code>Emotion_Reserved1 = 15;</code>
+   * <code>EmotionType_reserved1 = 15;</code>
    */
-  public static final int Emotion_Reserved1_VALUE = 15;
+  public static final int EmotionType_reserved1_VALUE = 15;
   /**
-   * <code>Emotion_Reserved2 = 16;</code>
+   * <code>EmotionType_reserved2 = 16;</code>
    */
-  public static final int Emotion_Reserved2_VALUE = 16;
+  public static final int EmotionType_reserved2_VALUE = 16;
 
 
   public final int getNumber() {
@@ -174,23 +174,23 @@ public enum EmotionType_e
    */
   public static EmotionType_e forNumber(int value) {
     switch (value) {
-      case 0: return Emotion_Unknown;
-      case 1: return Emotion_Neutral;
-      case 2: return Emotion_Positive;
-      case 3: return Emotion_Negative;
-      case 4: return Emotion_Stress;
-      case 5: return Emotion_Joy;
-      case 6: return Emotion_Happy;
-      case 7: return Emotion_Sadness;
-      case 8: return Emotion_Anger;
-      case 9: return Emotion_Arousal;
-      case 10: return Emotion_Relaxation;
-      case 11: return Emotion_Peace;
-      case 12: return Emotion_Anxiety;
-      case 13: return Emotion_Fear;
-      case 14: return Emotion_Disgust;
-      case 15: return Emotion_Reserved1;
-      case 16: return Emotion_Reserved2;
+      case 0: return EmotionType_unknown;
+      case 1: return EmotionType_neutral;
+      case 2: return EmotionType_positive;
+      case 3: return EmotionType_negative;
+      case 4: return EmotionType_stress;
+      case 5: return EmotionType_joy;
+      case 6: return EmotionType_happy;
+      case 7: return EmotionType_sadness;
+      case 8: return EmotionType_anger;
+      case 9: return EmotionType_arousal;
+      case 10: return EmotionType_relaxation;
+      case 11: return EmotionType_peace;
+      case 12: return EmotionType_anxiety;
+      case 13: return EmotionType_fear;
+      case 14: return EmotionType_disgust;
+      case 15: return EmotionType_reserved1;
+      case 16: return EmotionType_reserved2;
       default: return null;
     }
   }

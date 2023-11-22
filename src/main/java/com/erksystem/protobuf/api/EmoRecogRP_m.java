@@ -143,13 +143,13 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(1, getErkMsgDataHead());
     }
-    if (returnCode_ != com.erksystem.protobuf.api.ReturnCode_e.unknown.getNumber()) {
+    if (returnCode_ != com.erksystem.protobuf.api.ReturnCode_e.ReturnCode_unknown.getNumber()) {
       output.writeEnum(2, returnCode_);
     }
     if (emoRecogTime_ != 0L) {
       output.writeInt64(3, emoRecogTime_);
     }
-    if (emotion_ != com.erksystem.protobuf.api.EmotionType_e.Emotion_Unknown.getNumber()) {
+    if (emotion_ != com.erksystem.protobuf.api.EmotionType_e.EmotionType_unknown.getNumber()) {
       output.writeEnum(4, emotion_);
     }
     if (java.lang.Float.floatToRawIntBits(accuracy_) != 0) {
@@ -168,7 +168,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(1, getErkMsgDataHead());
     }
-    if (returnCode_ != com.erksystem.protobuf.api.ReturnCode_e.unknown.getNumber()) {
+    if (returnCode_ != com.erksystem.protobuf.api.ReturnCode_e.ReturnCode_unknown.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(2, returnCode_);
     }
@@ -176,7 +176,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(3, emoRecogTime_);
     }
-    if (emotion_ != com.erksystem.protobuf.api.EmotionType_e.Emotion_Unknown.getNumber()) {
+    if (emotion_ != com.erksystem.protobuf.api.EmotionType_e.EmotionType_unknown.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(4, emotion_);
     }

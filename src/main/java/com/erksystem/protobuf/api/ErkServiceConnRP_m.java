@@ -135,10 +135,10 @@ private static final long serialVersionUID = 0L;
     if (msgTime_ != 0L) {
       output.writeInt64(2, msgTime_);
     }
-    if (returnCode_ != com.erksystem.protobuf.api.ReturnCode_e.unknown.getNumber()) {
+    if (returnCode_ != com.erksystem.protobuf.api.ReturnCode_e.ReturnCode_unknown.getNumber()) {
       output.writeEnum(3, returnCode_);
     }
-    if (serviceType_ != com.erksystem.protobuf.api.ServiceType_e.Service_Unknown.getNumber()) {
+    if (serviceType_ != com.erksystem.protobuf.api.ServiceType_e.ServiceType_unknown.getNumber()) {
       output.writeEnum(4, serviceType_);
     }
     getUnknownFields().writeTo(output);
@@ -158,11 +158,11 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(2, msgTime_);
     }
-    if (returnCode_ != com.erksystem.protobuf.api.ReturnCode_e.unknown.getNumber()) {
+    if (returnCode_ != com.erksystem.protobuf.api.ReturnCode_e.ReturnCode_unknown.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(3, returnCode_);
     }
-    if (serviceType_ != com.erksystem.protobuf.api.ServiceType_e.Service_Unknown.getNumber()) {
+    if (serviceType_ != com.erksystem.protobuf.api.ServiceType_e.ServiceType_unknown.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(4, serviceType_);
     }

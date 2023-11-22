@@ -17,8 +17,6 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ErkMsgDataHeader() {
-    engineType_ = 0;
-    userId_ = "";
   }
 
   @java.lang.Override
@@ -41,74 +39,6 @@ private static final long serialVersionUID = 0L;
             com.erksystem.protobuf.api.ErkMsgDataHeader.class, com.erksystem.protobuf.api.ErkMsgDataHeader.Builder.class);
   }
 
-  public static final int ENGINETYPE_FIELD_NUMBER = 1;
-  private int engineType_ = 0;
-  /**
-   * <code>.EngineType_e EngineType = 1;</code>
-   * @return The enum numeric value on the wire for engineType.
-   */
-  @java.lang.Override public int getEngineTypeValue() {
-    return engineType_;
-  }
-  /**
-   * <code>.EngineType_e EngineType = 1;</code>
-   * @return The engineType.
-   */
-  @java.lang.Override public com.erksystem.protobuf.api.EngineType_e getEngineType() {
-    com.erksystem.protobuf.api.EngineType_e result = com.erksystem.protobuf.api.EngineType_e.forNumber(engineType_);
-    return result == null ? com.erksystem.protobuf.api.EngineType_e.UNRECOGNIZED : result;
-  }
-
-  public static final int ORGID_FIELD_NUMBER = 2;
-  private int orgId_ = 0;
-  /**
-   * <code>int32 OrgId = 2;</code>
-   * @return The orgId.
-   */
-  @java.lang.Override
-  public int getOrgId() {
-    return orgId_;
-  }
-
-  public static final int USERID_FIELD_NUMBER = 3;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object userId_ = "";
-  /**
-   * <code>string UserId = 3;</code>
-   * @return The userId.
-   */
-  @java.lang.Override
-  public java.lang.String getUserId() {
-    java.lang.Object ref = userId_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      userId_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string UserId = 3;</code>
-   * @return The bytes for userId.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getUserIdBytes() {
-    java.lang.Object ref = userId_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      userId_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -123,15 +53,6 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (engineType_ != com.erksystem.protobuf.api.EngineType_e.Engine_Unknown.getNumber()) {
-      output.writeEnum(1, engineType_);
-    }
-    if (orgId_ != 0) {
-      output.writeInt32(2, orgId_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, userId_);
-    }
     getUnknownFields().writeTo(output);
   }
 
@@ -141,17 +62,6 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (engineType_ != com.erksystem.protobuf.api.EngineType_e.Engine_Unknown.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(1, engineType_);
-    }
-    if (orgId_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(2, orgId_);
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userId_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, userId_);
-    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -167,11 +77,6 @@ private static final long serialVersionUID = 0L;
     }
     com.erksystem.protobuf.api.ErkMsgDataHeader other = (com.erksystem.protobuf.api.ErkMsgDataHeader) obj;
 
-    if (engineType_ != other.engineType_) return false;
-    if (getOrgId()
-        != other.getOrgId()) return false;
-    if (!getUserId()
-        .equals(other.getUserId())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -183,12 +88,6 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + ENGINETYPE_FIELD_NUMBER;
-    hash = (53 * hash) + engineType_;
-    hash = (37 * hash) + ORGID_FIELD_NUMBER;
-    hash = (53 * hash) + getOrgId();
-    hash = (37 * hash) + USERID_FIELD_NUMBER;
-    hash = (53 * hash) + getUserId().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -319,10 +218,6 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      bitField0_ = 0;
-      engineType_ = 0;
-      orgId_ = 0;
-      userId_ = "";
       return this;
     }
 
@@ -349,22 +244,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.erksystem.protobuf.api.ErkMsgDataHeader buildPartial() {
       com.erksystem.protobuf.api.ErkMsgDataHeader result = new com.erksystem.protobuf.api.ErkMsgDataHeader(this);
-      if (bitField0_ != 0) { buildPartial0(result); }
       onBuilt();
       return result;
-    }
-
-    private void buildPartial0(com.erksystem.protobuf.api.ErkMsgDataHeader result) {
-      int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.engineType_ = engineType_;
-      }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.orgId_ = orgId_;
-      }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.userId_ = userId_;
-      }
     }
 
     @java.lang.Override
@@ -411,17 +292,6 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.erksystem.protobuf.api.ErkMsgDataHeader other) {
       if (other == com.erksystem.protobuf.api.ErkMsgDataHeader.getDefaultInstance()) return this;
-      if (other.engineType_ != 0) {
-        setEngineTypeValue(other.getEngineTypeValue());
-      }
-      if (other.getOrgId() != 0) {
-        setOrgId(other.getOrgId());
-      }
-      if (!other.getUserId().isEmpty()) {
-        userId_ = other.userId_;
-        bitField0_ |= 0x00000004;
-        onChanged();
-      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -448,21 +318,6 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            case 8: {
-              engineType_ = input.readEnum();
-              bitField0_ |= 0x00000001;
-              break;
-            } // case 8
-            case 16: {
-              orgId_ = input.readInt32();
-              bitField0_ |= 0x00000002;
-              break;
-            } // case 16
-            case 26: {
-              userId_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000004;
-              break;
-            } // case 26
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -476,164 +331,6 @@ private static final long serialVersionUID = 0L;
       } finally {
         onChanged();
       } // finally
-      return this;
-    }
-    private int bitField0_;
-
-    private int engineType_ = 0;
-    /**
-     * <code>.EngineType_e EngineType = 1;</code>
-     * @return The enum numeric value on the wire for engineType.
-     */
-    @java.lang.Override public int getEngineTypeValue() {
-      return engineType_;
-    }
-    /**
-     * <code>.EngineType_e EngineType = 1;</code>
-     * @param value The enum numeric value on the wire for engineType to set.
-     * @return This builder for chaining.
-     */
-    public Builder setEngineTypeValue(int value) {
-      engineType_ = value;
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.EngineType_e EngineType = 1;</code>
-     * @return The engineType.
-     */
-    @java.lang.Override
-    public com.erksystem.protobuf.api.EngineType_e getEngineType() {
-      com.erksystem.protobuf.api.EngineType_e result = com.erksystem.protobuf.api.EngineType_e.forNumber(engineType_);
-      return result == null ? com.erksystem.protobuf.api.EngineType_e.UNRECOGNIZED : result;
-    }
-    /**
-     * <code>.EngineType_e EngineType = 1;</code>
-     * @param value The engineType to set.
-     * @return This builder for chaining.
-     */
-    public Builder setEngineType(com.erksystem.protobuf.api.EngineType_e value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000001;
-      engineType_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.EngineType_e EngineType = 1;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearEngineType() {
-      bitField0_ = (bitField0_ & ~0x00000001);
-      engineType_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private int orgId_ ;
-    /**
-     * <code>int32 OrgId = 2;</code>
-     * @return The orgId.
-     */
-    @java.lang.Override
-    public int getOrgId() {
-      return orgId_;
-    }
-    /**
-     * <code>int32 OrgId = 2;</code>
-     * @param value The orgId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setOrgId(int value) {
-
-      orgId_ = value;
-      bitField0_ |= 0x00000002;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>int32 OrgId = 2;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearOrgId() {
-      bitField0_ = (bitField0_ & ~0x00000002);
-      orgId_ = 0;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object userId_ = "";
-    /**
-     * <code>string UserId = 3;</code>
-     * @return The userId.
-     */
-    public java.lang.String getUserId() {
-      java.lang.Object ref = userId_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        userId_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string UserId = 3;</code>
-     * @return The bytes for userId.
-     */
-    public com.google.protobuf.ByteString
-        getUserIdBytes() {
-      java.lang.Object ref = userId_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        userId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string UserId = 3;</code>
-     * @param value The userId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setUserId(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      userId_ = value;
-      bitField0_ |= 0x00000004;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string UserId = 3;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearUserId() {
-      userId_ = getDefaultInstance().getUserId();
-      bitField0_ = (bitField0_ & ~0x00000004);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string UserId = 3;</code>
-     * @param value The bytes for userId to set.
-     * @return This builder for chaining.
-     */
-    public Builder setUserIdBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      userId_ = value;
-      bitField0_ |= 0x00000004;
-      onChanged();
       return this;
     }
     @java.lang.Override

@@ -10,88 +10,88 @@ package com.erksystem.protobuf.api;
 public enum OrgProfileResult_e
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
-   * <code>Org_Profile_Unknown = 0;</code>
+   * <code>OrgProfileResult_unknown = 0;</code>
    */
-  Org_Profile_Unknown(0),
+  OrgProfileResult_unknown(0),
   /**
-   * <code>Org_Profile_Ok = 1;</code>
+   * <code>OrgProfileResult_ok = 1;</code>
    */
-  Org_Profile_Ok(1),
+  OrgProfileResult_ok(1),
   /**
-   * <code>Org_Profile_Nok_OrgName = 2;</code>
+   * <code>OrgProfileResult_nok_OrgName = 2;</code>
    */
-  Org_Profile_Nok_OrgName(2),
+  OrgProfileResult_nok_OrgName(2),
   /**
-   * <code>Org_Profile_Nok_OrgPwd = 3;</code>
+   * <code>OrgProfileResult_nok_OrgPwd = 3;</code>
    */
-  Org_Profile_Nok_OrgPwd(3),
+  OrgProfileResult_nok_OrgPwd(3),
   /**
-   * <code>Org_Profile_Nok_ServiceDuration = 4;</code>
+   * <code>OrgProfileResult_nok_ServiceDuration = 4;</code>
    */
-  Org_Profile_Nok_ServiceDuration(4),
+  OrgProfileResult_nok_ServiceDuration(4),
   /**
-   * <code>Org_Profile_Nok_UserNumber = 5;</code>
+   * <code>OrgProfileResult_nok_UserNumber = 5;</code>
    */
-  Org_Profile_Nok_UserNumber(5),
+  OrgProfileResult_nok_UserNumber(5),
   /**
-   * <code>Org_Profile_Nok_ServiceType = 6;</code>
+   * <code>OrgProfileResult_nok_ServiceType = 6;</code>
    */
-  Org_Profile_Nok_ServiceType(6),
+  OrgProfileResult_nok_ServiceType(6),
   /**
-   * <code>Org_Profile_Nok_DB = 7;</code>
+   * <code>OrgProfileResult_nok_DB = 7;</code>
    */
-  Org_Profile_Nok_DB(7),
+  OrgProfileResult_nok_DB(7),
   /**
-   * <code>Org_Profile_Nok_Reason1 = 8;</code>
+   * <code>OrgProfileResult_nok_reason1 = 8;</code>
    */
-  Org_Profile_Nok_Reason1(8),
+  OrgProfileResult_nok_reason1(8),
   /**
-   * <code>Org_Profile_Nok_Reason2 = 9;</code>
+   * <code>OrgProfileResult_nok_reason2 = 9;</code>
    */
-  Org_Profile_Nok_Reason2(9),
+  OrgProfileResult_nok_reason2(9),
   UNRECOGNIZED(-1),
   ;
 
   /**
-   * <code>Org_Profile_Unknown = 0;</code>
+   * <code>OrgProfileResult_unknown = 0;</code>
    */
-  public static final int Org_Profile_Unknown_VALUE = 0;
+  public static final int OrgProfileResult_unknown_VALUE = 0;
   /**
-   * <code>Org_Profile_Ok = 1;</code>
+   * <code>OrgProfileResult_ok = 1;</code>
    */
-  public static final int Org_Profile_Ok_VALUE = 1;
+  public static final int OrgProfileResult_ok_VALUE = 1;
   /**
-   * <code>Org_Profile_Nok_OrgName = 2;</code>
+   * <code>OrgProfileResult_nok_OrgName = 2;</code>
    */
-  public static final int Org_Profile_Nok_OrgName_VALUE = 2;
+  public static final int OrgProfileResult_nok_OrgName_VALUE = 2;
   /**
-   * <code>Org_Profile_Nok_OrgPwd = 3;</code>
+   * <code>OrgProfileResult_nok_OrgPwd = 3;</code>
    */
-  public static final int Org_Profile_Nok_OrgPwd_VALUE = 3;
+  public static final int OrgProfileResult_nok_OrgPwd_VALUE = 3;
   /**
-   * <code>Org_Profile_Nok_ServiceDuration = 4;</code>
+   * <code>OrgProfileResult_nok_ServiceDuration = 4;</code>
    */
-  public static final int Org_Profile_Nok_ServiceDuration_VALUE = 4;
+  public static final int OrgProfileResult_nok_ServiceDuration_VALUE = 4;
   /**
-   * <code>Org_Profile_Nok_UserNumber = 5;</code>
+   * <code>OrgProfileResult_nok_UserNumber = 5;</code>
    */
-  public static final int Org_Profile_Nok_UserNumber_VALUE = 5;
+  public static final int OrgProfileResult_nok_UserNumber_VALUE = 5;
   /**
-   * <code>Org_Profile_Nok_ServiceType = 6;</code>
+   * <code>OrgProfileResult_nok_ServiceType = 6;</code>
    */
-  public static final int Org_Profile_Nok_ServiceType_VALUE = 6;
+  public static final int OrgProfileResult_nok_ServiceType_VALUE = 6;
   /**
-   * <code>Org_Profile_Nok_DB = 7;</code>
+   * <code>OrgProfileResult_nok_DB = 7;</code>
    */
-  public static final int Org_Profile_Nok_DB_VALUE = 7;
+  public static final int OrgProfileResult_nok_DB_VALUE = 7;
   /**
-   * <code>Org_Profile_Nok_Reason1 = 8;</code>
+   * <code>OrgProfileResult_nok_reason1 = 8;</code>
    */
-  public static final int Org_Profile_Nok_Reason1_VALUE = 8;
+  public static final int OrgProfileResult_nok_reason1_VALUE = 8;
   /**
-   * <code>Org_Profile_Nok_Reason2 = 9;</code>
+   * <code>OrgProfileResult_nok_reason2 = 9;</code>
    */
-  public static final int Org_Profile_Nok_Reason2_VALUE = 9;
+  public static final int OrgProfileResult_nok_reason2_VALUE = 9;
 
 
   public final int getNumber() {
@@ -118,16 +118,16 @@ public enum OrgProfileResult_e
    */
   public static OrgProfileResult_e forNumber(int value) {
     switch (value) {
-      case 0: return Org_Profile_Unknown;
-      case 1: return Org_Profile_Ok;
-      case 2: return Org_Profile_Nok_OrgName;
-      case 3: return Org_Profile_Nok_OrgPwd;
-      case 4: return Org_Profile_Nok_ServiceDuration;
-      case 5: return Org_Profile_Nok_UserNumber;
-      case 6: return Org_Profile_Nok_ServiceType;
-      case 7: return Org_Profile_Nok_DB;
-      case 8: return Org_Profile_Nok_Reason1;
-      case 9: return Org_Profile_Nok_Reason2;
+      case 0: return OrgProfileResult_unknown;
+      case 1: return OrgProfileResult_ok;
+      case 2: return OrgProfileResult_nok_OrgName;
+      case 3: return OrgProfileResult_nok_OrgPwd;
+      case 4: return OrgProfileResult_nok_ServiceDuration;
+      case 5: return OrgProfileResult_nok_UserNumber;
+      case 6: return OrgProfileResult_nok_ServiceType;
+      case 7: return OrgProfileResult_nok_DB;
+      case 8: return OrgProfileResult_nok_reason1;
+      case 9: return OrgProfileResult_nok_reason2;
       default: return null;
     }
   }

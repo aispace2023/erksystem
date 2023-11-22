@@ -246,7 +246,7 @@ private static final long serialVersionUID = 0L;
     if (msgTime_ != 0L) {
       output.writeInt64(2, msgTime_);
     }
-    if (returnCode_ != com.erksystem.protobuf.api.ReturnCode_e.unknown.getNumber()) {
+    if (returnCode_ != com.erksystem.protobuf.api.ReturnCode_e.ReturnCode_unknown.getNumber()) {
       output.writeEnum(3, returnCode_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
@@ -281,7 +281,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(2, msgTime_);
     }
-    if (returnCode_ != com.erksystem.protobuf.api.ReturnCode_e.unknown.getNumber()) {
+    if (returnCode_ != com.erksystem.protobuf.api.ReturnCode_e.ReturnCode_unknown.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(3, returnCode_);
     }

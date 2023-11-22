@@ -30,13 +30,13 @@ private static final long serialVersionUID = 0L;
 
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.erksystem.protobuf.prov.ErkProvMsgOuterClass.internal_static_DelServiceProviderInfoRQ_m_descriptor;
+    return com.erksystem.protobuf.prov.ErkProvMsg.internal_static_DelServiceProviderInfoRQ_m_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.erksystem.protobuf.prov.ErkProvMsgOuterClass.internal_static_DelServiceProviderInfoRQ_m_fieldAccessorTable
+    return com.erksystem.protobuf.prov.ErkProvMsg.internal_static_DelServiceProviderInfoRQ_m_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.erksystem.protobuf.prov.DelServiceProviderInfoRQ_m.class, com.erksystem.protobuf.prov.DelServiceProviderInfoRQ_m.Builder.class);
   }
@@ -294,13 +294,13 @@ private static final long serialVersionUID = 0L;
       com.erksystem.protobuf.prov.DelServiceProviderInfoRQ_mOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.erksystem.protobuf.prov.ErkProvMsgOuterClass.internal_static_DelServiceProviderInfoRQ_m_descriptor;
+      return com.erksystem.protobuf.prov.ErkProvMsg.internal_static_DelServiceProviderInfoRQ_m_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.erksystem.protobuf.prov.ErkProvMsgOuterClass.internal_static_DelServiceProviderInfoRQ_m_fieldAccessorTable
+      return com.erksystem.protobuf.prov.ErkProvMsg.internal_static_DelServiceProviderInfoRQ_m_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.erksystem.protobuf.prov.DelServiceProviderInfoRQ_m.class, com.erksystem.protobuf.prov.DelServiceProviderInfoRQ_m.Builder.class);
     }
@@ -327,7 +327,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.erksystem.protobuf.prov.ErkProvMsgOuterClass.internal_static_DelServiceProviderInfoRQ_m_descriptor;
+      return com.erksystem.protobuf.prov.ErkProvMsg.internal_static_DelServiceProviderInfoRQ_m_descriptor;
     }
 
     @java.lang.Override

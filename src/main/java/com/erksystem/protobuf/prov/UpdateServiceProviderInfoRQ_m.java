@@ -35,13 +35,13 @@ private static final long serialVersionUID = 0L;
 
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.erksystem.protobuf.prov.ErkProvMsgOuterClass.internal_static_UpdateServiceProviderInfoRQ_m_descriptor;
+    return com.erksystem.protobuf.prov.ErkProvMsg.internal_static_UpdateServiceProviderInfoRQ_m_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.erksystem.protobuf.prov.ErkProvMsgOuterClass.internal_static_UpdateServiceProviderInfoRQ_m_fieldAccessorTable
+    return com.erksystem.protobuf.prov.ErkProvMsg.internal_static_UpdateServiceProviderInfoRQ_m_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.erksystem.protobuf.prov.UpdateServiceProviderInfoRQ_m.class, com.erksystem.protobuf.prov.UpdateServiceProviderInfoRQ_m.Builder.class);
   }
@@ -325,7 +325,7 @@ private static final long serialVersionUID = 0L;
     if (oldUserNumber_ != 0) {
       output.writeInt32(4, oldUserNumber_);
     }
-    if (oldServiceType_ != com.erksystem.protobuf.prov.ServiceType_e.Service_Unknown.getNumber()) {
+    if (oldServiceType_ != com.erksystem.protobuf.prov.ServiceType_e.ServiceType_unknown.getNumber()) {
       output.writeEnum(5, oldServiceType_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(newOrgPwd_)) {
@@ -337,7 +337,7 @@ private static final long serialVersionUID = 0L;
     if (newUserNumber_ != 0) {
       output.writeInt32(8, newUserNumber_);
     }
-    if (newServiceType_ != com.erksystem.protobuf.prov.ServiceType_e.Service_Unknown.getNumber()) {
+    if (newServiceType_ != com.erksystem.protobuf.prov.ServiceType_e.ServiceType_unknown.getNumber()) {
       output.writeEnum(9, newServiceType_);
     }
     getUnknownFields().writeTo(output);
@@ -362,7 +362,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(4, oldUserNumber_);
     }
-    if (oldServiceType_ != com.erksystem.protobuf.prov.ServiceType_e.Service_Unknown.getNumber()) {
+    if (oldServiceType_ != com.erksystem.protobuf.prov.ServiceType_e.ServiceType_unknown.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(5, oldServiceType_);
     }
@@ -376,7 +376,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(8, newUserNumber_);
     }
-    if (newServiceType_ != com.erksystem.protobuf.prov.ServiceType_e.Service_Unknown.getNumber()) {
+    if (newServiceType_ != com.erksystem.protobuf.prov.ServiceType_e.ServiceType_unknown.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(9, newServiceType_);
     }
@@ -546,13 +546,13 @@ private static final long serialVersionUID = 0L;
       com.erksystem.protobuf.prov.UpdateServiceProviderInfoRQ_mOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.erksystem.protobuf.prov.ErkProvMsgOuterClass.internal_static_UpdateServiceProviderInfoRQ_m_descriptor;
+      return com.erksystem.protobuf.prov.ErkProvMsg.internal_static_UpdateServiceProviderInfoRQ_m_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.erksystem.protobuf.prov.ErkProvMsgOuterClass.internal_static_UpdateServiceProviderInfoRQ_m_fieldAccessorTable
+      return com.erksystem.protobuf.prov.ErkProvMsg.internal_static_UpdateServiceProviderInfoRQ_m_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.erksystem.protobuf.prov.UpdateServiceProviderInfoRQ_m.class, com.erksystem.protobuf.prov.UpdateServiceProviderInfoRQ_m.Builder.class);
     }
@@ -586,7 +586,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.erksystem.protobuf.prov.ErkProvMsgOuterClass.internal_static_UpdateServiceProviderInfoRQ_m_descriptor;
+      return com.erksystem.protobuf.prov.ErkProvMsg.internal_static_UpdateServiceProviderInfoRQ_m_descriptor;
     }
 
     @java.lang.Override

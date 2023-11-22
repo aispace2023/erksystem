@@ -127,7 +127,7 @@ private static final long serialVersionUID = 0L;
     if (emoRecogTime_ != 0L) {
       output.writeInt64(2, emoRecogTime_);
     }
-    if (emotion_ != com.erksystem.protobuf.api.EmotionType_e.Emotion_Unknown.getNumber()) {
+    if (emotion_ != com.erksystem.protobuf.api.EmotionType_e.EmotionType_unknown.getNumber()) {
       output.writeEnum(3, emotion_);
     }
     if (java.lang.Float.floatToRawIntBits(accuracy_) != 0) {
@@ -150,7 +150,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeInt64Size(2, emoRecogTime_);
     }
-    if (emotion_ != com.erksystem.protobuf.api.EmotionType_e.Emotion_Unknown.getNumber()) {
+    if (emotion_ != com.erksystem.protobuf.api.EmotionType_e.EmotionType_unknown.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(3, emotion_);
     }

@@ -10,72 +10,72 @@ package com.erksystem.protobuf.prov;
 public enum EngineType_e
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
-   * <code>Engine_Unknown = 0;</code>
+   * <code>EngineType_unknown = 0;</code>
    */
-  Engine_Unknown(0),
+  EngineType_unknown(0),
   /**
-   * <code>Engine_Physiology = 1;</code>
+   * <code>EngineType_physiology = 1;</code>
    */
-  Engine_Physiology(1),
+  EngineType_physiology(1),
   /**
-   * <code>Engine_Speech = 2;</code>
+   * <code>EngineType_speech = 2;</code>
    */
-  Engine_Speech(2),
+  EngineType_speech(2),
   /**
-   * <code>Engine_Face = 3;</code>
+   * <code>EngineType_face = 3;</code>
    */
-  Engine_Face(3),
+  EngineType_face(3),
   /**
-   * <code>Engine_EmoRecogAll = 4;</code>
+   * <code>EngineType_emo_recog_all = 4;</code>
    */
-  Engine_EmoRecogAll(4),
+  EngineType_emo_recog_all(4),
   /**
-   * <code>Engine_Knowledge = 5;</code>
+   * <code>EngineType_knowledge = 5;</code>
    */
-  Engine_Knowledge(5),
+  EngineType_knowledge(5),
   /**
-   * <code>Engine_Reserved1 = 6;</code>
+   * <code>EngineType_reserved1 = 6;</code>
    */
-  Engine_Reserved1(6),
+  EngineType_reserved1(6),
   /**
-   * <code>Engine_Reserved2 = 7;</code>
+   * <code>EngineType_reserved2 = 7;</code>
    */
-  Engine_Reserved2(7),
+  EngineType_reserved2(7),
   UNRECOGNIZED(-1),
   ;
 
   /**
-   * <code>Engine_Unknown = 0;</code>
+   * <code>EngineType_unknown = 0;</code>
    */
-  public static final int Engine_Unknown_VALUE = 0;
+  public static final int EngineType_unknown_VALUE = 0;
   /**
-   * <code>Engine_Physiology = 1;</code>
+   * <code>EngineType_physiology = 1;</code>
    */
-  public static final int Engine_Physiology_VALUE = 1;
+  public static final int EngineType_physiology_VALUE = 1;
   /**
-   * <code>Engine_Speech = 2;</code>
+   * <code>EngineType_speech = 2;</code>
    */
-  public static final int Engine_Speech_VALUE = 2;
+  public static final int EngineType_speech_VALUE = 2;
   /**
-   * <code>Engine_Face = 3;</code>
+   * <code>EngineType_face = 3;</code>
    */
-  public static final int Engine_Face_VALUE = 3;
+  public static final int EngineType_face_VALUE = 3;
   /**
-   * <code>Engine_EmoRecogAll = 4;</code>
+   * <code>EngineType_emo_recog_all = 4;</code>
    */
-  public static final int Engine_EmoRecogAll_VALUE = 4;
+  public static final int EngineType_emo_recog_all_VALUE = 4;
   /**
-   * <code>Engine_Knowledge = 5;</code>
+   * <code>EngineType_knowledge = 5;</code>
    */
-  public static final int Engine_Knowledge_VALUE = 5;
+  public static final int EngineType_knowledge_VALUE = 5;
   /**
-   * <code>Engine_Reserved1 = 6;</code>
+   * <code>EngineType_reserved1 = 6;</code>
    */
-  public static final int Engine_Reserved1_VALUE = 6;
+  public static final int EngineType_reserved1_VALUE = 6;
   /**
-   * <code>Engine_Reserved2 = 7;</code>
+   * <code>EngineType_reserved2 = 7;</code>
    */
-  public static final int Engine_Reserved2_VALUE = 7;
+  public static final int EngineType_reserved2_VALUE = 7;
 
 
   public final int getNumber() {
@@ -102,14 +102,14 @@ public enum EngineType_e
    */
   public static EngineType_e forNumber(int value) {
     switch (value) {
-      case 0: return Engine_Unknown;
-      case 1: return Engine_Physiology;
-      case 2: return Engine_Speech;
-      case 3: return Engine_Face;
-      case 4: return Engine_EmoRecogAll;
-      case 5: return Engine_Knowledge;
-      case 6: return Engine_Reserved1;
-      case 7: return Engine_Reserved2;
+      case 0: return EngineType_unknown;
+      case 1: return EngineType_physiology;
+      case 2: return EngineType_speech;
+      case 3: return EngineType_face;
+      case 4: return EngineType_emo_recog_all;
+      case 5: return EngineType_knowledge;
+      case 6: return EngineType_reserved1;
+      case 7: return EngineType_reserved2;
       default: return null;
     }
   }
@@ -140,7 +140,7 @@ public enum EngineType_e
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.erksystem.protobuf.prov.ErkProvMsgOuterClass.getDescriptor().getEnumTypes().get(2);
+    return com.erksystem.protobuf.prov.ErkProvMsg.getDescriptor().getEnumTypes().get(2);
   }
 
   private static final EngineType_e[] VALUES = values();

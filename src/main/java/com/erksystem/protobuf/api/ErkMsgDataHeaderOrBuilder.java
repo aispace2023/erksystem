@@ -7,33 +7,4 @@ package com.erksystem.protobuf.api;
 public interface ErkMsgDataHeaderOrBuilder extends
     // @@protoc_insertion_point(interface_extends:ErkMsgDataHeader)
     com.google.protobuf.MessageOrBuilder {
-
-  /**
-   * <code>.EngineType_e EngineType = 1;</code>
-   * @return The enum numeric value on the wire for engineType.
-   */
-  int getEngineTypeValue();
-  /**
-   * <code>.EngineType_e EngineType = 1;</code>
-   * @return The engineType.
-   */
-  com.erksystem.protobuf.api.EngineType_e getEngineType();
-
-  /**
-   * <code>int32 OrgId = 2;</code>
-   * @return The orgId.
-   */
-  int getOrgId();
-
-  /**
-   * <code>string UserId = 3;</code>
-   * @return The userId.
-   */
-  java.lang.String getUserId();
-  /**
-   * <code>string UserId = 3;</code>
-   * @return The bytes for userId.
-   */
-  com.google.protobuf.ByteString
-      getUserIdBytes();
 }

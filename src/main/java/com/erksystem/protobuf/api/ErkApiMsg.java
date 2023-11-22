@@ -117,29 +117,29 @@ private static final long serialVersionUID = 0L;
 
   public static final int ERKSERVICECONNRQ_FIELD_NUMBER = 1;
   /**
-   * <code>.ErkServiceConnRQ_m erkServiceConnRq = 1;</code>
-   * @return Whether the erkServiceConnRq field is set.
+   * <code>.ErkServiceConnRQ_m ErkServiceConnRQ = 1;</code>
+   * @return Whether the erkServiceConnRQ field is set.
    */
   @java.lang.Override
-  public boolean hasErkServiceConnRq() {
+  public boolean hasErkServiceConnRQ() {
     return msgCase_ == 1;
   }
   /**
-   * <code>.ErkServiceConnRQ_m erkServiceConnRq = 1;</code>
-   * @return The erkServiceConnRq.
+   * <code>.ErkServiceConnRQ_m ErkServiceConnRQ = 1;</code>
+   * @return The erkServiceConnRQ.
    */
   @java.lang.Override
-  public com.erksystem.protobuf.api.ErkServiceConnRQ_m getErkServiceConnRq() {
+  public com.erksystem.protobuf.api.ErkServiceConnRQ_m getErkServiceConnRQ() {
     if (msgCase_ == 1) {
        return (com.erksystem.protobuf.api.ErkServiceConnRQ_m) msg_;
     }
     return com.erksystem.protobuf.api.ErkServiceConnRQ_m.getDefaultInstance();
   }
   /**
-   * <code>.ErkServiceConnRQ_m erkServiceConnRq = 1;</code>
+   * <code>.ErkServiceConnRQ_m ErkServiceConnRQ = 1;</code>
    */
   @java.lang.Override
-  public com.erksystem.protobuf.api.ErkServiceConnRQ_mOrBuilder getErkServiceConnRqOrBuilder() {
+  public com.erksystem.protobuf.api.ErkServiceConnRQ_mOrBuilder getErkServiceConnRQOrBuilder() {
     if (msgCase_ == 1) {
        return (com.erksystem.protobuf.api.ErkServiceConnRQ_m) msg_;
     }
@@ -148,29 +148,29 @@ private static final long serialVersionUID = 0L;
 
   public static final int ERKSERVICECONNRP_FIELD_NUMBER = 2;
   /**
-   * <code>.ErkServiceConnRP_m erkServiceConnRp = 2;</code>
-   * @return Whether the erkServiceConnRp field is set.
+   * <code>.ErkServiceConnRP_m ErkServiceConnRP = 2;</code>
+   * @return Whether the erkServiceConnRP field is set.
    */
   @java.lang.Override
-  public boolean hasErkServiceConnRp() {
+  public boolean hasErkServiceConnRP() {
     return msgCase_ == 2;
   }
   /**
-   * <code>.ErkServiceConnRP_m erkServiceConnRp = 2;</code>
-   * @return The erkServiceConnRp.
+   * <code>.ErkServiceConnRP_m ErkServiceConnRP = 2;</code>
+   * @return The erkServiceConnRP.
    */
   @java.lang.Override
-  public com.erksystem.protobuf.api.ErkServiceConnRP_m getErkServiceConnRp() {
+  public com.erksystem.protobuf.api.ErkServiceConnRP_m getErkServiceConnRP() {
     if (msgCase_ == 2) {
        return (com.erksystem.protobuf.api.ErkServiceConnRP_m) msg_;
     }
     return com.erksystem.protobuf.api.ErkServiceConnRP_m.getDefaultInstance();
   }
   /**
-   * <code>.ErkServiceConnRP_m erkServiceConnRp = 2;</code>
+   * <code>.ErkServiceConnRP_m ErkServiceConnRP = 2;</code>
    */
   @java.lang.Override
-  public com.erksystem.protobuf.api.ErkServiceConnRP_mOrBuilder getErkServiceConnRpOrBuilder() {
+  public com.erksystem.protobuf.api.ErkServiceConnRP_mOrBuilder getErkServiceConnRPOrBuilder() {
     if (msgCase_ == 2) {
        return (com.erksystem.protobuf.api.ErkServiceConnRP_m) msg_;
     }
@@ -179,29 +179,29 @@ private static final long serialVersionUID = 0L;
 
   public static final int ERKSERVICEDISCONNRQ_FIELD_NUMBER = 3;
   /**
-   * <code>.ErkServiceDisConnRQ_m erkServiceDisConnRq = 3;</code>
-   * @return Whether the erkServiceDisConnRq field is set.
+   * <code>.ErkServiceDisConnRQ_m ErkServiceDisConnRQ = 3;</code>
+   * @return Whether the erkServiceDisConnRQ field is set.
    */
   @java.lang.Override
-  public boolean hasErkServiceDisConnRq() {
+  public boolean hasErkServiceDisConnRQ() {
     return msgCase_ == 3;
   }
   /**
-   * <code>.ErkServiceDisConnRQ_m erkServiceDisConnRq = 3;</code>
-   * @return The erkServiceDisConnRq.
+   * <code>.ErkServiceDisConnRQ_m ErkServiceDisConnRQ = 3;</code>
+   * @return The erkServiceDisConnRQ.
    */
   @java.lang.Override
-  public com.erksystem.protobuf.api.ErkServiceDisConnRQ_m getErkServiceDisConnRq() {
+  public com.erksystem.protobuf.api.ErkServiceDisConnRQ_m getErkServiceDisConnRQ() {
     if (msgCase_ == 3) {
        return (com.erksystem.protobuf.api.ErkServiceDisConnRQ_m) msg_;
     }
     return com.erksystem.protobuf.api.ErkServiceDisConnRQ_m.getDefaultInstance();
   }
   /**
-   * <code>.ErkServiceDisConnRQ_m erkServiceDisConnRq = 3;</code>
+   * <code>.ErkServiceDisConnRQ_m ErkServiceDisConnRQ = 3;</code>
    */
   @java.lang.Override
-  public com.erksystem.protobuf.api.ErkServiceDisConnRQ_mOrBuilder getErkServiceDisConnRqOrBuilder() {
+  public com.erksystem.protobuf.api.ErkServiceDisConnRQ_mOrBuilder getErkServiceDisConnRQOrBuilder() {
     if (msgCase_ == 3) {
        return (com.erksystem.protobuf.api.ErkServiceDisConnRQ_m) msg_;
     }
@@ -210,29 +210,29 @@ private static final long serialVersionUID = 0L;
 
   public static final int ERKSERVICEDISCONNRP_FIELD_NUMBER = 4;
   /**
-   * <code>.ErkServiceDisConnRP_m erkServiceDisConnRp = 4;</code>
-   * @return Whether the erkServiceDisConnRp field is set.
+   * <code>.ErkServiceDisConnRP_m ErkServiceDisConnRP = 4;</code>
+   * @return Whether the erkServiceDisConnRP field is set.
    */
   @java.lang.Override
-  public boolean hasErkServiceDisConnRp() {
+  public boolean hasErkServiceDisConnRP() {
     return msgCase_ == 4;
   }
   /**
-   * <code>.ErkServiceDisConnRP_m erkServiceDisConnRp = 4;</code>
-   * @return The erkServiceDisConnRp.
+   * <code>.ErkServiceDisConnRP_m ErkServiceDisConnRP = 4;</code>
+   * @return The erkServiceDisConnRP.
    */
   @java.lang.Override
-  public com.erksystem.protobuf.api.ErkServiceDisConnRP_m getErkServiceDisConnRp() {
+  public com.erksystem.protobuf.api.ErkServiceDisConnRP_m getErkServiceDisConnRP() {
     if (msgCase_ == 4) {
        return (com.erksystem.protobuf.api.ErkServiceDisConnRP_m) msg_;
     }
     return com.erksystem.protobuf.api.ErkServiceDisConnRP_m.getDefaultInstance();
   }
   /**
-   * <code>.ErkServiceDisConnRP_m erkServiceDisConnRp = 4;</code>
+   * <code>.ErkServiceDisConnRP_m ErkServiceDisConnRP = 4;</code>
    */
   @java.lang.Override
-  public com.erksystem.protobuf.api.ErkServiceDisConnRP_mOrBuilder getErkServiceDisConnRpOrBuilder() {
+  public com.erksystem.protobuf.api.ErkServiceDisConnRP_mOrBuilder getErkServiceDisConnRPOrBuilder() {
     if (msgCase_ == 4) {
        return (com.erksystem.protobuf.api.ErkServiceDisConnRP_m) msg_;
     }
@@ -241,29 +241,29 @@ private static final long serialVersionUID = 0L;
 
   public static final int EMORECOGCREATERQ_FIELD_NUMBER = 5;
   /**
-   * <code>.EmoRecogCreateRQ_m emoRecogCreateRq = 5;</code>
-   * @return Whether the emoRecogCreateRq field is set.
+   * <code>.EmoRecogCreateRQ_m EmoRecogCreateRQ = 5;</code>
+   * @return Whether the emoRecogCreateRQ field is set.
    */
   @java.lang.Override
-  public boolean hasEmoRecogCreateRq() {
+  public boolean hasEmoRecogCreateRQ() {
     return msgCase_ == 5;
   }
   /**
-   * <code>.EmoRecogCreateRQ_m emoRecogCreateRq = 5;</code>
-   * @return The emoRecogCreateRq.
+   * <code>.EmoRecogCreateRQ_m EmoRecogCreateRQ = 5;</code>
+   * @return The emoRecogCreateRQ.
    */
   @java.lang.Override
-  public com.erksystem.protobuf.api.EmoRecogCreateRQ_m getEmoRecogCreateRq() {
+  public com.erksystem.protobuf.api.EmoRecogCreateRQ_m getEmoRecogCreateRQ() {
     if (msgCase_ == 5) {
        return (com.erksystem.protobuf.api.EmoRecogCreateRQ_m) msg_;
     }
     return com.erksystem.protobuf.api.EmoRecogCreateRQ_m.getDefaultInstance();
   }
   /**
-   * <code>.EmoRecogCreateRQ_m emoRecogCreateRq = 5;</code>
+   * <code>.EmoRecogCreateRQ_m EmoRecogCreateRQ = 5;</code>
    */
   @java.lang.Override
-  public com.erksystem.protobuf.api.EmoRecogCreateRQ_mOrBuilder getEmoRecogCreateRqOrBuilder() {
+  public com.erksystem.protobuf.api.EmoRecogCreateRQ_mOrBuilder getEmoRecogCreateRQOrBuilder() {
     if (msgCase_ == 5) {
        return (com.erksystem.protobuf.api.EmoRecogCreateRQ_m) msg_;
     }
@@ -272,29 +272,29 @@ private static final long serialVersionUID = 0L;
 
   public static final int EMORECOGCREATERP_FIELD_NUMBER = 6;
   /**
-   * <code>.EmoRecogCreateRP_m emoRecogCreateRp = 6;</code>
-   * @return Whether the emoRecogCreateRp field is set.
+   * <code>.EmoRecogCreateRP_m EmoRecogCreateRP = 6;</code>
+   * @return Whether the emoRecogCreateRP field is set.
    */
   @java.lang.Override
-  public boolean hasEmoRecogCreateRp() {
+  public boolean hasEmoRecogCreateRP() {
     return msgCase_ == 6;
   }
   /**
-   * <code>.EmoRecogCreateRP_m emoRecogCreateRp = 6;</code>
-   * @return The emoRecogCreateRp.
+   * <code>.EmoRecogCreateRP_m EmoRecogCreateRP = 6;</code>
+   * @return The emoRecogCreateRP.
    */
   @java.lang.Override
-  public com.erksystem.protobuf.api.EmoRecogCreateRP_m getEmoRecogCreateRp() {
+  public com.erksystem.protobuf.api.EmoRecogCreateRP_m getEmoRecogCreateRP() {
     if (msgCase_ == 6) {
        return (com.erksystem.protobuf.api.EmoRecogCreateRP_m) msg_;
     }
     return com.erksystem.protobuf.api.EmoRecogCreateRP_m.getDefaultInstance();
   }
   /**
-   * <code>.EmoRecogCreateRP_m emoRecogCreateRp = 6;</code>
+   * <code>.EmoRecogCreateRP_m EmoRecogCreateRP = 6;</code>
    */
   @java.lang.Override
-  public com.erksystem.protobuf.api.EmoRecogCreateRP_mOrBuilder getEmoRecogCreateRpOrBuilder() {
+  public com.erksystem.protobuf.api.EmoRecogCreateRP_mOrBuilder getEmoRecogCreateRPOrBuilder() {
     if (msgCase_ == 6) {
        return (com.erksystem.protobuf.api.EmoRecogCreateRP_m) msg_;
     }
@@ -303,29 +303,29 @@ private static final long serialVersionUID = 0L;
 
   public static final int EMORECOGDELETERQ_FIELD_NUMBER = 7;
   /**
-   * <code>.EmoRecogDeleteRQ_m emoRecogDeleteRq = 7;</code>
-   * @return Whether the emoRecogDeleteRq field is set.
+   * <code>.EmoRecogDeleteRQ_m EmoRecogDeleteRQ = 7;</code>
+   * @return Whether the emoRecogDeleteRQ field is set.
    */
   @java.lang.Override
-  public boolean hasEmoRecogDeleteRq() {
+  public boolean hasEmoRecogDeleteRQ() {
     return msgCase_ == 7;
   }
   /**
-   * <code>.EmoRecogDeleteRQ_m emoRecogDeleteRq = 7;</code>
-   * @return The emoRecogDeleteRq.
+   * <code>.EmoRecogDeleteRQ_m EmoRecogDeleteRQ = 7;</code>
+   * @return The emoRecogDeleteRQ.
    */
   @java.lang.Override
-  public com.erksystem.protobuf.api.EmoRecogDeleteRQ_m getEmoRecogDeleteRq() {
+  public com.erksystem.protobuf.api.EmoRecogDeleteRQ_m getEmoRecogDeleteRQ() {
     if (msgCase_ == 7) {
        return (com.erksystem.protobuf.api.EmoRecogDeleteRQ_m) msg_;
     }
     return com.erksystem.protobuf.api.EmoRecogDeleteRQ_m.getDefaultInstance();
   }
   /**
-   * <code>.EmoRecogDeleteRQ_m emoRecogDeleteRq = 7;</code>
+   * <code>.EmoRecogDeleteRQ_m EmoRecogDeleteRQ = 7;</code>
    */
   @java.lang.Override
-  public com.erksystem.protobuf.api.EmoRecogDeleteRQ_mOrBuilder getEmoRecogDeleteRqOrBuilder() {
+  public com.erksystem.protobuf.api.EmoRecogDeleteRQ_mOrBuilder getEmoRecogDeleteRQOrBuilder() {
     if (msgCase_ == 7) {
        return (com.erksystem.protobuf.api.EmoRecogDeleteRQ_m) msg_;
     }
@@ -334,29 +334,29 @@ private static final long serialVersionUID = 0L;
 
   public static final int EMORECOGDELETERP_FIELD_NUMBER = 8;
   /**
-   * <code>.EmoRecogDeleteRP_m emoRecogDeleteRp = 8;</code>
-   * @return Whether the emoRecogDeleteRp field is set.
+   * <code>.EmoRecogDeleteRP_m EmoRecogDeleteRP = 8;</code>
+   * @return Whether the emoRecogDeleteRP field is set.
    */
   @java.lang.Override
-  public boolean hasEmoRecogDeleteRp() {
+  public boolean hasEmoRecogDeleteRP() {
     return msgCase_ == 8;
   }
   /**
-   * <code>.EmoRecogDeleteRP_m emoRecogDeleteRp = 8;</code>
-   * @return The emoRecogDeleteRp.
+   * <code>.EmoRecogDeleteRP_m EmoRecogDeleteRP = 8;</code>
+   * @return The emoRecogDeleteRP.
    */
   @java.lang.Override
-  public com.erksystem.protobuf.api.EmoRecogDeleteRP_m getEmoRecogDeleteRp() {
+  public com.erksystem.protobuf.api.EmoRecogDeleteRP_m getEmoRecogDeleteRP() {
     if (msgCase_ == 8) {
        return (com.erksystem.protobuf.api.EmoRecogDeleteRP_m) msg_;
     }
     return com.erksystem.protobuf.api.EmoRecogDeleteRP_m.getDefaultInstance();
   }
   /**
-   * <code>.EmoRecogDeleteRP_m emoRecogDeleteRp = 8;</code>
+   * <code>.EmoRecogDeleteRP_m EmoRecogDeleteRP = 8;</code>
    */
   @java.lang.Override
-  public com.erksystem.protobuf.api.EmoRecogDeleteRP_mOrBuilder getEmoRecogDeleteRpOrBuilder() {
+  public com.erksystem.protobuf.api.EmoRecogDeleteRP_mOrBuilder getEmoRecogDeleteRPOrBuilder() {
     if (msgCase_ == 8) {
        return (com.erksystem.protobuf.api.EmoRecogDeleteRP_m) msg_;
     }
@@ -427,29 +427,29 @@ private static final long serialVersionUID = 0L;
 
   public static final int EMORECOGRQ_FIELD_NUMBER = 11;
   /**
-   * <code>.EmoRecogRQ_m emoRecogRq = 11;</code>
-   * @return Whether the emoRecogRq field is set.
+   * <code>.EmoRecogRQ_m EmoRecogRQ = 11;</code>
+   * @return Whether the emoRecogRQ field is set.
    */
   @java.lang.Override
-  public boolean hasEmoRecogRq() {
+  public boolean hasEmoRecogRQ() {
     return msgCase_ == 11;
   }
   /**
-   * <code>.EmoRecogRQ_m emoRecogRq = 11;</code>
-   * @return The emoRecogRq.
+   * <code>.EmoRecogRQ_m EmoRecogRQ = 11;</code>
+   * @return The emoRecogRQ.
    */
   @java.lang.Override
-  public com.erksystem.protobuf.api.EmoRecogRQ_m getEmoRecogRq() {
+  public com.erksystem.protobuf.api.EmoRecogRQ_m getEmoRecogRQ() {
     if (msgCase_ == 11) {
        return (com.erksystem.protobuf.api.EmoRecogRQ_m) msg_;
     }
     return com.erksystem.protobuf.api.EmoRecogRQ_m.getDefaultInstance();
   }
   /**
-   * <code>.EmoRecogRQ_m emoRecogRq = 11;</code>
+   * <code>.EmoRecogRQ_m EmoRecogRQ = 11;</code>
    */
   @java.lang.Override
-  public com.erksystem.protobuf.api.EmoRecogRQ_mOrBuilder getEmoRecogRqOrBuilder() {
+  public com.erksystem.protobuf.api.EmoRecogRQ_mOrBuilder getEmoRecogRQOrBuilder() {
     if (msgCase_ == 11) {
        return (com.erksystem.protobuf.api.EmoRecogRQ_m) msg_;
     }
@@ -458,29 +458,29 @@ private static final long serialVersionUID = 0L;
 
   public static final int EMORECOGRP_FIELD_NUMBER = 12;
   /**
-   * <code>.EmoRecogRP_m emoRecogRp = 12;</code>
-   * @return Whether the emoRecogRp field is set.
+   * <code>.EmoRecogRP_m EmoRecogRP = 12;</code>
+   * @return Whether the emoRecogRP field is set.
    */
   @java.lang.Override
-  public boolean hasEmoRecogRp() {
+  public boolean hasEmoRecogRP() {
     return msgCase_ == 12;
   }
   /**
-   * <code>.EmoRecogRP_m emoRecogRp = 12;</code>
-   * @return The emoRecogRp.
+   * <code>.EmoRecogRP_m EmoRecogRP = 12;</code>
+   * @return The emoRecogRP.
    */
   @java.lang.Override
-  public com.erksystem.protobuf.api.EmoRecogRP_m getEmoRecogRp() {
+  public com.erksystem.protobuf.api.EmoRecogRP_m getEmoRecogRP() {
     if (msgCase_ == 12) {
        return (com.erksystem.protobuf.api.EmoRecogRP_m) msg_;
     }
     return com.erksystem.protobuf.api.EmoRecogRP_m.getDefaultInstance();
   }
   /**
-   * <code>.EmoRecogRP_m emoRecogRp = 12;</code>
+   * <code>.EmoRecogRP_m EmoRecogRP = 12;</code>
    */
   @java.lang.Override
-  public com.erksystem.protobuf.api.EmoRecogRP_mOrBuilder getEmoRecogRpOrBuilder() {
+  public com.erksystem.protobuf.api.EmoRecogRP_mOrBuilder getEmoRecogRPOrBuilder() {
     if (msgCase_ == 12) {
        return (com.erksystem.protobuf.api.EmoRecogRP_m) msg_;
     }
@@ -489,29 +489,29 @@ private static final long serialVersionUID = 0L;
 
   public static final int PHYSIOEMORECOGRQ_FIELD_NUMBER = 13;
   /**
-   * <code>.PhysioEmoRecogRQ_m physioEmoRecogRq = 13;</code>
-   * @return Whether the physioEmoRecogRq field is set.
+   * <code>.PhysioEmoRecogRQ_m PhysioEmoRecogRQ = 13;</code>
+   * @return Whether the physioEmoRecogRQ field is set.
    */
   @java.lang.Override
-  public boolean hasPhysioEmoRecogRq() {
+  public boolean hasPhysioEmoRecogRQ() {
     return msgCase_ == 13;
   }
   /**
-   * <code>.PhysioEmoRecogRQ_m physioEmoRecogRq = 13;</code>
-   * @return The physioEmoRecogRq.
+   * <code>.PhysioEmoRecogRQ_m PhysioEmoRecogRQ = 13;</code>
+   * @return The physioEmoRecogRQ.
    */
   @java.lang.Override
-  public com.erksystem.protobuf.api.PhysioEmoRecogRQ_m getPhysioEmoRecogRq() {
+  public com.erksystem.protobuf.api.PhysioEmoRecogRQ_m getPhysioEmoRecogRQ() {
     if (msgCase_ == 13) {
        return (com.erksystem.protobuf.api.PhysioEmoRecogRQ_m) msg_;
     }
     return com.erksystem.protobuf.api.PhysioEmoRecogRQ_m.getDefaultInstance();
   }
   /**
-   * <code>.PhysioEmoRecogRQ_m physioEmoRecogRq = 13;</code>
+   * <code>.PhysioEmoRecogRQ_m PhysioEmoRecogRQ = 13;</code>
    */
   @java.lang.Override
-  public com.erksystem.protobuf.api.PhysioEmoRecogRQ_mOrBuilder getPhysioEmoRecogRqOrBuilder() {
+  public com.erksystem.protobuf.api.PhysioEmoRecogRQ_mOrBuilder getPhysioEmoRecogRQOrBuilder() {
     if (msgCase_ == 13) {
        return (com.erksystem.protobuf.api.PhysioEmoRecogRQ_m) msg_;
     }
@@ -520,29 +520,29 @@ private static final long serialVersionUID = 0L;
 
   public static final int PHYSIOEMORECOGRP_FIELD_NUMBER = 14;
   /**
-   * <code>.PhysioEmoRecogRP_m physioEmoRecogRp = 14;</code>
-   * @return Whether the physioEmoRecogRp field is set.
+   * <code>.PhysioEmoRecogRP_m PhysioEmoRecogRP = 14;</code>
+   * @return Whether the physioEmoRecogRP field is set.
    */
   @java.lang.Override
-  public boolean hasPhysioEmoRecogRp() {
+  public boolean hasPhysioEmoRecogRP() {
     return msgCase_ == 14;
   }
   /**
-   * <code>.PhysioEmoRecogRP_m physioEmoRecogRp = 14;</code>
-   * @return The physioEmoRecogRp.
+   * <code>.PhysioEmoRecogRP_m PhysioEmoRecogRP = 14;</code>
+   * @return The physioEmoRecogRP.
    */
   @java.lang.Override
-  public com.erksystem.protobuf.api.PhysioEmoRecogRP_m getPhysioEmoRecogRp() {
+  public com.erksystem.protobuf.api.PhysioEmoRecogRP_m getPhysioEmoRecogRP() {
     if (msgCase_ == 14) {
        return (com.erksystem.protobuf.api.PhysioEmoRecogRP_m) msg_;
     }
     return com.erksystem.protobuf.api.PhysioEmoRecogRP_m.getDefaultInstance();
   }
   /**
-   * <code>.PhysioEmoRecogRP_m physioEmoRecogRp = 14;</code>
+   * <code>.PhysioEmoRecogRP_m PhysioEmoRecogRP = 14;</code>
    */
   @java.lang.Override
-  public com.erksystem.protobuf.api.PhysioEmoRecogRP_mOrBuilder getPhysioEmoRecogRpOrBuilder() {
+  public com.erksystem.protobuf.api.PhysioEmoRecogRP_mOrBuilder getPhysioEmoRecogRPOrBuilder() {
     if (msgCase_ == 14) {
        return (com.erksystem.protobuf.api.PhysioEmoRecogRP_m) msg_;
     }
@@ -551,29 +551,29 @@ private static final long serialVersionUID = 0L;
 
   public static final int SPEECHEMORECOGRQ_FIELD_NUMBER = 15;
   /**
-   * <code>.SpeechEmoRecogRQ_m speechEmoRecogRq = 15;</code>
-   * @return Whether the speechEmoRecogRq field is set.
+   * <code>.SpeechEmoRecogRQ_m SpeechEmoRecogRQ = 15;</code>
+   * @return Whether the speechEmoRecogRQ field is set.
    */
   @java.lang.Override
-  public boolean hasSpeechEmoRecogRq() {
+  public boolean hasSpeechEmoRecogRQ() {
     return msgCase_ == 15;
   }
   /**
-   * <code>.SpeechEmoRecogRQ_m speechEmoRecogRq = 15;</code>
-   * @return The speechEmoRecogRq.
+   * <code>.SpeechEmoRecogRQ_m SpeechEmoRecogRQ = 15;</code>
+   * @return The speechEmoRecogRQ.
    */
   @java.lang.Override
-  public com.erksystem.protobuf.api.SpeechEmoRecogRQ_m getSpeechEmoRecogRq() {
+  public com.erksystem.protobuf.api.SpeechEmoRecogRQ_m getSpeechEmoRecogRQ() {
     if (msgCase_ == 15) {
        return (com.erksystem.protobuf.api.SpeechEmoRecogRQ_m) msg_;
     }
     return com.erksystem.protobuf.api.SpeechEmoRecogRQ_m.getDefaultInstance();
   }
   /**
-   * <code>.SpeechEmoRecogRQ_m speechEmoRecogRq = 15;</code>
+   * <code>.SpeechEmoRecogRQ_m SpeechEmoRecogRQ = 15;</code>
    */
   @java.lang.Override
-  public com.erksystem.protobuf.api.SpeechEmoRecogRQ_mOrBuilder getSpeechEmoRecogRqOrBuilder() {
+  public com.erksystem.protobuf.api.SpeechEmoRecogRQ_mOrBuilder getSpeechEmoRecogRQOrBuilder() {
     if (msgCase_ == 15) {
        return (com.erksystem.protobuf.api.SpeechEmoRecogRQ_m) msg_;
     }
@@ -582,29 +582,29 @@ private static final long serialVersionUID = 0L;
 
   public static final int SPEECHEMORECOGRP_FIELD_NUMBER = 16;
   /**
-   * <code>.SpeechEmoRecogRP_m speechEmoRecogRp = 16;</code>
-   * @return Whether the speechEmoRecogRp field is set.
+   * <code>.SpeechEmoRecogRP_m SpeechEmoRecogRP = 16;</code>
+   * @return Whether the speechEmoRecogRP field is set.
    */
   @java.lang.Override
-  public boolean hasSpeechEmoRecogRp() {
+  public boolean hasSpeechEmoRecogRP() {
     return msgCase_ == 16;
   }
   /**
-   * <code>.SpeechEmoRecogRP_m speechEmoRecogRp = 16;</code>
-   * @return The speechEmoRecogRp.
+   * <code>.SpeechEmoRecogRP_m SpeechEmoRecogRP = 16;</code>
+   * @return The speechEmoRecogRP.
    */
   @java.lang.Override
-  public com.erksystem.protobuf.api.SpeechEmoRecogRP_m getSpeechEmoRecogRp() {
+  public com.erksystem.protobuf.api.SpeechEmoRecogRP_m getSpeechEmoRecogRP() {
     if (msgCase_ == 16) {
        return (com.erksystem.protobuf.api.SpeechEmoRecogRP_m) msg_;
     }
     return com.erksystem.protobuf.api.SpeechEmoRecogRP_m.getDefaultInstance();
   }
   /**
-   * <code>.SpeechEmoRecogRP_m speechEmoRecogRp = 16;</code>
+   * <code>.SpeechEmoRecogRP_m SpeechEmoRecogRP = 16;</code>
    */
   @java.lang.Override
-  public com.erksystem.protobuf.api.SpeechEmoRecogRP_mOrBuilder getSpeechEmoRecogRpOrBuilder() {
+  public com.erksystem.protobuf.api.SpeechEmoRecogRP_mOrBuilder getSpeechEmoRecogRPOrBuilder() {
     if (msgCase_ == 16) {
        return (com.erksystem.protobuf.api.SpeechEmoRecogRP_m) msg_;
     }
@@ -613,29 +613,29 @@ private static final long serialVersionUID = 0L;
 
   public static final int FACEEMORECOGRQ_FIELD_NUMBER = 17;
   /**
-   * <code>.FaceEmoRecogRQ_m faceEmoRecogRq = 17;</code>
-   * @return Whether the faceEmoRecogRq field is set.
+   * <code>.FaceEmoRecogRQ_m FaceEmoRecogRQ = 17;</code>
+   * @return Whether the faceEmoRecogRQ field is set.
    */
   @java.lang.Override
-  public boolean hasFaceEmoRecogRq() {
+  public boolean hasFaceEmoRecogRQ() {
     return msgCase_ == 17;
   }
   /**
-   * <code>.FaceEmoRecogRQ_m faceEmoRecogRq = 17;</code>
-   * @return The faceEmoRecogRq.
+   * <code>.FaceEmoRecogRQ_m FaceEmoRecogRQ = 17;</code>
+   * @return The faceEmoRecogRQ.
    */
   @java.lang.Override
-  public com.erksystem.protobuf.api.FaceEmoRecogRQ_m getFaceEmoRecogRq() {
+  public com.erksystem.protobuf.api.FaceEmoRecogRQ_m getFaceEmoRecogRQ() {
     if (msgCase_ == 17) {
        return (com.erksystem.protobuf.api.FaceEmoRecogRQ_m) msg_;
     }
     return com.erksystem.protobuf.api.FaceEmoRecogRQ_m.getDefaultInstance();
   }
   /**
-   * <code>.FaceEmoRecogRQ_m faceEmoRecogRq = 17;</code>
+   * <code>.FaceEmoRecogRQ_m FaceEmoRecogRQ = 17;</code>
    */
   @java.lang.Override
-  public com.erksystem.protobuf.api.FaceEmoRecogRQ_mOrBuilder getFaceEmoRecogRqOrBuilder() {
+  public com.erksystem.protobuf.api.FaceEmoRecogRQ_mOrBuilder getFaceEmoRecogRQOrBuilder() {
     if (msgCase_ == 17) {
        return (com.erksystem.protobuf.api.FaceEmoRecogRQ_m) msg_;
     }
@@ -644,29 +644,29 @@ private static final long serialVersionUID = 0L;
 
   public static final int FACEEMORECOGRP_FIELD_NUMBER = 18;
   /**
-   * <code>.FaceEmoRecogRP_m faceEmoRecogRp = 18;</code>
-   * @return Whether the faceEmoRecogRp field is set.
+   * <code>.FaceEmoRecogRP_m FaceEmoRecogRP = 18;</code>
+   * @return Whether the faceEmoRecogRP field is set.
    */
   @java.lang.Override
-  public boolean hasFaceEmoRecogRp() {
+  public boolean hasFaceEmoRecogRP() {
     return msgCase_ == 18;
   }
   /**
-   * <code>.FaceEmoRecogRP_m faceEmoRecogRp = 18;</code>
-   * @return The faceEmoRecogRp.
+   * <code>.FaceEmoRecogRP_m FaceEmoRecogRP = 18;</code>
+   * @return The faceEmoRecogRP.
    */
   @java.lang.Override
-  public com.erksystem.protobuf.api.FaceEmoRecogRP_m getFaceEmoRecogRp() {
+  public com.erksystem.protobuf.api.FaceEmoRecogRP_m getFaceEmoRecogRP() {
     if (msgCase_ == 18) {
        return (com.erksystem.protobuf.api.FaceEmoRecogRP_m) msg_;
     }
     return com.erksystem.protobuf.api.FaceEmoRecogRP_m.getDefaultInstance();
   }
   /**
-   * <code>.FaceEmoRecogRP_m faceEmoRecogRp = 18;</code>
+   * <code>.FaceEmoRecogRP_m FaceEmoRecogRP = 18;</code>
    */
   @java.lang.Override
-  public com.erksystem.protobuf.api.FaceEmoRecogRP_mOrBuilder getFaceEmoRecogRpOrBuilder() {
+  public com.erksystem.protobuf.api.FaceEmoRecogRP_mOrBuilder getFaceEmoRecogRPOrBuilder() {
     if (msgCase_ == 18) {
        return (com.erksystem.protobuf.api.FaceEmoRecogRP_m) msg_;
     }
@@ -675,7 +675,7 @@ private static final long serialVersionUID = 0L;
 
   public static final int EMORECOGNOTI_FIELD_NUMBER = 19;
   /**
-   * <code>.EmoRecogNoti_m emoRecogNoti = 19;</code>
+   * <code>.EmoRecogNoti_m EmoRecogNoti = 19;</code>
    * @return Whether the emoRecogNoti field is set.
    */
   @java.lang.Override
@@ -683,7 +683,7 @@ private static final long serialVersionUID = 0L;
     return msgCase_ == 19;
   }
   /**
-   * <code>.EmoRecogNoti_m emoRecogNoti = 19;</code>
+   * <code>.EmoRecogNoti_m EmoRecogNoti = 19;</code>
    * @return The emoRecogNoti.
    */
   @java.lang.Override
@@ -694,7 +694,7 @@ private static final long serialVersionUID = 0L;
     return com.erksystem.protobuf.api.EmoRecogNoti_m.getDefaultInstance();
   }
   /**
-   * <code>.EmoRecogNoti_m emoRecogNoti = 19;</code>
+   * <code>.EmoRecogNoti_m EmoRecogNoti = 19;</code>
    */
   @java.lang.Override
   public com.erksystem.protobuf.api.EmoRecogNoti_mOrBuilder getEmoRecogNotiOrBuilder() {
@@ -878,36 +878,36 @@ private static final long serialVersionUID = 0L;
     if (!getMsgCase().equals(other.getMsgCase())) return false;
     switch (msgCase_) {
       case 1:
-        if (!getErkServiceConnRq()
-            .equals(other.getErkServiceConnRq())) return false;
+        if (!getErkServiceConnRQ()
+            .equals(other.getErkServiceConnRQ())) return false;
         break;
       case 2:
-        if (!getErkServiceConnRp()
-            .equals(other.getErkServiceConnRp())) return false;
+        if (!getErkServiceConnRP()
+            .equals(other.getErkServiceConnRP())) return false;
         break;
       case 3:
-        if (!getErkServiceDisConnRq()
-            .equals(other.getErkServiceDisConnRq())) return false;
+        if (!getErkServiceDisConnRQ()
+            .equals(other.getErkServiceDisConnRQ())) return false;
         break;
       case 4:
-        if (!getErkServiceDisConnRp()
-            .equals(other.getErkServiceDisConnRp())) return false;
+        if (!getErkServiceDisConnRP()
+            .equals(other.getErkServiceDisConnRP())) return false;
         break;
       case 5:
-        if (!getEmoRecogCreateRq()
-            .equals(other.getEmoRecogCreateRq())) return false;
+        if (!getEmoRecogCreateRQ()
+            .equals(other.getEmoRecogCreateRQ())) return false;
         break;
       case 6:
-        if (!getEmoRecogCreateRp()
-            .equals(other.getEmoRecogCreateRp())) return false;
+        if (!getEmoRecogCreateRP()
+            .equals(other.getEmoRecogCreateRP())) return false;
         break;
       case 7:
-        if (!getEmoRecogDeleteRq()
-            .equals(other.getEmoRecogDeleteRq())) return false;
+        if (!getEmoRecogDeleteRQ()
+            .equals(other.getEmoRecogDeleteRQ())) return false;
         break;
       case 8:
-        if (!getEmoRecogDeleteRp()
-            .equals(other.getEmoRecogDeleteRp())) return false;
+        if (!getEmoRecogDeleteRP()
+            .equals(other.getEmoRecogDeleteRP())) return false;
         break;
       case 9:
         if (!getHeartBeatRQ()
@@ -918,36 +918,36 @@ private static final long serialVersionUID = 0L;
             .equals(other.getHeartBeatRP())) return false;
         break;
       case 11:
-        if (!getEmoRecogRq()
-            .equals(other.getEmoRecogRq())) return false;
+        if (!getEmoRecogRQ()
+            .equals(other.getEmoRecogRQ())) return false;
         break;
       case 12:
-        if (!getEmoRecogRp()
-            .equals(other.getEmoRecogRp())) return false;
+        if (!getEmoRecogRP()
+            .equals(other.getEmoRecogRP())) return false;
         break;
       case 13:
-        if (!getPhysioEmoRecogRq()
-            .equals(other.getPhysioEmoRecogRq())) return false;
+        if (!getPhysioEmoRecogRQ()
+            .equals(other.getPhysioEmoRecogRQ())) return false;
         break;
       case 14:
-        if (!getPhysioEmoRecogRp()
-            .equals(other.getPhysioEmoRecogRp())) return false;
+        if (!getPhysioEmoRecogRP()
+            .equals(other.getPhysioEmoRecogRP())) return false;
         break;
       case 15:
-        if (!getSpeechEmoRecogRq()
-            .equals(other.getSpeechEmoRecogRq())) return false;
+        if (!getSpeechEmoRecogRQ()
+            .equals(other.getSpeechEmoRecogRQ())) return false;
         break;
       case 16:
-        if (!getSpeechEmoRecogRp()
-            .equals(other.getSpeechEmoRecogRp())) return false;
+        if (!getSpeechEmoRecogRP()
+            .equals(other.getSpeechEmoRecogRP())) return false;
         break;
       case 17:
-        if (!getFaceEmoRecogRq()
-            .equals(other.getFaceEmoRecogRq())) return false;
+        if (!getFaceEmoRecogRQ()
+            .equals(other.getFaceEmoRecogRQ())) return false;
         break;
       case 18:
-        if (!getFaceEmoRecogRp()
-            .equals(other.getFaceEmoRecogRp())) return false;
+        if (!getFaceEmoRecogRP()
+            .equals(other.getFaceEmoRecogRP())) return false;
         break;
       case 19:
         if (!getEmoRecogNoti()
@@ -970,35 +970,35 @@ private static final long serialVersionUID = 0L;
     switch (msgCase_) {
       case 1:
         hash = (37 * hash) + ERKSERVICECONNRQ_FIELD_NUMBER;
-        hash = (53 * hash) + getErkServiceConnRq().hashCode();
+        hash = (53 * hash) + getErkServiceConnRQ().hashCode();
         break;
       case 2:
         hash = (37 * hash) + ERKSERVICECONNRP_FIELD_NUMBER;
-        hash = (53 * hash) + getErkServiceConnRp().hashCode();
+        hash = (53 * hash) + getErkServiceConnRP().hashCode();
         break;
       case 3:
         hash = (37 * hash) + ERKSERVICEDISCONNRQ_FIELD_NUMBER;
-        hash = (53 * hash) + getErkServiceDisConnRq().hashCode();
+        hash = (53 * hash) + getErkServiceDisConnRQ().hashCode();
         break;
       case 4:
         hash = (37 * hash) + ERKSERVICEDISCONNRP_FIELD_NUMBER;
-        hash = (53 * hash) + getErkServiceDisConnRp().hashCode();
+        hash = (53 * hash) + getErkServiceDisConnRP().hashCode();
         break;
       case 5:
         hash = (37 * hash) + EMORECOGCREATERQ_FIELD_NUMBER;
-        hash = (53 * hash) + getEmoRecogCreateRq().hashCode();
+        hash = (53 * hash) + getEmoRecogCreateRQ().hashCode();
         break;
       case 6:
         hash = (37 * hash) + EMORECOGCREATERP_FIELD_NUMBER;
-        hash = (53 * hash) + getEmoRecogCreateRp().hashCode();
+        hash = (53 * hash) + getEmoRecogCreateRP().hashCode();
         break;
       case 7:
         hash = (37 * hash) + EMORECOGDELETERQ_FIELD_NUMBER;
-        hash = (53 * hash) + getEmoRecogDeleteRq().hashCode();
+        hash = (53 * hash) + getEmoRecogDeleteRQ().hashCode();
         break;
       case 8:
         hash = (37 * hash) + EMORECOGDELETERP_FIELD_NUMBER;
-        hash = (53 * hash) + getEmoRecogDeleteRp().hashCode();
+        hash = (53 * hash) + getEmoRecogDeleteRP().hashCode();
         break;
       case 9:
         hash = (37 * hash) + HEARTBEATRQ_FIELD_NUMBER;
@@ -1010,35 +1010,35 @@ private static final long serialVersionUID = 0L;
         break;
       case 11:
         hash = (37 * hash) + EMORECOGRQ_FIELD_NUMBER;
-        hash = (53 * hash) + getEmoRecogRq().hashCode();
+        hash = (53 * hash) + getEmoRecogRQ().hashCode();
         break;
       case 12:
         hash = (37 * hash) + EMORECOGRP_FIELD_NUMBER;
-        hash = (53 * hash) + getEmoRecogRp().hashCode();
+        hash = (53 * hash) + getEmoRecogRP().hashCode();
         break;
       case 13:
         hash = (37 * hash) + PHYSIOEMORECOGRQ_FIELD_NUMBER;
-        hash = (53 * hash) + getPhysioEmoRecogRq().hashCode();
+        hash = (53 * hash) + getPhysioEmoRecogRQ().hashCode();
         break;
       case 14:
         hash = (37 * hash) + PHYSIOEMORECOGRP_FIELD_NUMBER;
-        hash = (53 * hash) + getPhysioEmoRecogRp().hashCode();
+        hash = (53 * hash) + getPhysioEmoRecogRP().hashCode();
         break;
       case 15:
         hash = (37 * hash) + SPEECHEMORECOGRQ_FIELD_NUMBER;
-        hash = (53 * hash) + getSpeechEmoRecogRq().hashCode();
+        hash = (53 * hash) + getSpeechEmoRecogRQ().hashCode();
         break;
       case 16:
         hash = (37 * hash) + SPEECHEMORECOGRP_FIELD_NUMBER;
-        hash = (53 * hash) + getSpeechEmoRecogRp().hashCode();
+        hash = (53 * hash) + getSpeechEmoRecogRP().hashCode();
         break;
       case 17:
         hash = (37 * hash) + FACEEMORECOGRQ_FIELD_NUMBER;
-        hash = (53 * hash) + getFaceEmoRecogRq().hashCode();
+        hash = (53 * hash) + getFaceEmoRecogRQ().hashCode();
         break;
       case 18:
         hash = (37 * hash) + FACEEMORECOGRP_FIELD_NUMBER;
-        hash = (53 * hash) + getFaceEmoRecogRp().hashCode();
+        hash = (53 * hash) + getFaceEmoRecogRP().hashCode();
         break;
       case 19:
         hash = (37 * hash) + EMORECOGNOTI_FIELD_NUMBER;
@@ -1178,29 +1178,29 @@ private static final long serialVersionUID = 0L;
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      if (erkServiceConnRqBuilder_ != null) {
-        erkServiceConnRqBuilder_.clear();
+      if (erkServiceConnRQBuilder_ != null) {
+        erkServiceConnRQBuilder_.clear();
       }
-      if (erkServiceConnRpBuilder_ != null) {
-        erkServiceConnRpBuilder_.clear();
+      if (erkServiceConnRPBuilder_ != null) {
+        erkServiceConnRPBuilder_.clear();
       }
-      if (erkServiceDisConnRqBuilder_ != null) {
-        erkServiceDisConnRqBuilder_.clear();
+      if (erkServiceDisConnRQBuilder_ != null) {
+        erkServiceDisConnRQBuilder_.clear();
       }
-      if (erkServiceDisConnRpBuilder_ != null) {
-        erkServiceDisConnRpBuilder_.clear();
+      if (erkServiceDisConnRPBuilder_ != null) {
+        erkServiceDisConnRPBuilder_.clear();
       }
-      if (emoRecogCreateRqBuilder_ != null) {
-        emoRecogCreateRqBuilder_.clear();
+      if (emoRecogCreateRQBuilder_ != null) {
+        emoRecogCreateRQBuilder_.clear();
       }
-      if (emoRecogCreateRpBuilder_ != null) {
-        emoRecogCreateRpBuilder_.clear();
+      if (emoRecogCreateRPBuilder_ != null) {
+        emoRecogCreateRPBuilder_.clear();
       }
-      if (emoRecogDeleteRqBuilder_ != null) {
-        emoRecogDeleteRqBuilder_.clear();
+      if (emoRecogDeleteRQBuilder_ != null) {
+        emoRecogDeleteRQBuilder_.clear();
       }
-      if (emoRecogDeleteRpBuilder_ != null) {
-        emoRecogDeleteRpBuilder_.clear();
+      if (emoRecogDeleteRPBuilder_ != null) {
+        emoRecogDeleteRPBuilder_.clear();
       }
       if (heartBeatRQBuilder_ != null) {
         heartBeatRQBuilder_.clear();
@@ -1208,29 +1208,29 @@ private static final long serialVersionUID = 0L;
       if (heartBeatRPBuilder_ != null) {
         heartBeatRPBuilder_.clear();
       }
-      if (emoRecogRqBuilder_ != null) {
-        emoRecogRqBuilder_.clear();
+      if (emoRecogRQBuilder_ != null) {
+        emoRecogRQBuilder_.clear();
       }
-      if (emoRecogRpBuilder_ != null) {
-        emoRecogRpBuilder_.clear();
+      if (emoRecogRPBuilder_ != null) {
+        emoRecogRPBuilder_.clear();
       }
-      if (physioEmoRecogRqBuilder_ != null) {
-        physioEmoRecogRqBuilder_.clear();
+      if (physioEmoRecogRQBuilder_ != null) {
+        physioEmoRecogRQBuilder_.clear();
       }
-      if (physioEmoRecogRpBuilder_ != null) {
-        physioEmoRecogRpBuilder_.clear();
+      if (physioEmoRecogRPBuilder_ != null) {
+        physioEmoRecogRPBuilder_.clear();
       }
-      if (speechEmoRecogRqBuilder_ != null) {
-        speechEmoRecogRqBuilder_.clear();
+      if (speechEmoRecogRQBuilder_ != null) {
+        speechEmoRecogRQBuilder_.clear();
       }
-      if (speechEmoRecogRpBuilder_ != null) {
-        speechEmoRecogRpBuilder_.clear();
+      if (speechEmoRecogRPBuilder_ != null) {
+        speechEmoRecogRPBuilder_.clear();
       }
-      if (faceEmoRecogRqBuilder_ != null) {
-        faceEmoRecogRqBuilder_.clear();
+      if (faceEmoRecogRQBuilder_ != null) {
+        faceEmoRecogRQBuilder_.clear();
       }
-      if (faceEmoRecogRpBuilder_ != null) {
-        faceEmoRecogRpBuilder_.clear();
+      if (faceEmoRecogRPBuilder_ != null) {
+        faceEmoRecogRPBuilder_.clear();
       }
       if (emoRecogNotiBuilder_ != null) {
         emoRecogNotiBuilder_.clear();
@@ -1277,36 +1277,36 @@ private static final long serialVersionUID = 0L;
       result.msgCase_ = msgCase_;
       result.msg_ = this.msg_;
       if (msgCase_ == 1 &&
-          erkServiceConnRqBuilder_ != null) {
-        result.msg_ = erkServiceConnRqBuilder_.build();
+          erkServiceConnRQBuilder_ != null) {
+        result.msg_ = erkServiceConnRQBuilder_.build();
       }
       if (msgCase_ == 2 &&
-          erkServiceConnRpBuilder_ != null) {
-        result.msg_ = erkServiceConnRpBuilder_.build();
+          erkServiceConnRPBuilder_ != null) {
+        result.msg_ = erkServiceConnRPBuilder_.build();
       }
       if (msgCase_ == 3 &&
-          erkServiceDisConnRqBuilder_ != null) {
-        result.msg_ = erkServiceDisConnRqBuilder_.build();
+          erkServiceDisConnRQBuilder_ != null) {
+        result.msg_ = erkServiceDisConnRQBuilder_.build();
       }
       if (msgCase_ == 4 &&
-          erkServiceDisConnRpBuilder_ != null) {
-        result.msg_ = erkServiceDisConnRpBuilder_.build();
+          erkServiceDisConnRPBuilder_ != null) {
+        result.msg_ = erkServiceDisConnRPBuilder_.build();
       }
       if (msgCase_ == 5 &&
-          emoRecogCreateRqBuilder_ != null) {
-        result.msg_ = emoRecogCreateRqBuilder_.build();
+          emoRecogCreateRQBuilder_ != null) {
+        result.msg_ = emoRecogCreateRQBuilder_.build();
       }
       if (msgCase_ == 6 &&
-          emoRecogCreateRpBuilder_ != null) {
-        result.msg_ = emoRecogCreateRpBuilder_.build();
+          emoRecogCreateRPBuilder_ != null) {
+        result.msg_ = emoRecogCreateRPBuilder_.build();
       }
       if (msgCase_ == 7 &&
-          emoRecogDeleteRqBuilder_ != null) {
-        result.msg_ = emoRecogDeleteRqBuilder_.build();
+          emoRecogDeleteRQBuilder_ != null) {
+        result.msg_ = emoRecogDeleteRQBuilder_.build();
       }
       if (msgCase_ == 8 &&
-          emoRecogDeleteRpBuilder_ != null) {
-        result.msg_ = emoRecogDeleteRpBuilder_.build();
+          emoRecogDeleteRPBuilder_ != null) {
+        result.msg_ = emoRecogDeleteRPBuilder_.build();
       }
       if (msgCase_ == 9 &&
           heartBeatRQBuilder_ != null) {
@@ -1317,36 +1317,36 @@ private static final long serialVersionUID = 0L;
         result.msg_ = heartBeatRPBuilder_.build();
       }
       if (msgCase_ == 11 &&
-          emoRecogRqBuilder_ != null) {
-        result.msg_ = emoRecogRqBuilder_.build();
+          emoRecogRQBuilder_ != null) {
+        result.msg_ = emoRecogRQBuilder_.build();
       }
       if (msgCase_ == 12 &&
-          emoRecogRpBuilder_ != null) {
-        result.msg_ = emoRecogRpBuilder_.build();
+          emoRecogRPBuilder_ != null) {
+        result.msg_ = emoRecogRPBuilder_.build();
       }
       if (msgCase_ == 13 &&
-          physioEmoRecogRqBuilder_ != null) {
-        result.msg_ = physioEmoRecogRqBuilder_.build();
+          physioEmoRecogRQBuilder_ != null) {
+        result.msg_ = physioEmoRecogRQBuilder_.build();
       }
       if (msgCase_ == 14 &&
-          physioEmoRecogRpBuilder_ != null) {
-        result.msg_ = physioEmoRecogRpBuilder_.build();
+          physioEmoRecogRPBuilder_ != null) {
+        result.msg_ = physioEmoRecogRPBuilder_.build();
       }
       if (msgCase_ == 15 &&
-          speechEmoRecogRqBuilder_ != null) {
-        result.msg_ = speechEmoRecogRqBuilder_.build();
+          speechEmoRecogRQBuilder_ != null) {
+        result.msg_ = speechEmoRecogRQBuilder_.build();
       }
       if (msgCase_ == 16 &&
-          speechEmoRecogRpBuilder_ != null) {
-        result.msg_ = speechEmoRecogRpBuilder_.build();
+          speechEmoRecogRPBuilder_ != null) {
+        result.msg_ = speechEmoRecogRPBuilder_.build();
       }
       if (msgCase_ == 17 &&
-          faceEmoRecogRqBuilder_ != null) {
-        result.msg_ = faceEmoRecogRqBuilder_.build();
+          faceEmoRecogRQBuilder_ != null) {
+        result.msg_ = faceEmoRecogRQBuilder_.build();
       }
       if (msgCase_ == 18 &&
-          faceEmoRecogRpBuilder_ != null) {
-        result.msg_ = faceEmoRecogRpBuilder_.build();
+          faceEmoRecogRPBuilder_ != null) {
+        result.msg_ = faceEmoRecogRPBuilder_.build();
       }
       if (msgCase_ == 19 &&
           emoRecogNotiBuilder_ != null) {
@@ -1400,35 +1400,35 @@ private static final long serialVersionUID = 0L;
       if (other == com.erksystem.protobuf.api.ErkApiMsg.getDefaultInstance()) return this;
       switch (other.getMsgCase()) {
         case ERKSERVICECONNRQ: {
-          mergeErkServiceConnRq(other.getErkServiceConnRq());
+          mergeErkServiceConnRQ(other.getErkServiceConnRQ());
           break;
         }
         case ERKSERVICECONNRP: {
-          mergeErkServiceConnRp(other.getErkServiceConnRp());
+          mergeErkServiceConnRP(other.getErkServiceConnRP());
           break;
         }
         case ERKSERVICEDISCONNRQ: {
-          mergeErkServiceDisConnRq(other.getErkServiceDisConnRq());
+          mergeErkServiceDisConnRQ(other.getErkServiceDisConnRQ());
           break;
         }
         case ERKSERVICEDISCONNRP: {
-          mergeErkServiceDisConnRp(other.getErkServiceDisConnRp());
+          mergeErkServiceDisConnRP(other.getErkServiceDisConnRP());
           break;
         }
         case EMORECOGCREATERQ: {
-          mergeEmoRecogCreateRq(other.getEmoRecogCreateRq());
+          mergeEmoRecogCreateRQ(other.getEmoRecogCreateRQ());
           break;
         }
         case EMORECOGCREATERP: {
-          mergeEmoRecogCreateRp(other.getEmoRecogCreateRp());
+          mergeEmoRecogCreateRP(other.getEmoRecogCreateRP());
           break;
         }
         case EMORECOGDELETERQ: {
-          mergeEmoRecogDeleteRq(other.getEmoRecogDeleteRq());
+          mergeEmoRecogDeleteRQ(other.getEmoRecogDeleteRQ());
           break;
         }
         case EMORECOGDELETERP: {
-          mergeEmoRecogDeleteRp(other.getEmoRecogDeleteRp());
+          mergeEmoRecogDeleteRP(other.getEmoRecogDeleteRP());
           break;
         }
         case HEARTBEATRQ: {
@@ -1440,35 +1440,35 @@ private static final long serialVersionUID = 0L;
           break;
         }
         case EMORECOGRQ: {
-          mergeEmoRecogRq(other.getEmoRecogRq());
+          mergeEmoRecogRQ(other.getEmoRecogRQ());
           break;
         }
         case EMORECOGRP: {
-          mergeEmoRecogRp(other.getEmoRecogRp());
+          mergeEmoRecogRP(other.getEmoRecogRP());
           break;
         }
         case PHYSIOEMORECOGRQ: {
-          mergePhysioEmoRecogRq(other.getPhysioEmoRecogRq());
+          mergePhysioEmoRecogRQ(other.getPhysioEmoRecogRQ());
           break;
         }
         case PHYSIOEMORECOGRP: {
-          mergePhysioEmoRecogRp(other.getPhysioEmoRecogRp());
+          mergePhysioEmoRecogRP(other.getPhysioEmoRecogRP());
           break;
         }
         case SPEECHEMORECOGRQ: {
-          mergeSpeechEmoRecogRq(other.getSpeechEmoRecogRq());
+          mergeSpeechEmoRecogRQ(other.getSpeechEmoRecogRQ());
           break;
         }
         case SPEECHEMORECOGRP: {
-          mergeSpeechEmoRecogRp(other.getSpeechEmoRecogRp());
+          mergeSpeechEmoRecogRP(other.getSpeechEmoRecogRP());
           break;
         }
         case FACEEMORECOGRQ: {
-          mergeFaceEmoRecogRq(other.getFaceEmoRecogRq());
+          mergeFaceEmoRecogRQ(other.getFaceEmoRecogRQ());
           break;
         }
         case FACEEMORECOGRP: {
-          mergeFaceEmoRecogRp(other.getFaceEmoRecogRp());
+          mergeFaceEmoRecogRP(other.getFaceEmoRecogRP());
           break;
         }
         case EMORECOGNOTI: {
@@ -1507,56 +1507,56 @@ private static final long serialVersionUID = 0L;
               break;
             case 10: {
               input.readMessage(
-                  getErkServiceConnRqFieldBuilder().getBuilder(),
+                  getErkServiceConnRQFieldBuilder().getBuilder(),
                   extensionRegistry);
               msgCase_ = 1;
               break;
             } // case 10
             case 18: {
               input.readMessage(
-                  getErkServiceConnRpFieldBuilder().getBuilder(),
+                  getErkServiceConnRPFieldBuilder().getBuilder(),
                   extensionRegistry);
               msgCase_ = 2;
               break;
             } // case 18
             case 26: {
               input.readMessage(
-                  getErkServiceDisConnRqFieldBuilder().getBuilder(),
+                  getErkServiceDisConnRQFieldBuilder().getBuilder(),
                   extensionRegistry);
               msgCase_ = 3;
               break;
             } // case 26
             case 34: {
               input.readMessage(
-                  getErkServiceDisConnRpFieldBuilder().getBuilder(),
+                  getErkServiceDisConnRPFieldBuilder().getBuilder(),
                   extensionRegistry);
               msgCase_ = 4;
               break;
             } // case 34
             case 42: {
               input.readMessage(
-                  getEmoRecogCreateRqFieldBuilder().getBuilder(),
+                  getEmoRecogCreateRQFieldBuilder().getBuilder(),
                   extensionRegistry);
               msgCase_ = 5;
               break;
             } // case 42
             case 50: {
               input.readMessage(
-                  getEmoRecogCreateRpFieldBuilder().getBuilder(),
+                  getEmoRecogCreateRPFieldBuilder().getBuilder(),
                   extensionRegistry);
               msgCase_ = 6;
               break;
             } // case 50
             case 58: {
               input.readMessage(
-                  getEmoRecogDeleteRqFieldBuilder().getBuilder(),
+                  getEmoRecogDeleteRQFieldBuilder().getBuilder(),
                   extensionRegistry);
               msgCase_ = 7;
               break;
             } // case 58
             case 66: {
               input.readMessage(
-                  getEmoRecogDeleteRpFieldBuilder().getBuilder(),
+                  getEmoRecogDeleteRPFieldBuilder().getBuilder(),
                   extensionRegistry);
               msgCase_ = 8;
               break;
@@ -1577,56 +1577,56 @@ private static final long serialVersionUID = 0L;
             } // case 82
             case 90: {
               input.readMessage(
-                  getEmoRecogRqFieldBuilder().getBuilder(),
+                  getEmoRecogRQFieldBuilder().getBuilder(),
                   extensionRegistry);
               msgCase_ = 11;
               break;
             } // case 90
             case 98: {
               input.readMessage(
-                  getEmoRecogRpFieldBuilder().getBuilder(),
+                  getEmoRecogRPFieldBuilder().getBuilder(),
                   extensionRegistry);
               msgCase_ = 12;
               break;
             } // case 98
             case 106: {
               input.readMessage(
-                  getPhysioEmoRecogRqFieldBuilder().getBuilder(),
+                  getPhysioEmoRecogRQFieldBuilder().getBuilder(),
                   extensionRegistry);
               msgCase_ = 13;
               break;
             } // case 106
             case 114: {
               input.readMessage(
-                  getPhysioEmoRecogRpFieldBuilder().getBuilder(),
+                  getPhysioEmoRecogRPFieldBuilder().getBuilder(),
                   extensionRegistry);
               msgCase_ = 14;
               break;
             } // case 114
             case 122: {
               input.readMessage(
-                  getSpeechEmoRecogRqFieldBuilder().getBuilder(),
+                  getSpeechEmoRecogRQFieldBuilder().getBuilder(),
                   extensionRegistry);
               msgCase_ = 15;
               break;
             } // case 122
             case 130: {
               input.readMessage(
-                  getSpeechEmoRecogRpFieldBuilder().getBuilder(),
+                  getSpeechEmoRecogRPFieldBuilder().getBuilder(),
                   extensionRegistry);
               msgCase_ = 16;
               break;
             } // case 130
             case 138: {
               input.readMessage(
-                  getFaceEmoRecogRqFieldBuilder().getBuilder(),
+                  getFaceEmoRecogRQFieldBuilder().getBuilder(),
                   extensionRegistry);
               msgCase_ = 17;
               break;
             } // case 138
             case 146: {
               input.readMessage(
-                  getFaceEmoRecogRpFieldBuilder().getBuilder(),
+                  getFaceEmoRecogRPFieldBuilder().getBuilder(),
                   extensionRegistry);
               msgCase_ = 18;
               break;
@@ -1671,68 +1671,68 @@ private static final long serialVersionUID = 0L;
     private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.erksystem.protobuf.api.ErkServiceConnRQ_m, com.erksystem.protobuf.api.ErkServiceConnRQ_m.Builder, com.erksystem.protobuf.api.ErkServiceConnRQ_mOrBuilder> erkServiceConnRqBuilder_;
+        com.erksystem.protobuf.api.ErkServiceConnRQ_m, com.erksystem.protobuf.api.ErkServiceConnRQ_m.Builder, com.erksystem.protobuf.api.ErkServiceConnRQ_mOrBuilder> erkServiceConnRQBuilder_;
     /**
-     * <code>.ErkServiceConnRQ_m erkServiceConnRq = 1;</code>
-     * @return Whether the erkServiceConnRq field is set.
+     * <code>.ErkServiceConnRQ_m ErkServiceConnRQ = 1;</code>
+     * @return Whether the erkServiceConnRQ field is set.
      */
     @java.lang.Override
-    public boolean hasErkServiceConnRq() {
+    public boolean hasErkServiceConnRQ() {
       return msgCase_ == 1;
     }
     /**
-     * <code>.ErkServiceConnRQ_m erkServiceConnRq = 1;</code>
-     * @return The erkServiceConnRq.
+     * <code>.ErkServiceConnRQ_m ErkServiceConnRQ = 1;</code>
+     * @return The erkServiceConnRQ.
      */
     @java.lang.Override
-    public com.erksystem.protobuf.api.ErkServiceConnRQ_m getErkServiceConnRq() {
-      if (erkServiceConnRqBuilder_ == null) {
+    public com.erksystem.protobuf.api.ErkServiceConnRQ_m getErkServiceConnRQ() {
+      if (erkServiceConnRQBuilder_ == null) {
         if (msgCase_ == 1) {
           return (com.erksystem.protobuf.api.ErkServiceConnRQ_m) msg_;
         }
         return com.erksystem.protobuf.api.ErkServiceConnRQ_m.getDefaultInstance();
       } else {
         if (msgCase_ == 1) {
-          return erkServiceConnRqBuilder_.getMessage();
+          return erkServiceConnRQBuilder_.getMessage();
         }
         return com.erksystem.protobuf.api.ErkServiceConnRQ_m.getDefaultInstance();
       }
     }
     /**
-     * <code>.ErkServiceConnRQ_m erkServiceConnRq = 1;</code>
+     * <code>.ErkServiceConnRQ_m ErkServiceConnRQ = 1;</code>
      */
-    public Builder setErkServiceConnRq(com.erksystem.protobuf.api.ErkServiceConnRQ_m value) {
-      if (erkServiceConnRqBuilder_ == null) {
+    public Builder setErkServiceConnRQ(com.erksystem.protobuf.api.ErkServiceConnRQ_m value) {
+      if (erkServiceConnRQBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         msg_ = value;
         onChanged();
       } else {
-        erkServiceConnRqBuilder_.setMessage(value);
+        erkServiceConnRQBuilder_.setMessage(value);
       }
       msgCase_ = 1;
       return this;
     }
     /**
-     * <code>.ErkServiceConnRQ_m erkServiceConnRq = 1;</code>
+     * <code>.ErkServiceConnRQ_m ErkServiceConnRQ = 1;</code>
      */
-    public Builder setErkServiceConnRq(
+    public Builder setErkServiceConnRQ(
         com.erksystem.protobuf.api.ErkServiceConnRQ_m.Builder builderForValue) {
-      if (erkServiceConnRqBuilder_ == null) {
+      if (erkServiceConnRQBuilder_ == null) {
         msg_ = builderForValue.build();
         onChanged();
       } else {
-        erkServiceConnRqBuilder_.setMessage(builderForValue.build());
+        erkServiceConnRQBuilder_.setMessage(builderForValue.build());
       }
       msgCase_ = 1;
       return this;
     }
     /**
-     * <code>.ErkServiceConnRQ_m erkServiceConnRq = 1;</code>
+     * <code>.ErkServiceConnRQ_m ErkServiceConnRQ = 1;</code>
      */
-    public Builder mergeErkServiceConnRq(com.erksystem.protobuf.api.ErkServiceConnRQ_m value) {
-      if (erkServiceConnRqBuilder_ == null) {
+    public Builder mergeErkServiceConnRQ(com.erksystem.protobuf.api.ErkServiceConnRQ_m value) {
+      if (erkServiceConnRQBuilder_ == null) {
         if (msgCase_ == 1 &&
             msg_ != com.erksystem.protobuf.api.ErkServiceConnRQ_m.getDefaultInstance()) {
           msg_ = com.erksystem.protobuf.api.ErkServiceConnRQ_m.newBuilder((com.erksystem.protobuf.api.ErkServiceConnRQ_m) msg_)
@@ -1743,19 +1743,19 @@ private static final long serialVersionUID = 0L;
         onChanged();
       } else {
         if (msgCase_ == 1) {
-          erkServiceConnRqBuilder_.mergeFrom(value);
+          erkServiceConnRQBuilder_.mergeFrom(value);
         } else {
-          erkServiceConnRqBuilder_.setMessage(value);
+          erkServiceConnRQBuilder_.setMessage(value);
         }
       }
       msgCase_ = 1;
       return this;
     }
     /**
-     * <code>.ErkServiceConnRQ_m erkServiceConnRq = 1;</code>
+     * <code>.ErkServiceConnRQ_m ErkServiceConnRQ = 1;</code>
      */
-    public Builder clearErkServiceConnRq() {
-      if (erkServiceConnRqBuilder_ == null) {
+    public Builder clearErkServiceConnRQ() {
+      if (erkServiceConnRQBuilder_ == null) {
         if (msgCase_ == 1) {
           msgCase_ = 0;
           msg_ = null;
@@ -1766,23 +1766,23 @@ private static final long serialVersionUID = 0L;
           msgCase_ = 0;
           msg_ = null;
         }
-        erkServiceConnRqBuilder_.clear();
+        erkServiceConnRQBuilder_.clear();
       }
       return this;
     }
     /**
-     * <code>.ErkServiceConnRQ_m erkServiceConnRq = 1;</code>
+     * <code>.ErkServiceConnRQ_m ErkServiceConnRQ = 1;</code>
      */
-    public com.erksystem.protobuf.api.ErkServiceConnRQ_m.Builder getErkServiceConnRqBuilder() {
-      return getErkServiceConnRqFieldBuilder().getBuilder();
+    public com.erksystem.protobuf.api.ErkServiceConnRQ_m.Builder getErkServiceConnRQBuilder() {
+      return getErkServiceConnRQFieldBuilder().getBuilder();
     }
     /**
-     * <code>.ErkServiceConnRQ_m erkServiceConnRq = 1;</code>
+     * <code>.ErkServiceConnRQ_m ErkServiceConnRQ = 1;</code>
      */
     @java.lang.Override
-    public com.erksystem.protobuf.api.ErkServiceConnRQ_mOrBuilder getErkServiceConnRqOrBuilder() {
-      if ((msgCase_ == 1) && (erkServiceConnRqBuilder_ != null)) {
-        return erkServiceConnRqBuilder_.getMessageOrBuilder();
+    public com.erksystem.protobuf.api.ErkServiceConnRQ_mOrBuilder getErkServiceConnRQOrBuilder() {
+      if ((msgCase_ == 1) && (erkServiceConnRQBuilder_ != null)) {
+        return erkServiceConnRQBuilder_.getMessageOrBuilder();
       } else {
         if (msgCase_ == 1) {
           return (com.erksystem.protobuf.api.ErkServiceConnRQ_m) msg_;
@@ -1791,16 +1791,16 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.ErkServiceConnRQ_m erkServiceConnRq = 1;</code>
+     * <code>.ErkServiceConnRQ_m ErkServiceConnRQ = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.erksystem.protobuf.api.ErkServiceConnRQ_m, com.erksystem.protobuf.api.ErkServiceConnRQ_m.Builder, com.erksystem.protobuf.api.ErkServiceConnRQ_mOrBuilder> 
-        getErkServiceConnRqFieldBuilder() {
-      if (erkServiceConnRqBuilder_ == null) {
+        getErkServiceConnRQFieldBuilder() {
+      if (erkServiceConnRQBuilder_ == null) {
         if (!(msgCase_ == 1)) {
           msg_ = com.erksystem.protobuf.api.ErkServiceConnRQ_m.getDefaultInstance();
         }
-        erkServiceConnRqBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        erkServiceConnRQBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             com.erksystem.protobuf.api.ErkServiceConnRQ_m, com.erksystem.protobuf.api.ErkServiceConnRQ_m.Builder, com.erksystem.protobuf.api.ErkServiceConnRQ_mOrBuilder>(
                 (com.erksystem.protobuf.api.ErkServiceConnRQ_m) msg_,
                 getParentForChildren(),
@@ -1809,72 +1809,72 @@ private static final long serialVersionUID = 0L;
       }
       msgCase_ = 1;
       onChanged();
-      return erkServiceConnRqBuilder_;
+      return erkServiceConnRQBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.erksystem.protobuf.api.ErkServiceConnRP_m, com.erksystem.protobuf.api.ErkServiceConnRP_m.Builder, com.erksystem.protobuf.api.ErkServiceConnRP_mOrBuilder> erkServiceConnRpBuilder_;
+        com.erksystem.protobuf.api.ErkServiceConnRP_m, com.erksystem.protobuf.api.ErkServiceConnRP_m.Builder, com.erksystem.protobuf.api.ErkServiceConnRP_mOrBuilder> erkServiceConnRPBuilder_;
     /**
-     * <code>.ErkServiceConnRP_m erkServiceConnRp = 2;</code>
-     * @return Whether the erkServiceConnRp field is set.
+     * <code>.ErkServiceConnRP_m ErkServiceConnRP = 2;</code>
+     * @return Whether the erkServiceConnRP field is set.
      */
     @java.lang.Override
-    public boolean hasErkServiceConnRp() {
+    public boolean hasErkServiceConnRP() {
       return msgCase_ == 2;
     }
     /**
-     * <code>.ErkServiceConnRP_m erkServiceConnRp = 2;</code>
-     * @return The erkServiceConnRp.
+     * <code>.ErkServiceConnRP_m ErkServiceConnRP = 2;</code>
+     * @return The erkServiceConnRP.
      */
     @java.lang.Override
-    public com.erksystem.protobuf.api.ErkServiceConnRP_m getErkServiceConnRp() {
-      if (erkServiceConnRpBuilder_ == null) {
+    public com.erksystem.protobuf.api.ErkServiceConnRP_m getErkServiceConnRP() {
+      if (erkServiceConnRPBuilder_ == null) {
         if (msgCase_ == 2) {
           return (com.erksystem.protobuf.api.ErkServiceConnRP_m) msg_;
         }
         return com.erksystem.protobuf.api.ErkServiceConnRP_m.getDefaultInstance();
       } else {
         if (msgCase_ == 2) {
-          return erkServiceConnRpBuilder_.getMessage();
+          return erkServiceConnRPBuilder_.getMessage();
         }
         return com.erksystem.protobuf.api.ErkServiceConnRP_m.getDefaultInstance();
       }
     }
     /**
-     * <code>.ErkServiceConnRP_m erkServiceConnRp = 2;</code>
+     * <code>.ErkServiceConnRP_m ErkServiceConnRP = 2;</code>
      */
-    public Builder setErkServiceConnRp(com.erksystem.protobuf.api.ErkServiceConnRP_m value) {
-      if (erkServiceConnRpBuilder_ == null) {
+    public Builder setErkServiceConnRP(com.erksystem.protobuf.api.ErkServiceConnRP_m value) {
+      if (erkServiceConnRPBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         msg_ = value;
         onChanged();
       } else {
-        erkServiceConnRpBuilder_.setMessage(value);
+        erkServiceConnRPBuilder_.setMessage(value);
       }
       msgCase_ = 2;
       return this;
     }
     /**
-     * <code>.ErkServiceConnRP_m erkServiceConnRp = 2;</code>
+     * <code>.ErkServiceConnRP_m ErkServiceConnRP = 2;</code>
      */
-    public Builder setErkServiceConnRp(
+    public Builder setErkServiceConnRP(
         com.erksystem.protobuf.api.ErkServiceConnRP_m.Builder builderForValue) {
-      if (erkServiceConnRpBuilder_ == null) {
+      if (erkServiceConnRPBuilder_ == null) {
         msg_ = builderForValue.build();
         onChanged();
       } else {
-        erkServiceConnRpBuilder_.setMessage(builderForValue.build());
+        erkServiceConnRPBuilder_.setMessage(builderForValue.build());
       }
       msgCase_ = 2;
       return this;
     }
     /**
-     * <code>.ErkServiceConnRP_m erkServiceConnRp = 2;</code>
+     * <code>.ErkServiceConnRP_m ErkServiceConnRP = 2;</code>
      */
-    public Builder mergeErkServiceConnRp(com.erksystem.protobuf.api.ErkServiceConnRP_m value) {
-      if (erkServiceConnRpBuilder_ == null) {
+    public Builder mergeErkServiceConnRP(com.erksystem.protobuf.api.ErkServiceConnRP_m value) {
+      if (erkServiceConnRPBuilder_ == null) {
         if (msgCase_ == 2 &&
             msg_ != com.erksystem.protobuf.api.ErkServiceConnRP_m.getDefaultInstance()) {
           msg_ = com.erksystem.protobuf.api.ErkServiceConnRP_m.newBuilder((com.erksystem.protobuf.api.ErkServiceConnRP_m) msg_)
@@ -1885,19 +1885,19 @@ private static final long serialVersionUID = 0L;
         onChanged();
       } else {
         if (msgCase_ == 2) {
-          erkServiceConnRpBuilder_.mergeFrom(value);
+          erkServiceConnRPBuilder_.mergeFrom(value);
         } else {
-          erkServiceConnRpBuilder_.setMessage(value);
+          erkServiceConnRPBuilder_.setMessage(value);
         }
       }
       msgCase_ = 2;
       return this;
     }
     /**
-     * <code>.ErkServiceConnRP_m erkServiceConnRp = 2;</code>
+     * <code>.ErkServiceConnRP_m ErkServiceConnRP = 2;</code>
      */
-    public Builder clearErkServiceConnRp() {
-      if (erkServiceConnRpBuilder_ == null) {
+    public Builder clearErkServiceConnRP() {
+      if (erkServiceConnRPBuilder_ == null) {
         if (msgCase_ == 2) {
           msgCase_ = 0;
           msg_ = null;
@@ -1908,23 +1908,23 @@ private static final long serialVersionUID = 0L;
           msgCase_ = 0;
           msg_ = null;
         }
-        erkServiceConnRpBuilder_.clear();
+        erkServiceConnRPBuilder_.clear();
       }
       return this;
     }
     /**
-     * <code>.ErkServiceConnRP_m erkServiceConnRp = 2;</code>
+     * <code>.ErkServiceConnRP_m ErkServiceConnRP = 2;</code>
      */
-    public com.erksystem.protobuf.api.ErkServiceConnRP_m.Builder getErkServiceConnRpBuilder() {
-      return getErkServiceConnRpFieldBuilder().getBuilder();
+    public com.erksystem.protobuf.api.ErkServiceConnRP_m.Builder getErkServiceConnRPBuilder() {
+      return getErkServiceConnRPFieldBuilder().getBuilder();
     }
     /**
-     * <code>.ErkServiceConnRP_m erkServiceConnRp = 2;</code>
+     * <code>.ErkServiceConnRP_m ErkServiceConnRP = 2;</code>
      */
     @java.lang.Override
-    public com.erksystem.protobuf.api.ErkServiceConnRP_mOrBuilder getErkServiceConnRpOrBuilder() {
-      if ((msgCase_ == 2) && (erkServiceConnRpBuilder_ != null)) {
-        return erkServiceConnRpBuilder_.getMessageOrBuilder();
+    public com.erksystem.protobuf.api.ErkServiceConnRP_mOrBuilder getErkServiceConnRPOrBuilder() {
+      if ((msgCase_ == 2) && (erkServiceConnRPBuilder_ != null)) {
+        return erkServiceConnRPBuilder_.getMessageOrBuilder();
       } else {
         if (msgCase_ == 2) {
           return (com.erksystem.protobuf.api.ErkServiceConnRP_m) msg_;
@@ -1933,16 +1933,16 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.ErkServiceConnRP_m erkServiceConnRp = 2;</code>
+     * <code>.ErkServiceConnRP_m ErkServiceConnRP = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.erksystem.protobuf.api.ErkServiceConnRP_m, com.erksystem.protobuf.api.ErkServiceConnRP_m.Builder, com.erksystem.protobuf.api.ErkServiceConnRP_mOrBuilder> 
-        getErkServiceConnRpFieldBuilder() {
-      if (erkServiceConnRpBuilder_ == null) {
+        getErkServiceConnRPFieldBuilder() {
+      if (erkServiceConnRPBuilder_ == null) {
         if (!(msgCase_ == 2)) {
           msg_ = com.erksystem.protobuf.api.ErkServiceConnRP_m.getDefaultInstance();
         }
-        erkServiceConnRpBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        erkServiceConnRPBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             com.erksystem.protobuf.api.ErkServiceConnRP_m, com.erksystem.protobuf.api.ErkServiceConnRP_m.Builder, com.erksystem.protobuf.api.ErkServiceConnRP_mOrBuilder>(
                 (com.erksystem.protobuf.api.ErkServiceConnRP_m) msg_,
                 getParentForChildren(),
@@ -1951,72 +1951,72 @@ private static final long serialVersionUID = 0L;
       }
       msgCase_ = 2;
       onChanged();
-      return erkServiceConnRpBuilder_;
+      return erkServiceConnRPBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.erksystem.protobuf.api.ErkServiceDisConnRQ_m, com.erksystem.protobuf.api.ErkServiceDisConnRQ_m.Builder, com.erksystem.protobuf.api.ErkServiceDisConnRQ_mOrBuilder> erkServiceDisConnRqBuilder_;
+        com.erksystem.protobuf.api.ErkServiceDisConnRQ_m, com.erksystem.protobuf.api.ErkServiceDisConnRQ_m.Builder, com.erksystem.protobuf.api.ErkServiceDisConnRQ_mOrBuilder> erkServiceDisConnRQBuilder_;
     /**
-     * <code>.ErkServiceDisConnRQ_m erkServiceDisConnRq = 3;</code>
-     * @return Whether the erkServiceDisConnRq field is set.
+     * <code>.ErkServiceDisConnRQ_m ErkServiceDisConnRQ = 3;</code>
+     * @return Whether the erkServiceDisConnRQ field is set.
      */
     @java.lang.Override
-    public boolean hasErkServiceDisConnRq() {
+    public boolean hasErkServiceDisConnRQ() {
       return msgCase_ == 3;
     }
     /**
-     * <code>.ErkServiceDisConnRQ_m erkServiceDisConnRq = 3;</code>
-     * @return The erkServiceDisConnRq.
+     * <code>.ErkServiceDisConnRQ_m ErkServiceDisConnRQ = 3;</code>
+     * @return The erkServiceDisConnRQ.
      */
     @java.lang.Override
-    public com.erksystem.protobuf.api.ErkServiceDisConnRQ_m getErkServiceDisConnRq() {
-      if (erkServiceDisConnRqBuilder_ == null) {
+    public com.erksystem.protobuf.api.ErkServiceDisConnRQ_m getErkServiceDisConnRQ() {
+      if (erkServiceDisConnRQBuilder_ == null) {
         if (msgCase_ == 3) {
           return (com.erksystem.protobuf.api.ErkServiceDisConnRQ_m) msg_;
         }
         return com.erksystem.protobuf.api.ErkServiceDisConnRQ_m.getDefaultInstance();
       } else {
         if (msgCase_ == 3) {
-          return erkServiceDisConnRqBuilder_.getMessage();
+          return erkServiceDisConnRQBuilder_.getMessage();
         }
         return com.erksystem.protobuf.api.ErkServiceDisConnRQ_m.getDefaultInstance();
       }
     }
     /**
-     * <code>.ErkServiceDisConnRQ_m erkServiceDisConnRq = 3;</code>
+     * <code>.ErkServiceDisConnRQ_m ErkServiceDisConnRQ = 3;</code>
      */
-    public Builder setErkServiceDisConnRq(com.erksystem.protobuf.api.ErkServiceDisConnRQ_m value) {
-      if (erkServiceDisConnRqBuilder_ == null) {
+    public Builder setErkServiceDisConnRQ(com.erksystem.protobuf.api.ErkServiceDisConnRQ_m value) {
+      if (erkServiceDisConnRQBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         msg_ = value;
         onChanged();
       } else {
-        erkServiceDisConnRqBuilder_.setMessage(value);
+        erkServiceDisConnRQBuilder_.setMessage(value);
       }
       msgCase_ = 3;
       return this;
     }
     /**
-     * <code>.ErkServiceDisConnRQ_m erkServiceDisConnRq = 3;</code>
+     * <code>.ErkServiceDisConnRQ_m ErkServiceDisConnRQ = 3;</code>
      */
-    public Builder setErkServiceDisConnRq(
+    public Builder setErkServiceDisConnRQ(
         com.erksystem.protobuf.api.ErkServiceDisConnRQ_m.Builder builderForValue) {
-      if (erkServiceDisConnRqBuilder_ == null) {
+      if (erkServiceDisConnRQBuilder_ == null) {
         msg_ = builderForValue.build();
         onChanged();
       } else {
-        erkServiceDisConnRqBuilder_.setMessage(builderForValue.build());
+        erkServiceDisConnRQBuilder_.setMessage(builderForValue.build());
       }
       msgCase_ = 3;
       return this;
     }
     /**
-     * <code>.ErkServiceDisConnRQ_m erkServiceDisConnRq = 3;</code>
+     * <code>.ErkServiceDisConnRQ_m ErkServiceDisConnRQ = 3;</code>
      */
-    public Builder mergeErkServiceDisConnRq(com.erksystem.protobuf.api.ErkServiceDisConnRQ_m value) {
-      if (erkServiceDisConnRqBuilder_ == null) {
+    public Builder mergeErkServiceDisConnRQ(com.erksystem.protobuf.api.ErkServiceDisConnRQ_m value) {
+      if (erkServiceDisConnRQBuilder_ == null) {
         if (msgCase_ == 3 &&
             msg_ != com.erksystem.protobuf.api.ErkServiceDisConnRQ_m.getDefaultInstance()) {
           msg_ = com.erksystem.protobuf.api.ErkServiceDisConnRQ_m.newBuilder((com.erksystem.protobuf.api.ErkServiceDisConnRQ_m) msg_)
@@ -2027,19 +2027,19 @@ private static final long serialVersionUID = 0L;
         onChanged();
       } else {
         if (msgCase_ == 3) {
-          erkServiceDisConnRqBuilder_.mergeFrom(value);
+          erkServiceDisConnRQBuilder_.mergeFrom(value);
         } else {
-          erkServiceDisConnRqBuilder_.setMessage(value);
+          erkServiceDisConnRQBuilder_.setMessage(value);
         }
       }
       msgCase_ = 3;
       return this;
     }
     /**
-     * <code>.ErkServiceDisConnRQ_m erkServiceDisConnRq = 3;</code>
+     * <code>.ErkServiceDisConnRQ_m ErkServiceDisConnRQ = 3;</code>
      */
-    public Builder clearErkServiceDisConnRq() {
-      if (erkServiceDisConnRqBuilder_ == null) {
+    public Builder clearErkServiceDisConnRQ() {
+      if (erkServiceDisConnRQBuilder_ == null) {
         if (msgCase_ == 3) {
           msgCase_ = 0;
           msg_ = null;
@@ -2050,23 +2050,23 @@ private static final long serialVersionUID = 0L;
           msgCase_ = 0;
           msg_ = null;
         }
-        erkServiceDisConnRqBuilder_.clear();
+        erkServiceDisConnRQBuilder_.clear();
       }
       return this;
     }
     /**
-     * <code>.ErkServiceDisConnRQ_m erkServiceDisConnRq = 3;</code>
+     * <code>.ErkServiceDisConnRQ_m ErkServiceDisConnRQ = 3;</code>
      */
-    public com.erksystem.protobuf.api.ErkServiceDisConnRQ_m.Builder getErkServiceDisConnRqBuilder() {
-      return getErkServiceDisConnRqFieldBuilder().getBuilder();
+    public com.erksystem.protobuf.api.ErkServiceDisConnRQ_m.Builder getErkServiceDisConnRQBuilder() {
+      return getErkServiceDisConnRQFieldBuilder().getBuilder();
     }
     /**
-     * <code>.ErkServiceDisConnRQ_m erkServiceDisConnRq = 3;</code>
+     * <code>.ErkServiceDisConnRQ_m ErkServiceDisConnRQ = 3;</code>
      */
     @java.lang.Override
-    public com.erksystem.protobuf.api.ErkServiceDisConnRQ_mOrBuilder getErkServiceDisConnRqOrBuilder() {
-      if ((msgCase_ == 3) && (erkServiceDisConnRqBuilder_ != null)) {
-        return erkServiceDisConnRqBuilder_.getMessageOrBuilder();
+    public com.erksystem.protobuf.api.ErkServiceDisConnRQ_mOrBuilder getErkServiceDisConnRQOrBuilder() {
+      if ((msgCase_ == 3) && (erkServiceDisConnRQBuilder_ != null)) {
+        return erkServiceDisConnRQBuilder_.getMessageOrBuilder();
       } else {
         if (msgCase_ == 3) {
           return (com.erksystem.protobuf.api.ErkServiceDisConnRQ_m) msg_;
@@ -2075,16 +2075,16 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.ErkServiceDisConnRQ_m erkServiceDisConnRq = 3;</code>
+     * <code>.ErkServiceDisConnRQ_m ErkServiceDisConnRQ = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.erksystem.protobuf.api.ErkServiceDisConnRQ_m, com.erksystem.protobuf.api.ErkServiceDisConnRQ_m.Builder, com.erksystem.protobuf.api.ErkServiceDisConnRQ_mOrBuilder> 
-        getErkServiceDisConnRqFieldBuilder() {
-      if (erkServiceDisConnRqBuilder_ == null) {
+        getErkServiceDisConnRQFieldBuilder() {
+      if (erkServiceDisConnRQBuilder_ == null) {
         if (!(msgCase_ == 3)) {
           msg_ = com.erksystem.protobuf.api.ErkServiceDisConnRQ_m.getDefaultInstance();
         }
-        erkServiceDisConnRqBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        erkServiceDisConnRQBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             com.erksystem.protobuf.api.ErkServiceDisConnRQ_m, com.erksystem.protobuf.api.ErkServiceDisConnRQ_m.Builder, com.erksystem.protobuf.api.ErkServiceDisConnRQ_mOrBuilder>(
                 (com.erksystem.protobuf.api.ErkServiceDisConnRQ_m) msg_,
                 getParentForChildren(),
@@ -2093,72 +2093,72 @@ private static final long serialVersionUID = 0L;
       }
       msgCase_ = 3;
       onChanged();
-      return erkServiceDisConnRqBuilder_;
+      return erkServiceDisConnRQBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.erksystem.protobuf.api.ErkServiceDisConnRP_m, com.erksystem.protobuf.api.ErkServiceDisConnRP_m.Builder, com.erksystem.protobuf.api.ErkServiceDisConnRP_mOrBuilder> erkServiceDisConnRpBuilder_;
+        com.erksystem.protobuf.api.ErkServiceDisConnRP_m, com.erksystem.protobuf.api.ErkServiceDisConnRP_m.Builder, com.erksystem.protobuf.api.ErkServiceDisConnRP_mOrBuilder> erkServiceDisConnRPBuilder_;
     /**
-     * <code>.ErkServiceDisConnRP_m erkServiceDisConnRp = 4;</code>
-     * @return Whether the erkServiceDisConnRp field is set.
+     * <code>.ErkServiceDisConnRP_m ErkServiceDisConnRP = 4;</code>
+     * @return Whether the erkServiceDisConnRP field is set.
      */
     @java.lang.Override
-    public boolean hasErkServiceDisConnRp() {
+    public boolean hasErkServiceDisConnRP() {
       return msgCase_ == 4;
     }
     /**
-     * <code>.ErkServiceDisConnRP_m erkServiceDisConnRp = 4;</code>
-     * @return The erkServiceDisConnRp.
+     * <code>.ErkServiceDisConnRP_m ErkServiceDisConnRP = 4;</code>
+     * @return The erkServiceDisConnRP.
      */
     @java.lang.Override
-    public com.erksystem.protobuf.api.ErkServiceDisConnRP_m getErkServiceDisConnRp() {
-      if (erkServiceDisConnRpBuilder_ == null) {
+    public com.erksystem.protobuf.api.ErkServiceDisConnRP_m getErkServiceDisConnRP() {
+      if (erkServiceDisConnRPBuilder_ == null) {
         if (msgCase_ == 4) {
           return (com.erksystem.protobuf.api.ErkServiceDisConnRP_m) msg_;
         }
         return com.erksystem.protobuf.api.ErkServiceDisConnRP_m.getDefaultInstance();
       } else {
         if (msgCase_ == 4) {
-          return erkServiceDisConnRpBuilder_.getMessage();
+          return erkServiceDisConnRPBuilder_.getMessage();
         }
         return com.erksystem.protobuf.api.ErkServiceDisConnRP_m.getDefaultInstance();
       }
     }
     /**
-     * <code>.ErkServiceDisConnRP_m erkServiceDisConnRp = 4;</code>
+     * <code>.ErkServiceDisConnRP_m ErkServiceDisConnRP = 4;</code>
      */
-    public Builder setErkServiceDisConnRp(com.erksystem.protobuf.api.ErkServiceDisConnRP_m value) {
-      if (erkServiceDisConnRpBuilder_ == null) {
+    public Builder setErkServiceDisConnRP(com.erksystem.protobuf.api.ErkServiceDisConnRP_m value) {
+      if (erkServiceDisConnRPBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         msg_ = value;
         onChanged();
       } else {
-        erkServiceDisConnRpBuilder_.setMessage(value);
+        erkServiceDisConnRPBuilder_.setMessage(value);
       }
       msgCase_ = 4;
       return this;
     }
     /**
-     * <code>.ErkServiceDisConnRP_m erkServiceDisConnRp = 4;</code>
+     * <code>.ErkServiceDisConnRP_m ErkServiceDisConnRP = 4;</code>
      */
-    public Builder setErkServiceDisConnRp(
+    public Builder setErkServiceDisConnRP(
         com.erksystem.protobuf.api.ErkServiceDisConnRP_m.Builder builderForValue) {
-      if (erkServiceDisConnRpBuilder_ == null) {
+      if (erkServiceDisConnRPBuilder_ == null) {
         msg_ = builderForValue.build();
         onChanged();
       } else {
-        erkServiceDisConnRpBuilder_.setMessage(builderForValue.build());
+        erkServiceDisConnRPBuilder_.setMessage(builderForValue.build());
       }
       msgCase_ = 4;
       return this;
     }
     /**
-     * <code>.ErkServiceDisConnRP_m erkServiceDisConnRp = 4;</code>
+     * <code>.ErkServiceDisConnRP_m ErkServiceDisConnRP = 4;</code>
      */
-    public Builder mergeErkServiceDisConnRp(com.erksystem.protobuf.api.ErkServiceDisConnRP_m value) {
-      if (erkServiceDisConnRpBuilder_ == null) {
+    public Builder mergeErkServiceDisConnRP(com.erksystem.protobuf.api.ErkServiceDisConnRP_m value) {
+      if (erkServiceDisConnRPBuilder_ == null) {
         if (msgCase_ == 4 &&
             msg_ != com.erksystem.protobuf.api.ErkServiceDisConnRP_m.getDefaultInstance()) {
           msg_ = com.erksystem.protobuf.api.ErkServiceDisConnRP_m.newBuilder((com.erksystem.protobuf.api.ErkServiceDisConnRP_m) msg_)
@@ -2169,19 +2169,19 @@ private static final long serialVersionUID = 0L;
         onChanged();
       } else {
         if (msgCase_ == 4) {
-          erkServiceDisConnRpBuilder_.mergeFrom(value);
+          erkServiceDisConnRPBuilder_.mergeFrom(value);
         } else {
-          erkServiceDisConnRpBuilder_.setMessage(value);
+          erkServiceDisConnRPBuilder_.setMessage(value);
         }
       }
       msgCase_ = 4;
       return this;
     }
     /**
-     * <code>.ErkServiceDisConnRP_m erkServiceDisConnRp = 4;</code>
+     * <code>.ErkServiceDisConnRP_m ErkServiceDisConnRP = 4;</code>
      */
-    public Builder clearErkServiceDisConnRp() {
-      if (erkServiceDisConnRpBuilder_ == null) {
+    public Builder clearErkServiceDisConnRP() {
+      if (erkServiceDisConnRPBuilder_ == null) {
         if (msgCase_ == 4) {
           msgCase_ = 0;
           msg_ = null;
@@ -2192,23 +2192,23 @@ private static final long serialVersionUID = 0L;
           msgCase_ = 0;
           msg_ = null;
         }
-        erkServiceDisConnRpBuilder_.clear();
+        erkServiceDisConnRPBuilder_.clear();
       }
       return this;
     }
     /**
-     * <code>.ErkServiceDisConnRP_m erkServiceDisConnRp = 4;</code>
+     * <code>.ErkServiceDisConnRP_m ErkServiceDisConnRP = 4;</code>
      */
-    public com.erksystem.protobuf.api.ErkServiceDisConnRP_m.Builder getErkServiceDisConnRpBuilder() {
-      return getErkServiceDisConnRpFieldBuilder().getBuilder();
+    public com.erksystem.protobuf.api.ErkServiceDisConnRP_m.Builder getErkServiceDisConnRPBuilder() {
+      return getErkServiceDisConnRPFieldBuilder().getBuilder();
     }
     /**
-     * <code>.ErkServiceDisConnRP_m erkServiceDisConnRp = 4;</code>
+     * <code>.ErkServiceDisConnRP_m ErkServiceDisConnRP = 4;</code>
      */
     @java.lang.Override
-    public com.erksystem.protobuf.api.ErkServiceDisConnRP_mOrBuilder getErkServiceDisConnRpOrBuilder() {
-      if ((msgCase_ == 4) && (erkServiceDisConnRpBuilder_ != null)) {
-        return erkServiceDisConnRpBuilder_.getMessageOrBuilder();
+    public com.erksystem.protobuf.api.ErkServiceDisConnRP_mOrBuilder getErkServiceDisConnRPOrBuilder() {
+      if ((msgCase_ == 4) && (erkServiceDisConnRPBuilder_ != null)) {
+        return erkServiceDisConnRPBuilder_.getMessageOrBuilder();
       } else {
         if (msgCase_ == 4) {
           return (com.erksystem.protobuf.api.ErkServiceDisConnRP_m) msg_;
@@ -2217,16 +2217,16 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.ErkServiceDisConnRP_m erkServiceDisConnRp = 4;</code>
+     * <code>.ErkServiceDisConnRP_m ErkServiceDisConnRP = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.erksystem.protobuf.api.ErkServiceDisConnRP_m, com.erksystem.protobuf.api.ErkServiceDisConnRP_m.Builder, com.erksystem.protobuf.api.ErkServiceDisConnRP_mOrBuilder> 
-        getErkServiceDisConnRpFieldBuilder() {
-      if (erkServiceDisConnRpBuilder_ == null) {
+        getErkServiceDisConnRPFieldBuilder() {
+      if (erkServiceDisConnRPBuilder_ == null) {
         if (!(msgCase_ == 4)) {
           msg_ = com.erksystem.protobuf.api.ErkServiceDisConnRP_m.getDefaultInstance();
         }
-        erkServiceDisConnRpBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        erkServiceDisConnRPBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             com.erksystem.protobuf.api.ErkServiceDisConnRP_m, com.erksystem.protobuf.api.ErkServiceDisConnRP_m.Builder, com.erksystem.protobuf.api.ErkServiceDisConnRP_mOrBuilder>(
                 (com.erksystem.protobuf.api.ErkServiceDisConnRP_m) msg_,
                 getParentForChildren(),
@@ -2235,72 +2235,72 @@ private static final long serialVersionUID = 0L;
       }
       msgCase_ = 4;
       onChanged();
-      return erkServiceDisConnRpBuilder_;
+      return erkServiceDisConnRPBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.erksystem.protobuf.api.EmoRecogCreateRQ_m, com.erksystem.protobuf.api.EmoRecogCreateRQ_m.Builder, com.erksystem.protobuf.api.EmoRecogCreateRQ_mOrBuilder> emoRecogCreateRqBuilder_;
+        com.erksystem.protobuf.api.EmoRecogCreateRQ_m, com.erksystem.protobuf.api.EmoRecogCreateRQ_m.Builder, com.erksystem.protobuf.api.EmoRecogCreateRQ_mOrBuilder> emoRecogCreateRQBuilder_;
     /**
-     * <code>.EmoRecogCreateRQ_m emoRecogCreateRq = 5;</code>
-     * @return Whether the emoRecogCreateRq field is set.
+     * <code>.EmoRecogCreateRQ_m EmoRecogCreateRQ = 5;</code>
+     * @return Whether the emoRecogCreateRQ field is set.
      */
     @java.lang.Override
-    public boolean hasEmoRecogCreateRq() {
+    public boolean hasEmoRecogCreateRQ() {
       return msgCase_ == 5;
     }
     /**
-     * <code>.EmoRecogCreateRQ_m emoRecogCreateRq = 5;</code>
-     * @return The emoRecogCreateRq.
+     * <code>.EmoRecogCreateRQ_m EmoRecogCreateRQ = 5;</code>
+     * @return The emoRecogCreateRQ.
      */
     @java.lang.Override
-    public com.erksystem.protobuf.api.EmoRecogCreateRQ_m getEmoRecogCreateRq() {
-      if (emoRecogCreateRqBuilder_ == null) {
+    public com.erksystem.protobuf.api.EmoRecogCreateRQ_m getEmoRecogCreateRQ() {
+      if (emoRecogCreateRQBuilder_ == null) {
         if (msgCase_ == 5) {
           return (com.erksystem.protobuf.api.EmoRecogCreateRQ_m) msg_;
         }
         return com.erksystem.protobuf.api.EmoRecogCreateRQ_m.getDefaultInstance();
       } else {
         if (msgCase_ == 5) {
-          return emoRecogCreateRqBuilder_.getMessage();
+          return emoRecogCreateRQBuilder_.getMessage();
         }
         return com.erksystem.protobuf.api.EmoRecogCreateRQ_m.getDefaultInstance();
       }
     }
     /**
-     * <code>.EmoRecogCreateRQ_m emoRecogCreateRq = 5;</code>
+     * <code>.EmoRecogCreateRQ_m EmoRecogCreateRQ = 5;</code>
      */
-    public Builder setEmoRecogCreateRq(com.erksystem.protobuf.api.EmoRecogCreateRQ_m value) {
-      if (emoRecogCreateRqBuilder_ == null) {
+    public Builder setEmoRecogCreateRQ(com.erksystem.protobuf.api.EmoRecogCreateRQ_m value) {
+      if (emoRecogCreateRQBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         msg_ = value;
         onChanged();
       } else {
-        emoRecogCreateRqBuilder_.setMessage(value);
+        emoRecogCreateRQBuilder_.setMessage(value);
       }
       msgCase_ = 5;
       return this;
     }
     /**
-     * <code>.EmoRecogCreateRQ_m emoRecogCreateRq = 5;</code>
+     * <code>.EmoRecogCreateRQ_m EmoRecogCreateRQ = 5;</code>
      */
-    public Builder setEmoRecogCreateRq(
+    public Builder setEmoRecogCreateRQ(
         com.erksystem.protobuf.api.EmoRecogCreateRQ_m.Builder builderForValue) {
-      if (emoRecogCreateRqBuilder_ == null) {
+      if (emoRecogCreateRQBuilder_ == null) {
         msg_ = builderForValue.build();
         onChanged();
       } else {
-        emoRecogCreateRqBuilder_.setMessage(builderForValue.build());
+        emoRecogCreateRQBuilder_.setMessage(builderForValue.build());
       }
       msgCase_ = 5;
       return this;
     }
     /**
-     * <code>.EmoRecogCreateRQ_m emoRecogCreateRq = 5;</code>
+     * <code>.EmoRecogCreateRQ_m EmoRecogCreateRQ = 5;</code>
      */
-    public Builder mergeEmoRecogCreateRq(com.erksystem.protobuf.api.EmoRecogCreateRQ_m value) {
-      if (emoRecogCreateRqBuilder_ == null) {
+    public Builder mergeEmoRecogCreateRQ(com.erksystem.protobuf.api.EmoRecogCreateRQ_m value) {
+      if (emoRecogCreateRQBuilder_ == null) {
         if (msgCase_ == 5 &&
             msg_ != com.erksystem.protobuf.api.EmoRecogCreateRQ_m.getDefaultInstance()) {
           msg_ = com.erksystem.protobuf.api.EmoRecogCreateRQ_m.newBuilder((com.erksystem.protobuf.api.EmoRecogCreateRQ_m) msg_)
@@ -2311,19 +2311,19 @@ private static final long serialVersionUID = 0L;
         onChanged();
       } else {
         if (msgCase_ == 5) {
-          emoRecogCreateRqBuilder_.mergeFrom(value);
+          emoRecogCreateRQBuilder_.mergeFrom(value);
         } else {
-          emoRecogCreateRqBuilder_.setMessage(value);
+          emoRecogCreateRQBuilder_.setMessage(value);
         }
       }
       msgCase_ = 5;
       return this;
     }
     /**
-     * <code>.EmoRecogCreateRQ_m emoRecogCreateRq = 5;</code>
+     * <code>.EmoRecogCreateRQ_m EmoRecogCreateRQ = 5;</code>
      */
-    public Builder clearEmoRecogCreateRq() {
-      if (emoRecogCreateRqBuilder_ == null) {
+    public Builder clearEmoRecogCreateRQ() {
+      if (emoRecogCreateRQBuilder_ == null) {
         if (msgCase_ == 5) {
           msgCase_ = 0;
           msg_ = null;
@@ -2334,23 +2334,23 @@ private static final long serialVersionUID = 0L;
           msgCase_ = 0;
           msg_ = null;
         }
-        emoRecogCreateRqBuilder_.clear();
+        emoRecogCreateRQBuilder_.clear();
       }
       return this;
     }
     /**
-     * <code>.EmoRecogCreateRQ_m emoRecogCreateRq = 5;</code>
+     * <code>.EmoRecogCreateRQ_m EmoRecogCreateRQ = 5;</code>
      */
-    public com.erksystem.protobuf.api.EmoRecogCreateRQ_m.Builder getEmoRecogCreateRqBuilder() {
-      return getEmoRecogCreateRqFieldBuilder().getBuilder();
+    public com.erksystem.protobuf.api.EmoRecogCreateRQ_m.Builder getEmoRecogCreateRQBuilder() {
+      return getEmoRecogCreateRQFieldBuilder().getBuilder();
     }
     /**
-     * <code>.EmoRecogCreateRQ_m emoRecogCreateRq = 5;</code>
+     * <code>.EmoRecogCreateRQ_m EmoRecogCreateRQ = 5;</code>
      */
     @java.lang.Override
-    public com.erksystem.protobuf.api.EmoRecogCreateRQ_mOrBuilder getEmoRecogCreateRqOrBuilder() {
-      if ((msgCase_ == 5) && (emoRecogCreateRqBuilder_ != null)) {
-        return emoRecogCreateRqBuilder_.getMessageOrBuilder();
+    public com.erksystem.protobuf.api.EmoRecogCreateRQ_mOrBuilder getEmoRecogCreateRQOrBuilder() {
+      if ((msgCase_ == 5) && (emoRecogCreateRQBuilder_ != null)) {
+        return emoRecogCreateRQBuilder_.getMessageOrBuilder();
       } else {
         if (msgCase_ == 5) {
           return (com.erksystem.protobuf.api.EmoRecogCreateRQ_m) msg_;
@@ -2359,16 +2359,16 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.EmoRecogCreateRQ_m emoRecogCreateRq = 5;</code>
+     * <code>.EmoRecogCreateRQ_m EmoRecogCreateRQ = 5;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.erksystem.protobuf.api.EmoRecogCreateRQ_m, com.erksystem.protobuf.api.EmoRecogCreateRQ_m.Builder, com.erksystem.protobuf.api.EmoRecogCreateRQ_mOrBuilder> 
-        getEmoRecogCreateRqFieldBuilder() {
-      if (emoRecogCreateRqBuilder_ == null) {
+        getEmoRecogCreateRQFieldBuilder() {
+      if (emoRecogCreateRQBuilder_ == null) {
         if (!(msgCase_ == 5)) {
           msg_ = com.erksystem.protobuf.api.EmoRecogCreateRQ_m.getDefaultInstance();
         }
-        emoRecogCreateRqBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        emoRecogCreateRQBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             com.erksystem.protobuf.api.EmoRecogCreateRQ_m, com.erksystem.protobuf.api.EmoRecogCreateRQ_m.Builder, com.erksystem.protobuf.api.EmoRecogCreateRQ_mOrBuilder>(
                 (com.erksystem.protobuf.api.EmoRecogCreateRQ_m) msg_,
                 getParentForChildren(),
@@ -2377,72 +2377,72 @@ private static final long serialVersionUID = 0L;
       }
       msgCase_ = 5;
       onChanged();
-      return emoRecogCreateRqBuilder_;
+      return emoRecogCreateRQBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.erksystem.protobuf.api.EmoRecogCreateRP_m, com.erksystem.protobuf.api.EmoRecogCreateRP_m.Builder, com.erksystem.protobuf.api.EmoRecogCreateRP_mOrBuilder> emoRecogCreateRpBuilder_;
+        com.erksystem.protobuf.api.EmoRecogCreateRP_m, com.erksystem.protobuf.api.EmoRecogCreateRP_m.Builder, com.erksystem.protobuf.api.EmoRecogCreateRP_mOrBuilder> emoRecogCreateRPBuilder_;
     /**
-     * <code>.EmoRecogCreateRP_m emoRecogCreateRp = 6;</code>
-     * @return Whether the emoRecogCreateRp field is set.
+     * <code>.EmoRecogCreateRP_m EmoRecogCreateRP = 6;</code>
+     * @return Whether the emoRecogCreateRP field is set.
      */
     @java.lang.Override
-    public boolean hasEmoRecogCreateRp() {
+    public boolean hasEmoRecogCreateRP() {
       return msgCase_ == 6;
     }
     /**
-     * <code>.EmoRecogCreateRP_m emoRecogCreateRp = 6;</code>
-     * @return The emoRecogCreateRp.
+     * <code>.EmoRecogCreateRP_m EmoRecogCreateRP = 6;</code>
+     * @return The emoRecogCreateRP.
      */
     @java.lang.Override
-    public com.erksystem.protobuf.api.EmoRecogCreateRP_m getEmoRecogCreateRp() {
-      if (emoRecogCreateRpBuilder_ == null) {
+    public com.erksystem.protobuf.api.EmoRecogCreateRP_m getEmoRecogCreateRP() {
+      if (emoRecogCreateRPBuilder_ == null) {
         if (msgCase_ == 6) {
           return (com.erksystem.protobuf.api.EmoRecogCreateRP_m) msg_;
         }
         return com.erksystem.protobuf.api.EmoRecogCreateRP_m.getDefaultInstance();
       } else {
         if (msgCase_ == 6) {
-          return emoRecogCreateRpBuilder_.getMessage();
+          return emoRecogCreateRPBuilder_.getMessage();
         }
         return com.erksystem.protobuf.api.EmoRecogCreateRP_m.getDefaultInstance();
       }
     }
     /**
-     * <code>.EmoRecogCreateRP_m emoRecogCreateRp = 6;</code>
+     * <code>.EmoRecogCreateRP_m EmoRecogCreateRP = 6;</code>
      */
-    public Builder setEmoRecogCreateRp(com.erksystem.protobuf.api.EmoRecogCreateRP_m value) {
-      if (emoRecogCreateRpBuilder_ == null) {
+    public Builder setEmoRecogCreateRP(com.erksystem.protobuf.api.EmoRecogCreateRP_m value) {
+      if (emoRecogCreateRPBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         msg_ = value;
         onChanged();
       } else {
-        emoRecogCreateRpBuilder_.setMessage(value);
+        emoRecogCreateRPBuilder_.setMessage(value);
       }
       msgCase_ = 6;
       return this;
     }
     /**
-     * <code>.EmoRecogCreateRP_m emoRecogCreateRp = 6;</code>
+     * <code>.EmoRecogCreateRP_m EmoRecogCreateRP = 6;</code>
      */
-    public Builder setEmoRecogCreateRp(
+    public Builder setEmoRecogCreateRP(
         com.erksystem.protobuf.api.EmoRecogCreateRP_m.Builder builderForValue) {
-      if (emoRecogCreateRpBuilder_ == null) {
+      if (emoRecogCreateRPBuilder_ == null) {
         msg_ = builderForValue.build();
         onChanged();
       } else {
-        emoRecogCreateRpBuilder_.setMessage(builderForValue.build());
+        emoRecogCreateRPBuilder_.setMessage(builderForValue.build());
       }
       msgCase_ = 6;
       return this;
     }
     /**
-     * <code>.EmoRecogCreateRP_m emoRecogCreateRp = 6;</code>
+     * <code>.EmoRecogCreateRP_m EmoRecogCreateRP = 6;</code>
      */
-    public Builder mergeEmoRecogCreateRp(com.erksystem.protobuf.api.EmoRecogCreateRP_m value) {
-      if (emoRecogCreateRpBuilder_ == null) {
+    public Builder mergeEmoRecogCreateRP(com.erksystem.protobuf.api.EmoRecogCreateRP_m value) {
+      if (emoRecogCreateRPBuilder_ == null) {
         if (msgCase_ == 6 &&
             msg_ != com.erksystem.protobuf.api.EmoRecogCreateRP_m.getDefaultInstance()) {
           msg_ = com.erksystem.protobuf.api.EmoRecogCreateRP_m.newBuilder((com.erksystem.protobuf.api.EmoRecogCreateRP_m) msg_)
@@ -2453,19 +2453,19 @@ private static final long serialVersionUID = 0L;
         onChanged();
       } else {
         if (msgCase_ == 6) {
-          emoRecogCreateRpBuilder_.mergeFrom(value);
+          emoRecogCreateRPBuilder_.mergeFrom(value);
         } else {
-          emoRecogCreateRpBuilder_.setMessage(value);
+          emoRecogCreateRPBuilder_.setMessage(value);
         }
       }
       msgCase_ = 6;
       return this;
     }
     /**
-     * <code>.EmoRecogCreateRP_m emoRecogCreateRp = 6;</code>
+     * <code>.EmoRecogCreateRP_m EmoRecogCreateRP = 6;</code>
      */
-    public Builder clearEmoRecogCreateRp() {
-      if (emoRecogCreateRpBuilder_ == null) {
+    public Builder clearEmoRecogCreateRP() {
+      if (emoRecogCreateRPBuilder_ == null) {
         if (msgCase_ == 6) {
           msgCase_ = 0;
           msg_ = null;
@@ -2476,23 +2476,23 @@ private static final long serialVersionUID = 0L;
           msgCase_ = 0;
           msg_ = null;
         }
-        emoRecogCreateRpBuilder_.clear();
+        emoRecogCreateRPBuilder_.clear();
       }
       return this;
     }
     /**
-     * <code>.EmoRecogCreateRP_m emoRecogCreateRp = 6;</code>
+     * <code>.EmoRecogCreateRP_m EmoRecogCreateRP = 6;</code>
      */
-    public com.erksystem.protobuf.api.EmoRecogCreateRP_m.Builder getEmoRecogCreateRpBuilder() {
-      return getEmoRecogCreateRpFieldBuilder().getBuilder();
+    public com.erksystem.protobuf.api.EmoRecogCreateRP_m.Builder getEmoRecogCreateRPBuilder() {
+      return getEmoRecogCreateRPFieldBuilder().getBuilder();
     }
     /**
-     * <code>.EmoRecogCreateRP_m emoRecogCreateRp = 6;</code>
+     * <code>.EmoRecogCreateRP_m EmoRecogCreateRP = 6;</code>
      */
     @java.lang.Override
-    public com.erksystem.protobuf.api.EmoRecogCreateRP_mOrBuilder getEmoRecogCreateRpOrBuilder() {
-      if ((msgCase_ == 6) && (emoRecogCreateRpBuilder_ != null)) {
-        return emoRecogCreateRpBuilder_.getMessageOrBuilder();
+    public com.erksystem.protobuf.api.EmoRecogCreateRP_mOrBuilder getEmoRecogCreateRPOrBuilder() {
+      if ((msgCase_ == 6) && (emoRecogCreateRPBuilder_ != null)) {
+        return emoRecogCreateRPBuilder_.getMessageOrBuilder();
       } else {
         if (msgCase_ == 6) {
           return (com.erksystem.protobuf.api.EmoRecogCreateRP_m) msg_;
@@ -2501,16 +2501,16 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.EmoRecogCreateRP_m emoRecogCreateRp = 6;</code>
+     * <code>.EmoRecogCreateRP_m EmoRecogCreateRP = 6;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.erksystem.protobuf.api.EmoRecogCreateRP_m, com.erksystem.protobuf.api.EmoRecogCreateRP_m.Builder, com.erksystem.protobuf.api.EmoRecogCreateRP_mOrBuilder> 
-        getEmoRecogCreateRpFieldBuilder() {
-      if (emoRecogCreateRpBuilder_ == null) {
+        getEmoRecogCreateRPFieldBuilder() {
+      if (emoRecogCreateRPBuilder_ == null) {
         if (!(msgCase_ == 6)) {
           msg_ = com.erksystem.protobuf.api.EmoRecogCreateRP_m.getDefaultInstance();
         }
-        emoRecogCreateRpBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        emoRecogCreateRPBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             com.erksystem.protobuf.api.EmoRecogCreateRP_m, com.erksystem.protobuf.api.EmoRecogCreateRP_m.Builder, com.erksystem.protobuf.api.EmoRecogCreateRP_mOrBuilder>(
                 (com.erksystem.protobuf.api.EmoRecogCreateRP_m) msg_,
                 getParentForChildren(),
@@ -2519,72 +2519,72 @@ private static final long serialVersionUID = 0L;
       }
       msgCase_ = 6;
       onChanged();
-      return emoRecogCreateRpBuilder_;
+      return emoRecogCreateRPBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.erksystem.protobuf.api.EmoRecogDeleteRQ_m, com.erksystem.protobuf.api.EmoRecogDeleteRQ_m.Builder, com.erksystem.protobuf.api.EmoRecogDeleteRQ_mOrBuilder> emoRecogDeleteRqBuilder_;
+        com.erksystem.protobuf.api.EmoRecogDeleteRQ_m, com.erksystem.protobuf.api.EmoRecogDeleteRQ_m.Builder, com.erksystem.protobuf.api.EmoRecogDeleteRQ_mOrBuilder> emoRecogDeleteRQBuilder_;
     /**
-     * <code>.EmoRecogDeleteRQ_m emoRecogDeleteRq = 7;</code>
-     * @return Whether the emoRecogDeleteRq field is set.
+     * <code>.EmoRecogDeleteRQ_m EmoRecogDeleteRQ = 7;</code>
+     * @return Whether the emoRecogDeleteRQ field is set.
      */
     @java.lang.Override
-    public boolean hasEmoRecogDeleteRq() {
+    public boolean hasEmoRecogDeleteRQ() {
       return msgCase_ == 7;
     }
     /**
-     * <code>.EmoRecogDeleteRQ_m emoRecogDeleteRq = 7;</code>
-     * @return The emoRecogDeleteRq.
+     * <code>.EmoRecogDeleteRQ_m EmoRecogDeleteRQ = 7;</code>
+     * @return The emoRecogDeleteRQ.
      */
     @java.lang.Override
-    public com.erksystem.protobuf.api.EmoRecogDeleteRQ_m getEmoRecogDeleteRq() {
-      if (emoRecogDeleteRqBuilder_ == null) {
+    public com.erksystem.protobuf.api.EmoRecogDeleteRQ_m getEmoRecogDeleteRQ() {
+      if (emoRecogDeleteRQBuilder_ == null) {
         if (msgCase_ == 7) {
           return (com.erksystem.protobuf.api.EmoRecogDeleteRQ_m) msg_;
         }
         return com.erksystem.protobuf.api.EmoRecogDeleteRQ_m.getDefaultInstance();
       } else {
         if (msgCase_ == 7) {
-          return emoRecogDeleteRqBuilder_.getMessage();
+          return emoRecogDeleteRQBuilder_.getMessage();
         }
         return com.erksystem.protobuf.api.EmoRecogDeleteRQ_m.getDefaultInstance();
       }
     }
     /**
-     * <code>.EmoRecogDeleteRQ_m emoRecogDeleteRq = 7;</code>
+     * <code>.EmoRecogDeleteRQ_m EmoRecogDeleteRQ = 7;</code>
      */
-    public Builder setEmoRecogDeleteRq(com.erksystem.protobuf.api.EmoRecogDeleteRQ_m value) {
-      if (emoRecogDeleteRqBuilder_ == null) {
+    public Builder setEmoRecogDeleteRQ(com.erksystem.protobuf.api.EmoRecogDeleteRQ_m value) {
+      if (emoRecogDeleteRQBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         msg_ = value;
         onChanged();
       } else {
-        emoRecogDeleteRqBuilder_.setMessage(value);
+        emoRecogDeleteRQBuilder_.setMessage(value);
       }
       msgCase_ = 7;
       return this;
     }
     /**
-     * <code>.EmoRecogDeleteRQ_m emoRecogDeleteRq = 7;</code>
+     * <code>.EmoRecogDeleteRQ_m EmoRecogDeleteRQ = 7;</code>
      */
-    public Builder setEmoRecogDeleteRq(
+    public Builder setEmoRecogDeleteRQ(
         com.erksystem.protobuf.api.EmoRecogDeleteRQ_m.Builder builderForValue) {
-      if (emoRecogDeleteRqBuilder_ == null) {
+      if (emoRecogDeleteRQBuilder_ == null) {
         msg_ = builderForValue.build();
         onChanged();
       } else {
-        emoRecogDeleteRqBuilder_.setMessage(builderForValue.build());
+        emoRecogDeleteRQBuilder_.setMessage(builderForValue.build());
       }
       msgCase_ = 7;
       return this;
     }
     /**
-     * <code>.EmoRecogDeleteRQ_m emoRecogDeleteRq = 7;</code>
+     * <code>.EmoRecogDeleteRQ_m EmoRecogDeleteRQ = 7;</code>
      */
-    public Builder mergeEmoRecogDeleteRq(com.erksystem.protobuf.api.EmoRecogDeleteRQ_m value) {
-      if (emoRecogDeleteRqBuilder_ == null) {
+    public Builder mergeEmoRecogDeleteRQ(com.erksystem.protobuf.api.EmoRecogDeleteRQ_m value) {
+      if (emoRecogDeleteRQBuilder_ == null) {
         if (msgCase_ == 7 &&
             msg_ != com.erksystem.protobuf.api.EmoRecogDeleteRQ_m.getDefaultInstance()) {
           msg_ = com.erksystem.protobuf.api.EmoRecogDeleteRQ_m.newBuilder((com.erksystem.protobuf.api.EmoRecogDeleteRQ_m) msg_)
@@ -2595,19 +2595,19 @@ private static final long serialVersionUID = 0L;
         onChanged();
       } else {
         if (msgCase_ == 7) {
-          emoRecogDeleteRqBuilder_.mergeFrom(value);
+          emoRecogDeleteRQBuilder_.mergeFrom(value);
         } else {
-          emoRecogDeleteRqBuilder_.setMessage(value);
+          emoRecogDeleteRQBuilder_.setMessage(value);
         }
       }
       msgCase_ = 7;
       return this;
     }
     /**
-     * <code>.EmoRecogDeleteRQ_m emoRecogDeleteRq = 7;</code>
+     * <code>.EmoRecogDeleteRQ_m EmoRecogDeleteRQ = 7;</code>
      */
-    public Builder clearEmoRecogDeleteRq() {
-      if (emoRecogDeleteRqBuilder_ == null) {
+    public Builder clearEmoRecogDeleteRQ() {
+      if (emoRecogDeleteRQBuilder_ == null) {
         if (msgCase_ == 7) {
           msgCase_ = 0;
           msg_ = null;
@@ -2618,23 +2618,23 @@ private static final long serialVersionUID = 0L;
           msgCase_ = 0;
           msg_ = null;
         }
-        emoRecogDeleteRqBuilder_.clear();
+        emoRecogDeleteRQBuilder_.clear();
       }
       return this;
     }
     /**
-     * <code>.EmoRecogDeleteRQ_m emoRecogDeleteRq = 7;</code>
+     * <code>.EmoRecogDeleteRQ_m EmoRecogDeleteRQ = 7;</code>
      */
-    public com.erksystem.protobuf.api.EmoRecogDeleteRQ_m.Builder getEmoRecogDeleteRqBuilder() {
-      return getEmoRecogDeleteRqFieldBuilder().getBuilder();
+    public com.erksystem.protobuf.api.EmoRecogDeleteRQ_m.Builder getEmoRecogDeleteRQBuilder() {
+      return getEmoRecogDeleteRQFieldBuilder().getBuilder();
     }
     /**
-     * <code>.EmoRecogDeleteRQ_m emoRecogDeleteRq = 7;</code>
+     * <code>.EmoRecogDeleteRQ_m EmoRecogDeleteRQ = 7;</code>
      */
     @java.lang.Override
-    public com.erksystem.protobuf.api.EmoRecogDeleteRQ_mOrBuilder getEmoRecogDeleteRqOrBuilder() {
-      if ((msgCase_ == 7) && (emoRecogDeleteRqBuilder_ != null)) {
-        return emoRecogDeleteRqBuilder_.getMessageOrBuilder();
+    public com.erksystem.protobuf.api.EmoRecogDeleteRQ_mOrBuilder getEmoRecogDeleteRQOrBuilder() {
+      if ((msgCase_ == 7) && (emoRecogDeleteRQBuilder_ != null)) {
+        return emoRecogDeleteRQBuilder_.getMessageOrBuilder();
       } else {
         if (msgCase_ == 7) {
           return (com.erksystem.protobuf.api.EmoRecogDeleteRQ_m) msg_;
@@ -2643,16 +2643,16 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.EmoRecogDeleteRQ_m emoRecogDeleteRq = 7;</code>
+     * <code>.EmoRecogDeleteRQ_m EmoRecogDeleteRQ = 7;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.erksystem.protobuf.api.EmoRecogDeleteRQ_m, com.erksystem.protobuf.api.EmoRecogDeleteRQ_m.Builder, com.erksystem.protobuf.api.EmoRecogDeleteRQ_mOrBuilder> 
-        getEmoRecogDeleteRqFieldBuilder() {
-      if (emoRecogDeleteRqBuilder_ == null) {
+        getEmoRecogDeleteRQFieldBuilder() {
+      if (emoRecogDeleteRQBuilder_ == null) {
         if (!(msgCase_ == 7)) {
           msg_ = com.erksystem.protobuf.api.EmoRecogDeleteRQ_m.getDefaultInstance();
         }
-        emoRecogDeleteRqBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        emoRecogDeleteRQBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             com.erksystem.protobuf.api.EmoRecogDeleteRQ_m, com.erksystem.protobuf.api.EmoRecogDeleteRQ_m.Builder, com.erksystem.protobuf.api.EmoRecogDeleteRQ_mOrBuilder>(
                 (com.erksystem.protobuf.api.EmoRecogDeleteRQ_m) msg_,
                 getParentForChildren(),
@@ -2661,72 +2661,72 @@ private static final long serialVersionUID = 0L;
       }
       msgCase_ = 7;
       onChanged();
-      return emoRecogDeleteRqBuilder_;
+      return emoRecogDeleteRQBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.erksystem.protobuf.api.EmoRecogDeleteRP_m, com.erksystem.protobuf.api.EmoRecogDeleteRP_m.Builder, com.erksystem.protobuf.api.EmoRecogDeleteRP_mOrBuilder> emoRecogDeleteRpBuilder_;
+        com.erksystem.protobuf.api.EmoRecogDeleteRP_m, com.erksystem.protobuf.api.EmoRecogDeleteRP_m.Builder, com.erksystem.protobuf.api.EmoRecogDeleteRP_mOrBuilder> emoRecogDeleteRPBuilder_;
     /**
-     * <code>.EmoRecogDeleteRP_m emoRecogDeleteRp = 8;</code>
-     * @return Whether the emoRecogDeleteRp field is set.
+     * <code>.EmoRecogDeleteRP_m EmoRecogDeleteRP = 8;</code>
+     * @return Whether the emoRecogDeleteRP field is set.
      */
     @java.lang.Override
-    public boolean hasEmoRecogDeleteRp() {
+    public boolean hasEmoRecogDeleteRP() {
       return msgCase_ == 8;
     }
     /**
-     * <code>.EmoRecogDeleteRP_m emoRecogDeleteRp = 8;</code>
-     * @return The emoRecogDeleteRp.
+     * <code>.EmoRecogDeleteRP_m EmoRecogDeleteRP = 8;</code>
+     * @return The emoRecogDeleteRP.
      */
     @java.lang.Override
-    public com.erksystem.protobuf.api.EmoRecogDeleteRP_m getEmoRecogDeleteRp() {
-      if (emoRecogDeleteRpBuilder_ == null) {
+    public com.erksystem.protobuf.api.EmoRecogDeleteRP_m getEmoRecogDeleteRP() {
+      if (emoRecogDeleteRPBuilder_ == null) {
         if (msgCase_ == 8) {
           return (com.erksystem.protobuf.api.EmoRecogDeleteRP_m) msg_;
         }
         return com.erksystem.protobuf.api.EmoRecogDeleteRP_m.getDefaultInstance();
       } else {
         if (msgCase_ == 8) {
-          return emoRecogDeleteRpBuilder_.getMessage();
+          return emoRecogDeleteRPBuilder_.getMessage();
         }
         return com.erksystem.protobuf.api.EmoRecogDeleteRP_m.getDefaultInstance();
       }
     }
     /**
-     * <code>.EmoRecogDeleteRP_m emoRecogDeleteRp = 8;</code>
+     * <code>.EmoRecogDeleteRP_m EmoRecogDeleteRP = 8;</code>
      */
-    public Builder setEmoRecogDeleteRp(com.erksystem.protobuf.api.EmoRecogDeleteRP_m value) {
-      if (emoRecogDeleteRpBuilder_ == null) {
+    public Builder setEmoRecogDeleteRP(com.erksystem.protobuf.api.EmoRecogDeleteRP_m value) {
+      if (emoRecogDeleteRPBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         msg_ = value;
         onChanged();
       } else {
-        emoRecogDeleteRpBuilder_.setMessage(value);
+        emoRecogDeleteRPBuilder_.setMessage(value);
       }
       msgCase_ = 8;
       return this;
     }
     /**
-     * <code>.EmoRecogDeleteRP_m emoRecogDeleteRp = 8;</code>
+     * <code>.EmoRecogDeleteRP_m EmoRecogDeleteRP = 8;</code>
      */
-    public Builder setEmoRecogDeleteRp(
+    public Builder setEmoRecogDeleteRP(
         com.erksystem.protobuf.api.EmoRecogDeleteRP_m.Builder builderForValue) {
-      if (emoRecogDeleteRpBuilder_ == null) {
+      if (emoRecogDeleteRPBuilder_ == null) {
         msg_ = builderForValue.build();
         onChanged();
       } else {
-        emoRecogDeleteRpBuilder_.setMessage(builderForValue.build());
+        emoRecogDeleteRPBuilder_.setMessage(builderForValue.build());
       }
       msgCase_ = 8;
       return this;
     }
     /**
-     * <code>.EmoRecogDeleteRP_m emoRecogDeleteRp = 8;</code>
+     * <code>.EmoRecogDeleteRP_m EmoRecogDeleteRP = 8;</code>
      */
-    public Builder mergeEmoRecogDeleteRp(com.erksystem.protobuf.api.EmoRecogDeleteRP_m value) {
-      if (emoRecogDeleteRpBuilder_ == null) {
+    public Builder mergeEmoRecogDeleteRP(com.erksystem.protobuf.api.EmoRecogDeleteRP_m value) {
+      if (emoRecogDeleteRPBuilder_ == null) {
         if (msgCase_ == 8 &&
             msg_ != com.erksystem.protobuf.api.EmoRecogDeleteRP_m.getDefaultInstance()) {
           msg_ = com.erksystem.protobuf.api.EmoRecogDeleteRP_m.newBuilder((com.erksystem.protobuf.api.EmoRecogDeleteRP_m) msg_)
@@ -2737,19 +2737,19 @@ private static final long serialVersionUID = 0L;
         onChanged();
       } else {
         if (msgCase_ == 8) {
-          emoRecogDeleteRpBuilder_.mergeFrom(value);
+          emoRecogDeleteRPBuilder_.mergeFrom(value);
         } else {
-          emoRecogDeleteRpBuilder_.setMessage(value);
+          emoRecogDeleteRPBuilder_.setMessage(value);
         }
       }
       msgCase_ = 8;
       return this;
     }
     /**
-     * <code>.EmoRecogDeleteRP_m emoRecogDeleteRp = 8;</code>
+     * <code>.EmoRecogDeleteRP_m EmoRecogDeleteRP = 8;</code>
      */
-    public Builder clearEmoRecogDeleteRp() {
-      if (emoRecogDeleteRpBuilder_ == null) {
+    public Builder clearEmoRecogDeleteRP() {
+      if (emoRecogDeleteRPBuilder_ == null) {
         if (msgCase_ == 8) {
           msgCase_ = 0;
           msg_ = null;
@@ -2760,23 +2760,23 @@ private static final long serialVersionUID = 0L;
           msgCase_ = 0;
           msg_ = null;
         }
-        emoRecogDeleteRpBuilder_.clear();
+        emoRecogDeleteRPBuilder_.clear();
       }
       return this;
     }
     /**
-     * <code>.EmoRecogDeleteRP_m emoRecogDeleteRp = 8;</code>
+     * <code>.EmoRecogDeleteRP_m EmoRecogDeleteRP = 8;</code>
      */
-    public com.erksystem.protobuf.api.EmoRecogDeleteRP_m.Builder getEmoRecogDeleteRpBuilder() {
-      return getEmoRecogDeleteRpFieldBuilder().getBuilder();
+    public com.erksystem.protobuf.api.EmoRecogDeleteRP_m.Builder getEmoRecogDeleteRPBuilder() {
+      return getEmoRecogDeleteRPFieldBuilder().getBuilder();
     }
     /**
-     * <code>.EmoRecogDeleteRP_m emoRecogDeleteRp = 8;</code>
+     * <code>.EmoRecogDeleteRP_m EmoRecogDeleteRP = 8;</code>
      */
     @java.lang.Override
-    public com.erksystem.protobuf.api.EmoRecogDeleteRP_mOrBuilder getEmoRecogDeleteRpOrBuilder() {
-      if ((msgCase_ == 8) && (emoRecogDeleteRpBuilder_ != null)) {
-        return emoRecogDeleteRpBuilder_.getMessageOrBuilder();
+    public com.erksystem.protobuf.api.EmoRecogDeleteRP_mOrBuilder getEmoRecogDeleteRPOrBuilder() {
+      if ((msgCase_ == 8) && (emoRecogDeleteRPBuilder_ != null)) {
+        return emoRecogDeleteRPBuilder_.getMessageOrBuilder();
       } else {
         if (msgCase_ == 8) {
           return (com.erksystem.protobuf.api.EmoRecogDeleteRP_m) msg_;
@@ -2785,16 +2785,16 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.EmoRecogDeleteRP_m emoRecogDeleteRp = 8;</code>
+     * <code>.EmoRecogDeleteRP_m EmoRecogDeleteRP = 8;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.erksystem.protobuf.api.EmoRecogDeleteRP_m, com.erksystem.protobuf.api.EmoRecogDeleteRP_m.Builder, com.erksystem.protobuf.api.EmoRecogDeleteRP_mOrBuilder> 
-        getEmoRecogDeleteRpFieldBuilder() {
-      if (emoRecogDeleteRpBuilder_ == null) {
+        getEmoRecogDeleteRPFieldBuilder() {
+      if (emoRecogDeleteRPBuilder_ == null) {
         if (!(msgCase_ == 8)) {
           msg_ = com.erksystem.protobuf.api.EmoRecogDeleteRP_m.getDefaultInstance();
         }
-        emoRecogDeleteRpBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        emoRecogDeleteRPBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             com.erksystem.protobuf.api.EmoRecogDeleteRP_m, com.erksystem.protobuf.api.EmoRecogDeleteRP_m.Builder, com.erksystem.protobuf.api.EmoRecogDeleteRP_mOrBuilder>(
                 (com.erksystem.protobuf.api.EmoRecogDeleteRP_m) msg_,
                 getParentForChildren(),
@@ -2803,7 +2803,7 @@ private static final long serialVersionUID = 0L;
       }
       msgCase_ = 8;
       onChanged();
-      return emoRecogDeleteRpBuilder_;
+      return emoRecogDeleteRPBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -3091,68 +3091,68 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.erksystem.protobuf.api.EmoRecogRQ_m, com.erksystem.protobuf.api.EmoRecogRQ_m.Builder, com.erksystem.protobuf.api.EmoRecogRQ_mOrBuilder> emoRecogRqBuilder_;
+        com.erksystem.protobuf.api.EmoRecogRQ_m, com.erksystem.protobuf.api.EmoRecogRQ_m.Builder, com.erksystem.protobuf.api.EmoRecogRQ_mOrBuilder> emoRecogRQBuilder_;
     /**
-     * <code>.EmoRecogRQ_m emoRecogRq = 11;</code>
-     * @return Whether the emoRecogRq field is set.
+     * <code>.EmoRecogRQ_m EmoRecogRQ = 11;</code>
+     * @return Whether the emoRecogRQ field is set.
      */
     @java.lang.Override
-    public boolean hasEmoRecogRq() {
+    public boolean hasEmoRecogRQ() {
       return msgCase_ == 11;
     }
     /**
-     * <code>.EmoRecogRQ_m emoRecogRq = 11;</code>
-     * @return The emoRecogRq.
+     * <code>.EmoRecogRQ_m EmoRecogRQ = 11;</code>
+     * @return The emoRecogRQ.
      */
     @java.lang.Override
-    public com.erksystem.protobuf.api.EmoRecogRQ_m getEmoRecogRq() {
-      if (emoRecogRqBuilder_ == null) {
+    public com.erksystem.protobuf.api.EmoRecogRQ_m getEmoRecogRQ() {
+      if (emoRecogRQBuilder_ == null) {
         if (msgCase_ == 11) {
           return (com.erksystem.protobuf.api.EmoRecogRQ_m) msg_;
         }
         return com.erksystem.protobuf.api.EmoRecogRQ_m.getDefaultInstance();
       } else {
         if (msgCase_ == 11) {
-          return emoRecogRqBuilder_.getMessage();
+          return emoRecogRQBuilder_.getMessage();
         }
         return com.erksystem.protobuf.api.EmoRecogRQ_m.getDefaultInstance();
       }
     }
     /**
-     * <code>.EmoRecogRQ_m emoRecogRq = 11;</code>
+     * <code>.EmoRecogRQ_m EmoRecogRQ = 11;</code>
      */
-    public Builder setEmoRecogRq(com.erksystem.protobuf.api.EmoRecogRQ_m value) {
-      if (emoRecogRqBuilder_ == null) {
+    public Builder setEmoRecogRQ(com.erksystem.protobuf.api.EmoRecogRQ_m value) {
+      if (emoRecogRQBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         msg_ = value;
         onChanged();
       } else {
-        emoRecogRqBuilder_.setMessage(value);
+        emoRecogRQBuilder_.setMessage(value);
       }
       msgCase_ = 11;
       return this;
     }
     /**
-     * <code>.EmoRecogRQ_m emoRecogRq = 11;</code>
+     * <code>.EmoRecogRQ_m EmoRecogRQ = 11;</code>
      */
-    public Builder setEmoRecogRq(
+    public Builder setEmoRecogRQ(
         com.erksystem.protobuf.api.EmoRecogRQ_m.Builder builderForValue) {
-      if (emoRecogRqBuilder_ == null) {
+      if (emoRecogRQBuilder_ == null) {
         msg_ = builderForValue.build();
         onChanged();
       } else {
-        emoRecogRqBuilder_.setMessage(builderForValue.build());
+        emoRecogRQBuilder_.setMessage(builderForValue.build());
       }
       msgCase_ = 11;
       return this;
     }
     /**
-     * <code>.EmoRecogRQ_m emoRecogRq = 11;</code>
+     * <code>.EmoRecogRQ_m EmoRecogRQ = 11;</code>
      */
-    public Builder mergeEmoRecogRq(com.erksystem.protobuf.api.EmoRecogRQ_m value) {
-      if (emoRecogRqBuilder_ == null) {
+    public Builder mergeEmoRecogRQ(com.erksystem.protobuf.api.EmoRecogRQ_m value) {
+      if (emoRecogRQBuilder_ == null) {
         if (msgCase_ == 11 &&
             msg_ != com.erksystem.protobuf.api.EmoRecogRQ_m.getDefaultInstance()) {
           msg_ = com.erksystem.protobuf.api.EmoRecogRQ_m.newBuilder((com.erksystem.protobuf.api.EmoRecogRQ_m) msg_)
@@ -3163,19 +3163,19 @@ private static final long serialVersionUID = 0L;
         onChanged();
       } else {
         if (msgCase_ == 11) {
-          emoRecogRqBuilder_.mergeFrom(value);
+          emoRecogRQBuilder_.mergeFrom(value);
         } else {
-          emoRecogRqBuilder_.setMessage(value);
+          emoRecogRQBuilder_.setMessage(value);
         }
       }
       msgCase_ = 11;
       return this;
     }
     /**
-     * <code>.EmoRecogRQ_m emoRecogRq = 11;</code>
+     * <code>.EmoRecogRQ_m EmoRecogRQ = 11;</code>
      */
-    public Builder clearEmoRecogRq() {
-      if (emoRecogRqBuilder_ == null) {
+    public Builder clearEmoRecogRQ() {
+      if (emoRecogRQBuilder_ == null) {
         if (msgCase_ == 11) {
           msgCase_ = 0;
           msg_ = null;
@@ -3186,23 +3186,23 @@ private static final long serialVersionUID = 0L;
           msgCase_ = 0;
           msg_ = null;
         }
-        emoRecogRqBuilder_.clear();
+        emoRecogRQBuilder_.clear();
       }
       return this;
     }
     /**
-     * <code>.EmoRecogRQ_m emoRecogRq = 11;</code>
+     * <code>.EmoRecogRQ_m EmoRecogRQ = 11;</code>
      */
-    public com.erksystem.protobuf.api.EmoRecogRQ_m.Builder getEmoRecogRqBuilder() {
-      return getEmoRecogRqFieldBuilder().getBuilder();
+    public com.erksystem.protobuf.api.EmoRecogRQ_m.Builder getEmoRecogRQBuilder() {
+      return getEmoRecogRQFieldBuilder().getBuilder();
     }
     /**
-     * <code>.EmoRecogRQ_m emoRecogRq = 11;</code>
+     * <code>.EmoRecogRQ_m EmoRecogRQ = 11;</code>
      */
     @java.lang.Override
-    public com.erksystem.protobuf.api.EmoRecogRQ_mOrBuilder getEmoRecogRqOrBuilder() {
-      if ((msgCase_ == 11) && (emoRecogRqBuilder_ != null)) {
-        return emoRecogRqBuilder_.getMessageOrBuilder();
+    public com.erksystem.protobuf.api.EmoRecogRQ_mOrBuilder getEmoRecogRQOrBuilder() {
+      if ((msgCase_ == 11) && (emoRecogRQBuilder_ != null)) {
+        return emoRecogRQBuilder_.getMessageOrBuilder();
       } else {
         if (msgCase_ == 11) {
           return (com.erksystem.protobuf.api.EmoRecogRQ_m) msg_;
@@ -3211,16 +3211,16 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.EmoRecogRQ_m emoRecogRq = 11;</code>
+     * <code>.EmoRecogRQ_m EmoRecogRQ = 11;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.erksystem.protobuf.api.EmoRecogRQ_m, com.erksystem.protobuf.api.EmoRecogRQ_m.Builder, com.erksystem.protobuf.api.EmoRecogRQ_mOrBuilder> 
-        getEmoRecogRqFieldBuilder() {
-      if (emoRecogRqBuilder_ == null) {
+        getEmoRecogRQFieldBuilder() {
+      if (emoRecogRQBuilder_ == null) {
         if (!(msgCase_ == 11)) {
           msg_ = com.erksystem.protobuf.api.EmoRecogRQ_m.getDefaultInstance();
         }
-        emoRecogRqBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        emoRecogRQBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             com.erksystem.protobuf.api.EmoRecogRQ_m, com.erksystem.protobuf.api.EmoRecogRQ_m.Builder, com.erksystem.protobuf.api.EmoRecogRQ_mOrBuilder>(
                 (com.erksystem.protobuf.api.EmoRecogRQ_m) msg_,
                 getParentForChildren(),
@@ -3229,72 +3229,72 @@ private static final long serialVersionUID = 0L;
       }
       msgCase_ = 11;
       onChanged();
-      return emoRecogRqBuilder_;
+      return emoRecogRQBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.erksystem.protobuf.api.EmoRecogRP_m, com.erksystem.protobuf.api.EmoRecogRP_m.Builder, com.erksystem.protobuf.api.EmoRecogRP_mOrBuilder> emoRecogRpBuilder_;
+        com.erksystem.protobuf.api.EmoRecogRP_m, com.erksystem.protobuf.api.EmoRecogRP_m.Builder, com.erksystem.protobuf.api.EmoRecogRP_mOrBuilder> emoRecogRPBuilder_;
     /**
-     * <code>.EmoRecogRP_m emoRecogRp = 12;</code>
-     * @return Whether the emoRecogRp field is set.
+     * <code>.EmoRecogRP_m EmoRecogRP = 12;</code>
+     * @return Whether the emoRecogRP field is set.
      */
     @java.lang.Override
-    public boolean hasEmoRecogRp() {
+    public boolean hasEmoRecogRP() {
       return msgCase_ == 12;
     }
     /**
-     * <code>.EmoRecogRP_m emoRecogRp = 12;</code>
-     * @return The emoRecogRp.
+     * <code>.EmoRecogRP_m EmoRecogRP = 12;</code>
+     * @return The emoRecogRP.
      */
     @java.lang.Override
-    public com.erksystem.protobuf.api.EmoRecogRP_m getEmoRecogRp() {
-      if (emoRecogRpBuilder_ == null) {
+    public com.erksystem.protobuf.api.EmoRecogRP_m getEmoRecogRP() {
+      if (emoRecogRPBuilder_ == null) {
         if (msgCase_ == 12) {
           return (com.erksystem.protobuf.api.EmoRecogRP_m) msg_;
         }
         return com.erksystem.protobuf.api.EmoRecogRP_m.getDefaultInstance();
       } else {
         if (msgCase_ == 12) {
-          return emoRecogRpBuilder_.getMessage();
+          return emoRecogRPBuilder_.getMessage();
         }
         return com.erksystem.protobuf.api.EmoRecogRP_m.getDefaultInstance();
       }
     }
     /**
-     * <code>.EmoRecogRP_m emoRecogRp = 12;</code>
+     * <code>.EmoRecogRP_m EmoRecogRP = 12;</code>
      */
-    public Builder setEmoRecogRp(com.erksystem.protobuf.api.EmoRecogRP_m value) {
-      if (emoRecogRpBuilder_ == null) {
+    public Builder setEmoRecogRP(com.erksystem.protobuf.api.EmoRecogRP_m value) {
+      if (emoRecogRPBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         msg_ = value;
         onChanged();
       } else {
-        emoRecogRpBuilder_.setMessage(value);
+        emoRecogRPBuilder_.setMessage(value);
       }
       msgCase_ = 12;
       return this;
     }
     /**
-     * <code>.EmoRecogRP_m emoRecogRp = 12;</code>
+     * <code>.EmoRecogRP_m EmoRecogRP = 12;</code>
      */
-    public Builder setEmoRecogRp(
+    public Builder setEmoRecogRP(
         com.erksystem.protobuf.api.EmoRecogRP_m.Builder builderForValue) {
-      if (emoRecogRpBuilder_ == null) {
+      if (emoRecogRPBuilder_ == null) {
         msg_ = builderForValue.build();
         onChanged();
       } else {
-        emoRecogRpBuilder_.setMessage(builderForValue.build());
+        emoRecogRPBuilder_.setMessage(builderForValue.build());
       }
       msgCase_ = 12;
       return this;
     }
     /**
-     * <code>.EmoRecogRP_m emoRecogRp = 12;</code>
+     * <code>.EmoRecogRP_m EmoRecogRP = 12;</code>
      */
-    public Builder mergeEmoRecogRp(com.erksystem.protobuf.api.EmoRecogRP_m value) {
-      if (emoRecogRpBuilder_ == null) {
+    public Builder mergeEmoRecogRP(com.erksystem.protobuf.api.EmoRecogRP_m value) {
+      if (emoRecogRPBuilder_ == null) {
         if (msgCase_ == 12 &&
             msg_ != com.erksystem.protobuf.api.EmoRecogRP_m.getDefaultInstance()) {
           msg_ = com.erksystem.protobuf.api.EmoRecogRP_m.newBuilder((com.erksystem.protobuf.api.EmoRecogRP_m) msg_)
@@ -3305,19 +3305,19 @@ private static final long serialVersionUID = 0L;
         onChanged();
       } else {
         if (msgCase_ == 12) {
-          emoRecogRpBuilder_.mergeFrom(value);
+          emoRecogRPBuilder_.mergeFrom(value);
         } else {
-          emoRecogRpBuilder_.setMessage(value);
+          emoRecogRPBuilder_.setMessage(value);
         }
       }
       msgCase_ = 12;
       return this;
     }
     /**
-     * <code>.EmoRecogRP_m emoRecogRp = 12;</code>
+     * <code>.EmoRecogRP_m EmoRecogRP = 12;</code>
      */
-    public Builder clearEmoRecogRp() {
-      if (emoRecogRpBuilder_ == null) {
+    public Builder clearEmoRecogRP() {
+      if (emoRecogRPBuilder_ == null) {
         if (msgCase_ == 12) {
           msgCase_ = 0;
           msg_ = null;
@@ -3328,23 +3328,23 @@ private static final long serialVersionUID = 0L;
           msgCase_ = 0;
           msg_ = null;
         }
-        emoRecogRpBuilder_.clear();
+        emoRecogRPBuilder_.clear();
       }
       return this;
     }
     /**
-     * <code>.EmoRecogRP_m emoRecogRp = 12;</code>
+     * <code>.EmoRecogRP_m EmoRecogRP = 12;</code>
      */
-    public com.erksystem.protobuf.api.EmoRecogRP_m.Builder getEmoRecogRpBuilder() {
-      return getEmoRecogRpFieldBuilder().getBuilder();
+    public com.erksystem.protobuf.api.EmoRecogRP_m.Builder getEmoRecogRPBuilder() {
+      return getEmoRecogRPFieldBuilder().getBuilder();
     }
     /**
-     * <code>.EmoRecogRP_m emoRecogRp = 12;</code>
+     * <code>.EmoRecogRP_m EmoRecogRP = 12;</code>
      */
     @java.lang.Override
-    public com.erksystem.protobuf.api.EmoRecogRP_mOrBuilder getEmoRecogRpOrBuilder() {
-      if ((msgCase_ == 12) && (emoRecogRpBuilder_ != null)) {
-        return emoRecogRpBuilder_.getMessageOrBuilder();
+    public com.erksystem.protobuf.api.EmoRecogRP_mOrBuilder getEmoRecogRPOrBuilder() {
+      if ((msgCase_ == 12) && (emoRecogRPBuilder_ != null)) {
+        return emoRecogRPBuilder_.getMessageOrBuilder();
       } else {
         if (msgCase_ == 12) {
           return (com.erksystem.protobuf.api.EmoRecogRP_m) msg_;
@@ -3353,16 +3353,16 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.EmoRecogRP_m emoRecogRp = 12;</code>
+     * <code>.EmoRecogRP_m EmoRecogRP = 12;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.erksystem.protobuf.api.EmoRecogRP_m, com.erksystem.protobuf.api.EmoRecogRP_m.Builder, com.erksystem.protobuf.api.EmoRecogRP_mOrBuilder> 
-        getEmoRecogRpFieldBuilder() {
-      if (emoRecogRpBuilder_ == null) {
+        getEmoRecogRPFieldBuilder() {
+      if (emoRecogRPBuilder_ == null) {
         if (!(msgCase_ == 12)) {
           msg_ = com.erksystem.protobuf.api.EmoRecogRP_m.getDefaultInstance();
         }
-        emoRecogRpBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        emoRecogRPBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             com.erksystem.protobuf.api.EmoRecogRP_m, com.erksystem.protobuf.api.EmoRecogRP_m.Builder, com.erksystem.protobuf.api.EmoRecogRP_mOrBuilder>(
                 (com.erksystem.protobuf.api.EmoRecogRP_m) msg_,
                 getParentForChildren(),
@@ -3371,72 +3371,72 @@ private static final long serialVersionUID = 0L;
       }
       msgCase_ = 12;
       onChanged();
-      return emoRecogRpBuilder_;
+      return emoRecogRPBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.erksystem.protobuf.api.PhysioEmoRecogRQ_m, com.erksystem.protobuf.api.PhysioEmoRecogRQ_m.Builder, com.erksystem.protobuf.api.PhysioEmoRecogRQ_mOrBuilder> physioEmoRecogRqBuilder_;
+        com.erksystem.protobuf.api.PhysioEmoRecogRQ_m, com.erksystem.protobuf.api.PhysioEmoRecogRQ_m.Builder, com.erksystem.protobuf.api.PhysioEmoRecogRQ_mOrBuilder> physioEmoRecogRQBuilder_;
     /**
-     * <code>.PhysioEmoRecogRQ_m physioEmoRecogRq = 13;</code>
-     * @return Whether the physioEmoRecogRq field is set.
+     * <code>.PhysioEmoRecogRQ_m PhysioEmoRecogRQ = 13;</code>
+     * @return Whether the physioEmoRecogRQ field is set.
      */
     @java.lang.Override
-    public boolean hasPhysioEmoRecogRq() {
+    public boolean hasPhysioEmoRecogRQ() {
       return msgCase_ == 13;
     }
     /**
-     * <code>.PhysioEmoRecogRQ_m physioEmoRecogRq = 13;</code>
-     * @return The physioEmoRecogRq.
+     * <code>.PhysioEmoRecogRQ_m PhysioEmoRecogRQ = 13;</code>
+     * @return The physioEmoRecogRQ.
      */
     @java.lang.Override
-    public com.erksystem.protobuf.api.PhysioEmoRecogRQ_m getPhysioEmoRecogRq() {
-      if (physioEmoRecogRqBuilder_ == null) {
+    public com.erksystem.protobuf.api.PhysioEmoRecogRQ_m getPhysioEmoRecogRQ() {
+      if (physioEmoRecogRQBuilder_ == null) {
         if (msgCase_ == 13) {
           return (com.erksystem.protobuf.api.PhysioEmoRecogRQ_m) msg_;
         }
         return com.erksystem.protobuf.api.PhysioEmoRecogRQ_m.getDefaultInstance();
       } else {
         if (msgCase_ == 13) {
-          return physioEmoRecogRqBuilder_.getMessage();
+          return physioEmoRecogRQBuilder_.getMessage();
         }
         return com.erksystem.protobuf.api.PhysioEmoRecogRQ_m.getDefaultInstance();
       }
     }
     /**
-     * <code>.PhysioEmoRecogRQ_m physioEmoRecogRq = 13;</code>
+     * <code>.PhysioEmoRecogRQ_m PhysioEmoRecogRQ = 13;</code>
      */
-    public Builder setPhysioEmoRecogRq(com.erksystem.protobuf.api.PhysioEmoRecogRQ_m value) {
-      if (physioEmoRecogRqBuilder_ == null) {
+    public Builder setPhysioEmoRecogRQ(com.erksystem.protobuf.api.PhysioEmoRecogRQ_m value) {
+      if (physioEmoRecogRQBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         msg_ = value;
         onChanged();
       } else {
-        physioEmoRecogRqBuilder_.setMessage(value);
+        physioEmoRecogRQBuilder_.setMessage(value);
       }
       msgCase_ = 13;
       return this;
     }
     /**
-     * <code>.PhysioEmoRecogRQ_m physioEmoRecogRq = 13;</code>
+     * <code>.PhysioEmoRecogRQ_m PhysioEmoRecogRQ = 13;</code>
      */
-    public Builder setPhysioEmoRecogRq(
+    public Builder setPhysioEmoRecogRQ(
         com.erksystem.protobuf.api.PhysioEmoRecogRQ_m.Builder builderForValue) {
-      if (physioEmoRecogRqBuilder_ == null) {
+      if (physioEmoRecogRQBuilder_ == null) {
         msg_ = builderForValue.build();
         onChanged();
       } else {
-        physioEmoRecogRqBuilder_.setMessage(builderForValue.build());
+        physioEmoRecogRQBuilder_.setMessage(builderForValue.build());
       }
       msgCase_ = 13;
       return this;
     }
     /**
-     * <code>.PhysioEmoRecogRQ_m physioEmoRecogRq = 13;</code>
+     * <code>.PhysioEmoRecogRQ_m PhysioEmoRecogRQ = 13;</code>
      */
-    public Builder mergePhysioEmoRecogRq(com.erksystem.protobuf.api.PhysioEmoRecogRQ_m value) {
-      if (physioEmoRecogRqBuilder_ == null) {
+    public Builder mergePhysioEmoRecogRQ(com.erksystem.protobuf.api.PhysioEmoRecogRQ_m value) {
+      if (physioEmoRecogRQBuilder_ == null) {
         if (msgCase_ == 13 &&
             msg_ != com.erksystem.protobuf.api.PhysioEmoRecogRQ_m.getDefaultInstance()) {
           msg_ = com.erksystem.protobuf.api.PhysioEmoRecogRQ_m.newBuilder((com.erksystem.protobuf.api.PhysioEmoRecogRQ_m) msg_)
@@ -3447,19 +3447,19 @@ private static final long serialVersionUID = 0L;
         onChanged();
       } else {
         if (msgCase_ == 13) {
-          physioEmoRecogRqBuilder_.mergeFrom(value);
+          physioEmoRecogRQBuilder_.mergeFrom(value);
         } else {
-          physioEmoRecogRqBuilder_.setMessage(value);
+          physioEmoRecogRQBuilder_.setMessage(value);
         }
       }
       msgCase_ = 13;
       return this;
     }
     /**
-     * <code>.PhysioEmoRecogRQ_m physioEmoRecogRq = 13;</code>
+     * <code>.PhysioEmoRecogRQ_m PhysioEmoRecogRQ = 13;</code>
      */
-    public Builder clearPhysioEmoRecogRq() {
-      if (physioEmoRecogRqBuilder_ == null) {
+    public Builder clearPhysioEmoRecogRQ() {
+      if (physioEmoRecogRQBuilder_ == null) {
         if (msgCase_ == 13) {
           msgCase_ = 0;
           msg_ = null;
@@ -3470,23 +3470,23 @@ private static final long serialVersionUID = 0L;
           msgCase_ = 0;
           msg_ = null;
         }
-        physioEmoRecogRqBuilder_.clear();
+        physioEmoRecogRQBuilder_.clear();
       }
       return this;
     }
     /**
-     * <code>.PhysioEmoRecogRQ_m physioEmoRecogRq = 13;</code>
+     * <code>.PhysioEmoRecogRQ_m PhysioEmoRecogRQ = 13;</code>
      */
-    public com.erksystem.protobuf.api.PhysioEmoRecogRQ_m.Builder getPhysioEmoRecogRqBuilder() {
-      return getPhysioEmoRecogRqFieldBuilder().getBuilder();
+    public com.erksystem.protobuf.api.PhysioEmoRecogRQ_m.Builder getPhysioEmoRecogRQBuilder() {
+      return getPhysioEmoRecogRQFieldBuilder().getBuilder();
     }
     /**
-     * <code>.PhysioEmoRecogRQ_m physioEmoRecogRq = 13;</code>
+     * <code>.PhysioEmoRecogRQ_m PhysioEmoRecogRQ = 13;</code>
      */
     @java.lang.Override
-    public com.erksystem.protobuf.api.PhysioEmoRecogRQ_mOrBuilder getPhysioEmoRecogRqOrBuilder() {
-      if ((msgCase_ == 13) && (physioEmoRecogRqBuilder_ != null)) {
-        return physioEmoRecogRqBuilder_.getMessageOrBuilder();
+    public com.erksystem.protobuf.api.PhysioEmoRecogRQ_mOrBuilder getPhysioEmoRecogRQOrBuilder() {
+      if ((msgCase_ == 13) && (physioEmoRecogRQBuilder_ != null)) {
+        return physioEmoRecogRQBuilder_.getMessageOrBuilder();
       } else {
         if (msgCase_ == 13) {
           return (com.erksystem.protobuf.api.PhysioEmoRecogRQ_m) msg_;
@@ -3495,16 +3495,16 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.PhysioEmoRecogRQ_m physioEmoRecogRq = 13;</code>
+     * <code>.PhysioEmoRecogRQ_m PhysioEmoRecogRQ = 13;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.erksystem.protobuf.api.PhysioEmoRecogRQ_m, com.erksystem.protobuf.api.PhysioEmoRecogRQ_m.Builder, com.erksystem.protobuf.api.PhysioEmoRecogRQ_mOrBuilder> 
-        getPhysioEmoRecogRqFieldBuilder() {
-      if (physioEmoRecogRqBuilder_ == null) {
+        getPhysioEmoRecogRQFieldBuilder() {
+      if (physioEmoRecogRQBuilder_ == null) {
         if (!(msgCase_ == 13)) {
           msg_ = com.erksystem.protobuf.api.PhysioEmoRecogRQ_m.getDefaultInstance();
         }
-        physioEmoRecogRqBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        physioEmoRecogRQBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             com.erksystem.protobuf.api.PhysioEmoRecogRQ_m, com.erksystem.protobuf.api.PhysioEmoRecogRQ_m.Builder, com.erksystem.protobuf.api.PhysioEmoRecogRQ_mOrBuilder>(
                 (com.erksystem.protobuf.api.PhysioEmoRecogRQ_m) msg_,
                 getParentForChildren(),
@@ -3513,72 +3513,72 @@ private static final long serialVersionUID = 0L;
       }
       msgCase_ = 13;
       onChanged();
-      return physioEmoRecogRqBuilder_;
+      return physioEmoRecogRQBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.erksystem.protobuf.api.PhysioEmoRecogRP_m, com.erksystem.protobuf.api.PhysioEmoRecogRP_m.Builder, com.erksystem.protobuf.api.PhysioEmoRecogRP_mOrBuilder> physioEmoRecogRpBuilder_;
+        com.erksystem.protobuf.api.PhysioEmoRecogRP_m, com.erksystem.protobuf.api.PhysioEmoRecogRP_m.Builder, com.erksystem.protobuf.api.PhysioEmoRecogRP_mOrBuilder> physioEmoRecogRPBuilder_;
     /**
-     * <code>.PhysioEmoRecogRP_m physioEmoRecogRp = 14;</code>
-     * @return Whether the physioEmoRecogRp field is set.
+     * <code>.PhysioEmoRecogRP_m PhysioEmoRecogRP = 14;</code>
+     * @return Whether the physioEmoRecogRP field is set.
      */
     @java.lang.Override
-    public boolean hasPhysioEmoRecogRp() {
+    public boolean hasPhysioEmoRecogRP() {
       return msgCase_ == 14;
     }
     /**
-     * <code>.PhysioEmoRecogRP_m physioEmoRecogRp = 14;</code>
-     * @return The physioEmoRecogRp.
+     * <code>.PhysioEmoRecogRP_m PhysioEmoRecogRP = 14;</code>
+     * @return The physioEmoRecogRP.
      */
     @java.lang.Override
-    public com.erksystem.protobuf.api.PhysioEmoRecogRP_m getPhysioEmoRecogRp() {
-      if (physioEmoRecogRpBuilder_ == null) {
+    public com.erksystem.protobuf.api.PhysioEmoRecogRP_m getPhysioEmoRecogRP() {
+      if (physioEmoRecogRPBuilder_ == null) {
         if (msgCase_ == 14) {
           return (com.erksystem.protobuf.api.PhysioEmoRecogRP_m) msg_;
         }
         return com.erksystem.protobuf.api.PhysioEmoRecogRP_m.getDefaultInstance();
       } else {
         if (msgCase_ == 14) {
-          return physioEmoRecogRpBuilder_.getMessage();
+          return physioEmoRecogRPBuilder_.getMessage();
         }
         return com.erksystem.protobuf.api.PhysioEmoRecogRP_m.getDefaultInstance();
       }
     }
     /**
-     * <code>.PhysioEmoRecogRP_m physioEmoRecogRp = 14;</code>
+     * <code>.PhysioEmoRecogRP_m PhysioEmoRecogRP = 14;</code>
      */
-    public Builder setPhysioEmoRecogRp(com.erksystem.protobuf.api.PhysioEmoRecogRP_m value) {
-      if (physioEmoRecogRpBuilder_ == null) {
+    public Builder setPhysioEmoRecogRP(com.erksystem.protobuf.api.PhysioEmoRecogRP_m value) {
+      if (physioEmoRecogRPBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         msg_ = value;
         onChanged();
       } else {
-        physioEmoRecogRpBuilder_.setMessage(value);
+        physioEmoRecogRPBuilder_.setMessage(value);
       }
       msgCase_ = 14;
       return this;
     }
     /**
-     * <code>.PhysioEmoRecogRP_m physioEmoRecogRp = 14;</code>
+     * <code>.PhysioEmoRecogRP_m PhysioEmoRecogRP = 14;</code>
      */
-    public Builder setPhysioEmoRecogRp(
+    public Builder setPhysioEmoRecogRP(
         com.erksystem.protobuf.api.PhysioEmoRecogRP_m.Builder builderForValue) {
-      if (physioEmoRecogRpBuilder_ == null) {
+      if (physioEmoRecogRPBuilder_ == null) {
         msg_ = builderForValue.build();
         onChanged();
       } else {
-        physioEmoRecogRpBuilder_.setMessage(builderForValue.build());
+        physioEmoRecogRPBuilder_.setMessage(builderForValue.build());
       }
       msgCase_ = 14;
       return this;
     }
     /**
-     * <code>.PhysioEmoRecogRP_m physioEmoRecogRp = 14;</code>
+     * <code>.PhysioEmoRecogRP_m PhysioEmoRecogRP = 14;</code>
      */
-    public Builder mergePhysioEmoRecogRp(com.erksystem.protobuf.api.PhysioEmoRecogRP_m value) {
-      if (physioEmoRecogRpBuilder_ == null) {
+    public Builder mergePhysioEmoRecogRP(com.erksystem.protobuf.api.PhysioEmoRecogRP_m value) {
+      if (physioEmoRecogRPBuilder_ == null) {
         if (msgCase_ == 14 &&
             msg_ != com.erksystem.protobuf.api.PhysioEmoRecogRP_m.getDefaultInstance()) {
           msg_ = com.erksystem.protobuf.api.PhysioEmoRecogRP_m.newBuilder((com.erksystem.protobuf.api.PhysioEmoRecogRP_m) msg_)
@@ -3589,19 +3589,19 @@ private static final long serialVersionUID = 0L;
         onChanged();
       } else {
         if (msgCase_ == 14) {
-          physioEmoRecogRpBuilder_.mergeFrom(value);
+          physioEmoRecogRPBuilder_.mergeFrom(value);
         } else {
-          physioEmoRecogRpBuilder_.setMessage(value);
+          physioEmoRecogRPBuilder_.setMessage(value);
         }
       }
       msgCase_ = 14;
       return this;
     }
     /**
-     * <code>.PhysioEmoRecogRP_m physioEmoRecogRp = 14;</code>
+     * <code>.PhysioEmoRecogRP_m PhysioEmoRecogRP = 14;</code>
      */
-    public Builder clearPhysioEmoRecogRp() {
-      if (physioEmoRecogRpBuilder_ == null) {
+    public Builder clearPhysioEmoRecogRP() {
+      if (physioEmoRecogRPBuilder_ == null) {
         if (msgCase_ == 14) {
           msgCase_ = 0;
           msg_ = null;
@@ -3612,23 +3612,23 @@ private static final long serialVersionUID = 0L;
           msgCase_ = 0;
           msg_ = null;
         }
-        physioEmoRecogRpBuilder_.clear();
+        physioEmoRecogRPBuilder_.clear();
       }
       return this;
     }
     /**
-     * <code>.PhysioEmoRecogRP_m physioEmoRecogRp = 14;</code>
+     * <code>.PhysioEmoRecogRP_m PhysioEmoRecogRP = 14;</code>
      */
-    public com.erksystem.protobuf.api.PhysioEmoRecogRP_m.Builder getPhysioEmoRecogRpBuilder() {
-      return getPhysioEmoRecogRpFieldBuilder().getBuilder();
+    public com.erksystem.protobuf.api.PhysioEmoRecogRP_m.Builder getPhysioEmoRecogRPBuilder() {
+      return getPhysioEmoRecogRPFieldBuilder().getBuilder();
     }
     /**
-     * <code>.PhysioEmoRecogRP_m physioEmoRecogRp = 14;</code>
+     * <code>.PhysioEmoRecogRP_m PhysioEmoRecogRP = 14;</code>
      */
     @java.lang.Override
-    public com.erksystem.protobuf.api.PhysioEmoRecogRP_mOrBuilder getPhysioEmoRecogRpOrBuilder() {
-      if ((msgCase_ == 14) && (physioEmoRecogRpBuilder_ != null)) {
-        return physioEmoRecogRpBuilder_.getMessageOrBuilder();
+    public com.erksystem.protobuf.api.PhysioEmoRecogRP_mOrBuilder getPhysioEmoRecogRPOrBuilder() {
+      if ((msgCase_ == 14) && (physioEmoRecogRPBuilder_ != null)) {
+        return physioEmoRecogRPBuilder_.getMessageOrBuilder();
       } else {
         if (msgCase_ == 14) {
           return (com.erksystem.protobuf.api.PhysioEmoRecogRP_m) msg_;
@@ -3637,16 +3637,16 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.PhysioEmoRecogRP_m physioEmoRecogRp = 14;</code>
+     * <code>.PhysioEmoRecogRP_m PhysioEmoRecogRP = 14;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.erksystem.protobuf.api.PhysioEmoRecogRP_m, com.erksystem.protobuf.api.PhysioEmoRecogRP_m.Builder, com.erksystem.protobuf.api.PhysioEmoRecogRP_mOrBuilder> 
-        getPhysioEmoRecogRpFieldBuilder() {
-      if (physioEmoRecogRpBuilder_ == null) {
+        getPhysioEmoRecogRPFieldBuilder() {
+      if (physioEmoRecogRPBuilder_ == null) {
         if (!(msgCase_ == 14)) {
           msg_ = com.erksystem.protobuf.api.PhysioEmoRecogRP_m.getDefaultInstance();
         }
-        physioEmoRecogRpBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        physioEmoRecogRPBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             com.erksystem.protobuf.api.PhysioEmoRecogRP_m, com.erksystem.protobuf.api.PhysioEmoRecogRP_m.Builder, com.erksystem.protobuf.api.PhysioEmoRecogRP_mOrBuilder>(
                 (com.erksystem.protobuf.api.PhysioEmoRecogRP_m) msg_,
                 getParentForChildren(),
@@ -3655,72 +3655,72 @@ private static final long serialVersionUID = 0L;
       }
       msgCase_ = 14;
       onChanged();
-      return physioEmoRecogRpBuilder_;
+      return physioEmoRecogRPBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.erksystem.protobuf.api.SpeechEmoRecogRQ_m, com.erksystem.protobuf.api.SpeechEmoRecogRQ_m.Builder, com.erksystem.protobuf.api.SpeechEmoRecogRQ_mOrBuilder> speechEmoRecogRqBuilder_;
+        com.erksystem.protobuf.api.SpeechEmoRecogRQ_m, com.erksystem.protobuf.api.SpeechEmoRecogRQ_m.Builder, com.erksystem.protobuf.api.SpeechEmoRecogRQ_mOrBuilder> speechEmoRecogRQBuilder_;
     /**
-     * <code>.SpeechEmoRecogRQ_m speechEmoRecogRq = 15;</code>
-     * @return Whether the speechEmoRecogRq field is set.
+     * <code>.SpeechEmoRecogRQ_m SpeechEmoRecogRQ = 15;</code>
+     * @return Whether the speechEmoRecogRQ field is set.
      */
     @java.lang.Override
-    public boolean hasSpeechEmoRecogRq() {
+    public boolean hasSpeechEmoRecogRQ() {
       return msgCase_ == 15;
     }
     /**
-     * <code>.SpeechEmoRecogRQ_m speechEmoRecogRq = 15;</code>
-     * @return The speechEmoRecogRq.
+     * <code>.SpeechEmoRecogRQ_m SpeechEmoRecogRQ = 15;</code>
+     * @return The speechEmoRecogRQ.
      */
     @java.lang.Override
-    public com.erksystem.protobuf.api.SpeechEmoRecogRQ_m getSpeechEmoRecogRq() {
-      if (speechEmoRecogRqBuilder_ == null) {
+    public com.erksystem.protobuf.api.SpeechEmoRecogRQ_m getSpeechEmoRecogRQ() {
+      if (speechEmoRecogRQBuilder_ == null) {
         if (msgCase_ == 15) {
           return (com.erksystem.protobuf.api.SpeechEmoRecogRQ_m) msg_;
         }
         return com.erksystem.protobuf.api.SpeechEmoRecogRQ_m.getDefaultInstance();
       } else {
         if (msgCase_ == 15) {
-          return speechEmoRecogRqBuilder_.getMessage();
+          return speechEmoRecogRQBuilder_.getMessage();
         }
         return com.erksystem.protobuf.api.SpeechEmoRecogRQ_m.getDefaultInstance();
       }
     }
     /**
-     * <code>.SpeechEmoRecogRQ_m speechEmoRecogRq = 15;</code>
+     * <code>.SpeechEmoRecogRQ_m SpeechEmoRecogRQ = 15;</code>
      */
-    public Builder setSpeechEmoRecogRq(com.erksystem.protobuf.api.SpeechEmoRecogRQ_m value) {
-      if (speechEmoRecogRqBuilder_ == null) {
+    public Builder setSpeechEmoRecogRQ(com.erksystem.protobuf.api.SpeechEmoRecogRQ_m value) {
+      if (speechEmoRecogRQBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         msg_ = value;
         onChanged();
       } else {
-        speechEmoRecogRqBuilder_.setMessage(value);
+        speechEmoRecogRQBuilder_.setMessage(value);
       }
       msgCase_ = 15;
       return this;
     }
     /**
-     * <code>.SpeechEmoRecogRQ_m speechEmoRecogRq = 15;</code>
+     * <code>.SpeechEmoRecogRQ_m SpeechEmoRecogRQ = 15;</code>
      */
-    public Builder setSpeechEmoRecogRq(
+    public Builder setSpeechEmoRecogRQ(
         com.erksystem.protobuf.api.SpeechEmoRecogRQ_m.Builder builderForValue) {
-      if (speechEmoRecogRqBuilder_ == null) {
+      if (speechEmoRecogRQBuilder_ == null) {
         msg_ = builderForValue.build();
         onChanged();
       } else {
-        speechEmoRecogRqBuilder_.setMessage(builderForValue.build());
+        speechEmoRecogRQBuilder_.setMessage(builderForValue.build());
       }
       msgCase_ = 15;
       return this;
     }
     /**
-     * <code>.SpeechEmoRecogRQ_m speechEmoRecogRq = 15;</code>
+     * <code>.SpeechEmoRecogRQ_m SpeechEmoRecogRQ = 15;</code>
      */
-    public Builder mergeSpeechEmoRecogRq(com.erksystem.protobuf.api.SpeechEmoRecogRQ_m value) {
-      if (speechEmoRecogRqBuilder_ == null) {
+    public Builder mergeSpeechEmoRecogRQ(com.erksystem.protobuf.api.SpeechEmoRecogRQ_m value) {
+      if (speechEmoRecogRQBuilder_ == null) {
         if (msgCase_ == 15 &&
             msg_ != com.erksystem.protobuf.api.SpeechEmoRecogRQ_m.getDefaultInstance()) {
           msg_ = com.erksystem.protobuf.api.SpeechEmoRecogRQ_m.newBuilder((com.erksystem.protobuf.api.SpeechEmoRecogRQ_m) msg_)
@@ -3731,19 +3731,19 @@ private static final long serialVersionUID = 0L;
         onChanged();
       } else {
         if (msgCase_ == 15) {
-          speechEmoRecogRqBuilder_.mergeFrom(value);
+          speechEmoRecogRQBuilder_.mergeFrom(value);
         } else {
-          speechEmoRecogRqBuilder_.setMessage(value);
+          speechEmoRecogRQBuilder_.setMessage(value);
         }
       }
       msgCase_ = 15;
       return this;
     }
     /**
-     * <code>.SpeechEmoRecogRQ_m speechEmoRecogRq = 15;</code>
+     * <code>.SpeechEmoRecogRQ_m SpeechEmoRecogRQ = 15;</code>
      */
-    public Builder clearSpeechEmoRecogRq() {
-      if (speechEmoRecogRqBuilder_ == null) {
+    public Builder clearSpeechEmoRecogRQ() {
+      if (speechEmoRecogRQBuilder_ == null) {
         if (msgCase_ == 15) {
           msgCase_ = 0;
           msg_ = null;
@@ -3754,23 +3754,23 @@ private static final long serialVersionUID = 0L;
           msgCase_ = 0;
           msg_ = null;
         }
-        speechEmoRecogRqBuilder_.clear();
+        speechEmoRecogRQBuilder_.clear();
       }
       return this;
     }
     /**
-     * <code>.SpeechEmoRecogRQ_m speechEmoRecogRq = 15;</code>
+     * <code>.SpeechEmoRecogRQ_m SpeechEmoRecogRQ = 15;</code>
      */
-    public com.erksystem.protobuf.api.SpeechEmoRecogRQ_m.Builder getSpeechEmoRecogRqBuilder() {
-      return getSpeechEmoRecogRqFieldBuilder().getBuilder();
+    public com.erksystem.protobuf.api.SpeechEmoRecogRQ_m.Builder getSpeechEmoRecogRQBuilder() {
+      return getSpeechEmoRecogRQFieldBuilder().getBuilder();
     }
     /**
-     * <code>.SpeechEmoRecogRQ_m speechEmoRecogRq = 15;</code>
+     * <code>.SpeechEmoRecogRQ_m SpeechEmoRecogRQ = 15;</code>
      */
     @java.lang.Override
-    public com.erksystem.protobuf.api.SpeechEmoRecogRQ_mOrBuilder getSpeechEmoRecogRqOrBuilder() {
-      if ((msgCase_ == 15) && (speechEmoRecogRqBuilder_ != null)) {
-        return speechEmoRecogRqBuilder_.getMessageOrBuilder();
+    public com.erksystem.protobuf.api.SpeechEmoRecogRQ_mOrBuilder getSpeechEmoRecogRQOrBuilder() {
+      if ((msgCase_ == 15) && (speechEmoRecogRQBuilder_ != null)) {
+        return speechEmoRecogRQBuilder_.getMessageOrBuilder();
       } else {
         if (msgCase_ == 15) {
           return (com.erksystem.protobuf.api.SpeechEmoRecogRQ_m) msg_;
@@ -3779,16 +3779,16 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.SpeechEmoRecogRQ_m speechEmoRecogRq = 15;</code>
+     * <code>.SpeechEmoRecogRQ_m SpeechEmoRecogRQ = 15;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.erksystem.protobuf.api.SpeechEmoRecogRQ_m, com.erksystem.protobuf.api.SpeechEmoRecogRQ_m.Builder, com.erksystem.protobuf.api.SpeechEmoRecogRQ_mOrBuilder> 
-        getSpeechEmoRecogRqFieldBuilder() {
-      if (speechEmoRecogRqBuilder_ == null) {
+        getSpeechEmoRecogRQFieldBuilder() {
+      if (speechEmoRecogRQBuilder_ == null) {
         if (!(msgCase_ == 15)) {
           msg_ = com.erksystem.protobuf.api.SpeechEmoRecogRQ_m.getDefaultInstance();
         }
-        speechEmoRecogRqBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        speechEmoRecogRQBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             com.erksystem.protobuf.api.SpeechEmoRecogRQ_m, com.erksystem.protobuf.api.SpeechEmoRecogRQ_m.Builder, com.erksystem.protobuf.api.SpeechEmoRecogRQ_mOrBuilder>(
                 (com.erksystem.protobuf.api.SpeechEmoRecogRQ_m) msg_,
                 getParentForChildren(),
@@ -3797,72 +3797,72 @@ private static final long serialVersionUID = 0L;
       }
       msgCase_ = 15;
       onChanged();
-      return speechEmoRecogRqBuilder_;
+      return speechEmoRecogRQBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.erksystem.protobuf.api.SpeechEmoRecogRP_m, com.erksystem.protobuf.api.SpeechEmoRecogRP_m.Builder, com.erksystem.protobuf.api.SpeechEmoRecogRP_mOrBuilder> speechEmoRecogRpBuilder_;
+        com.erksystem.protobuf.api.SpeechEmoRecogRP_m, com.erksystem.protobuf.api.SpeechEmoRecogRP_m.Builder, com.erksystem.protobuf.api.SpeechEmoRecogRP_mOrBuilder> speechEmoRecogRPBuilder_;
     /**
-     * <code>.SpeechEmoRecogRP_m speechEmoRecogRp = 16;</code>
-     * @return Whether the speechEmoRecogRp field is set.
+     * <code>.SpeechEmoRecogRP_m SpeechEmoRecogRP = 16;</code>
+     * @return Whether the speechEmoRecogRP field is set.
      */
     @java.lang.Override
-    public boolean hasSpeechEmoRecogRp() {
+    public boolean hasSpeechEmoRecogRP() {
       return msgCase_ == 16;
     }
     /**
-     * <code>.SpeechEmoRecogRP_m speechEmoRecogRp = 16;</code>
-     * @return The speechEmoRecogRp.
+     * <code>.SpeechEmoRecogRP_m SpeechEmoRecogRP = 16;</code>
+     * @return The speechEmoRecogRP.
      */
     @java.lang.Override
-    public com.erksystem.protobuf.api.SpeechEmoRecogRP_m getSpeechEmoRecogRp() {
-      if (speechEmoRecogRpBuilder_ == null) {
+    public com.erksystem.protobuf.api.SpeechEmoRecogRP_m getSpeechEmoRecogRP() {
+      if (speechEmoRecogRPBuilder_ == null) {
         if (msgCase_ == 16) {
           return (com.erksystem.protobuf.api.SpeechEmoRecogRP_m) msg_;
         }
         return com.erksystem.protobuf.api.SpeechEmoRecogRP_m.getDefaultInstance();
       } else {
         if (msgCase_ == 16) {
-          return speechEmoRecogRpBuilder_.getMessage();
+          return speechEmoRecogRPBuilder_.getMessage();
         }
         return com.erksystem.protobuf.api.SpeechEmoRecogRP_m.getDefaultInstance();
       }
     }
     /**
-     * <code>.SpeechEmoRecogRP_m speechEmoRecogRp = 16;</code>
+     * <code>.SpeechEmoRecogRP_m SpeechEmoRecogRP = 16;</code>
      */
-    public Builder setSpeechEmoRecogRp(com.erksystem.protobuf.api.SpeechEmoRecogRP_m value) {
-      if (speechEmoRecogRpBuilder_ == null) {
+    public Builder setSpeechEmoRecogRP(com.erksystem.protobuf.api.SpeechEmoRecogRP_m value) {
+      if (speechEmoRecogRPBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         msg_ = value;
         onChanged();
       } else {
-        speechEmoRecogRpBuilder_.setMessage(value);
+        speechEmoRecogRPBuilder_.setMessage(value);
       }
       msgCase_ = 16;
       return this;
     }
     /**
-     * <code>.SpeechEmoRecogRP_m speechEmoRecogRp = 16;</code>
+     * <code>.SpeechEmoRecogRP_m SpeechEmoRecogRP = 16;</code>
      */
-    public Builder setSpeechEmoRecogRp(
+    public Builder setSpeechEmoRecogRP(
         com.erksystem.protobuf.api.SpeechEmoRecogRP_m.Builder builderForValue) {
-      if (speechEmoRecogRpBuilder_ == null) {
+      if (speechEmoRecogRPBuilder_ == null) {
         msg_ = builderForValue.build();
         onChanged();
       } else {
-        speechEmoRecogRpBuilder_.setMessage(builderForValue.build());
+        speechEmoRecogRPBuilder_.setMessage(builderForValue.build());
       }
       msgCase_ = 16;
       return this;
     }
     /**
-     * <code>.SpeechEmoRecogRP_m speechEmoRecogRp = 16;</code>
+     * <code>.SpeechEmoRecogRP_m SpeechEmoRecogRP = 16;</code>
      */
-    public Builder mergeSpeechEmoRecogRp(com.erksystem.protobuf.api.SpeechEmoRecogRP_m value) {
-      if (speechEmoRecogRpBuilder_ == null) {
+    public Builder mergeSpeechEmoRecogRP(com.erksystem.protobuf.api.SpeechEmoRecogRP_m value) {
+      if (speechEmoRecogRPBuilder_ == null) {
         if (msgCase_ == 16 &&
             msg_ != com.erksystem.protobuf.api.SpeechEmoRecogRP_m.getDefaultInstance()) {
           msg_ = com.erksystem.protobuf.api.SpeechEmoRecogRP_m.newBuilder((com.erksystem.protobuf.api.SpeechEmoRecogRP_m) msg_)
@@ -3873,19 +3873,19 @@ private static final long serialVersionUID = 0L;
         onChanged();
       } else {
         if (msgCase_ == 16) {
-          speechEmoRecogRpBuilder_.mergeFrom(value);
+          speechEmoRecogRPBuilder_.mergeFrom(value);
         } else {
-          speechEmoRecogRpBuilder_.setMessage(value);
+          speechEmoRecogRPBuilder_.setMessage(value);
         }
       }
       msgCase_ = 16;
       return this;
     }
     /**
-     * <code>.SpeechEmoRecogRP_m speechEmoRecogRp = 16;</code>
+     * <code>.SpeechEmoRecogRP_m SpeechEmoRecogRP = 16;</code>
      */
-    public Builder clearSpeechEmoRecogRp() {
-      if (speechEmoRecogRpBuilder_ == null) {
+    public Builder clearSpeechEmoRecogRP() {
+      if (speechEmoRecogRPBuilder_ == null) {
         if (msgCase_ == 16) {
           msgCase_ = 0;
           msg_ = null;
@@ -3896,23 +3896,23 @@ private static final long serialVersionUID = 0L;
           msgCase_ = 0;
           msg_ = null;
         }
-        speechEmoRecogRpBuilder_.clear();
+        speechEmoRecogRPBuilder_.clear();
       }
       return this;
     }
     /**
-     * <code>.SpeechEmoRecogRP_m speechEmoRecogRp = 16;</code>
+     * <code>.SpeechEmoRecogRP_m SpeechEmoRecogRP = 16;</code>
      */
-    public com.erksystem.protobuf.api.SpeechEmoRecogRP_m.Builder getSpeechEmoRecogRpBuilder() {
-      return getSpeechEmoRecogRpFieldBuilder().getBuilder();
+    public com.erksystem.protobuf.api.SpeechEmoRecogRP_m.Builder getSpeechEmoRecogRPBuilder() {
+      return getSpeechEmoRecogRPFieldBuilder().getBuilder();
     }
     /**
-     * <code>.SpeechEmoRecogRP_m speechEmoRecogRp = 16;</code>
+     * <code>.SpeechEmoRecogRP_m SpeechEmoRecogRP = 16;</code>
      */
     @java.lang.Override
-    public com.erksystem.protobuf.api.SpeechEmoRecogRP_mOrBuilder getSpeechEmoRecogRpOrBuilder() {
-      if ((msgCase_ == 16) && (speechEmoRecogRpBuilder_ != null)) {
-        return speechEmoRecogRpBuilder_.getMessageOrBuilder();
+    public com.erksystem.protobuf.api.SpeechEmoRecogRP_mOrBuilder getSpeechEmoRecogRPOrBuilder() {
+      if ((msgCase_ == 16) && (speechEmoRecogRPBuilder_ != null)) {
+        return speechEmoRecogRPBuilder_.getMessageOrBuilder();
       } else {
         if (msgCase_ == 16) {
           return (com.erksystem.protobuf.api.SpeechEmoRecogRP_m) msg_;
@@ -3921,16 +3921,16 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.SpeechEmoRecogRP_m speechEmoRecogRp = 16;</code>
+     * <code>.SpeechEmoRecogRP_m SpeechEmoRecogRP = 16;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.erksystem.protobuf.api.SpeechEmoRecogRP_m, com.erksystem.protobuf.api.SpeechEmoRecogRP_m.Builder, com.erksystem.protobuf.api.SpeechEmoRecogRP_mOrBuilder> 
-        getSpeechEmoRecogRpFieldBuilder() {
-      if (speechEmoRecogRpBuilder_ == null) {
+        getSpeechEmoRecogRPFieldBuilder() {
+      if (speechEmoRecogRPBuilder_ == null) {
         if (!(msgCase_ == 16)) {
           msg_ = com.erksystem.protobuf.api.SpeechEmoRecogRP_m.getDefaultInstance();
         }
-        speechEmoRecogRpBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        speechEmoRecogRPBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             com.erksystem.protobuf.api.SpeechEmoRecogRP_m, com.erksystem.protobuf.api.SpeechEmoRecogRP_m.Builder, com.erksystem.protobuf.api.SpeechEmoRecogRP_mOrBuilder>(
                 (com.erksystem.protobuf.api.SpeechEmoRecogRP_m) msg_,
                 getParentForChildren(),
@@ -3939,72 +3939,72 @@ private static final long serialVersionUID = 0L;
       }
       msgCase_ = 16;
       onChanged();
-      return speechEmoRecogRpBuilder_;
+      return speechEmoRecogRPBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.erksystem.protobuf.api.FaceEmoRecogRQ_m, com.erksystem.protobuf.api.FaceEmoRecogRQ_m.Builder, com.erksystem.protobuf.api.FaceEmoRecogRQ_mOrBuilder> faceEmoRecogRqBuilder_;
+        com.erksystem.protobuf.api.FaceEmoRecogRQ_m, com.erksystem.protobuf.api.FaceEmoRecogRQ_m.Builder, com.erksystem.protobuf.api.FaceEmoRecogRQ_mOrBuilder> faceEmoRecogRQBuilder_;
     /**
-     * <code>.FaceEmoRecogRQ_m faceEmoRecogRq = 17;</code>
-     * @return Whether the faceEmoRecogRq field is set.
+     * <code>.FaceEmoRecogRQ_m FaceEmoRecogRQ = 17;</code>
+     * @return Whether the faceEmoRecogRQ field is set.
      */
     @java.lang.Override
-    public boolean hasFaceEmoRecogRq() {
+    public boolean hasFaceEmoRecogRQ() {
       return msgCase_ == 17;
     }
     /**
-     * <code>.FaceEmoRecogRQ_m faceEmoRecogRq = 17;</code>
-     * @return The faceEmoRecogRq.
+     * <code>.FaceEmoRecogRQ_m FaceEmoRecogRQ = 17;</code>
+     * @return The faceEmoRecogRQ.
      */
     @java.lang.Override
-    public com.erksystem.protobuf.api.FaceEmoRecogRQ_m getFaceEmoRecogRq() {
-      if (faceEmoRecogRqBuilder_ == null) {
+    public com.erksystem.protobuf.api.FaceEmoRecogRQ_m getFaceEmoRecogRQ() {
+      if (faceEmoRecogRQBuilder_ == null) {
         if (msgCase_ == 17) {
           return (com.erksystem.protobuf.api.FaceEmoRecogRQ_m) msg_;
         }
         return com.erksystem.protobuf.api.FaceEmoRecogRQ_m.getDefaultInstance();
       } else {
         if (msgCase_ == 17) {
-          return faceEmoRecogRqBuilder_.getMessage();
+          return faceEmoRecogRQBuilder_.getMessage();
         }
         return com.erksystem.protobuf.api.FaceEmoRecogRQ_m.getDefaultInstance();
       }
     }
     /**
-     * <code>.FaceEmoRecogRQ_m faceEmoRecogRq = 17;</code>
+     * <code>.FaceEmoRecogRQ_m FaceEmoRecogRQ = 17;</code>
      */
-    public Builder setFaceEmoRecogRq(com.erksystem.protobuf.api.FaceEmoRecogRQ_m value) {
-      if (faceEmoRecogRqBuilder_ == null) {
+    public Builder setFaceEmoRecogRQ(com.erksystem.protobuf.api.FaceEmoRecogRQ_m value) {
+      if (faceEmoRecogRQBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         msg_ = value;
         onChanged();
       } else {
-        faceEmoRecogRqBuilder_.setMessage(value);
+        faceEmoRecogRQBuilder_.setMessage(value);
       }
       msgCase_ = 17;
       return this;
     }
     /**
-     * <code>.FaceEmoRecogRQ_m faceEmoRecogRq = 17;</code>
+     * <code>.FaceEmoRecogRQ_m FaceEmoRecogRQ = 17;</code>
      */
-    public Builder setFaceEmoRecogRq(
+    public Builder setFaceEmoRecogRQ(
         com.erksystem.protobuf.api.FaceEmoRecogRQ_m.Builder builderForValue) {
-      if (faceEmoRecogRqBuilder_ == null) {
+      if (faceEmoRecogRQBuilder_ == null) {
         msg_ = builderForValue.build();
         onChanged();
       } else {
-        faceEmoRecogRqBuilder_.setMessage(builderForValue.build());
+        faceEmoRecogRQBuilder_.setMessage(builderForValue.build());
       }
       msgCase_ = 17;
       return this;
     }
     /**
-     * <code>.FaceEmoRecogRQ_m faceEmoRecogRq = 17;</code>
+     * <code>.FaceEmoRecogRQ_m FaceEmoRecogRQ = 17;</code>
      */
-    public Builder mergeFaceEmoRecogRq(com.erksystem.protobuf.api.FaceEmoRecogRQ_m value) {
-      if (faceEmoRecogRqBuilder_ == null) {
+    public Builder mergeFaceEmoRecogRQ(com.erksystem.protobuf.api.FaceEmoRecogRQ_m value) {
+      if (faceEmoRecogRQBuilder_ == null) {
         if (msgCase_ == 17 &&
             msg_ != com.erksystem.protobuf.api.FaceEmoRecogRQ_m.getDefaultInstance()) {
           msg_ = com.erksystem.protobuf.api.FaceEmoRecogRQ_m.newBuilder((com.erksystem.protobuf.api.FaceEmoRecogRQ_m) msg_)
@@ -4015,19 +4015,19 @@ private static final long serialVersionUID = 0L;
         onChanged();
       } else {
         if (msgCase_ == 17) {
-          faceEmoRecogRqBuilder_.mergeFrom(value);
+          faceEmoRecogRQBuilder_.mergeFrom(value);
         } else {
-          faceEmoRecogRqBuilder_.setMessage(value);
+          faceEmoRecogRQBuilder_.setMessage(value);
         }
       }
       msgCase_ = 17;
       return this;
     }
     /**
-     * <code>.FaceEmoRecogRQ_m faceEmoRecogRq = 17;</code>
+     * <code>.FaceEmoRecogRQ_m FaceEmoRecogRQ = 17;</code>
      */
-    public Builder clearFaceEmoRecogRq() {
-      if (faceEmoRecogRqBuilder_ == null) {
+    public Builder clearFaceEmoRecogRQ() {
+      if (faceEmoRecogRQBuilder_ == null) {
         if (msgCase_ == 17) {
           msgCase_ = 0;
           msg_ = null;
@@ -4038,23 +4038,23 @@ private static final long serialVersionUID = 0L;
           msgCase_ = 0;
           msg_ = null;
         }
-        faceEmoRecogRqBuilder_.clear();
+        faceEmoRecogRQBuilder_.clear();
       }
       return this;
     }
     /**
-     * <code>.FaceEmoRecogRQ_m faceEmoRecogRq = 17;</code>
+     * <code>.FaceEmoRecogRQ_m FaceEmoRecogRQ = 17;</code>
      */
-    public com.erksystem.protobuf.api.FaceEmoRecogRQ_m.Builder getFaceEmoRecogRqBuilder() {
-      return getFaceEmoRecogRqFieldBuilder().getBuilder();
+    public com.erksystem.protobuf.api.FaceEmoRecogRQ_m.Builder getFaceEmoRecogRQBuilder() {
+      return getFaceEmoRecogRQFieldBuilder().getBuilder();
     }
     /**
-     * <code>.FaceEmoRecogRQ_m faceEmoRecogRq = 17;</code>
+     * <code>.FaceEmoRecogRQ_m FaceEmoRecogRQ = 17;</code>
      */
     @java.lang.Override
-    public com.erksystem.protobuf.api.FaceEmoRecogRQ_mOrBuilder getFaceEmoRecogRqOrBuilder() {
-      if ((msgCase_ == 17) && (faceEmoRecogRqBuilder_ != null)) {
-        return faceEmoRecogRqBuilder_.getMessageOrBuilder();
+    public com.erksystem.protobuf.api.FaceEmoRecogRQ_mOrBuilder getFaceEmoRecogRQOrBuilder() {
+      if ((msgCase_ == 17) && (faceEmoRecogRQBuilder_ != null)) {
+        return faceEmoRecogRQBuilder_.getMessageOrBuilder();
       } else {
         if (msgCase_ == 17) {
           return (com.erksystem.protobuf.api.FaceEmoRecogRQ_m) msg_;
@@ -4063,16 +4063,16 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.FaceEmoRecogRQ_m faceEmoRecogRq = 17;</code>
+     * <code>.FaceEmoRecogRQ_m FaceEmoRecogRQ = 17;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.erksystem.protobuf.api.FaceEmoRecogRQ_m, com.erksystem.protobuf.api.FaceEmoRecogRQ_m.Builder, com.erksystem.protobuf.api.FaceEmoRecogRQ_mOrBuilder> 
-        getFaceEmoRecogRqFieldBuilder() {
-      if (faceEmoRecogRqBuilder_ == null) {
+        getFaceEmoRecogRQFieldBuilder() {
+      if (faceEmoRecogRQBuilder_ == null) {
         if (!(msgCase_ == 17)) {
           msg_ = com.erksystem.protobuf.api.FaceEmoRecogRQ_m.getDefaultInstance();
         }
-        faceEmoRecogRqBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        faceEmoRecogRQBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             com.erksystem.protobuf.api.FaceEmoRecogRQ_m, com.erksystem.protobuf.api.FaceEmoRecogRQ_m.Builder, com.erksystem.protobuf.api.FaceEmoRecogRQ_mOrBuilder>(
                 (com.erksystem.protobuf.api.FaceEmoRecogRQ_m) msg_,
                 getParentForChildren(),
@@ -4081,72 +4081,72 @@ private static final long serialVersionUID = 0L;
       }
       msgCase_ = 17;
       onChanged();
-      return faceEmoRecogRqBuilder_;
+      return faceEmoRecogRQBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.erksystem.protobuf.api.FaceEmoRecogRP_m, com.erksystem.protobuf.api.FaceEmoRecogRP_m.Builder, com.erksystem.protobuf.api.FaceEmoRecogRP_mOrBuilder> faceEmoRecogRpBuilder_;
+        com.erksystem.protobuf.api.FaceEmoRecogRP_m, com.erksystem.protobuf.api.FaceEmoRecogRP_m.Builder, com.erksystem.protobuf.api.FaceEmoRecogRP_mOrBuilder> faceEmoRecogRPBuilder_;
     /**
-     * <code>.FaceEmoRecogRP_m faceEmoRecogRp = 18;</code>
-     * @return Whether the faceEmoRecogRp field is set.
+     * <code>.FaceEmoRecogRP_m FaceEmoRecogRP = 18;</code>
+     * @return Whether the faceEmoRecogRP field is set.
      */
     @java.lang.Override
-    public boolean hasFaceEmoRecogRp() {
+    public boolean hasFaceEmoRecogRP() {
       return msgCase_ == 18;
     }
     /**
-     * <code>.FaceEmoRecogRP_m faceEmoRecogRp = 18;</code>
-     * @return The faceEmoRecogRp.
+     * <code>.FaceEmoRecogRP_m FaceEmoRecogRP = 18;</code>
+     * @return The faceEmoRecogRP.
      */
     @java.lang.Override
-    public com.erksystem.protobuf.api.FaceEmoRecogRP_m getFaceEmoRecogRp() {
-      if (faceEmoRecogRpBuilder_ == null) {
+    public com.erksystem.protobuf.api.FaceEmoRecogRP_m getFaceEmoRecogRP() {
+      if (faceEmoRecogRPBuilder_ == null) {
         if (msgCase_ == 18) {
           return (com.erksystem.protobuf.api.FaceEmoRecogRP_m) msg_;
         }
         return com.erksystem.protobuf.api.FaceEmoRecogRP_m.getDefaultInstance();
       } else {
         if (msgCase_ == 18) {
-          return faceEmoRecogRpBuilder_.getMessage();
+          return faceEmoRecogRPBuilder_.getMessage();
         }
         return com.erksystem.protobuf.api.FaceEmoRecogRP_m.getDefaultInstance();
       }
     }
     /**
-     * <code>.FaceEmoRecogRP_m faceEmoRecogRp = 18;</code>
+     * <code>.FaceEmoRecogRP_m FaceEmoRecogRP = 18;</code>
      */
-    public Builder setFaceEmoRecogRp(com.erksystem.protobuf.api.FaceEmoRecogRP_m value) {
-      if (faceEmoRecogRpBuilder_ == null) {
+    public Builder setFaceEmoRecogRP(com.erksystem.protobuf.api.FaceEmoRecogRP_m value) {
+      if (faceEmoRecogRPBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         msg_ = value;
         onChanged();
       } else {
-        faceEmoRecogRpBuilder_.setMessage(value);
+        faceEmoRecogRPBuilder_.setMessage(value);
       }
       msgCase_ = 18;
       return this;
     }
     /**
-     * <code>.FaceEmoRecogRP_m faceEmoRecogRp = 18;</code>
+     * <code>.FaceEmoRecogRP_m FaceEmoRecogRP = 18;</code>
      */
-    public Builder setFaceEmoRecogRp(
+    public Builder setFaceEmoRecogRP(
         com.erksystem.protobuf.api.FaceEmoRecogRP_m.Builder builderForValue) {
-      if (faceEmoRecogRpBuilder_ == null) {
+      if (faceEmoRecogRPBuilder_ == null) {
         msg_ = builderForValue.build();
         onChanged();
       } else {
-        faceEmoRecogRpBuilder_.setMessage(builderForValue.build());
+        faceEmoRecogRPBuilder_.setMessage(builderForValue.build());
       }
       msgCase_ = 18;
       return this;
     }
     /**
-     * <code>.FaceEmoRecogRP_m faceEmoRecogRp = 18;</code>
+     * <code>.FaceEmoRecogRP_m FaceEmoRecogRP = 18;</code>
      */
-    public Builder mergeFaceEmoRecogRp(com.erksystem.protobuf.api.FaceEmoRecogRP_m value) {
-      if (faceEmoRecogRpBuilder_ == null) {
+    public Builder mergeFaceEmoRecogRP(com.erksystem.protobuf.api.FaceEmoRecogRP_m value) {
+      if (faceEmoRecogRPBuilder_ == null) {
         if (msgCase_ == 18 &&
             msg_ != com.erksystem.protobuf.api.FaceEmoRecogRP_m.getDefaultInstance()) {
           msg_ = com.erksystem.protobuf.api.FaceEmoRecogRP_m.newBuilder((com.erksystem.protobuf.api.FaceEmoRecogRP_m) msg_)
@@ -4157,19 +4157,19 @@ private static final long serialVersionUID = 0L;
         onChanged();
       } else {
         if (msgCase_ == 18) {
-          faceEmoRecogRpBuilder_.mergeFrom(value);
+          faceEmoRecogRPBuilder_.mergeFrom(value);
         } else {
-          faceEmoRecogRpBuilder_.setMessage(value);
+          faceEmoRecogRPBuilder_.setMessage(value);
         }
       }
       msgCase_ = 18;
       return this;
     }
     /**
-     * <code>.FaceEmoRecogRP_m faceEmoRecogRp = 18;</code>
+     * <code>.FaceEmoRecogRP_m FaceEmoRecogRP = 18;</code>
      */
-    public Builder clearFaceEmoRecogRp() {
-      if (faceEmoRecogRpBuilder_ == null) {
+    public Builder clearFaceEmoRecogRP() {
+      if (faceEmoRecogRPBuilder_ == null) {
         if (msgCase_ == 18) {
           msgCase_ = 0;
           msg_ = null;
@@ -4180,23 +4180,23 @@ private static final long serialVersionUID = 0L;
           msgCase_ = 0;
           msg_ = null;
         }
-        faceEmoRecogRpBuilder_.clear();
+        faceEmoRecogRPBuilder_.clear();
       }
       return this;
     }
     /**
-     * <code>.FaceEmoRecogRP_m faceEmoRecogRp = 18;</code>
+     * <code>.FaceEmoRecogRP_m FaceEmoRecogRP = 18;</code>
      */
-    public com.erksystem.protobuf.api.FaceEmoRecogRP_m.Builder getFaceEmoRecogRpBuilder() {
-      return getFaceEmoRecogRpFieldBuilder().getBuilder();
+    public com.erksystem.protobuf.api.FaceEmoRecogRP_m.Builder getFaceEmoRecogRPBuilder() {
+      return getFaceEmoRecogRPFieldBuilder().getBuilder();
     }
     /**
-     * <code>.FaceEmoRecogRP_m faceEmoRecogRp = 18;</code>
+     * <code>.FaceEmoRecogRP_m FaceEmoRecogRP = 18;</code>
      */
     @java.lang.Override
-    public com.erksystem.protobuf.api.FaceEmoRecogRP_mOrBuilder getFaceEmoRecogRpOrBuilder() {
-      if ((msgCase_ == 18) && (faceEmoRecogRpBuilder_ != null)) {
-        return faceEmoRecogRpBuilder_.getMessageOrBuilder();
+    public com.erksystem.protobuf.api.FaceEmoRecogRP_mOrBuilder getFaceEmoRecogRPOrBuilder() {
+      if ((msgCase_ == 18) && (faceEmoRecogRPBuilder_ != null)) {
+        return faceEmoRecogRPBuilder_.getMessageOrBuilder();
       } else {
         if (msgCase_ == 18) {
           return (com.erksystem.protobuf.api.FaceEmoRecogRP_m) msg_;
@@ -4205,16 +4205,16 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.FaceEmoRecogRP_m faceEmoRecogRp = 18;</code>
+     * <code>.FaceEmoRecogRP_m FaceEmoRecogRP = 18;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.erksystem.protobuf.api.FaceEmoRecogRP_m, com.erksystem.protobuf.api.FaceEmoRecogRP_m.Builder, com.erksystem.protobuf.api.FaceEmoRecogRP_mOrBuilder> 
-        getFaceEmoRecogRpFieldBuilder() {
-      if (faceEmoRecogRpBuilder_ == null) {
+        getFaceEmoRecogRPFieldBuilder() {
+      if (faceEmoRecogRPBuilder_ == null) {
         if (!(msgCase_ == 18)) {
           msg_ = com.erksystem.protobuf.api.FaceEmoRecogRP_m.getDefaultInstance();
         }
-        faceEmoRecogRpBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+        faceEmoRecogRPBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
             com.erksystem.protobuf.api.FaceEmoRecogRP_m, com.erksystem.protobuf.api.FaceEmoRecogRP_m.Builder, com.erksystem.protobuf.api.FaceEmoRecogRP_mOrBuilder>(
                 (com.erksystem.protobuf.api.FaceEmoRecogRP_m) msg_,
                 getParentForChildren(),
@@ -4223,13 +4223,13 @@ private static final long serialVersionUID = 0L;
       }
       msgCase_ = 18;
       onChanged();
-      return faceEmoRecogRpBuilder_;
+      return faceEmoRecogRPBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
         com.erksystem.protobuf.api.EmoRecogNoti_m, com.erksystem.protobuf.api.EmoRecogNoti_m.Builder, com.erksystem.protobuf.api.EmoRecogNoti_mOrBuilder> emoRecogNotiBuilder_;
     /**
-     * <code>.EmoRecogNoti_m emoRecogNoti = 19;</code>
+     * <code>.EmoRecogNoti_m EmoRecogNoti = 19;</code>
      * @return Whether the emoRecogNoti field is set.
      */
     @java.lang.Override
@@ -4237,7 +4237,7 @@ private static final long serialVersionUID = 0L;
       return msgCase_ == 19;
     }
     /**
-     * <code>.EmoRecogNoti_m emoRecogNoti = 19;</code>
+     * <code>.EmoRecogNoti_m EmoRecogNoti = 19;</code>
      * @return The emoRecogNoti.
      */
     @java.lang.Override
@@ -4255,7 +4255,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.EmoRecogNoti_m emoRecogNoti = 19;</code>
+     * <code>.EmoRecogNoti_m EmoRecogNoti = 19;</code>
      */
     public Builder setEmoRecogNoti(com.erksystem.protobuf.api.EmoRecogNoti_m value) {
       if (emoRecogNotiBuilder_ == null) {
@@ -4271,7 +4271,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.EmoRecogNoti_m emoRecogNoti = 19;</code>
+     * <code>.EmoRecogNoti_m EmoRecogNoti = 19;</code>
      */
     public Builder setEmoRecogNoti(
         com.erksystem.protobuf.api.EmoRecogNoti_m.Builder builderForValue) {
@@ -4285,7 +4285,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.EmoRecogNoti_m emoRecogNoti = 19;</code>
+     * <code>.EmoRecogNoti_m EmoRecogNoti = 19;</code>
      */
     public Builder mergeEmoRecogNoti(com.erksystem.protobuf.api.EmoRecogNoti_m value) {
       if (emoRecogNotiBuilder_ == null) {
@@ -4308,7 +4308,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.EmoRecogNoti_m emoRecogNoti = 19;</code>
+     * <code>.EmoRecogNoti_m EmoRecogNoti = 19;</code>
      */
     public Builder clearEmoRecogNoti() {
       if (emoRecogNotiBuilder_ == null) {
@@ -4327,13 +4327,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.EmoRecogNoti_m emoRecogNoti = 19;</code>
+     * <code>.EmoRecogNoti_m EmoRecogNoti = 19;</code>
      */
     public com.erksystem.protobuf.api.EmoRecogNoti_m.Builder getEmoRecogNotiBuilder() {
       return getEmoRecogNotiFieldBuilder().getBuilder();
     }
     /**
-     * <code>.EmoRecogNoti_m emoRecogNoti = 19;</code>
+     * <code>.EmoRecogNoti_m EmoRecogNoti = 19;</code>
      */
     @java.lang.Override
     public com.erksystem.protobuf.api.EmoRecogNoti_mOrBuilder getEmoRecogNotiOrBuilder() {
@@ -4347,7 +4347,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.EmoRecogNoti_m emoRecogNoti = 19;</code>
+     * <code>.EmoRecogNoti_m EmoRecogNoti = 19;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.erksystem.protobuf.api.EmoRecogNoti_m, com.erksystem.protobuf.api.EmoRecogNoti_m.Builder, com.erksystem.protobuf.api.EmoRecogNoti_mOrBuilder> 
