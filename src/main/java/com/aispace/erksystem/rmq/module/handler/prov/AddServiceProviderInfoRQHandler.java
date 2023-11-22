@@ -56,7 +56,7 @@ public class AddServiceProviderInfoRQHandler extends RmqIncomingHandler<AddServi
                 .setServiceDuration(msg.getServiceDuration())
                 .setUserNumber(msg.getUserNumber())
                 .setServiceType(msg.getServiceType())
-                .setResultType(OrgProfileResult_e.Org_Profile_Ok)
+                .setResultType(OrgProfileResult_e.OrgProfileResult_ok)
                 .build();
 
         sendErkProvMsg2API(res);

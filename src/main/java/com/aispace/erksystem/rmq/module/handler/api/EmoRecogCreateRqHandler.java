@@ -38,7 +38,7 @@ public class EmoRecogCreateRqHandler extends RmqIncomingHandler<EmoRecogCreateRQ
     @Override
     protected void onFail() {
         EmoRecogCreateRP_m res = EmoRecogCreateRP_m.newBuilder()
-                .setErkMsgHead(ErkMsgHeader.newBuilder(msg.getErkMsgHead()).setMsgType(ErkMsgType_e.emoRecogCreateRp))
+                .setErkMsgHead(ErkMsgHeader.newBuilder(msg.getErkMsgHead()).setMsgType(ErkMsgType_e.EmoRecogCreateRP))
                 .setMsgTime(System.currentTimeMillis())
                 // .setReturnCode() // TODO
                 .build();

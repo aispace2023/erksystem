@@ -32,7 +32,7 @@ public class ErkServiceConnRqHandler extends RmqIncomingHandler<ErkServiceConnRQ
     @Override
     protected void onFail() {
         ErkServiceConnRP_m res = ErkServiceConnRP_m.newBuilder()
-                .setErkMsgHead(ErkMsgHeader.newBuilder(msg.getErkMsgHead()).setMsgType(ErkMsgType_e.erkServiceConnRp))
+                .setErkMsgHead(ErkMsgHeader.newBuilder(msg.getErkMsgHead()).setMsgType(ErkMsgType_e.ErkServiceConnRP))
                 .setMsgTime(System.currentTimeMillis())
                 // .setReturnCode() // TODO
                 .build();

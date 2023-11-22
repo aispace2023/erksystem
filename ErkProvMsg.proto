@@ -4,34 +4,34 @@ option java_package = "com.erksystem.protobuf.prov";
 option java_multiple_files = true;
 
 enum ErkMsgType_e{
-  Unknown = 0;
-  ErkServiceConnRQ_e = 1;
-  ErkServiceConnRP_e = 2;
-  ErkServiceDisConnRQ_e = 3;
-  ErkServiceDisConnRP_e = 4;
-  AddServiceProviderInfoRQ_e = 5;
-  AddServiceProviderInfoRP_e = 6;
-  DelServiceProviderInfoRQ_e = 7;
-  DelServiceProviderInfoRP_e = 8;
-  UpdServiceProviderInfoRQ_e = 9;
-  UpdServiceProviderInfoRP_e = 10;
-  AddUserInfoRQ_e = 11;
-  AddUserInfoRP_e = 12;
-  DelUserInfoRQ_e = 13;
-  DelUserInfoRP_e = 14;
-  UpdUserInfoRQ_e = 15;
-  UpdUserInfoRP_e = 16;
-  EmoRecogCreateRQ_e = 17;
-  EmoRecogCreateRP_e = 18;
-  EmoRecogDeleteRQ_e = 19;
-  EmoRecogDeleteRP_e = 20;
-  PhysioEmoRecogRQ_e = 21;
-  SpeechEmoRecogRQ_e = 22;
-  FaceEmoRecogRQ_e = 23;
-  EmoRecogRQ_e = 24;
-  EmoRecogRP_e = 25;
-  reserved1_e = 26;
-  reserved2_e = 27;
+  ErkMsgType_unknown = 0;
+  ErkServiceConnRQ = 1;
+  ErkServiceConnRP = 2;
+  ErkServiceDisConnRQ = 3;
+  ErkServiceDisConnRP = 4;
+  AddServiceProviderInfoRQ = 5;
+  AddServiceProviderInfoRP = 6;
+  DelServiceProviderInfoRQ = 7;
+  DelServiceProviderInfoRP = 8;
+  UpdServiceProviderInfoRQ = 9;
+  UpdServiceProviderInfoRP = 10;
+  AddUserInfoRQ = 11;
+  AddUserInfoRp = 12;
+  DelUserInfoRQ = 13;
+  DelUserInfoRp = 14;
+  UpdUserInfoRQ = 15;
+  UpdUserInfoRP = 16;
+  EmoRecogCreateRQ = 17;
+  EmoRecogCreateRP = 18;
+  EmoRecogDeleteRQ = 19;
+  EmoRecogDeleteRP = 20;
+  PhysioEmoRecogRQ = 21;
+  SpeechEmoRecogRQ = 22;
+  FaceEmoRecogRQ = 23;
+  EmoRecogRQ = 24;
+  EmoRecogRP = 25;
+  ErkMsgType_reserved1 = 26;
+  ErkMsgType_reserved2 = 27;
 }
 
 enum ReturnCode_e {
@@ -52,84 +52,84 @@ enum ReturnCode_e {
 }
 
 enum EngineType_e {
-  Engine_Unknown = 0;
-  Engine_Physiology = 1;
-  Engine_Speech = 2;
-  Engine_Face = 3;
-  Engine_EmoRecogAll = 4;
-  Engine_Knowledge = 5;
-  Engine_Reserved1 = 6;
-  Engine_Reserved2 = 7;
+  EngineType_unknown = 0;
+  EngineType_physiology = 1;
+  EngineType_speech = 2;
+  EngineType_face = 3;
+  EngineType_emo_recog_all = 4;
+  EngineType_knowledge = 5;
+  EngineType_reserved1 = 6;
+  EngineType_reserved2 = 7;
 }
 
 enum EngineCondition_e {
-  Engine_UnknownCondition = 0;
-  Engine_Available = 1;
-  Engine_NotAvailable = 2;
+  EngineCondition_unknown = 0;
+  EngineCondition_available = 1;
+  EngineCondition_not_available = 2;
 }
 
 enum ServiceType_e {
-  Service_Unknown = 0;
-  Service_Physiology = 1;
-  Service_Speech = 2;
-  Service_Video = 3;
-  Service_PhysiologySPEECH = 4;
-  Service_PhysiologyVideo = 5;
-  Service_SpeechVideo = 6;
-  Service_PhysiologySpeechVideo = 7;
-  Service_Knowledge = 8;
-  Service_All = 9;
-  Service_Reserved1 = 10;
-  Service_Reserved2 = 11;
+  ServiceType_unknown = 0;
+  ServiceType_physiology = 1;
+  ServiceType_speech = 2;
+  ServiceType_video = 3;
+  ServiceType_physiology_speech = 4;
+  ServiceType_physiology_video = 5;
+  ServiceType_speech_video = 6;
+  ServiceType_physiology_speech_video = 7;
+  ServiceType_knowledge = 8;
+  ServiceType_service_all = 9;
+  ServiceType_reserved1 = 10;
+  ServiceType_reserved2 = 11;
 }
 
 enum EmotionType_e{
-  Emotion_Unknown = 0;
-  Emotion_Neutral = 1;
-  Emotion_Positive = 2;
-  Emotion_Negative = 3;
-  Emotion_Stress = 4;
-  Emotion_Joy = 5;
-  Emotion_Happy = 6;
-  Emotion_Sadness = 7;
-  Emotion_Anger = 8;
-  Emotion_Arousal = 9;
-  Emotion_Relaxation = 10;
-  Emotion_Peace = 11;
-  Emotion_Anxiety = 12;
-  Emotion_Fear = 13;
-  Emotion_Disgust = 14;
-  Emotion_Reserved1 = 15;
-  Emotion_Reserved2 = 16;
+  EmotionType_unknown = 0;
+  EmotionType_neutral = 1;
+  EmotionType_positive = 2;
+  EmotionType_negative = 3;
+  EmotionType_stress = 4;
+  EmotionType_joy = 5;
+  EmotionType_happy = 6;
+  EmotionType_sadness = 7;
+  EmotionType_anger = 8;
+  EmotionType_arousal = 9;
+  EmotionType_relaxation = 10;
+  EmotionType_peace = 11;
+  EmotionType_anxiety = 12;
+  EmotionType_fear = 13;
+  EmotionType_disgust = 14;
+  EmotionType_reserved1 = 15;
+  EmotionType_reserved2 = 16;
 }
 
 enum OrgProfileResult_e{
-  Org_Profile_Unknown = 0;
-  Org_Profile_Ok = 1;
-  Org_Profile_Nok_OrgName = 2;
-  Org_Profile_Nok_OrgPwd = 3;
-  Org_Profile_Nok_ServiceDuration = 4;
-  Org_Profile_Nok_UserNumber = 5;
-  Org_Profile_Nok_ServiceType = 6;
-  Org_Profile_Nok_DB = 7;
-  Org_Profile_Nok_Reason1 = 8;
-  Org_Profile_Nok_Reason2 = 9;
+  OrgProfileResult_unknown = 0;
+  OrgProfileResult_ok = 1;
+  OrgProfileResult_nok_OrgName = 2;
+  OrgProfileResult_nok_OrgPwd = 3;
+  OrgProfileResult_nok_ServiceDuration = 4;
+  OrgProfileResult_nok_UserNumber = 5;
+  OrgProfileResult_nok_ServiceType = 6;
+  OrgProfileResult_nok_DB = 7;
+  OrgProfileResult_nok_reason1 = 8;
+  OrgProfileResult_nok_reason2 = 9;
 }
 
-enum  UserProfileResult_e{
-  User_ProfileUSER_PROFILE_UNKNOWN = 0;
-  User_Profile_Ok = 1;
-  User_Profile_Nok_OrgName = 2;
-  User_Profile_Nok_UserName = 3;
-  User_Profile_Nok_UserPwd = 4;
-  User_Profile_Nok_ServiceDuration = 5;
-  User_Profile_Nok_Age = 6;
-  User_Profile_Nok_Sex = 7;
-  User_Profile_Nok_UserType = 8;
-  User_Profile_Nok_ServiceType = 9;
-  User_Profile_Nok_DB = 10;
-  User_Profile_Nok_Reason1 = 11;
-  User_Profile_Nok_Reason2 = 12;
+enum UserProfileResult_e{
+  UserProfileResult_unknown = 0;
+  UserProfileResult_ok = 1;
+  UserProfileResult_nok_OrgName = 2;
+  UserProfileResult_nok_UserName = 3;
+  UserProfileResult_nok_UserPwd = 4;
+  UserProfileResult_nok_ServiceDuration = 5;
+  UserProfileResult_nok_Age = 6;
+  UserProfileResult_nok_Sex = 7;
+  UserProfileResult_nok_UserType = 8;
+  UserProfileResult_nok_ServiceType = 9;
+  UserProfileResult_nok_DB = 10;
+  UserProfileResult_nok_reason1 = 11;
+  UserProfileResult_nok_reason2 = 12;
 }
 
 
@@ -181,6 +181,7 @@ message DelServiceProviderInfoRQ_m{
   string OrgName = 1;
   string OrgPwd = 2;
 }
+
 message DelServiceProviderInfoRP_m{
   string OrgName = 1;
   OrgProfileResult_e ResultType = 2;
@@ -258,19 +259,19 @@ message DelUserInfoRP_m{
   string Return = 4;
 }
 
-message ErkProvMsg{
+message ErkProvMsg_m{
   oneof msg{
-    AddServiceProviderInfoRQ_m addServiceProviderInfoRq = 1;
-    AddServiceProviderInfoRP_m addServiceProviderInfoRp = 2;
-    UpdateServiceProviderInfoRQ_m updateServiceProviderInfoRq = 3;
-    UpdateServiceProviderInfoRP_m updateServiceProviderInfoRp = 4;
-    DelServiceProviderInfoRQ_m delServiceProviderInfoRq = 5;
-    DelServiceProviderInfoRP_m delServiceProviderInfoRp = 6;
-    AddUserInfoRQ_m addUserInfoRq = 7;
-    AddUserInfoRP_m addUserInfoRp = 8;
-    UpdateUserInfoRQ_m updateUserInfoRq = 9;
-    UpdateUserInfoRP_m updateUserInfoRp = 10;
-    DelUserInfoRQ_m delUserInfoRq = 11;
-    DelUserInfoRP_m delUserInfoRp = 12;
+    AddServiceProviderInfoRQ_m AddServiceProviderInfoRQ = 1;
+    AddServiceProviderInfoRP_m AddServiceProviderInfoRP = 2;
+    UpdateServiceProviderInfoRQ_m UpdateServiceProviderInfoRQ = 3;
+    UpdateServiceProviderInfoRP_m UpdateServiceProviderInfoRP = 4;
+    DelServiceProviderInfoRQ_m DelServiceProviderInfoRQ = 5;
+    DelServiceProviderInfoRP_m DelServiceProviderInfoRP = 6;
+    AddUserInfoRQ_m AddUserInfoRQ = 7;
+    AddUserInfoRP_m AddUserInfoRP = 8;
+    UpdateUserInfoRQ_m UpdateUserInfoRQ = 9;
+    UpdateUserInfoRP_m UpdateUserInfoRP = 10;
+    DelUserInfoRQ_m DelUserInfoRQ = 11;
+    DelUserInfoRP_m DelUserInfoRP = 12;
   }
 }

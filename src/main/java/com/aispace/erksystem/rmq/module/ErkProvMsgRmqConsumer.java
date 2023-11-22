@@ -2,6 +2,7 @@ package com.aispace.erksystem.rmq.module;
 
 import com.aispace.erksystem.rmq.module.handler.prov.*;
 import com.erksystem.protobuf.prov.ErkProvMsg;
+import com.erksystem.protobuf.prov.ErkProvMsg_m;
 import lombok.extern.slf4j.Slf4j;
 
 import static com.aispace.erksystem.rmq.module.RmqLogPrinter.proto2Json;
@@ -17,7 +18,7 @@ public class ErkProvMsgRmqConsumer {
 
     public static void consumeMessage(byte[] message) {
         try {
-            ErkProvMsg msg = ErkProvMsg.parseFrom(message);
+            ErkProvMsg_m msg = ErkProvMsg_m.parseFrom(message);
             log.info("RMQ Recv [{}]", proto2Json(msg).orElse("Fail to Parse"));
             switch (msg.getMsgCase()) {
                 case ADDSERVICEPROVIDERINFORQ -> new AddServiceProviderInfoRQHandler().proc(msg);

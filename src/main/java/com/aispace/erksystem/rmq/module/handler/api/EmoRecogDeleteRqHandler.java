@@ -37,7 +37,7 @@ public class EmoRecogDeleteRqHandler extends RmqIncomingHandler<EmoRecogDeleteRQ
     @Override
     protected void onFail() {
         EmoRecogDeleteRP_m res = EmoRecogDeleteRP_m.newBuilder()
-                .setErkMsgHead(ErkMsgHeader.newBuilder(msg.getErkMsgHead()).setMsgType(ErkMsgType_e.emoRecogDeleteRp))
+                .setErkMsgHead(ErkMsgHeader.newBuilder(msg.getErkMsgHead()).setMsgType(ErkMsgType_e.EmoRecogDeleteRP))
                 .setMsgTime(System.currentTimeMillis())
                 // .setReturnCode() // TODO
                 .build();
