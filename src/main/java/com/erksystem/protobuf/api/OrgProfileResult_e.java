@@ -158,7 +158,7 @@ public enum OrgProfileResult_e
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.erksystem.protobuf.api.ErkApiMsgOuterClass.getDescriptor().getEnumTypes().get(6);
+    return com.erksystem.protobuf.api.ErkApiMsgOuterClass.getDescriptor().getEnumTypes().get(7);
   }
 
   private static final OrgProfileResult_e[] VALUES = values();

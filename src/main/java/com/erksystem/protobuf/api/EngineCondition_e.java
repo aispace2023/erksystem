@@ -95,7 +95,7 @@ public enum EngineCondition_e
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.erksystem.protobuf.api.ErkApiMsgOuterClass.getDescriptor().getEnumTypes().get(3);
+    return com.erksystem.protobuf.api.ErkApiMsgOuterClass.getDescriptor().getEnumTypes().get(4);
   }
 
   private static final EngineCondition_e[] VALUES = values();

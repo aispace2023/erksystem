@@ -194,7 +194,7 @@ public enum ReturnCode_e
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.erksystem.protobuf.api.ErkApiMsgOuterClass.getDescriptor().getEnumTypes().get(1);
+    return com.erksystem.protobuf.api.ErkApiMsgOuterClass.getDescriptor().getEnumTypes().get(2);
   }
 
   private static final ReturnCode_e[] VALUES = values();

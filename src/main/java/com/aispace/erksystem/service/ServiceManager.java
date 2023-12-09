@@ -4,7 +4,6 @@ import com.aispace.erksystem.common.SystemLock;
 import com.aispace.erksystem.config.UserConfig;
 import com.aispace.erksystem.rmq.RmqManager;
 import com.aispace.erksystem.rmq.module.ErkApiMsgRmqConsumer;
-import com.aispace.erksystem.rmq.module.ErkProvMsgRmqConsumer;
 import com.aispace.erksystem.rmq.module.RmqStreamModule;
 import com.aispace.erksystem.service.scheduler.IntervalTaskManager;
 import lombok.Getter;
@@ -59,7 +58,6 @@ public class ServiceManager {
                 () -> log.warn("RMQ PROVISION QUEUE Disconnected"));
 
         rmqManager.connectRmqModule(config.getRmqApiQueueName(), ErkApiMsgRmqConsumer::consumeMessage);
-        rmqManager.connectRmqModule(config.getRmqProvQueueName(), ErkProvMsgRmqConsumer::consumeMessage);
 
         IntervalTaskManager.startAll();
         DBManager.getInstance().start();

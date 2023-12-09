@@ -1,10 +1,10 @@
 package com.aispace.erksystem.rmq.module;
 
-import com.aispace.erksystem.rmq.module.handler.api.*;
+import com.aispace.erksystem.rmq.module.handler.*;
 import com.erksystem.protobuf.api.ErkApiMsg;
 import lombok.extern.slf4j.Slf4j;
 
-import static com.aispace.erksystem.rmq.module.RmqLogPrinter.*;
+import static com.aispace.erksystem.rmq.module.RmqLogPrinter.proto2Json;
 
 
 /**
@@ -22,13 +22,19 @@ public class ErkApiMsgRmqConsumer {
             switch (msg.getMsgCase()) {
                 case ERKSERVICECONNRQ -> new ErkServiceConnRqHandler().proc(msg);
                 case ERKSERVICEDISCONNRQ -> new ErkServiceDisConnRqHandler().proc(msg);
-                case EMORECOGCREATERQ -> new EmoRecogCreateRqHandler().proc(msg);
-                case EMORECOGDELETERQ -> new EmoRecogDeleteRqHandler().proc(msg);
                 case HEARTBEATRQ -> new HeartBeatRqHandler().proc(msg);
                 case EMORECOGRQ -> new EmoRecogRqHandler().proc(msg);
                 case PHYSIOEMORECOGRQ -> new PhysioEmoRecogRqHandler().proc(msg);
                 case SPEECHEMORECOGRQ -> new SpeechEmoRecogRqHandler().proc(msg);
                 case FACEEMORECOGRQ -> new FaceEmoRecogRqHandler().proc(msg);
+                case ADDSERVICEPROVIDERINFORQ -> new AddServiceProviderInfoRQHandler().proc(msg);
+                case UPDATESERVICEPROVIDERINFORQ -> new UpdateServiceProviderInfoRQHandler().proc(msg);
+                case DELSERVICEPROVIDERINFORQ -> new DelServiceProviderInfoRQHandler().proc(msg);
+                case ADDUSERINFORQ -> new AddUserInfoRQHandler().proc(msg);
+                case UPDATEUSERINFORQ -> new UpdateUserInfoRQHandler().proc(msg);
+                case DELUSERINFORQ -> new DelUserInfoRQHandler().proc(msg);
+                case EMOSERVICESTARTRQ -> new EmoServiceStartRQHandler().proc(msg);
+                case EMOSERVICESTOPRQ -> new EmoServiceStopRQHandler().proc(msg);
                 default -> log.warn("Recv Undefined type [{}]", msg.getMsgCase());
             }
         } catch (Exception e) {

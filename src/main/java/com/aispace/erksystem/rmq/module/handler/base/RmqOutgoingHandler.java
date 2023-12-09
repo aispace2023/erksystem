@@ -38,8 +38,4 @@ public class RmqOutgoingHandler {
     public static void sendErkApiMsg2API(Message msg) {
         sendToApi(ErkMsgWrapper.wrap2ErkApiMsg(msg));
     }
-
-    public static void sendErkProvMsg2API(Message msg) {
-        sendToApi(ErkMsgWrapper.wrap2ErkProvMsg(msg));
-    }
 }

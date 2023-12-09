@@ -9,19 +9,19 @@ public interface ErkServiceConnRQ_mOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.ErkMsgHeader ErkMsgHead = 1;</code>
+   * <code>.ErkMsgHead_s ErkMsgHead = 1;</code>
    * @return Whether the erkMsgHead field is set.
    */
   boolean hasErkMsgHead();
   /**
-   * <code>.ErkMsgHeader ErkMsgHead = 1;</code>
+   * <code>.ErkMsgHead_s ErkMsgHead = 1;</code>
    * @return The erkMsgHead.
    */
-  com.erksystem.protobuf.api.ErkMsgHeader getErkMsgHead();
+  com.erksystem.protobuf.api.ErkMsgHead_s getErkMsgHead();
   /**
-   * <code>.ErkMsgHeader ErkMsgHead = 1;</code>
+   * <code>.ErkMsgHead_s ErkMsgHead = 1;</code>
    */
-  com.erksystem.protobuf.api.ErkMsgHeaderOrBuilder getErkMsgHeadOrBuilder();
+  com.erksystem.protobuf.api.ErkMsgHead_sOrBuilder getErkMsgHeadOrBuilder();
 
   /**
    * <code>int64 MsgTime = 2;</code>

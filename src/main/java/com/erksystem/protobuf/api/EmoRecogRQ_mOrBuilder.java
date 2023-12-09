@@ -9,19 +9,19 @@ public interface EmoRecogRQ_mOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.ErkMsgDataHeader ErkMsgDataHead = 1;</code>
+   * <code>.ErkMsgDataHead_s ErkMsgDataHead = 1;</code>
    * @return Whether the erkMsgDataHead field is set.
    */
   boolean hasErkMsgDataHead();
   /**
-   * <code>.ErkMsgDataHeader ErkMsgDataHead = 1;</code>
+   * <code>.ErkMsgDataHead_s ErkMsgDataHead = 1;</code>
    * @return The erkMsgDataHead.
    */
-  com.erksystem.protobuf.api.ErkMsgDataHeader getErkMsgDataHead();
+  com.erksystem.protobuf.api.ErkMsgDataHead_s getErkMsgDataHead();
   /**
-   * <code>.ErkMsgDataHeader ErkMsgDataHead = 1;</code>
+   * <code>.ErkMsgDataHead_s ErkMsgDataHead = 1;</code>
    */
-  com.erksystem.protobuf.api.ErkMsgDataHeaderOrBuilder getErkMsgDataHeadOrBuilder();
+  com.erksystem.protobuf.api.ErkMsgDataHead_sOrBuilder getErkMsgDataHeadOrBuilder();
 
   /**
    * <code>int64 DataTimeStamp = 2;</code>

@@ -16,20 +16,85 @@ public final class ErkApiMsgOuterClass {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_ErkMsgHeader_descriptor;
+    internal_static_ErkMsgHead_s_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_ErkMsgHeader_fieldAccessorTable;
+      internal_static_ErkMsgHead_s_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_ErkMsgDataHeader_descriptor;
+    internal_static_ErkMsgDataHead_s_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_ErkMsgDataHeader_fieldAccessorTable;
+      internal_static_ErkMsgDataHead_s_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_ErkInterMsgHead_s_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_ErkInterMsgHead_s_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_ErkEngineInfo_s_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_ErkEngineInfo_s_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_AddServiceProviderInfoRQ_m_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_AddServiceProviderInfoRQ_m_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_AddServiceProviderInfoRP_m_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_AddServiceProviderInfoRP_m_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_UpdateServiceProviderInfoRQ_m_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_UpdateServiceProviderInfoRQ_m_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_UpdateServiceProviderInfoRP_m_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_UpdateServiceProviderInfoRP_m_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_DelServiceProviderInfoRQ_m_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_DelServiceProviderInfoRQ_m_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_DelServiceProviderInfoRP_m_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_DelServiceProviderInfoRP_m_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_AddUserInfoRQ_m_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_AddUserInfoRQ_m_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_AddUserInfoRP_m_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_AddUserInfoRP_m_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_UpdateUserInfoRQ_m_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_UpdateUserInfoRQ_m_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_UpdateUserInfoRP_m_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_UpdateUserInfoRP_m_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_DelUserInfoRQ_m_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_DelUserInfoRQ_m_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_DelUserInfoRP_m_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_DelUserInfoRP_m_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_ErkServiceConnRQ_m_descriptor;
   static final 
@@ -51,25 +116,45 @@ public final class ErkApiMsgOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_ErkServiceDisConnRP_m_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_EmoRecogCreateRQ_m_descriptor;
+    internal_static_EmoServiceStartRQ_m_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_EmoRecogCreateRQ_m_fieldAccessorTable;
+      internal_static_EmoServiceStartRQ_m_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_EmoRecogCreateRP_m_descriptor;
+    internal_static_EmoServiceStartRP_m_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_EmoRecogCreateRP_m_fieldAccessorTable;
+      internal_static_EmoServiceStartRP_m_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_EmoRecogDeleteRQ_m_descriptor;
+    internal_static_EmoServiceStopRQ_m_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_EmoRecogDeleteRQ_m_fieldAccessorTable;
+      internal_static_EmoServiceStopRQ_m_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_EmoRecogDeleteRP_m_descriptor;
+    internal_static_EmoServiceStopRP_m_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_EmoRecogDeleteRP_m_fieldAccessorTable;
+      internal_static_EmoServiceStopRP_m_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_ErkEngineCreateRQ_m_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_ErkEngineCreateRQ_m_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_ErkEngineCreateRP_m_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_ErkEngineCreateRP_m_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_ErkEngineDeleteRQ_m_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_ErkEngineDeleteRQ_m_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_ErkEngineDeleteRP_m_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_ErkEngineDeleteRP_m_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_HeartBeatRQ_m_descriptor;
   static final 
@@ -126,6 +211,11 @@ public final class ErkApiMsgOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_EmoRecogNoti_m_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_ErkInterApiMsg_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_ErkInterApiMsg_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_ErkApiMsg_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -139,329 +229,584 @@ public final class ErkApiMsgOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\017ErkApiMsg.proto\"M\n\014ErkMsgHeader\022\036\n\007Msg" +
+      "\n\017ErkApiMsg.proto\"M\n\014ErkMsgHead_s\022\036\n\007Msg" +
       "Type\030\001 \001(\0162\r.ErkMsgType_e\022\r\n\005OrgId\030\002 \001(\005" +
-      "\022\016\n\006UserId\030\003 \001(\005\"\022\n\020ErkMsgDataHeader\"\242\001\n" +
-      "\017ErkEngineInfo_s\022!\n\nEngineType\030\001 \001(\0162\r.E" +
-      "ngineType_e\022+\n\017EngineCondition\030\002 \001(\0162\022.E" +
-      "ngineCondition_e\022\016\n\006IpAddr\030\003 \001(\t\022\030\n\020Rece" +
-      "iveQueueName\030\004 \001(\t\022\025\n\rSendQueueName\030\005 \001(" +
-      "\t\"H\n\022ErkServiceConnRQ_m\022!\n\nErkMsgHead\030\001 " +
-      "\001(\0132\r.ErkMsgHeader\022\017\n\007MsgTime\030\002 \001(\003\"\220\001\n\022" +
-      "ErkServiceConnRP_m\022!\n\nErkMsgHead\030\001 \001(\0132\r" +
-      ".ErkMsgHeader\022\017\n\007MsgTime\030\002 \001(\003\022!\n\nReturn" +
-      "Code\030\003 \001(\0162\r.ReturnCode_e\022#\n\013ServiceType" +
-      "\030\004 \001(\0162\016.ServiceType_e\"p\n\025ErkServiceDisC" +
-      "onnRQ_m\022!\n\nErkMsgHead\030\001 \001(\0132\r.ErkMsgHead" +
-      "er\022\017\n\007MsgTime\030\002 \001(\003\022#\n\013ServiceType\030\003 \001(\016" +
-      "2\016.ServiceType_e\"n\n\025ErkServiceDisConnRP_" +
-      "m\022!\n\nErkMsgHead\030\001 \001(\0132\r.ErkMsgHeader\022\017\n\007" +
-      "MsgTime\030\002 \001(\003\022!\n\nReturnCode\030\003 \001(\0162\r.Retu" +
-      "rnCode_e\"m\n\022EmoRecogCreateRQ_m\022!\n\nErkMsg" +
-      "Head\030\001 \001(\0132\r.ErkMsgHeader\022\017\n\007MsgTime\030\002 \001" +
-      "(\003\022#\n\013ServiceType\030\003 \001(\0162\016.ServiceType_e\"" +
-      "\313\002\n\022EmoRecogCreateRP_m\022!\n\nErkMsgHead\030\001 \001" +
-      "(\0132\r.ErkMsgHeader\022\017\n\007MsgTime\030\002 \001(\003\022!\n\nRe" +
-      "turnCode\030\003 \001(\0162\r.ReturnCode_e\022*\n\020PhysioE" +
-      "ngineInfo\030\004 \001(\0132\020.ErkEngineInfo_s\022*\n\020Spe" +
-      "echEngineInfo\030\005 \001(\0132\020.ErkEngineInfo_s\022(\n" +
-      "\016FaceEngineInfo\030\006 \001(\0132\020.ErkEngineInfo_s\022" +
-      "-\n\023Reserved1EngineInfo\030\007 \001(\0132\020.ErkEngine" +
-      "Info_s\022-\n\023Reserved2EngineInfo\030\010 \001(\0132\020.Er" +
-      "kEngineInfo_s\"\236\001\n\022EmoRecogDeleteRQ_m\022!\n\n" +
-      "ErkMsgHead\030\001 \001(\0132\r.ErkMsgHeader\022\017\n\007MsgTi" +
-      "me\030\002 \001(\003\022#\n\013ServiceType\030\003 \001(\0162\016.ServiceT" +
-      "ype_e\022\030\n\020ReceiveQueueName\030\004 \001(\t\022\025\n\rSendQ" +
-      "ueueName\030\005 \001(\t\"\313\002\n\022EmoRecogDeleteRP_m\022!\n" +
-      "\nErkMsgHead\030\001 \001(\0132\r.ErkMsgHeader\022\017\n\007MsgT" +
-      "ime\030\002 \001(\003\022!\n\nReturnCode\030\003 \001(\0162\r.ReturnCo" +
-      "de_e\022*\n\020PhysioEngineInfo\030\004 \001(\0132\020.ErkEngi" +
-      "neInfo_s\022*\n\020SpeechEngineInfo\030\005 \001(\0132\020.Erk" +
-      "EngineInfo_s\022(\n\016FaceEngineInfo\030\006 \001(\0132\020.E" +
-      "rkEngineInfo_s\022-\n\023Reserved1EngineInfo\030\007 " +
-      "\001(\0132\020.ErkEngineInfo_s\022-\n\023Reserved2Engine" +
-      "Info\030\010 \001(\0132\020.ErkEngineInfo_s\"E\n\rHeartBea" +
-      "tRQ_m\022!\n\nErkMsgHead\030\001 \001(\0132\r.ErkMsgHeader" +
-      "\022\021\n\tQueueName\030\002 \001(\t\"B\n\rHeartBeatRP_m\022!\n\n" +
-      "ErkMsgHead\030\001 \001(\0132\r.ErkMsgHeader\022\016\n\006Statu" +
-      "s\030\002 \001(\005\"}\n\014EmoRecogRQ_m\022)\n\016ErkMsgDataHea" +
-      "d\030\001 \001(\0132\021.ErkMsgDataHeader\022\025\n\rDataTimeSt" +
-      "amp\030\002 \001(\003\022\025\n\rMsgDataLength\030\003 \001(\005\022\024\n\014MsgD" +
-      "ataFrame\030\004 \001(\014\"\245\001\n\014EmoRecogRP_m\022)\n\016ErkMs" +
-      "gDataHead\030\001 \001(\0132\021.ErkMsgDataHeader\022!\n\nRe" +
-      "turnCode\030\002 \001(\0162\r.ReturnCode_e\022\024\n\014EmoReco" +
-      "gTime\030\003 \001(\003\022\037\n\007Emotion\030\004 \001(\0162\016.EmotionTy" +
-      "pe_e\022\020\n\010Accuracy\030\005 \001(\002\"\203\001\n\022PhysioEmoReco" +
-      "gRQ_m\022)\n\016ErkMsgDataHead\030\001 \001(\0132\021.ErkMsgDa" +
-      "taHeader\022\025\n\rDataTimeStamp\030\002 \001(\003\022\025\n\rMsgDa" +
-      "taLength\030\003 \001(\005\022\024\n\014MsgDataFrame\030\004 \001(\014\"\253\001\n" +
-      "\022PhysioEmoRecogRP_m\022)\n\016ErkMsgDataHead\030\001 " +
-      "\001(\0132\021.ErkMsgDataHeader\022!\n\nReturnCode\030\002 \001" +
-      "(\0162\r.ReturnCode_e\022\024\n\014EmoRecogTime\030\003 \001(\003\022" +
-      "\037\n\007Emotion\030\004 \001(\0162\016.EmotionType_e\022\020\n\010Accu" +
-      "racy\030\005 \001(\002\"\203\001\n\022SpeechEmoRecogRQ_m\022)\n\016Erk" +
-      "MsgDataHead\030\001 \001(\0132\021.ErkMsgDataHeader\022\025\n\r" +
-      "DataTimeStamp\030\002 \001(\003\022\025\n\rMsgDataLength\030\003 \001" +
-      "(\005\022\024\n\014MsgDataFrame\030\004 \001(\014\"\253\001\n\022SpeechEmoRe" +
-      "cogRP_m\022)\n\016ErkMsgDataHead\030\001 \001(\0132\021.ErkMsg" +
-      "DataHeader\022!\n\nReturnCode\030\002 \001(\0162\r.ReturnC" +
-      "ode_e\022\024\n\014EmoRecogTime\030\003 \001(\003\022\037\n\007Emotion\030\004" +
-      " \001(\0162\016.EmotionType_e\022\020\n\010Accuracy\030\005 \001(\002\"\201" +
-      "\001\n\020FaceEmoRecogRQ_m\022)\n\016ErkMsgDataHead\030\001 " +
-      "\001(\0132\021.ErkMsgDataHeader\022\025\n\rDataTimeStamp\030" +
-      "\002 \001(\003\022\025\n\rMsgDataLength\030\003 \001(\005\022\024\n\014MsgDataF" +
-      "rame\030\004 \001(\014\"\251\001\n\020FaceEmoRecogRP_m\022)\n\016ErkMs" +
-      "gDataHead\030\001 \001(\0132\021.ErkMsgDataHeader\022!\n\nRe" +
-      "turnCode\030\002 \001(\0162\r.ReturnCode_e\022\024\n\014EmoReco" +
-      "gTime\030\003 \001(\003\022\037\n\007Emotion\030\004 \001(\0162\016.EmotionTy" +
-      "pe_e\022\020\n\010Accuracy\030\005 \001(\002\"\204\001\n\016EmoRecogNoti_" +
-      "m\022)\n\016ErkMsgDataHead\030\001 \001(\0132\021.ErkMsgDataHe" +
-      "ader\022\024\n\014EmoRecogTime\030\002 \001(\003\022\037\n\007Emotion\030\003 " +
-      "\001(\0162\016.EmotionType_e\022\020\n\010Accuracy\030\004 \001(\002\"\205\007" +
-      "\n\tErkApiMsg\022/\n\020ErkServiceConnRQ\030\001 \001(\0132\023." +
-      "ErkServiceConnRQ_mH\000\022/\n\020ErkServiceConnRP" +
-      "\030\002 \001(\0132\023.ErkServiceConnRP_mH\000\0225\n\023ErkServ" +
-      "iceDisConnRQ\030\003 \001(\0132\026.ErkServiceDisConnRQ" +
-      "_mH\000\0225\n\023ErkServiceDisConnRP\030\004 \001(\0132\026.ErkS" +
-      "erviceDisConnRP_mH\000\022/\n\020EmoRecogCreateRQ\030" +
-      "\005 \001(\0132\023.EmoRecogCreateRQ_mH\000\022/\n\020EmoRecog" +
-      "CreateRP\030\006 \001(\0132\023.EmoRecogCreateRP_mH\000\022/\n" +
-      "\020EmoRecogDeleteRQ\030\007 \001(\0132\023.EmoRecogDelete" +
-      "RQ_mH\000\022/\n\020EmoRecogDeleteRP\030\010 \001(\0132\023.EmoRe" +
-      "cogDeleteRP_mH\000\022%\n\013HeartBeatRQ\030\t \001(\0132\016.H" +
-      "eartBeatRQ_mH\000\022%\n\013HeartBeatRP\030\n \001(\0132\016.He" +
-      "artBeatRP_mH\000\022#\n\nEmoRecogRQ\030\013 \001(\0132\r.EmoR" +
-      "ecogRQ_mH\000\022#\n\nEmoRecogRP\030\014 \001(\0132\r.EmoReco" +
-      "gRP_mH\000\022/\n\020PhysioEmoRecogRQ\030\r \001(\0132\023.Phys" +
-      "ioEmoRecogRQ_mH\000\022/\n\020PhysioEmoRecogRP\030\016 \001" +
-      "(\0132\023.PhysioEmoRecogRP_mH\000\022/\n\020SpeechEmoRe" +
-      "cogRQ\030\017 \001(\0132\023.SpeechEmoRecogRQ_mH\000\022/\n\020Sp" +
-      "eechEmoRecogRP\030\020 \001(\0132\023.SpeechEmoRecogRP_" +
-      "mH\000\022+\n\016FaceEmoRecogRQ\030\021 \001(\0132\021.FaceEmoRec" +
-      "ogRQ_mH\000\022+\n\016FaceEmoRecogRP\030\022 \001(\0132\021.FaceE" +
-      "moRecogRP_mH\000\022\'\n\014EmoRecogNoti\030\023 \001(\0132\017.Em" +
-      "oRecogNoti_mH\000B\005\n\003msg*\226\005\n\014ErkMsgType_e\022\026" +
-      "\n\022ErkMsgType_unknown\020\000\022\024\n\020ErkServiceConn" +
-      "RQ\020\001\022\024\n\020ErkServiceConnRP\020\002\022\027\n\023ErkService" +
-      "DisConnRQ\020\003\022\027\n\023ErkServiceDisConnRP\020\004\022\034\n\030" +
-      "AddServiceProviderInfoRQ\020\005\022\034\n\030AddService" +
-      "ProviderInfoRP\020\006\022\034\n\030DelServiceProviderIn" +
-      "foRQ\020\007\022\034\n\030DelServiceProviderInfoRP\020\010\022\034\n\030" +
-      "UpdServiceProviderInfoRQ\020\t\022\034\n\030UpdService" +
-      "ProviderInfoRP\020\n\022\021\n\rAddUserInfoRQ\020\013\022\021\n\rA" +
-      "ddUserInfoRP\020\014\022\021\n\rDelUserInfoRQ\020\r\022\021\n\rDel" +
-      "UserInfoRP\020\016\022\021\n\rUpdUserInfoRQ\020\017\022\021\n\rUpdUs" +
-      "erInfoRP\020\020\022\024\n\020EmoRecogCreateRQ\020\021\022\024\n\020EmoR" +
-      "ecogCreateRP\020\022\022\024\n\020EmoRecogDeleteRQ\020\023\022\024\n\020" +
-      "EmoRecogDeleteRP\020\024\022\024\n\020PhysioEmoRecogRQ\020\025" +
-      "\022\024\n\020SpeechEmoRecogRQ\020\026\022\022\n\016FaceEmoRecogRQ" +
-      "\020\027\022\016\n\nEmoRecogRQ\020\030\022\016\n\nEmoRecogRP\020\031\022\030\n\024Er" +
-      "kMsgType_reserved1\020\032\022\030\n\024ErkMsgType_reser" +
-      "ved2\020\033*\300\003\n\014ReturnCode_e\022\026\n\022ReturnCode_un" +
-      "known\020\000\022\021\n\rReturnCode_ok\020\001\022\026\n\022ReturnCode" +
-      "_nok_Org\020\002\022\027\n\023ReturnCode_nok_User\020\003\022\032\n\026R" +
-      "eturnCode_nok_MsgType\020\004\022\035\n\031ReturnCode_no" +
-      "k_EngineType\020\005\022\"\n\036ReturnCode_nok_EngineC" +
-      "ondition\020\006\022(\n$ReturnCode_nok_PhysioEngin" +
-      "eCondition\020\007\022(\n$ReturnCode_nok_SpeechEng" +
-      "ineCondition\020\010\022)\n%ReturnCode_nok_FaceEmo" +
-      "EngineCondition\020\t\022\036\n\032ReturnCode_nok_DevP" +
-      "latform\020\n\022\036\n\032ReturnCode_nok_EmotionType\020" +
-      "\013\022\032\n\026ReturnCode_nok_reason1\020\014\022\032\n\026ReturnC" +
-      "ode_nok_reason2\020\r*\331\001\n\014EngineType_e\022\026\n\022En" +
-      "gineType_unknown\020\000\022\031\n\025EngineType_physiol" +
-      "ogy\020\001\022\025\n\021EngineType_speech\020\002\022\023\n\017EngineTy" +
-      "pe_face\020\003\022\034\n\030EngineType_emo_recog_all\020\004\022" +
-      "\030\n\024EngineType_knowledge\020\005\022\030\n\024EngineType_" +
-      "reserved1\020\006\022\030\n\024EngineType_reserved2\020\007*r\n" +
-      "\021EngineCondition_e\022\033\n\027EngineCondition_un" +
-      "known\020\000\022\035\n\031EngineCondition_available\020\001\022!" +
-      "\n\035EngineCondition_not_available\020\002*\341\002\n\rSe" +
-      "rviceType_e\022\027\n\023ServiceType_unknown\020\000\022\032\n\026" +
-      "ServiceType_physiology\020\001\022\026\n\022ServiceType_" +
-      "speech\020\002\022\025\n\021ServiceType_video\020\003\022!\n\035Servi" +
-      "ceType_physiology_speech\020\004\022 \n\034ServiceTyp" +
-      "e_physiology_video\020\005\022\034\n\030ServiceType_spee" +
-      "ch_video\020\006\022\033\n\027physiology_speech_video\020\007\022" +
-      "\031\n\025ServiceType_knowledge\020\010\022\033\n\027ServiceTyp" +
-      "e_service_all\020\t\022\031\n\025ServiceType_reserved1" +
-      "\020\n\022\031\n\025ServiceType_reserved2\020\013*\263\003\n\rEmotio" +
-      "nType_e\022\027\n\023EmotionType_unknown\020\000\022\027\n\023Emot" +
-      "ionType_neutral\020\001\022\030\n\024EmotionType_positiv" +
-      "e\020\002\022\030\n\024EmotionType_negative\020\003\022\026\n\022Emotion" +
-      "Type_stress\020\004\022\023\n\017EmotionType_joy\020\005\022\025\n\021Em" +
-      "otionType_happy\020\006\022\027\n\023EmotionType_sadness" +
-      "\020\007\022\025\n\021EmotionType_anger\020\010\022\027\n\023EmotionType" +
-      "_arousal\020\t\022\032\n\026EmotionType_relaxation\020\n\022\025" +
-      "\n\021EmotionType_peace\020\013\022\027\n\023EmotionType_anx" +
-      "iety\020\014\022\024\n\020EmotionType_fear\020\r\022\027\n\023EmotionT" +
-      "ype_disgust\020\016\022\031\n\025EmotionType_reserved1\020\017" +
-      "\022\031\n\025EmotionType_reserved2\020\020*\344\002\n\022OrgProfi" +
-      "leResult_e\022\034\n\030OrgProfileResult_unknown\020\000" +
-      "\022\027\n\023OrgProfileResult_ok\020\001\022 \n\034OrgProfileR" +
-      "esult_nok_OrgName\020\002\022\037\n\033OrgProfileResult_" +
-      "nok_OrgPwd\020\003\022(\n$OrgProfileResult_nok_Ser" +
-      "viceDuration\020\004\022#\n\037OrgProfileResult_nok_U" +
-      "serNumber\020\005\022$\n OrgProfileResult_nok_Serv" +
-      "iceType\020\006\022\033\n\027OrgProfileResult_nok_DB\020\007\022 " +
-      "\n\034OrgProfileResult_nok_reason1\020\010\022 \n\034OrgP" +
-      "rofileResult_nok_reason2\020\t*\320\003\n\023UserProfi" +
-      "leResult_e\022\035\n\031UserProfileResult_unknown\020" +
-      "\000\022\030\n\024UserProfileResult_ok\020\001\022!\n\035UserProfi" +
-      "leResult_nok_OrgName\020\002\022\"\n\036UserProfileRes" +
-      "ult_nok_UserName\020\003\022!\n\035UserProfileResult_" +
-      "nok_UserPwd\020\004\022)\n%UserProfileResult_nok_S" +
-      "erviceDuration\020\005\022\035\n\031UserProfileResult_no" +
-      "k_Age\020\006\022\035\n\031UserProfileResult_nok_Sex\020\007\022\"" +
-      "\n\036UserProfileResult_nok_UserType\020\010\022%\n!Us" +
-      "erProfileResult_nok_ServiceType\020\t\022\034\n\030Use" +
-      "rProfileResult_nok_DB\020\n\022!\n\035UserProfileRe" +
-      "sult_nok_reason1\020\013\022!\n\035UserProfileResult_" +
-      "nok_reason2\020\014B\036\n\032com.erksystem.protobuf." +
-      "apiP\001b\006proto3"
+      "\022\016\n\006UserId\030\003 \001(\005\"Q\n\020ErkMsgDataHead_s\022\036\n\007" +
+      "MsgType\030\001 \001(\0162\r.ErkMsgType_e\022\r\n\005OrgId\030\002 " +
+      "\001(\005\022\016\n\006UserId\030\003 \001(\005\"W\n\021ErkInterMsgHead_s" +
+      "\022#\n\007MsgType\030\001 \001(\0162\022.ErkInterMsgType_e\022\r\n" +
+      "\005OrgId\030\002 \001(\005\022\016\n\006UserId\030\003 \001(\005\"\242\001\n\017ErkEngi" +
+      "neInfo_s\022!\n\nEngineType\030\001 \001(\0162\r.EngineTyp" +
+      "e_e\022+\n\017EngineCondition\030\002 \001(\0162\022.EngineCon" +
+      "dition_e\022\016\n\006IpAddr\030\003 \001(\t\022\030\n\020ReceiveQueue" +
+      "Name\030\004 \001(\t\022\025\n\rSendQueueName\030\005 \001(\t\"\257\001\n\032Ad" +
+      "dServiceProviderInfoRQ_m\022\036\n\007MsgType\030\001 \001(" +
+      "\0162\r.ErkMsgType_e\022\017\n\007OrgName\030\002 \001(\t\022\016\n\006Org" +
+      "Pwd\030\003 \001(\t\022\027\n\017ServiceDuration\030\004 \001(\t\022\022\n\nUs" +
+      "erNumber\030\005 \001(\005\022#\n\013ServiceType\030\006 \001(\0162\016.Se" +
+      "rviceType_e\"\347\001\n\032AddServiceProviderInfoRP" +
+      "_m\022\036\n\007MsgType\030\001 \001(\0162\r.ErkMsgType_e\022\017\n\007Or" +
+      "gName\030\002 \001(\t\022\'\n\nResultType\030\003 \001(\0162\023.OrgPro" +
+      "fileResult_e\022\r\n\005OrgId\030\004 \001(\005\022\016\n\006OrgPwd\030\005 " +
+      "\001(\t\022\027\n\017ServiceDuration\030\006 \001(\t\022\022\n\nUserNumb" +
+      "er\030\007 \001(\005\022#\n\013ServiceType\030\010 \001(\0162\016.ServiceT" +
+      "ype_e\"\264\002\n\035UpdateServiceProviderInfoRQ_m\022" +
+      "\036\n\007MsgType\030\001 \001(\0162\r.ErkMsgType_e\022\017\n\007OrgNa" +
+      "me\030\002 \001(\t\022\022\n\nOld_OrgPwd\030\003 \001(\t\022\033\n\023Old_Serv" +
+      "iceDuration\030\004 \001(\t\022\026\n\016Old_UserNumber\030\005 \001(" +
+      "\005\022\'\n\017Old_ServiceType\030\006 \001(\0162\016.ServiceType" +
+      "_e\022\022\n\nNew_OrgPwd\030\007 \001(\t\022\033\n\023New_ServiceDur" +
+      "ation\030\010 \001(\t\022\026\n\016New_UserNumber\030\t \001(\005\022\'\n\017N" +
+      "ew_ServiceType\030\n \001(\0162\016.ServiceType_e\"\335\002\n" +
+      "\035UpdateServiceProviderInfoRP_m\022\036\n\007MsgTyp" +
+      "e\030\001 \001(\0162\r.ErkMsgType_e\022\017\n\007OrgName\030\002 \001(\t\022" +
+      "\'\n\nResultType\030\003 \001(\0162\023.OrgProfileResult_e" +
+      "\022\022\n\nOld_OrgPwd\030\004 \001(\t\022\033\n\023Old_ServiceDurat" +
+      "ion\030\005 \001(\t\022\026\n\016Old_UserNumber\030\006 \001(\005\022\'\n\017Old" +
+      "_ServiceType\030\007 \001(\0162\016.ServiceType_e\022\022\n\nNe" +
+      "w_OrgPwd\030\010 \001(\t\022\033\n\023New_ServiceDuration\030\t " +
+      "\001(\t\022\026\n\016New_UserNumber\030\n \001(\005\022\'\n\017New_Servi" +
+      "ceType\030\013 \001(\0162\016.ServiceType_e\"]\n\032DelServi" +
+      "ceProviderInfoRQ_m\022\036\n\007MsgType\030\001 \001(\0162\r.Er" +
+      "kMsgType_e\022\017\n\007OrgName\030\002 \001(\t\022\016\n\006OrgPwd\030\003 " +
+      "\001(\t\"v\n\032DelServiceProviderInfoRP_m\022\036\n\007Msg" +
+      "Type\030\001 \001(\0162\r.ErkMsgType_e\022\017\n\007OrgName\030\002 \001" +
+      "(\t\022\'\n\nResultType\030\003 \001(\0162\023.OrgProfileResul" +
+      "t_e\"\317\001\n\017AddUserInfoRQ_m\022\036\n\007MsgType\030\001 \001(\016" +
+      "2\r.ErkMsgType_e\022\017\n\007OrgName\030\002 \001(\t\022\020\n\010User" +
+      "Name\030\003 \001(\t\022\017\n\007UserPwd\030\004 \001(\t\022\027\n\017ServiceDu" +
+      "ration\030\005 \001(\t\022\013\n\003Age\030\006 \001(\005\022\013\n\003Sex\030\007 \001(\005\022\020" +
+      "\n\010UserType\030\010 \001(\005\022#\n\013ServiceType\030\t \001(\0162\016." +
+      "ServiceType_e\"\211\002\n\017AddUserInfoRP_m\022\036\n\007Msg" +
+      "Type\030\001 \001(\0162\r.ErkMsgType_e\022\017\n\007OrgName\030\002 \001" +
+      "(\t\022\020\n\010UserName\030\003 \001(\t\022(\n\nResultType\030\004 \001(\016" +
+      "2\024.UserProfileResult_e\022\016\n\006UserId\030\005 \001(\005\022\017" +
+      "\n\007UserPwd\030\006 \001(\t\022\027\n\017ServiceDuration\030\007 \001(\t" +
+      "\022\013\n\003Age\030\010 \001(\005\022\013\n\003Sex\030\t \001(\005\022\020\n\010UserType\030\n" +
+      " \001(\005\022#\n\013ServiceType\030\013 \001(\0162\016.ServiceType_" +
+      "e\"\375\002\n\022UpdateUserInfoRQ_m\022\036\n\007MsgType\030\001 \001(" +
+      "\0162\r.ErkMsgType_e\022\017\n\007OrgName\030\002 \001(\t\022\020\n\010Use" +
+      "rName\030\003 \001(\t\022\023\n\013Old_UserPwd\030\004 \001(\t\022\033\n\023Old_" +
+      "ServiceDuration\030\005 \001(\t\022\017\n\007Old_Age\030\006 \001(\005\022\017" +
+      "\n\007Old_Sex\030\007 \001(\005\022\024\n\014Old_UserType\030\010 \001(\005\022\'\n" +
+      "\017Old_ServiceType\030\t \001(\0162\016.ServiceType_e\022\023" +
+      "\n\013New_UserPwd\030\n \001(\t\022\033\n\023New_ServiceDurati" +
+      "on\030\013 \001(\t\022\017\n\007New_Age\030\014 \001(\005\022\017\n\007New_Sex\030\r \001" +
+      "(\005\022\024\n\014New_UserType\030\016 \001(\005\022\'\n\017New_ServiceT" +
+      "ype\030\017 \001(\0162\016.ServiceType_e\"\247\003\n\022UpdateUser" +
+      "InfoRP_m\022\036\n\007MsgType\030\001 \001(\0162\r.ErkMsgType_e" +
+      "\022\017\n\007OrgName\030\002 \001(\t\022\020\n\010UserName\030\003 \001(\t\022(\n\nR" +
+      "esultType\030\004 \001(\0162\024.UserProfileResult_e\022\023\n" +
+      "\013Old_UserPwd\030\005 \001(\t\022\033\n\023Old_ServiceDuratio" +
+      "n\030\006 \001(\t\022\017\n\007Old_Age\030\007 \001(\005\022\017\n\007Old_Sex\030\010 \001(" +
+      "\005\022\024\n\014Old_UserType\030\t \001(\005\022\'\n\017Old_ServiceTy" +
+      "pe\030\n \001(\0162\016.ServiceType_e\022\023\n\013New_UserPwd\030" +
+      "\013 \001(\t\022\033\n\023New_ServiceDuration\030\014 \001(\t\022\017\n\007Ne" +
+      "w_Age\030\r \001(\005\022\017\n\007New_Sex\030\016 \001(\005\022\024\n\014New_User" +
+      "Type\030\017 \001(\005\022\'\n\017New_ServiceType\030\020 \001(\0162\016.Se" +
+      "rviceType_e\"e\n\017DelUserInfoRQ_m\022\036\n\007MsgTyp" +
+      "e\030\001 \001(\0162\r.ErkMsgType_e\022\017\n\007OrgName\030\002 \001(\t\022" +
+      "\020\n\010UserName\030\003 \001(\t\022\017\n\007UserPwd\030\004 \001(\t\"\216\001\n\017D" +
+      "elUserInfoRP_m\022\036\n\007MsgType\030\001 \001(\0162\r.ErkMsg" +
+      "Type_e\022\017\n\007OrgName\030\002 \001(\t\022\020\n\010UserName\030\003 \001(" +
+      "\t\022(\n\nResultType\030\004 \001(\0162\024.UserProfileResul" +
+      "t_e\022\016\n\006Return\030\005 \001(\t\"H\n\022ErkServiceConnRQ_" +
+      "m\022!\n\nErkMsgHead\030\001 \001(\0132\r.ErkMsgHead_s\022\017\n\007" +
+      "MsgTime\030\002 \001(\003\"\220\001\n\022ErkServiceConnRP_m\022!\n\n" +
+      "ErkMsgHead\030\001 \001(\0132\r.ErkMsgHead_s\022\017\n\007MsgTi" +
+      "me\030\002 \001(\003\022!\n\nReturnCode\030\003 \001(\0162\r.ReturnCod" +
+      "e_e\022#\n\013ServiceType\030\004 \001(\0162\016.ServiceType_e" +
+      "\"p\n\025ErkServiceDisConnRQ_m\022!\n\nErkMsgHead\030" +
+      "\001 \001(\0132\r.ErkMsgHead_s\022\017\n\007MsgTime\030\002 \001(\003\022#\n" +
+      "\013ServiceType\030\003 \001(\0162\016.ServiceType_e\"n\n\025Er" +
+      "kServiceDisConnRP_m\022!\n\nErkMsgHead\030\001 \001(\0132" +
+      "\r.ErkMsgHead_s\022\017\n\007MsgTime\030\002 \001(\003\022!\n\nRetur" +
+      "nCode\030\003 \001(\0162\r.ReturnCode_e\"n\n\023EmoService" +
+      "StartRQ_m\022!\n\nErkMsgHead\030\001 \001(\0132\r.ErkMsgHe" +
+      "ad_s\022\017\n\007MsgTime\030\002 \001(\003\022#\n\013ServiceType\030\003 \001" +
+      "(\0162\016.ServiceType_e\"\312\002\n\023EmoServiceStartRP" +
+      "_m\022!\n\nErkMsgHead\030\001 \001(\0132\r.ErkMsgHead_s\022\017\n" +
+      "\007MsgTime\030\002 \001(\003\022!\n\nReturnCode\030\003 \001(\0162\r.Ret" +
+      "urnCode_e\022*\n\020PhysioEngineInfo\030\004 \001(\0132\020.Er" +
+      "kEngineInfo_s\022*\n\020SpeechEngineInfo\030\005 \001(\0132" +
+      "\020.ErkEngineInfo_s\022(\n\016FaceEngineInfo\030\006 \001(" +
+      "\0132\020.ErkEngineInfo_s\022-\n\023KnowledgeEngineIn" +
+      "fo\030\007 \001(\0132\020.ErkEngineInfo_s\022+\n\021ServiceEng" +
+      "ineInfo\030\010 \001(\0132\020.ErkEngineInfo_s\"\233\003\n\022EmoS" +
+      "erviceStopRQ_m\022!\n\nErkMsgHead\030\001 \001(\0132\r.Erk" +
+      "MsgHead_s\022\017\n\007MsgTime\030\002 \001(\003\022#\n\013ServiceTyp" +
+      "e\030\003 \001(\0162\016.ServiceType_e\022%\n\035PhysioEngine_" +
+      "ReceiveQueueName\030\004 \001(\t\022\"\n\032PhysioEngine_S" +
+      "endQueueName\030\005 \001(\t\022%\n\035SpeechEngine_Recei" +
+      "veQueueName\030\006 \001(\t\022\"\n\032SpeechEngine_SendQu" +
+      "eueName\030\007 \001(\t\022#\n\033FaceEngine_ReceiveQueue" +
+      "Name\030\010 \001(\t\022 \n\030FaceEngine_SendQueueName\030\t" +
+      " \001(\t\022(\n KnowledgeEngine_ReceiveQueueName" +
+      "\030\n \001(\t\022%\n\035KnowledgeEngine_SendQueueName\030" +
+      "\013 \001(\t\"\311\002\n\022EmoServiceStopRP_m\022!\n\nErkMsgHe" +
+      "ad\030\001 \001(\0132\r.ErkMsgHead_s\022\017\n\007MsgTime\030\002 \001(\003" +
+      "\022!\n\nReturnCode\030\003 \001(\0162\r.ReturnCode_e\022*\n\020P" +
+      "hysioEngineInfo\030\004 \001(\0132\020.ErkEngineInfo_s\022" +
+      "*\n\020SpeechEngineInfo\030\005 \001(\0132\020.ErkEngineInf" +
+      "o_s\022(\n\016FaceEngineInfo\030\006 \001(\0132\020.ErkEngineI" +
+      "nfo_s\022-\n\023KnowledgeEngineInfo\030\007 \001(\0132\020.Erk" +
+      "EngineInfo_s\022+\n\021ServiceEngineInfo\030\010 \001(\0132" +
+      "\020.ErkEngineInfo_s\"\246\003\n\023ErkEngineCreateRQ_" +
+      "m\022+\n\017ErkInterMsgHead\030\001 \001(\0132\022.ErkInterMsg" +
+      "Head_s\022\017\n\007MsgTime\030\002 \001(\003\022#\n\013ServiceType\030\003" +
+      " \001(\0162\016.ServiceType_e\022%\n\035PhysioEngine_Rec" +
+      "eiveQueueName\030\004 \001(\t\022\"\n\032PhysioEngine_Send" +
+      "QueueName\030\005 \001(\t\022%\n\035SpeechEngine_ReceiveQ" +
+      "ueueName\030\006 \001(\t\022\"\n\032SpeechEngine_SendQueue" +
+      "Name\030\007 \001(\t\022#\n\033FaceEngine_ReceiveQueueNam" +
+      "e\030\010 \001(\t\022 \n\030FaceEngine_SendQueueName\030\t \001(" +
+      "\t\022(\n KnowledgeEngine_ReceiveQueueName\030\n " +
+      "\001(\t\022%\n\035KnowledgeEngine_SendQueueName\030\013 \001" +
+      "(\t\"\324\002\n\023ErkEngineCreateRP_m\022+\n\017ErkInterMs" +
+      "gHead\030\001 \001(\0132\022.ErkInterMsgHead_s\022\017\n\007MsgTi" +
+      "me\030\002 \001(\003\022!\n\nReturnCode\030\003 \001(\0162\r.ReturnCod" +
+      "e_e\022*\n\020PhysioEngineInfo\030\004 \001(\0132\020.ErkEngin" +
+      "eInfo_s\022*\n\020SpeechEngineInfo\030\005 \001(\0132\020.ErkE" +
+      "ngineInfo_s\022(\n\016FaceEngineInfo\030\006 \001(\0132\020.Er" +
+      "kEngineInfo_s\022-\n\023KnowledgeEngineInfo\030\007 \001" +
+      "(\0132\020.ErkEngineInfo_s\022+\n\021ServiceEngineInf" +
+      "o\030\010 \001(\0132\020.ErkEngineInfo_s\"\246\003\n\023ErkEngineD" +
+      "eleteRQ_m\022+\n\017ErkInterMsgHead\030\001 \001(\0132\022.Erk" +
+      "InterMsgHead_s\022\017\n\007MsgTime\030\002 \001(\003\022#\n\013Servi" +
+      "ceType\030\003 \001(\0162\016.ServiceType_e\022%\n\035PhysioEn" +
+      "gine_ReceiveQueueName\030\004 \001(\t\022\"\n\032PhysioEng" +
+      "ine_SendQueueName\030\005 \001(\t\022%\n\035SpeechEngine_" +
+      "ReceiveQueueName\030\006 \001(\t\022\"\n\032SpeechEngine_S" +
+      "endQueueName\030\007 \001(\t\022#\n\033FaceEngine_Receive" +
+      "QueueName\030\010 \001(\t\022 \n\030FaceEngine_SendQueueN" +
+      "ame\030\t \001(\t\022(\n KnowledgeEngine_ReceiveQueu" +
+      "eName\030\n \001(\t\022%\n\035KnowledgeEngine_SendQueue" +
+      "Name\030\013 \001(\t\"\324\002\n\023ErkEngineDeleteRP_m\022+\n\017Er" +
+      "kInterMsgHead\030\001 \001(\0132\022.ErkInterMsgHead_s\022" +
+      "\017\n\007MsgTime\030\002 \001(\003\022!\n\nReturnCode\030\003 \001(\0162\r.R" +
+      "eturnCode_e\022*\n\020PhysioEngineInfo\030\004 \001(\0132\020." +
+      "ErkEngineInfo_s\022*\n\020SpeechEngineInfo\030\005 \001(" +
+      "\0132\020.ErkEngineInfo_s\022(\n\016FaceEngineInfo\030\006 " +
+      "\001(\0132\020.ErkEngineInfo_s\022-\n\023KnowledgeEngine" +
+      "Info\030\007 \001(\0132\020.ErkEngineInfo_s\022+\n\021ServiceE" +
+      "ngineInfo\030\010 \001(\0132\020.ErkEngineInfo_s\"E\n\rHea" +
+      "rtBeatRQ_m\022!\n\nErkMsgHead\030\001 \001(\0132\r.ErkMsgH" +
+      "ead_s\022\021\n\tQueueName\030\002 \001(\t\"B\n\rHeartBeatRP_" +
+      "m\022!\n\nErkMsgHead\030\001 \001(\0132\r.ErkMsgHead_s\022\016\n\006" +
+      "Status\030\002 \001(\005\"}\n\014EmoRecogRQ_m\022)\n\016ErkMsgDa" +
+      "taHead\030\001 \001(\0132\021.ErkMsgDataHead_s\022\025\n\rDataT" +
+      "imeStamp\030\002 \001(\003\022\025\n\rMsgDataLength\030\003 \001(\005\022\024\n" +
+      "\014MsgDataFrame\030\004 \001(\014\"\245\001\n\014EmoRecogRP_m\022)\n\016" +
+      "ErkMsgDataHead\030\001 \001(\0132\021.ErkMsgDataHead_s\022" +
+      "!\n\nReturnCode\030\002 \001(\0162\r.ReturnCode_e\022\024\n\014Em" +
+      "oRecogTime\030\003 \001(\003\022\037\n\007Emotion\030\004 \001(\0162\016.Emot" +
+      "ionType_e\022\020\n\010Accuracy\030\005 \001(\002\"\203\001\n\022PhysioEm" +
+      "oRecogRQ_m\022)\n\016ErkMsgDataHead\030\001 \001(\0132\021.Erk" +
+      "MsgDataHead_s\022\025\n\rDataTimeStamp\030\002 \001(\003\022\025\n\r" +
+      "MsgDataLength\030\003 \001(\005\022\024\n\014MsgDataFrame\030\004 \001(" +
+      "\014\"\253\001\n\022PhysioEmoRecogRP_m\022)\n\016ErkMsgDataHe" +
+      "ad\030\001 \001(\0132\021.ErkMsgDataHead_s\022!\n\nReturnCod" +
+      "e\030\002 \001(\0162\r.ReturnCode_e\022\024\n\014EmoRecogTime\030\003" +
+      " \001(\003\022\037\n\007Emotion\030\004 \001(\0162\016.EmotionType_e\022\020\n" +
+      "\010Accuracy\030\005 \001(\002\"\203\001\n\022SpeechEmoRecogRQ_m\022)" +
+      "\n\016ErkMsgDataHead\030\001 \001(\0132\021.ErkMsgDataHead_" +
+      "s\022\025\n\rDataTimeStamp\030\002 \001(\003\022\025\n\rMsgDataLengt" +
+      "h\030\003 \001(\005\022\024\n\014MsgDataFrame\030\004 \001(\014\"\253\001\n\022Speech" +
+      "EmoRecogRP_m\022)\n\016ErkMsgDataHead\030\001 \001(\0132\021.E" +
+      "rkMsgDataHead_s\022!\n\nReturnCode\030\002 \001(\0162\r.Re" +
+      "turnCode_e\022\024\n\014EmoRecogTime\030\003 \001(\003\022\037\n\007Emot" +
+      "ion\030\004 \001(\0162\016.EmotionType_e\022\020\n\010Accuracy\030\005 " +
+      "\001(\002\"\201\001\n\020FaceEmoRecogRQ_m\022)\n\016ErkMsgDataHe" +
+      "ad\030\001 \001(\0132\021.ErkMsgDataHead_s\022\025\n\rDataTimeS" +
+      "tamp\030\002 \001(\003\022\025\n\rMsgDataLength\030\003 \001(\005\022\024\n\014Msg" +
+      "DataFrame\030\004 \001(\014\"\251\001\n\020FaceEmoRecogRP_m\022)\n\016" +
+      "ErkMsgDataHead\030\001 \001(\0132\021.ErkMsgDataHead_s\022" +
+      "!\n\nReturnCode\030\002 \001(\0162\r.ReturnCode_e\022\024\n\014Em" +
+      "oRecogTime\030\003 \001(\003\022\037\n\007Emotion\030\004 \001(\0162\016.Emot" +
+      "ionType_e\022\020\n\010Accuracy\030\005 \001(\002\"\204\001\n\016EmoRecog" +
+      "Noti_m\022)\n\016ErkMsgDataHead\030\001 \001(\0132\021.ErkMsgD" +
+      "ataHead_s\022\024\n\014EmoRecogTime\030\002 \001(\003\022\037\n\007Emoti" +
+      "on\030\003 \001(\0162\016.EmotionType_e\022\020\n\010Accuracy\030\004 \001" +
+      "(\002\"\343\001\n\016ErkInterApiMsg\0221\n\021ErkEngineCreate" +
+      "RQ\030\001 \001(\0132\024.ErkEngineCreateRQ_mH\000\0221\n\021ErkE" +
+      "ngineCreateRP\030\002 \001(\0132\024.ErkEngineCreateRP_" +
+      "mH\000\0221\n\021ErkEngineDeleteRQ\030\003 \001(\0132\024.ErkEngi" +
+      "neDeleteRQ_mH\000\0221\n\021ErkEngineDeleteRP\030\004 \001(" +
+      "\0132\024.ErkEngineDeleteRP_mH\000B\005\n\003msg\"\251\014\n\tErk" +
+      "ApiMsg\022?\n\030AddServiceProviderInfoRQ\030\001 \001(\013" +
+      "2\033.AddServiceProviderInfoRQ_mH\000\022?\n\030AddSe" +
+      "rviceProviderInfoRP\030\002 \001(\0132\033.AddServicePr" +
+      "oviderInfoRP_mH\000\022E\n\033UpdateServiceProvide" +
+      "rInfoRQ\030\003 \001(\0132\036.UpdateServiceProviderInf" +
+      "oRQ_mH\000\022E\n\033UpdateServiceProviderInfoRP\030\004" +
+      " \001(\0132\036.UpdateServiceProviderInfoRP_mH\000\022?" +
+      "\n\030DelServiceProviderInfoRQ\030\005 \001(\0132\033.DelSe" +
+      "rviceProviderInfoRQ_mH\000\022?\n\030DelServicePro" +
+      "viderInfoRP\030\006 \001(\0132\033.DelServiceProviderIn" +
+      "foRP_mH\000\022)\n\rAddUserInfoRQ\030\007 \001(\0132\020.AddUse" +
+      "rInfoRQ_mH\000\022)\n\rAddUserInfoRP\030\010 \001(\0132\020.Add" +
+      "UserInfoRP_mH\000\022/\n\020UpdateUserInfoRQ\030\t \001(\013" +
+      "2\023.UpdateUserInfoRQ_mH\000\022/\n\020UpdateUserInf" +
+      "oRP\030\n \001(\0132\023.UpdateUserInfoRP_mH\000\022)\n\rDelU" +
+      "serInfoRQ\030\013 \001(\0132\020.DelUserInfoRQ_mH\000\022)\n\rD" +
+      "elUserInfoRP\030\014 \001(\0132\020.DelUserInfoRP_mH\000\022/" +
+      "\n\020ErkServiceConnRQ\030\r \001(\0132\023.ErkServiceCon" +
+      "nRQ_mH\000\022/\n\020ErkServiceConnRP\030\016 \001(\0132\023.ErkS" +
+      "erviceConnRP_mH\000\0225\n\023ErkServiceDisConnRQ\030" +
+      "\017 \001(\0132\026.ErkServiceDisConnRQ_mH\000\0225\n\023ErkSe" +
+      "rviceDisConnRP\030\020 \001(\0132\026.ErkServiceDisConn" +
+      "RP_mH\000\0221\n\021EmoServiceStartRQ\030\021 \001(\0132\024.EmoS" +
+      "erviceStartRQ_mH\000\0221\n\021EmoServiceStartRP\030\022" +
+      " \001(\0132\024.EmoServiceStartRP_mH\000\022/\n\020EmoServi" +
+      "ceStopRQ\030\023 \001(\0132\023.EmoServiceStopRQ_mH\000\022/\n" +
+      "\020EmoServiceStopRP\030\024 \001(\0132\023.EmoServiceStop" +
+      "RP_mH\000\022#\n\nEmoRecogRQ\030\025 \001(\0132\r.EmoRecogRQ_" +
+      "mH\000\022#\n\nEmoRecogRP\030\026 \001(\0132\r.EmoRecogRP_mH\000" +
+      "\022/\n\020PhysioEmoRecogRQ\030\027 \001(\0132\023.PhysioEmoRe" +
+      "cogRQ_mH\000\022/\n\020PhysioEmoRecogRP\030\030 \001(\0132\023.Ph" +
+      "ysioEmoRecogRP_mH\000\022/\n\020SpeechEmoRecogRQ\030\031" +
+      " \001(\0132\023.SpeechEmoRecogRQ_mH\000\022/\n\020SpeechEmo" +
+      "RecogRP\030\032 \001(\0132\023.SpeechEmoRecogRP_mH\000\022+\n\016" +
+      "FaceEmoRecogRQ\030\033 \001(\0132\021.FaceEmoRecogRQ_mH" +
+      "\000\022+\n\016FaceEmoRecogRP\030\034 \001(\0132\021.FaceEmoRecog" +
+      "RP_mH\000\022%\n\013HeartBeatRQ\030\035 \001(\0132\016.HeartBeatR" +
+      "Q_mH\000\022%\n\013HeartBeatRP\030\036 \001(\0132\016.HeartBeatRP" +
+      "_mH\000\022\'\n\014EmoRecogNoti\030\037 \001(\0132\017.EmoRecogNot" +
+      "i_mH\000B\005\n\003msg*\230\005\n\014ErkMsgType_e\022\026\n\022ErkMsgT" +
+      "ype_unknown\020\000\022\034\n\030AddServiceProviderInfoR" +
+      "Q\020\001\022\034\n\030AddServiceProviderInfoRP\020\002\022\034\n\030Del" +
+      "ServiceProviderInfoRQ\020\003\022\034\n\030DelServicePro" +
+      "viderInfoRP\020\004\022\034\n\030UpdServiceProviderInfoR" +
+      "Q\020\005\022\034\n\030UpdServiceProviderInfoRP\020\006\022\021\n\rAdd" +
+      "UserInfoRQ\020\007\022\021\n\rAddUserInfoRP\020\010\022\021\n\rDelUs" +
+      "erInfoRQ\020\t\022\021\n\rDelUserInfoRP\020\n\022\021\n\rUpdUser" +
+      "InfoRQ\020\013\022\021\n\rUpdUserInfoRP\020\014\022\024\n\020ErkServic" +
+      "eConnRQ\020\r\022\024\n\020ErkServiceConnRP\020\016\022\027\n\023ErkSe" +
+      "rviceDisConnRQ\020\017\022\027\n\023ErkServiceDisConnRP\020" +
+      "\020\022\025\n\021EmoServiceStartRQ\020\021\022\025\n\021EmoServiceSt" +
+      "artRP\020\022\022\024\n\020EmoServiceStopRQ\020\023\022\024\n\020EmoServ" +
+      "iceStopRP\020\024\022\024\n\020PhysioEmoRecogRQ\020\025\022\024\n\020Spe" +
+      "echEmoRecogRQ\020\026\022\022\n\016FaceEmoRecogRQ\020\027\022\016\n\nE" +
+      "moRecogRQ\020\030\022\016\n\nEmoRecogRP\020\031\022\030\n\024ErkMsgTyp" +
+      "e_reserved1\020\032\022\030\n\024ErkMsgType_reserved2\020\033*" +
+      "\312\001\n\021ErkInterMsgType_e\022\033\n\027ErkInterMsgType" +
+      "_unknown\020\000\022\025\n\021ErkEngineCreateRQ\020\001\022\025\n\021Erk" +
+      "EngineCreateRP\020\002\022\025\n\021ErkEngineDeleteRQ\020\003\022" +
+      "\025\n\021ErkEngineDeleteRP\020\004\022\035\n\031ErkInterMsgTyp" +
+      "e_reserved1\020\005\022\035\n\031ErkInterMsgType_reserve" +
+      "d2\020\006*\300\003\n\014ReturnCode_e\022\026\n\022ReturnCode_unkn" +
+      "own\020\000\022\021\n\rReturnCode_ok\020\001\022\026\n\022ReturnCode_n" +
+      "ok_Org\020\002\022\027\n\023ReturnCode_nok_User\020\003\022\032\n\026Ret" +
+      "urnCode_nok_MsgType\020\004\022\035\n\031ReturnCode_nok_" +
+      "EngineType\020\005\022\"\n\036ReturnCode_nok_EngineCon" +
+      "dition\020\006\022(\n$ReturnCode_nok_PhysioEngineC" +
+      "ondition\020\007\022(\n$ReturnCode_nok_SpeechEngin" +
+      "eCondition\020\010\022)\n%ReturnCode_nok_FaceEmoEn" +
+      "gineCondition\020\t\022\036\n\032ReturnCode_nok_DevPla" +
+      "tform\020\n\022\036\n\032ReturnCode_nok_EmotionType\020\013\022" +
+      "\032\n\026ReturnCode_nok_reason1\020\014\022\032\n\026ReturnCod" +
+      "e_nok_reason2\020\r*\331\001\n\014EngineType_e\022\026\n\022Engi" +
+      "neType_unknown\020\000\022\031\n\025EngineType_physiolog" +
+      "y\020\001\022\025\n\021EngineType_speech\020\002\022\023\n\017EngineType" +
+      "_face\020\003\022\034\n\030EngineType_emo_recog_all\020\004\022\030\n" +
+      "\024EngineType_knowledge\020\005\022\030\n\024EngineType_re" +
+      "served1\020\006\022\030\n\024EngineType_reserved2\020\007*r\n\021E" +
+      "ngineCondition_e\022\033\n\027EngineCondition_unkn" +
+      "own\020\000\022\035\n\031EngineCondition_available\020\001\022!\n\035" +
+      "EngineCondition_not_available\020\002*\355\002\n\rServ" +
+      "iceType_e\022\027\n\023ServiceType_unknown\020\000\022\032\n\026Se" +
+      "rviceType_physiology\020\001\022\026\n\022ServiceType_sp" +
+      "eech\020\002\022\025\n\021ServiceType_video\020\003\022!\n\035Service" +
+      "Type_physiology_speech\020\004\022 \n\034ServiceType_" +
+      "physiology_video\020\005\022\034\n\030ServiceType_speech" +
+      "_video\020\006\022\'\n#ServiceType_physiology_speec" +
+      "h_video\020\007\022\031\n\025ServiceType_knowledge\020\010\022\033\n\027" +
+      "ServiceType_service_all\020\t\022\031\n\025ServiceType" +
+      "_reserved1\020\n\022\031\n\025ServiceType_reserved2\020\013*" +
+      "\263\003\n\rEmotionType_e\022\027\n\023EmotionType_unknown" +
+      "\020\000\022\027\n\023EmotionType_neutral\020\001\022\030\n\024EmotionTy" +
+      "pe_positive\020\002\022\030\n\024EmotionType_negative\020\003\022" +
+      "\026\n\022EmotionType_stress\020\004\022\023\n\017EmotionType_j" +
+      "oy\020\005\022\025\n\021EmotionType_happy\020\006\022\027\n\023EmotionTy" +
+      "pe_sadness\020\007\022\025\n\021EmotionType_anger\020\010\022\027\n\023E" +
+      "motionType_arousal\020\t\022\032\n\026EmotionType_rela" +
+      "xation\020\n\022\025\n\021EmotionType_peace\020\013\022\027\n\023Emoti" +
+      "onType_anxiety\020\014\022\024\n\020EmotionType_fear\020\r\022\027" +
+      "\n\023EmotionType_disgust\020\016\022\031\n\025EmotionType_r" +
+      "eserved1\020\017\022\031\n\025EmotionType_reserved2\020\020*\344\002" +
+      "\n\022OrgProfileResult_e\022\034\n\030OrgProfileResult" +
+      "_unknown\020\000\022\027\n\023OrgProfileResult_ok\020\001\022 \n\034O" +
+      "rgProfileResult_nok_OrgName\020\002\022\037\n\033OrgProf" +
+      "ileResult_nok_OrgPwd\020\003\022(\n$OrgProfileResu" +
+      "lt_nok_ServiceDuration\020\004\022#\n\037OrgProfileRe" +
+      "sult_nok_UserNumber\020\005\022$\n OrgProfileResul" +
+      "t_nok_ServiceType\020\006\022\033\n\027OrgProfileResult_" +
+      "nok_DB\020\007\022 \n\034OrgProfileResult_nok_reason1" +
+      "\020\010\022 \n\034OrgProfileResult_nok_reason2\020\t*\320\003\n" +
+      "\023UserProfileResult_e\022\035\n\031UserProfileResul" +
+      "t_unknown\020\000\022\030\n\024UserProfileResult_ok\020\001\022!\n" +
+      "\035UserProfileResult_nok_OrgName\020\002\022\"\n\036User" +
+      "ProfileResult_nok_UserName\020\003\022!\n\035UserProf" +
+      "ileResult_nok_UserPwd\020\004\022)\n%UserProfileRe" +
+      "sult_nok_ServiceDuration\020\005\022\035\n\031UserProfil" +
+      "eResult_nok_Age\020\006\022\035\n\031UserProfileResult_n" +
+      "ok_Sex\020\007\022\"\n\036UserProfileResult_nok_UserTy" +
+      "pe\020\010\022%\n!UserProfileResult_nok_ServiceTyp" +
+      "e\020\t\022\034\n\030UserProfileResult_nok_DB\020\n\022!\n\035Use" +
+      "rProfileResult_nok_reason1\020\013\022!\n\035UserProf" +
+      "ileResult_nok_reason2\020\014B\036\n\032com.erksystem" +
+      ".protobuf.apiP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_ErkMsgHeader_descriptor =
+    internal_static_ErkMsgHead_s_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_ErkMsgHeader_fieldAccessorTable = new
+    internal_static_ErkMsgHead_s_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_ErkMsgHeader_descriptor,
+        internal_static_ErkMsgHead_s_descriptor,
         new java.lang.String[] { "MsgType", "OrgId", "UserId", });
-    internal_static_ErkMsgDataHeader_descriptor =
+    internal_static_ErkMsgDataHead_s_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_ErkMsgDataHeader_fieldAccessorTable = new
+    internal_static_ErkMsgDataHead_s_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_ErkMsgDataHeader_descriptor,
-        new java.lang.String[] { });
-    internal_static_ErkEngineInfo_s_descriptor =
+        internal_static_ErkMsgDataHead_s_descriptor,
+        new java.lang.String[] { "MsgType", "OrgId", "UserId", });
+    internal_static_ErkInterMsgHead_s_descriptor =
       getDescriptor().getMessageTypes().get(2);
+    internal_static_ErkInterMsgHead_s_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_ErkInterMsgHead_s_descriptor,
+        new java.lang.String[] { "MsgType", "OrgId", "UserId", });
+    internal_static_ErkEngineInfo_s_descriptor =
+      getDescriptor().getMessageTypes().get(3);
     internal_static_ErkEngineInfo_s_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ErkEngineInfo_s_descriptor,
         new java.lang.String[] { "EngineType", "EngineCondition", "IpAddr", "ReceiveQueueName", "SendQueueName", });
+    internal_static_AddServiceProviderInfoRQ_m_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_AddServiceProviderInfoRQ_m_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_AddServiceProviderInfoRQ_m_descriptor,
+        new java.lang.String[] { "MsgType", "OrgName", "OrgPwd", "ServiceDuration", "UserNumber", "ServiceType", });
+    internal_static_AddServiceProviderInfoRP_m_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_AddServiceProviderInfoRP_m_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_AddServiceProviderInfoRP_m_descriptor,
+        new java.lang.String[] { "MsgType", "OrgName", "ResultType", "OrgId", "OrgPwd", "ServiceDuration", "UserNumber", "ServiceType", });
+    internal_static_UpdateServiceProviderInfoRQ_m_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_UpdateServiceProviderInfoRQ_m_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_UpdateServiceProviderInfoRQ_m_descriptor,
+        new java.lang.String[] { "MsgType", "OrgName", "OldOrgPwd", "OldServiceDuration", "OldUserNumber", "OldServiceType", "NewOrgPwd", "NewServiceDuration", "NewUserNumber", "NewServiceType", });
+    internal_static_UpdateServiceProviderInfoRP_m_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_UpdateServiceProviderInfoRP_m_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_UpdateServiceProviderInfoRP_m_descriptor,
+        new java.lang.String[] { "MsgType", "OrgName", "ResultType", "OldOrgPwd", "OldServiceDuration", "OldUserNumber", "OldServiceType", "NewOrgPwd", "NewServiceDuration", "NewUserNumber", "NewServiceType", });
+    internal_static_DelServiceProviderInfoRQ_m_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_DelServiceProviderInfoRQ_m_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_DelServiceProviderInfoRQ_m_descriptor,
+        new java.lang.String[] { "MsgType", "OrgName", "OrgPwd", });
+    internal_static_DelServiceProviderInfoRP_m_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_DelServiceProviderInfoRP_m_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_DelServiceProviderInfoRP_m_descriptor,
+        new java.lang.String[] { "MsgType", "OrgName", "ResultType", });
+    internal_static_AddUserInfoRQ_m_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_AddUserInfoRQ_m_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_AddUserInfoRQ_m_descriptor,
+        new java.lang.String[] { "MsgType", "OrgName", "UserName", "UserPwd", "ServiceDuration", "Age", "Sex", "UserType", "ServiceType", });
+    internal_static_AddUserInfoRP_m_descriptor =
+      getDescriptor().getMessageTypes().get(11);
+    internal_static_AddUserInfoRP_m_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_AddUserInfoRP_m_descriptor,
+        new java.lang.String[] { "MsgType", "OrgName", "UserName", "ResultType", "UserId", "UserPwd", "ServiceDuration", "Age", "Sex", "UserType", "ServiceType", });
+    internal_static_UpdateUserInfoRQ_m_descriptor =
+      getDescriptor().getMessageTypes().get(12);
+    internal_static_UpdateUserInfoRQ_m_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_UpdateUserInfoRQ_m_descriptor,
+        new java.lang.String[] { "MsgType", "OrgName", "UserName", "OldUserPwd", "OldServiceDuration", "OldAge", "OldSex", "OldUserType", "OldServiceType", "NewUserPwd", "NewServiceDuration", "NewAge", "NewSex", "NewUserType", "NewServiceType", });
+    internal_static_UpdateUserInfoRP_m_descriptor =
+      getDescriptor().getMessageTypes().get(13);
+    internal_static_UpdateUserInfoRP_m_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_UpdateUserInfoRP_m_descriptor,
+        new java.lang.String[] { "MsgType", "OrgName", "UserName", "ResultType", "OldUserPwd", "OldServiceDuration", "OldAge", "OldSex", "OldUserType", "OldServiceType", "NewUserPwd", "NewServiceDuration", "NewAge", "NewSex", "NewUserType", "NewServiceType", });
+    internal_static_DelUserInfoRQ_m_descriptor =
+      getDescriptor().getMessageTypes().get(14);
+    internal_static_DelUserInfoRQ_m_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_DelUserInfoRQ_m_descriptor,
+        new java.lang.String[] { "MsgType", "OrgName", "UserName", "UserPwd", });
+    internal_static_DelUserInfoRP_m_descriptor =
+      getDescriptor().getMessageTypes().get(15);
+    internal_static_DelUserInfoRP_m_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_DelUserInfoRP_m_descriptor,
+        new java.lang.String[] { "MsgType", "OrgName", "UserName", "ResultType", "Return", });
     internal_static_ErkServiceConnRQ_m_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_ErkServiceConnRQ_m_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ErkServiceConnRQ_m_descriptor,
         new java.lang.String[] { "ErkMsgHead", "MsgTime", });
     internal_static_ErkServiceConnRP_m_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_ErkServiceConnRP_m_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ErkServiceConnRP_m_descriptor,
         new java.lang.String[] { "ErkMsgHead", "MsgTime", "ReturnCode", "ServiceType", });
     internal_static_ErkServiceDisConnRQ_m_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_ErkServiceDisConnRQ_m_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ErkServiceDisConnRQ_m_descriptor,
         new java.lang.String[] { "ErkMsgHead", "MsgTime", "ServiceType", });
     internal_static_ErkServiceDisConnRP_m_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_ErkServiceDisConnRP_m_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ErkServiceDisConnRP_m_descriptor,
         new java.lang.String[] { "ErkMsgHead", "MsgTime", "ReturnCode", });
-    internal_static_EmoRecogCreateRQ_m_descriptor =
-      getDescriptor().getMessageTypes().get(7);
-    internal_static_EmoRecogCreateRQ_m_fieldAccessorTable = new
+    internal_static_EmoServiceStartRQ_m_descriptor =
+      getDescriptor().getMessageTypes().get(20);
+    internal_static_EmoServiceStartRQ_m_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_EmoRecogCreateRQ_m_descriptor,
+        internal_static_EmoServiceStartRQ_m_descriptor,
         new java.lang.String[] { "ErkMsgHead", "MsgTime", "ServiceType", });
-    internal_static_EmoRecogCreateRP_m_descriptor =
-      getDescriptor().getMessageTypes().get(8);
-    internal_static_EmoRecogCreateRP_m_fieldAccessorTable = new
+    internal_static_EmoServiceStartRP_m_descriptor =
+      getDescriptor().getMessageTypes().get(21);
+    internal_static_EmoServiceStartRP_m_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_EmoRecogCreateRP_m_descriptor,
-        new java.lang.String[] { "ErkMsgHead", "MsgTime", "ReturnCode", "PhysioEngineInfo", "SpeechEngineInfo", "FaceEngineInfo", "Reserved1EngineInfo", "Reserved2EngineInfo", });
-    internal_static_EmoRecogDeleteRQ_m_descriptor =
-      getDescriptor().getMessageTypes().get(9);
-    internal_static_EmoRecogDeleteRQ_m_fieldAccessorTable = new
+        internal_static_EmoServiceStartRP_m_descriptor,
+        new java.lang.String[] { "ErkMsgHead", "MsgTime", "ReturnCode", "PhysioEngineInfo", "SpeechEngineInfo", "FaceEngineInfo", "KnowledgeEngineInfo", "ServiceEngineInfo", });
+    internal_static_EmoServiceStopRQ_m_descriptor =
+      getDescriptor().getMessageTypes().get(22);
+    internal_static_EmoServiceStopRQ_m_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_EmoRecogDeleteRQ_m_descriptor,
-        new java.lang.String[] { "ErkMsgHead", "MsgTime", "ServiceType", "ReceiveQueueName", "SendQueueName", });
-    internal_static_EmoRecogDeleteRP_m_descriptor =
-      getDescriptor().getMessageTypes().get(10);
-    internal_static_EmoRecogDeleteRP_m_fieldAccessorTable = new
+        internal_static_EmoServiceStopRQ_m_descriptor,
+        new java.lang.String[] { "ErkMsgHead", "MsgTime", "ServiceType", "PhysioEngineReceiveQueueName", "PhysioEngineSendQueueName", "SpeechEngineReceiveQueueName", "SpeechEngineSendQueueName", "FaceEngineReceiveQueueName", "FaceEngineSendQueueName", "KnowledgeEngineReceiveQueueName", "KnowledgeEngineSendQueueName", });
+    internal_static_EmoServiceStopRP_m_descriptor =
+      getDescriptor().getMessageTypes().get(23);
+    internal_static_EmoServiceStopRP_m_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_EmoRecogDeleteRP_m_descriptor,
-        new java.lang.String[] { "ErkMsgHead", "MsgTime", "ReturnCode", "PhysioEngineInfo", "SpeechEngineInfo", "FaceEngineInfo", "Reserved1EngineInfo", "Reserved2EngineInfo", });
+        internal_static_EmoServiceStopRP_m_descriptor,
+        new java.lang.String[] { "ErkMsgHead", "MsgTime", "ReturnCode", "PhysioEngineInfo", "SpeechEngineInfo", "FaceEngineInfo", "KnowledgeEngineInfo", "ServiceEngineInfo", });
+    internal_static_ErkEngineCreateRQ_m_descriptor =
+      getDescriptor().getMessageTypes().get(24);
+    internal_static_ErkEngineCreateRQ_m_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_ErkEngineCreateRQ_m_descriptor,
+        new java.lang.String[] { "ErkInterMsgHead", "MsgTime", "ServiceType", "PhysioEngineReceiveQueueName", "PhysioEngineSendQueueName", "SpeechEngineReceiveQueueName", "SpeechEngineSendQueueName", "FaceEngineReceiveQueueName", "FaceEngineSendQueueName", "KnowledgeEngineReceiveQueueName", "KnowledgeEngineSendQueueName", });
+    internal_static_ErkEngineCreateRP_m_descriptor =
+      getDescriptor().getMessageTypes().get(25);
+    internal_static_ErkEngineCreateRP_m_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_ErkEngineCreateRP_m_descriptor,
+        new java.lang.String[] { "ErkInterMsgHead", "MsgTime", "ReturnCode", "PhysioEngineInfo", "SpeechEngineInfo", "FaceEngineInfo", "KnowledgeEngineInfo", "ServiceEngineInfo", });
+    internal_static_ErkEngineDeleteRQ_m_descriptor =
+      getDescriptor().getMessageTypes().get(26);
+    internal_static_ErkEngineDeleteRQ_m_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_ErkEngineDeleteRQ_m_descriptor,
+        new java.lang.String[] { "ErkInterMsgHead", "MsgTime", "ServiceType", "PhysioEngineReceiveQueueName", "PhysioEngineSendQueueName", "SpeechEngineReceiveQueueName", "SpeechEngineSendQueueName", "FaceEngineReceiveQueueName", "FaceEngineSendQueueName", "KnowledgeEngineReceiveQueueName", "KnowledgeEngineSendQueueName", });
+    internal_static_ErkEngineDeleteRP_m_descriptor =
+      getDescriptor().getMessageTypes().get(27);
+    internal_static_ErkEngineDeleteRP_m_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_ErkEngineDeleteRP_m_descriptor,
+        new java.lang.String[] { "ErkInterMsgHead", "MsgTime", "ReturnCode", "PhysioEngineInfo", "SpeechEngineInfo", "FaceEngineInfo", "KnowledgeEngineInfo", "ServiceEngineInfo", });
     internal_static_HeartBeatRQ_m_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(28);
     internal_static_HeartBeatRQ_m_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_HeartBeatRQ_m_descriptor,
         new java.lang.String[] { "ErkMsgHead", "QueueName", });
     internal_static_HeartBeatRP_m_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(29);
     internal_static_HeartBeatRP_m_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_HeartBeatRP_m_descriptor,
         new java.lang.String[] { "ErkMsgHead", "Status", });
     internal_static_EmoRecogRQ_m_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(30);
     internal_static_EmoRecogRQ_m_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_EmoRecogRQ_m_descriptor,
         new java.lang.String[] { "ErkMsgDataHead", "DataTimeStamp", "MsgDataLength", "MsgDataFrame", });
     internal_static_EmoRecogRP_m_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(31);
     internal_static_EmoRecogRP_m_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_EmoRecogRP_m_descriptor,
         new java.lang.String[] { "ErkMsgDataHead", "ReturnCode", "EmoRecogTime", "Emotion", "Accuracy", });
     internal_static_PhysioEmoRecogRQ_m_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(32);
     internal_static_PhysioEmoRecogRQ_m_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_PhysioEmoRecogRQ_m_descriptor,
         new java.lang.String[] { "ErkMsgDataHead", "DataTimeStamp", "MsgDataLength", "MsgDataFrame", });
     internal_static_PhysioEmoRecogRP_m_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(33);
     internal_static_PhysioEmoRecogRP_m_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_PhysioEmoRecogRP_m_descriptor,
         new java.lang.String[] { "ErkMsgDataHead", "ReturnCode", "EmoRecogTime", "Emotion", "Accuracy", });
     internal_static_SpeechEmoRecogRQ_m_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(34);
     internal_static_SpeechEmoRecogRQ_m_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SpeechEmoRecogRQ_m_descriptor,
         new java.lang.String[] { "ErkMsgDataHead", "DataTimeStamp", "MsgDataLength", "MsgDataFrame", });
     internal_static_SpeechEmoRecogRP_m_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(35);
     internal_static_SpeechEmoRecogRP_m_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SpeechEmoRecogRP_m_descriptor,
         new java.lang.String[] { "ErkMsgDataHead", "ReturnCode", "EmoRecogTime", "Emotion", "Accuracy", });
     internal_static_FaceEmoRecogRQ_m_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(36);
     internal_static_FaceEmoRecogRQ_m_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_FaceEmoRecogRQ_m_descriptor,
         new java.lang.String[] { "ErkMsgDataHead", "DataTimeStamp", "MsgDataLength", "MsgDataFrame", });
     internal_static_FaceEmoRecogRP_m_descriptor =
-      getDescriptor().getMessageTypes().get(20);
+      getDescriptor().getMessageTypes().get(37);
     internal_static_FaceEmoRecogRP_m_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_FaceEmoRecogRP_m_descriptor,
         new java.lang.String[] { "ErkMsgDataHead", "ReturnCode", "EmoRecogTime", "Emotion", "Accuracy", });
     internal_static_EmoRecogNoti_m_descriptor =
-      getDescriptor().getMessageTypes().get(21);
+      getDescriptor().getMessageTypes().get(38);
     internal_static_EmoRecogNoti_m_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_EmoRecogNoti_m_descriptor,
         new java.lang.String[] { "ErkMsgDataHead", "EmoRecogTime", "Emotion", "Accuracy", });
+    internal_static_ErkInterApiMsg_descriptor =
+      getDescriptor().getMessageTypes().get(39);
+    internal_static_ErkInterApiMsg_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_ErkInterApiMsg_descriptor,
+        new java.lang.String[] { "ErkEngineCreateRQ", "ErkEngineCreateRP", "ErkEngineDeleteRQ", "ErkEngineDeleteRP", "Msg", });
     internal_static_ErkApiMsg_descriptor =
-      getDescriptor().getMessageTypes().get(22);
+      getDescriptor().getMessageTypes().get(40);
     internal_static_ErkApiMsg_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ErkApiMsg_descriptor,
-        new java.lang.String[] { "ErkServiceConnRQ", "ErkServiceConnRP", "ErkServiceDisConnRQ", "ErkServiceDisConnRP", "EmoRecogCreateRQ", "EmoRecogCreateRP", "EmoRecogDeleteRQ", "EmoRecogDeleteRP", "HeartBeatRQ", "HeartBeatRP", "EmoRecogRQ", "EmoRecogRP", "PhysioEmoRecogRQ", "PhysioEmoRecogRP", "SpeechEmoRecogRQ", "SpeechEmoRecogRP", "FaceEmoRecogRQ", "FaceEmoRecogRP", "EmoRecogNoti", "Msg", });
+        new java.lang.String[] { "AddServiceProviderInfoRQ", "AddServiceProviderInfoRP", "UpdateServiceProviderInfoRQ", "UpdateServiceProviderInfoRP", "DelServiceProviderInfoRQ", "DelServiceProviderInfoRP", "AddUserInfoRQ", "AddUserInfoRP", "UpdateUserInfoRQ", "UpdateUserInfoRP", "DelUserInfoRQ", "DelUserInfoRP", "ErkServiceConnRQ", "ErkServiceConnRP", "ErkServiceDisConnRQ", "ErkServiceDisConnRP", "EmoServiceStartRQ", "EmoServiceStartRP", "EmoServiceStopRQ", "EmoServiceStopRP", "EmoRecogRQ", "EmoRecogRP", "PhysioEmoRecogRQ", "PhysioEmoRecogRP", "SpeechEmoRecogRQ", "SpeechEmoRecogRP", "FaceEmoRecogRQ", "FaceEmoRecogRP", "HeartBeatRQ", "HeartBeatRP", "EmoRecogNoti", "Msg", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

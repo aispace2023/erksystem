@@ -38,9 +38,9 @@ public enum ServiceType_e
    */
   ServiceType_speech_video(6),
   /**
-   * <code>physiology_speech_video = 7;</code>
+   * <code>ServiceType_physiology_speech_video = 7;</code>
    */
-  physiology_speech_video(7),
+  ServiceType_physiology_speech_video(7),
   /**
    * <code>ServiceType_knowledge = 8;</code>
    */
@@ -89,9 +89,9 @@ public enum ServiceType_e
    */
   public static final int ServiceType_speech_video_VALUE = 6;
   /**
-   * <code>physiology_speech_video = 7;</code>
+   * <code>ServiceType_physiology_speech_video = 7;</code>
    */
-  public static final int physiology_speech_video_VALUE = 7;
+  public static final int ServiceType_physiology_speech_video_VALUE = 7;
   /**
    * <code>ServiceType_knowledge = 8;</code>
    */
@@ -141,7 +141,7 @@ public enum ServiceType_e
       case 4: return ServiceType_physiology_speech;
       case 5: return ServiceType_physiology_video;
       case 6: return ServiceType_speech_video;
-      case 7: return physiology_speech_video;
+      case 7: return ServiceType_physiology_speech_video;
       case 8: return ServiceType_knowledge;
       case 9: return ServiceType_service_all;
       case 10: return ServiceType_reserved1;
@@ -176,7 +176,7 @@ public enum ServiceType_e
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.erksystem.protobuf.api.ErkApiMsgOuterClass.getDescriptor().getEnumTypes().get(4);
+    return com.erksystem.protobuf.api.ErkApiMsgOuterClass.getDescriptor().getEnumTypes().get(5);
   }
 
   private static final ServiceType_e[] VALUES = values();
