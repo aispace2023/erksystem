@@ -4,7 +4,7 @@ import com.aispace.erksystem.service.scheduler.handler.base.IntervalTaskUnit;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * @author kangmoo Heo
+ * Created by Ai_Space
  */
 @Slf4j
 public class StateMonitor extends IntervalTaskUnit {

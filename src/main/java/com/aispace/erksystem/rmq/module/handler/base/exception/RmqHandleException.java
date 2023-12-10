@@ -3,7 +3,7 @@ package com.aispace.erksystem.rmq.module.handler.base.exception;
 import lombok.Getter;
 
 /**
- * @author kangmoo Heo
+ * Created by Ai_Space
  */
 @Getter
 public class RmqHandleException extends RuntimeException {

@@ -10,7 +10,7 @@ import static com.aispace.erksystem.rmq.module.RmqLogPrinter.proto2Json;
 
 
 /**
- * @author kangmoo Heo
+ * Created by Ai_Space
  */
 @Slf4j
 public class RmqOutgoingHandler {
@@ -32,10 +32,19 @@ public class RmqOutgoingHandler {
     }
 
     public static void sendToApi(Message msg) {
-        send(msg, userConfig.getRmqApiQueueName(), userConfig.getApiQueue());
+        send(msg, userConfig.getRmqIncomingQueueApi(), userConfig.getRmqOutgoingQueueApi());
+    }
+
+    public static void sendToSubSystem(Message msg) {
+        send(msg, userConfig.getRmqIncomingQueueSubsystem(), userConfig.getRmqOutgoingQueueSubsystem());
     }
 
     public static void sendErkApiMsg2API(Message msg) {
         sendToApi(ErkMsgWrapper.wrap2ErkApiMsg(msg));
     }
+
+    public static void sendErkApiMsg2SubSystem(Message msg) {
+        sendToApi(ErkMsgWrapper.wrap2ErkInterApiMsg(msg));
+    }
+
 }

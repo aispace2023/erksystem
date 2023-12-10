@@ -1,4 +1,4 @@
-package com.aispace.erksystem.rmq.module.handler;
+package com.aispace.erksystem.rmq.module.handler.api;
 
 import com.aispace.erksystem.rmq.module.handler.base.RmqIncomingHandler;
 import com.erksystem.protobuf.api.ErkMsgHead_s;
@@ -19,11 +19,11 @@ public class ErkServiceDisConnRqHandler extends RmqIncomingHandler<ErkServiceDis
     }
 
     @Override
-    protected void onFail() {
+    protected void onFail(int reasonCode, String reason) {
         ErkServiceDisConnRP_m res = ErkServiceDisConnRP_m.newBuilder()
                 .setErkMsgHead(ErkMsgHead_s.newBuilder(msg.getErkMsgHead()).setMsgType(ErkMsgType_e.ErkServiceDisConnRP))
                 .setMsgTime(System.currentTimeMillis())
-                // .setReturnCode() // TODO
+                .setReturnCodeValue(reasonCode)
                 .build();
 
         sendErkApiMsg2API(res);

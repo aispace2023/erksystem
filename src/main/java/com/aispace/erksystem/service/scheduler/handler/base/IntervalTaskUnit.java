@@ -16,7 +16,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author kangmoo Heo
+ * Created by Ai_Space
  */
 @Slf4j
 public abstract class IntervalTaskUnit implements Runnable {

@@ -79,4 +79,20 @@ public class ErkMsgWrapper {
         }
         return builder.build();
     }
+
+    public static ErkInterApiMsg wrap2ErkInterApiMsg(Message msg) {
+        ErkInterApiMsg.Builder builder = ErkInterApiMsg.newBuilder();
+        if (msg instanceof ErkEngineCreateRQ_m casted) {
+            builder.setErkEngineCreateRQ(casted);
+        } else if (msg instanceof ErkEngineCreateRP_m casted) {
+            builder.setErkEngineCreateRP(casted);
+        } else if (msg instanceof ErkEngineDeleteRQ_m casted) {
+            builder.setErkEngineDeleteRQ(casted);
+        } else if (msg instanceof ErkEngineDeleteRP_m casted) {
+            builder.setErkEngineDeleteRP(casted);
+        } else {
+            throw new IllegalArgumentException("Unsupported message type: " + msg.getClass());
+        }
+        return builder.build();
+    }
 }

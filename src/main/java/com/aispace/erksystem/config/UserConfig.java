@@ -9,7 +9,6 @@ import lombok.Setter;
 import lombok.ToString;
 
 import javax.validation.constraints.Min;
-import java.util.List;
 
 /**
  * Created by Ai_Space
@@ -29,11 +28,13 @@ public class UserConfig extends YamlConfig {
     @ConfigValue("rmq.port")
     int rmqPort;
     @ConfigValue("rmq.incoming-queue.api")
-    String rmqApiQueueName;
-    @ConfigValue("rmq.incoming-queue.provision")
-    String rmqProvQueueName;
-    @ConfigValue("rmq.api-queue-name")
-    String apiQueue;
+    String rmqIncomingQueueApi;
+    @ConfigValue("rmq.incoming-queue.subsystem")
+    String rmqIncomingQueueSubsystem;
+    @ConfigValue("rmq.outgoing-queue.api")
+    String rmqOutgoingQueueApi;
+    @ConfigValue("rmq.outgoing-queue.subsystem")
+    String rmqOutgoingQueueSubsystem;
 
     @Min(0)
     @ConfigValue("timer.connection-timeout")

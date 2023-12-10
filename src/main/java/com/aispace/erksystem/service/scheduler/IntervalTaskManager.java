@@ -10,7 +10,7 @@ import java.util.List;
  * Session Manager
  * 주기적으로 세션을 필터링하고 처리
  *
- * @author Kangmoo Heo
+ * Created by Ai_Space
  */
 public class IntervalTaskManager {
     private static final List<IntervalTaskUnit> itu = List.of(

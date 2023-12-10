@@ -1,4 +1,4 @@
-package com.aispace.erksystem.rmq.module.handler;
+package com.aispace.erksystem.rmq.module.handler.api;
 
 
 import com.aispace.erksystem.rmq.module.handler.base.RmqIncomingHandler;
@@ -19,10 +19,10 @@ public class DelServiceProviderInfoRQHandler extends RmqIncomingHandler<DelServi
     }
 
     @Override
-    protected void onFail() {
+    protected void onFail(int reasonCode, String reason) {
         DelServiceProviderInfoRP_m res = DelServiceProviderInfoRP_m.newBuilder()
                 .setOrgName(msg.getOrgName())
-                // .setResultType() // TODO
+                .setResultTypeValue(reasonCode)
                 .build();
 
         sendErkApiMsg2API(res);

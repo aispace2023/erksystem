@@ -28,7 +28,7 @@ public class ConnectionManager {
         ConnectionInfo connectionInfo = new ConnectionInfo(userId, orgId);
         if (connectionInfos.putIfAbsent(userId, connectionInfo) != null) {
             log.warn("[{}] connection is already exist", userId);
-            throw new RmqHandleException(-1, "Connection Already Exist");
+            throw new RmqHandleException(0, "Connection Already Exist");
         }
         log.info("{} Connection Created", connectionInfo.getLogPrefix());
         return connectionInfo;

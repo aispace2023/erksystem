@@ -1,7 +1,7 @@
 package com.aispace.erksystem.rmq.module.handler.base.exception;
 
 /**
- * @author kangmoo Heo
+ * Created by Ai_Space
  */
 public class ValidationHandleException extends RmqHandleException {
     public ValidationHandleException(int errorCode, String message) {

@@ -1,16 +1,16 @@
-package com.aispace.erksystem.rmq.module.handler;
+package com.aispace.erksystem.rmq.module.handler.api;
 
 import com.aispace.erksystem.rmq.module.handler.base.RmqIncomingHandler;
-import com.erksystem.protobuf.api.EmoRecogRP_m;
-import com.erksystem.protobuf.api.EmoRecogRQ_m;
 import com.erksystem.protobuf.api.ErkMsgDataHead_s;
+import com.erksystem.protobuf.api.FaceEmoRecogRP_m;
+import com.erksystem.protobuf.api.FaceEmoRecogRQ_m;
 
 import static com.aispace.erksystem.rmq.module.handler.base.RmqOutgoingHandler.sendErkApiMsg2API;
 
 /**
  * Created by Ai_Space
  */
-public class EmoRecogRqHandler extends RmqIncomingHandler<EmoRecogRQ_m> {
+public class FaceEmoRecogRqHandler extends RmqIncomingHandler<FaceEmoRecogRQ_m> {
     @Override
     protected void handle() {
         throw new IllegalStateException("FAIL");
@@ -18,10 +18,10 @@ public class EmoRecogRqHandler extends RmqIncomingHandler<EmoRecogRQ_m> {
     }
 
     @Override
-    protected void onFail() {
-        EmoRecogRP_m res = EmoRecogRP_m.newBuilder()
+    protected void onFail(int reasonCode, String reason) {
+        FaceEmoRecogRP_m res = FaceEmoRecogRP_m.newBuilder()
                 .setErkMsgDataHead(ErkMsgDataHead_s.newBuilder(msg.getErkMsgDataHead()))
-                // .setReturnCode() // TODO
+                .setReturnCodeValue(reasonCode)
                 .build();
 
         sendErkApiMsg2API(res);

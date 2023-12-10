@@ -3,7 +3,7 @@ package com.aispace.erksystem.rmq.module.handler.base;
 import com.google.protobuf.Message;
 
 /**
- * @author kangmoo Heo
+ * Created by Ai_Space
  */
 public interface RmqIncomingMsgInterface {
     void proc(Message incomingMsg);

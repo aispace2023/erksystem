@@ -5,8 +5,10 @@ rmq:
   port: 10001
   incoming-queue:
     api: ERK_API_QUEUE
-    provision: ERK_PROVISION_QUEUE
-  api-queue-name: ERK_TEST
+    subsystem: ERK_SUBSYSTEM_QUEUE
+  outgoing-queue:
+    api: API_QUEUE
+    subsystem: SUBSYSTEM_QUEUE
 
 performance:
   rmq-consumer-count: 8

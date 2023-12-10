@@ -1,4 +1,4 @@
-package com.aispace.erksystem.rmq.module.handler;
+package com.aispace.erksystem.rmq.module.handler.api;
 
 import com.aispace.erksystem.rmq.module.handler.base.RmqIncomingHandler;
 import com.erksystem.protobuf.api.DelUserInfoRP_m;
@@ -17,12 +17,12 @@ public class DelUserInfoRQHandler extends RmqIncomingHandler<DelUserInfoRQ_m> {
     }
 
     @Override
-    protected void onFail() {
+    protected void onFail(int reasonCode, String reason) {
         DelUserInfoRP_m res = DelUserInfoRP_m.newBuilder()
                 .setOrgName(msg.getOrgName())
                 .setUserName(msg.getUserName())
-                // .setResultType() // TODO
-                // .setReturn() // TODO
+                .setResultTypeValue(reasonCode)
+                .setReturn(reason) // TODO return 값 체크
                 .build();
 
         sendErkApiMsg2API(res);

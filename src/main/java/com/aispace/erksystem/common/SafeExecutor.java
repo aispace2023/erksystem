@@ -3,7 +3,7 @@ package com.aispace.erksystem.common;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * @author kangmoo Heo
+ * Created by Ai_Space
  */
 @Slf4j
 public class SafeExecutor {

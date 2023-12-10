@@ -1,4 +1,4 @@
-package com.aispace.erksystem.rmq.module.handler;
+package com.aispace.erksystem.rmq.module.handler.api;
 
 import com.aispace.erksystem.rmq.module.handler.base.RmqIncomingHandler;
 import com.aispace.erksystem.service.database.ServiceProviderDAO;
@@ -42,14 +42,14 @@ public class AddServiceProviderInfoRQHandler extends RmqIncomingHandler<AddServi
     }
 
     @Override
-    protected void onFail() {
+    protected void onFail(int reasonCode, String reason) {
         AddServiceProviderInfoRP_m res = AddServiceProviderInfoRP_m.newBuilder()
                 .setOrgName(msg.getOrgName())
                 .setOrgPwd(msg.getOrgPwd())
                 .setServiceDuration(msg.getServiceDuration())
                 .setUserNumber(msg.getUserNumber())
                 .setServiceType(msg.getServiceType())
-                // .setResultType() // TODO
+                .setResultTypeValue(reasonCode)
                 // .setOrgId() // TODO
                 .build();
 

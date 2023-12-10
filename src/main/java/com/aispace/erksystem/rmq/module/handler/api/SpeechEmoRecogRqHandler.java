@@ -1,4 +1,4 @@
-package com.aispace.erksystem.rmq.module.handler;
+package com.aispace.erksystem.rmq.module.handler.api;
 
 import com.aispace.erksystem.rmq.module.handler.base.RmqIncomingHandler;
 import com.erksystem.protobuf.api.ErkMsgDataHead_s;
@@ -18,10 +18,10 @@ public class SpeechEmoRecogRqHandler extends RmqIncomingHandler<SpeechEmoRecogRQ
     }
 
     @Override
-    protected void onFail() {
+    protected void onFail(int reasonCode, String reason) {
         SpeechEmoRecogRP_m res = SpeechEmoRecogRP_m.newBuilder()
                 .setErkMsgDataHead(ErkMsgDataHead_s.newBuilder(msg.getErkMsgDataHead()))
-                // .setReturnCode() // TODO
+                .setReturnCodeValue(reasonCode)
                 .build();
 
         sendErkApiMsg2API(res);

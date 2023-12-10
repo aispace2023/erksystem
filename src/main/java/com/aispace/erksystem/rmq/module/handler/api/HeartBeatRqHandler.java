@@ -1,4 +1,4 @@
-package com.aispace.erksystem.rmq.module.handler;
+package com.aispace.erksystem.rmq.module.handler.api;
 
 import com.aispace.erksystem.rmq.module.handler.base.RmqIncomingHandler;
 import com.erksystem.protobuf.api.ErkMsgHead_s;
@@ -18,7 +18,7 @@ public class HeartBeatRqHandler extends RmqIncomingHandler<HeartBeatRQ_m> {
     }
 
     @Override
-    protected void onFail() {
+    protected void onFail(int reasonCode, String reason) {
         HeartBeatRP_m res = HeartBeatRP_m.newBuilder()
                 .setErkMsgHead(ErkMsgHead_s.newBuilder(msg.getErkMsgHead()))
                 .setStatus(0)

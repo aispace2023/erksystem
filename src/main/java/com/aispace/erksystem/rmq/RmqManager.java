@@ -14,7 +14,7 @@ import java.util.function.Consumer;
 /**
  * RabbitMQ 모듈들을 제어하고 관리하는 매니저 클래스.
  *
- * @author kangmoo Heo
+ * Created by Ai_Space
  */
 @Slf4j
 public class RmqManager {

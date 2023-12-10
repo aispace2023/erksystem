@@ -1,4 +1,4 @@
-package com.aispace.erksystem.rmq.module.handler;
+package com.aispace.erksystem.rmq.module.handler.api;
 
 import com.aispace.erksystem.rmq.module.handler.base.RmqIncomingHandler;
 import com.erksystem.protobuf.api.UpdateUserInfoRP_m;
@@ -17,7 +17,7 @@ public class UpdateUserInfoRQHandler extends RmqIncomingHandler<UpdateUserInfoRQ
     }
 
     @Override
-    protected void onFail() {
+    protected void onFail(int reasonCode, String reason) {
         UpdateUserInfoRP_m res = UpdateUserInfoRP_m.newBuilder()
                 .setOrgName(msg.getOrgName())
                 .setUserName(msg.getUserName())
@@ -33,7 +33,7 @@ public class UpdateUserInfoRQHandler extends RmqIncomingHandler<UpdateUserInfoRQ
                 .setNewSex(msg.getNewSex())
                 .setNewUserType(msg.getNewUserType())
                 .setNewServiceType(msg.getNewServiceType())
-                //.setResultType() // TODO
+                .setResultTypeValue(reasonCode)
                 .build();
 
         sendErkApiMsg2API(res);

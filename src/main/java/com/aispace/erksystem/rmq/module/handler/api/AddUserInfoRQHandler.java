@@ -1,6 +1,7 @@
-package com.aispace.erksystem.rmq.module.handler;
+package com.aispace.erksystem.rmq.module.handler.api;
 
 import com.aispace.erksystem.rmq.module.handler.base.RmqIncomingHandler;
+import com.aispace.erksystem.rmq.module.handler.base.exception.RmqHandleException;
 import com.aispace.erksystem.service.database.ServiceProviderDAO;
 import com.aispace.erksystem.service.database.ServiceUserDAO;
 import com.aispace.erksystem.service.database.table.ServiceProvider;
@@ -11,6 +12,8 @@ import com.erksystem.protobuf.api.AddUserInfoRQ_m;
 import com.erksystem.protobuf.api.UserProfileResult_e;
 
 import static com.aispace.erksystem.rmq.module.handler.base.RmqOutgoingHandler.sendErkApiMsg2API;
+import static com.erksystem.protobuf.api.UserProfileResult_e.UserProfileResult_nok_OrgName;
+import static com.erksystem.protobuf.api.UserProfileResult_e.UserProfileResult_nok_UserName;
 
 
 /**
@@ -20,7 +23,9 @@ public class AddUserInfoRQHandler extends RmqIncomingHandler<AddUserInfoRQ_m> {
     @Override
     protected void handle() {
         ServiceProvider provider = ServiceProviderDAO.readbyName(msg.getOrgName());
-        if (provider == null) throw new IllegalStateException("FAIL");
+        if (provider == null) {
+            throw new RmqHandleException(UserProfileResult_nok_OrgName.getNumber(), "FAIL");
+        }
 
         ServiceUser user = new ServiceUser();
         user.setOrgId(provider.getOrgId());
@@ -32,7 +37,7 @@ public class AddUserInfoRQHandler extends RmqIncomingHandler<AddUserInfoRQ_m> {
         //user.setUserType(msg.getUserType());
         user.setServiceType(ServiceType.getName(msg.getServiceType().getNumber()));
         if (!ServiceUserDAO.create(user)) {
-            throw new IllegalStateException("FAIL");
+            throw new RmqHandleException(UserProfileResult_nok_UserName.getNumber(), "FAIL"); // TODO ReasonCode 세분화
         }
 
         AddUserInfoRP_m res = AddUserInfoRP_m.newBuilder()
@@ -52,7 +57,7 @@ public class AddUserInfoRQHandler extends RmqIncomingHandler<AddUserInfoRQ_m> {
     }
 
     @Override
-    protected void onFail() {
+    protected void onFail(int reasonCode, String reason) {
         AddUserInfoRP_m res = AddUserInfoRP_m.newBuilder()
                 .setOrgName(msg.getOrgName())
                 .setUserName(msg.getUserName())
@@ -62,7 +67,7 @@ public class AddUserInfoRQHandler extends RmqIncomingHandler<AddUserInfoRQ_m> {
                 .setSex(msg.getSex())
                 .setUserType(msg.getUserType())
                 .setServiceType(msg.getServiceType())
-                .setResultType(UserProfileResult_e.UserProfileResult_nok_OrgName)
+                .setResultTypeValue(reasonCode)
                 //.setUserId() // TODO
                 .build();
 

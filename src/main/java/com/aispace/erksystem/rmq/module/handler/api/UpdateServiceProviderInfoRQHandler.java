@@ -1,4 +1,4 @@
-package com.aispace.erksystem.rmq.module.handler;
+package com.aispace.erksystem.rmq.module.handler.api;
 
 import com.aispace.erksystem.rmq.module.handler.base.RmqIncomingHandler;
 import com.erksystem.protobuf.api.UpdateServiceProviderInfoRP_m;
@@ -18,7 +18,7 @@ public class UpdateServiceProviderInfoRQHandler extends RmqIncomingHandler<Updat
     }
 
     @Override
-    protected void onFail() {
+    protected void onFail(int reasonCode, String reason) {
         UpdateServiceProviderInfoRP_m res = UpdateServiceProviderInfoRP_m.newBuilder()
                 .setOrgName(msg.getOrgName())
                 .setOldOrgPwd(msg.getOldOrgPwd())
@@ -29,7 +29,7 @@ public class UpdateServiceProviderInfoRQHandler extends RmqIncomingHandler<Updat
                 .setNewServiceDuration(msg.getNewServiceDuration())
                 .setNewUserNumber(msg.getNewUserNumber())
                 .setNewServiceType(msg.getNewServiceType())
-                // .setResultType() // TODO
+                .setResultTypeValue(reasonCode)
                 .build();
 
         sendErkApiMsg2API(res);

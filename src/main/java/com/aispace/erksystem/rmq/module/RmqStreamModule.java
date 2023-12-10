@@ -204,6 +204,18 @@ public class RmqStreamModule {
         channel.queueDeclare(queueName, true, false, false, arguments);
     }
 
+    public AMQP.Queue.DeleteOk queueDelete(String queue) throws IOException {
+        return channel.queueDelete(queue);
+    }
+
+    public AMQP.Queue.DeleteOk queueDelete(String queue, boolean ifUnused, boolean ifEmpty) throws IOException {
+        return channel.queueDelete(queue, ifUnused, ifEmpty);
+    }
+
+    public void queueDeleteNoWait(String queue, boolean ifUnused, boolean ifEmpty) throws IOException {
+        channel.queueDeleteNoWait(queue, ifUnused, ifEmpty);
+    }
+
     /**
      * 지정된 이름의 큐에 메시지를 전송한다.
      *

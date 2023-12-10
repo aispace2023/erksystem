@@ -49,15 +49,15 @@ public class ServiceManager {
 
         // RMQ 서버 연결 및 RMQ Consumer 등록
         RmqManager rmqManager = RmqManager.getInstance();
-        rmqManager.addRmqModule(config.getRmqApiQueueName(), new RmqStreamModule(config.getRmqHost(), config.getRmqUser(), config.getRmqPassword(), config.getRmqPort()), config.getRmqApiQueueName(),
+        rmqManager.addRmqModule(config.getRmqIncomingQueueApi(), new RmqStreamModule(config.getRmqHost(), config.getRmqUser(), config.getRmqPassword(), config.getRmqPort()), config.getRmqIncomingQueueApi(),
                 () -> log.info("RMQ API QUEUE Connected"),
                 () -> log.warn("RMQ API QUEUE Disconnected"));
+        rmqManager.connectRmqModule(config.getRmqIncomingQueueApi(), ErkApiMsgRmqConsumer::consumeApiMessage);
 
-        rmqManager.addRmqModule(config.getRmqProvQueueName(), new RmqStreamModule(config.getRmqHost(), config.getRmqUser(), config.getRmqPassword(), config.getRmqPort()), config.getRmqProvQueueName(),
-                () -> log.info("RMQ PROVISION QUEUE Connected"),
-                () -> log.warn("RMQ PROVISION QUEUE Disconnected"));
-
-        rmqManager.connectRmqModule(config.getRmqApiQueueName(), ErkApiMsgRmqConsumer::consumeMessage);
+        rmqManager.addRmqModule(config.getRmqIncomingQueueSubsystem(), new RmqStreamModule(config.getRmqHost(), config.getRmqUser(), config.getRmqPassword(), config.getRmqPort()), config.getRmqIncomingQueueSubsystem(),
+                () -> log.info("RMQ SUBSYSTEM QUEUE Connected"),
+                () -> log.warn("RMQ SUBSYSTEM QUEUE Disconnected"));
+        rmqManager.connectRmqModule(config.getRmqIncomingQueueSubsystem(), ErkApiMsgRmqConsumer::consumeSubsystemApiMessage);
 
         IntervalTaskManager.startAll();
         DBManager.getInstance().start();

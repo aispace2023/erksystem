@@ -1,7 +1,10 @@
 package com.aispace.erksystem.rmq.module;
 
-import com.aispace.erksystem.rmq.module.handler.*;
+import com.aispace.erksystem.rmq.module.handler.api.*;
+import com.aispace.erksystem.rmq.module.handler.subsystem.ErkEngineCreateRPHandler;
+import com.aispace.erksystem.rmq.module.handler.subsystem.ErkEngineDeleteRPHandler;
 import com.erksystem.protobuf.api.ErkApiMsg;
+import com.erksystem.protobuf.api.ErkInterApiMsg;
 import lombok.extern.slf4j.Slf4j;
 
 import static com.aispace.erksystem.rmq.module.RmqLogPrinter.proto2Json;
@@ -15,7 +18,7 @@ public class ErkApiMsgRmqConsumer {
     private ErkApiMsgRmqConsumer() {
     }
 
-    public static void consumeMessage(byte[] message) {
+    public static void consumeApiMessage(byte[] message) {
         try {
             ErkApiMsg msg = ErkApiMsg.parseFrom(message);
             log.info("RMQ Recv [{}]", proto2Json(msg).orElse("Fail to Parse"));
@@ -35,6 +38,20 @@ public class ErkApiMsgRmqConsumer {
                 case DELUSERINFORQ -> new DelUserInfoRQHandler().proc(msg);
                 case EMOSERVICESTARTRQ -> new EmoServiceStartRQHandler().proc(msg);
                 case EMOSERVICESTOPRQ -> new EmoServiceStopRQHandler().proc(msg);
+                default -> log.warn("Recv Undefined type [{}]", msg.getMsgCase());
+            }
+        } catch (Exception e) {
+            log.warn("Err Occurs while consume ErkMessage", e);
+        }
+    }
+
+    public static void consumeSubsystemApiMessage(byte[] message) {
+        try {
+            ErkInterApiMsg msg = ErkInterApiMsg.parseFrom(message);
+            log.info("RMQ Recv [{}]", proto2Json(msg).orElse("Fail to Parse"));
+            switch (msg.getMsgCase()) {
+                case ERKENGINECREATERP -> new ErkEngineCreateRPHandler().proc(msg);
+                case ERKENGINEDELETERP -> new ErkEngineDeleteRPHandler().proc(msg);
                 default -> log.warn("Recv Undefined type [{}]", msg.getMsgCase());
             }
         } catch (Exception e) {
