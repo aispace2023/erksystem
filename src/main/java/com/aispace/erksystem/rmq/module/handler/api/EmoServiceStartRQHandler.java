@@ -4,11 +4,10 @@ import com.aispace.erksystem.rmq.module.handler.base.RmqIncomingHandler;
 import com.aispace.erksystem.rmq.module.handler.base.exception.RmqHandleException;
 import com.aispace.erksystem.service.database.ServiceUserDAO;
 import com.aispace.erksystem.service.database.table.ServiceUser;
-import com.erksystem.protobuf.api.EmoServiceStartRP_m;
-import com.erksystem.protobuf.api.EmoServiceStartRQ_m;
-import com.erksystem.protobuf.api.ErkMsgHead_s;
-import com.erksystem.protobuf.api.ErkMsgType_e;
+import com.erksystem.protobuf.api.*;
 import lombok.extern.slf4j.Slf4j;
+
+import java.util.Map;
 
 import static com.aispace.erksystem.rmq.module.handler.base.RmqOutgoingHandler.sendErkApiMsg2API;
 
@@ -32,8 +31,8 @@ public class EmoServiceStartRQHandler extends RmqIncomingHandler<EmoServiceStart
                     try {
                         // RMQ 큐 생성
                         rmqManager.getRmqModule(userConfig.getRmqIncomingQueueSubsystem()).orElseThrow()
-                                .queueDeclare(key); // TODO Queue Name 구조는 팀장님이 정의해주실 예정. 추후 수정
-                        
+                                .getChannel().queueDeclare(key, false, false, true, Map.of("x-queue-type", "stream")); // TODO Queue Name 구조는 팀장님이 정의해주실 예정. 추후 수정
+
                         // Response 전송
                         EmoServiceStartRP_m res = EmoServiceStartRP_m.newBuilder()
                                 .setErkMsgHead(ErkMsgHead_s.newBuilder(msg.getErkMsgHead()).setMsgType(ErkMsgType_e.EmoServiceStartRP))
@@ -47,6 +46,7 @@ public class EmoServiceStartRQHandler extends RmqIncomingHandler<EmoServiceStart
                 },
                 () -> onFail(0, "EmoServiceStart Fail"),
                 () -> onFail(0, "EmoServiceStart Timeout"), 5000);
+        // TODO ErkEngineCreateRQ_m 송신
     }
 
     @Override
