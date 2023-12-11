@@ -6,8 +6,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
-import java.util.Random;
+import java.sql.SQLDataException;
 
 @Slf4j
 public class ServiceProviderDAO {
@@ -16,12 +17,14 @@ public class ServiceProviderDAO {
     private ServiceProviderDAO() {}
 
     public static boolean create(ServiceProvider serviceProvider) {
-        int newId = 1 + new Random().nextInt(999999998);
-        serviceProvider.setOrgId(newId);
         Session session = sessionFactory.openSession();
         Transaction tx = null;
         try {
             tx = session.beginTransaction();
+            Query query = session.createNativeQuery("SELECT COALESCE(MAX(org_id), 0) AS id_max FROM service_provider_tbl");
+            int newId = (Integer)query.getSingleResult() + 1;   // query result 가 없거나 복수 개인 경우 exception
+            if (newId < 1 || newId > 999) throw new SQLDataException("can't retrieve max org_id");
+            serviceProvider.setOrgId(newId);
             session.save(serviceProvider);
             tx.commit();
             return true;

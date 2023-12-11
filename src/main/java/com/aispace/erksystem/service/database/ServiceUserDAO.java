@@ -7,19 +7,23 @@ import lombok.extern.slf4j.Slf4j;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
-import java.util.Random;
+import java.sql.SQLDataException;
 
 @Slf4j
 public class ServiceUserDAO {
     private static final SessionFactory sessionFactory = DBManager.getInstance().getSessionFactory();
 
     public static boolean create(ServiceUser serviceUser) {
-        serviceUser.setUserId(1 + new Random().nextInt(999999998));
         Session session = sessionFactory.openSession();
         Transaction tx = null;
         try {
             tx = session.beginTransaction();
+            Query query = session.createNativeQuery("SELECT COALESCE(MAX(user_id), 0) AS id_max FROM service_user_tbl");
+            int newId = (Integer)query.getSingleResult() + 1;   // query result 가 없거나 복수 개인 경우 exception
+            if (newId < 1 || newId > 999) throw new SQLDataException("can't retrieve max user_id");
+            serviceUser.setUserId(newId);
             session.save(serviceUser);
             tx.commit();
             return true;
