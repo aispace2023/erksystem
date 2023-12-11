@@ -15,13 +15,15 @@ import java.sql.SQLDataException;
 public class ServiceUserDAO {
     private static final SessionFactory sessionFactory = DBManager.getInstance().getSessionFactory();
 
+    private ServiceUserDAO() {}
+
     public static boolean create(ServiceUser serviceUser) {
         Session session = sessionFactory.openSession();
         Transaction tx = null;
         try {
             tx = session.beginTransaction();
-            Query query = session.createNativeQuery("SELECT COALESCE(MAX(user_id), 0) AS id_max FROM service_user_tbl");
-            int newId = (Integer)query.getSingleResult() + 1;   // query result 가 없거나 복수 개인 경우 exception
+            Query<Integer> query = session.createNativeQuery("SELECT COALESCE(MAX(user_id), 0) AS id_max FROM service_user_tbl");
+            int newId = query.getSingleResult() + 1;   // query result 가 없거나 복수 개인 경우 exception
             if (newId < 1 || newId > 999) throw new SQLDataException("can't retrieve max user_id");
             serviceUser.setUserId(newId);
             session.save(serviceUser);
@@ -54,35 +56,41 @@ public class ServiceUserDAO {
         }
     }
 
-    public static void update(ServiceUser serviceUser) {
+    public static boolean update(ServiceUser serviceUser) {
         Session session = sessionFactory.openSession();
         Transaction tx = null;
         try {
             tx = session.beginTransaction();
             session.update(serviceUser);
             tx.commit();
+            return true;
         } catch (Exception e) {
             if (tx != null) tx.rollback();
-            throw e;
+            log.warn("update error", e);
+            return false;
         } finally {
             if (session != null && session.isOpen())
                 session.close();
         }
     }
 
-    public static void delete(int userId, int orgId) {
+    public static boolean delete(int userId, int orgId) {
         Session session = sessionFactory.openSession();
         Transaction tx = null;
         try {
+            boolean result = false;
             tx = session.beginTransaction();
             ServiceUser serviceUser = session.get(ServiceUser.class, new ServiceUserId(userId, orgId));
             if (serviceUser != null) {
                 session.delete(serviceUser);
+                result = true;
             }
             tx.commit();
+            return result;
         } catch (Exception e) {
             if (tx != null) tx.rollback();
             log.warn("delete error", e);
+            return false;
         } finally {
             if (session != null && session.isOpen())
                 session.close();

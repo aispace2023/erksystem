@@ -21,8 +21,8 @@ public class ServiceProviderDAO {
         Transaction tx = null;
         try {
             tx = session.beginTransaction();
-            Query query = session.createNativeQuery("SELECT COALESCE(MAX(org_id), 0) AS id_max FROM service_provider_tbl");
-            int newId = (Integer)query.getSingleResult() + 1;   // query result 가 없거나 복수 개인 경우 exception
+            Query<Integer> query = session.createNativeQuery("SELECT COALESCE(MAX(org_id), 0) AS id_max FROM service_provider_tbl");
+            int newId = query.getSingleResult() + 1;   // query result 가 없거나 복수 개인 경우 exception
             if (newId < 1 || newId > 999) throw new SQLDataException("can't retrieve max org_id");
             serviceProvider.setOrgId(newId);
             session.save(serviceProvider);
