@@ -1,12 +1,11 @@
-package com.aispace.erksystem.rmq.module.handler.api;
+package com.aispace.erksystem.rmq.handler.api;
 
-import com.aispace.erksystem.rmq.module.handler.base.RmqIncomingHandler;
+import com.aispace.erksystem.rmq.handler.base.RmqOutgoingHandler;
+import com.aispace.erksystem.rmq.handler.base.RmqIncomingHandler;
 import com.erksystem.protobuf.api.ErkMsgHead_s;
 import com.erksystem.protobuf.api.ErkMsgType_e;
 import com.erksystem.protobuf.api.ErkServiceDisConnRP_m;
 import com.erksystem.protobuf.api.ErkServiceDisConnRQ_m;
-
-import static com.aispace.erksystem.rmq.module.handler.base.RmqOutgoingHandler.sendErkApiMsg2API;
 
 /**
  * Created by Ai_Space
@@ -26,6 +25,6 @@ public class ErkServiceDisConnRqHandler extends RmqIncomingHandler<ErkServiceDis
                 .setReturnCodeValue(reasonCode)
                 .build();
 
-        sendErkApiMsg2API(res);
+        RmqOutgoingHandler.sendErkApiMsg2API(res);
     }
 }

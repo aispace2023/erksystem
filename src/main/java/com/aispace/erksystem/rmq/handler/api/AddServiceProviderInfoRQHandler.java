@@ -1,14 +1,13 @@
-package com.aispace.erksystem.rmq.module.handler.api;
+package com.aispace.erksystem.rmq.handler.api;
 
-import com.aispace.erksystem.rmq.module.handler.base.RmqIncomingHandler;
+import com.aispace.erksystem.rmq.handler.base.RmqIncomingHandler;
+import com.aispace.erksystem.rmq.handler.base.RmqOutgoingHandler;
 import com.aispace.erksystem.service.database.ServiceProviderDAO;
 import com.aispace.erksystem.service.database.table.ServiceProvider;
 import com.aispace.erksystem.service.database.type.ServiceType;
 import com.erksystem.protobuf.api.AddServiceProviderInfoRP_m;
 import com.erksystem.protobuf.api.AddServiceProviderInfoRQ_m;
 import com.erksystem.protobuf.api.OrgProfileResult_e;
-
-import static com.aispace.erksystem.rmq.module.handler.base.RmqOutgoingHandler.sendErkApiMsg2API;
 
 
 /**
@@ -38,7 +37,7 @@ public class AddServiceProviderInfoRQHandler extends RmqIncomingHandler<AddServi
                 .setResultType(OrgProfileResult_e.OrgProfileResult_ok)
                 .build();
 
-        sendErkApiMsg2API(res);
+        RmqOutgoingHandler.sendErkApiMsg2API(res);
     }
 
     @Override
@@ -53,6 +52,6 @@ public class AddServiceProviderInfoRQHandler extends RmqIncomingHandler<AddServi
                 // .setOrgId() // TODO
                 .build();
 
-        sendErkApiMsg2API(res);
+        RmqOutgoingHandler.sendErkApiMsg2API(res);
     }
 }

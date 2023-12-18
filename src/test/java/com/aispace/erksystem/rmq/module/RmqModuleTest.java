@@ -19,15 +19,21 @@ public class RmqModuleTest {
     void rmqTest() {
         try {
             // RMQ 연결 및 Queue 생성
-            RmqStreamModule rmqModule = new RmqStreamModule(HOST, USER, PW);
-            rmqModule.connect(() -> log.info("RMQ Conneted"), () -> log.warn("RMQ Disconnected"));
+            RmqModule rmqModule = RmqModule.builder(HOST, USER, PW)
+                    .setOnConnected(() -> log.info("RMQ Conneted"))
+                    .setOnDisconnected(() -> log.warn("RMQ Disconnected"))
+                    .build();
+            rmqModule.connect();
             rmqModule.queueDeclare(QUEUE_NAME);
 
             // RMQ 연결 및 메시지 핸들러 등록
             new Thread(() -> {
                 try {
-                    RmqStreamModule consumer = new RmqStreamModule(HOST, USER, PW);
-                    consumer.connect(() -> log.info("RMQ Conneted"), () -> log.warn("RMQ Disconnected"));
+                    RmqModule consumer = RmqModule.builder(HOST, USER, PW)
+                            .setOnConnected(() -> log.info("RMQ Conneted"))
+                            .setOnDisconnected(() -> log.warn("RMQ Disconnected"))
+                            .build();
+                    consumer.connect();
                     consumer.registerStringConsumer(QUEUE_NAME, (message) -> log.debug("Consumed Message : {}", message));
                     Thread.sleep(1000);
                     consumer.close();
@@ -40,8 +46,11 @@ public class RmqModuleTest {
             // RMQ 연결 및 메시지 메시지 전송
             new Thread(() -> {
                 try {
-                    RmqStreamModule producer = new RmqStreamModule(HOST, USER, PW);
-                    producer.connect(() -> log.info("RMQ Conneted"), () -> log.warn("RMQ Disconnected"));
+                    RmqModule producer = RmqModule.builder(HOST, USER, PW)
+                            .setOnConnected(() -> log.info("RMQ Conneted"))
+                            .setOnDisconnected(() -> log.warn("RMQ Disconnected"))
+                            .build();
+                    producer.connect();
                     producer.sendMessage(QUEUE_NAME, "TEST_MESSAGE");
                 } catch (Exception e) {
                     log.warn("Err Occurs", e);

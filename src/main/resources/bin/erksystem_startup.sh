@@ -14,8 +14,8 @@ JAVA_CONF=$PACKAGE_DIR/config/
 JAVA_OPT=" -Dlogback.configurationFile=$PACKAGE_DIR/config/logback.xml"
 #JAVA_OPT="$JAVA_OPT -Dio.netty.leakDetectionLevel=simple -Djdk.nio.maxCachedBufferSize=262144 -Dio.netty.allocator.type=unpooled -Dio.netty.noPreferDirect=true"
 JAVA_OPT="$JAVA_OPT -XX:+UseG1GC -XX:G1RSetUpdatingPauseTimePercent=5 -XX:MaxGCPauseMillis=500 -verbosegc  -Xms4G -Xmx4G"
-JAVA_OPT="$JAVA_OPT -XX:+UnlockDiagnosticVMOptions -XX:+LogVMOutput"
-#JAVA_OPT="$JAVA_OPT -Xlog:gc*:file=$PACKAGE_DIR/logs/gc.log:time:filecount=10,filesize=10M:gc+heap=trace:age*=debug:safepoint:gc+promotion=debug  -XX:LogFile=$PACKAGE_DIR/logs/thd_dmp.log"
+JAVA_OPT="$JAVA_OPT -XX:+UnlockDiagnosticVMOptions -XX:+LogVMOutput -XX:LogFile=$PACKAGE_DIR/logs/jvm.log"
+#JAVA_OPT="$JAVA_OPT -Xlog:gc*:file=$PACKAGE_DIR/logs/gc.log:time:filecount=10,filesize=10M:gc+heap=trace:age*=debug:safepoint:gc+promotion=debug"
 
 if [ "$USER" != "$AUTHORIZED_USER_NAME" ]; then
   echo "Need to be application account($AUTHORIZED_USER_NAME)"

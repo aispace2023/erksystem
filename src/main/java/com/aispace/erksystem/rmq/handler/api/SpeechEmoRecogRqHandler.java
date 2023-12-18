@@ -1,11 +1,10 @@
-package com.aispace.erksystem.rmq.module.handler.api;
+package com.aispace.erksystem.rmq.handler.api;
 
-import com.aispace.erksystem.rmq.module.handler.base.RmqIncomingHandler;
+import com.aispace.erksystem.rmq.handler.base.RmqIncomingHandler;
+import com.aispace.erksystem.rmq.handler.base.RmqOutgoingHandler;
 import com.erksystem.protobuf.api.ErkMsgDataHead_s;
 import com.erksystem.protobuf.api.SpeechEmoRecogRP_m;
 import com.erksystem.protobuf.api.SpeechEmoRecogRQ_m;
-
-import static com.aispace.erksystem.rmq.module.handler.base.RmqOutgoingHandler.sendErkApiMsg2API;
 
 /**
  * Created by Ai_Space
@@ -24,6 +23,6 @@ public class SpeechEmoRecogRqHandler extends RmqIncomingHandler<SpeechEmoRecogRQ
                 .setReturnCodeValue(reasonCode)
                 .build();
 
-        sendErkApiMsg2API(res);
+        RmqOutgoingHandler.sendErkApiMsg2API(res);
     }
 }

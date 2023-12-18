@@ -4,7 +4,7 @@ import com.aispace.erksystem.common.SystemLock;
 import com.aispace.erksystem.config.UserConfig;
 import com.aispace.erksystem.rmq.RmqManager;
 import com.aispace.erksystem.rmq.module.ErkApiMsgRmqConsumer;
-import com.aispace.erksystem.rmq.module.RmqStreamModule;
+import com.aispace.erksystem.rmq.module.RmqModule;
 import com.aispace.erksystem.service.scheduler.IntervalTaskManager;
 import lombok.Getter;
 import lombok.Setter;
@@ -49,15 +49,9 @@ public class ServiceManager {
 
         // RMQ 서버 연결 및 RMQ Consumer 등록
         RmqManager rmqManager = RmqManager.getInstance();
-        rmqManager.addRmqModule(config.getRmqIncomingQueueApi(), new RmqStreamModule(config.getRmqHost(), config.getRmqUser(), config.getRmqPassword(), config.getRmqPort()), config.getRmqIncomingQueueApi(),
-                () -> log.info("RMQ API QUEUE Connected"),
-                () -> log.warn("RMQ API QUEUE Disconnected"));
-        rmqManager.connectRmqModule(config.getRmqIncomingQueueApi(), ErkApiMsgRmqConsumer::consumeApiMessage);
-
-        rmqManager.addRmqModule(config.getRmqIncomingQueueSubsystem(), new RmqStreamModule(config.getRmqHost(), config.getRmqUser(), config.getRmqPassword(), config.getRmqPort()), config.getRmqIncomingQueueSubsystem(),
-                () -> log.info("RMQ SUBSYSTEM QUEUE Connected"),
-                () -> log.warn("RMQ SUBSYSTEM QUEUE Disconnected"));
-        rmqManager.connectRmqModule(config.getRmqIncomingQueueSubsystem(), ErkApiMsgRmqConsumer::consumeSubsystemApiMessage);
+        rmqManager.addRmqModule(config.getRmqIncomingQueueApi(), config.getRmqHost(), config.getRmqUser(), config.getRmqPassword(), config.getRmqPort(), config.getRmqIncomingQueueApi(), ErkApiMsgRmqConsumer::consumeApiMessage);
+        rmqManager.addRmqModule(config.getRmqIncomingQueueSubsystem(), config.getRmqHost(), config.getRmqUser(), config.getRmqPassword(), config.getRmqPort(), config.getRmqIncomingQueueSubsystem(), ErkApiMsgRmqConsumer::consumeSubsystemApiMessage);
+        rmqManager.connectAll();
 
         IntervalTaskManager.startAll();
         DBManager.getInstance().start();
@@ -83,7 +77,7 @@ public class ServiceManager {
 
     public static void stopService() {
         DBManager.getInstance().stop();
-        RmqManager.getInstance().stop();
+        RmqManager.getInstance().disconnectAll();
         IntervalTaskManager.stopAll();
         isQuit = true;
     }

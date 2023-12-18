@@ -1,4 +1,4 @@
-package com.aispace.erksystem.rmq.module.handler.base;
+package com.aispace.erksystem.rmq.handler.base;
 
 import com.erksystem.protobuf.api.*;
 import com.google.protobuf.Message;

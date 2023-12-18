@@ -1,7 +1,6 @@
 package com.aispace.erksystem.connection;
 
-import com.aispace.erksystem.rmq.module.handler.base.exception.RmqHandleException;
-import com.erksystem.protobuf.api.ServiceType_e;
+import com.aispace.erksystem.rmq.handler.base.exception.RmqHandleException;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.HashMap;

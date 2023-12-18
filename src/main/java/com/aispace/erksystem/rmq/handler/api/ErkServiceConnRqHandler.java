@@ -1,13 +1,12 @@
-package com.aispace.erksystem.rmq.module.handler.api;
+package com.aispace.erksystem.rmq.handler.api;
 
-import com.aispace.erksystem.rmq.module.handler.base.RmqIncomingHandler;
+import com.aispace.erksystem.rmq.handler.base.RmqIncomingHandler;
+import com.aispace.erksystem.rmq.handler.base.RmqOutgoingHandler;
 import com.aispace.erksystem.service.database.ServiceProviderDAO;
 import com.aispace.erksystem.service.database.ServiceUserDAO;
 import com.aispace.erksystem.service.database.table.ServiceProvider;
 import com.aispace.erksystem.service.database.table.ServiceUser;
 import com.erksystem.protobuf.api.*;
-
-import static com.aispace.erksystem.rmq.module.handler.base.RmqOutgoingHandler.sendErkApiMsg2API;
 
 /**
  * Created by Ai_Space
@@ -29,7 +28,7 @@ public class ErkServiceConnRqHandler extends RmqIncomingHandler<ErkServiceConnRQ
                 .setReturnCode(ReturnCode_e.ReturnCode_ok)
                 .build();
 
-        sendErkApiMsg2API(res);
+        RmqOutgoingHandler.sendErkApiMsg2API(res);
     }
 
     @Override
@@ -40,6 +39,6 @@ public class ErkServiceConnRqHandler extends RmqIncomingHandler<ErkServiceConnRQ
                 .setReturnCodeValue(reasonCode)
                 .build();
 
-        sendErkApiMsg2API(res);
+        RmqOutgoingHandler.sendErkApiMsg2API(res);
     }
 }

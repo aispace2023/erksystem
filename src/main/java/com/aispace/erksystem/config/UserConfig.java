@@ -36,6 +36,13 @@ public class UserConfig extends YamlConfig {
     @ConfigValue("rmq.outgoing-queue.subsystem")
     String rmqOutgoingQueueSubsystem;
 
+    @ConfigValue("rmq.agent-option.durable")
+    boolean agentOptionDurable = false;
+    @ConfigValue("rmq.agent-option.exclusive")
+    boolean agentOptionExclusive = false;
+    @ConfigValue("rmq.agent-option.autoDelete")
+    boolean agentOptionAutoDelete = false;
+
     @Min(0)
     @ConfigValue("timer.connection-timeout")
     int connectionTimeout;

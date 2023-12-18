@@ -1,11 +1,10 @@
-package com.aispace.erksystem.rmq.module.handler.api;
+package com.aispace.erksystem.rmq.handler.api;
 
-import com.aispace.erksystem.rmq.module.handler.base.RmqIncomingHandler;
+import com.aispace.erksystem.rmq.handler.base.RmqIncomingHandler;
+import com.aispace.erksystem.rmq.handler.base.RmqOutgoingHandler;
 import com.erksystem.protobuf.api.ErkMsgHead_s;
 import com.erksystem.protobuf.api.HeartBeatRP_m;
 import com.erksystem.protobuf.api.HeartBeatRQ_m;
-
-import static com.aispace.erksystem.rmq.module.handler.base.RmqOutgoingHandler.sendErkApiMsg2API;
 
 /**
  * Created by Ai_Space
@@ -24,6 +23,6 @@ public class HeartBeatRqHandler extends RmqIncomingHandler<HeartBeatRQ_m> {
                 .setStatus(0)
                 .build();
 
-        sendErkApiMsg2API(res);
+        RmqOutgoingHandler.sendErkApiMsg2API(res);
     }
 }

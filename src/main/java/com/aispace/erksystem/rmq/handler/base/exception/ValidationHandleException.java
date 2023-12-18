@@ -1,4 +1,4 @@
-package com.aispace.erksystem.rmq.module.handler.base.exception;
+package com.aispace.erksystem.rmq.handler.base.exception;
 
 /**
  * Created by Ai_Space

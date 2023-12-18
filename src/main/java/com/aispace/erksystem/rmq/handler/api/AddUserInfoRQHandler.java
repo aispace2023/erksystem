@@ -1,7 +1,8 @@
-package com.aispace.erksystem.rmq.module.handler.api;
+package com.aispace.erksystem.rmq.handler.api;
 
-import com.aispace.erksystem.rmq.module.handler.base.RmqIncomingHandler;
-import com.aispace.erksystem.rmq.module.handler.base.exception.RmqHandleException;
+import com.aispace.erksystem.rmq.handler.base.RmqIncomingHandler;
+import com.aispace.erksystem.rmq.handler.base.RmqOutgoingHandler;
+import com.aispace.erksystem.rmq.handler.base.exception.RmqHandleException;
 import com.aispace.erksystem.service.database.ServiceProviderDAO;
 import com.aispace.erksystem.service.database.ServiceUserDAO;
 import com.aispace.erksystem.service.database.table.ServiceProvider;
@@ -11,7 +12,6 @@ import com.erksystem.protobuf.api.AddUserInfoRP_m;
 import com.erksystem.protobuf.api.AddUserInfoRQ_m;
 import com.erksystem.protobuf.api.UserProfileResult_e;
 
-import static com.aispace.erksystem.rmq.module.handler.base.RmqOutgoingHandler.sendErkApiMsg2API;
 import static com.erksystem.protobuf.api.UserProfileResult_e.UserProfileResult_nok_OrgName;
 import static com.erksystem.protobuf.api.UserProfileResult_e.UserProfileResult_nok_UserName;
 
@@ -53,7 +53,7 @@ public class AddUserInfoRQHandler extends RmqIncomingHandler<AddUserInfoRQ_m> {
                 .setUserId(user.getUserId())
                 .build();
 
-        sendErkApiMsg2API(res);
+        RmqOutgoingHandler.sendErkApiMsg2API(res);
     }
 
     @Override
@@ -71,6 +71,6 @@ public class AddUserInfoRQHandler extends RmqIncomingHandler<AddUserInfoRQ_m> {
                 //.setUserId() // TODO
                 .build();
 
-        sendErkApiMsg2API(res);
+        RmqOutgoingHandler.sendErkApiMsg2API(res);
     }
 }

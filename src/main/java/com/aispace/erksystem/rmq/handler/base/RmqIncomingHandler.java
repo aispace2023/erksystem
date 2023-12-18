@@ -1,11 +1,11 @@
-package com.aispace.erksystem.rmq.module.handler.base;
+package com.aispace.erksystem.rmq.handler.base;
 
 import com.aispace.erksystem.common.utils.PromiseManager;
 import com.aispace.erksystem.config.UserConfig;
 import com.aispace.erksystem.connection.ConnectionManager;
 import com.aispace.erksystem.rmq.RmqManager;
-import com.aispace.erksystem.rmq.module.handler.base.exception.RmqHandleException;
-import com.aispace.erksystem.rmq.module.handler.base.exception.ValidationHandleException;
+import com.aispace.erksystem.rmq.handler.base.exception.RmqHandleException;
+import com.aispace.erksystem.rmq.handler.base.exception.ValidationHandleException;
 import com.aispace.erksystem.service.AppInstance;
 import com.google.protobuf.GeneratedMessageV3;
 import com.google.protobuf.Message;

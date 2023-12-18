@@ -1,13 +1,11 @@
-package com.aispace.erksystem.rmq.module.handler.api;
+package com.aispace.erksystem.rmq.handler.api;
 
-import com.aispace.erksystem.rmq.module.handler.base.RmqIncomingHandler;
-import com.aispace.erksystem.rmq.module.handler.base.exception.RmqHandleException;
-import com.aispace.erksystem.service.database.ServiceUserDAO;
-import com.aispace.erksystem.service.database.table.ServiceUser;
+import com.aispace.erksystem.rmq.handler.base.RmqIncomingHandler;
+import com.aispace.erksystem.rmq.handler.base.RmqOutgoingHandler;
+import com.aispace.erksystem.rmq.handler.base.exception.RmqHandleException;
+import com.aispace.erksystem.rmq.module.RmqModule;
 import com.erksystem.protobuf.api.*;
 import lombok.extern.slf4j.Slf4j;
-
-import static com.aispace.erksystem.rmq.module.handler.base.RmqOutgoingHandler.sendErkApiMsg2API;
 
 /**
  * Created by Ai_Space
@@ -17,26 +15,36 @@ public class EmoServiceStopRQHandler extends RmqIncomingHandler<EmoServiceStopRQ
     @Override
     protected void handle() {
         ErkMsgHead_s erkMsgHead = msg.getErkMsgHead();
+        /* 추후 개발/개선
         ServiceUser user = ServiceUserDAO.read(erkMsgHead.getUserId(), erkMsgHead.getOrgId());
         if (user == null) {
             throw new RmqHandleException(0, "User is not exists");
         }
+        */
 
-        // TODO TransactionId 없이 이러한 절차를 진행하는 것이 적절한지에 대해 확인 필요
+        String recvQueue ="RECV_%02d_%03d_%03d".formatted(msg.getServiceType().getNumber(), erkMsgHead.getOrgId(), erkMsgHead.getUserId());
+        String sendQueue ="SEND_%02d_%03d_%03d".formatted(msg.getServiceType().getNumber(), erkMsgHead.getOrgId(), erkMsgHead.getUserId());
+
+        // RMQ 큐 삭제
+        RmqModule rmqModule = rmqManager.getRmqModule(userConfig.getRmqIncomingQueueSubsystem()).orElseThrow();
+        try {
+            rmqModule.queueDelete(recvQueue);
+            rmqModule.queueDelete(sendQueue);
+        } catch (Exception e){
+            throw new RmqHandleException(0, "Fail to delete queue", e);
+        }
+
+        // 추후 메시지에 TransactionId 필드가 추가되면 그때 key 수정
         String key = erkMsgHead.getMsgType().toString() + erkMsgHead.getUserId() + erkMsgHead.getOrgId();
         promiseManager.createPromiseInfo(key,
                 () -> {
                     try {
-                        // RMQ 큐 삭제
-                        rmqManager.getRmqModule(userConfig.getRmqIncomingQueueSubsystem()).orElseThrow()
-                                .queueDelete(key); // TODO Queue Name 구조는 팀장님이 정의해주실 예정. 추후 수정
-
                         // Response 전송
                         EmoServiceStopRP_m res = EmoServiceStopRP_m.newBuilder()
                                 .setErkMsgHead(ErkMsgHead_s.newBuilder(msg.getErkMsgHead()).setMsgType(ErkMsgType_e.EmoServiceStopRP))
                                 .setMsgTime(System.currentTimeMillis())
                                 .build();
-                        sendErkApiMsg2API(res);
+                        RmqOutgoingHandler.sendErkApiMsg2API(res);
                     } catch (Exception e) {
                         log.warn("Unexpected Exception Occurs", e);
                         onFail(0, "Unexpected Exception");
@@ -55,6 +63,6 @@ public class EmoServiceStopRQHandler extends RmqIncomingHandler<EmoServiceStopRQ
                 .setReturnCodeValue(reasonCode)
                 .build();
 
-        sendErkApiMsg2API(res);
+        RmqOutgoingHandler.sendErkApiMsg2API(res);
     }
 }

@@ -1,8 +1,8 @@
 package com.aispace.erksystem.rmq.module;
 
-import com.aispace.erksystem.rmq.module.handler.api.*;
-import com.aispace.erksystem.rmq.module.handler.subsystem.ErkEngineCreateRPHandler;
-import com.aispace.erksystem.rmq.module.handler.subsystem.ErkEngineDeleteRPHandler;
+import com.aispace.erksystem.rmq.handler.api.*;
+import com.aispace.erksystem.rmq.handler.subsystem.ErkEngineCreateRPHandler;
+import com.aispace.erksystem.rmq.handler.subsystem.ErkEngineDeleteRPHandler;
 import com.erksystem.protobuf.api.ErkApiMsg;
 import com.erksystem.protobuf.api.ErkInterApiMsg;
 import lombok.extern.slf4j.Slf4j;
