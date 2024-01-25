@@ -106,21 +106,33 @@ public enum ErkMsgType_e
    */
   FaceEmoRecogRQ(23),
   /**
-   * <code>EmoRecogRQ = 24;</code>
+   * <code>PhysioEmoRecogRP = 24;</code>
    */
-  EmoRecogRQ(24),
+  PhysioEmoRecogRP(24),
   /**
-   * <code>EmoRecogRP = 25;</code>
+   * <code>SpeechEmoRecogRP = 25;</code>
    */
-  EmoRecogRP(25),
+  SpeechEmoRecogRP(25),
   /**
-   * <code>ErkMsgType_reserved1 = 26;</code>
+   * <code>FaceEmoRecogRP = 26;</code>
    */
-  ErkMsgType_reserved1(26),
+  FaceEmoRecogRP(26),
   /**
-   * <code>ErkMsgType_reserved2 = 27;</code>
+   * <code>EmoRecogRQ = 27;</code>
    */
-  ErkMsgType_reserved2(27),
+  EmoRecogRQ(27),
+  /**
+   * <code>EmoRecogRP = 28;</code>
+   */
+  EmoRecogRP(28),
+  /**
+   * <code>ErkMsgType_reserved1 = 29;</code>
+   */
+  ErkMsgType_reserved1(29),
+  /**
+   * <code>ErkMsgType_reserved2 = 30;</code>
+   */
+  ErkMsgType_reserved2(30),
   UNRECOGNIZED(-1),
   ;
 
@@ -221,21 +233,33 @@ public enum ErkMsgType_e
    */
   public static final int FaceEmoRecogRQ_VALUE = 23;
   /**
-   * <code>EmoRecogRQ = 24;</code>
+   * <code>PhysioEmoRecogRP = 24;</code>
    */
-  public static final int EmoRecogRQ_VALUE = 24;
+  public static final int PhysioEmoRecogRP_VALUE = 24;
   /**
-   * <code>EmoRecogRP = 25;</code>
+   * <code>SpeechEmoRecogRP = 25;</code>
    */
-  public static final int EmoRecogRP_VALUE = 25;
+  public static final int SpeechEmoRecogRP_VALUE = 25;
   /**
-   * <code>ErkMsgType_reserved1 = 26;</code>
+   * <code>FaceEmoRecogRP = 26;</code>
    */
-  public static final int ErkMsgType_reserved1_VALUE = 26;
+  public static final int FaceEmoRecogRP_VALUE = 26;
   /**
-   * <code>ErkMsgType_reserved2 = 27;</code>
+   * <code>EmoRecogRQ = 27;</code>
    */
-  public static final int ErkMsgType_reserved2_VALUE = 27;
+  public static final int EmoRecogRQ_VALUE = 27;
+  /**
+   * <code>EmoRecogRP = 28;</code>
+   */
+  public static final int EmoRecogRP_VALUE = 28;
+  /**
+   * <code>ErkMsgType_reserved1 = 29;</code>
+   */
+  public static final int ErkMsgType_reserved1_VALUE = 29;
+  /**
+   * <code>ErkMsgType_reserved2 = 30;</code>
+   */
+  public static final int ErkMsgType_reserved2_VALUE = 30;
 
 
   public final int getNumber() {
@@ -286,10 +310,13 @@ public enum ErkMsgType_e
       case 21: return PhysioEmoRecogRQ;
       case 22: return SpeechEmoRecogRQ;
       case 23: return FaceEmoRecogRQ;
-      case 24: return EmoRecogRQ;
-      case 25: return EmoRecogRP;
-      case 26: return ErkMsgType_reserved1;
-      case 27: return ErkMsgType_reserved2;
+      case 24: return PhysioEmoRecogRP;
+      case 25: return SpeechEmoRecogRP;
+      case 26: return FaceEmoRecogRP;
+      case 27: return EmoRecogRQ;
+      case 28: return EmoRecogRP;
+      case 29: return ErkMsgType_reserved1;
+      case 30: return ErkMsgType_reserved2;
       default: return null;
     }
   }

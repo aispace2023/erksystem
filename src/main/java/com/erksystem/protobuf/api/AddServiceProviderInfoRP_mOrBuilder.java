@@ -20,71 +20,86 @@ public interface AddServiceProviderInfoRP_mOrBuilder extends
   com.erksystem.protobuf.api.ErkMsgType_e getMsgType();
 
   /**
-   * <code>string OrgName = 2;</code>
+   * <code>.QueueInfo_s QueueInfo = 2;</code>
+   * @return Whether the queueInfo field is set.
+   */
+  boolean hasQueueInfo();
+  /**
+   * <code>.QueueInfo_s QueueInfo = 2;</code>
+   * @return The queueInfo.
+   */
+  com.erksystem.protobuf.api.QueueInfo_s getQueueInfo();
+  /**
+   * <code>.QueueInfo_s QueueInfo = 2;</code>
+   */
+  com.erksystem.protobuf.api.QueueInfo_sOrBuilder getQueueInfoOrBuilder();
+
+  /**
+   * <code>string OrgName = 3;</code>
    * @return The orgName.
    */
   java.lang.String getOrgName();
   /**
-   * <code>string OrgName = 2;</code>
+   * <code>string OrgName = 3;</code>
    * @return The bytes for orgName.
    */
   com.google.protobuf.ByteString
       getOrgNameBytes();
 
   /**
-   * <code>.OrgProfileResult_e ResultType = 3;</code>
+   * <code>.OrgProfileResult_e ResultType = 4;</code>
    * @return The enum numeric value on the wire for resultType.
    */
   int getResultTypeValue();
   /**
-   * <code>.OrgProfileResult_e ResultType = 3;</code>
+   * <code>.OrgProfileResult_e ResultType = 4;</code>
    * @return The resultType.
    */
   com.erksystem.protobuf.api.OrgProfileResult_e getResultType();
 
   /**
-   * <code>int32 OrgId = 4;</code>
+   * <code>int32 OrgId = 5;</code>
    * @return The orgId.
    */
   int getOrgId();
 
   /**
-   * <code>string OrgPwd = 5;</code>
+   * <code>string OrgPwd = 6;</code>
    * @return The orgPwd.
    */
   java.lang.String getOrgPwd();
   /**
-   * <code>string OrgPwd = 5;</code>
+   * <code>string OrgPwd = 6;</code>
    * @return The bytes for orgPwd.
    */
   com.google.protobuf.ByteString
       getOrgPwdBytes();
 
   /**
-   * <code>string ServiceDuration = 6;</code>
+   * <code>string ServiceDuration = 7;</code>
    * @return The serviceDuration.
    */
   java.lang.String getServiceDuration();
   /**
-   * <code>string ServiceDuration = 6;</code>
+   * <code>string ServiceDuration = 7;</code>
    * @return The bytes for serviceDuration.
    */
   com.google.protobuf.ByteString
       getServiceDurationBytes();
 
   /**
-   * <code>int32 UserNumber = 7;</code>
+   * <code>int32 UserNumber = 8;</code>
    * @return The userNumber.
    */
   int getUserNumber();
 
   /**
-   * <code>.ServiceType_e ServiceType = 8;</code>
+   * <code>.ServiceType_e ServiceType = 9;</code>
    * @return The enum numeric value on the wire for serviceType.
    */
   int getServiceTypeValue();
   /**
-   * <code>.ServiceType_e ServiceType = 8;</code>
+   * <code>.ServiceType_e ServiceType = 9;</code>
    * @return The serviceType.
    */
   com.erksystem.protobuf.api.ServiceType_e getServiceType();

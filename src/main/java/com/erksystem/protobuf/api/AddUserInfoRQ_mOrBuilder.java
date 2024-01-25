@@ -20,78 +20,93 @@ public interface AddUserInfoRQ_mOrBuilder extends
   com.erksystem.protobuf.api.ErkMsgType_e getMsgType();
 
   /**
-   * <code>string OrgName = 2;</code>
+   * <code>.QueueInfo_s QueueInfo = 2;</code>
+   * @return Whether the queueInfo field is set.
+   */
+  boolean hasQueueInfo();
+  /**
+   * <code>.QueueInfo_s QueueInfo = 2;</code>
+   * @return The queueInfo.
+   */
+  com.erksystem.protobuf.api.QueueInfo_s getQueueInfo();
+  /**
+   * <code>.QueueInfo_s QueueInfo = 2;</code>
+   */
+  com.erksystem.protobuf.api.QueueInfo_sOrBuilder getQueueInfoOrBuilder();
+
+  /**
+   * <code>string OrgName = 3;</code>
    * @return The orgName.
    */
   java.lang.String getOrgName();
   /**
-   * <code>string OrgName = 2;</code>
+   * <code>string OrgName = 3;</code>
    * @return The bytes for orgName.
    */
   com.google.protobuf.ByteString
       getOrgNameBytes();
 
   /**
-   * <code>string UserName = 3;</code>
+   * <code>string UserName = 4;</code>
    * @return The userName.
    */
   java.lang.String getUserName();
   /**
-   * <code>string UserName = 3;</code>
+   * <code>string UserName = 4;</code>
    * @return The bytes for userName.
    */
   com.google.protobuf.ByteString
       getUserNameBytes();
 
   /**
-   * <code>string UserPwd = 4;</code>
+   * <code>string UserPwd = 5;</code>
    * @return The userPwd.
    */
   java.lang.String getUserPwd();
   /**
-   * <code>string UserPwd = 4;</code>
+   * <code>string UserPwd = 5;</code>
    * @return The bytes for userPwd.
    */
   com.google.protobuf.ByteString
       getUserPwdBytes();
 
   /**
-   * <code>string ServiceDuration = 5;</code>
+   * <code>string ServiceDuration = 6;</code>
    * @return The serviceDuration.
    */
   java.lang.String getServiceDuration();
   /**
-   * <code>string ServiceDuration = 5;</code>
+   * <code>string ServiceDuration = 6;</code>
    * @return The bytes for serviceDuration.
    */
   com.google.protobuf.ByteString
       getServiceDurationBytes();
 
   /**
-   * <code>int32 Age = 6;</code>
+   * <code>int32 Age = 7;</code>
    * @return The age.
    */
   int getAge();
 
   /**
-   * <code>int32 Sex = 7;</code>
+   * <code>int32 Sex = 8;</code>
    * @return The sex.
    */
   int getSex();
 
   /**
-   * <code>int32 UserType = 8;</code>
+   * <code>int32 UserType = 9;</code>
    * @return The userType.
    */
   int getUserType();
 
   /**
-   * <code>.ServiceType_e ServiceType = 9;</code>
+   * <code>.ServiceType_e ServiceType = 10;</code>
    * @return The enum numeric value on the wire for serviceType.
    */
   int getServiceTypeValue();
   /**
-   * <code>.ServiceType_e ServiceType = 9;</code>
+   * <code>.ServiceType_e ServiceType = 10;</code>
    * @return The serviceType.
    */
   com.erksystem.protobuf.api.ServiceType_e getServiceType();

@@ -1,8 +1,5 @@
 package com.aispace.erksystem.rmq.module;
 
-/**
- * @author kangmoo Heo
- */
 public final class RmqStreamModuleBuilder {
     RmqModuleBuilder rmqModuleBuilder;
     int qos = 100;
@@ -12,44 +9,54 @@ public final class RmqStreamModuleBuilder {
         this.rmqModuleBuilder = new RmqModuleBuilder(host, userName, password);
     }
 
-    public RmqModuleBuilder setHost(String host) {
-        return rmqModuleBuilder.setHost(host);
+    public RmqStreamModuleBuilder setHost(String host) {
+        rmqModuleBuilder.setHost(host);
+        return this;
     }
 
-    public RmqModuleBuilder setUserName(String userName) {
-        return rmqModuleBuilder.setUserName(userName);
+    public RmqStreamModuleBuilder setUserName(String userName) {
+        rmqModuleBuilder.setUserName(userName);
+        return this;
     }
 
-    public RmqModuleBuilder setPassword(String password) {
-        return rmqModuleBuilder.setPassword(password);
+    public RmqStreamModuleBuilder setPassword(String password) {
+        rmqModuleBuilder.setPassword(password);
+        return this;
     }
 
-    public RmqModuleBuilder setPort(int port) {
-        return rmqModuleBuilder.setPort(port);
+    public RmqStreamModuleBuilder setPort(int port) {
+        rmqModuleBuilder.setPort(port);
+        return this;
     }
 
-    public RmqModuleBuilder setBufferCount(int bufferCount) {
-        return rmqModuleBuilder.setBufferCount(bufferCount);
+    public RmqStreamModuleBuilder setBufferCount(int bufferCount) {
+        rmqModuleBuilder.setBufferCount(bufferCount);
+        return this;
     }
 
-    public RmqModuleBuilder setRecoveryInterval(int recoveryInterval) {
-        return rmqModuleBuilder.setRecoveryInterval(recoveryInterval);
+    public RmqStreamModuleBuilder setRecoveryInterval(int recoveryInterval) {
+        rmqModuleBuilder.setRecoveryInterval(recoveryInterval);
+        return this;
     }
 
-    public RmqModuleBuilder setRequestedHeartbeat(int requestedHeartbeat) {
-        return rmqModuleBuilder.setRequestedHeartbeat(requestedHeartbeat);
+    public RmqStreamModuleBuilder setRequestedHeartbeat(int requestedHeartbeat) {
+        rmqModuleBuilder.setRequestedHeartbeat(requestedHeartbeat);
+        return this;
     }
 
-    public RmqModuleBuilder setConnectionTimeout(int connectionTimeout) {
-        return rmqModuleBuilder.setConnectionTimeout(connectionTimeout);
+    public RmqStreamModuleBuilder setConnectionTimeout(int connectionTimeout) {
+        rmqModuleBuilder.setConnectionTimeout(connectionTimeout);
+        return this;
     }
 
-    public RmqModuleBuilder setOnConnected(Runnable onConnected) {
-        return rmqModuleBuilder.setOnConnected(onConnected);
+    public RmqStreamModuleBuilder setOnConnected(Runnable onConnected) {
+        rmqModuleBuilder.setOnConnected(onConnected);
+        return this;
     }
 
-    public RmqModuleBuilder setOnDisconnected(Runnable onDisconnected) {
-        return rmqModuleBuilder.setOnDisconnected(onDisconnected);
+    public RmqStreamModuleBuilder setOnDisconnected(Runnable onDisconnected) {
+        rmqModuleBuilder.setOnDisconnected(onDisconnected);
+        return this;
     }
 
     public RmqStreamModuleBuilder setQos(int qos) {

@@ -5,22 +5,22 @@ option java_multiple_files = true;
 
 message ErkMsgHead_s{
   ErkMsgType_e MsgType = 1;
-  int32 OrgId = 2;
-  int32 UserId = 3;
+  QueueInfo_s QueueInfo = 2;
+  int32 OrgId = 3;
+  int32 UserId = 4;
 }
 
 message ErkMsgDataHead_s{
   ErkMsgType_e MsgType = 1;
-  int32 OrgId = 2;
-  int32 UserId = 3;
+  QueueInfo_s QueueInfo = 2;
+  int32 OrgId = 3;
+  int32 UserId = 4;
 }
 
-message ErkInterMsgHead_s{
-  ErkInterMsgType_e MsgType = 1;
-  int32 OrgId = 2;
-  int32 UserId = 3;
+message QueueInfo_s{
+  string ToQueueName = 1;
+  string FromQueueName = 2;
 }
-
 
 enum ErkMsgType_e{
   ErkMsgType_unknown = 0;
@@ -47,10 +47,13 @@ enum ErkMsgType_e{
   PhysioEmoRecogRQ = 21;
   SpeechEmoRecogRQ = 22;
   FaceEmoRecogRQ = 23;
-  EmoRecogRQ = 24;
-  EmoRecogRP = 25;
-  ErkMsgType_reserved1 = 26;
-  ErkMsgType_reserved2 = 27;
+  PhysioEmoRecogRP = 24;
+  SpeechEmoRecogRP = 25;
+  FaceEmoRecogRP = 26;
+  EmoRecogRQ = 27;
+  EmoRecogRP = 28;
+  ErkMsgType_reserved1 = 29;
+  ErkMsgType_reserved2 = 30;
 }
 
 enum ErkInterMsgType_e{
@@ -172,42 +175,31 @@ message ErkEngineInfo_s{
 
 
 message AddServiceProviderInfoRQ_m{
-  ErkMsgType_e MsgType =1;
-  string OrgName = 2;
-  string OrgPwd = 3;
-  string ServiceDuration = 4;
-  int32 UserNumber = 5;
-  ServiceType_e ServiceType = 6;
+  ErkMsgType_e MsgType = 1;
+  QueueInfo_s QueueInfo = 2;
+  string OrgName = 3;
+  string OrgPwd = 4;
+  string ServiceDuration = 5;
+  int32 UserNumber = 6;
+  ServiceType_e ServiceType = 7;
 }
 
 message AddServiceProviderInfoRP_m{
-  ErkMsgType_e MsgType =1;
-  string OrgName = 2;
-  OrgProfileResult_e ResultType = 3;
-  int32 OrgId = 4;
-  string OrgPwd = 5;
-  string ServiceDuration = 6;
-  int32 UserNumber = 7;
-  ServiceType_e ServiceType = 8;
+  ErkMsgType_e MsgType = 1;
+  QueueInfo_s QueueInfo = 2;
+  string OrgName = 3;
+  OrgProfileResult_e ResultType = 4;
+  int32 OrgId = 5;
+  string OrgPwd = 6;
+  string ServiceDuration = 7;
+  int32 UserNumber = 8;
+  ServiceType_e ServiceType = 9;
 }
 
 message UpdateServiceProviderInfoRQ_m{
-  ErkMsgType_e MsgType =1;
-  string OrgName = 2;
-  string Old_OrgPwd = 3;
-  string Old_ServiceDuration = 4;
-  int32 Old_UserNumber = 5;
-  ServiceType_e Old_ServiceType = 6;
-  string New_OrgPwd = 7;
-  string New_ServiceDuration = 8;
-  int32 New_UserNumber = 9;
-  ServiceType_e New_ServiceType = 10;
-}
-
-message UpdateServiceProviderInfoRP_m{
-  ErkMsgType_e MsgType =1;
-  string OrgName = 2;
-  OrgProfileResult_e ResultType = 3;
+  ErkMsgType_e MsgType = 1;
+  QueueInfo_s QueueInfo = 2;
+  string OrgName = 3;
   string Old_OrgPwd = 4;
   string Old_ServiceDuration = 5;
   int32 Old_UserNumber = 6;
@@ -218,67 +210,68 @@ message UpdateServiceProviderInfoRP_m{
   ServiceType_e New_ServiceType = 11;
 }
 
+message UpdateServiceProviderInfoRP_m{
+  ErkMsgType_e MsgType = 1;
+  QueueInfo_s QueueInfo = 2;
+  string OrgName = 3;
+  OrgProfileResult_e ResultType = 4;
+  string Old_OrgPwd = 5;
+  string Old_ServiceDuration = 6;
+  int32 Old_UserNumber = 7;
+  ServiceType_e Old_ServiceType = 8;
+  string New_OrgPwd = 9;
+  string New_ServiceDuration = 10;
+  int32 New_UserNumber = 11;
+  ServiceType_e New_ServiceType = 12;
+}
+
 message DelServiceProviderInfoRQ_m{
-  ErkMsgType_e MsgType =1;
-  string OrgName = 2;
-  string OrgPwd = 3;
+  ErkMsgType_e MsgType = 1;
+  QueueInfo_s QueueInfo = 2;
+  string OrgName = 3;
+  string OrgPwd = 4;
 }
 
 message DelServiceProviderInfoRP_m{
-  ErkMsgType_e MsgType =1;
-  string OrgName = 2;
-  OrgProfileResult_e ResultType = 3;
+  ErkMsgType_e MsgType = 1;
+  QueueInfo_s QueueInfo = 2;
+  string OrgName = 3;
+  OrgProfileResult_e ResultType = 4;
 }
 
 message AddUserInfoRQ_m{
-  ErkMsgType_e MsgType =1;
-  string OrgName = 2;
-  string UserName = 3;
-  string UserPwd = 4;
-  string ServiceDuration = 5;
-  int32 Age = 6;
-  int32 Sex = 7;
-  int32 UserType = 8;
-  ServiceType_e ServiceType = 9;
+  ErkMsgType_e MsgType = 1;
+  QueueInfo_s QueueInfo = 2;
+  string OrgName = 3;
+  string UserName = 4;
+  string UserPwd = 5;
+  string ServiceDuration = 6;
+  int32 Age = 7;
+  int32 Sex = 8;
+  int32 UserType = 9;
+  ServiceType_e ServiceType = 10;
 }
 
 message AddUserInfoRP_m{
-  ErkMsgType_e MsgType =1;
-  string OrgName = 2;
-  string UserName = 3;
-  UserProfileResult_e ResultType = 4;
-  int32 UserId = 5;
-  string UserPwd = 6;
-  string ServiceDuration = 7;
-  int32 Age = 8;
-  int32 Sex = 9;
-  int32 UserType = 10;
-  ServiceType_e ServiceType = 11;
+  ErkMsgType_e MsgType = 1;
+  QueueInfo_s QueueInfo = 2;
+  string OrgName = 3;
+  string UserName = 4;
+  UserProfileResult_e ResultType = 5;
+  int32 UserId = 6;
+  string UserPwd = 7;
+  string ServiceDuration = 8;
+  int32 Age = 9;
+  int32 Sex = 10;
+  int32 UserType = 11;
+  ServiceType_e ServiceType = 12;
 }
 
 message UpdateUserInfoRQ_m{
-  ErkMsgType_e MsgType =1;
-  string OrgName = 2;
-  string UserName = 3;
-  string Old_UserPwd = 4;
-  string Old_ServiceDuration = 5;
-  int32 Old_Age = 6;
-  int32 Old_Sex = 7;
-  int32 Old_UserType = 8;
-  ServiceType_e Old_ServiceType = 9;
-  string New_UserPwd = 10;
-  string New_ServiceDuration = 11;
-  int32 New_Age = 12;
-  int32 New_Sex = 13;
-  int32 New_UserType = 14;
-  ServiceType_e New_ServiceType = 15;
-}
-
-message UpdateUserInfoRP_m{
-  ErkMsgType_e MsgType =1;
-  string OrgName = 2;
-  string UserName = 3;
-  UserProfileResult_e ResultType = 4;
+  ErkMsgType_e MsgType = 1;
+  QueueInfo_s QueueInfo = 2;
+  string OrgName = 3;
+  string UserName = 4;
   string Old_UserPwd = 5;
   string Old_ServiceDuration = 6;
   int32 Old_Age = 7;
@@ -293,19 +286,41 @@ message UpdateUserInfoRP_m{
   ServiceType_e New_ServiceType = 16;
 }
 
+message UpdateUserInfoRP_m{
+  ErkMsgType_e MsgType = 1;
+  QueueInfo_s QueueInfo = 2;
+  string OrgName = 3;
+  string UserName = 4;
+  UserProfileResult_e ResultType = 5;
+  string Old_UserPwd = 6;
+  string Old_ServiceDuration = 7;
+  int32 Old_Age = 8;
+  int32 Old_Sex = 9;
+  int32 Old_UserType = 10;
+  ServiceType_e Old_ServiceType = 11;
+  string New_UserPwd = 12;
+  string New_ServiceDuration = 13;
+  int32 New_Age = 14;
+  int32 New_Sex = 15;
+  int32 New_UserType = 16;
+  ServiceType_e New_ServiceType = 17;
+}
+
 message DelUserInfoRQ_m{
-  ErkMsgType_e MsgType =1;
-  string OrgName = 2;
-  string UserName = 3;
-  string UserPwd = 4;
+  ErkMsgType_e MsgType = 1;
+  QueueInfo_s QueueInfo = 2;
+  string OrgName = 3;
+  string UserName = 4;
+  string UserPwd = 5;
 }
 
 message DelUserInfoRP_m{
-  ErkMsgType_e MsgType =1;
-  string OrgName = 2;
-  string UserName = 3;
-  UserProfileResult_e ResultType = 4;
-  string Return = 5;
+  ErkMsgType_e MsgType = 1;
+  QueueInfo_s QueueInfo = 2;
+  string OrgName = 3;
+  string UserName = 4;
+  UserProfileResult_e ResultType = 5;
+  string Return = 6;
 }
 
 
@@ -354,11 +369,11 @@ message EmoServiceStopRQ_m{
   ErkMsgHead_s ErkMsgHead = 1;
   int64 MsgTime = 2;
   ServiceType_e ServiceType = 3;
-  string PhysioEngine_ReceiveQueueName= 4;
+  string PhysioEngine_ReceiveQueueName = 4;
   string PhysioEngine_SendQueueName = 5;
-  string SpeechEngine_ReceiveQueueName= 6;
+  string SpeechEngine_ReceiveQueueName = 6;
   string SpeechEngine_SendQueueName = 7;
-  string FaceEngine_ReceiveQueueName= 8;
+  string FaceEngine_ReceiveQueueName = 8;
   string FaceEngine_SendQueueName = 9;
   string KnowledgeEngine_ReceiveQueueName = 10;
   string KnowledgeEngine_SendQueueName = 11;
@@ -375,9 +390,8 @@ message EmoServiceStopRP_m{
   ErkEngineInfo_s ServiceEngineInfo = 8;
 }
 
-
 message ErkEngineCreateRQ_m{
-  ErkInterMsgHead_s ErkInterMsgHead = 1;
+  ErkMsgHead_s ErkMsgHead = 1;
   int64 MsgTime = 2;
   ServiceType_e ServiceType = 3;
   string PhysioEngine_ReceiveQueueName = 4;
@@ -390,8 +404,8 @@ message ErkEngineCreateRQ_m{
   string KnowledgeEngine_SendQueueName = 11;
 }
 
-message ErkEngineCreateRP_m{
-  ErkInterMsgHead_s ErkInterMsgHead = 1;
+message EmoServiceCreateRP_m{
+  ErkMsgHead_s ErkMsgHead = 1;
   int64 MsgTime = 2;
   ReturnCode_e ReturnCode = 3;
   ErkEngineInfo_s PhysioEngineInfo = 4;
@@ -402,7 +416,7 @@ message ErkEngineCreateRP_m{
 }
 
 message ErkEngineDeleteRQ_m{
-  ErkInterMsgHead_s ErkInterMsgHead = 1;
+  ErkMsgHead_s ErkMsgHead = 1;
   int64 MsgTime = 2;
   ServiceType_e ServiceType = 3;
   string PhysioEngine_ReceiveQueueName = 4;
@@ -415,8 +429,9 @@ message ErkEngineDeleteRQ_m{
   string KnowledgeEngine_SendQueueName = 11;
 }
 
+
 message ErkEngineDeleteRP_m{
-  ErkInterMsgHead_s ErkInterMsgHead = 1;
+  ErkMsgHead_s ErkMsgHead = 1;
   int64 MsgTime = 2;
   ReturnCode_e ReturnCode = 3;
   ErkEngineInfo_s PhysioEngineInfo = 4;
@@ -425,7 +440,6 @@ message ErkEngineDeleteRP_m{
   ErkEngineInfo_s KnowledgeEngineInfo = 7;
   ErkEngineInfo_s ServiceEngineInfo = 8;
 }
-
 
 message HeartBeatRQ_m{
   ErkMsgHead_s ErkMsgHead = 1;
@@ -504,15 +518,6 @@ message EmoRecogNoti_m{
   float Accuracy = 4;
 }
 
-message ErkInterApiMsg{
-  oneof msg{
-    ErkEngineCreateRQ_m ErkEngineCreateRQ = 1;
-    ErkEngineCreateRP_m ErkEngineCreateRP = 2;
-    ErkEngineDeleteRQ_m ErkEngineDeleteRQ = 3;
-    ErkEngineDeleteRP_m ErkEngineDeleteRP = 4;
-  }
-}
-
 message ErkApiMsg{
   oneof msg{
     AddServiceProviderInfoRQ_m AddServiceProviderInfoRQ = 1;
@@ -535,16 +540,20 @@ message ErkApiMsg{
     EmoServiceStartRP_m EmoServiceStartRP = 18;
     EmoServiceStopRQ_m EmoServiceStopRQ = 19;
     EmoServiceStopRP_m EmoServiceStopRP = 20;
-    EmoRecogRQ_m EmoRecogRQ = 21;
-    EmoRecogRP_m EmoRecogRP = 22;
-    PhysioEmoRecogRQ_m PhysioEmoRecogRQ = 23;
-    PhysioEmoRecogRP_m PhysioEmoRecogRP = 24;
-    SpeechEmoRecogRQ_m SpeechEmoRecogRQ = 25;
-    SpeechEmoRecogRP_m SpeechEmoRecogRP = 26;
-    FaceEmoRecogRQ_m FaceEmoRecogRQ = 27;
-    FaceEmoRecogRP_m FaceEmoRecogRP = 28;
-    HeartBeatRQ_m HeartBeatRQ = 29;
-    HeartBeatRP_m HeartBeatRP= 30;
-    EmoRecogNoti_m EmoRecogNoti = 31;
+    ErkEngineCreateRQ_m ErkEngineCreateRQ = 21;
+    EmoServiceCreateRP_m EmoServiceCreateRP = 22;
+    ErkEngineDeleteRQ_m ErkEngineDeleteRQ = 23;
+    ErkEngineDeleteRP_m ErkEngineDeleteRP = 24;
+    HeartBeatRQ_m HeartBeatRQ = 25;
+    HeartBeatRP_m HeartBeatRP = 26;
+    EmoRecogRQ_m EmoRecogRQ = 27;
+    EmoRecogRP_m EmoRecogRP = 28;
+    PhysioEmoRecogRQ_m PhysioEmoRecogRQ = 29;
+    PhysioEmoRecogRP_m PhysioEmoRecogRP = 30;
+    SpeechEmoRecogRQ_m SpeechEmoRecogRQ = 31;
+    SpeechEmoRecogRP_m SpeechEmoRecogRP = 32;
+    FaceEmoRecogRQ_m FaceEmoRecogRQ = 33;
+    FaceEmoRecogRP_m FaceEmoRecogRP = 34;
+    EmoRecogNoti_m EmoRecogNoti = 35;
   }
 }

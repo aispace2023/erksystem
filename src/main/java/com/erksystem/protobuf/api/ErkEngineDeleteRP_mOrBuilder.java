@@ -9,19 +9,19 @@ public interface ErkEngineDeleteRP_mOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.ErkInterMsgHead_s ErkInterMsgHead = 1;</code>
-   * @return Whether the erkInterMsgHead field is set.
+   * <code>.ErkMsgHead_s ErkMsgHead = 1;</code>
+   * @return Whether the erkMsgHead field is set.
    */
-  boolean hasErkInterMsgHead();
+  boolean hasErkMsgHead();
   /**
-   * <code>.ErkInterMsgHead_s ErkInterMsgHead = 1;</code>
-   * @return The erkInterMsgHead.
+   * <code>.ErkMsgHead_s ErkMsgHead = 1;</code>
+   * @return The erkMsgHead.
    */
-  com.erksystem.protobuf.api.ErkInterMsgHead_s getErkInterMsgHead();
+  com.erksystem.protobuf.api.ErkMsgHead_s getErkMsgHead();
   /**
-   * <code>.ErkInterMsgHead_s ErkInterMsgHead = 1;</code>
+   * <code>.ErkMsgHead_s ErkMsgHead = 1;</code>
    */
-  com.erksystem.protobuf.api.ErkInterMsgHead_sOrBuilder getErkInterMsgHeadOrBuilder();
+  com.erksystem.protobuf.api.ErkMsgHead_sOrBuilder getErkMsgHeadOrBuilder();
 
   /**
    * <code>int64 MsgTime = 2;</code>

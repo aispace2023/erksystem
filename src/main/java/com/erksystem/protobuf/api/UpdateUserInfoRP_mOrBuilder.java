@@ -20,142 +20,157 @@ public interface UpdateUserInfoRP_mOrBuilder extends
   com.erksystem.protobuf.api.ErkMsgType_e getMsgType();
 
   /**
-   * <code>string OrgName = 2;</code>
+   * <code>.QueueInfo_s QueueInfo = 2;</code>
+   * @return Whether the queueInfo field is set.
+   */
+  boolean hasQueueInfo();
+  /**
+   * <code>.QueueInfo_s QueueInfo = 2;</code>
+   * @return The queueInfo.
+   */
+  com.erksystem.protobuf.api.QueueInfo_s getQueueInfo();
+  /**
+   * <code>.QueueInfo_s QueueInfo = 2;</code>
+   */
+  com.erksystem.protobuf.api.QueueInfo_sOrBuilder getQueueInfoOrBuilder();
+
+  /**
+   * <code>string OrgName = 3;</code>
    * @return The orgName.
    */
   java.lang.String getOrgName();
   /**
-   * <code>string OrgName = 2;</code>
+   * <code>string OrgName = 3;</code>
    * @return The bytes for orgName.
    */
   com.google.protobuf.ByteString
       getOrgNameBytes();
 
   /**
-   * <code>string UserName = 3;</code>
+   * <code>string UserName = 4;</code>
    * @return The userName.
    */
   java.lang.String getUserName();
   /**
-   * <code>string UserName = 3;</code>
+   * <code>string UserName = 4;</code>
    * @return The bytes for userName.
    */
   com.google.protobuf.ByteString
       getUserNameBytes();
 
   /**
-   * <code>.UserProfileResult_e ResultType = 4;</code>
+   * <code>.UserProfileResult_e ResultType = 5;</code>
    * @return The enum numeric value on the wire for resultType.
    */
   int getResultTypeValue();
   /**
-   * <code>.UserProfileResult_e ResultType = 4;</code>
+   * <code>.UserProfileResult_e ResultType = 5;</code>
    * @return The resultType.
    */
   com.erksystem.protobuf.api.UserProfileResult_e getResultType();
 
   /**
-   * <code>string Old_UserPwd = 5;</code>
+   * <code>string Old_UserPwd = 6;</code>
    * @return The oldUserPwd.
    */
   java.lang.String getOldUserPwd();
   /**
-   * <code>string Old_UserPwd = 5;</code>
+   * <code>string Old_UserPwd = 6;</code>
    * @return The bytes for oldUserPwd.
    */
   com.google.protobuf.ByteString
       getOldUserPwdBytes();
 
   /**
-   * <code>string Old_ServiceDuration = 6;</code>
+   * <code>string Old_ServiceDuration = 7;</code>
    * @return The oldServiceDuration.
    */
   java.lang.String getOldServiceDuration();
   /**
-   * <code>string Old_ServiceDuration = 6;</code>
+   * <code>string Old_ServiceDuration = 7;</code>
    * @return The bytes for oldServiceDuration.
    */
   com.google.protobuf.ByteString
       getOldServiceDurationBytes();
 
   /**
-   * <code>int32 Old_Age = 7;</code>
+   * <code>int32 Old_Age = 8;</code>
    * @return The oldAge.
    */
   int getOldAge();
 
   /**
-   * <code>int32 Old_Sex = 8;</code>
+   * <code>int32 Old_Sex = 9;</code>
    * @return The oldSex.
    */
   int getOldSex();
 
   /**
-   * <code>int32 Old_UserType = 9;</code>
+   * <code>int32 Old_UserType = 10;</code>
    * @return The oldUserType.
    */
   int getOldUserType();
 
   /**
-   * <code>.ServiceType_e Old_ServiceType = 10;</code>
+   * <code>.ServiceType_e Old_ServiceType = 11;</code>
    * @return The enum numeric value on the wire for oldServiceType.
    */
   int getOldServiceTypeValue();
   /**
-   * <code>.ServiceType_e Old_ServiceType = 10;</code>
+   * <code>.ServiceType_e Old_ServiceType = 11;</code>
    * @return The oldServiceType.
    */
   com.erksystem.protobuf.api.ServiceType_e getOldServiceType();
 
   /**
-   * <code>string New_UserPwd = 11;</code>
+   * <code>string New_UserPwd = 12;</code>
    * @return The newUserPwd.
    */
   java.lang.String getNewUserPwd();
   /**
-   * <code>string New_UserPwd = 11;</code>
+   * <code>string New_UserPwd = 12;</code>
    * @return The bytes for newUserPwd.
    */
   com.google.protobuf.ByteString
       getNewUserPwdBytes();
 
   /**
-   * <code>string New_ServiceDuration = 12;</code>
+   * <code>string New_ServiceDuration = 13;</code>
    * @return The newServiceDuration.
    */
   java.lang.String getNewServiceDuration();
   /**
-   * <code>string New_ServiceDuration = 12;</code>
+   * <code>string New_ServiceDuration = 13;</code>
    * @return The bytes for newServiceDuration.
    */
   com.google.protobuf.ByteString
       getNewServiceDurationBytes();
 
   /**
-   * <code>int32 New_Age = 13;</code>
+   * <code>int32 New_Age = 14;</code>
    * @return The newAge.
    */
   int getNewAge();
 
   /**
-   * <code>int32 New_Sex = 14;</code>
+   * <code>int32 New_Sex = 15;</code>
    * @return The newSex.
    */
   int getNewSex();
 
   /**
-   * <code>int32 New_UserType = 15;</code>
+   * <code>int32 New_UserType = 16;</code>
    * @return The newUserType.
    */
   int getNewUserType();
 
   /**
-   * <code>.ServiceType_e New_ServiceType = 16;</code>
+   * <code>.ServiceType_e New_ServiceType = 17;</code>
    * @return The enum numeric value on the wire for newServiceType.
    */
   int getNewServiceTypeValue();
   /**
-   * <code>.ServiceType_e New_ServiceType = 16;</code>
+   * <code>.ServiceType_e New_ServiceType = 17;</code>
    * @return The newServiceType.
    */
   com.erksystem.protobuf.api.ServiceType_e getNewServiceType();

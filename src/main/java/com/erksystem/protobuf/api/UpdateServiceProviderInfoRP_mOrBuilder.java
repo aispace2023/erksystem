@@ -20,106 +20,121 @@ public interface UpdateServiceProviderInfoRP_mOrBuilder extends
   com.erksystem.protobuf.api.ErkMsgType_e getMsgType();
 
   /**
-   * <code>string OrgName = 2;</code>
+   * <code>.QueueInfo_s QueueInfo = 2;</code>
+   * @return Whether the queueInfo field is set.
+   */
+  boolean hasQueueInfo();
+  /**
+   * <code>.QueueInfo_s QueueInfo = 2;</code>
+   * @return The queueInfo.
+   */
+  com.erksystem.protobuf.api.QueueInfo_s getQueueInfo();
+  /**
+   * <code>.QueueInfo_s QueueInfo = 2;</code>
+   */
+  com.erksystem.protobuf.api.QueueInfo_sOrBuilder getQueueInfoOrBuilder();
+
+  /**
+   * <code>string OrgName = 3;</code>
    * @return The orgName.
    */
   java.lang.String getOrgName();
   /**
-   * <code>string OrgName = 2;</code>
+   * <code>string OrgName = 3;</code>
    * @return The bytes for orgName.
    */
   com.google.protobuf.ByteString
       getOrgNameBytes();
 
   /**
-   * <code>.OrgProfileResult_e ResultType = 3;</code>
+   * <code>.OrgProfileResult_e ResultType = 4;</code>
    * @return The enum numeric value on the wire for resultType.
    */
   int getResultTypeValue();
   /**
-   * <code>.OrgProfileResult_e ResultType = 3;</code>
+   * <code>.OrgProfileResult_e ResultType = 4;</code>
    * @return The resultType.
    */
   com.erksystem.protobuf.api.OrgProfileResult_e getResultType();
 
   /**
-   * <code>string Old_OrgPwd = 4;</code>
+   * <code>string Old_OrgPwd = 5;</code>
    * @return The oldOrgPwd.
    */
   java.lang.String getOldOrgPwd();
   /**
-   * <code>string Old_OrgPwd = 4;</code>
+   * <code>string Old_OrgPwd = 5;</code>
    * @return The bytes for oldOrgPwd.
    */
   com.google.protobuf.ByteString
       getOldOrgPwdBytes();
 
   /**
-   * <code>string Old_ServiceDuration = 5;</code>
+   * <code>string Old_ServiceDuration = 6;</code>
    * @return The oldServiceDuration.
    */
   java.lang.String getOldServiceDuration();
   /**
-   * <code>string Old_ServiceDuration = 5;</code>
+   * <code>string Old_ServiceDuration = 6;</code>
    * @return The bytes for oldServiceDuration.
    */
   com.google.protobuf.ByteString
       getOldServiceDurationBytes();
 
   /**
-   * <code>int32 Old_UserNumber = 6;</code>
+   * <code>int32 Old_UserNumber = 7;</code>
    * @return The oldUserNumber.
    */
   int getOldUserNumber();
 
   /**
-   * <code>.ServiceType_e Old_ServiceType = 7;</code>
+   * <code>.ServiceType_e Old_ServiceType = 8;</code>
    * @return The enum numeric value on the wire for oldServiceType.
    */
   int getOldServiceTypeValue();
   /**
-   * <code>.ServiceType_e Old_ServiceType = 7;</code>
+   * <code>.ServiceType_e Old_ServiceType = 8;</code>
    * @return The oldServiceType.
    */
   com.erksystem.protobuf.api.ServiceType_e getOldServiceType();
 
   /**
-   * <code>string New_OrgPwd = 8;</code>
+   * <code>string New_OrgPwd = 9;</code>
    * @return The newOrgPwd.
    */
   java.lang.String getNewOrgPwd();
   /**
-   * <code>string New_OrgPwd = 8;</code>
+   * <code>string New_OrgPwd = 9;</code>
    * @return The bytes for newOrgPwd.
    */
   com.google.protobuf.ByteString
       getNewOrgPwdBytes();
 
   /**
-   * <code>string New_ServiceDuration = 9;</code>
+   * <code>string New_ServiceDuration = 10;</code>
    * @return The newServiceDuration.
    */
   java.lang.String getNewServiceDuration();
   /**
-   * <code>string New_ServiceDuration = 9;</code>
+   * <code>string New_ServiceDuration = 10;</code>
    * @return The bytes for newServiceDuration.
    */
   com.google.protobuf.ByteString
       getNewServiceDurationBytes();
 
   /**
-   * <code>int32 New_UserNumber = 10;</code>
+   * <code>int32 New_UserNumber = 11;</code>
    * @return The newUserNumber.
    */
   int getNewUserNumber();
 
   /**
-   * <code>.ServiceType_e New_ServiceType = 11;</code>
+   * <code>.ServiceType_e New_ServiceType = 12;</code>
    * @return The enum numeric value on the wire for newServiceType.
    */
   int getNewServiceTypeValue();
   /**
-   * <code>.ServiceType_e New_ServiceType = 11;</code>
+   * <code>.ServiceType_e New_ServiceType = 12;</code>
    * @return The newServiceType.
    */
   com.erksystem.protobuf.api.ServiceType_e getNewServiceType();

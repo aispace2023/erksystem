@@ -20,24 +20,39 @@ public interface DelServiceProviderInfoRP_mOrBuilder extends
   com.erksystem.protobuf.api.ErkMsgType_e getMsgType();
 
   /**
-   * <code>string OrgName = 2;</code>
+   * <code>.QueueInfo_s QueueInfo = 2;</code>
+   * @return Whether the queueInfo field is set.
+   */
+  boolean hasQueueInfo();
+  /**
+   * <code>.QueueInfo_s QueueInfo = 2;</code>
+   * @return The queueInfo.
+   */
+  com.erksystem.protobuf.api.QueueInfo_s getQueueInfo();
+  /**
+   * <code>.QueueInfo_s QueueInfo = 2;</code>
+   */
+  com.erksystem.protobuf.api.QueueInfo_sOrBuilder getQueueInfoOrBuilder();
+
+  /**
+   * <code>string OrgName = 3;</code>
    * @return The orgName.
    */
   java.lang.String getOrgName();
   /**
-   * <code>string OrgName = 2;</code>
+   * <code>string OrgName = 3;</code>
    * @return The bytes for orgName.
    */
   com.google.protobuf.ByteString
       getOrgNameBytes();
 
   /**
-   * <code>.OrgProfileResult_e ResultType = 3;</code>
+   * <code>.OrgProfileResult_e ResultType = 4;</code>
    * @return The enum numeric value on the wire for resultType.
    */
   int getResultTypeValue();
   /**
-   * <code>.OrgProfileResult_e ResultType = 3;</code>
+   * <code>.OrgProfileResult_e ResultType = 4;</code>
    * @return The resultType.
    */
   com.erksystem.protobuf.api.OrgProfileResult_e getResultType();

@@ -40,6 +40,7 @@ private static final long serialVersionUID = 0L;
             com.erksystem.protobuf.api.ErkMsgDataHead_s.class, com.erksystem.protobuf.api.ErkMsgDataHead_s.Builder.class);
   }
 
+  private int bitField0_;
   public static final int MSGTYPE_FIELD_NUMBER = 1;
   private int msgType_ = 0;
   /**
@@ -58,10 +59,36 @@ private static final long serialVersionUID = 0L;
     return result == null ? com.erksystem.protobuf.api.ErkMsgType_e.UNRECOGNIZED : result;
   }
 
-  public static final int ORGID_FIELD_NUMBER = 2;
+  public static final int QUEUEINFO_FIELD_NUMBER = 2;
+  private com.erksystem.protobuf.api.QueueInfo_s queueInfo_;
+  /**
+   * <code>.QueueInfo_s QueueInfo = 2;</code>
+   * @return Whether the queueInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasQueueInfo() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   * <code>.QueueInfo_s QueueInfo = 2;</code>
+   * @return The queueInfo.
+   */
+  @java.lang.Override
+  public com.erksystem.protobuf.api.QueueInfo_s getQueueInfo() {
+    return queueInfo_ == null ? com.erksystem.protobuf.api.QueueInfo_s.getDefaultInstance() : queueInfo_;
+  }
+  /**
+   * <code>.QueueInfo_s QueueInfo = 2;</code>
+   */
+  @java.lang.Override
+  public com.erksystem.protobuf.api.QueueInfo_sOrBuilder getQueueInfoOrBuilder() {
+    return queueInfo_ == null ? com.erksystem.protobuf.api.QueueInfo_s.getDefaultInstance() : queueInfo_;
+  }
+
+  public static final int ORGID_FIELD_NUMBER = 3;
   private int orgId_ = 0;
   /**
-   * <code>int32 OrgId = 2;</code>
+   * <code>int32 OrgId = 3;</code>
    * @return The orgId.
    */
   @java.lang.Override
@@ -69,10 +96,10 @@ private static final long serialVersionUID = 0L;
     return orgId_;
   }
 
-  public static final int USERID_FIELD_NUMBER = 3;
+  public static final int USERID_FIELD_NUMBER = 4;
   private int userId_ = 0;
   /**
-   * <code>int32 UserId = 3;</code>
+   * <code>int32 UserId = 4;</code>
    * @return The userId.
    */
   @java.lang.Override
@@ -97,11 +124,14 @@ private static final long serialVersionUID = 0L;
     if (msgType_ != com.erksystem.protobuf.api.ErkMsgType_e.ErkMsgType_unknown.getNumber()) {
       output.writeEnum(1, msgType_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(2, getQueueInfo());
+    }
     if (orgId_ != 0) {
-      output.writeInt32(2, orgId_);
+      output.writeInt32(3, orgId_);
     }
     if (userId_ != 0) {
-      output.writeInt32(3, userId_);
+      output.writeInt32(4, userId_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -116,13 +146,17 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(1, msgType_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(2, getQueueInfo());
+    }
     if (orgId_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(2, orgId_);
+        .computeInt32Size(3, orgId_);
     }
     if (userId_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(3, userId_);
+        .computeInt32Size(4, userId_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -140,6 +174,11 @@ private static final long serialVersionUID = 0L;
     com.erksystem.protobuf.api.ErkMsgDataHead_s other = (com.erksystem.protobuf.api.ErkMsgDataHead_s) obj;
 
     if (msgType_ != other.msgType_) return false;
+    if (hasQueueInfo() != other.hasQueueInfo()) return false;
+    if (hasQueueInfo()) {
+      if (!getQueueInfo()
+          .equals(other.getQueueInfo())) return false;
+    }
     if (getOrgId()
         != other.getOrgId()) return false;
     if (getUserId()
@@ -157,6 +196,10 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + MSGTYPE_FIELD_NUMBER;
     hash = (53 * hash) + msgType_;
+    if (hasQueueInfo()) {
+      hash = (37 * hash) + QUEUEINFO_FIELD_NUMBER;
+      hash = (53 * hash) + getQueueInfo().hashCode();
+    }
     hash = (37 * hash) + ORGID_FIELD_NUMBER;
     hash = (53 * hash) + getOrgId();
     hash = (37 * hash) + USERID_FIELD_NUMBER;
@@ -280,19 +323,30 @@ private static final long serialVersionUID = 0L;
 
     // Construct using com.erksystem.protobuf.api.ErkMsgDataHead_s.newBuilder()
     private Builder() {
-
+      maybeForceBuilderInitialization();
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-
+      maybeForceBuilderInitialization();
+    }
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3
+              .alwaysUseFieldBuilders) {
+        getQueueInfoFieldBuilder();
+      }
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
       msgType_ = 0;
+      queueInfo_ = null;
+      if (queueInfoBuilder_ != null) {
+        queueInfoBuilder_.dispose();
+        queueInfoBuilder_ = null;
+      }
       orgId_ = 0;
       userId_ = 0;
       return this;
@@ -331,12 +385,20 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.msgType_ = msgType_;
       }
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.orgId_ = orgId_;
+        result.queueInfo_ = queueInfoBuilder_ == null
+            ? queueInfo_
+            : queueInfoBuilder_.build();
+        to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.orgId_ = orgId_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.userId_ = userId_;
       }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -386,6 +448,9 @@ private static final long serialVersionUID = 0L;
       if (other.msgType_ != 0) {
         setMsgTypeValue(other.getMsgTypeValue());
       }
+      if (other.hasQueueInfo()) {
+        mergeQueueInfo(other.getQueueInfo());
+      }
       if (other.getOrgId() != 0) {
         setOrgId(other.getOrgId());
       }
@@ -423,16 +488,23 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000001;
               break;
             } // case 8
-            case 16: {
-              orgId_ = input.readInt32();
+            case 18: {
+              input.readMessage(
+                  getQueueInfoFieldBuilder().getBuilder(),
+                  extensionRegistry);
               bitField0_ |= 0x00000002;
               break;
-            } // case 16
+            } // case 18
             case 24: {
-              userId_ = input.readInt32();
+              orgId_ = input.readInt32();
               bitField0_ |= 0x00000004;
               break;
             } // case 24
+            case 32: {
+              userId_ = input.readInt32();
+              bitField0_ |= 0x00000008;
+              break;
+            } // case 32
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -503,9 +575,130 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private com.erksystem.protobuf.api.QueueInfo_s queueInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.erksystem.protobuf.api.QueueInfo_s, com.erksystem.protobuf.api.QueueInfo_s.Builder, com.erksystem.protobuf.api.QueueInfo_sOrBuilder> queueInfoBuilder_;
+    /**
+     * <code>.QueueInfo_s QueueInfo = 2;</code>
+     * @return Whether the queueInfo field is set.
+     */
+    public boolean hasQueueInfo() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <code>.QueueInfo_s QueueInfo = 2;</code>
+     * @return The queueInfo.
+     */
+    public com.erksystem.protobuf.api.QueueInfo_s getQueueInfo() {
+      if (queueInfoBuilder_ == null) {
+        return queueInfo_ == null ? com.erksystem.protobuf.api.QueueInfo_s.getDefaultInstance() : queueInfo_;
+      } else {
+        return queueInfoBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.QueueInfo_s QueueInfo = 2;</code>
+     */
+    public Builder setQueueInfo(com.erksystem.protobuf.api.QueueInfo_s value) {
+      if (queueInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        queueInfo_ = value;
+      } else {
+        queueInfoBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.QueueInfo_s QueueInfo = 2;</code>
+     */
+    public Builder setQueueInfo(
+        com.erksystem.protobuf.api.QueueInfo_s.Builder builderForValue) {
+      if (queueInfoBuilder_ == null) {
+        queueInfo_ = builderForValue.build();
+      } else {
+        queueInfoBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.QueueInfo_s QueueInfo = 2;</code>
+     */
+    public Builder mergeQueueInfo(com.erksystem.protobuf.api.QueueInfo_s value) {
+      if (queueInfoBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0) &&
+          queueInfo_ != null &&
+          queueInfo_ != com.erksystem.protobuf.api.QueueInfo_s.getDefaultInstance()) {
+          getQueueInfoBuilder().mergeFrom(value);
+        } else {
+          queueInfo_ = value;
+        }
+      } else {
+        queueInfoBuilder_.mergeFrom(value);
+      }
+      if (queueInfo_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>.QueueInfo_s QueueInfo = 2;</code>
+     */
+    public Builder clearQueueInfo() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      queueInfo_ = null;
+      if (queueInfoBuilder_ != null) {
+        queueInfoBuilder_.dispose();
+        queueInfoBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.QueueInfo_s QueueInfo = 2;</code>
+     */
+    public com.erksystem.protobuf.api.QueueInfo_s.Builder getQueueInfoBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return getQueueInfoFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.QueueInfo_s QueueInfo = 2;</code>
+     */
+    public com.erksystem.protobuf.api.QueueInfo_sOrBuilder getQueueInfoOrBuilder() {
+      if (queueInfoBuilder_ != null) {
+        return queueInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return queueInfo_ == null ?
+            com.erksystem.protobuf.api.QueueInfo_s.getDefaultInstance() : queueInfo_;
+      }
+    }
+    /**
+     * <code>.QueueInfo_s QueueInfo = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.erksystem.protobuf.api.QueueInfo_s, com.erksystem.protobuf.api.QueueInfo_s.Builder, com.erksystem.protobuf.api.QueueInfo_sOrBuilder> 
+        getQueueInfoFieldBuilder() {
+      if (queueInfoBuilder_ == null) {
+        queueInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.erksystem.protobuf.api.QueueInfo_s, com.erksystem.protobuf.api.QueueInfo_s.Builder, com.erksystem.protobuf.api.QueueInfo_sOrBuilder>(
+                getQueueInfo(),
+                getParentForChildren(),
+                isClean());
+        queueInfo_ = null;
+      }
+      return queueInfoBuilder_;
+    }
+
     private int orgId_ ;
     /**
-     * <code>int32 OrgId = 2;</code>
+     * <code>int32 OrgId = 3;</code>
      * @return The orgId.
      */
     @java.lang.Override
@@ -513,23 +706,23 @@ private static final long serialVersionUID = 0L;
       return orgId_;
     }
     /**
-     * <code>int32 OrgId = 2;</code>
+     * <code>int32 OrgId = 3;</code>
      * @param value The orgId to set.
      * @return This builder for chaining.
      */
     public Builder setOrgId(int value) {
 
       orgId_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
     /**
-     * <code>int32 OrgId = 2;</code>
+     * <code>int32 OrgId = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearOrgId() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       orgId_ = 0;
       onChanged();
       return this;
@@ -537,7 +730,7 @@ private static final long serialVersionUID = 0L;
 
     private int userId_ ;
     /**
-     * <code>int32 UserId = 3;</code>
+     * <code>int32 UserId = 4;</code>
      * @return The userId.
      */
     @java.lang.Override
@@ -545,23 +738,23 @@ private static final long serialVersionUID = 0L;
       return userId_;
     }
     /**
-     * <code>int32 UserId = 3;</code>
+     * <code>int32 UserId = 4;</code>
      * @param value The userId to set.
      * @return This builder for chaining.
      */
     public Builder setUserId(int value) {
 
       userId_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
     /**
-     * <code>int32 UserId = 3;</code>
+     * <code>int32 UserId = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearUserId() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       userId_ = 0;
       onChanged();
       return this;

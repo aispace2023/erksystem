@@ -48,6 +48,7 @@ private static final long serialVersionUID = 0L;
             com.erksystem.protobuf.api.UpdateUserInfoRQ_m.class, com.erksystem.protobuf.api.UpdateUserInfoRQ_m.Builder.class);
   }
 
+  private int bitField0_;
   public static final int MSGTYPE_FIELD_NUMBER = 1;
   private int msgType_ = 0;
   /**
@@ -66,11 +67,37 @@ private static final long serialVersionUID = 0L;
     return result == null ? com.erksystem.protobuf.api.ErkMsgType_e.UNRECOGNIZED : result;
   }
 
-  public static final int ORGNAME_FIELD_NUMBER = 2;
+  public static final int QUEUEINFO_FIELD_NUMBER = 2;
+  private com.erksystem.protobuf.api.QueueInfo_s queueInfo_;
+  /**
+   * <code>.QueueInfo_s QueueInfo = 2;</code>
+   * @return Whether the queueInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasQueueInfo() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   * <code>.QueueInfo_s QueueInfo = 2;</code>
+   * @return The queueInfo.
+   */
+  @java.lang.Override
+  public com.erksystem.protobuf.api.QueueInfo_s getQueueInfo() {
+    return queueInfo_ == null ? com.erksystem.protobuf.api.QueueInfo_s.getDefaultInstance() : queueInfo_;
+  }
+  /**
+   * <code>.QueueInfo_s QueueInfo = 2;</code>
+   */
+  @java.lang.Override
+  public com.erksystem.protobuf.api.QueueInfo_sOrBuilder getQueueInfoOrBuilder() {
+    return queueInfo_ == null ? com.erksystem.protobuf.api.QueueInfo_s.getDefaultInstance() : queueInfo_;
+  }
+
+  public static final int ORGNAME_FIELD_NUMBER = 3;
   @SuppressWarnings("serial")
   private volatile java.lang.Object orgName_ = "";
   /**
-   * <code>string OrgName = 2;</code>
+   * <code>string OrgName = 3;</code>
    * @return The orgName.
    */
   @java.lang.Override
@@ -87,7 +114,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string OrgName = 2;</code>
+   * <code>string OrgName = 3;</code>
    * @return The bytes for orgName.
    */
   @java.lang.Override
@@ -105,11 +132,11 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int USERNAME_FIELD_NUMBER = 3;
+  public static final int USERNAME_FIELD_NUMBER = 4;
   @SuppressWarnings("serial")
   private volatile java.lang.Object userName_ = "";
   /**
-   * <code>string UserName = 3;</code>
+   * <code>string UserName = 4;</code>
    * @return The userName.
    */
   @java.lang.Override
@@ -126,7 +153,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string UserName = 3;</code>
+   * <code>string UserName = 4;</code>
    * @return The bytes for userName.
    */
   @java.lang.Override
@@ -144,11 +171,11 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int OLD_USERPWD_FIELD_NUMBER = 4;
+  public static final int OLD_USERPWD_FIELD_NUMBER = 5;
   @SuppressWarnings("serial")
   private volatile java.lang.Object oldUserPwd_ = "";
   /**
-   * <code>string Old_UserPwd = 4;</code>
+   * <code>string Old_UserPwd = 5;</code>
    * @return The oldUserPwd.
    */
   @java.lang.Override
@@ -165,7 +192,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string Old_UserPwd = 4;</code>
+   * <code>string Old_UserPwd = 5;</code>
    * @return The bytes for oldUserPwd.
    */
   @java.lang.Override
@@ -183,11 +210,11 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int OLD_SERVICEDURATION_FIELD_NUMBER = 5;
+  public static final int OLD_SERVICEDURATION_FIELD_NUMBER = 6;
   @SuppressWarnings("serial")
   private volatile java.lang.Object oldServiceDuration_ = "";
   /**
-   * <code>string Old_ServiceDuration = 5;</code>
+   * <code>string Old_ServiceDuration = 6;</code>
    * @return The oldServiceDuration.
    */
   @java.lang.Override
@@ -204,7 +231,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string Old_ServiceDuration = 5;</code>
+   * <code>string Old_ServiceDuration = 6;</code>
    * @return The bytes for oldServiceDuration.
    */
   @java.lang.Override
@@ -222,10 +249,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int OLD_AGE_FIELD_NUMBER = 6;
+  public static final int OLD_AGE_FIELD_NUMBER = 7;
   private int oldAge_ = 0;
   /**
-   * <code>int32 Old_Age = 6;</code>
+   * <code>int32 Old_Age = 7;</code>
    * @return The oldAge.
    */
   @java.lang.Override
@@ -233,10 +260,10 @@ private static final long serialVersionUID = 0L;
     return oldAge_;
   }
 
-  public static final int OLD_SEX_FIELD_NUMBER = 7;
+  public static final int OLD_SEX_FIELD_NUMBER = 8;
   private int oldSex_ = 0;
   /**
-   * <code>int32 Old_Sex = 7;</code>
+   * <code>int32 Old_Sex = 8;</code>
    * @return The oldSex.
    */
   @java.lang.Override
@@ -244,10 +271,10 @@ private static final long serialVersionUID = 0L;
     return oldSex_;
   }
 
-  public static final int OLD_USERTYPE_FIELD_NUMBER = 8;
+  public static final int OLD_USERTYPE_FIELD_NUMBER = 9;
   private int oldUserType_ = 0;
   /**
-   * <code>int32 Old_UserType = 8;</code>
+   * <code>int32 Old_UserType = 9;</code>
    * @return The oldUserType.
    */
   @java.lang.Override
@@ -255,17 +282,17 @@ private static final long serialVersionUID = 0L;
     return oldUserType_;
   }
 
-  public static final int OLD_SERVICETYPE_FIELD_NUMBER = 9;
+  public static final int OLD_SERVICETYPE_FIELD_NUMBER = 10;
   private int oldServiceType_ = 0;
   /**
-   * <code>.ServiceType_e Old_ServiceType = 9;</code>
+   * <code>.ServiceType_e Old_ServiceType = 10;</code>
    * @return The enum numeric value on the wire for oldServiceType.
    */
   @java.lang.Override public int getOldServiceTypeValue() {
     return oldServiceType_;
   }
   /**
-   * <code>.ServiceType_e Old_ServiceType = 9;</code>
+   * <code>.ServiceType_e Old_ServiceType = 10;</code>
    * @return The oldServiceType.
    */
   @java.lang.Override public com.erksystem.protobuf.api.ServiceType_e getOldServiceType() {
@@ -273,11 +300,11 @@ private static final long serialVersionUID = 0L;
     return result == null ? com.erksystem.protobuf.api.ServiceType_e.UNRECOGNIZED : result;
   }
 
-  public static final int NEW_USERPWD_FIELD_NUMBER = 10;
+  public static final int NEW_USERPWD_FIELD_NUMBER = 11;
   @SuppressWarnings("serial")
   private volatile java.lang.Object newUserPwd_ = "";
   /**
-   * <code>string New_UserPwd = 10;</code>
+   * <code>string New_UserPwd = 11;</code>
    * @return The newUserPwd.
    */
   @java.lang.Override
@@ -294,7 +321,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string New_UserPwd = 10;</code>
+   * <code>string New_UserPwd = 11;</code>
    * @return The bytes for newUserPwd.
    */
   @java.lang.Override
@@ -312,11 +339,11 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int NEW_SERVICEDURATION_FIELD_NUMBER = 11;
+  public static final int NEW_SERVICEDURATION_FIELD_NUMBER = 12;
   @SuppressWarnings("serial")
   private volatile java.lang.Object newServiceDuration_ = "";
   /**
-   * <code>string New_ServiceDuration = 11;</code>
+   * <code>string New_ServiceDuration = 12;</code>
    * @return The newServiceDuration.
    */
   @java.lang.Override
@@ -333,7 +360,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string New_ServiceDuration = 11;</code>
+   * <code>string New_ServiceDuration = 12;</code>
    * @return The bytes for newServiceDuration.
    */
   @java.lang.Override
@@ -351,10 +378,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int NEW_AGE_FIELD_NUMBER = 12;
+  public static final int NEW_AGE_FIELD_NUMBER = 13;
   private int newAge_ = 0;
   /**
-   * <code>int32 New_Age = 12;</code>
+   * <code>int32 New_Age = 13;</code>
    * @return The newAge.
    */
   @java.lang.Override
@@ -362,10 +389,10 @@ private static final long serialVersionUID = 0L;
     return newAge_;
   }
 
-  public static final int NEW_SEX_FIELD_NUMBER = 13;
+  public static final int NEW_SEX_FIELD_NUMBER = 14;
   private int newSex_ = 0;
   /**
-   * <code>int32 New_Sex = 13;</code>
+   * <code>int32 New_Sex = 14;</code>
    * @return The newSex.
    */
   @java.lang.Override
@@ -373,10 +400,10 @@ private static final long serialVersionUID = 0L;
     return newSex_;
   }
 
-  public static final int NEW_USERTYPE_FIELD_NUMBER = 14;
+  public static final int NEW_USERTYPE_FIELD_NUMBER = 15;
   private int newUserType_ = 0;
   /**
-   * <code>int32 New_UserType = 14;</code>
+   * <code>int32 New_UserType = 15;</code>
    * @return The newUserType.
    */
   @java.lang.Override
@@ -384,17 +411,17 @@ private static final long serialVersionUID = 0L;
     return newUserType_;
   }
 
-  public static final int NEW_SERVICETYPE_FIELD_NUMBER = 15;
+  public static final int NEW_SERVICETYPE_FIELD_NUMBER = 16;
   private int newServiceType_ = 0;
   /**
-   * <code>.ServiceType_e New_ServiceType = 15;</code>
+   * <code>.ServiceType_e New_ServiceType = 16;</code>
    * @return The enum numeric value on the wire for newServiceType.
    */
   @java.lang.Override public int getNewServiceTypeValue() {
     return newServiceType_;
   }
   /**
-   * <code>.ServiceType_e New_ServiceType = 15;</code>
+   * <code>.ServiceType_e New_ServiceType = 16;</code>
    * @return The newServiceType.
    */
   @java.lang.Override public com.erksystem.protobuf.api.ServiceType_e getNewServiceType() {
@@ -419,47 +446,50 @@ private static final long serialVersionUID = 0L;
     if (msgType_ != com.erksystem.protobuf.api.ErkMsgType_e.ErkMsgType_unknown.getNumber()) {
       output.writeEnum(1, msgType_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(2, getQueueInfo());
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(orgName_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, orgName_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, orgName_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userName_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, userName_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, userName_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(oldUserPwd_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, oldUserPwd_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, oldUserPwd_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(oldServiceDuration_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, oldServiceDuration_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, oldServiceDuration_);
     }
     if (oldAge_ != 0) {
-      output.writeInt32(6, oldAge_);
+      output.writeInt32(7, oldAge_);
     }
     if (oldSex_ != 0) {
-      output.writeInt32(7, oldSex_);
+      output.writeInt32(8, oldSex_);
     }
     if (oldUserType_ != 0) {
-      output.writeInt32(8, oldUserType_);
+      output.writeInt32(9, oldUserType_);
     }
     if (oldServiceType_ != com.erksystem.protobuf.api.ServiceType_e.ServiceType_unknown.getNumber()) {
-      output.writeEnum(9, oldServiceType_);
+      output.writeEnum(10, oldServiceType_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(newUserPwd_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, newUserPwd_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, newUserPwd_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(newServiceDuration_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, newServiceDuration_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, newServiceDuration_);
     }
     if (newAge_ != 0) {
-      output.writeInt32(12, newAge_);
+      output.writeInt32(13, newAge_);
     }
     if (newSex_ != 0) {
-      output.writeInt32(13, newSex_);
+      output.writeInt32(14, newSex_);
     }
     if (newUserType_ != 0) {
-      output.writeInt32(14, newUserType_);
+      output.writeInt32(15, newUserType_);
     }
     if (newServiceType_ != com.erksystem.protobuf.api.ServiceType_e.ServiceType_unknown.getNumber()) {
-      output.writeEnum(15, newServiceType_);
+      output.writeEnum(16, newServiceType_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -474,55 +504,59 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(1, msgType_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(2, getQueueInfo());
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(orgName_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, orgName_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, orgName_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userName_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, userName_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, userName_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(oldUserPwd_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, oldUserPwd_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, oldUserPwd_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(oldServiceDuration_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, oldServiceDuration_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, oldServiceDuration_);
     }
     if (oldAge_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(6, oldAge_);
+        .computeInt32Size(7, oldAge_);
     }
     if (oldSex_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(7, oldSex_);
+        .computeInt32Size(8, oldSex_);
     }
     if (oldUserType_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(8, oldUserType_);
+        .computeInt32Size(9, oldUserType_);
     }
     if (oldServiceType_ != com.erksystem.protobuf.api.ServiceType_e.ServiceType_unknown.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(9, oldServiceType_);
+        .computeEnumSize(10, oldServiceType_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(newUserPwd_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, newUserPwd_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, newUserPwd_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(newServiceDuration_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, newServiceDuration_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, newServiceDuration_);
     }
     if (newAge_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(12, newAge_);
+        .computeInt32Size(13, newAge_);
     }
     if (newSex_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(13, newSex_);
+        .computeInt32Size(14, newSex_);
     }
     if (newUserType_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(14, newUserType_);
+        .computeInt32Size(15, newUserType_);
     }
     if (newServiceType_ != com.erksystem.protobuf.api.ServiceType_e.ServiceType_unknown.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(15, newServiceType_);
+        .computeEnumSize(16, newServiceType_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -540,6 +574,11 @@ private static final long serialVersionUID = 0L;
     com.erksystem.protobuf.api.UpdateUserInfoRQ_m other = (com.erksystem.protobuf.api.UpdateUserInfoRQ_m) obj;
 
     if (msgType_ != other.msgType_) return false;
+    if (hasQueueInfo() != other.hasQueueInfo()) return false;
+    if (hasQueueInfo()) {
+      if (!getQueueInfo()
+          .equals(other.getQueueInfo())) return false;
+    }
     if (!getOrgName()
         .equals(other.getOrgName())) return false;
     if (!getUserName()
@@ -579,6 +618,10 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + MSGTYPE_FIELD_NUMBER;
     hash = (53 * hash) + msgType_;
+    if (hasQueueInfo()) {
+      hash = (37 * hash) + QUEUEINFO_FIELD_NUMBER;
+      hash = (53 * hash) + getQueueInfo().hashCode();
+    }
     hash = (37 * hash) + ORGNAME_FIELD_NUMBER;
     hash = (53 * hash) + getOrgName().hashCode();
     hash = (37 * hash) + USERNAME_FIELD_NUMBER;
@@ -726,19 +769,30 @@ private static final long serialVersionUID = 0L;
 
     // Construct using com.erksystem.protobuf.api.UpdateUserInfoRQ_m.newBuilder()
     private Builder() {
-
+      maybeForceBuilderInitialization();
     }
 
     private Builder(
         com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
-
+      maybeForceBuilderInitialization();
+    }
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3
+              .alwaysUseFieldBuilders) {
+        getQueueInfoFieldBuilder();
+      }
     }
     @java.lang.Override
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
       msgType_ = 0;
+      queueInfo_ = null;
+      if (queueInfoBuilder_ != null) {
+        queueInfoBuilder_.dispose();
+        queueInfoBuilder_ = null;
+      }
       orgName_ = "";
       userName_ = "";
       oldUserPwd_ = "";
@@ -789,48 +843,56 @@ private static final long serialVersionUID = 0L;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.msgType_ = msgType_;
       }
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.orgName_ = orgName_;
+        result.queueInfo_ = queueInfoBuilder_ == null
+            ? queueInfo_
+            : queueInfoBuilder_.build();
+        to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.userName_ = userName_;
+        result.orgName_ = orgName_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.oldUserPwd_ = oldUserPwd_;
+        result.userName_ = userName_;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.oldServiceDuration_ = oldServiceDuration_;
+        result.oldUserPwd_ = oldUserPwd_;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.oldAge_ = oldAge_;
+        result.oldServiceDuration_ = oldServiceDuration_;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.oldSex_ = oldSex_;
+        result.oldAge_ = oldAge_;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.oldUserType_ = oldUserType_;
+        result.oldSex_ = oldSex_;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.oldServiceType_ = oldServiceType_;
+        result.oldUserType_ = oldUserType_;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.newUserPwd_ = newUserPwd_;
+        result.oldServiceType_ = oldServiceType_;
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
-        result.newServiceDuration_ = newServiceDuration_;
+        result.newUserPwd_ = newUserPwd_;
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.newAge_ = newAge_;
+        result.newServiceDuration_ = newServiceDuration_;
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
-        result.newSex_ = newSex_;
+        result.newAge_ = newAge_;
       }
       if (((from_bitField0_ & 0x00002000) != 0)) {
-        result.newUserType_ = newUserType_;
+        result.newSex_ = newSex_;
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.newUserType_ = newUserType_;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.newServiceType_ = newServiceType_;
       }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -880,24 +942,27 @@ private static final long serialVersionUID = 0L;
       if (other.msgType_ != 0) {
         setMsgTypeValue(other.getMsgTypeValue());
       }
+      if (other.hasQueueInfo()) {
+        mergeQueueInfo(other.getQueueInfo());
+      }
       if (!other.getOrgName().isEmpty()) {
         orgName_ = other.orgName_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getUserName().isEmpty()) {
         userName_ = other.userName_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getOldUserPwd().isEmpty()) {
         oldUserPwd_ = other.oldUserPwd_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (!other.getOldServiceDuration().isEmpty()) {
         oldServiceDuration_ = other.oldServiceDuration_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (other.getOldAge() != 0) {
@@ -914,12 +979,12 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getNewUserPwd().isEmpty()) {
         newUserPwd_ = other.newUserPwd_;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (!other.getNewServiceDuration().isEmpty()) {
         newServiceDuration_ = other.newServiceDuration_;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       if (other.getNewAge() != 0) {
@@ -966,75 +1031,82 @@ private static final long serialVersionUID = 0L;
               break;
             } // case 8
             case 18: {
-              orgName_ = input.readStringRequireUtf8();
+              input.readMessage(
+                  getQueueInfoFieldBuilder().getBuilder(),
+                  extensionRegistry);
               bitField0_ |= 0x00000002;
               break;
             } // case 18
             case 26: {
-              userName_ = input.readStringRequireUtf8();
+              orgName_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000004;
               break;
             } // case 26
             case 34: {
-              oldUserPwd_ = input.readStringRequireUtf8();
+              userName_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000008;
               break;
             } // case 34
             case 42: {
-              oldServiceDuration_ = input.readStringRequireUtf8();
+              oldUserPwd_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000010;
               break;
             } // case 42
-            case 48: {
-              oldAge_ = input.readInt32();
+            case 50: {
+              oldServiceDuration_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000020;
               break;
-            } // case 48
+            } // case 50
             case 56: {
-              oldSex_ = input.readInt32();
+              oldAge_ = input.readInt32();
               bitField0_ |= 0x00000040;
               break;
             } // case 56
             case 64: {
-              oldUserType_ = input.readInt32();
+              oldSex_ = input.readInt32();
               bitField0_ |= 0x00000080;
               break;
             } // case 64
             case 72: {
-              oldServiceType_ = input.readEnum();
+              oldUserType_ = input.readInt32();
               bitField0_ |= 0x00000100;
               break;
             } // case 72
-            case 82: {
-              newUserPwd_ = input.readStringRequireUtf8();
+            case 80: {
+              oldServiceType_ = input.readEnum();
               bitField0_ |= 0x00000200;
               break;
-            } // case 82
+            } // case 80
             case 90: {
-              newServiceDuration_ = input.readStringRequireUtf8();
+              newUserPwd_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000400;
               break;
             } // case 90
-            case 96: {
-              newAge_ = input.readInt32();
+            case 98: {
+              newServiceDuration_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000800;
               break;
-            } // case 96
+            } // case 98
             case 104: {
-              newSex_ = input.readInt32();
+              newAge_ = input.readInt32();
               bitField0_ |= 0x00001000;
               break;
             } // case 104
             case 112: {
-              newUserType_ = input.readInt32();
+              newSex_ = input.readInt32();
               bitField0_ |= 0x00002000;
               break;
             } // case 112
             case 120: {
-              newServiceType_ = input.readEnum();
+              newUserType_ = input.readInt32();
               bitField0_ |= 0x00004000;
               break;
             } // case 120
+            case 128: {
+              newServiceType_ = input.readEnum();
+              bitField0_ |= 0x00008000;
+              break;
+            } // case 128
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1105,9 +1177,130 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private com.erksystem.protobuf.api.QueueInfo_s queueInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.erksystem.protobuf.api.QueueInfo_s, com.erksystem.protobuf.api.QueueInfo_s.Builder, com.erksystem.protobuf.api.QueueInfo_sOrBuilder> queueInfoBuilder_;
+    /**
+     * <code>.QueueInfo_s QueueInfo = 2;</code>
+     * @return Whether the queueInfo field is set.
+     */
+    public boolean hasQueueInfo() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <code>.QueueInfo_s QueueInfo = 2;</code>
+     * @return The queueInfo.
+     */
+    public com.erksystem.protobuf.api.QueueInfo_s getQueueInfo() {
+      if (queueInfoBuilder_ == null) {
+        return queueInfo_ == null ? com.erksystem.protobuf.api.QueueInfo_s.getDefaultInstance() : queueInfo_;
+      } else {
+        return queueInfoBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.QueueInfo_s QueueInfo = 2;</code>
+     */
+    public Builder setQueueInfo(com.erksystem.protobuf.api.QueueInfo_s value) {
+      if (queueInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        queueInfo_ = value;
+      } else {
+        queueInfoBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.QueueInfo_s QueueInfo = 2;</code>
+     */
+    public Builder setQueueInfo(
+        com.erksystem.protobuf.api.QueueInfo_s.Builder builderForValue) {
+      if (queueInfoBuilder_ == null) {
+        queueInfo_ = builderForValue.build();
+      } else {
+        queueInfoBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.QueueInfo_s QueueInfo = 2;</code>
+     */
+    public Builder mergeQueueInfo(com.erksystem.protobuf.api.QueueInfo_s value) {
+      if (queueInfoBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0) &&
+          queueInfo_ != null &&
+          queueInfo_ != com.erksystem.protobuf.api.QueueInfo_s.getDefaultInstance()) {
+          getQueueInfoBuilder().mergeFrom(value);
+        } else {
+          queueInfo_ = value;
+        }
+      } else {
+        queueInfoBuilder_.mergeFrom(value);
+      }
+      if (queueInfo_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>.QueueInfo_s QueueInfo = 2;</code>
+     */
+    public Builder clearQueueInfo() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      queueInfo_ = null;
+      if (queueInfoBuilder_ != null) {
+        queueInfoBuilder_.dispose();
+        queueInfoBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.QueueInfo_s QueueInfo = 2;</code>
+     */
+    public com.erksystem.protobuf.api.QueueInfo_s.Builder getQueueInfoBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return getQueueInfoFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.QueueInfo_s QueueInfo = 2;</code>
+     */
+    public com.erksystem.protobuf.api.QueueInfo_sOrBuilder getQueueInfoOrBuilder() {
+      if (queueInfoBuilder_ != null) {
+        return queueInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return queueInfo_ == null ?
+            com.erksystem.protobuf.api.QueueInfo_s.getDefaultInstance() : queueInfo_;
+      }
+    }
+    /**
+     * <code>.QueueInfo_s QueueInfo = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.erksystem.protobuf.api.QueueInfo_s, com.erksystem.protobuf.api.QueueInfo_s.Builder, com.erksystem.protobuf.api.QueueInfo_sOrBuilder> 
+        getQueueInfoFieldBuilder() {
+      if (queueInfoBuilder_ == null) {
+        queueInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.erksystem.protobuf.api.QueueInfo_s, com.erksystem.protobuf.api.QueueInfo_s.Builder, com.erksystem.protobuf.api.QueueInfo_sOrBuilder>(
+                getQueueInfo(),
+                getParentForChildren(),
+                isClean());
+        queueInfo_ = null;
+      }
+      return queueInfoBuilder_;
+    }
+
     private java.lang.Object orgName_ = "";
     /**
-     * <code>string OrgName = 2;</code>
+     * <code>string OrgName = 3;</code>
      * @return The orgName.
      */
     public java.lang.String getOrgName() {
@@ -1123,7 +1316,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string OrgName = 2;</code>
+     * <code>string OrgName = 3;</code>
      * @return The bytes for orgName.
      */
     public com.google.protobuf.ByteString
@@ -1140,7 +1333,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string OrgName = 2;</code>
+     * <code>string OrgName = 3;</code>
      * @param value The orgName to set.
      * @return This builder for chaining.
      */
@@ -1148,22 +1341,22 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       orgName_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
     /**
-     * <code>string OrgName = 2;</code>
+     * <code>string OrgName = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearOrgName() {
       orgName_ = getDefaultInstance().getOrgName();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
     /**
-     * <code>string OrgName = 2;</code>
+     * <code>string OrgName = 3;</code>
      * @param value The bytes for orgName to set.
      * @return This builder for chaining.
      */
@@ -1172,14 +1365,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       orgName_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
 
     private java.lang.Object userName_ = "";
     /**
-     * <code>string UserName = 3;</code>
+     * <code>string UserName = 4;</code>
      * @return The userName.
      */
     public java.lang.String getUserName() {
@@ -1195,7 +1388,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string UserName = 3;</code>
+     * <code>string UserName = 4;</code>
      * @return The bytes for userName.
      */
     public com.google.protobuf.ByteString
@@ -1212,7 +1405,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string UserName = 3;</code>
+     * <code>string UserName = 4;</code>
      * @param value The userName to set.
      * @return This builder for chaining.
      */
@@ -1220,22 +1413,22 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       userName_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
     /**
-     * <code>string UserName = 3;</code>
+     * <code>string UserName = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearUserName() {
       userName_ = getDefaultInstance().getUserName();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
     /**
-     * <code>string UserName = 3;</code>
+     * <code>string UserName = 4;</code>
      * @param value The bytes for userName to set.
      * @return This builder for chaining.
      */
@@ -1244,14 +1437,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       userName_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
 
     private java.lang.Object oldUserPwd_ = "";
     /**
-     * <code>string Old_UserPwd = 4;</code>
+     * <code>string Old_UserPwd = 5;</code>
      * @return The oldUserPwd.
      */
     public java.lang.String getOldUserPwd() {
@@ -1267,7 +1460,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string Old_UserPwd = 4;</code>
+     * <code>string Old_UserPwd = 5;</code>
      * @return The bytes for oldUserPwd.
      */
     public com.google.protobuf.ByteString
@@ -1284,7 +1477,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string Old_UserPwd = 4;</code>
+     * <code>string Old_UserPwd = 5;</code>
      * @param value The oldUserPwd to set.
      * @return This builder for chaining.
      */
@@ -1292,22 +1485,22 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       oldUserPwd_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
     /**
-     * <code>string Old_UserPwd = 4;</code>
+     * <code>string Old_UserPwd = 5;</code>
      * @return This builder for chaining.
      */
     public Builder clearOldUserPwd() {
       oldUserPwd_ = getDefaultInstance().getOldUserPwd();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
     /**
-     * <code>string Old_UserPwd = 4;</code>
+     * <code>string Old_UserPwd = 5;</code>
      * @param value The bytes for oldUserPwd to set.
      * @return This builder for chaining.
      */
@@ -1316,14 +1509,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       oldUserPwd_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
 
     private java.lang.Object oldServiceDuration_ = "";
     /**
-     * <code>string Old_ServiceDuration = 5;</code>
+     * <code>string Old_ServiceDuration = 6;</code>
      * @return The oldServiceDuration.
      */
     public java.lang.String getOldServiceDuration() {
@@ -1339,7 +1532,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string Old_ServiceDuration = 5;</code>
+     * <code>string Old_ServiceDuration = 6;</code>
      * @return The bytes for oldServiceDuration.
      */
     public com.google.protobuf.ByteString
@@ -1356,7 +1549,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string Old_ServiceDuration = 5;</code>
+     * <code>string Old_ServiceDuration = 6;</code>
      * @param value The oldServiceDuration to set.
      * @return This builder for chaining.
      */
@@ -1364,22 +1557,22 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       oldServiceDuration_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
     /**
-     * <code>string Old_ServiceDuration = 5;</code>
+     * <code>string Old_ServiceDuration = 6;</code>
      * @return This builder for chaining.
      */
     public Builder clearOldServiceDuration() {
       oldServiceDuration_ = getDefaultInstance().getOldServiceDuration();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
     /**
-     * <code>string Old_ServiceDuration = 5;</code>
+     * <code>string Old_ServiceDuration = 6;</code>
      * @param value The bytes for oldServiceDuration to set.
      * @return This builder for chaining.
      */
@@ -1388,14 +1581,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       oldServiceDuration_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
 
     private int oldAge_ ;
     /**
-     * <code>int32 Old_Age = 6;</code>
+     * <code>int32 Old_Age = 7;</code>
      * @return The oldAge.
      */
     @java.lang.Override
@@ -1403,23 +1596,23 @@ private static final long serialVersionUID = 0L;
       return oldAge_;
     }
     /**
-     * <code>int32 Old_Age = 6;</code>
+     * <code>int32 Old_Age = 7;</code>
      * @param value The oldAge to set.
      * @return This builder for chaining.
      */
     public Builder setOldAge(int value) {
 
       oldAge_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
     /**
-     * <code>int32 Old_Age = 6;</code>
+     * <code>int32 Old_Age = 7;</code>
      * @return This builder for chaining.
      */
     public Builder clearOldAge() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       oldAge_ = 0;
       onChanged();
       return this;
@@ -1427,7 +1620,7 @@ private static final long serialVersionUID = 0L;
 
     private int oldSex_ ;
     /**
-     * <code>int32 Old_Sex = 7;</code>
+     * <code>int32 Old_Sex = 8;</code>
      * @return The oldSex.
      */
     @java.lang.Override
@@ -1435,23 +1628,23 @@ private static final long serialVersionUID = 0L;
       return oldSex_;
     }
     /**
-     * <code>int32 Old_Sex = 7;</code>
+     * <code>int32 Old_Sex = 8;</code>
      * @param value The oldSex to set.
      * @return This builder for chaining.
      */
     public Builder setOldSex(int value) {
 
       oldSex_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
     /**
-     * <code>int32 Old_Sex = 7;</code>
+     * <code>int32 Old_Sex = 8;</code>
      * @return This builder for chaining.
      */
     public Builder clearOldSex() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       oldSex_ = 0;
       onChanged();
       return this;
@@ -1459,7 +1652,7 @@ private static final long serialVersionUID = 0L;
 
     private int oldUserType_ ;
     /**
-     * <code>int32 Old_UserType = 8;</code>
+     * <code>int32 Old_UserType = 9;</code>
      * @return The oldUserType.
      */
     @java.lang.Override
@@ -1467,23 +1660,23 @@ private static final long serialVersionUID = 0L;
       return oldUserType_;
     }
     /**
-     * <code>int32 Old_UserType = 8;</code>
+     * <code>int32 Old_UserType = 9;</code>
      * @param value The oldUserType to set.
      * @return This builder for chaining.
      */
     public Builder setOldUserType(int value) {
 
       oldUserType_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
     /**
-     * <code>int32 Old_UserType = 8;</code>
+     * <code>int32 Old_UserType = 9;</code>
      * @return This builder for chaining.
      */
     public Builder clearOldUserType() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       oldUserType_ = 0;
       onChanged();
       return this;
@@ -1491,25 +1684,25 @@ private static final long serialVersionUID = 0L;
 
     private int oldServiceType_ = 0;
     /**
-     * <code>.ServiceType_e Old_ServiceType = 9;</code>
+     * <code>.ServiceType_e Old_ServiceType = 10;</code>
      * @return The enum numeric value on the wire for oldServiceType.
      */
     @java.lang.Override public int getOldServiceTypeValue() {
       return oldServiceType_;
     }
     /**
-     * <code>.ServiceType_e Old_ServiceType = 9;</code>
+     * <code>.ServiceType_e Old_ServiceType = 10;</code>
      * @param value The enum numeric value on the wire for oldServiceType to set.
      * @return This builder for chaining.
      */
     public Builder setOldServiceTypeValue(int value) {
       oldServiceType_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
     /**
-     * <code>.ServiceType_e Old_ServiceType = 9;</code>
+     * <code>.ServiceType_e Old_ServiceType = 10;</code>
      * @return The oldServiceType.
      */
     @java.lang.Override
@@ -1518,7 +1711,7 @@ private static final long serialVersionUID = 0L;
       return result == null ? com.erksystem.protobuf.api.ServiceType_e.UNRECOGNIZED : result;
     }
     /**
-     * <code>.ServiceType_e Old_ServiceType = 9;</code>
+     * <code>.ServiceType_e Old_ServiceType = 10;</code>
      * @param value The oldServiceType to set.
      * @return This builder for chaining.
      */
@@ -1526,17 +1719,17 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       oldServiceType_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
-     * <code>.ServiceType_e Old_ServiceType = 9;</code>
+     * <code>.ServiceType_e Old_ServiceType = 10;</code>
      * @return This builder for chaining.
      */
     public Builder clearOldServiceType() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       oldServiceType_ = 0;
       onChanged();
       return this;
@@ -1544,7 +1737,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object newUserPwd_ = "";
     /**
-     * <code>string New_UserPwd = 10;</code>
+     * <code>string New_UserPwd = 11;</code>
      * @return The newUserPwd.
      */
     public java.lang.String getNewUserPwd() {
@@ -1560,7 +1753,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string New_UserPwd = 10;</code>
+     * <code>string New_UserPwd = 11;</code>
      * @return The bytes for newUserPwd.
      */
     public com.google.protobuf.ByteString
@@ -1577,7 +1770,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string New_UserPwd = 10;</code>
+     * <code>string New_UserPwd = 11;</code>
      * @param value The newUserPwd to set.
      * @return This builder for chaining.
      */
@@ -1585,22 +1778,22 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       newUserPwd_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
     /**
-     * <code>string New_UserPwd = 10;</code>
+     * <code>string New_UserPwd = 11;</code>
      * @return This builder for chaining.
      */
     public Builder clearNewUserPwd() {
       newUserPwd_ = getDefaultInstance().getNewUserPwd();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
     /**
-     * <code>string New_UserPwd = 10;</code>
+     * <code>string New_UserPwd = 11;</code>
      * @param value The bytes for newUserPwd to set.
      * @return This builder for chaining.
      */
@@ -1609,14 +1802,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       newUserPwd_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
 
     private java.lang.Object newServiceDuration_ = "";
     /**
-     * <code>string New_ServiceDuration = 11;</code>
+     * <code>string New_ServiceDuration = 12;</code>
      * @return The newServiceDuration.
      */
     public java.lang.String getNewServiceDuration() {
@@ -1632,7 +1825,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string New_ServiceDuration = 11;</code>
+     * <code>string New_ServiceDuration = 12;</code>
      * @return The bytes for newServiceDuration.
      */
     public com.google.protobuf.ByteString
@@ -1649,7 +1842,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string New_ServiceDuration = 11;</code>
+     * <code>string New_ServiceDuration = 12;</code>
      * @param value The newServiceDuration to set.
      * @return This builder for chaining.
      */
@@ -1657,22 +1850,22 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       newServiceDuration_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
     /**
-     * <code>string New_ServiceDuration = 11;</code>
+     * <code>string New_ServiceDuration = 12;</code>
      * @return This builder for chaining.
      */
     public Builder clearNewServiceDuration() {
       newServiceDuration_ = getDefaultInstance().getNewServiceDuration();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       onChanged();
       return this;
     }
     /**
-     * <code>string New_ServiceDuration = 11;</code>
+     * <code>string New_ServiceDuration = 12;</code>
      * @param value The bytes for newServiceDuration to set.
      * @return This builder for chaining.
      */
@@ -1681,14 +1874,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       newServiceDuration_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
 
     private int newAge_ ;
     /**
-     * <code>int32 New_Age = 12;</code>
+     * <code>int32 New_Age = 13;</code>
      * @return The newAge.
      */
     @java.lang.Override
@@ -1696,23 +1889,23 @@ private static final long serialVersionUID = 0L;
       return newAge_;
     }
     /**
-     * <code>int32 New_Age = 12;</code>
+     * <code>int32 New_Age = 13;</code>
      * @param value The newAge to set.
      * @return This builder for chaining.
      */
     public Builder setNewAge(int value) {
 
       newAge_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
     /**
-     * <code>int32 New_Age = 12;</code>
+     * <code>int32 New_Age = 13;</code>
      * @return This builder for chaining.
      */
     public Builder clearNewAge() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       newAge_ = 0;
       onChanged();
       return this;
@@ -1720,7 +1913,7 @@ private static final long serialVersionUID = 0L;
 
     private int newSex_ ;
     /**
-     * <code>int32 New_Sex = 13;</code>
+     * <code>int32 New_Sex = 14;</code>
      * @return The newSex.
      */
     @java.lang.Override
@@ -1728,23 +1921,23 @@ private static final long serialVersionUID = 0L;
       return newSex_;
     }
     /**
-     * <code>int32 New_Sex = 13;</code>
+     * <code>int32 New_Sex = 14;</code>
      * @param value The newSex to set.
      * @return This builder for chaining.
      */
     public Builder setNewSex(int value) {
 
       newSex_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
     /**
-     * <code>int32 New_Sex = 13;</code>
+     * <code>int32 New_Sex = 14;</code>
      * @return This builder for chaining.
      */
     public Builder clearNewSex() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       newSex_ = 0;
       onChanged();
       return this;
@@ -1752,7 +1945,7 @@ private static final long serialVersionUID = 0L;
 
     private int newUserType_ ;
     /**
-     * <code>int32 New_UserType = 14;</code>
+     * <code>int32 New_UserType = 15;</code>
      * @return The newUserType.
      */
     @java.lang.Override
@@ -1760,23 +1953,23 @@ private static final long serialVersionUID = 0L;
       return newUserType_;
     }
     /**
-     * <code>int32 New_UserType = 14;</code>
+     * <code>int32 New_UserType = 15;</code>
      * @param value The newUserType to set.
      * @return This builder for chaining.
      */
     public Builder setNewUserType(int value) {
 
       newUserType_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
     /**
-     * <code>int32 New_UserType = 14;</code>
+     * <code>int32 New_UserType = 15;</code>
      * @return This builder for chaining.
      */
     public Builder clearNewUserType() {
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       newUserType_ = 0;
       onChanged();
       return this;
@@ -1784,25 +1977,25 @@ private static final long serialVersionUID = 0L;
 
     private int newServiceType_ = 0;
     /**
-     * <code>.ServiceType_e New_ServiceType = 15;</code>
+     * <code>.ServiceType_e New_ServiceType = 16;</code>
      * @return The enum numeric value on the wire for newServiceType.
      */
     @java.lang.Override public int getNewServiceTypeValue() {
       return newServiceType_;
     }
     /**
-     * <code>.ServiceType_e New_ServiceType = 15;</code>
+     * <code>.ServiceType_e New_ServiceType = 16;</code>
      * @param value The enum numeric value on the wire for newServiceType to set.
      * @return This builder for chaining.
      */
     public Builder setNewServiceTypeValue(int value) {
       newServiceType_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
     /**
-     * <code>.ServiceType_e New_ServiceType = 15;</code>
+     * <code>.ServiceType_e New_ServiceType = 16;</code>
      * @return The newServiceType.
      */
     @java.lang.Override
@@ -1811,7 +2004,7 @@ private static final long serialVersionUID = 0L;
       return result == null ? com.erksystem.protobuf.api.ServiceType_e.UNRECOGNIZED : result;
     }
     /**
-     * <code>.ServiceType_e New_ServiceType = 15;</code>
+     * <code>.ServiceType_e New_ServiceType = 16;</code>
      * @param value The newServiceType to set.
      * @return This builder for chaining.
      */
@@ -1819,17 +2012,17 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       newServiceType_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
-     * <code>.ServiceType_e New_ServiceType = 15;</code>
+     * <code>.ServiceType_e New_ServiceType = 16;</code>
      * @return This builder for chaining.
      */
     public Builder clearNewServiceType() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       newServiceType_ = 0;
       onChanged();
       return this;

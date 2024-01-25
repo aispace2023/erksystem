@@ -20,47 +20,62 @@ public interface DelUserInfoRP_mOrBuilder extends
   com.erksystem.protobuf.api.ErkMsgType_e getMsgType();
 
   /**
-   * <code>string OrgName = 2;</code>
+   * <code>.QueueInfo_s QueueInfo = 2;</code>
+   * @return Whether the queueInfo field is set.
+   */
+  boolean hasQueueInfo();
+  /**
+   * <code>.QueueInfo_s QueueInfo = 2;</code>
+   * @return The queueInfo.
+   */
+  com.erksystem.protobuf.api.QueueInfo_s getQueueInfo();
+  /**
+   * <code>.QueueInfo_s QueueInfo = 2;</code>
+   */
+  com.erksystem.protobuf.api.QueueInfo_sOrBuilder getQueueInfoOrBuilder();
+
+  /**
+   * <code>string OrgName = 3;</code>
    * @return The orgName.
    */
   java.lang.String getOrgName();
   /**
-   * <code>string OrgName = 2;</code>
+   * <code>string OrgName = 3;</code>
    * @return The bytes for orgName.
    */
   com.google.protobuf.ByteString
       getOrgNameBytes();
 
   /**
-   * <code>string UserName = 3;</code>
+   * <code>string UserName = 4;</code>
    * @return The userName.
    */
   java.lang.String getUserName();
   /**
-   * <code>string UserName = 3;</code>
+   * <code>string UserName = 4;</code>
    * @return The bytes for userName.
    */
   com.google.protobuf.ByteString
       getUserNameBytes();
 
   /**
-   * <code>.UserProfileResult_e ResultType = 4;</code>
+   * <code>.UserProfileResult_e ResultType = 5;</code>
    * @return The enum numeric value on the wire for resultType.
    */
   int getResultTypeValue();
   /**
-   * <code>.UserProfileResult_e ResultType = 4;</code>
+   * <code>.UserProfileResult_e ResultType = 5;</code>
    * @return The resultType.
    */
   com.erksystem.protobuf.api.UserProfileResult_e getResultType();
 
   /**
-   * <code>string Return = 5;</code>
+   * <code>string Return = 6;</code>
    * @return The return.
    */
   java.lang.String getReturn();
   /**
-   * <code>string Return = 5;</code>
+   * <code>string Return = 6;</code>
    * @return The bytes for return.
    */
   com.google.protobuf.ByteString
