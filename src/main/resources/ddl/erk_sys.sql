@@ -3,9 +3,9 @@ use ERK_SYS;
 DROP TABLE IF EXISTS service_provider_tbl;
 CREATE TABLE service_provider_tbl (
     `org_id` INT(11) NOT NULL,
-    `org_name` VARCHAR(16) NOT NULL,
-    `org_pwd` VARCHAR(16) NOT NULL,
-    `service_duration` VARCHAR(8) NOT NULL,
+    `org_name` VARCHAR(32) NOT NULL,
+    `org_pwd` VARCHAR(32) NOT NULL,
+    `service_duration` CHAR(8) NOT NULL,
     `user_number` INT(11) NOT NULL,
     `service_type` VARCHAR(32) NOT NULL,
     `ts` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -16,15 +16,18 @@ CREATE TABLE service_provider_tbl (
 --FOREIGN KEY(`org_id`) REFERENCES service_provider_tbl(`org_id`),
 DROP TABLE IF EXISTS service_user_tbl;
 CREATE TABLE service_user_tbl (
-    `user_id` INT(11) NOT NULL,
     `org_id` INT(11) NOT NULL,
-    `user_name` VARCHAR(16),
-    `user_pwd` VARCHAR(16),
-    `service_duration` VARCHAR(8) NOT NULL,
+    `user_id` INT(11) NOT NULL,
+    `user_name` VARCHAR(32),
+    `user_pwd` VARCHAR(32),
+    `service_duration` CHAR(8) NOT NULL,
+    `user_number` INT(11),
     `age` TINYINT,
-    `user_type` VARCHAR(64),
+    `sex` TINYINT,
+    `mbti` VARCHAR(32),
+    `user_type` TINYINT,
     `service_type` VARCHAR(32) NOT NULL,
     `ts` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    PRIMARY KEY(`user_id`, `org_id`),
-    UNIQUE KEY service_user_tbl.idx1 (`user_name`)
+    PRIMARY KEY(`org_id`, `user_id`),
+    FOREIGN KEY(`org_id`) REFERENCES service_provider_tbl(`org_id`)
 );

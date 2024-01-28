@@ -1,6 +1,5 @@
 package com.aispace.erksystem.service.database.table;
 
-import com.aispace.erksystem.service.database.type.ServiceType;
 import lombok.Data;
 import org.hibernate.annotations.NaturalId;
 

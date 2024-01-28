@@ -39,7 +39,7 @@ public class DBManagerTest {
 
     void serviceProviderReadTest() {
         this.proceed = false;
-        ServiceProvider provider = ServiceProviderDAO.readbyName("유엔젤-테스트");
+        ServiceProvider provider = ServiceProviderDAO.read("유엔젤-테스트");
         System.out.println("provider = " + provider);
         this.proceed = true;
     }

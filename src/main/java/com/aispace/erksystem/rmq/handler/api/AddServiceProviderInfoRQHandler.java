@@ -2,12 +2,15 @@ package com.aispace.erksystem.rmq.handler.api;
 
 import com.aispace.erksystem.rmq.handler.base.RmqIncomingHandler;
 import com.aispace.erksystem.rmq.handler.base.RmqOutgoingHandler;
+import com.aispace.erksystem.rmq.handler.base.exception.RmqHandleException;
 import com.aispace.erksystem.service.database.ServiceProviderDAO;
 import com.aispace.erksystem.service.database.table.ServiceProvider;
 import com.aispace.erksystem.service.database.type.ServiceType;
 import com.erksystem.protobuf.api.AddServiceProviderInfoRP_m;
 import com.erksystem.protobuf.api.AddServiceProviderInfoRQ_m;
 import com.erksystem.protobuf.api.OrgProfileResult_e;
+
+import static com.erksystem.protobuf.api.OrgProfileResult_e.OrgProfileResult_nok_DB;
 
 
 /**
@@ -24,17 +27,18 @@ public class AddServiceProviderInfoRQHandler extends RmqIncomingHandler<AddServi
         provider.setServiceType(ServiceType.getName(msg.getServiceType().getNumber()));
 
         if (!ServiceProviderDAO.create(provider)) {
-            throw new IllegalStateException("FAIL");
+            throw new RmqHandleException(OrgProfileResult_nok_DB.getNumber(), "FAIL");
         }
 
         AddServiceProviderInfoRP_m res = AddServiceProviderInfoRP_m.newBuilder()
-                .setOrgId(provider.getOrgId())
-                .setOrgName(provider.getOrgName())
-                .setOrgPwd(provider.getOrgPwd())
-                .setServiceDuration(provider.getServiceDuration())
-                .setUserNumber(provider.getUserNumber())
+                .setQueueInfo(msg.getQueueInfo())
+                .setOrgName(msg.getOrgName())
+                .setOrgPwd(msg.getOrgPwd())
+                .setServiceDuration(msg.getServiceDuration())
+                .setUserNumber(msg.getUserNumber())
                 .setServiceType(msg.getServiceType())
                 .setResultType(OrgProfileResult_e.OrgProfileResult_ok)
+                .setOrgId(provider.getOrgId())
                 .build();
 
         RmqOutgoingHandler.sendErkApiMsg2API(res);
@@ -43,13 +47,13 @@ public class AddServiceProviderInfoRQHandler extends RmqIncomingHandler<AddServi
     @Override
     protected void onFail(int reasonCode, String reason) {
         AddServiceProviderInfoRP_m res = AddServiceProviderInfoRP_m.newBuilder()
+                .setQueueInfo(msg.getQueueInfo())
                 .setOrgName(msg.getOrgName())
                 .setOrgPwd(msg.getOrgPwd())
                 .setServiceDuration(msg.getServiceDuration())
                 .setUserNumber(msg.getUserNumber())
                 .setServiceType(msg.getServiceType())
                 .setResultTypeValue(reasonCode)
-                // .setOrgId() // TODO
                 .build();
 
         RmqOutgoingHandler.sendErkApiMsg2API(res);

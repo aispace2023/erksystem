@@ -13,7 +13,7 @@ import com.erksystem.protobuf.api.AddUserInfoRQ_m;
 import com.erksystem.protobuf.api.UserProfileResult_e;
 
 import static com.erksystem.protobuf.api.UserProfileResult_e.UserProfileResult_nok_OrgName;
-import static com.erksystem.protobuf.api.UserProfileResult_e.UserProfileResult_nok_UserName;
+import static com.erksystem.protobuf.api.UserProfileResult_e.UserProfileResult_nok_DB;
 
 
 /**
@@ -22,9 +22,9 @@ import static com.erksystem.protobuf.api.UserProfileResult_e.UserProfileResult_n
 public class AddUserInfoRQHandler extends RmqIncomingHandler<AddUserInfoRQ_m> {
     @Override
     protected void handle() {
-        ServiceProvider provider = ServiceProviderDAO.readbyName(msg.getOrgName());
+        ServiceProvider provider = ServiceProviderDAO.read(msg.getOrgName());
         if (provider == null) {
-            throw new RmqHandleException(UserProfileResult_nok_OrgName.getNumber(), "FAIL");
+            throw new RmqHandleException(UserProfileResult_nok_OrgName.getNumber(), "Provider Not Found");
         }
 
         ServiceUser user = new ServiceUser();
@@ -33,21 +33,22 @@ public class AddUserInfoRQHandler extends RmqIncomingHandler<AddUserInfoRQ_m> {
         user.setUserPwd(msg.getUserPwd());
         user.setServiceDuration(msg.getServiceDuration());
         user.setAge(msg.getAge());
-        //user.setSex(msg.getSex());
-        //user.setUserType(msg.getUserType());
+        user.setSex(msg.getSex());
+        user.setUserType(msg.getUserType());
         user.setServiceType(ServiceType.getName(msg.getServiceType().getNumber()));
         if (!ServiceUserDAO.create(user)) {
-            throw new RmqHandleException(UserProfileResult_nok_UserName.getNumber(), "FAIL"); // TODO ReasonCode 세분화
+            throw new RmqHandleException(UserProfileResult_nok_DB.getNumber(), "FAIL");
         }
 
         AddUserInfoRP_m res = AddUserInfoRP_m.newBuilder()
+                .setQueueInfo(msg.getQueueInfo())
                 .setOrgName(msg.getOrgName())
-                .setUserName(user.getUserName())
-                .setUserPwd(user.getUserPwd())
-                .setServiceDuration(user.getServiceDuration())
-                .setAge(user.getAge())
-//                .setSex(msg.getSex())
-//                .setUserType(msg.getUserType())
+                .setUserName(msg.getUserName())
+                .setUserPwd(msg.getUserPwd())
+                .setServiceDuration(msg.getServiceDuration())
+                .setAge(msg.getAge())
+                .setSex(msg.getSex())
+                .setUserType(msg.getUserType())
                 .setServiceType(msg.getServiceType())
                 .setResultType(UserProfileResult_e.UserProfileResult_ok)
                 .setUserId(user.getUserId())
@@ -59,6 +60,7 @@ public class AddUserInfoRQHandler extends RmqIncomingHandler<AddUserInfoRQ_m> {
     @Override
     protected void onFail(int reasonCode, String reason) {
         AddUserInfoRP_m res = AddUserInfoRP_m.newBuilder()
+                .setQueueInfo(msg.getQueueInfo())
                 .setOrgName(msg.getOrgName())
                 .setUserName(msg.getUserName())
                 .setUserPwd(msg.getUserPwd())
@@ -68,7 +70,6 @@ public class AddUserInfoRQHandler extends RmqIncomingHandler<AddUserInfoRQ_m> {
                 .setUserType(msg.getUserType())
                 .setServiceType(msg.getServiceType())
                 .setResultTypeValue(reasonCode)
-                //.setUserId() // TODO
                 .build();
 
         RmqOutgoingHandler.sendErkApiMsg2API(res);

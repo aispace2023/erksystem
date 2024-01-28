@@ -11,12 +11,12 @@ import java.sql.Timestamp;
 @Data
 public class ServiceUser implements Serializable {
     @Id
-    @Column(name = "user_id", nullable = false)
-    private Integer userId;
-
-    @Id
     @Column(name = "org_id", nullable = false)
     private Integer orgId;
+
+    @Id
+    @Column(name = "user_id", nullable = false)
+    private Integer userId;
 
     @Column(name = "user_name")
     private String userName;
@@ -27,11 +27,20 @@ public class ServiceUser implements Serializable {
     @Column(name = "service_duration", nullable = false)
     private String serviceDuration;
 
+    @Column(name = "user_number")
+    private Integer userNumber;
+
     @Column(name = "age")
     private Integer age;
 
+    @Column(name = "sex")
+    private Integer sex;
+
+    @Column(name = "mbti")
+    private String mbti;
+
     @Column(name = "user_type")
-    private String userType;
+    private Integer userType;
 
     @Column(name = "service_type", nullable = false)
     private String serviceType;
