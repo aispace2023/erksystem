@@ -2,7 +2,7 @@ package com.aispace.erksystem.rmq.handler.subsystem;
 
 import com.aispace.erksystem.rmq.handler.base.RmqIncomingHandler;
 import com.erksystem.protobuf.api.ErkEngineCreateRP_m;
-import com.erksystem.protobuf.api.ErkInterMsgHead_s;
+import com.erksystem.protobuf.api.ErkMsgHead_s;
 import lombok.extern.slf4j.Slf4j;
 
 import static com.erksystem.protobuf.api.ReturnCode_e.ReturnCode_ok;
@@ -14,7 +14,7 @@ import static com.erksystem.protobuf.api.ReturnCode_e.ReturnCode_ok;
 public class ErkEngineCreateRPHandler extends RmqIncomingHandler<ErkEngineCreateRP_m> {
     @Override
     protected void handle() {
-        ErkInterMsgHead_s erkMsgHead = msg.getErkInterMsgHead();
+        ErkMsgHead_s erkMsgHead = msg.getErkMsgHead();
         String key = erkMsgHead.getMsgType().toString() + erkMsgHead.getUserId() + erkMsgHead.getOrgId();
 
         promiseManager.findPromiseInfo(key).ifPresentOrElse(promiseInfo -> {

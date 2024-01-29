@@ -324,19 +324,19 @@ public interface ErkApiMsgOrBuilder extends
   com.erksystem.protobuf.api.ErkEngineCreateRQ_mOrBuilder getErkEngineCreateRQOrBuilder();
 
   /**
-   * <code>.EmoServiceCreateRP_m EmoServiceCreateRP = 22;</code>
-   * @return Whether the emoServiceCreateRP field is set.
+   * <code>.ErkEngineCreateRP_m ErkEngineCreateRP = 22;</code>
+   * @return Whether the erkEngineCreateRP field is set.
    */
-  boolean hasEmoServiceCreateRP();
+  boolean hasErkEngineCreateRP();
   /**
-   * <code>.EmoServiceCreateRP_m EmoServiceCreateRP = 22;</code>
-   * @return The emoServiceCreateRP.
+   * <code>.ErkEngineCreateRP_m ErkEngineCreateRP = 22;</code>
+   * @return The erkEngineCreateRP.
    */
-  com.erksystem.protobuf.api.EmoServiceCreateRP_m getEmoServiceCreateRP();
+  com.erksystem.protobuf.api.ErkEngineCreateRP_m getErkEngineCreateRP();
   /**
-   * <code>.EmoServiceCreateRP_m EmoServiceCreateRP = 22;</code>
+   * <code>.ErkEngineCreateRP_m ErkEngineCreateRP = 22;</code>
    */
-  com.erksystem.protobuf.api.EmoServiceCreateRP_mOrBuilder getEmoServiceCreateRPOrBuilder();
+  com.erksystem.protobuf.api.ErkEngineCreateRP_mOrBuilder getErkEngineCreateRPOrBuilder();
 
   /**
    * <code>.ErkEngineDeleteRQ_m ErkEngineDeleteRQ = 23;</code>

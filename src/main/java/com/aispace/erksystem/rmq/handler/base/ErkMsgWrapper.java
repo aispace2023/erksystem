@@ -80,8 +80,8 @@ public class ErkMsgWrapper {
         return builder.build();
     }
 
-    public static ErkInterApiMsg wrap2ErkInterApiMsg(Message msg) {
-        ErkInterApiMsg.Builder builder = ErkInterApiMsg.newBuilder();
+    public static ErkApiMsg wrap2ErkInterApiMsg(Message msg) {
+        ErkApiMsg.Builder builder = ErkApiMsg.newBuilder();
         if (msg instanceof ErkEngineCreateRQ_m casted) {
             builder.setErkEngineCreateRQ(casted);
         } else if (msg instanceof ErkEngineCreateRP_m casted) {

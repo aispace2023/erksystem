@@ -66,7 +66,7 @@ private static final long serialVersionUID = 0L;
     EMOSERVICESTOPRQ(19),
     EMOSERVICESTOPRP(20),
     ERKENGINECREATERQ(21),
-    EMOSERVICECREATERP(22),
+    ERKENGINECREATERP(22),
     ERKENGINEDELETERQ(23),
     ERKENGINEDELETERP(24),
     HEARTBEATRQ(25),
@@ -118,7 +118,7 @@ private static final long serialVersionUID = 0L;
         case 19: return EMOSERVICESTOPRQ;
         case 20: return EMOSERVICESTOPRP;
         case 21: return ERKENGINECREATERQ;
-        case 22: return EMOSERVICECREATERP;
+        case 22: return ERKENGINECREATERP;
         case 23: return ERKENGINEDELETERQ;
         case 24: return ERKENGINEDELETERP;
         case 25: return HEARTBEATRQ;
@@ -798,35 +798,35 @@ private static final long serialVersionUID = 0L;
     return com.erksystem.protobuf.api.ErkEngineCreateRQ_m.getDefaultInstance();
   }
 
-  public static final int EMOSERVICECREATERP_FIELD_NUMBER = 22;
+  public static final int ERKENGINECREATERP_FIELD_NUMBER = 22;
   /**
-   * <code>.EmoServiceCreateRP_m EmoServiceCreateRP = 22;</code>
-   * @return Whether the emoServiceCreateRP field is set.
+   * <code>.ErkEngineCreateRP_m ErkEngineCreateRP = 22;</code>
+   * @return Whether the erkEngineCreateRP field is set.
    */
   @java.lang.Override
-  public boolean hasEmoServiceCreateRP() {
+  public boolean hasErkEngineCreateRP() {
     return msgCase_ == 22;
   }
   /**
-   * <code>.EmoServiceCreateRP_m EmoServiceCreateRP = 22;</code>
-   * @return The emoServiceCreateRP.
+   * <code>.ErkEngineCreateRP_m ErkEngineCreateRP = 22;</code>
+   * @return The erkEngineCreateRP.
    */
   @java.lang.Override
-  public com.erksystem.protobuf.api.EmoServiceCreateRP_m getEmoServiceCreateRP() {
+  public com.erksystem.protobuf.api.ErkEngineCreateRP_m getErkEngineCreateRP() {
     if (msgCase_ == 22) {
-       return (com.erksystem.protobuf.api.EmoServiceCreateRP_m) msg_;
+       return (com.erksystem.protobuf.api.ErkEngineCreateRP_m) msg_;
     }
-    return com.erksystem.protobuf.api.EmoServiceCreateRP_m.getDefaultInstance();
+    return com.erksystem.protobuf.api.ErkEngineCreateRP_m.getDefaultInstance();
   }
   /**
-   * <code>.EmoServiceCreateRP_m EmoServiceCreateRP = 22;</code>
+   * <code>.ErkEngineCreateRP_m ErkEngineCreateRP = 22;</code>
    */
   @java.lang.Override
-  public com.erksystem.protobuf.api.EmoServiceCreateRP_mOrBuilder getEmoServiceCreateRPOrBuilder() {
+  public com.erksystem.protobuf.api.ErkEngineCreateRP_mOrBuilder getErkEngineCreateRPOrBuilder() {
     if (msgCase_ == 22) {
-       return (com.erksystem.protobuf.api.EmoServiceCreateRP_m) msg_;
+       return (com.erksystem.protobuf.api.ErkEngineCreateRP_m) msg_;
     }
-    return com.erksystem.protobuf.api.EmoServiceCreateRP_m.getDefaultInstance();
+    return com.erksystem.protobuf.api.ErkEngineCreateRP_m.getDefaultInstance();
   }
 
   public static final int ERKENGINEDELETERQ_FIELD_NUMBER = 23;
@@ -1310,7 +1310,7 @@ private static final long serialVersionUID = 0L;
       output.writeMessage(21, (com.erksystem.protobuf.api.ErkEngineCreateRQ_m) msg_);
     }
     if (msgCase_ == 22) {
-      output.writeMessage(22, (com.erksystem.protobuf.api.EmoServiceCreateRP_m) msg_);
+      output.writeMessage(22, (com.erksystem.protobuf.api.ErkEngineCreateRP_m) msg_);
     }
     if (msgCase_ == 23) {
       output.writeMessage(23, (com.erksystem.protobuf.api.ErkEngineDeleteRQ_m) msg_);
@@ -1446,7 +1446,7 @@ private static final long serialVersionUID = 0L;
     }
     if (msgCase_ == 22) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(22, (com.erksystem.protobuf.api.EmoServiceCreateRP_m) msg_);
+        .computeMessageSize(22, (com.erksystem.protobuf.api.ErkEngineCreateRP_m) msg_);
     }
     if (msgCase_ == 23) {
       size += com.google.protobuf.CodedOutputStream
@@ -1602,8 +1602,8 @@ private static final long serialVersionUID = 0L;
             .equals(other.getErkEngineCreateRQ())) return false;
         break;
       case 22:
-        if (!getEmoServiceCreateRP()
-            .equals(other.getEmoServiceCreateRP())) return false;
+        if (!getErkEngineCreateRP()
+            .equals(other.getErkEngineCreateRP())) return false;
         break;
       case 23:
         if (!getErkEngineDeleteRQ()
@@ -1757,8 +1757,8 @@ private static final long serialVersionUID = 0L;
         hash = (53 * hash) + getErkEngineCreateRQ().hashCode();
         break;
       case 22:
-        hash = (37 * hash) + EMOSERVICECREATERP_FIELD_NUMBER;
-        hash = (53 * hash) + getEmoServiceCreateRP().hashCode();
+        hash = (37 * hash) + ERKENGINECREATERP_FIELD_NUMBER;
+        hash = (53 * hash) + getErkEngineCreateRP().hashCode();
         break;
       case 23:
         hash = (37 * hash) + ERKENGINEDELETERQ_FIELD_NUMBER;
@@ -2010,8 +2010,8 @@ private static final long serialVersionUID = 0L;
       if (erkEngineCreateRQBuilder_ != null) {
         erkEngineCreateRQBuilder_.clear();
       }
-      if (emoServiceCreateRPBuilder_ != null) {
-        emoServiceCreateRPBuilder_.clear();
+      if (erkEngineCreateRPBuilder_ != null) {
+        erkEngineCreateRPBuilder_.clear();
       }
       if (erkEngineDeleteRQBuilder_ != null) {
         erkEngineDeleteRQBuilder_.clear();
@@ -2183,8 +2183,8 @@ private static final long serialVersionUID = 0L;
         result.msg_ = erkEngineCreateRQBuilder_.build();
       }
       if (msgCase_ == 22 &&
-          emoServiceCreateRPBuilder_ != null) {
-        result.msg_ = emoServiceCreateRPBuilder_.build();
+          erkEngineCreateRPBuilder_ != null) {
+        result.msg_ = erkEngineCreateRPBuilder_.build();
       }
       if (msgCase_ == 23 &&
           erkEngineDeleteRQBuilder_ != null) {
@@ -2369,8 +2369,8 @@ private static final long serialVersionUID = 0L;
           mergeErkEngineCreateRQ(other.getErkEngineCreateRQ());
           break;
         }
-        case EMOSERVICECREATERP: {
-          mergeEmoServiceCreateRP(other.getEmoServiceCreateRP());
+        case ERKENGINECREATERP: {
+          mergeErkEngineCreateRP(other.getErkEngineCreateRP());
           break;
         }
         case ERKENGINEDELETERQ: {
@@ -2604,7 +2604,7 @@ private static final long serialVersionUID = 0L;
             } // case 170
             case 178: {
               input.readMessage(
-                  getEmoServiceCreateRPFieldBuilder().getBuilder(),
+                  getErkEngineCreateRPFieldBuilder().getBuilder(),
                   extensionRegistry);
               msgCase_ = 22;
               break;
@@ -5716,71 +5716,71 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.erksystem.protobuf.api.EmoServiceCreateRP_m, com.erksystem.protobuf.api.EmoServiceCreateRP_m.Builder, com.erksystem.protobuf.api.EmoServiceCreateRP_mOrBuilder> emoServiceCreateRPBuilder_;
+        com.erksystem.protobuf.api.ErkEngineCreateRP_m, com.erksystem.protobuf.api.ErkEngineCreateRP_m.Builder, com.erksystem.protobuf.api.ErkEngineCreateRP_mOrBuilder> erkEngineCreateRPBuilder_;
     /**
-     * <code>.EmoServiceCreateRP_m EmoServiceCreateRP = 22;</code>
-     * @return Whether the emoServiceCreateRP field is set.
+     * <code>.ErkEngineCreateRP_m ErkEngineCreateRP = 22;</code>
+     * @return Whether the erkEngineCreateRP field is set.
      */
     @java.lang.Override
-    public boolean hasEmoServiceCreateRP() {
+    public boolean hasErkEngineCreateRP() {
       return msgCase_ == 22;
     }
     /**
-     * <code>.EmoServiceCreateRP_m EmoServiceCreateRP = 22;</code>
-     * @return The emoServiceCreateRP.
+     * <code>.ErkEngineCreateRP_m ErkEngineCreateRP = 22;</code>
+     * @return The erkEngineCreateRP.
      */
     @java.lang.Override
-    public com.erksystem.protobuf.api.EmoServiceCreateRP_m getEmoServiceCreateRP() {
-      if (emoServiceCreateRPBuilder_ == null) {
+    public com.erksystem.protobuf.api.ErkEngineCreateRP_m getErkEngineCreateRP() {
+      if (erkEngineCreateRPBuilder_ == null) {
         if (msgCase_ == 22) {
-          return (com.erksystem.protobuf.api.EmoServiceCreateRP_m) msg_;
+          return (com.erksystem.protobuf.api.ErkEngineCreateRP_m) msg_;
         }
-        return com.erksystem.protobuf.api.EmoServiceCreateRP_m.getDefaultInstance();
+        return com.erksystem.protobuf.api.ErkEngineCreateRP_m.getDefaultInstance();
       } else {
         if (msgCase_ == 22) {
-          return emoServiceCreateRPBuilder_.getMessage();
+          return erkEngineCreateRPBuilder_.getMessage();
         }
-        return com.erksystem.protobuf.api.EmoServiceCreateRP_m.getDefaultInstance();
+        return com.erksystem.protobuf.api.ErkEngineCreateRP_m.getDefaultInstance();
       }
     }
     /**
-     * <code>.EmoServiceCreateRP_m EmoServiceCreateRP = 22;</code>
+     * <code>.ErkEngineCreateRP_m ErkEngineCreateRP = 22;</code>
      */
-    public Builder setEmoServiceCreateRP(com.erksystem.protobuf.api.EmoServiceCreateRP_m value) {
-      if (emoServiceCreateRPBuilder_ == null) {
+    public Builder setErkEngineCreateRP(com.erksystem.protobuf.api.ErkEngineCreateRP_m value) {
+      if (erkEngineCreateRPBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         msg_ = value;
         onChanged();
       } else {
-        emoServiceCreateRPBuilder_.setMessage(value);
+        erkEngineCreateRPBuilder_.setMessage(value);
       }
       msgCase_ = 22;
       return this;
     }
     /**
-     * <code>.EmoServiceCreateRP_m EmoServiceCreateRP = 22;</code>
+     * <code>.ErkEngineCreateRP_m ErkEngineCreateRP = 22;</code>
      */
-    public Builder setEmoServiceCreateRP(
-        com.erksystem.protobuf.api.EmoServiceCreateRP_m.Builder builderForValue) {
-      if (emoServiceCreateRPBuilder_ == null) {
+    public Builder setErkEngineCreateRP(
+        com.erksystem.protobuf.api.ErkEngineCreateRP_m.Builder builderForValue) {
+      if (erkEngineCreateRPBuilder_ == null) {
         msg_ = builderForValue.build();
         onChanged();
       } else {
-        emoServiceCreateRPBuilder_.setMessage(builderForValue.build());
+        erkEngineCreateRPBuilder_.setMessage(builderForValue.build());
       }
       msgCase_ = 22;
       return this;
     }
     /**
-     * <code>.EmoServiceCreateRP_m EmoServiceCreateRP = 22;</code>
+     * <code>.ErkEngineCreateRP_m ErkEngineCreateRP = 22;</code>
      */
-    public Builder mergeEmoServiceCreateRP(com.erksystem.protobuf.api.EmoServiceCreateRP_m value) {
-      if (emoServiceCreateRPBuilder_ == null) {
+    public Builder mergeErkEngineCreateRP(com.erksystem.protobuf.api.ErkEngineCreateRP_m value) {
+      if (erkEngineCreateRPBuilder_ == null) {
         if (msgCase_ == 22 &&
-            msg_ != com.erksystem.protobuf.api.EmoServiceCreateRP_m.getDefaultInstance()) {
-          msg_ = com.erksystem.protobuf.api.EmoServiceCreateRP_m.newBuilder((com.erksystem.protobuf.api.EmoServiceCreateRP_m) msg_)
+            msg_ != com.erksystem.protobuf.api.ErkEngineCreateRP_m.getDefaultInstance()) {
+          msg_ = com.erksystem.protobuf.api.ErkEngineCreateRP_m.newBuilder((com.erksystem.protobuf.api.ErkEngineCreateRP_m) msg_)
               .mergeFrom(value).buildPartial();
         } else {
           msg_ = value;
@@ -5788,19 +5788,19 @@ private static final long serialVersionUID = 0L;
         onChanged();
       } else {
         if (msgCase_ == 22) {
-          emoServiceCreateRPBuilder_.mergeFrom(value);
+          erkEngineCreateRPBuilder_.mergeFrom(value);
         } else {
-          emoServiceCreateRPBuilder_.setMessage(value);
+          erkEngineCreateRPBuilder_.setMessage(value);
         }
       }
       msgCase_ = 22;
       return this;
     }
     /**
-     * <code>.EmoServiceCreateRP_m EmoServiceCreateRP = 22;</code>
+     * <code>.ErkEngineCreateRP_m ErkEngineCreateRP = 22;</code>
      */
-    public Builder clearEmoServiceCreateRP() {
-      if (emoServiceCreateRPBuilder_ == null) {
+    public Builder clearErkEngineCreateRP() {
+      if (erkEngineCreateRPBuilder_ == null) {
         if (msgCase_ == 22) {
           msgCase_ = 0;
           msg_ = null;
@@ -5811,50 +5811,50 @@ private static final long serialVersionUID = 0L;
           msgCase_ = 0;
           msg_ = null;
         }
-        emoServiceCreateRPBuilder_.clear();
+        erkEngineCreateRPBuilder_.clear();
       }
       return this;
     }
     /**
-     * <code>.EmoServiceCreateRP_m EmoServiceCreateRP = 22;</code>
+     * <code>.ErkEngineCreateRP_m ErkEngineCreateRP = 22;</code>
      */
-    public com.erksystem.protobuf.api.EmoServiceCreateRP_m.Builder getEmoServiceCreateRPBuilder() {
-      return getEmoServiceCreateRPFieldBuilder().getBuilder();
+    public com.erksystem.protobuf.api.ErkEngineCreateRP_m.Builder getErkEngineCreateRPBuilder() {
+      return getErkEngineCreateRPFieldBuilder().getBuilder();
     }
     /**
-     * <code>.EmoServiceCreateRP_m EmoServiceCreateRP = 22;</code>
+     * <code>.ErkEngineCreateRP_m ErkEngineCreateRP = 22;</code>
      */
     @java.lang.Override
-    public com.erksystem.protobuf.api.EmoServiceCreateRP_mOrBuilder getEmoServiceCreateRPOrBuilder() {
-      if ((msgCase_ == 22) && (emoServiceCreateRPBuilder_ != null)) {
-        return emoServiceCreateRPBuilder_.getMessageOrBuilder();
+    public com.erksystem.protobuf.api.ErkEngineCreateRP_mOrBuilder getErkEngineCreateRPOrBuilder() {
+      if ((msgCase_ == 22) && (erkEngineCreateRPBuilder_ != null)) {
+        return erkEngineCreateRPBuilder_.getMessageOrBuilder();
       } else {
         if (msgCase_ == 22) {
-          return (com.erksystem.protobuf.api.EmoServiceCreateRP_m) msg_;
+          return (com.erksystem.protobuf.api.ErkEngineCreateRP_m) msg_;
         }
-        return com.erksystem.protobuf.api.EmoServiceCreateRP_m.getDefaultInstance();
+        return com.erksystem.protobuf.api.ErkEngineCreateRP_m.getDefaultInstance();
       }
     }
     /**
-     * <code>.EmoServiceCreateRP_m EmoServiceCreateRP = 22;</code>
+     * <code>.ErkEngineCreateRP_m ErkEngineCreateRP = 22;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.erksystem.protobuf.api.EmoServiceCreateRP_m, com.erksystem.protobuf.api.EmoServiceCreateRP_m.Builder, com.erksystem.protobuf.api.EmoServiceCreateRP_mOrBuilder> 
-        getEmoServiceCreateRPFieldBuilder() {
-      if (emoServiceCreateRPBuilder_ == null) {
+        com.erksystem.protobuf.api.ErkEngineCreateRP_m, com.erksystem.protobuf.api.ErkEngineCreateRP_m.Builder, com.erksystem.protobuf.api.ErkEngineCreateRP_mOrBuilder> 
+        getErkEngineCreateRPFieldBuilder() {
+      if (erkEngineCreateRPBuilder_ == null) {
         if (!(msgCase_ == 22)) {
-          msg_ = com.erksystem.protobuf.api.EmoServiceCreateRP_m.getDefaultInstance();
+          msg_ = com.erksystem.protobuf.api.ErkEngineCreateRP_m.getDefaultInstance();
         }
-        emoServiceCreateRPBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.erksystem.protobuf.api.EmoServiceCreateRP_m, com.erksystem.protobuf.api.EmoServiceCreateRP_m.Builder, com.erksystem.protobuf.api.EmoServiceCreateRP_mOrBuilder>(
-                (com.erksystem.protobuf.api.EmoServiceCreateRP_m) msg_,
+        erkEngineCreateRPBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.erksystem.protobuf.api.ErkEngineCreateRP_m, com.erksystem.protobuf.api.ErkEngineCreateRP_m.Builder, com.erksystem.protobuf.api.ErkEngineCreateRP_mOrBuilder>(
+                (com.erksystem.protobuf.api.ErkEngineCreateRP_m) msg_,
                 getParentForChildren(),
                 isClean());
         msg_ = null;
       }
       msgCase_ = 22;
       onChanged();
-      return emoServiceCreateRPBuilder_;
+      return erkEngineCreateRPBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<

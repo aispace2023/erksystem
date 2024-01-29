@@ -4,7 +4,6 @@ import com.aispace.erksystem.rmq.handler.api.*;
 import com.aispace.erksystem.rmq.handler.subsystem.ErkEngineCreateRPHandler;
 import com.aispace.erksystem.rmq.handler.subsystem.ErkEngineDeleteRPHandler;
 import com.erksystem.protobuf.api.ErkApiMsg;
-import com.erksystem.protobuf.api.ErkInterApiMsg;
 import lombok.extern.slf4j.Slf4j;
 
 import static com.aispace.erksystem.rmq.module.RmqLogPrinter.proto2Json;
@@ -47,7 +46,7 @@ public class ErkApiMsgRmqConsumer {
 
     public static void consumeSubsystemApiMessage(byte[] message) {
         try {
-            ErkInterApiMsg msg = ErkInterApiMsg.parseFrom(message);
+            ErkApiMsg msg = ErkApiMsg.parseFrom(message);
             log.info("RMQ Recv [{}]", proto2Json(msg).orElse("Fail to Parse"));
             switch (msg.getMsgCase()) {
                 case ERKENGINECREATERP -> new ErkEngineCreateRPHandler().proc(msg);

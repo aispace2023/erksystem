@@ -404,7 +404,7 @@ message ErkEngineCreateRQ_m{
   string KnowledgeEngine_SendQueueName = 11;
 }
 
-message EmoServiceCreateRP_m{
+message ErkEngineCreateRP_m{
   ErkMsgHead_s ErkMsgHead = 1;
   int64 MsgTime = 2;
   ReturnCode_e ReturnCode = 3;
@@ -541,7 +541,7 @@ message ErkApiMsg{
     EmoServiceStopRQ_m EmoServiceStopRQ = 19;
     EmoServiceStopRP_m EmoServiceStopRP = 20;
     ErkEngineCreateRQ_m ErkEngineCreateRQ = 21;
-    EmoServiceCreateRP_m EmoServiceCreateRP = 22;
+    ErkEngineCreateRP_m ErkEngineCreateRP = 22;
     ErkEngineDeleteRQ_m ErkEngineDeleteRQ = 23;
     ErkEngineDeleteRP_m ErkEngineDeleteRP = 24;
     HeartBeatRQ_m HeartBeatRQ = 25;
