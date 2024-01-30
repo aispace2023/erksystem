@@ -79,7 +79,7 @@ public class DBManagerTest {
         user.setAge(15);
         user.setServiceDuration("20240630");
         user.setServiceType(ServiceType.physiology_face.name());
-        assertEquals(true, ServiceUserDAO.create(user));
+        assertTrue(ServiceUserDAO.create(user));
         this.userId = user.getUserId();
         ServiceUser read = ServiceUserDAO.read(userId, orgId);
         assertNotNull(read);

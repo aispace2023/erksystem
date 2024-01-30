@@ -13,7 +13,6 @@ CREATE TABLE service_provider_tbl (
     UNIQUE KEY service_provider_tbl.idx1 (`org_name`)
 );
 
---FOREIGN KEY(`org_id`) REFERENCES service_provider_tbl(`org_id`),
 DROP TABLE IF EXISTS service_user_tbl;
 CREATE TABLE service_user_tbl (
     `org_id` INT(11) NOT NULL,
