@@ -17,6 +17,12 @@ message ErkMsgDataHead_s{
   int32 UserId = 4;
 }
 
+message ErkInterMsgHead_s{
+  ErkInterMsgType_e MsgType = 1;
+  int32 OrgId = 2;
+  int32 UserId = 3;
+}
+
 message QueueInfo_s{
   string ToQueueName = 1;
   string FromQueueName = 2;
@@ -391,7 +397,7 @@ message EmoServiceStopRP_m{
 }
 
 message ErkEngineCreateRQ_m{
-  ErkMsgHead_s ErkMsgHead = 1;
+  ErkInterMsgHead_s ErkInterMsgHead = 1;
   int64 MsgTime = 2;
   ServiceType_e ServiceType = 3;
   string PhysioEngine_ReceiveQueueName = 4;
@@ -405,7 +411,7 @@ message ErkEngineCreateRQ_m{
 }
 
 message ErkEngineCreateRP_m{
-  ErkMsgHead_s ErkMsgHead = 1;
+  ErkInterMsgHead_s ErkInterMsgHead = 1;
   int64 MsgTime = 2;
   ReturnCode_e ReturnCode = 3;
   ErkEngineInfo_s PhysioEngineInfo = 4;
@@ -416,7 +422,7 @@ message ErkEngineCreateRP_m{
 }
 
 message ErkEngineDeleteRQ_m{
-  ErkMsgHead_s ErkMsgHead = 1;
+  ErkInterMsgHead_s ErkInterMsgHead = 1;
   int64 MsgTime = 2;
   ServiceType_e ServiceType = 3;
   string PhysioEngine_ReceiveQueueName = 4;
@@ -431,7 +437,7 @@ message ErkEngineDeleteRQ_m{
 
 
 message ErkEngineDeleteRP_m{
-  ErkMsgHead_s ErkMsgHead = 1;
+  ErkInterMsgHead_s ErkInterMsgHead = 1;
   int64 MsgTime = 2;
   ReturnCode_e ReturnCode = 3;
   ErkEngineInfo_s PhysioEngineInfo = 4;

@@ -41,30 +41,30 @@ private static final long serialVersionUID = 0L;
   }
 
   private int bitField0_;
-  public static final int ERKMSGHEAD_FIELD_NUMBER = 1;
-  private com.erksystem.protobuf.api.ErkMsgHead_s erkMsgHead_;
+  public static final int ERKINTERMSGHEAD_FIELD_NUMBER = 1;
+  private com.erksystem.protobuf.api.ErkInterMsgHead_s erkInterMsgHead_;
   /**
-   * <code>.ErkMsgHead_s ErkMsgHead = 1;</code>
-   * @return Whether the erkMsgHead field is set.
+   * <code>.ErkInterMsgHead_s ErkInterMsgHead = 1;</code>
+   * @return Whether the erkInterMsgHead field is set.
    */
   @java.lang.Override
-  public boolean hasErkMsgHead() {
+  public boolean hasErkInterMsgHead() {
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>.ErkMsgHead_s ErkMsgHead = 1;</code>
-   * @return The erkMsgHead.
+   * <code>.ErkInterMsgHead_s ErkInterMsgHead = 1;</code>
+   * @return The erkInterMsgHead.
    */
   @java.lang.Override
-  public com.erksystem.protobuf.api.ErkMsgHead_s getErkMsgHead() {
-    return erkMsgHead_ == null ? com.erksystem.protobuf.api.ErkMsgHead_s.getDefaultInstance() : erkMsgHead_;
+  public com.erksystem.protobuf.api.ErkInterMsgHead_s getErkInterMsgHead() {
+    return erkInterMsgHead_ == null ? com.erksystem.protobuf.api.ErkInterMsgHead_s.getDefaultInstance() : erkInterMsgHead_;
   }
   /**
-   * <code>.ErkMsgHead_s ErkMsgHead = 1;</code>
+   * <code>.ErkInterMsgHead_s ErkInterMsgHead = 1;</code>
    */
   @java.lang.Override
-  public com.erksystem.protobuf.api.ErkMsgHead_sOrBuilder getErkMsgHeadOrBuilder() {
-    return erkMsgHead_ == null ? com.erksystem.protobuf.api.ErkMsgHead_s.getDefaultInstance() : erkMsgHead_;
+  public com.erksystem.protobuf.api.ErkInterMsgHead_sOrBuilder getErkInterMsgHeadOrBuilder() {
+    return erkInterMsgHead_ == null ? com.erksystem.protobuf.api.ErkInterMsgHead_s.getDefaultInstance() : erkInterMsgHead_;
   }
 
   public static final int MSGTIME_FIELD_NUMBER = 2;
@@ -241,7 +241,7 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeMessage(1, getErkMsgHead());
+      output.writeMessage(1, getErkInterMsgHead());
     }
     if (msgTime_ != 0L) {
       output.writeInt64(2, msgTime_);
@@ -275,7 +275,7 @@ private static final long serialVersionUID = 0L;
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getErkMsgHead());
+        .computeMessageSize(1, getErkInterMsgHead());
     }
     if (msgTime_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
@@ -320,10 +320,10 @@ private static final long serialVersionUID = 0L;
     }
     com.erksystem.protobuf.api.ErkEngineCreateRP_m other = (com.erksystem.protobuf.api.ErkEngineCreateRP_m) obj;
 
-    if (hasErkMsgHead() != other.hasErkMsgHead()) return false;
-    if (hasErkMsgHead()) {
-      if (!getErkMsgHead()
-          .equals(other.getErkMsgHead())) return false;
+    if (hasErkInterMsgHead() != other.hasErkInterMsgHead()) return false;
+    if (hasErkInterMsgHead()) {
+      if (!getErkInterMsgHead()
+          .equals(other.getErkInterMsgHead())) return false;
     }
     if (getMsgTime()
         != other.getMsgTime()) return false;
@@ -364,9 +364,9 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasErkMsgHead()) {
-      hash = (37 * hash) + ERKMSGHEAD_FIELD_NUMBER;
-      hash = (53 * hash) + getErkMsgHead().hashCode();
+    if (hasErkInterMsgHead()) {
+      hash = (37 * hash) + ERKINTERMSGHEAD_FIELD_NUMBER;
+      hash = (53 * hash) + getErkInterMsgHead().hashCode();
     }
     hash = (37 * hash) + MSGTIME_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
@@ -523,7 +523,7 @@ private static final long serialVersionUID = 0L;
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
-        getErkMsgHeadFieldBuilder();
+        getErkInterMsgHeadFieldBuilder();
         getPhysioEngineInfoFieldBuilder();
         getSpeechEngineInfoFieldBuilder();
         getFaceEngineInfoFieldBuilder();
@@ -535,10 +535,10 @@ private static final long serialVersionUID = 0L;
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      erkMsgHead_ = null;
-      if (erkMsgHeadBuilder_ != null) {
-        erkMsgHeadBuilder_.dispose();
-        erkMsgHeadBuilder_ = null;
+      erkInterMsgHead_ = null;
+      if (erkInterMsgHeadBuilder_ != null) {
+        erkInterMsgHeadBuilder_.dispose();
+        erkInterMsgHeadBuilder_ = null;
       }
       msgTime_ = 0L;
       returnCode_ = 0;
@@ -602,9 +602,9 @@ private static final long serialVersionUID = 0L;
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.erkMsgHead_ = erkMsgHeadBuilder_ == null
-            ? erkMsgHead_
-            : erkMsgHeadBuilder_.build();
+        result.erkInterMsgHead_ = erkInterMsgHeadBuilder_ == null
+            ? erkInterMsgHead_
+            : erkInterMsgHeadBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
@@ -690,8 +690,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.erksystem.protobuf.api.ErkEngineCreateRP_m other) {
       if (other == com.erksystem.protobuf.api.ErkEngineCreateRP_m.getDefaultInstance()) return this;
-      if (other.hasErkMsgHead()) {
-        mergeErkMsgHead(other.getErkMsgHead());
+      if (other.hasErkInterMsgHead()) {
+        mergeErkInterMsgHead(other.getErkInterMsgHead());
       }
       if (other.getMsgTime() != 0L) {
         setMsgTime(other.getMsgTime());
@@ -742,7 +742,7 @@ private static final long serialVersionUID = 0L;
               break;
             case 10: {
               input.readMessage(
-                  getErkMsgHeadFieldBuilder().getBuilder(),
+                  getErkInterMsgHeadFieldBuilder().getBuilder(),
                   extensionRegistry);
               bitField0_ |= 0x00000001;
               break;
@@ -809,125 +809,125 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private com.erksystem.protobuf.api.ErkMsgHead_s erkMsgHead_;
+    private com.erksystem.protobuf.api.ErkInterMsgHead_s erkInterMsgHead_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.erksystem.protobuf.api.ErkMsgHead_s, com.erksystem.protobuf.api.ErkMsgHead_s.Builder, com.erksystem.protobuf.api.ErkMsgHead_sOrBuilder> erkMsgHeadBuilder_;
+        com.erksystem.protobuf.api.ErkInterMsgHead_s, com.erksystem.protobuf.api.ErkInterMsgHead_s.Builder, com.erksystem.protobuf.api.ErkInterMsgHead_sOrBuilder> erkInterMsgHeadBuilder_;
     /**
-     * <code>.ErkMsgHead_s ErkMsgHead = 1;</code>
-     * @return Whether the erkMsgHead field is set.
+     * <code>.ErkInterMsgHead_s ErkInterMsgHead = 1;</code>
+     * @return Whether the erkInterMsgHead field is set.
      */
-    public boolean hasErkMsgHead() {
+    public boolean hasErkInterMsgHead() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>.ErkMsgHead_s ErkMsgHead = 1;</code>
-     * @return The erkMsgHead.
+     * <code>.ErkInterMsgHead_s ErkInterMsgHead = 1;</code>
+     * @return The erkInterMsgHead.
      */
-    public com.erksystem.protobuf.api.ErkMsgHead_s getErkMsgHead() {
-      if (erkMsgHeadBuilder_ == null) {
-        return erkMsgHead_ == null ? com.erksystem.protobuf.api.ErkMsgHead_s.getDefaultInstance() : erkMsgHead_;
+    public com.erksystem.protobuf.api.ErkInterMsgHead_s getErkInterMsgHead() {
+      if (erkInterMsgHeadBuilder_ == null) {
+        return erkInterMsgHead_ == null ? com.erksystem.protobuf.api.ErkInterMsgHead_s.getDefaultInstance() : erkInterMsgHead_;
       } else {
-        return erkMsgHeadBuilder_.getMessage();
+        return erkInterMsgHeadBuilder_.getMessage();
       }
     }
     /**
-     * <code>.ErkMsgHead_s ErkMsgHead = 1;</code>
+     * <code>.ErkInterMsgHead_s ErkInterMsgHead = 1;</code>
      */
-    public Builder setErkMsgHead(com.erksystem.protobuf.api.ErkMsgHead_s value) {
-      if (erkMsgHeadBuilder_ == null) {
+    public Builder setErkInterMsgHead(com.erksystem.protobuf.api.ErkInterMsgHead_s value) {
+      if (erkInterMsgHeadBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        erkMsgHead_ = value;
+        erkInterMsgHead_ = value;
       } else {
-        erkMsgHeadBuilder_.setMessage(value);
+        erkInterMsgHeadBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
     /**
-     * <code>.ErkMsgHead_s ErkMsgHead = 1;</code>
+     * <code>.ErkInterMsgHead_s ErkInterMsgHead = 1;</code>
      */
-    public Builder setErkMsgHead(
-        com.erksystem.protobuf.api.ErkMsgHead_s.Builder builderForValue) {
-      if (erkMsgHeadBuilder_ == null) {
-        erkMsgHead_ = builderForValue.build();
+    public Builder setErkInterMsgHead(
+        com.erksystem.protobuf.api.ErkInterMsgHead_s.Builder builderForValue) {
+      if (erkInterMsgHeadBuilder_ == null) {
+        erkInterMsgHead_ = builderForValue.build();
       } else {
-        erkMsgHeadBuilder_.setMessage(builderForValue.build());
+        erkInterMsgHeadBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
     /**
-     * <code>.ErkMsgHead_s ErkMsgHead = 1;</code>
+     * <code>.ErkInterMsgHead_s ErkInterMsgHead = 1;</code>
      */
-    public Builder mergeErkMsgHead(com.erksystem.protobuf.api.ErkMsgHead_s value) {
-      if (erkMsgHeadBuilder_ == null) {
+    public Builder mergeErkInterMsgHead(com.erksystem.protobuf.api.ErkInterMsgHead_s value) {
+      if (erkInterMsgHeadBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0) &&
-          erkMsgHead_ != null &&
-          erkMsgHead_ != com.erksystem.protobuf.api.ErkMsgHead_s.getDefaultInstance()) {
-          getErkMsgHeadBuilder().mergeFrom(value);
+          erkInterMsgHead_ != null &&
+          erkInterMsgHead_ != com.erksystem.protobuf.api.ErkInterMsgHead_s.getDefaultInstance()) {
+          getErkInterMsgHeadBuilder().mergeFrom(value);
         } else {
-          erkMsgHead_ = value;
+          erkInterMsgHead_ = value;
         }
       } else {
-        erkMsgHeadBuilder_.mergeFrom(value);
+        erkInterMsgHeadBuilder_.mergeFrom(value);
       }
-      if (erkMsgHead_ != null) {
+      if (erkInterMsgHead_ != null) {
         bitField0_ |= 0x00000001;
         onChanged();
       }
       return this;
     }
     /**
-     * <code>.ErkMsgHead_s ErkMsgHead = 1;</code>
+     * <code>.ErkInterMsgHead_s ErkInterMsgHead = 1;</code>
      */
-    public Builder clearErkMsgHead() {
+    public Builder clearErkInterMsgHead() {
       bitField0_ = (bitField0_ & ~0x00000001);
-      erkMsgHead_ = null;
-      if (erkMsgHeadBuilder_ != null) {
-        erkMsgHeadBuilder_.dispose();
-        erkMsgHeadBuilder_ = null;
+      erkInterMsgHead_ = null;
+      if (erkInterMsgHeadBuilder_ != null) {
+        erkInterMsgHeadBuilder_.dispose();
+        erkInterMsgHeadBuilder_ = null;
       }
       onChanged();
       return this;
     }
     /**
-     * <code>.ErkMsgHead_s ErkMsgHead = 1;</code>
+     * <code>.ErkInterMsgHead_s ErkInterMsgHead = 1;</code>
      */
-    public com.erksystem.protobuf.api.ErkMsgHead_s.Builder getErkMsgHeadBuilder() {
+    public com.erksystem.protobuf.api.ErkInterMsgHead_s.Builder getErkInterMsgHeadBuilder() {
       bitField0_ |= 0x00000001;
       onChanged();
-      return getErkMsgHeadFieldBuilder().getBuilder();
+      return getErkInterMsgHeadFieldBuilder().getBuilder();
     }
     /**
-     * <code>.ErkMsgHead_s ErkMsgHead = 1;</code>
+     * <code>.ErkInterMsgHead_s ErkInterMsgHead = 1;</code>
      */
-    public com.erksystem.protobuf.api.ErkMsgHead_sOrBuilder getErkMsgHeadOrBuilder() {
-      if (erkMsgHeadBuilder_ != null) {
-        return erkMsgHeadBuilder_.getMessageOrBuilder();
+    public com.erksystem.protobuf.api.ErkInterMsgHead_sOrBuilder getErkInterMsgHeadOrBuilder() {
+      if (erkInterMsgHeadBuilder_ != null) {
+        return erkInterMsgHeadBuilder_.getMessageOrBuilder();
       } else {
-        return erkMsgHead_ == null ?
-            com.erksystem.protobuf.api.ErkMsgHead_s.getDefaultInstance() : erkMsgHead_;
+        return erkInterMsgHead_ == null ?
+            com.erksystem.protobuf.api.ErkInterMsgHead_s.getDefaultInstance() : erkInterMsgHead_;
       }
     }
     /**
-     * <code>.ErkMsgHead_s ErkMsgHead = 1;</code>
+     * <code>.ErkInterMsgHead_s ErkInterMsgHead = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.erksystem.protobuf.api.ErkMsgHead_s, com.erksystem.protobuf.api.ErkMsgHead_s.Builder, com.erksystem.protobuf.api.ErkMsgHead_sOrBuilder> 
-        getErkMsgHeadFieldBuilder() {
-      if (erkMsgHeadBuilder_ == null) {
-        erkMsgHeadBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.erksystem.protobuf.api.ErkMsgHead_s, com.erksystem.protobuf.api.ErkMsgHead_s.Builder, com.erksystem.protobuf.api.ErkMsgHead_sOrBuilder>(
-                getErkMsgHead(),
+        com.erksystem.protobuf.api.ErkInterMsgHead_s, com.erksystem.protobuf.api.ErkInterMsgHead_s.Builder, com.erksystem.protobuf.api.ErkInterMsgHead_sOrBuilder> 
+        getErkInterMsgHeadFieldBuilder() {
+      if (erkInterMsgHeadBuilder_ == null) {
+        erkInterMsgHeadBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.erksystem.protobuf.api.ErkInterMsgHead_s, com.erksystem.protobuf.api.ErkInterMsgHead_s.Builder, com.erksystem.protobuf.api.ErkInterMsgHead_sOrBuilder>(
+                getErkInterMsgHead(),
                 getParentForChildren(),
                 isClean());
-        erkMsgHead_ = null;
+        erkInterMsgHead_ = null;
       }
-      return erkMsgHeadBuilder_;
+      return erkInterMsgHeadBuilder_;
     }
 
     private long msgTime_ ;
