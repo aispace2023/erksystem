@@ -82,7 +82,7 @@ public class ServiceProviderDAO {
         }
     }
 
-    public static boolean delete(long orgId) {
+    public static boolean delete(int orgId) {
         Session session = sessionFactory.openSession();
         Transaction tx = null;
         try {

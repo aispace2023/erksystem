@@ -39,7 +39,7 @@ public class ServiceUserDAO {
         }
     }
 
-    public static ServiceUser read(Integer userId, Integer orgId) {
+    public static ServiceUser read(int userId, int orgId) {
         Session session = sessionFactory.openSession();
         try {
             // key object 정의한 경우 ServiceUser class 정의를 맞추어야 함.
