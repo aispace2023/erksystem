@@ -7,9 +7,9 @@ import com.aispace.erksystem.service.database.ServiceProviderDAO;
 import com.aispace.erksystem.service.database.ServiceUserDAO;
 import com.aispace.erksystem.service.database.table.ServiceProvider;
 import com.aispace.erksystem.service.database.table.ServiceUser;
-import com.aispace.erksystem.service.database.type.ServiceType;
 import com.erksystem.protobuf.api.AddUserInfoRP_m;
 import com.erksystem.protobuf.api.AddUserInfoRQ_m;
+import com.erksystem.protobuf.api.ErkMsgType_e;
 import com.erksystem.protobuf.api.UserProfileResult_e;
 
 import static com.erksystem.protobuf.api.UserProfileResult_e.UserProfileResult_nok_OrgName;
@@ -35,12 +35,13 @@ public class AddUserInfoRQHandler extends RmqIncomingHandler<AddUserInfoRQ_m> {
         user.setAge(msg.getAge());
         user.setSex(msg.getSex());
         user.setUserType(msg.getUserType());
-        user.setServiceType(ServiceType.getName(msg.getServiceType().getNumber()));
+        user.setServiceType(msg.getServiceType().getNumber());
         if (!ServiceUserDAO.create(user)) {
             throw new RmqHandleException(UserProfileResult_nok_DB.getNumber(), "FAIL");
         }
 
         AddUserInfoRP_m res = AddUserInfoRP_m.newBuilder()
+                .setMsgType(ErkMsgType_e.AddUserInfoRP)
                 .setQueueInfo(msg.getQueueInfo())
                 .setOrgName(msg.getOrgName())
                 .setUserName(msg.getUserName())
@@ -60,6 +61,7 @@ public class AddUserInfoRQHandler extends RmqIncomingHandler<AddUserInfoRQ_m> {
     @Override
     protected void onFail(int reasonCode, String reason) {
         AddUserInfoRP_m res = AddUserInfoRP_m.newBuilder()
+                .setMsgType(ErkMsgType_e.AddUserInfoRP)
                 .setQueueInfo(msg.getQueueInfo())
                 .setOrgName(msg.getOrgName())
                 .setUserName(msg.getUserName())

@@ -43,7 +43,7 @@ public class ServiceUser implements Serializable {
     private Integer userType;
 
     @Column(name = "service_type", nullable = false)
-    private String serviceType;
+    private Integer serviceType;
 
     @Column(name = "ts", nullable = false)
     private Timestamp timestamp;

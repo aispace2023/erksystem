@@ -29,7 +29,7 @@ public class ServiceProvider implements Serializable {
     private Integer userNumber;
 
     @Column(name = "service_type", nullable = false)
-    private String serviceType;
+    private Integer serviceType;
 
     @Column(name = "ts", nullable = false)
     private Timestamp timestamp;

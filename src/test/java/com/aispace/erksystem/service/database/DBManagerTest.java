@@ -54,7 +54,7 @@ public class DBManagerTest {
     void serviceProviderTest() {
         this.proceed = false;
         ServiceProvider provider = new ServiceProvider();
-        provider.setServiceType(ServiceType.speech.name());
+        provider.setServiceType(ServiceType.speech.getValue());
         provider.setOrgName("테스트-" + new Random().nextInt(99999));
         provider.setOrgPwd("99999");
         provider.setUserNumber(5);
@@ -78,7 +78,7 @@ public class DBManagerTest {
         user.setUserPwd("pwdTest");
         user.setAge(15);
         user.setServiceDuration("20240630");
-        user.setServiceType(ServiceType.physiology_face.name());
+        user.setServiceType(ServiceType.physiology_face.getValue());
         assertTrue(ServiceUserDAO.create(user));
         this.userId = user.getUserId();
         ServiceUser read = ServiceUserDAO.read(userId, orgId);

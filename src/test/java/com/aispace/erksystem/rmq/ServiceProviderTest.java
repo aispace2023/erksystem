@@ -20,7 +20,7 @@ class ServiceProviderTest {
         RmqSimBase.init("src/test/resources/config");
 
         handleMessage(getAddServiceProviderInfoRQ(getQueueInfo("ERK_API_QUEUE", "API_QUEUE"),
-                "TEST_ORG_NAME", "TEST", "20330101", 7777, ServiceType_e.ServiceType_unknown));
+                "TEST_ORG_NAME", "TEST", "20330101", 7777, ServiceType_e.ServiceType_physiology_speech));
 
         handleMessage(getDelServiceProviderInfoRQ(getQueueInfo("ERK_API_QUEUE", "API_QUEUE"),
                 "TEST_ORG_NAME", "TEST"));

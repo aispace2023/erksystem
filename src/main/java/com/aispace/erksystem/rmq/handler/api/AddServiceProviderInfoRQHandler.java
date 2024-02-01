@@ -5,9 +5,9 @@ import com.aispace.erksystem.rmq.handler.base.RmqOutgoingHandler;
 import com.aispace.erksystem.rmq.handler.base.exception.RmqHandleException;
 import com.aispace.erksystem.service.database.ServiceProviderDAO;
 import com.aispace.erksystem.service.database.table.ServiceProvider;
-import com.aispace.erksystem.service.database.type.ServiceType;
 import com.erksystem.protobuf.api.AddServiceProviderInfoRP_m;
 import com.erksystem.protobuf.api.AddServiceProviderInfoRQ_m;
+import com.erksystem.protobuf.api.ErkMsgType_e;
 import com.erksystem.protobuf.api.OrgProfileResult_e;
 
 import static com.erksystem.protobuf.api.OrgProfileResult_e.OrgProfileResult_nok_DB;
@@ -24,13 +24,14 @@ public class AddServiceProviderInfoRQHandler extends RmqIncomingHandler<AddServi
         provider.setOrgPwd(msg.getOrgPwd());
         provider.setServiceDuration(msg.getServiceDuration());
         provider.setUserNumber(msg.getUserNumber());
-        provider.setServiceType(ServiceType.getName(msg.getServiceType().getNumber()));
+        provider.setServiceType(msg.getServiceType().getNumber());
 
         if (!ServiceProviderDAO.create(provider)) {
             throw new RmqHandleException(OrgProfileResult_nok_DB.getNumber(), "FAIL");
         }
 
         AddServiceProviderInfoRP_m res = AddServiceProviderInfoRP_m.newBuilder()
+                .setMsgType(ErkMsgType_e.AddServiceProviderInfoRP)
                 .setQueueInfo(msg.getQueueInfo())
                 .setOrgName(msg.getOrgName())
                 .setOrgPwd(msg.getOrgPwd())
@@ -47,6 +48,7 @@ public class AddServiceProviderInfoRQHandler extends RmqIncomingHandler<AddServi
     @Override
     protected void onFail(int reasonCode, String reason) {
         AddServiceProviderInfoRP_m res = AddServiceProviderInfoRP_m.newBuilder()
+                .setMsgType(ErkMsgType_e.AddServiceProviderInfoRP)
                 .setQueueInfo(msg.getQueueInfo())
                 .setOrgName(msg.getOrgName())
                 .setOrgPwd(msg.getOrgPwd())

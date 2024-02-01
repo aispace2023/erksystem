@@ -8,6 +8,7 @@ import com.aispace.erksystem.service.database.table.ServiceProvider;
 import com.aispace.erksystem.service.database.table.ServiceUser;
 import com.erksystem.protobuf.api.DelUserInfoRP_m;
 import com.erksystem.protobuf.api.DelUserInfoRQ_m;
+import com.erksystem.protobuf.api.ErkMsgType_e;
 
 import static com.aispace.erksystem.rmq.handler.base.RmqOutgoingHandler.sendErkApiMsg2API;
 import static com.erksystem.protobuf.api.UserProfileResult_e.UserProfileResult_nok_OrgName;
@@ -41,6 +42,7 @@ public class DelUserInfoRQHandler extends RmqIncomingHandler<DelUserInfoRQ_m> {
 
     private void sendRsp(int reasonCode, String reason) {
         DelUserInfoRP_m res = DelUserInfoRP_m.newBuilder()
+                .setMsgType(ErkMsgType_e.DelUserInfoRP)
                 .setQueueInfo(msg.getQueueInfo())
                 .setOrgName(msg.getOrgName())
                 .setUserName(msg.getUserName())

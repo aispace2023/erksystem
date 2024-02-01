@@ -7,6 +7,7 @@ import com.aispace.erksystem.service.database.ServiceProviderDAO;
 import com.aispace.erksystem.service.database.table.ServiceProvider;
 import com.erksystem.protobuf.api.DelServiceProviderInfoRP_m;
 import com.erksystem.protobuf.api.DelServiceProviderInfoRQ_m;
+import com.erksystem.protobuf.api.ErkMsgType_e;
 
 import static com.erksystem.protobuf.api.UserProfileResult_e.UserProfileResult_ok;
 
@@ -35,6 +36,7 @@ public class DelServiceProviderInfoRQHandler extends RmqIncomingHandler<DelServi
 
     private void sendRsp(int reasonCode) {
         DelServiceProviderInfoRP_m res = DelServiceProviderInfoRP_m.newBuilder()
+                .setMsgType(ErkMsgType_e.DelServiceProviderInfoRP)
                 .setQueueInfo(msg.getQueueInfo())
                 .setOrgName(msg.getOrgName())
                 .setResultTypeValue(reasonCode)
