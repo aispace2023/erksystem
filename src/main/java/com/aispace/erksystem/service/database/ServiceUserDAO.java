@@ -19,9 +19,8 @@ public class ServiceUserDAO {
 
     public static boolean create(ServiceUser su) {
         Session session = sessionFactory.openSession();
-        Transaction tx = null;
         try {
-            tx = session.beginTransaction();
+            Transaction tx = session.beginTransaction();
             Query<Integer> query = session.createNativeQuery("SELECT COALESCE(MAX(user_id), 0) AS id_max FROM service_user_tbl");
             int newId = query.getSingleResult() + 1;   // query result 가 없거나 복수 개인 경우 exception
             if (newId < 1 || newId > 999) throw new SQLDataException("can't retrieve max user_id");
@@ -30,8 +29,7 @@ public class ServiceUserDAO {
             tx.commit();
             return true;
         } catch (Exception e) {
-            if (tx != null) tx.rollback();
-            log.warn("insert error", e);
+            log.warn("insert error - {}", e.getMessage());
             return false;
         } finally {
             if (session != null && session.isOpen())
@@ -48,7 +46,7 @@ public class ServiceUserDAO {
             su.setUserId(userId);
             return session.get(ServiceUser.class, su);
         } catch (Exception e) {
-            log.error("read error", e);
+            log.warn("read error - {}", e.getMessage());
             return null;
         } finally {
             if (session != null && session.isOpen())
@@ -67,7 +65,7 @@ public class ServiceUserDAO {
                     .setParameter(2, userName);
             return query.getSingleResult();   // query result 가 없거나 복수 개인 경우 exception
         } catch (Exception e) {
-            log.error("read error", e);
+            log.warn("read error - {}", e.getMessage());
             return null;
         } finally {
             if (session != null && session.isOpen())
@@ -77,15 +75,13 @@ public class ServiceUserDAO {
 
     public static boolean update(ServiceUser su) {
         Session session = sessionFactory.openSession();
-        Transaction tx = null;
         try {
-            tx = session.beginTransaction();
+            Transaction tx = session.beginTransaction();
             session.update(su);
             tx.commit();
             return true;
         } catch (Exception e) {
-            if (tx != null) tx.rollback();
-            log.warn("update error", e);
+            log.warn("update error - {}", e.getMessage());
             return false;
         } finally {
             if (session != null && session.isOpen())
@@ -95,10 +91,9 @@ public class ServiceUserDAO {
 
     public static boolean delete(int orgId, int userId) {
         Session session = sessionFactory.openSession();
-        Transaction tx = null;
         try {
             boolean result = false;
-            tx = session.beginTransaction();
+            Transaction tx = session.beginTransaction();
             ServiceUser su = session.get(ServiceUser.class, new ServiceUserId(userId, orgId));
             if (su != null) {
                 session.delete(su);
@@ -107,8 +102,7 @@ public class ServiceUserDAO {
             tx.commit();
             return result;
         } catch (Exception e) {
-            if (tx != null) tx.rollback();
-            log.warn("delete error", e);
+            log.warn("delete error - {}", e.getMessage());
             return false;
         } finally {
             if (session != null && session.isOpen())

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD//EN" "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
         <property name="connection.provider_class">org.hibernate.hikaricp.internal.HikariCPConnectionProvider</property>
@@ -9,7 +9,7 @@
 
         <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
         <property name="show_sql">true</property>
-        <property name="format_sql">true</property>
+        <property name="format_sql">false</property>
 
         <!--property name="hikari.dataSourceClassName">org.mariadb.jdbc.MariaDbDataSource</property-->
         <property name="hikari.driverClassName">com.mysql.cj.jdbc.Driver</property>

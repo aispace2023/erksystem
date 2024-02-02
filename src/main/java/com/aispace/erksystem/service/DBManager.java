@@ -46,10 +46,8 @@ public class DBManager {
             String pwd = PasswdUtil.decrypt(props.getProperty("hibernate.hikari.password"));
             props.setProperty("hibernate.hikari.password", pwd);
             sessionFactory = configuration.buildSessionFactory();
-//            StandardServiceRegistryBuilder registryBuilder = new StandardServiceRegistryBuilder();
-//            registryBuilder.applySettings(props);
-//            StandardServiceRegistry standardServiceRegistry = registryBuilder.build();
-//            sessionFactory = config.buildSessionFactory(standardServiceRegistry);
+            if (sessionFactory == null) throw new NullPointerException();
+            log.info("SessionFactory is normally created.");
             return true;
         } catch (Exception e) {
             log.error("Initial SessionFactory creation failed", e);

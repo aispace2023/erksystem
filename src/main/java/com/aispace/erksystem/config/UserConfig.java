@@ -51,19 +51,6 @@ public class UserConfig extends YamlConfig {
     @ConfigValue("performance.rmq-consumer-count")
     Integer rmqConsumerCount;
 
-    @ConfigValue("dbms.host")
-    String dbHost;
-    @ConfigValue("dbms.user")
-    String dbUser;
-    @ConfigValue("dbms.password")
-    String dbPassword;
-    @ConfigValue("dbms.database")
-    String dbName;
-    @ConfigValue("dbms.jdbc-params")
-    String jdbcParam;
-    @ConfigValue("dbms.port")
-    Integer dbPort;
-
     @ConfigValue("prometheus.activate")
     boolean prometheusActivate = false;
     @ConfigValue("prometheus.port")
@@ -74,7 +61,6 @@ public class UserConfig extends YamlConfig {
     @Override
     public void afterFieldSetting() {
         rmqPassword = PasswdUtil.decrypt(rmqPassword);
-        dbPassword = PasswdUtil.decrypt(dbPassword);
         if (prometheusMetricsPath != null && !prometheusMetricsPath.startsWith("/")) {
             prometheusMetricsPath = "/" + prometheusMetricsPath;
         }
