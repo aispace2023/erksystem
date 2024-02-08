@@ -1,11 +1,15 @@
 package com.aispace.erksystem.rmq.module;
 
+import com.aispace.erksystem.config.UserConfig;
+import com.aispace.erksystem.rmq.ErkMsgUtil;
 import com.aispace.erksystem.rmq.handler.api.*;
 import com.aispace.erksystem.rmq.handler.subsystem.ErkEngineCreateRPHandler;
 import com.aispace.erksystem.rmq.handler.subsystem.ErkEngineDeleteRPHandler;
+import com.aispace.erksystem.service.AppInstance;
 import com.erksystem.protobuf.api.ErkApiMsg;
 import lombok.extern.slf4j.Slf4j;
 
+import static com.aispace.erksystem.rmq.module.RmqLogPrinter.getMsgFrom;
 import static com.aispace.erksystem.rmq.module.RmqLogPrinter.proto2Json;
 
 
@@ -14,13 +18,14 @@ import static com.aispace.erksystem.rmq.module.RmqLogPrinter.proto2Json;
  */
 @Slf4j
 public class ErkApiMsgRmqConsumer {
+    private static final UserConfig userConfig = AppInstance.getInstance().getUserConfig();
     private ErkApiMsgRmqConsumer() {
     }
 
     public static void consumeApiMessage(byte[] message) {
         try {
             ErkApiMsg msg = ErkApiMsg.parseFrom(message);
-            log.info("RMQ Recv [{}]", proto2Json(msg).orElse("Fail to Parse"));
+            log.info("[RMQ MESSAGE RECV] {}<-{} [{}]", userConfig.getRmqIncomingQueueApi(), getMsgFrom(msg), proto2Json(msg).orElse("Fail to Parse"));
             switch (msg.getMsgCase()) {
                 case ERKSERVICECONNRQ -> new ErkServiceConnRqHandler().proc(msg);
                 case ERKSERVICEDISCONNRQ -> new ErkServiceDisConnRqHandler().proc(msg);
@@ -47,7 +52,7 @@ public class ErkApiMsgRmqConsumer {
     public static void consumeSubsystemApiMessage(byte[] message) {
         try {
             ErkApiMsg msg = ErkApiMsg.parseFrom(message);
-            log.info("RMQ Recv [{}]", proto2Json(msg).orElse("Fail to Parse"));
+            log.info("[RMQ MESSAGE RECV] {}<-{} [{}]", userConfig.getRmqIncomingQueueApi(), getMsgFrom(msg), proto2Json(msg).orElse("Fail to Parse"));
             switch (msg.getMsgCase()) {
                 case ERKENGINECREATERP -> new ErkEngineCreateRPHandler().proc(msg);
                 case ERKENGINEDELETERP -> new ErkEngineDeleteRPHandler().proc(msg);

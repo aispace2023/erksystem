@@ -1,5 +1,7 @@
 package com.aispace.erksystem.rmq.module;
 
+import com.aispace.erksystem.rmq.ErkMsgUtil;
+import com.erksystem.protobuf.api.QueueInfo_s;
 import com.google.protobuf.Message;
 import com.google.protobuf.util.JsonFormat;
 import lombok.extern.slf4j.Slf4j;
@@ -25,4 +27,7 @@ public class RmqLogPrinter {
         }
     }
 
+    public static String getMsgFrom(Message msg) {
+        return ErkMsgUtil.getQueueInfo(msg).map(QueueInfo_s::getFromQueueName).orElse("UNKNOWN");
+    }
 }

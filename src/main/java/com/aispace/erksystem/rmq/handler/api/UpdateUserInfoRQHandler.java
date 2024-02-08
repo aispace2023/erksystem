@@ -35,6 +35,6 @@ public class UpdateUserInfoRQHandler extends RmqIncomingHandler<UpdateUserInfoRQ
                 .setResultTypeValue(reasonCode)
                 .build();
 
-        RmqOutgoingHandler.sendErkApiMsg2API(res);
+        reply(res);
     }
 }

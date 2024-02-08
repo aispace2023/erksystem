@@ -37,11 +37,10 @@ public class DelServiceProviderInfoRQHandler extends RmqIncomingHandler<DelServi
     private void sendRsp(int reasonCode) {
         DelServiceProviderInfoRP_m res = DelServiceProviderInfoRP_m.newBuilder()
                 .setMsgType(ErkMsgType_e.DelServiceProviderInfoRP)
-                .setQueueInfo(msg.getQueueInfo())
                 .setOrgName(msg.getOrgName())
                 .setResultTypeValue(reasonCode)
                 .build();
 
-        RmqOutgoingHandler.sendErkApiMsg2API(res);
+        reply(res);
     }
 }

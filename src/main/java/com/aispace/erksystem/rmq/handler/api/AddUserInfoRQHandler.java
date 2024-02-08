@@ -42,7 +42,6 @@ public class AddUserInfoRQHandler extends RmqIncomingHandler<AddUserInfoRQ_m> {
 
         AddUserInfoRP_m res = AddUserInfoRP_m.newBuilder()
                 .setMsgType(ErkMsgType_e.AddUserInfoRP)
-                .setQueueInfo(msg.getQueueInfo())
                 .setOrgName(msg.getOrgName())
                 .setUserName(msg.getUserName())
                 .setUserPwd(msg.getUserPwd())
@@ -55,14 +54,13 @@ public class AddUserInfoRQHandler extends RmqIncomingHandler<AddUserInfoRQ_m> {
                 .setUserId(user.getUserId())
                 .build();
 
-        RmqOutgoingHandler.sendErkApiMsg2API(res);
+        reply(res);
     }
 
     @Override
     protected void onFail(int reasonCode, String reason) {
         AddUserInfoRP_m res = AddUserInfoRP_m.newBuilder()
                 .setMsgType(ErkMsgType_e.AddUserInfoRP)
-                .setQueueInfo(msg.getQueueInfo())
                 .setOrgName(msg.getOrgName())
                 .setUserName(msg.getUserName())
                 .setUserPwd(msg.getUserPwd())
@@ -74,6 +72,6 @@ public class AddUserInfoRQHandler extends RmqIncomingHandler<AddUserInfoRQ_m> {
                 .setResultTypeValue(reasonCode)
                 .build();
 
-        RmqOutgoingHandler.sendErkApiMsg2API(res);
+        reply(res);
     }
 }

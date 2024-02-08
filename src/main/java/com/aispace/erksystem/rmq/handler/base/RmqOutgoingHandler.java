@@ -6,6 +6,7 @@ import com.aispace.erksystem.service.AppInstance;
 import com.google.protobuf.Message;
 import lombok.extern.slf4j.Slf4j;
 
+import static com.aispace.erksystem.rmq.module.RmqLogPrinter.getMsgFrom;
 import static com.aispace.erksystem.rmq.module.RmqLogPrinter.proto2Json;
 
 
@@ -25,7 +26,7 @@ public class RmqOutgoingHandler {
         try {
             rmqManager.getRmqModule(rmqKey).orElseThrow()
                     .sendMessage(queueName, msg.toByteArray(), 60_000);
-            log.info("RMQ Send [{}]", proto2Json(msg).orElse("Fail to Parse"));
+            log.info("[RMQ MESSAGE SEND] {}->{} [{}]", getMsgFrom(msg), queueName, proto2Json(msg).orElse("Fail to Parse"));
         } catch (Exception e) {
             log.warn("Err Occurs", e);
         }

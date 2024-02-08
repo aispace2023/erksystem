@@ -23,6 +23,6 @@ public class PhysioEmoRecogRqHandler extends RmqIncomingHandler<PhysioEmoRecogRQ
                 .setReturnCodeValue(reasonCode)
                 .build();
 
-        RmqOutgoingHandler.sendErkApiMsg2API(res);
+        reply(res);
     }
 }

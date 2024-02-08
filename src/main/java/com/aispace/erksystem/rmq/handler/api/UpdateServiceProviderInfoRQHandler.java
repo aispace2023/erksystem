@@ -31,6 +31,6 @@ public class UpdateServiceProviderInfoRQHandler extends RmqIncomingHandler<Updat
                 .setResultTypeValue(reasonCode)
                 .build();
 
-        RmqOutgoingHandler.sendErkApiMsg2API(res);
+        reply(res);
     }
 }

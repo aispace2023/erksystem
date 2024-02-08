@@ -32,7 +32,6 @@ public class RmqSimBase {
     public static byte[] lastSendRmqMsgByte;
     public static ErkApiMsg lastSendRmqMsg;
     public static Consumer<ErkApiMsg> onRmqMsgResponse = msg -> {
-        log.info("[RMQ MESSAGE] ERK_SYSTEM -> _ : {}", proto2Json(msg).orElse("Fail to Parse"));
     };
 
     public static AtomicBoolean isInitDone = new AtomicBoolean(false);

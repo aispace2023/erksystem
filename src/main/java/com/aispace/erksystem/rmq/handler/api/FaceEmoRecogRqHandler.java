@@ -23,6 +23,6 @@ public class FaceEmoRecogRqHandler extends RmqIncomingHandler<FaceEmoRecogRQ_m> 
                 .setReturnCodeValue(reasonCode)
                 .build();
 
-        RmqOutgoingHandler.sendErkApiMsg2API(res);
+        reply(res);
     }
 }

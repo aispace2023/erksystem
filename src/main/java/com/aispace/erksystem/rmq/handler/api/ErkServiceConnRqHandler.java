@@ -28,7 +28,7 @@ public class ErkServiceConnRqHandler extends RmqIncomingHandler<ErkServiceConnRQ
                 .setReturnCode(ReturnCode_e.ReturnCode_ok)
                 .build();
 
-        RmqOutgoingHandler.sendErkApiMsg2API(res);
+        reply(res);
     }
 
     @Override
@@ -39,6 +39,6 @@ public class ErkServiceConnRqHandler extends RmqIncomingHandler<ErkServiceConnRQ
                 .setReturnCodeValue(reasonCode)
                 .build();
 
-        RmqOutgoingHandler.sendErkApiMsg2API(res);
+        reply(res);
     }
 }

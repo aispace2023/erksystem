@@ -44,7 +44,7 @@ public class EmoServiceStopRQHandler extends RmqIncomingHandler<EmoServiceStopRQ
                                 .setErkMsgHead(ErkMsgHead_s.newBuilder(msg.getErkMsgHead()).setMsgType(ErkMsgType_e.EmoServiceStopRP))
                                 .setMsgTime(System.currentTimeMillis())
                                 .build();
-                        RmqOutgoingHandler.sendErkApiMsg2API(res);
+                        reply(res);
                     } catch (Exception e) {
                         log.warn("Unexpected Exception Occurs", e);
                         onFail(0, "Unexpected Exception");
@@ -63,6 +63,6 @@ public class EmoServiceStopRQHandler extends RmqIncomingHandler<EmoServiceStopRQ
                 .setReturnCodeValue(reasonCode)
                 .build();
 
-        RmqOutgoingHandler.sendErkApiMsg2API(res);
+        reply(res);
     }
 }

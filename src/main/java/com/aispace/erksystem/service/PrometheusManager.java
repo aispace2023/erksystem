@@ -1,6 +1,7 @@
 package com.aispace.erksystem.service;
 
 import io.micrometer.core.instrument.Metrics;
+import io.micrometer.core.instrument.binder.MeterBinder;
 import io.micrometer.core.instrument.binder.jvm.*;
 import io.micrometer.core.instrument.binder.logging.LogbackMetrics;
 import io.micrometer.core.instrument.binder.system.FileDescriptorMetrics;
@@ -18,6 +19,7 @@ import java.io.File;
 @Getter
 public class PrometheusManager {
     PrometheusMeterRegistry registry;
+
     private PrometheusManager() {
         registry = new PrometheusMeterRegistry(PrometheusConfig.DEFAULT);
         // new DatabaseTableMetrics().bindTo(registry);
@@ -46,5 +48,9 @@ public class PrometheusManager {
 
     public static PrometheusManager getInstance() {
         return SingletonInstance.INSTANCE;
+    }
+
+    public void bindMetric(MeterBinder meterBinder) {
+        meterBinder.bindTo(registry);
     }
 }

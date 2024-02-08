@@ -32,7 +32,6 @@ public class AddServiceProviderInfoRQHandler extends RmqIncomingHandler<AddServi
 
         AddServiceProviderInfoRP_m res = AddServiceProviderInfoRP_m.newBuilder()
                 .setMsgType(ErkMsgType_e.AddServiceProviderInfoRP)
-                .setQueueInfo(msg.getQueueInfo())
                 .setOrgName(msg.getOrgName())
                 .setOrgPwd(msg.getOrgPwd())
                 .setServiceDuration(msg.getServiceDuration())
@@ -42,14 +41,13 @@ public class AddServiceProviderInfoRQHandler extends RmqIncomingHandler<AddServi
                 .setOrgId(provider.getOrgId())
                 .build();
 
-        RmqOutgoingHandler.sendErkApiMsg2API(res);
+        reply(res);
     }
 
     @Override
     protected void onFail(int reasonCode, String reason) {
         AddServiceProviderInfoRP_m res = AddServiceProviderInfoRP_m.newBuilder()
                 .setMsgType(ErkMsgType_e.AddServiceProviderInfoRP)
-                .setQueueInfo(msg.getQueueInfo())
                 .setOrgName(msg.getOrgName())
                 .setOrgPwd(msg.getOrgPwd())
                 .setServiceDuration(msg.getServiceDuration())
@@ -58,6 +56,6 @@ public class AddServiceProviderInfoRQHandler extends RmqIncomingHandler<AddServi
                 .setResultTypeValue(reasonCode)
                 .build();
 
-        RmqOutgoingHandler.sendErkApiMsg2API(res);
+        reply(res);
     }
 }

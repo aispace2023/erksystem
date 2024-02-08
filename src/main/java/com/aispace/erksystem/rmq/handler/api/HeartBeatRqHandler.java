@@ -23,6 +23,6 @@ public class HeartBeatRqHandler extends RmqIncomingHandler<HeartBeatRQ_m> {
                 .setStatus(0)
                 .build();
 
-        RmqOutgoingHandler.sendErkApiMsg2API(res);
+        reply(res);
     }
 }

@@ -23,6 +23,6 @@ public class SpeechEmoRecogRqHandler extends RmqIncomingHandler<SpeechEmoRecogRQ
                 .setReturnCodeValue(reasonCode)
                 .build();
 
-        RmqOutgoingHandler.sendErkApiMsg2API(res);
+        reply(res);
     }
 }

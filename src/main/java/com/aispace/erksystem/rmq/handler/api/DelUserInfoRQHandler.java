@@ -1,6 +1,7 @@
 package com.aispace.erksystem.rmq.handler.api;
 
 import com.aispace.erksystem.rmq.handler.base.RmqIncomingHandler;
+import com.aispace.erksystem.rmq.handler.base.RmqOutgoingHandler;
 import com.aispace.erksystem.rmq.handler.base.exception.RmqHandleException;
 import com.aispace.erksystem.service.database.ServiceProviderDAO;
 import com.aispace.erksystem.service.database.ServiceUserDAO;
@@ -10,7 +11,6 @@ import com.erksystem.protobuf.api.DelUserInfoRP_m;
 import com.erksystem.protobuf.api.DelUserInfoRQ_m;
 import com.erksystem.protobuf.api.ErkMsgType_e;
 
-import static com.aispace.erksystem.rmq.handler.base.RmqOutgoingHandler.sendErkApiMsg2API;
 import static com.erksystem.protobuf.api.UserProfileResult_e.UserProfileResult_nok_OrgName;
 import static com.erksystem.protobuf.api.UserProfileResult_e.UserProfileResult_ok;
 
@@ -43,13 +43,12 @@ public class DelUserInfoRQHandler extends RmqIncomingHandler<DelUserInfoRQ_m> {
     private void sendRsp(int reasonCode, String reason) {
         DelUserInfoRP_m res = DelUserInfoRP_m.newBuilder()
                 .setMsgType(ErkMsgType_e.DelUserInfoRP)
-                .setQueueInfo(msg.getQueueInfo())
                 .setOrgName(msg.getOrgName())
                 .setUserName(msg.getUserName())
                 .setResultTypeValue(reasonCode)
                 .setReturn(reason) // TODO return 값 체크
                 .build();
 
-        sendErkApiMsg2API(res);
+        reply(res);
     }
 }

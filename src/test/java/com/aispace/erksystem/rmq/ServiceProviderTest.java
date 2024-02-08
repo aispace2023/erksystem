@@ -19,10 +19,10 @@ class ServiceProviderTest {
     void serviceProviderTest() throws IOException, NoSuchFieldException {
         RmqSimBase.init("src/test/resources/config");
 
-        handleMessage(getAddServiceProviderInfoRQ(getQueueInfo("ERK_API_QUEUE", "API_QUEUE"),
+        handleMessage(getAddServiceProviderInfoRQ(getQueueInfo("ERK_API_QUEUE11111", "API_QUEUE22222"),
                 "TEST_ORG_NAME", "TEST", "20330101", 7777, ServiceType_e.ServiceType_physiology_speech));
 
-        handleMessage(getDelServiceProviderInfoRQ(getQueueInfo("ERK_API_QUEUE", "API_QUEUE"),
+        handleMessage(getDelServiceProviderInfoRQ(getQueueInfo("ERK_API_QUEUE33333", "API_QUEUE44444"),
                 "TEST_ORG_NAME", "TEST"));
     }
 }
