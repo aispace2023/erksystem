@@ -37,7 +37,7 @@ public class UserConfig extends YamlConfig {
     String rmqOutgoingQueueSubsystem;
 
     @ConfigValue("rmq.agent-option.durable")
-    boolean agentOptionDurable = false;
+    boolean agentOptionDurable = true;
     @ConfigValue("rmq.agent-option.exclusive")
     boolean agentOptionExclusive = false;
     @ConfigValue("rmq.agent-option.autoDelete")

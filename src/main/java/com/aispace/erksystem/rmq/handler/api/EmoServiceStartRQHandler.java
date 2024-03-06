@@ -28,14 +28,16 @@ public class EmoServiceStartRQHandler extends RmqIncomingHandler<EmoServiceStart
         int orgId = erkMsgHead.getOrgId();
         int userId = erkMsgHead.getUserId();
         String recvQueue = "RECV_%02d_%03d_%03d".formatted(msg.getServiceType().getNumber(), orgId, userId);
-        String sendQueue = "RECV_%02d_%03d_%03d".formatted(msg.getServiceType().getNumber(), orgId, userId);
+        String sendQueue = "SEND_%02d_%03d_%03d".formatted(msg.getServiceType().getNumber(), orgId, userId);
 
         RmqModule rmqModule = rmqManager.getRmqModule(userConfig.getRmqIncomingQueueSubsystem()).orElseThrow();
 
         // RMQ 큐 생성
         try {
             rmqModule.getChannel().queueDeclare(recvQueue, userConfig.isAgentOptionDurable(), userConfig.isAgentOptionExclusive(), userConfig.isAgentOptionAutoDelete(), Map.of("x-queue-type", "stream"));
+            log.info("Queue Declared [{}]", recvQueue);
             rmqModule.getChannel().queueDeclare(sendQueue, userConfig.isAgentOptionDurable(), userConfig.isAgentOptionExclusive(), userConfig.isAgentOptionAutoDelete(), Map.of("x-queue-type", "stream"));
+            log.info("Queue Declared [{}]", sendQueue);
         } catch (IOException e) {
             throw new RmqHandleException(0, "Fail to create queue", e);
         }
