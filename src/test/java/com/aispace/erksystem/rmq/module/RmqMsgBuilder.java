@@ -402,17 +402,27 @@ public class RmqMsgBuilder {
     public static ErkApiMsg getErkEngineCreateRP(int OrgId, int UserId, long MsgTime, ReturnCode_e
             ReturnCode, ErkEngineInfo_s PhysioEngineInfo, ErkEngineInfo_s SpeechEngineInfo, ErkEngineInfo_s
                                                          FaceEngineInfo, ErkEngineInfo_s KnowledgeEngineInfo, ErkEngineInfo_s ServiceEngineInfo) {
-        return getErkApiMsg(
-                ErkEngineCreateRP_m.newBuilder()
-                        .setErkInterMsgHead(getErkInterMsgHead(ErkInterMsgType_e.ErkEngineCreateRP, OrgId, UserId))
-                        .setMsgTime(MsgTime)
-                        .setReturnCode(ReturnCode)
-                        .setPhysioEngineInfo(PhysioEngineInfo)
-                        .setSpeechEngineInfo(SpeechEngineInfo)
-                        .setFaceEngineInfo(FaceEngineInfo)
-                        .setKnowledgeEngineInfo(KnowledgeEngineInfo)
-                        .setServiceEngineInfo(ServiceEngineInfo)
-                        .build());
+        ErkEngineCreateRP_m.Builder builder = ErkEngineCreateRP_m.newBuilder()
+                .setErkInterMsgHead(getErkInterMsgHead(ErkInterMsgType_e.ErkEngineCreateRP, OrgId, UserId))
+                .setMsgTime(MsgTime)
+                .setReturnCode(ReturnCode);
+
+        if(PhysioEngineInfo != null){
+            builder.setPhysioEngineInfo(PhysioEngineInfo);
+        }
+        if(SpeechEngineInfo != null){
+            builder.setSpeechEngineInfo(SpeechEngineInfo);
+        }
+        if(FaceEngineInfo != null){
+            builder.setFaceEngineInfo(FaceEngineInfo);
+        }
+        if(KnowledgeEngineInfo != null){
+            builder.setKnowledgeEngineInfo(KnowledgeEngineInfo);
+        }
+        if(ServiceEngineInfo != null){
+            builder.setServiceEngineInfo(ServiceEngineInfo);
+        }
+        return getErkApiMsg(builder.build());
     }
 
     public static ErkApiMsg getErkEngineDeleteRQ(int OrgId, int UserId, long MsgTime, ServiceType_e

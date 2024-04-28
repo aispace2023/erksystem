@@ -3,6 +3,7 @@ package com.aispace.erksystem.rmq.handler.subsystem;
 import com.aispace.erksystem.rmq.handler.base.RmqIncomingHandler;
 import com.erksystem.protobuf.api.ErkEngineCreateRP_m;
 import com.erksystem.protobuf.api.ErkInterMsgHead_s;
+import com.erksystem.protobuf.api.ErkInterMsgType_e;
 import lombok.extern.slf4j.Slf4j;
 
 import static com.erksystem.protobuf.api.ReturnCode_e.ReturnCode_ok;
@@ -15,7 +16,7 @@ public class ErkEngineCreateRPHandler extends RmqIncomingHandler<ErkEngineCreate
     @Override
     protected void handle() {
         ErkInterMsgHead_s erkMsgHead = msg.getErkInterMsgHead();
-        String key = erkMsgHead.getMsgType().toString() + erkMsgHead.getUserId() + erkMsgHead.getOrgId();
+        String key = erkMsgHead.getUserId() + "_" + erkMsgHead.getOrgId();
 
         promiseManager.findPromiseInfo(key).ifPresentOrElse(promiseInfo -> {
             if (msg.getReturnCode() == ReturnCode_ok) {

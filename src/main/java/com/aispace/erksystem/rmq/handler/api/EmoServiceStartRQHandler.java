@@ -50,18 +50,20 @@ public class EmoServiceStartRQHandler extends RmqIncomingHandler<EmoServiceStart
             String testRecvQueue = userConfig.getTestRecvQueue();
             if (testRecvQueue != null && !testRecvQueue.isEmpty()) {
                 rmqModule.getChannel().queueDeclare(testRecvQueue, userConfig.isAgentOptionDurable(), userConfig.isAgentOptionExclusive(), userConfig.isAgentOptionAutoDelete(), Map.of("x-queue-type", "stream"));
+                log.info("Queue Declared [{}]", testRecvQueue);
             }
 
             String testSendQueue = userConfig.getTestSendQueue();
             if (testSendQueue != null && !testSendQueue.isEmpty()) {
                 rmqModule.getChannel().queueDeclare(testSendQueue, userConfig.isAgentOptionDurable(), userConfig.isAgentOptionExclusive(), userConfig.isAgentOptionAutoDelete(), Map.of("x-queue-type", "stream"));
+                log.info("Queue Declared [{}]", testSendQueue);
             }
         } catch (Exception e) {
             // Do Nothing
         }
 
         // 추후 메시지에 TransactionId 필드가 추가되면 그때 key 수정
-        String key = erkMsgHead.getMsgType().toString() + userId + orgId;
+        String key = userId + "_" + orgId;
         promiseManager.createPromiseInfo(key,
                 () -> {
                     try {
@@ -69,6 +71,7 @@ public class EmoServiceStartRQHandler extends RmqIncomingHandler<EmoServiceStart
                         EmoServiceStartRP_m res = EmoServiceStartRP_m.newBuilder()
                                 .setErkMsgHead(ErkMsgHead_s.newBuilder(msg.getErkMsgHead()).setMsgType(ErkMsgType_e.EmoServiceStartRP))
                                 .setMsgTime(System.currentTimeMillis())
+                                .setReturnCode(ReturnCode_e.ReturnCode_ok)
                                 .build();
                         reply(res);
                     } catch (Exception e) {
