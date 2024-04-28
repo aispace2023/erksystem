@@ -10,6 +10,8 @@ import lombok.extern.slf4j.Slf4j;
 import java.io.IOException;
 import java.util.Map;
 
+import static com.aispace.erksystem.rmq.handler.base.ErkMsgWrapper.convertToErkApiMsg;
+
 /**
  * Created by Ai_Space
  */
@@ -41,6 +43,23 @@ public class EmoServiceStartRQHandler extends RmqIncomingHandler<EmoServiceStart
         } catch (IOException e) {
             throw new RmqHandleException(0, "Fail to create queue", e);
         }
+
+        // TODO : 테스트용. 추후 삭제
+        try {
+
+            String testRecvQueue = userConfig.getTestRecvQueue();
+            if (testRecvQueue != null && !testRecvQueue.isEmpty()) {
+                rmqModule.getChannel().queueDeclare(testRecvQueue, userConfig.isAgentOptionDurable(), userConfig.isAgentOptionExclusive(), userConfig.isAgentOptionAutoDelete(), Map.of("x-queue-type", "stream"));
+            }
+
+            String testSendQueue = userConfig.getTestSendQueue();
+            if (testSendQueue != null && !testSendQueue.isEmpty()) {
+                rmqModule.getChannel().queueDeclare(testSendQueue, userConfig.isAgentOptionDurable(), userConfig.isAgentOptionExclusive(), userConfig.isAgentOptionAutoDelete(), Map.of("x-queue-type", "stream"));
+            }
+        } catch (Exception e) {
+            // Do Nothing
+        }
+
         // 추후 메시지에 TransactionId 필드가 추가되면 그때 key 수정
         String key = erkMsgHead.getMsgType().toString() + userId + orgId;
         promiseManager.createPromiseInfo(key,
@@ -59,7 +78,18 @@ public class EmoServiceStartRQHandler extends RmqIncomingHandler<EmoServiceStart
                 },
                 () -> onFail(0, "EmoServiceStart Fail"),
                 () -> onFail(0, "EmoServiceStart Timeout"), 5000);
-        // TODO ErkEngineCreateRQ_m 송신
+
+        // TODO : 테스트용 코드. 추후 ErkEngineCreateRQ_m 메시지 송신 로직 수정
+        ErkApiMsg msg = convertToErkApiMsg(ErkEngineCreateRQ_m.newBuilder()
+                .setErkInterMsgHead(ErkInterMsgHead_s.newBuilder()
+                        .setMsgType(ErkInterMsgType_e.ErkEngineCreateRQ)
+                        .setOrgId(orgId)
+                        .setUserId(userId))
+                .setMsgTime(System.currentTimeMillis())
+                .setServiceType(this.msg.getServiceType())
+                .setSpeechEngineSendQueueName(userConfig.getTestSendQueue())
+                .setSpeechEngineReceiveQueueName(userConfig.getTestRecvQueue()).build());
+        RmqOutgoingHandler.send(msg, userConfig.getRmqIncomingQueueSubsystem(), userConfig.getRmqIncomingQueueSubsystem());
     }
 
     @Override

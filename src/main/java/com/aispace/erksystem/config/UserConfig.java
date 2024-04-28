@@ -58,6 +58,11 @@ public class UserConfig extends YamlConfig {
     @ConfigValue("prometheus.metrics_path")
     String prometheusMetricsPath;
 
+    @ConfigValue("test.send-queue")
+    String testSendQueue;
+    @ConfigValue("test.recv-queue")
+    String testRecvQueue;
+
     @Override
     public void afterFieldSetting() {
         rmqPassword = PasswdUtil.decrypt(rmqPassword);

@@ -17,3 +17,7 @@ prometheus:
   activate: false
   port: 8080
   metrics_path: /metrics/prometheus
+
+test:
+  send-queue: SEND_SER_QUEUE
+  recv-queue: RECV_SER_QUEUE

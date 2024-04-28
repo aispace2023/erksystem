@@ -58,8 +58,10 @@ enum ErkMsgType_e{
   FaceEmoRecogRP = 26;
   EmoRecogRQ = 27;
   EmoRecogRP = 28;
-  ErkMsgType_reserved1 = 29;
-  ErkMsgType_reserved2 = 30;
+  HeartBeatRQ = 29;
+  HeartBeatRP = 30;
+  ErkMsgType_reserved1 = 31;
+  ErkMsgType_reserved2 = 32;
 }
 
 enum ErkInterMsgType_e{
@@ -170,6 +172,73 @@ enum UserProfileResult_e{
   UserProfileResult_nok_reason2 = 12;
 }
 
+
+enum ProviderType_e{
+  ProviderType_unknown = 0;
+  ProviderType_personal = 1;
+  ProviderType_medical = 2;
+  ProviderType_education = 3;
+  ProviderType_public_social = 4;
+  ProviderType_emotional_labor = 5;
+  ProviderType_fire_119 = 6;
+  ProviderType_communication_service = 7;
+  ProviderType_advertisement = 8;
+  ProviderType_construction_project = 9;
+  ProviderType_clothing_business = 10;
+  ProviderType_reserved1 = 11;
+  ProviderType_reserved2 = 12;
+}
+
+enum SexType_e{
+  SexType_unknown = 0;
+  SexType_male = 1;
+  SexType_female = 2;
+  SexType_reserved1 = 3;
+  SexType_reserved2 = 4;
+}
+
+enum UserType_e{
+  UserType_unknown = 0;
+  UserType_normal = 1;
+  UserType_disabled = 2;
+  UserType_dementia = 3;
+  UserType_infant = 4;
+  UserType_student = 5;
+  UserType_soldier = 6;
+  UserType_firefighter = 7;
+  UserType_farmers = 8;
+  UserType_fishermen = 9;
+  UserType_merchant = 10;
+  UserType_professional = 11;
+  UserType_teacher = 12;
+  UserType_politician = 13;
+  UserType_reserved1 = 14;
+  UserType_reserved2 = 15;
+}
+
+enum MbtiType_e{
+  MbtiType_unknown = 0;
+  MbtiType_ISTJ = 1;
+  MbtiType_ISFJ = 2;
+  MbtiType_INFJ = 3;
+  MbtiType_INTJ = 4;
+  MbtiType_ISTP = 5;
+  MbtiType_ISFP = 6;
+  MbtiType_INFP = 7;
+  MbtiType_INTP = 8;
+  MbtiType_ESTP = 9;
+  MbtiType_ESFP = 10;
+  MbtiType_ENFP = 11;
+  MbtiType_ENTP = 12;
+  MbtiType_ESTJ = 13;
+  MbtiType_ESFJ = 14;
+  MbtiType_ENFJ = 15;
+  MbtiType_ENTJ = 16;
+  MbtiType_reserved1 = 17;
+  MbtiType_reserved2 = 18;
+}
+
+
 message ErkEngineInfo_s{
   EngineType_e EngineType = 1;
   EngineCondition_e EngineCondition = 2;
@@ -178,16 +247,15 @@ message ErkEngineInfo_s{
   string SendQueueName = 5;
 }
 
-
-
 message AddServiceProviderInfoRQ_m{
   ErkMsgType_e MsgType = 1;
   QueueInfo_s QueueInfo = 2;
   string OrgName = 3;
   string OrgPwd = 4;
-  string ServiceDuration = 5;
-  int32 UserNumber = 6;
-  ServiceType_e ServiceType = 7;
+  ProviderType_e ProviderType = 5;
+  string ServiceDuration = 6;
+  int32 UserNumber = 7;
+  ServiceType_e ServiceType = 8;
 }
 
 message AddServiceProviderInfoRP_m{
@@ -197,9 +265,10 @@ message AddServiceProviderInfoRP_m{
   OrgProfileResult_e ResultType = 4;
   int32 OrgId = 5;
   string OrgPwd = 6;
-  string ServiceDuration = 7;
-  int32 UserNumber = 8;
-  ServiceType_e ServiceType = 9;
+  ProviderType_e ProviderType = 7;
+  string ServiceDuration = 8;
+  int32 UserNumber = 9;
+  ServiceType_e ServiceType = 10;
 }
 
 message UpdateServiceProviderInfoRQ_m{
@@ -207,13 +276,15 @@ message UpdateServiceProviderInfoRQ_m{
   QueueInfo_s QueueInfo = 2;
   string OrgName = 3;
   string Old_OrgPwd = 4;
-  string Old_ServiceDuration = 5;
-  int32 Old_UserNumber = 6;
-  ServiceType_e Old_ServiceType = 7;
-  string New_OrgPwd = 8;
-  string New_ServiceDuration = 9;
-  int32 New_UserNumber = 10;
-  ServiceType_e New_ServiceType = 11;
+  ProviderType_e Old_ProviderType = 5;
+  string Old_ServiceDuration = 6;
+  int32 Old_UserNumber = 7;
+  ServiceType_e Old_ServiceType = 8;
+  string New_OrgPwd = 9;
+  ProviderType_e New_ProviderType = 10;
+  string New_ServiceDuration = 11;
+  int32 New_UserNumber = 12;
+  ServiceType_e New_ServiceType = 13;
 }
 
 message UpdateServiceProviderInfoRP_m{
@@ -222,13 +293,15 @@ message UpdateServiceProviderInfoRP_m{
   string OrgName = 3;
   OrgProfileResult_e ResultType = 4;
   string Old_OrgPwd = 5;
-  string Old_ServiceDuration = 6;
-  int32 Old_UserNumber = 7;
-  ServiceType_e Old_ServiceType = 8;
-  string New_OrgPwd = 9;
-  string New_ServiceDuration = 10;
-  int32 New_UserNumber = 11;
-  ServiceType_e New_ServiceType = 12;
+  ProviderType_e Old_ProviderType = 6;
+  string Old_ServiceDuration = 7;
+  int32 Old_UserNumber = 8;
+  ServiceType_e Old_ServiceType = 9;
+  string New_OrgPwd = 10;
+  ProviderType_e New_ProviderType = 11;
+  string New_ServiceDuration = 120;
+  int32 New_UserNumber = 13;
+  ServiceType_e New_ServiceType = 14;
 }
 
 message DelServiceProviderInfoRQ_m{
@@ -253,9 +326,10 @@ message AddUserInfoRQ_m{
   string UserPwd = 5;
   string ServiceDuration = 6;
   int32 Age = 7;
-  int32 Sex = 8;
-  int32 UserType = 9;
-  ServiceType_e ServiceType = 10;
+  SexType_e Sex = 8;
+  MbtiType_e MbtiType = 9;
+  UserType_e UserType = 10;
+  ServiceType_e ServiceType = 11;
 }
 
 message AddUserInfoRP_m{
@@ -268,9 +342,10 @@ message AddUserInfoRP_m{
   string UserPwd = 7;
   string ServiceDuration = 8;
   int32 Age = 9;
-  int32 Sex = 10;
-  int32 UserType = 11;
-  ServiceType_e ServiceType = 12;
+  SexType_e Sex = 10;
+  MbtiType_e MbtiType = 11;
+  UserType_e UserType = 12;
+  ServiceType_e ServiceType = 13;
 }
 
 message UpdateUserInfoRQ_m{
@@ -280,16 +355,18 @@ message UpdateUserInfoRQ_m{
   string UserName = 4;
   string Old_UserPwd = 5;
   string Old_ServiceDuration = 6;
-  int32 Old_Age = 7;
-  int32 Old_Sex = 8;
-  int32 Old_UserType = 9;
-  ServiceType_e Old_ServiceType = 10;
-  string New_UserPwd = 11;
-  string New_ServiceDuration = 12;
-  int32 New_Age = 13;
-  int32 New_Sex = 14;
-  int32 New_UserType = 15;
-  ServiceType_e New_ServiceType = 16;
+  optional int32 Old_Age = 7;
+  SexType_e Old_Sex = 8;
+  MbtiType_e Old_MbtiType = 9;
+  UserType_e Old_UserType = 10;
+  ServiceType_e Old_ServiceType = 11;
+  string New_UserPwd = 12;
+  string New_ServiceDuration = 13;
+  optional int32 New_Age = 14;
+  SexType_e New_Sex = 15;
+  MbtiType_e New_MbtiType = 16;
+  UserType_e New_UserType = 17;
+  ServiceType_e New_ServiceType = 18;
 }
 
 message UpdateUserInfoRP_m{
@@ -301,15 +378,17 @@ message UpdateUserInfoRP_m{
   string Old_UserPwd = 6;
   string Old_ServiceDuration = 7;
   int32 Old_Age = 8;
-  int32 Old_Sex = 9;
-  int32 Old_UserType = 10;
-  ServiceType_e Old_ServiceType = 11;
-  string New_UserPwd = 12;
-  string New_ServiceDuration = 13;
-  int32 New_Age = 14;
-  int32 New_Sex = 15;
-  int32 New_UserType = 16;
-  ServiceType_e New_ServiceType = 17;
+  SexType_e Old_Sex = 9;
+  MbtiType_e Old_MbtiType = 10;
+  UserType_e Old_UserType = 11;
+  ServiceType_e Old_ServiceType = 12;
+  string New_UserPwd = 13;
+  string New_ServiceDuration = 14;
+  int32 New_Age = 15;
+  SexType_e New_Sex = 16;
+  MbtiType_e New_MbtiType = 17;
+  UserType_e New_UserType = 18;
+  ServiceType_e New_ServiceType = 19;
 }
 
 message DelUserInfoRQ_m{
@@ -461,7 +540,7 @@ message EmoRecogRQ_m{
   ErkMsgDataHead_s ErkMsgDataHead = 1;
   int64 DataTimeStamp = 2;
   int32 MsgDataLength = 3;
-  bytes MsgDataFrame = 4;
+  repeated bytes MsgDataFrame = 4;
 }
 
 message EmoRecogRP_m{
@@ -476,7 +555,7 @@ message PhysioEmoRecogRQ_m{
   ErkMsgDataHead_s ErkMsgDataHead = 1;
   int64 DataTimeStamp = 2;
   int32 MsgDataLength = 3;
-  bytes MsgDataFrame = 4;
+  repeated bytes MsgDataFrame = 4;
 }
 
 message PhysioEmoRecogRP_m{
@@ -491,7 +570,7 @@ message SpeechEmoRecogRQ_m{
   ErkMsgDataHead_s ErkMsgDataHead = 1;
   int64 DataTimeStamp = 2;
   int32 MsgDataLength = 3;
-  bytes MsgDataFrame = 4;
+  repeated bytes MsgDataFrame = 4;
 }
 
 message SpeechEmoRecogRP_m{
@@ -506,7 +585,7 @@ message FaceEmoRecogRQ_m{
   ErkMsgDataHead_s ErkMsgDataHead = 1;
   int64 DataTimeStamp = 2;
   int32 MsgDataLength = 3;
-  bytes MsgDataFrame = 4;
+  repeated bytes MsgDataFrame = 4;
 }
 
 message FaceEmoRecogRP_m{

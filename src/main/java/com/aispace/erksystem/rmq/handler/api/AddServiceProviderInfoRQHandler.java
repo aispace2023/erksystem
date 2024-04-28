@@ -22,6 +22,7 @@ public class AddServiceProviderInfoRQHandler extends RmqIncomingHandler<AddServi
         ServiceProvider provider = new ServiceProvider();
         provider.setOrgName(msg.getOrgName());
         provider.setOrgPwd(msg.getOrgPwd());
+        provider.setServiceType(msg.getServiceType().getNumber());
         provider.setServiceDuration(msg.getServiceDuration());
         provider.setUserNumber(msg.getUserNumber());
         provider.setServiceType(msg.getServiceType().getNumber());
@@ -34,6 +35,7 @@ public class AddServiceProviderInfoRQHandler extends RmqIncomingHandler<AddServi
                 .setMsgType(ErkMsgType_e.AddServiceProviderInfoRP)
                 .setOrgName(msg.getOrgName())
                 .setOrgPwd(msg.getOrgPwd())
+                .setServiceType(msg.getServiceType())
                 .setServiceDuration(msg.getServiceDuration())
                 .setUserNumber(msg.getUserNumber())
                 .setServiceType(msg.getServiceType())

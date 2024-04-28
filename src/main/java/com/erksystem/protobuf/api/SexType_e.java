@@ -5,37 +5,53 @@
 package com.erksystem.protobuf.api;
 
 /**
- * Protobuf enum {@code EngineCondition_e}
+ * Protobuf enum {@code SexType_e}
  */
-public enum EngineCondition_e
+public enum SexType_e
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
-   * <code>EngineCondition_unknown = 0;</code>
+   * <code>SexType_unknown = 0;</code>
    */
-  EngineCondition_unknown(0),
+  SexType_unknown(0),
   /**
-   * <code>EngineCondition_available = 1;</code>
+   * <code>SexType_male = 1;</code>
    */
-  EngineCondition_available(1),
+  SexType_male(1),
   /**
-   * <code>EngineCondition_not_available = 2;</code>
+   * <code>SexType_female = 2;</code>
    */
-  EngineCondition_not_available(2),
+  SexType_female(2),
+  /**
+   * <code>SexType_reserved1 = 3;</code>
+   */
+  SexType_reserved1(3),
+  /**
+   * <code>SexType_reserved2 = 4;</code>
+   */
+  SexType_reserved2(4),
   UNRECOGNIZED(-1),
   ;
 
   /**
-   * <code>EngineCondition_unknown = 0;</code>
+   * <code>SexType_unknown = 0;</code>
    */
-  public static final int EngineCondition_unknown_VALUE = 0;
+  public static final int SexType_unknown_VALUE = 0;
   /**
-   * <code>EngineCondition_available = 1;</code>
+   * <code>SexType_male = 1;</code>
    */
-  public static final int EngineCondition_available_VALUE = 1;
+  public static final int SexType_male_VALUE = 1;
   /**
-   * <code>EngineCondition_not_available = 2;</code>
+   * <code>SexType_female = 2;</code>
    */
-  public static final int EngineCondition_not_available_VALUE = 2;
+  public static final int SexType_female_VALUE = 2;
+  /**
+   * <code>SexType_reserved1 = 3;</code>
+   */
+  public static final int SexType_reserved1_VALUE = 3;
+  /**
+   * <code>SexType_reserved2 = 4;</code>
+   */
+  public static final int SexType_reserved2_VALUE = 4;
 
 
   public final int getNumber() {
@@ -52,7 +68,7 @@ public enum EngineCondition_e
    * @deprecated Use {@link #forNumber(int)} instead.
    */
   @java.lang.Deprecated
-  public static EngineCondition_e valueOf(int value) {
+  public static SexType_e valueOf(int value) {
     return forNumber(value);
   }
 
@@ -60,24 +76,26 @@ public enum EngineCondition_e
    * @param value The numeric wire value of the corresponding enum entry.
    * @return The enum associated with the given numeric wire value.
    */
-  public static EngineCondition_e forNumber(int value) {
+  public static SexType_e forNumber(int value) {
     switch (value) {
-      case 0: return EngineCondition_unknown;
-      case 1: return EngineCondition_available;
-      case 2: return EngineCondition_not_available;
+      case 0: return SexType_unknown;
+      case 1: return SexType_male;
+      case 2: return SexType_female;
+      case 3: return SexType_reserved1;
+      case 4: return SexType_reserved2;
       default: return null;
     }
   }
 
-  public static com.google.protobuf.Internal.EnumLiteMap<EngineCondition_e>
+  public static com.google.protobuf.Internal.EnumLiteMap<SexType_e>
       internalGetValueMap() {
     return internalValueMap;
   }
   private static final com.google.protobuf.Internal.EnumLiteMap<
-      EngineCondition_e> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<EngineCondition_e>() {
-          public EngineCondition_e findValueByNumber(int number) {
-            return EngineCondition_e.forNumber(number);
+      SexType_e> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<SexType_e>() {
+          public SexType_e findValueByNumber(int number) {
+            return SexType_e.forNumber(number);
           }
         };
 
@@ -95,12 +113,12 @@ public enum EngineCondition_e
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.erksystem.protobuf.api.ErkApiMsgOuterClass.getDescriptor().getEnumTypes().get(4);
+    return com.erksystem.protobuf.api.ErkApiMsgOuterClass.getDescriptor().getEnumTypes().get(10);
   }
 
-  private static final EngineCondition_e[] VALUES = values();
+  private static final SexType_e[] VALUES = values();
 
-  public static EngineCondition_e valueOf(
+  public static SexType_e valueOf(
       com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
       throw new java.lang.IllegalArgumentException(
@@ -114,10 +132,10 @@ public enum EngineCondition_e
 
   private final int value;
 
-  private EngineCondition_e(int value) {
+  private SexType_e(int value) {
     this.value = value;
   }
 
-  // @@protoc_insertion_point(enum_scope:EngineCondition_e)
+  // @@protoc_insertion_point(enum_scope:SexType_e)
 }
 

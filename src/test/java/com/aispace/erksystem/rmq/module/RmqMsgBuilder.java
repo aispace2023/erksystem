@@ -164,7 +164,7 @@ public class RmqMsgBuilder {
     }
 
     public static ErkApiMsg getAddUserInfoRQ(QueueInfo_s QueueInfo, String OrgName, String UserName, String
-            UserPwd, String ServiceDuration, int Age, int Sex, int UserType, ServiceType_e ServiceType) {
+            UserPwd, String ServiceDuration, int Age, SexType_e Sex, UserType_e UserType, ServiceType_e ServiceType) {
         return getErkApiMsg(
                 AddUserInfoRQ_m.newBuilder()
                         .setMsgType(ErkMsgType_e.AddUserInfoRQ)
@@ -181,8 +181,8 @@ public class RmqMsgBuilder {
     }
 
     public static ErkApiMsg getAddUserInfoRP(QueueInfo_s QueueInfo, String OrgName, String
-            UserName, UserProfileResult_e ResultType, int UserId, String UserPwd, String ServiceDuration, int Age, int Sex,
-                                             int UserType, ServiceType_e ServiceType) {
+            UserName, UserProfileResult_e ResultType, int UserId, String UserPwd, String ServiceDuration, int Age, SexType_e Sex,
+                                             UserType_e UserType, ServiceType_e ServiceType) {
         return getErkApiMsg(
                 AddUserInfoRP_m.newBuilder()
                         .setMsgType(ErkMsgType_e.AddUserInfoRP)
@@ -201,9 +201,9 @@ public class RmqMsgBuilder {
     }
 
     public static ErkApiMsg getUpdateUserInfoRQ(QueueInfo_s QueueInfo, String OrgName, String UserName, String
-            Old_UserPwd, String Old_ServiceDuration, int Old_Age, int Old_Sex, int Old_UserType, ServiceType_e
-                                                        Old_ServiceType, String New_UserPwd, String New_ServiceDuration, int New_Age, int New_Sex,
-                                                int New_UserType, ServiceType_e New_ServiceType) {
+            Old_UserPwd, String Old_ServiceDuration, int Old_Age, SexType_e Old_Sex, UserType_e Old_UserType, ServiceType_e
+                                                        Old_ServiceType, String New_UserPwd, String New_ServiceDuration, int New_Age, SexType_e New_Sex,
+                                                UserType_e New_UserType, ServiceType_e New_ServiceType) {
         return getErkApiMsg(
                 UpdateUserInfoRQ_m.newBuilder()
                         .setMsgType(ErkMsgType_e.UpdUserInfoRQ)
@@ -227,8 +227,8 @@ public class RmqMsgBuilder {
 
     public static ErkApiMsg getUpdateUserInfoRP(QueueInfo_s QueueInfo, String OrgName, String
             UserName, UserProfileResult_e ResultType, String Old_UserPwd, String Old_ServiceDuration, int Old_Age,
-                                                int Old_Sex, int Old_UserType, ServiceType_e Old_ServiceType, String New_UserPwd, String New_ServiceDuration,
-                                                int New_Age, int New_Sex, int New_UserType, ServiceType_e New_ServiceType) {
+                                                SexType_e Old_Sex, UserType_e Old_UserType, ServiceType_e Old_ServiceType, String New_UserPwd, String New_ServiceDuration,
+                                                int New_Age, SexType_e New_Sex, UserType_e New_UserType, ServiceType_e New_ServiceType) {
         return getErkApiMsg(
                 UpdateUserInfoRP_m.newBuilder()
                         .setMsgType(ErkMsgType_e.UpdUserInfoRP)
@@ -467,16 +467,16 @@ public class RmqMsgBuilder {
                         .build());
     }
 
-    public static ErkApiMsg getEmoRecogRQ(QueueInfo_s QueueInfo, int OrgId, int UserId, long DataTimeStamp,
-                                          int MsgDataLength, ByteString MsgDataFrame) {
-        return getErkApiMsg(
-                EmoRecogRQ_m.newBuilder()
-                        .setErkMsgDataHead(getErkMsgDataHead(ErkMsgType_e.EmoRecogRQ, QueueInfo, OrgId, UserId))
-                        .setDataTimeStamp(DataTimeStamp)
-                        .setMsgDataLength(MsgDataLength)
-                        .setMsgDataFrame(MsgDataFrame)
-                        .build());
-    }
+//    public static ErkApiMsg getEmoRecogRQ(QueueInfo_s QueueInfo, int OrgId, int UserId, long DataTimeStamp,
+//                                          int MsgDataLength, ByteString MsgDataFrame) {
+//        return getErkApiMsg(
+//                EmoRecogRQ_m.newBuilder()
+//                        .setErkMsgDataHead(getErkMsgDataHead(ErkMsgType_e.EmoRecogRQ, QueueInfo, OrgId, UserId))
+//                        .setDataTimeStamp(DataTimeStamp)
+//                        .setMsgDataLength(MsgDataLength)
+//                        .setMsgDataFrame(MsgDataFrame)
+//                        .build());
+//    }
 
     public static ErkApiMsg getEmoRecogRP(QueueInfo_s QueueInfo, int OrgId, int UserId, ReturnCode_e ReturnCode,
                                           long EmoRecogTime, EmotionType_e Emotion, float Accuracy) {
@@ -490,16 +490,16 @@ public class RmqMsgBuilder {
                         .build());
     }
 
-    public static ErkApiMsg getPhysioEmoRecogRQ(QueueInfo_s QueueInfo, int OrgId, int UserId, long DataTimeStamp,
-                                                int MsgDataLength, ByteString MsgDataFrame) {
-        return getErkApiMsg(
-                PhysioEmoRecogRQ_m.newBuilder()
-                        .setErkMsgDataHead(getErkMsgDataHead(ErkMsgType_e.PhysioEmoRecogRQ, QueueInfo, OrgId, UserId))
-                        .setDataTimeStamp(DataTimeStamp)
-                        .setMsgDataLength(MsgDataLength)
-                        .setMsgDataFrame(MsgDataFrame)
-                        .build());
-    }
+//    public static ErkApiMsg getPhysioEmoRecogRQ(QueueInfo_s QueueInfo, int OrgId, int UserId, long DataTimeStamp,
+//                                                int MsgDataLength, ByteString MsgDataFrame) {
+//        return getErkApiMsg(
+//                PhysioEmoRecogRQ_m.newBuilder()
+//                        .setErkMsgDataHead(getErkMsgDataHead(ErkMsgType_e.PhysioEmoRecogRQ, QueueInfo, OrgId, UserId))
+//                        .setDataTimeStamp(DataTimeStamp)
+//                        .setMsgDataLength(MsgDataLength)
+//                        .setMsgDataFrame(MsgDataFrame)
+//                        .build());
+//    }
 
     public static ErkApiMsg getPhysioEmoRecogRP(QueueInfo_s QueueInfo, int OrgId, int UserId, ReturnCode_e
             ReturnCode, long EmoRecogTime, EmotionType_e Emotion, float Accuracy) {
@@ -513,16 +513,16 @@ public class RmqMsgBuilder {
                         .build());
     }
 
-    public static ErkApiMsg getSpeechEmoRecogRQ(QueueInfo_s QueueInfo, int OrgId, int UserId, long DataTimeStamp,
-                                                int MsgDataLength, ByteString MsgDataFrame) {
-        return getErkApiMsg(
-                SpeechEmoRecogRQ_m.newBuilder()
-                        .setErkMsgDataHead(getErkMsgDataHead(ErkMsgType_e.SpeechEmoRecogRQ, QueueInfo, OrgId, UserId))
-                        .setDataTimeStamp(DataTimeStamp)
-                        .setMsgDataLength(MsgDataLength)
-                        .setMsgDataFrame(MsgDataFrame)
-                        .build());
-    }
+//    public static ErkApiMsg getSpeechEmoRecogRQ(QueueInfo_s QueueInfo, int OrgId, int UserId, long DataTimeStamp,
+//                                                int MsgDataLength, ByteString MsgDataFrame) {
+//        return getErkApiMsg(
+//                SpeechEmoRecogRQ_m.newBuilder()
+//                        .setErkMsgDataHead(getErkMsgDataHead(ErkMsgType_e.SpeechEmoRecogRQ, QueueInfo, OrgId, UserId))
+//                        .setDataTimeStamp(DataTimeStamp)
+//                        .setMsgDataLength(MsgDataLength)
+//                        .setMsgDataFrame(MsgDataFrame)
+//                        .build());
+//    }
 
     public static ErkApiMsg getSpeechEmoRecogRP(QueueInfo_s QueueInfo, int OrgId, int UserId, ReturnCode_e
             ReturnCode, long EmoRecogTime, EmotionType_e Emotion, float Accuracy) {
@@ -536,16 +536,16 @@ public class RmqMsgBuilder {
                         .build());
     }
 
-    public static ErkApiMsg getFaceEmoRecogRQ(QueueInfo_s QueueInfo, int OrgId, int UserId, long DataTimeStamp,
-                                              int MsgDataLength, ByteString MsgDataFrame) {
-        return getErkApiMsg(
-                FaceEmoRecogRQ_m.newBuilder()
-                        .setErkMsgDataHead(getErkMsgDataHead(ErkMsgType_e.FaceEmoRecogRQ, QueueInfo, OrgId, UserId))
-                        .setDataTimeStamp(DataTimeStamp)
-                        .setMsgDataLength(MsgDataLength)
-                        .setMsgDataFrame(MsgDataFrame)
-                        .build());
-    }
+//    public static ErkApiMsg getFaceEmoRecogRQ(QueueInfo_s QueueInfo, int OrgId, int UserId, long DataTimeStamp,
+//                                              int MsgDataLength, ByteString MsgDataFrame) {
+//        return getErkApiMsg(
+//                FaceEmoRecogRQ_m.newBuilder()
+//                        .setErkMsgDataHead(getErkMsgDataHead(ErkMsgType_e.FaceEmoRecogRQ, QueueInfo, OrgId, UserId))
+//                        .setDataTimeStamp(DataTimeStamp)
+//                        .setMsgDataLength(MsgDataLength)
+//                        .setMsgDataFrame(MsgDataFrame)
+//                        .build());
+//    }
 
     public static ErkApiMsg getFaceEmoRecogRP(QueueInfo_s QueueInfo, int OrgId, int UserId, ReturnCode_e ReturnCode,
                                               long EmoRecogTime, EmotionType_e Emotion, float Accuracy) {

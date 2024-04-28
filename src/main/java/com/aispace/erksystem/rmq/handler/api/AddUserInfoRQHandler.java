@@ -33,8 +33,9 @@ public class AddUserInfoRQHandler extends RmqIncomingHandler<AddUserInfoRQ_m> {
         user.setUserPwd(msg.getUserPwd());
         user.setServiceDuration(msg.getServiceDuration());
         user.setAge(msg.getAge());
-        user.setSex(msg.getSex());
-        user.setUserType(msg.getUserType());
+        user.setSex(msg.getSex().getNumber());
+        user.setMbti(msg.getMbtiType().name());
+        user.setUserType(msg.getUserType().getNumber());
         user.setServiceType(msg.getServiceType().getNumber());
         if (!ServiceUserDAO.create(user)) {
             throw new RmqHandleException(UserProfileResult_nok_DB.getNumber(), "FAIL");
@@ -49,6 +50,7 @@ public class AddUserInfoRQHandler extends RmqIncomingHandler<AddUserInfoRQ_m> {
                 .setAge(msg.getAge())
                 .setSex(msg.getSex())
                 .setUserType(msg.getUserType())
+                .setMbtiType(msg.getMbtiType())
                 .setServiceType(msg.getServiceType())
                 .setResultType(UserProfileResult_e.UserProfileResult_ok)
                 .setUserId(user.getUserId())
