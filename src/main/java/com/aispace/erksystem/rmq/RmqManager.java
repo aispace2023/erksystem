@@ -1,14 +1,15 @@
 package com.aispace.erksystem.rmq;
 
 import com.aispace.erksystem.rmq.module.RmqModule;
+import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.TimeoutException;
 import java.util.function.Consumer;
 
 /**
@@ -16,9 +17,10 @@ import java.util.function.Consumer;
  * <p>
  * Created by Ai_Space
  */
+@Getter
 @Slf4j
 public class RmqManager {
-    private static final Map<String, RmqModule> rmqModules = new ConcurrentHashMap<>();
+    private RmqModule rmqModule;
 
     private RmqManager() {
     }
@@ -31,56 +33,37 @@ public class RmqManager {
         return SingletonInstance.INSTANCE;
     }
 
-    public void addRmqModule(String key, RmqModule rmqModule) {
-        if (rmqModules.putIfAbsent(key, rmqModule) != null) {
-            throw new IllegalArgumentException("Already Exists key [" + key + "]");
+    public void init(String host, String userName, String password, Integer port, int bufferCount) throws IOException, TimeoutException {
+        if (this.rmqModule != null) {
+            log.warn("RmqModule is already initialized.");
+            return;
         }
+        this.rmqModule = new RmqModule(host, userName, password, port, bufferCount);
+        this.rmqModule.connect();
     }
 
-    public void addRmqModule(String key, String host, String userName, String password, int port, String targetQueue, Consumer<byte[]> consumer) {
-        RmqModule rmqModule = RmqModule.builder(host, userName, password).setPort(port).build();
-        rmqModule.setOnConnected(() -> {
-            log.info("RMQ Connected [{}]", targetQueue);
-            try {
-                rmqModule.queueDeclare(targetQueue);
-                rmqModule.registerByteConsumer(targetQueue, msg -> {
-                    try {
-                        consumer.accept(msg);
-                    } catch (Exception e) {
-                        log.warn("Err Occurs while handling RMQ message ", e);
-                    }
-                });
-            } catch (IOException e) {
-                log.warn("Fail to declare queue. [" + targetQueue + "]");
-            }
-        });
-        rmqModule.setOnDisconnected(() -> log.info("RMQ DisConnected [{}]", targetQueue));
-        addRmqModule(key, rmqModule);
-    }
-
-    public void connectAll() {
-        for (RmqModule rmqModule : rmqModules.values()) {
-            rmqModule.connectWithAsyncRetry();
+    public void destroy() {
+        if (this.rmqModule == null) {
+            return;
         }
+        this.rmqModule.close();
+        this.rmqModule = null;
     }
 
-    public void disconnectAll() {
-        for (RmqModule rmqModule : rmqModules.values()) {
-            rmqModule.close();
+    public void sendMsg(String queueName, byte[] message) {
+        rmqModule.sendMessage(queueName, message);
+    }
+
+    public void sendMsg(String queueName, String message) {
+        this.sendMsg(queueName, message.getBytes());
+    }
+
+    public void addConsumer(String queueName, Consumer<byte[]> consumer) throws IOException {
+        try {
+            rmqModule.queueDeclare(queueName);
+        } catch (Exception e){
+            // Do Nothing
         }
-    }
-
-    public Optional<RmqModule> getRmqModule(String key) {
-        return Optional.ofNullable(rmqModules.get(key));
-    }
-
-    public RmqModule removeRmqModule(String key) {
-        return rmqModules.remove(key);
-    }
-
-    public Map<String, RmqModule> getRmqModules() {
-        synchronized (rmqModules) {
-            return new HashMap<>(rmqModules);
-        }
+        rmqModule.registerConsumer(queueName, consumer);
     }
 }

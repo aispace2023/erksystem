@@ -15,7 +15,7 @@ public class ErkEngineDeleteRPHandler extends RmqIncomingHandler<ErkEngineDelete
     @Override
     protected void handle() {
         ErkInterMsgHead_s erkMsgHead = msg.getErkInterMsgHead();
-        String key = erkMsgHead.getMsgType().toString() + erkMsgHead.getUserId() + erkMsgHead.getOrgId();
+        String key = erkMsgHead.getUserId() + "_" + erkMsgHead.getOrgId();
 
         promiseManager.findPromiseInfo(key).ifPresentOrElse(promiseInfo -> {
             if (msg.getReturnCode() == ReturnCode_ok) {

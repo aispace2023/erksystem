@@ -9,6 +9,7 @@ import com.rabbitmq.client.Channel;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
+import java.lang.reflect.Field;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
@@ -42,8 +43,15 @@ public class RmqSimBase {
         config.init(Path.of(configPath).resolve(CONFIG_FILE_NAME).toString());
 
         RmqManager rmqManager = RmqManager.getInstance();
-        rmqManager.addRmqModule(config.getRmqIncomingQueueApi(), getRmqModuleMock());
-        rmqManager.addRmqModule(config.getRmqIncomingQueueSubsystem(), getRmqModuleMock());
+        Field rmqModuleField = rmqManager.getClass().getDeclaredField("rmqModule");
+        rmqModuleField.setAccessible(true);
+        try {
+            rmqModuleField.set(rmqManager, getRmqModuleMock());
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } finally {
+            rmqModuleField.setAccessible(false);
+        }
 
         DBManager.getInstance().start();
     }
@@ -61,10 +69,9 @@ public class RmqSimBase {
             return null;
         }).when(rmqModule).sendMessage(anyString(), any(byte[].class), anyInt());
 
-        when(rmqModule.queueDelete(anyString())).thenReturn(null);
-
         Channel channel = mock(Channel.class);
         when(channel.queueDeclare(anyString(), anyBoolean(), anyBoolean(), anyBoolean(), anyMap())).thenReturn(null);
+        when(channel.queueDelete(anyString())).thenReturn(null);
         when(rmqModule.getChannel()).thenReturn(channel);
 
         return rmqModule;

@@ -27,6 +27,8 @@ public class UserConfig extends YamlConfig {
     String rmqPassword;
     @ConfigValue("rmq.port")
     int rmqPort;
+    @ConfigValue("rmq.buffer-count")
+    int bufferCount = 1024;
     @ConfigValue("rmq.incoming-queue.api")
     String rmqIncomingQueueApi;
     @ConfigValue("rmq.incoming-queue.subsystem")
@@ -57,11 +59,6 @@ public class UserConfig extends YamlConfig {
     Integer prometheusPort;
     @ConfigValue("prometheus.metrics_path")
     String prometheusMetricsPath;
-
-    @ConfigValue("test.send-queue")
-    String testSendQueue;
-    @ConfigValue("test.recv-queue")
-    String testRecvQueue;
 
     @Override
     public void afterFieldSetting() {

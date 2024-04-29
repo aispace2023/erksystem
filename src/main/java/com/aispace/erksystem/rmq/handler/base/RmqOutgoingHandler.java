@@ -22,22 +22,21 @@ public class RmqOutgoingHandler {
     private RmqOutgoingHandler() {
     }
 
-    public static void send(Message msg, String rmqKey, String queueName) {
+    public static void send(Message msg, String queueName) {
         try {
-            rmqManager.getRmqModule(rmqKey).orElseThrow()
-                    .sendMessage(queueName, msg.toByteArray(), 60_000);
-            log.info("[RMQ MESSAGE SEND] {}->{} [{}]", getMsgFrom(msg), queueName, proto2Json(msg).orElse("Fail to Parse"));
+            rmqManager.getRmqModule().sendMessage(queueName, msg.toByteArray(), 60_000);
+            log.info("[RMQ MESSAGE SEND] ERK_PLATFORM->{} [{}]", queueName, proto2Json(msg).orElse("Fail to Parse"));
         } catch (Exception e) {
             log.warn("Err Occurs", e);
         }
     }
 
     public static void sendToApi(Message msg) {
-        send(msg, userConfig.getRmqIncomingQueueApi(), userConfig.getRmqOutgoingQueueApi());
+        send(msg, userConfig.getRmqOutgoingQueueApi());
     }
 
     public static void sendToSubSystem(Message msg) {
-        send(msg, userConfig.getRmqIncomingQueueSubsystem(), userConfig.getRmqOutgoingQueueSubsystem());
+        send(msg, userConfig.getRmqOutgoingQueueSubsystem());
     }
 
     public static void sendErkApiMsg2API(Message msg) {

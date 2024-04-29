@@ -65,7 +65,7 @@ public abstract class RmqIncomingHandler<T extends GeneratedMessageV3> implement
                 .setFromQueueName(rmqKey)
                 .setToQueueName(oldQueueInfo.getFromQueueName()).build();
 
-        RmqOutgoingHandler.send(wrap2ErkApiMsg(setQueueInfo(msg, newQueueInfo)), rmqKey, newQueueInfo.getToQueueName());
+        RmqOutgoingHandler.send(wrap2ErkApiMsg(setQueueInfo(msg, newQueueInfo)), newQueueInfo.getToQueueName());
     }
 
     private String getProperRmqKey() {
