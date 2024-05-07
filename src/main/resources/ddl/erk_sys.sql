@@ -19,7 +19,7 @@ CREATE TABLE service_provider_tbl (
 CREATE TABLE service_user_tbl (
     `org_id` INT(11) NOT NULL,
     `user_id` INT(11) NOT NULL,
-    `user_name` VARCHAR(100),
+    `user_name` VARCHAR(100) UNIQUE KEY NOT NULL,
     `user_pwd` VARCHAR(100),
     `service_duration` CHAR(8) NOT NULL,
     `user_number` INT(11),

@@ -1,6 +1,7 @@
 package com.aispace.erksystem.service.database.table;
 
 import lombok.Data;
+import org.hibernate.annotations.NaturalId;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -18,6 +19,7 @@ public class ServiceUser implements Serializable {
     @Column(name = "user_id", nullable = false)
     private Integer userId;
 
+    @NaturalId
     @Column(name = "user_name")
     private String userName;
 

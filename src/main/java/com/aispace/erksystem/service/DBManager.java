@@ -3,8 +3,6 @@ package com.aispace.erksystem.service;
 import com.aispace.erksystem.common.PasswdUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.hibernate.SessionFactory;
-import org.hibernate.boot.registry.StandardServiceRegistry;
-import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 
 import java.util.Properties;
@@ -12,9 +10,7 @@ import java.util.Properties;
 
 /**
  * MariaDB 용 DBCP Manager
- *
  * Created by Ai_Space
- *
  */
 
 @Slf4j
