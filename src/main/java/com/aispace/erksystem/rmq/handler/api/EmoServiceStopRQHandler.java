@@ -4,11 +4,16 @@ import com.aispace.erksystem.rmq.handler.base.RmqIncomingHandler;
 import com.aispace.erksystem.rmq.handler.base.RmqOutgoingHandler;
 import com.aispace.erksystem.rmq.handler.base.exception.RmqHandleException;
 import com.aispace.erksystem.rmq.module.RmqModule;
+import com.aispace.erksystem.session.SessionManager;
 import com.erksystem.protobuf.api.*;
 import com.rabbitmq.client.Channel;
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.List;
+
+import static com.aispace.erksystem.rmq.handler.api.EmoServiceStartRQHandler.ENGINE_QUEUE_MAP;
 import static com.aispace.erksystem.rmq.handler.api.EmoServiceStartRQHandler.TYPE_MAP;
+import static com.aispace.erksystem.rmq.handler.base.ErkMsgWrapper.convertToErkApiMsg;
 import static com.aispace.erksystem.service.AppInstance.RECV_QUEUE_NAME_PATTERN;
 import static com.aispace.erksystem.service.AppInstance.SEND_QUEUE_NAME_PATTERN;
 import static com.erksystem.protobuf.api.EngineCondition_e.EngineCondition_available;
@@ -24,15 +29,15 @@ public class EmoServiceStopRQHandler extends RmqIncomingHandler<EmoServiceStopRQ
     @Override
     protected void handle() {
         ErkMsgHead_s erkMsgHead = msg.getErkMsgHead();
-        /* 추후 개발/개선
-        ServiceUser user = ServiceUserDAO.read(erkMsgHead.getUserId(), erkMsgHead.getOrgId());
-        if (user == null) {
-            throw new RmqHandleException(0, "User is not exists");
-        }
-        */
+        // TODO : User 정보 확인 로직
 
         int orgId = erkMsgHead.getOrgId();
         int userId = erkMsgHead.getUserId();
+
+        // TODO : 추후 메시지에 TransactionId 필드가 추가되면 그때 key 수정
+        String key = userId + "_" + orgId;
+        List<EngineType_e> engineTypeEs = TYPE_MAP.get(msg.getServiceType());
+        SessionManager.getInstance().createSession(userId + "_" + orgId, engineTypeEs.size());
 
         // RMQ 큐 삭제
         Channel rmqChannel = rmqManager.getRmqModule().getChannel();
@@ -50,26 +55,38 @@ public class EmoServiceStopRQHandler extends RmqIncomingHandler<EmoServiceStopRQ
                         .setReceiveQueueName(recvQueue)
                         .build();
 
+                ErkApiMsg engineDeleteMsg = convertToErkApiMsg(erkEngineDeleteRqBuilder
+                        .setErkInterMsgHead(ErkInterMsgHead_s.newBuilder()
+                                .setMsgType(ErkInterMsgType_e.ErkEngineDeleteRQ)
+                                .setOrgId(orgId)
+                                .setUserId(userId))
+                        .setMsgTime(System.currentTimeMillis())
+                        .setServiceType(this.msg.getServiceType()).build());
+
                 switch (engineType) {
                     case EngineType_physiology -> {
                         erkEngineDeleteRqBuilder.setPhysioEngineSendQueueName(sendQueue);
                         erkEngineDeleteRqBuilder.setPhysioEngineReceiveQueueName(recvQueue);
                         emoServiceStopRpBuilder.setPhysioEngineInfo(engineInfo);
+                        RmqOutgoingHandler.send(engineDeleteMsg, ENGINE_QUEUE_MAP.get(engineType));
                     }
                     case EngineType_speech -> {
                         erkEngineDeleteRqBuilder.setSpeechEngineSendQueueName(sendQueue);
                         erkEngineDeleteRqBuilder.setSpeechEngineReceiveQueueName(recvQueue);
                         emoServiceStopRpBuilder.setSpeechEngineInfo(engineInfo);
+                        RmqOutgoingHandler.send(engineDeleteMsg, ENGINE_QUEUE_MAP.get(engineType));
                     }
                     case EngineType_face -> {
                         erkEngineDeleteRqBuilder.setFaceEngineSendQueueName(sendQueue);
                         erkEngineDeleteRqBuilder.setFaceEngineReceiveQueueName(recvQueue);
                         emoServiceStopRpBuilder.setFaceEngineInfo(engineInfo);
+                        RmqOutgoingHandler.send(engineDeleteMsg, ENGINE_QUEUE_MAP.get(engineType));
                     }
                     case EngineType_knowledge -> {
                         erkEngineDeleteRqBuilder.setKnowledgeEngineSendQueueName(sendQueue);
                         erkEngineDeleteRqBuilder.setKnowledgeEngineReceiveQueueName(recvQueue);
                         emoServiceStopRpBuilder.setKnowledgeEngineInfo(engineInfo);
+                        RmqOutgoingHandler.send(engineDeleteMsg, ENGINE_QUEUE_MAP.get(engineType));
                     }
                 }
 
@@ -79,7 +96,6 @@ public class EmoServiceStopRQHandler extends RmqIncomingHandler<EmoServiceStopRQ
         }
 
         // 추후 메시지에 TransactionId 필드가 추가되면 그때 key 수정
-        String key = userId + "_" + orgId;
         promiseManager.createPromiseInfo(key,
                 () -> {
                     try {
@@ -96,16 +112,6 @@ public class EmoServiceStopRQHandler extends RmqIncomingHandler<EmoServiceStopRQ
                 },
                 () -> onFail(0, "EmoServiceStart Fail"),
                 () -> onFail(0, "EmoServiceStart Timeout"), 5000);
-        // TODO ErkEngineDeleteRQ_m 송신
-
-        ErkEngineDeleteRQ_m replyMsg = erkEngineDeleteRqBuilder
-                .setErkInterMsgHead(ErkInterMsgHead_s.newBuilder()
-                        .setMsgType(ErkInterMsgType_e.ErkEngineDeleteRQ)
-                        .setOrgId(orgId)
-                        .setUserId(userId))
-                .setMsgTime(System.currentTimeMillis())
-                .setServiceType(this.msg.getServiceType()).build();
-        RmqOutgoingHandler.send(replyMsg, userConfig.getRmqIncomingQueueSubsystem());
     }
 
     @Override

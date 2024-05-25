@@ -1,22 +1,24 @@
 package com.aispace.erksystem.rmq.handler.api;
 
-import com.aispace.erksystem.rmq.RmqManager;
+import com.aispace.erksystem.rmq.handler.base.RmqIncomingHandler;
 import com.aispace.erksystem.rmq.handler.base.RmqOutgoingHandler;
 import com.aispace.erksystem.rmq.handler.base.exception.RmqHandleException;
-import com.aispace.erksystem.rmq.handler.base.RmqIncomingHandler;
 import com.aispace.erksystem.rmq.module.RmqModule;
+import com.aispace.erksystem.session.SessionManager;
 import com.erksystem.protobuf.api.*;
 import lombok.extern.slf4j.Slf4j;
 
-import java.lang.reflect.Method;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import static com.aispace.erksystem.rmq.handler.base.ErkMsgWrapper.convertToErkApiMsg;
 import static com.aispace.erksystem.service.AppInstance.RECV_QUEUE_NAME_PATTERN;
 import static com.aispace.erksystem.service.AppInstance.SEND_QUEUE_NAME_PATTERN;
-import static com.erksystem.protobuf.api.EngineCondition_e.*;
-import static com.erksystem.protobuf.api.ServiceType_e.*;
+import static com.erksystem.protobuf.api.EngineCondition_e.EngineCondition_available;
 import static com.erksystem.protobuf.api.EngineType_e.*;
+import static com.erksystem.protobuf.api.ServiceType_e.*;
 
 /**
  * Created by Ai_Space
@@ -37,6 +39,14 @@ public class EmoServiceStartRQHandler extends RmqIncomingHandler<EmoServiceStart
         }
     };
 
+    public static final Map<EngineType_e, String> ENGINE_QUEUE_MAP = new HashMap<>() {
+        {
+            put(EngineType_physiology, userConfig.getRmqOutgoingPerQueue());
+            put(EngineType_speech, userConfig.getRmqOutgoingSerQueue());
+            put(EngineType_face, userConfig.getRmqOutgoingFerQueue());
+            put(EngineType_knowledge, userConfig.getRmqOutgoingEkmQueue());
+        }
+    };
     private final EmoServiceStartRP_m.Builder emoServiceStartRpBuilder = EmoServiceStartRP_m.newBuilder();
     private final ErkEngineCreateRQ_m.Builder erkEngineCreateRqBuilder = ErkEngineCreateRQ_m.newBuilder();
     private final List<String> declaredQueues = new ArrayList<>();
@@ -45,18 +55,17 @@ public class EmoServiceStartRQHandler extends RmqIncomingHandler<EmoServiceStart
     @Override
     protected void handle() {
         ErkMsgHead_s erkMsgHead = msg.getErkMsgHead();
-        /*추후 개발/개선
-        ServiceUser user = ServiceUserDAO.read(erkMsgHead.getUserId(), erkMsgHead.getOrgId());
-        if (user == null) {
-            throw new RmqHandleException(0, "User is not exists");
-        }
-        */
-
+        // TODO : User 정보 확인 로직
 
         int orgId = erkMsgHead.getOrgId();
         int userId = erkMsgHead.getUserId();
 
-        for (EngineType_e engineType : TYPE_MAP.get(msg.getServiceType())) {
+        // TODO : 추후 메시지에 TransactionId 필드가 추가되면 그때 key 수정
+        String key = userId + "_" + orgId;
+        List<EngineType_e> engineTypeEs = TYPE_MAP.get(msg.getServiceType());
+        sessionManager.createSession(userId + "_" + orgId, engineTypeEs.size());
+
+        for (EngineType_e engineType : engineTypeEs) {
             try {
                 String sendQueue = SEND_QUEUE_NAME_PATTERN.formatted(engineType.getNumber(), orgId, userId);
                 String recvQueue = RECV_QUEUE_NAME_PATTERN.formatted(engineType.getNumber(), orgId, userId);
@@ -74,26 +83,38 @@ public class EmoServiceStartRQHandler extends RmqIncomingHandler<EmoServiceStart
                         .setReceiveQueueName(recvQueue)
                         .build();
 
+                ErkApiMsg engineCreateMsg = convertToErkApiMsg(erkEngineCreateRqBuilder
+                        .setErkInterMsgHead(ErkInterMsgHead_s.newBuilder()
+                                .setMsgType(ErkInterMsgType_e.ErkEngineCreateRQ)
+                                .setOrgId(orgId)
+                                .setUserId(userId))
+                        .setMsgTime(System.currentTimeMillis())
+                        .setServiceType(this.msg.getServiceType()).build());
+
                 switch (engineType) {
                     case EngineType_physiology -> {
                         erkEngineCreateRqBuilder.setPhysioEngineSendQueueName(sendQueue);
                         erkEngineCreateRqBuilder.setPhysioEngineReceiveQueueName(recvQueue);
                         emoServiceStartRpBuilder.setPhysioEngineInfo(engineInfo);
+                        RmqOutgoingHandler.send(engineCreateMsg, ENGINE_QUEUE_MAP.get(engineType));
                     }
                     case EngineType_speech -> {
                         erkEngineCreateRqBuilder.setSpeechEngineSendQueueName(sendQueue);
                         erkEngineCreateRqBuilder.setSpeechEngineReceiveQueueName(recvQueue);
                         emoServiceStartRpBuilder.setSpeechEngineInfo(engineInfo);
+                        RmqOutgoingHandler.send(engineCreateMsg, ENGINE_QUEUE_MAP.get(engineType));
                     }
                     case EngineType_face -> {
                         erkEngineCreateRqBuilder.setFaceEngineSendQueueName(sendQueue);
                         erkEngineCreateRqBuilder.setFaceEngineReceiveQueueName(recvQueue);
                         emoServiceStartRpBuilder.setFaceEngineInfo(engineInfo);
+                        RmqOutgoingHandler.send(engineCreateMsg, ENGINE_QUEUE_MAP.get(engineType));
                     }
                     case EngineType_knowledge -> {
                         erkEngineCreateRqBuilder.setKnowledgeEngineSendQueueName(sendQueue);
                         erkEngineCreateRqBuilder.setKnowledgeEngineReceiveQueueName(recvQueue);
                         emoServiceStartRpBuilder.setKnowledgeEngineInfo(engineInfo);
+                        RmqOutgoingHandler.send(engineCreateMsg, ENGINE_QUEUE_MAP.get(engineType));
                     }
                 }
             } catch (Exception e) {
@@ -101,8 +122,6 @@ public class EmoServiceStartRQHandler extends RmqIncomingHandler<EmoServiceStart
             }
         }
 
-        // 추후 메시지에 TransactionId 필드가 추가되면 그때 key 수정
-        String key = userId + "_" + orgId;
         promiseManager.createPromiseInfo(key,
                 () -> {
                     try {
@@ -120,14 +139,6 @@ public class EmoServiceStartRQHandler extends RmqIncomingHandler<EmoServiceStart
                 },
                 () -> onFail(0, "EmoServiceStart Fail"),
                 () -> onFail(0, "EmoServiceStart Timeout"), 5000);
-        ErkApiMsg replyMsg = convertToErkApiMsg(erkEngineCreateRqBuilder
-                .setErkInterMsgHead(ErkInterMsgHead_s.newBuilder()
-                        .setMsgType(ErkInterMsgType_e.ErkEngineCreateRQ)
-                        .setOrgId(orgId)
-                        .setUserId(userId))
-                .setMsgTime(System.currentTimeMillis())
-                .setServiceType(this.msg.getServiceType()).build());
-        RmqOutgoingHandler.send(replyMsg, userConfig.getRmqIncomingQueueSubsystem());
     }
 
     @Override
@@ -135,7 +146,7 @@ public class EmoServiceStartRQHandler extends RmqIncomingHandler<EmoServiceStart
         for (String declaredQueue : declaredQueues) {
             try {
                 rmqModule.getChannel().queueDelete(declaredQueue);
-            } catch (Exception e){
+            } catch (Exception e) {
                 // Do Nothing
             }
         }

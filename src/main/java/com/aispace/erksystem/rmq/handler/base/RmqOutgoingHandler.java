@@ -35,10 +35,6 @@ public class RmqOutgoingHandler {
         send(msg, userConfig.getRmqOutgoingQueueApi());
     }
 
-    public static void sendToSubSystem(Message msg) {
-        send(msg, userConfig.getRmqOutgoingQueueSubsystem());
-    }
-
     public static void sendErkApiMsg2API(Message msg) {
         sendToApi(ErkMsgWrapper.wrap2ErkApiMsg(msg));
     }

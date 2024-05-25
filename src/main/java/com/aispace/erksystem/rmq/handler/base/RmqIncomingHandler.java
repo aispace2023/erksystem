@@ -8,8 +8,9 @@ import com.aispace.erksystem.rmq.RmqManager;
 import com.aispace.erksystem.rmq.handler.base.exception.RmqHandleException;
 import com.aispace.erksystem.rmq.handler.base.exception.ValidationHandleException;
 import com.aispace.erksystem.service.AppInstance;
+import com.aispace.erksystem.session.SessionManager;
 import com.erksystem.protobuf.api.QueueInfo_s;
-import com.google.protobuf.GeneratedMessageV3;
+import com.google.protobuf.GeneratedMessage;
 import com.google.protobuf.Message;
 import lombok.extern.slf4j.Slf4j;
 
@@ -22,12 +23,13 @@ import static com.aispace.erksystem.rmq.handler.base.ErkMsgWrapper.wrap2ErkApiMs
  * Created by Ai_Space
  */
 @Slf4j
-public abstract class RmqIncomingHandler<T extends GeneratedMessageV3> implements RmqIncomingMsgInterface {
+public abstract class RmqIncomingHandler<T extends GeneratedMessage> implements RmqIncomingMsgInterface {
     protected static final AppInstance appInstance = AppInstance.getInstance();
     protected static final RmqManager rmqManager = RmqManager.getInstance();
     protected static final PromiseManager promiseManager = PromiseManager.getInstance();
     protected static final UserConfig userConfig = appInstance.getUserConfig();
     protected static final ConnectionManager connectionManager = ConnectionManager.getInstance();
+    protected static final SessionManager sessionManager = SessionManager.getInstance();
     protected Message incomingMsg;
     protected T msg;
 

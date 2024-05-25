@@ -16,7 +16,7 @@ public class RmqLogPrinter {
     private RmqLogPrinter() {
     }
 
-    private static final JsonFormat.Printer jsonPrinter = JsonFormat.printer().includingDefaultValueFields();
+    private static final JsonFormat.Printer jsonPrinter = JsonFormat.printer().alwaysPrintFieldsWithNoPresence();
 
     public static Optional<String> proto2Json(Message msg) {
         try {

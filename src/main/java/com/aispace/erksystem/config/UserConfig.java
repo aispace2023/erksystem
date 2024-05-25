@@ -35,8 +35,14 @@ public class UserConfig extends YamlConfig {
     String rmqIncomingQueueSubsystem;
     @ConfigValue("rmq.outgoing-queue.api")
     String rmqOutgoingQueueApi;
-    @ConfigValue("rmq.outgoing-queue.subsystem")
-    String rmqOutgoingQueueSubsystem;
+    @ConfigValue("rmq.outgoing-queue.per-queue")
+    String rmqOutgoingPerQueue;
+    @ConfigValue("rmq.outgoing-queue.ser-queue")
+    String rmqOutgoingSerQueue;
+    @ConfigValue("rmq.outgoing-queue.fer-queue")
+    String rmqOutgoingFerQueue;
+    @ConfigValue("rmq.outgoing-queue.ekm-queue")
+    String rmqOutgoingEkmQueue;
 
     @ConfigValue("rmq.agent-option.durable")
     boolean agentOptionDurable = true;

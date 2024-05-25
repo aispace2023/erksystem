@@ -8,7 +8,10 @@ rmq:
     subsystem: ERK_SUBSYSTEM_QUEUE
   outgoing-queue:
     api: API_QUEUE
-    subsystem: SUBSYSTEM_QUEUE
+    per-queue: PER_QUEUE
+    ser-queue: SER_QUEUE
+    fer-queue: FER_QUEUE
+    ekm-queue: EKM_QUEUE
 
 performance:
   rmq-consumer-count: 8
