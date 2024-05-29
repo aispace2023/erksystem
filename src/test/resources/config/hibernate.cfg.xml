@@ -13,7 +13,7 @@
 
         <!--property name="hikari.dataSourceClassName">org.mariadb.jdbc.MariaDbDataSource</property-->
         <property name="hikari.driverClassName">com.mysql.cj.jdbc.Driver</property>
-        <property name="hikari.jdbcUrl">jdbc:mysql://192.168.5.221:3306/ERK_SYS?serverTimezone=UTC</property>
+        <property name="hikari.jdbcUrl">jdbc:mysql://192.168.5.221:3306/ERK_SYSTEM?serverTimezone=UTC</property>
         <property name="hikari.username">erksys</property>
         <property name="hikari.password">o7Uf4SN8rQ5tHpkIv8E7FoofKAHpuZeB</property>
         <property name="hikari.minimumIdle">5</property>

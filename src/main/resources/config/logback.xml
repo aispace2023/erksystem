@@ -40,17 +40,8 @@
         <appender-ref ref="qos"/>
     </logger>
 
-<!--    <logger name="org.hibernate.engine" level="debug" additivity="false">-->
-<!--        <appender-ref ref="STDOUT"/>-->
-<!--    </logger>-->
-<!--    <logger name="org.hibernate.type.descriptor.sql" level="trace" additivity="false">-->
-<!--        <appender-ref ref="STDOUT"/>-->
-<!--    </logger>-->
-<!--    <logger name="org.hibernate.stat" level="debug" additivity="false">-->
-<!--        <appender-ref ref="STDOUT"/>-->
-<!--    </logger>-->
-<!--    <logger name="org.hibernate.cache" level="debug" additivity="false">-->
-<!--        <appender-ref ref="STDOUT"/>-->
-<!--    </logger>-->
+    <logger name="org.hibernate" level="trace" additivity="false">
+        <appender-ref ref="STDOUT"/>
+    </logger>
 
 </configuration>
