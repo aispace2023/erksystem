@@ -73,13 +73,14 @@ public class RmqMsgBuilder {
 
 
     public static ErkApiMsg getAddServiceProviderInfoRQ(QueueInfo_s QueueInfo, String OrgName, String
-            OrgPwd, String ServiceDuration, int UserNumber, ServiceType_e ServiceType) {
+            OrgPwd, ProviderType_e providerType, String ServiceDuration, int UserNumber, ServiceType_e ServiceType) {
         return getErkApiMsg(
                 AddServiceProviderInfoRQ_m.newBuilder()
                         .setMsgType(ErkMsgType_e.AddServiceProviderInfoRQ)
                         .setQueueInfo(QueueInfo)
                         .setOrgName(OrgName)
                         .setOrgPwd(OrgPwd)
+                        .setProviderType(providerType)
                         .setServiceDuration(ServiceDuration)
                         .setUserNumber(UserNumber)
                         .setServiceType(ServiceType)

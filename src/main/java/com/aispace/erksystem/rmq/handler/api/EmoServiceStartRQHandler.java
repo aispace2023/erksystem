@@ -4,7 +4,6 @@ import com.aispace.erksystem.rmq.handler.base.RmqIncomingHandler;
 import com.aispace.erksystem.rmq.handler.base.RmqOutgoingHandler;
 import com.aispace.erksystem.rmq.handler.base.exception.RmqHandleException;
 import com.aispace.erksystem.rmq.module.RmqModule;
-import com.aispace.erksystem.session.SessionManager;
 import com.erksystem.protobuf.api.*;
 import lombok.extern.slf4j.Slf4j;
 

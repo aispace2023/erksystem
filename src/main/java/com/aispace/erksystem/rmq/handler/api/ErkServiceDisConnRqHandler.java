@@ -1,6 +1,5 @@
 package com.aispace.erksystem.rmq.handler.api;
 
-import com.aispace.erksystem.rmq.handler.base.RmqOutgoingHandler;
 import com.aispace.erksystem.rmq.handler.base.RmqIncomingHandler;
 import com.erksystem.protobuf.api.ErkMsgHead_s;
 import com.erksystem.protobuf.api.ErkMsgType_e;

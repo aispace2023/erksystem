@@ -1,7 +1,6 @@
 package com.aispace.erksystem.rmq.handler.api;
 
 import com.aispace.erksystem.rmq.handler.base.RmqIncomingHandler;
-import com.aispace.erksystem.rmq.handler.base.RmqOutgoingHandler;
 import com.erksystem.protobuf.api.UpdateServiceProviderInfoRP_m;
 import com.erksystem.protobuf.api.UpdateServiceProviderInfoRQ_m;
 

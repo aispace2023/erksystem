@@ -1,7 +1,6 @@
 package com.aispace.erksystem.rmq.handler.api;
 
 import com.aispace.erksystem.rmq.handler.base.RmqIncomingHandler;
-import com.aispace.erksystem.rmq.handler.base.RmqOutgoingHandler;
 import com.aispace.erksystem.rmq.handler.base.exception.RmqHandleException;
 import com.aispace.erksystem.service.database.ServiceProviderDAO;
 import com.aispace.erksystem.service.database.table.ServiceProvider;
@@ -22,10 +21,10 @@ public class AddServiceProviderInfoRQHandler extends RmqIncomingHandler<AddServi
         ServiceProvider provider = new ServiceProvider();
         provider.setOrgName(msg.getOrgName());
         provider.setOrgPwd(msg.getOrgPwd());
-        provider.setServiceType(msg.getServiceType().getNumber());
+        provider.setProviderType(msg.getProviderTypeValue());
         provider.setServiceDuration(msg.getServiceDuration());
         provider.setUserNumber(msg.getUserNumber());
-        provider.setServiceType(msg.getServiceType().getNumber());
+        provider.setServiceType(msg.getServiceTypeValue());
 
         if (!ServiceProviderDAO.create(provider)) {
             throw new RmqHandleException(OrgProfileResult_nok_DB.getNumber(), "FAIL");
@@ -35,7 +34,7 @@ public class AddServiceProviderInfoRQHandler extends RmqIncomingHandler<AddServi
                 .setMsgType(ErkMsgType_e.AddServiceProviderInfoRP)
                 .setOrgName(msg.getOrgName())
                 .setOrgPwd(msg.getOrgPwd())
-                .setServiceType(msg.getServiceType())
+                .setProviderType(msg.getProviderType())
                 .setServiceDuration(msg.getServiceDuration())
                 .setUserNumber(msg.getUserNumber())
                 .setServiceType(msg.getServiceType())
@@ -52,6 +51,7 @@ public class AddServiceProviderInfoRQHandler extends RmqIncomingHandler<AddServi
                 .setMsgType(ErkMsgType_e.AddServiceProviderInfoRP)
                 .setOrgName(msg.getOrgName())
                 .setOrgPwd(msg.getOrgPwd())
+                .setProviderType(msg.getProviderType())
                 .setServiceDuration(msg.getServiceDuration())
                 .setUserNumber(msg.getUserNumber())
                 .setServiceType(msg.getServiceType())

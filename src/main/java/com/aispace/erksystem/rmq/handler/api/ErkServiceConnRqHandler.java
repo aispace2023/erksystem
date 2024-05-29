@@ -1,10 +1,7 @@
 package com.aispace.erksystem.rmq.handler.api;
 
 import com.aispace.erksystem.rmq.handler.base.RmqIncomingHandler;
-import com.aispace.erksystem.rmq.handler.base.RmqOutgoingHandler;
-import com.aispace.erksystem.service.database.ServiceProviderDAO;
 import com.aispace.erksystem.service.database.ServiceUserDAO;
-import com.aispace.erksystem.service.database.table.ServiceProvider;
 import com.aispace.erksystem.service.database.table.ServiceUser;
 import com.erksystem.protobuf.api.*;
 
@@ -14,11 +11,8 @@ import com.erksystem.protobuf.api.*;
 public class ErkServiceConnRqHandler extends RmqIncomingHandler<ErkServiceConnRQ_m> {
     @Override
     protected void handle() {
-        ServiceProvider provider = ServiceProviderDAO.read(msg.getErkMsgHead().getOrgId());
-        if (provider == null) {
-            throw new IllegalStateException("FAIL");
-        }
-        ServiceUser user = ServiceUserDAO.read(msg.getErkMsgHead().getUserId(), provider.getOrgId());
+        // SERVICE_USER 가 SERVICE_PROVIDER 를 참조하므로 SERVICE_USER_TBL 만 조회해도 유효하다.
+        ServiceUser user = ServiceUserDAO.read(msg.getErkMsgHead().getUserId(), msg.getErkMsgHead().getOrgId());
         if (user == null) {
             throw new IllegalStateException("FAIL");
         }

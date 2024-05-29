@@ -26,16 +26,8 @@ public class AddUserInfoRQHandler extends RmqIncomingHandler<AddUserInfoRQ_m> {
             throw new RmqHandleException(UserProfileResult_nok_OrgName.getNumber(), "Provider Not Found");
         }
 
-        ServiceUser user = new ServiceUser();
-        user.setOrgId(provider.getOrgId());
-        user.setUserName(msg.getUserName());
-        user.setUserPwd(msg.getUserPwd());
-        user.setServiceDuration(msg.getServiceDuration());
-        user.setAge(msg.getAge());
-        user.setSex(msg.getSex().getNumber());
-        user.setMbti(msg.getMbtiType().getNumber());
-        user.setUserType(msg.getUserType().getNumber());
-        user.setServiceType(msg.getServiceType().getNumber());
+        ServiceUser user = getServiceUser(provider);
+        
         if (!ServiceUserDAO.create(user)) {
             throw new RmqHandleException(UserProfileResult_nok_DB.getNumber(), "FAIL");
         }
@@ -74,5 +66,22 @@ public class AddUserInfoRQHandler extends RmqIncomingHandler<AddUserInfoRQ_m> {
                 .build();
 
         reply(res);
+    }
+
+    private ServiceUser getServiceUser(ServiceProvider provider) {
+        ServiceUser user = new ServiceUser();
+        user.setOrgId(provider.getOrgId());
+        user.setUserName(msg.getUserName());
+        user.setUserPwd(msg.getUserPwd());
+        user.setServiceDuration(msg.getServiceDuration());
+        user.setAge(msg.getAge());
+        user.setSex(msg.getSexValue());
+        user.setMbti(msg.getMbtiTypeValue());
+        user.setUserType(msg.getUserTypeValue());
+        user.setServiceType(msg.getServiceType().getNumber());
+        // 어떤 의도인지 알 수 없는 필드. not null 속성 때문에 임시로 설정한다.(추후 반영 요망)
+        user.setServiceStatus(0);
+        user.setServiceNumber(1);
+        return user;
     }
 }
