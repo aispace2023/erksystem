@@ -1,7 +1,6 @@
 package com.aispace.erksystem.rmq.handler.api;
 
 import com.aispace.erksystem.rmq.handler.base.RmqIncomingHandler;
-import com.aispace.erksystem.rmq.handler.base.RmqOutgoingHandler;
 import com.aispace.erksystem.rmq.handler.base.exception.RmqHandleException;
 import com.aispace.erksystem.service.database.ServiceProviderDAO;
 import com.aispace.erksystem.service.database.ServiceUserDAO;
@@ -34,7 +33,7 @@ public class AddUserInfoRQHandler extends RmqIncomingHandler<AddUserInfoRQ_m> {
         user.setServiceDuration(msg.getServiceDuration());
         user.setAge(msg.getAge());
         user.setSex(msg.getSex().getNumber());
-        user.setMbti(msg.getMbtiType().name());
+        user.setMbti(msg.getMbtiType().getNumber());
         user.setUserType(msg.getUserType().getNumber());
         user.setServiceType(msg.getServiceType().getNumber());
         if (!ServiceUserDAO.create(user)) {

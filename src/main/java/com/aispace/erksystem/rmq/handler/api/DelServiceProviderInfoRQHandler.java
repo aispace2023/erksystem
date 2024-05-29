@@ -2,7 +2,6 @@ package com.aispace.erksystem.rmq.handler.api;
 
 
 import com.aispace.erksystem.rmq.handler.base.RmqIncomingHandler;
-import com.aispace.erksystem.rmq.handler.base.RmqOutgoingHandler;
 import com.aispace.erksystem.service.database.ServiceProviderDAO;
 import com.aispace.erksystem.service.database.table.ServiceProvider;
 import com.erksystem.protobuf.api.DelServiceProviderInfoRP_m;

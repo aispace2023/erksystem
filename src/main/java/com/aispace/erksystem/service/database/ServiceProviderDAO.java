@@ -18,17 +18,19 @@ public class ServiceProviderDAO {
 
     public static boolean create(ServiceProvider sp) {
         Session session = sessionFactory.openSession();
+        Transaction tx = null;
         try {
-            Transaction tx = session.beginTransaction();
-            Query<Integer> query = session.createNativeQuery("SELECT COALESCE(MAX(org_id), 0) AS id_max FROM service_provider_tbl");
+            tx = session.beginTransaction();
+            Query<Integer> query = session.createNativeQuery("SELECT COALESCE(MAX(OrgId), 0) AS id_max FROM SERVICE_PROVIDER_TBL");
             int newId = query.getSingleResult() + 1;   // query result 가 없거나 복수 개인 경우 exception
-            if (newId < 1 || newId > 999) throw new SQLDataException("can't retrieve max org_id");
+            if (newId < 1 || newId > 999) throw new SQLDataException("can't retrieve max OrgID");
             sp.setOrgId(newId);
             session.save(sp);
             tx.commit();
             return true;
         } catch (Exception e) {
-            log.warn("insert error - {}", e.getMessage());
+            log.warn("ServiceProvider create FAIL [{}]", e.getMessage());
+            if (tx != null) tx.rollback();
             return false;
         } finally {
             if (session != null && session.isOpen())
@@ -41,7 +43,7 @@ public class ServiceProviderDAO {
         try {
             return session.get(ServiceProvider.class, orgId);
         } catch (Exception e) {
-            log.warn("read error - {}", e.getMessage());
+            log.warn("ServiceProvider readById FAIL [{}]", e.getMessage());
             return null;
         } finally {
             if (session != null && session.isOpen())
@@ -54,7 +56,7 @@ public class ServiceProviderDAO {
         try {
             return session.bySimpleNaturalId(ServiceProvider.class).load(orgName);
         } catch (Exception e) {
-            log.warn("read error - {}", e.getMessage());
+            log.warn("ServiceProvider readByName FAIL [{}]", e.getMessage());
             return null;
         } finally {
             if (session != null && session.isOpen())
@@ -64,13 +66,15 @@ public class ServiceProviderDAO {
 
     public static boolean update(ServiceProvider sp) {
         Session session = sessionFactory.openSession();
+        Transaction tx = null;
         try {
-            Transaction tx = session.beginTransaction();
+            tx = session.beginTransaction();
             session.update(sp);
             tx.commit();
             return true;
         } catch (Exception e) {
-            log.warn("update error - {}", e.getMessage());
+            log.warn("ServiceProvider update FAIL [{}]", e.getMessage());
+            if (tx != null) tx.rollback();
             return false;
         } finally {
             if (session != null && session.isOpen())
@@ -80,9 +84,10 @@ public class ServiceProviderDAO {
 
     public static boolean delete(int orgId) {
         Session session = sessionFactory.openSession();
+        Transaction tx = null;
         try {
             boolean result = false;
-            Transaction tx = session.beginTransaction();
+            tx = session.beginTransaction();
             ServiceProvider sp = session.get(ServiceProvider.class, orgId);
             if (sp != null) {
                 session.delete(sp);
@@ -91,7 +96,8 @@ public class ServiceProviderDAO {
             tx.commit();
             return result;
         } catch (Exception e) {
-            log.warn("delete error - {}", e.getMessage());
+            log.warn("ServiceProvider delete FAIL [{}]", e.getMessage());
+            if (tx != null) tx.rollback();
             return false;
         } finally {
             if (session != null && session.isOpen())

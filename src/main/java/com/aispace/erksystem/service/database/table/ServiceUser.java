@@ -5,52 +5,51 @@ import org.hibernate.annotations.NaturalId;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.sql.Timestamp;
 
 @Entity
-@Table(name = "service_user_tbl")
+@Table(name = "SERVICE_USER_TBL")
 @Data
 public class ServiceUser implements Serializable {
-    @Id
-    @Column(name = "org_id", nullable = false)
+    @NaturalId
+    @Column(name = "OrgId", nullable = false)
     private Integer orgId;
 
-    @Id
-    @Column(name = "user_id", nullable = false)
+    @NaturalId
+    @Column(name = "UserId", nullable = false)
     private Integer userId;
 
-    @NaturalId
-    @Column(name = "user_name")
+    @Id
+    @Column(name = "UserName", nullable = false)
     private String userName;
 
-    @Column(name = "user_pwd")
+    @Column(name = "UserPwd")
     private String userPwd;
 
-    @Column(name = "service_duration", nullable = false)
+    @Column(name = "ServiceDuration", nullable = false)
     private String serviceDuration;
 
-    @Column(name = "user_number")
-    private Integer userNumber;
-
-    @Column(name = "age")
+    @Column(name = "Age")
     private Integer age;
 
-    @Column(name = "sex")
+    @Column(name = "Sex")
     private Integer sex;
 
-    @Column(name = "mbti")
-    private String mbti;
+    @Column(name = "Mbti")
+    private Integer mbti;
 
-    @Column(name = "user_type")
+    @Column(name = "UserType")
     private Integer userType;
 
-    @Column(name = "service_type", nullable = false)
+    @Column(name = "ServiceType", nullable = false)
     private Integer serviceType;
 
-    @Column(name = "ts", nullable = false)
-    private Timestamp timestamp;
+    @Column(name = "ServiceStatus", nullable = false)
+    private Integer serviceStatus;
+
+    @Column(name = "ServiceNumber", nullable = false)
+    private Integer serviceNumber;
 
 //    @ManyToOne
-//    @JoinColumn(name = "org_id", referencedColumnName = "org_id", insertable = false, updatable = false)
-//    private ServiceProvider serviceProvider; // FK on service_provider_tbl
+//    @JoinColumn(name = "OrgId", referencedColumnName = "OrgId", insertable = false, updatable = false)
+//    private ServiceProvider serviceProvider; // FK on SERVICE_PROVIDER_TBL
 }

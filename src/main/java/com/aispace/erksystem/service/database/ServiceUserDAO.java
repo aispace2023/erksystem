@@ -2,12 +2,12 @@ package com.aispace.erksystem.service.database;
 
 import com.aispace.erksystem.service.DBManager;
 import com.aispace.erksystem.service.database.table.ServiceUser;
-import com.aispace.erksystem.service.database.type.ServiceUserId;
 import lombok.extern.slf4j.Slf4j;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import org.hibernate.query.Query;
+import org.hibernate.query.NativeQuery;
+import org.hibernate.type.StandardBasicTypes;
 
 import java.sql.SQLDataException;
 
@@ -19,17 +19,23 @@ public class ServiceUserDAO {
 
     public static boolean create(ServiceUser su) {
         Session session = sessionFactory.openSession();
+        Transaction tx = null;
         try {
-            Transaction tx = session.beginTransaction();
-            Query<Integer> query = session.createNativeQuery("SELECT COALESCE(MAX(user_id), 0) AS id_max FROM service_user_tbl");
+            tx = session.beginTransaction();
+            NativeQuery<Integer> query = session.createNativeQuery(
+                    "SELECT COALESCE(MAX(UserId), 0) AS id_max FROM SERVICE_USER_TBL WHERE OrgId=:orgId")
+                    .setParameter("orgId", su.getOrgId())
+                    .addScalar("id_max", StandardBasicTypes.INTEGER);
             int newId = query.getSingleResult() + 1;   // query result 가 없거나 복수 개인 경우 exception
-            if (newId < 1 || newId > 999) throw new SQLDataException("can't retrieve max user_id");
+            if (newId < 1 || newId > 999)
+                throw new SQLDataException("can't retrieve max UserId for OrgId=" + su.getOrgId());
             su.setUserId(newId);
             session.save(su);
             tx.commit();
             return true;
         } catch (Exception e) {
-            log.warn("insert error - {}", e.getMessage());
+            log.warn("ServiceUser create FAIL [{}]", e.getMessage());
+            if (tx != null) tx.rollback();
             return false;
         } finally {
             if (session != null && session.isOpen())
@@ -40,13 +46,13 @@ public class ServiceUserDAO {
     public static ServiceUser read(int userId, int orgId) {
         Session session = sessionFactory.openSession();
         try {
-            // key object 정의한 경우 ServiceUser class 정의를 맞추어야 함.
-            ServiceUser su = new ServiceUser();
-            su.setOrgId(orgId);
-            su.setUserId(userId);
-            return session.get(ServiceUser.class, su);
+            // NaturalId 로 조회. using() 인자값은 Class 필드 이름과 일치해야 한다.
+            return session.byNaturalId(ServiceUser.class)
+                    .using("orgId", orgId)
+                    .using("userId", userId)
+                    .load();
         } catch (Exception e) {
-            log.warn("read error - {}", e.getMessage());
+            log.warn("ServiceUser readById FAIL [{}]", e.getMessage());
             return null;
         } finally {
             if (session != null && session.isOpen())
@@ -54,18 +60,12 @@ public class ServiceUserDAO {
         }
     }
 
-    public static ServiceUser read(int orgId, String userName) {
+    public static ServiceUser read(String userName) {
         Session session = sessionFactory.openSession();
         try {
-            String sql = "SELECT org_id, user_id, user_name, user_pwd " +
-                    "FROM service_user_tbl WHERE org_id=? AND user_name=?";
-            //위치기반 파라미터 사용
-            Query<ServiceUser> query = session.createNativeQuery(sql, ServiceUser.class)
-                    .setParameter(1, orgId)
-                    .setParameter(2, userName);
-            return query.getSingleResult();   // query result 가 없거나 복수 개인 경우 exception
+            return session.get(ServiceUser.class, userName);
         } catch (Exception e) {
-            log.warn("read error - {}", e.getMessage());
+            log.warn("ServiceUser readByName FAIL [{}]", e.getMessage());
             return null;
         } finally {
             if (session != null && session.isOpen())
@@ -75,13 +75,15 @@ public class ServiceUserDAO {
 
     public static boolean update(ServiceUser su) {
         Session session = sessionFactory.openSession();
+        Transaction tx = null;
         try {
-            Transaction tx = session.beginTransaction();
+            tx = session.beginTransaction();
             session.update(su);
             tx.commit();
             return true;
         } catch (Exception e) {
-            log.warn("update error - {}", e.getMessage());
+            log.warn("ServiceUser update FAIL [{}]", e.getMessage());
+            if (tx != null) tx.rollback();
             return false;
         } finally {
             if (session != null && session.isOpen())
@@ -89,12 +91,13 @@ public class ServiceUserDAO {
         }
     }
 
-    public static boolean delete(int orgId, int userId) {
+    public static boolean delete(String userName) {
         Session session = sessionFactory.openSession();
+        Transaction tx = null;
         try {
             boolean result = false;
-            Transaction tx = session.beginTransaction();
-            ServiceUser su = session.get(ServiceUser.class, new ServiceUserId(userId, orgId));
+            tx = session.beginTransaction();
+            ServiceUser su = session.get(ServiceUser.class, userName);
             if (su != null) {
                 session.delete(su);
                 result = true;
@@ -102,7 +105,8 @@ public class ServiceUserDAO {
             tx.commit();
             return result;
         } catch (Exception e) {
-            log.warn("delete error - {}", e.getMessage());
+            log.warn("ServiceUser delete FAIL [{}]", e.getMessage());
+            if (tx != null) tx.rollback();
             return false;
         } finally {
             if (session != null && session.isOpen())

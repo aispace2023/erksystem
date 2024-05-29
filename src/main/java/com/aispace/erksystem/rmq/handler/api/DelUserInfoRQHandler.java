@@ -1,12 +1,10 @@
 package com.aispace.erksystem.rmq.handler.api;
 
 import com.aispace.erksystem.rmq.handler.base.RmqIncomingHandler;
-import com.aispace.erksystem.rmq.handler.base.RmqOutgoingHandler;
 import com.aispace.erksystem.rmq.handler.base.exception.RmqHandleException;
 import com.aispace.erksystem.service.database.ServiceProviderDAO;
 import com.aispace.erksystem.service.database.ServiceUserDAO;
 import com.aispace.erksystem.service.database.table.ServiceProvider;
-import com.aispace.erksystem.service.database.table.ServiceUser;
 import com.erksystem.protobuf.api.DelUserInfoRP_m;
 import com.erksystem.protobuf.api.DelUserInfoRQ_m;
 import com.erksystem.protobuf.api.ErkMsgType_e;
@@ -20,15 +18,14 @@ import static com.erksystem.protobuf.api.UserProfileResult_e.UserProfileResult_o
 public class DelUserInfoRQHandler extends RmqIncomingHandler<DelUserInfoRQ_m> {
     @Override
     protected void handle() {
+        // User Delete 시 필요한 값은 아니나, 조직명이 유효한 지 확인한다.
         ServiceProvider sp = ServiceProviderDAO.read(msg.getOrgName());
         if (sp == null) {
             throw new RmqHandleException(UserProfileResult_nok_OrgName.getNumber(), "Provider Not Found");
         }
 
         int result = 0; // unknown error
-        ServiceUser su = ServiceUserDAO.read(sp.getOrgId(), msg.getUserName());
-        if (su != null && su.getUserPwd().equals(msg.getUserPwd())
-                && ServiceUserDAO.delete(sp.getOrgId(), su.getUserId())) {
+        if (ServiceUserDAO.delete(msg.getUserName())) {
             result = UserProfileResult_ok.getNumber();
         }
 
@@ -46,7 +43,7 @@ public class DelUserInfoRQHandler extends RmqIncomingHandler<DelUserInfoRQ_m> {
                 .setOrgName(msg.getOrgName())
                 .setUserName(msg.getUserName())
                 .setResultTypeValue(reasonCode)
-                .setReturn(reason) // TODO return 값 체크
+                .setReturn(reason)
                 .build();
 
         reply(res);

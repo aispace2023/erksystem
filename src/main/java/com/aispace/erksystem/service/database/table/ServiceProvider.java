@@ -5,32 +5,31 @@ import org.hibernate.annotations.NaturalId;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.sql.Timestamp;
 
 @Entity
-@Table(name = "service_provider_tbl")
+@Table(name = "SERVICE_PROVIDER_TBL")
 @Data
 public class ServiceProvider implements Serializable {
     @Id
-    @Column(name = "org_id", nullable = false)
+    @Column(name = "OrgId", nullable = false)
     private Integer orgId;
 
     @NaturalId
-    @Column(name = "org_name", nullable = false)
+    @Column(name = "OrgName", nullable = false)
     private String orgName;
 
-    @Column(name = "org_pwd", nullable = false)
+    @Column(name = "OrgPwd", nullable = false)
     private String orgPwd;
 
-    @Column(name = "service_duration", nullable = false)
+    @Column(name = "ProviderType", nullable = false)
+    private Integer providerType;
+
+    @Column(name = "ServiceDuration", nullable = false)
     private String serviceDuration;
 
-    @Column(name = "user_number", nullable = false)
+    @Column(name = "UserNumber", nullable = false)
     private Integer userNumber;
 
-    @Column(name = "service_type", nullable = false)
+    @Column(name = "ServiceType", nullable = false)
     private Integer serviceType;
-
-    @Column(name = "ts", nullable = false)
-    private Timestamp timestamp;
 }
