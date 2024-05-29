@@ -1,34 +1,32 @@
-use ERK_SYS;
+use ERK_SYSTEM;
 
--- user_tbl 이 provider_tbl 을 참조하므로 먼저 삭제해야 한다.
-DROP TABLE IF EXISTS service_user_tbl;
-DROP TABLE IF EXISTS service_provider_tbl;
+-- USER Table 이 PROVIDER Table 을 참조하므로 먼저 삭제
+DROP TABLE IF EXISTS SERVICE_USER_TBL;
+DROP TABLE IF EXISTS SERVICE_PROVIDER_TBL;
 
-CREATE TABLE service_provider_tbl (
-    `org_id` INT(11) NOT NULL,
-    `org_name` VARCHAR(100) NOT NULL,
-    `org_pwd` VARCHAR(100) NOT NULL,
-    `service_duration` CHAR(8) NOT NULL,
-    `user_number` INT(11) NOT NULL,
-    `service_type` INT(11) NOT NULL,
-    `ts` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    PRIMARY KEY(`org_id`),
-    UNIQUE KEY service_provider_tbl.idx1 (`org_name`)
+CREATE TABLE SERVICE_PROVIDER_TBL (
+    OrgId INT PRIMARY KEY NOT NULL,
+    OrgName VARCHAR(50) UNIQUE KEY NOT NULL,
+    OrgPwd VARCHAR(40) NOT NULL,
+    ProviderType INT NOT NULL,
+    ServiceDuration VARCHAR(10) NOT NULL,
+    UserNumber INT NOT NULL,
+    ServiceType INT NOT NULL
 );
 
-CREATE TABLE service_user_tbl (
-    `org_id` INT(11) NOT NULL,
-    `user_id` INT(11) NOT NULL,
-    `user_name` VARCHAR(100) UNIQUE KEY NOT NULL,
-    `user_pwd` VARCHAR(100),
-    `service_duration` CHAR(8) NOT NULL,
-    `user_number` INT(11),
-    `age` TINYINT,
-    `sex` TINYINT,
-    `mbti` VARCHAR(32),
-    `user_type` TINYINT,
-    `service_type` INT(11) NOT NULL,
-    `ts` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    PRIMARY KEY(`org_id`, `user_id`),
-    FOREIGN KEY(`org_id`) REFERENCES service_provider_tbl(`org_id`)
+CREATE TABLE SERVICE_USER_TBL (
+    OrgId INT NOT NULL,
+    UserId INT NOT NULL,
+    UserName VARCHAR(50) PRIMARY KEY NOT NULL,
+    UserPwd VARCHAR(40) DEFAULT NULL,
+    ServiceDuration VARCHAR(10) NOT NULL,
+    Age INT DEFAULT 0,
+    Sex INT DEFAULT 0,
+    Mbti INT DEFAULT 0,
+    UserType INT DEFAULT 0,
+    ServiceType INT NOT NULL DEFAULT 0,
+    ServiceStatus INT NOT NULL DEFAULT 0,
+    ServiceNumber INT NOT NULL DEFAULT 0,
+    UNIQUE KEY SERVICE_USER_TBL.idx_UniqueKey (OrgId, UserId),
+    FOREIGN KEY (OrgId) REFERENCES SERVICE_PROVIDER_TBL(OrgId)
 );
