@@ -4,6 +4,7 @@ import com.aispace.erksystem.common.SystemLock;
 import com.aispace.erksystem.config.UserConfig;
 import com.aispace.erksystem.rmq.RmqManager;
 import com.aispace.erksystem.rmq.module.ErkApiMsgRmqConsumer;
+import com.aispace.erksystem.rmq.module.RmqModule;
 import com.aispace.erksystem.service.scheduler.IntervalTaskManager;
 import lombok.Getter;
 import lombok.Setter;
@@ -51,6 +52,12 @@ public class ServiceManager {
         rmqManager.init(config.getRmqHost(), config.getRmqUser(), config.getRmqPassword(), config.getRmqPort(), config.getBufferCount());
         rmqManager.addConsumer(config.getRmqIncomingQueueApi(), ErkApiMsgRmqConsumer::consumeApiMessage);
         rmqManager.addConsumer(config.getRmqIncomingQueueSubsystem(), ErkApiMsgRmqConsumer::consumeSubsystemApiMessage);
+        RmqModule rmqModule = rmqManager.getRmqModule();
+
+        rmqModule.queueDeclare(config.getRmqOutgoingPerQueue());
+        rmqModule.queueDeclare(config.getRmqOutgoingSerQueue());
+        rmqModule.queueDeclare(config.getRmqOutgoingFerQueue());
+        rmqModule.queueDeclare(config.getRmqOutgoingEkmQueue());
 
         IntervalTaskManager.startAll();
         DBManager.getInstance().start();
