@@ -8,15 +8,14 @@ import com.aispace.erksystem.rmq.RmqManager;
 import com.aispace.erksystem.rmq.handler.base.exception.RmqHandleException;
 import com.aispace.erksystem.rmq.handler.base.exception.ValidationHandleException;
 import com.aispace.erksystem.service.AppInstance;
-import com.aispace.erksystem.session.SessionManager;
 import com.erksystem.protobuf.api.QueueInfo_s;
 import com.google.protobuf.GeneratedMessage;
 import com.google.protobuf.Message;
 import lombok.extern.slf4j.Slf4j;
 
-
 import static com.aispace.erksystem.rmq.ErkMsgUtil.setQueueInfo;
 import static com.aispace.erksystem.rmq.handler.base.ErkMsgWrapper.wrap2ErkApiMsg;
+import static com.erksystem.protobuf.api.ReturnCode_e.ReturnCode_unknown;
 
 
 /**
@@ -29,7 +28,7 @@ public abstract class RmqIncomingHandler<T extends GeneratedMessage> implements 
     protected static final PromiseManager promiseManager = PromiseManager.getInstance();
     protected static final UserConfig userConfig = appInstance.getUserConfig();
     protected static final ConnectionManager connectionManager = ConnectionManager.getInstance();
-    protected static final SessionManager sessionManager = SessionManager.getInstance();
+
     protected Message incomingMsg;
     protected T msg;
 
@@ -47,7 +46,7 @@ public abstract class RmqIncomingHandler<T extends GeneratedMessage> implements 
             onFail(e.getErrCode(), e.getMessage());
         } catch (Exception e) {
             log.warn("Unexpected Exception Occurs", e);
-            onFail(0, "Unexpected Exception");
+            onFail(ReturnCode_unknown.getNumber(), "Unexpected Exception");
         }
     }
 

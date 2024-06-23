@@ -6,7 +6,6 @@ import com.aispace.erksystem.service.AppInstance;
 import com.google.protobuf.Message;
 import lombok.extern.slf4j.Slf4j;
 
-import static com.aispace.erksystem.rmq.module.RmqLogPrinter.getMsgFrom;
 import static com.aispace.erksystem.rmq.module.RmqLogPrinter.proto2Json;
 
 
@@ -30,17 +29,4 @@ public class RmqOutgoingHandler {
             log.warn("Err Occurs", e);
         }
     }
-
-    public static void sendToApi(Message msg) {
-        send(msg, userConfig.getRmqOutgoingQueueApi());
-    }
-
-    public static void sendErkApiMsg2API(Message msg) {
-        sendToApi(ErkMsgWrapper.wrap2ErkApiMsg(msg));
-    }
-
-    public static void sendErkApiMsg2SubSystem(Message msg) {
-        sendToApi(ErkMsgWrapper.wrap2ErkInterApiMsg(msg));
-    }
-
 }

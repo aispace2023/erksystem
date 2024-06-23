@@ -3,10 +3,12 @@ package com.aispace.erksystem.connection;
 import com.aispace.erksystem.rmq.handler.base.exception.RmqHandleException;
 import lombok.extern.slf4j.Slf4j;
 
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 /**
  * Created by Ai_Space
@@ -14,7 +16,7 @@ import java.util.concurrent.ConcurrentHashMap;
 @Slf4j
 public class ConnectionManager {
     private static final ConnectionManager INSTANCE = new ConnectionManager();
-    private static final Map<Integer, ConnectionInfo> connectionInfos = new ConcurrentHashMap<>();
+    private static final Map<String, ConnectionInfo> connectionInfos = new ConcurrentHashMap<>();
 
     private ConnectionManager() {
     }
@@ -23,9 +25,9 @@ public class ConnectionManager {
         return INSTANCE;
     }
 
-    public ConnectionInfo createConnection(Integer userId, Integer orgId) {
-        ConnectionInfo connectionInfo = new ConnectionInfo(userId, orgId);
-        if (connectionInfos.putIfAbsent(userId, connectionInfo) != null) {
+    public ConnectionInfo createConnection(int orgId, int userId) {
+        ConnectionInfo connectionInfo = new ConnectionInfo(orgId, userId);
+        if (connectionInfos.putIfAbsent(getKey(orgId, userId), connectionInfo) != null) {
             log.warn("[{}] connection is already exist", userId);
             throw new RmqHandleException(0, "Connection Already Exist");
         }
@@ -33,24 +35,33 @@ public class ConnectionManager {
         return connectionInfo;
     }
 
-    public Optional<ConnectionInfo> findConnection(Integer userId) {
-        return Optional.ofNullable(connectionInfos.get(userId));
+    public Optional<ConnectionInfo> findConnectionInfo(int orgId, int userId) {
+        return Optional.ofNullable(connectionInfos.get(getKey(orgId, userId)));
     }
 
-    public void deleteConnection(Integer userId) {
-        ConnectionInfo removedConnectionInfo = connectionInfos.remove(userId);
+    public Set<ConnectionInfo> findConnectionInfo(Predicate<ConnectionInfo> predicates) {
+        return connectionInfos.values().stream().filter(predicates).collect(Collectors.toSet());
+    }
+
+    public void deleteConnection(int orgId, int userId) {
+        deleteConnection(getKey(orgId, userId));
+    }
+
+    public void deleteConnection(String key) {
+        ConnectionInfo removedConnectionInfo = connectionInfos.remove(key);
         if (removedConnectionInfo == null) {
-            log.info("[{}] Connection Already deleted. Remaining count [{}]", userId, connectionInfos.size());
+            log.info("[{}] Connection Already deleted. Remaining count [{}]", key, connectionInfos.size());
             return;
         }
         removedConnectionInfo.dealloc();
+
     }
 
-    public Map<Integer, ConnectionInfo> getCloneConnectionInfos() {
-        return new HashMap<>(connectionInfos);
+    public int getConnectionCount() {
+        return connectionInfos.size();
     }
 
-    public String getLogPrefix(Integer userId) {
-        return findConnection(userId).map(ConnectionInfo::getLogPrefix).orElseGet(() -> "(" + userId + ") () ");
+    public String getKey(int orgId, int userId) {
+        return orgId + ":" + userId;
     }
 }

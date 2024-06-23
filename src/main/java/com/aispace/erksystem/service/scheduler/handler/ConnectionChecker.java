@@ -17,11 +17,10 @@ public class ConnectionChecker extends IntervalTaskUnit {
         long connectionTimeout = userConfig.getConnectionTimeout() * 1000L;
         if (connectionTimeout <= 0) return;
         long now = System.currentTimeMillis();
-        connectionManager.getCloneConnectionInfos().values().stream()
-                .filter(o -> o.getLastHbTime() + connectionTimeout < now)
-                .forEach(o -> {
-                    log.warn("{} Disconnect Timeout conncetion", o.getLogPrefix());
-                    connectionManager.deleteConnection(o.getUserId());
+        connectionManager.findConnectionInfo(connectionInfo -> connectionInfo.getLastAccessTime() + connectionTimeout < now)
+                .forEach(connectionInfo -> {
+                    log.warn("{} Disconnect Timeout conncetion", connectionInfo.getLogPrefix());
+                    connectionManager.deleteConnection(connectionInfo.getKey());
                 });
     }
 }

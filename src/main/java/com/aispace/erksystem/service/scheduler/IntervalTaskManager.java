@@ -1,7 +1,7 @@
 package com.aispace.erksystem.service.scheduler;
 
 import com.aispace.erksystem.service.scheduler.handler.ConnectionChecker;
-import com.aispace.erksystem.service.scheduler.handler.SessionChecker;
+import com.aispace.erksystem.service.scheduler.handler.ErkServiceChecker;
 import com.aispace.erksystem.service.scheduler.handler.StateMonitor;
 import com.aispace.erksystem.service.scheduler.handler.base.IntervalTaskUnit;
 
@@ -16,7 +16,7 @@ import java.util.List;
 public class IntervalTaskManager {
     private static final List<IntervalTaskUnit> itu = List.of(
             new ConnectionChecker(),
-            new SessionChecker(),
+            new ErkServiceChecker(),
             new StateMonitor()
     );
 

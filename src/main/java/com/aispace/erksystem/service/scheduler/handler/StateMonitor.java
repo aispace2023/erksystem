@@ -15,6 +15,6 @@ public class StateMonitor extends IntervalTaskUnit {
 
     @Override
     public void run() {
-        log.debug("Connection count={}", connectionManager.getCloneConnectionInfos().size());
+        log.debug("Connection count={}", connectionManager.getConnectionCount());
     }
 }

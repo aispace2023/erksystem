@@ -4,11 +4,18 @@ import com.aispace.erksystem.common.PasswdUtil;
 import com.aispace.erksystem.common.ValidationUtil;
 import com.aispace.erksystem.config.base.ConfigValue;
 import com.aispace.erksystem.config.base.yaml.YamlConfig;
+import com.erksystem.protobuf.api.EngineType_e;
+import com.erksystem.protobuf.api.ServiceType_e;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
 import javax.validation.constraints.Min;
+import java.util.List;
+import java.util.Map;
+
+import static com.erksystem.protobuf.api.EngineType_e.*;
+import static com.erksystem.protobuf.api.ServiceType_e.*;
 
 /**
  * Created by Ai_Space
@@ -66,12 +73,37 @@ public class UserConfig extends YamlConfig {
     @ConfigValue("prometheus.metrics_path")
     String prometheusMetricsPath;
 
+    @ConfigValue("timeout.erk-hb-timeout")
+    long erkHbTimeout = 5000;
+
+    Map<EngineType_e, String> engineQueueMap;
+
+    final Map<ServiceType_e, List<EngineType_e>> serviceTypeMap = Map.of(
+            ServiceType_physiology, List.of(EngineType_physiology),
+            ServiceType_speech, List.of(EngineType_speech),
+            ServiceType_video, List.of(EngineType_face),
+            ServiceType_physiology_speech, List.of(EngineType_physiology, EngineType_speech),
+            ServiceType_physiology_video, List.of(EngineType_physiology, EngineType_face),
+            ServiceType_speech_video, List.of(EngineType_speech, EngineType_face),
+            ServiceType_physiology_speech_video, List.of(EngineType_physiology, EngineType_speech, EngineType_face),
+            ServiceType_knowledge, List.of(EngineType_knowledge),
+            ServiceType_service_all, List.of(EngineType_physiology, EngineType_speech, EngineType_face, EngineType_knowledge)
+    );
+
     @Override
     public void afterFieldSetting() {
         rmqPassword = PasswdUtil.decrypt(rmqPassword);
         if (prometheusMetricsPath != null && !prometheusMetricsPath.startsWith("/")) {
             prometheusMetricsPath = "/" + prometheusMetricsPath;
         }
+
+        engineQueueMap = Map.of(
+                EngineType_e.EngineType_physiology, rmqOutgoingPerQueue,
+                EngineType_e.EngineType_speech, rmqOutgoingSerQueue,
+                EngineType_e.EngineType_face, rmqOutgoingFerQueue,
+                EngineType_e.EngineType_knowledge, rmqOutgoingEkmQueue
+        );
+
         ValidationUtil.validCheck(this);
     }
 }

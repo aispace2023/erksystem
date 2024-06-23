@@ -5,10 +5,13 @@ rmq:
   port: 10001
   incoming-queue:
     api: ERK_API_QUEUE
-    subsystem: ERK_SUBSYSTEM_QUEUE
+    subsystem: ERK_SER_QUEUE
   outgoing-queue:
     api: API_QUEUE
-    subsystem: SUBSYSTEM_QUEUE
+    per-queue: PER_QUEUE
+    ser-queue: SER_QUEUE
+    fer-queue: FER_QUEUE
+    ekm-queue: EKM_QUEUE
 
 performance:
   rmq-consumer-count: 8
@@ -17,3 +20,6 @@ prometheus:
   activate: false
   port: 8080
   metrics_path: /metrics/prometheus
+
+timeout:
+  erk-hb-timeout: 5000

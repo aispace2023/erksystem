@@ -1,129 +1,60 @@
 package com.aispace.erksystem.rmq.handler.api;
 
+import com.aispace.erksystem.connection.ConnectionInfo;
 import com.aispace.erksystem.rmq.handler.base.RmqIncomingHandler;
 import com.aispace.erksystem.rmq.handler.base.RmqOutgoingHandler;
-import com.aispace.erksystem.rmq.handler.base.exception.RmqHandleException;
+import com.aispace.erksystem.rmq.module.ErkEngineUtil;
 import com.aispace.erksystem.rmq.module.RmqModule;
 import com.erksystem.protobuf.api.*;
 import lombok.extern.slf4j.Slf4j;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
-import static com.aispace.erksystem.rmq.handler.base.ErkMsgWrapper.convertToErkApiMsg;
-import static com.aispace.erksystem.service.AppInstance.RECV_QUEUE_NAME_PATTERN;
-import static com.aispace.erksystem.service.AppInstance.SEND_QUEUE_NAME_PATTERN;
-import static com.erksystem.protobuf.api.EngineCondition_e.EngineCondition_available;
-import static com.erksystem.protobuf.api.EngineType_e.*;
-import static com.erksystem.protobuf.api.ServiceType_e.*;
+import static com.aispace.erksystem.rmq.module.ErkEngineUtil.getEngineCreateMsgs;
+import static com.erksystem.protobuf.api.ReturnCode_e.ReturnCode_unknown;
 
 /**
  * Created by Ai_Space
  */
 @Slf4j
 public class EmoServiceStartRQHandler extends RmqIncomingHandler<EmoServiceStartRQ_m> {
-    public static final Map<ServiceType_e, List<EngineType_e>> TYPE_MAP = new HashMap<>() {
-        {
-            put(ServiceType_physiology, List.of(EngineType_physiology));
-            put(ServiceType_speech, List.of(EngineType_speech));
-            put(ServiceType_video, List.of(EngineType_face));
-            put(ServiceType_physiology_speech, List.of(EngineType_physiology, EngineType_speech));
-            put(ServiceType_physiology_video, List.of(EngineType_physiology, EngineType_face));
-            put(ServiceType_speech_video, List.of(EngineType_speech, EngineType_face));
-            put(ServiceType_physiology_speech_video, List.of(EngineType_physiology, EngineType_speech, EngineType_face));
-            put(ServiceType_knowledge, List.of(EngineType_knowledge));
-            put(ServiceType_service_all, List.of(EngineType_physiology, EngineType_speech, EngineType_face, EngineType_knowledge));
-        }
-    };
-
-    public static final Map<EngineType_e, String> ENGINE_QUEUE_MAP = new HashMap<>() {
-        {
-            put(EngineType_physiology, userConfig.getRmqOutgoingPerQueue());
-            put(EngineType_speech, userConfig.getRmqOutgoingSerQueue());
-            put(EngineType_face, userConfig.getRmqOutgoingFerQueue());
-            put(EngineType_knowledge, userConfig.getRmqOutgoingEkmQueue());
-        }
-    };
-    private final EmoServiceStartRP_m.Builder emoServiceStartRpBuilder = EmoServiceStartRP_m.newBuilder();
-    private final ErkEngineCreateRQ_m.Builder erkEngineCreateRqBuilder = ErkEngineCreateRQ_m.newBuilder();
-    private final List<String> declaredQueues = new ArrayList<>();
     private final RmqModule rmqModule = rmqManager.getRmqModule();
+    private ConnectionInfo connectionInfo;
 
     @Override
     protected void handle() {
         ErkMsgHead_s erkMsgHead = msg.getErkMsgHead();
-        // TODO : User 정보 확인 로직
-
         int orgId = erkMsgHead.getOrgId();
         int userId = erkMsgHead.getUserId();
+        ServiceType_e serviceType = msg.getServiceType();
 
-        // TODO : 추후 메시지에 TransactionId 필드가 추가되면 그때 key 수정
-        String key = userId + "_" + orgId;
-        List<EngineType_e> engineTypeEs = TYPE_MAP.get(msg.getServiceType());
-        sessionManager.createSession(userId + "_" + orgId, engineTypeEs.size());
+        connectionInfo = connectionManager.findConnectionInfo(orgId, userId).orElseThrow();
 
-        for (EngineType_e engineType : engineTypeEs) {
-            try {
-                String sendQueue = SEND_QUEUE_NAME_PATTERN.formatted(engineType.getNumber(), orgId, userId);
-                String recvQueue = RECV_QUEUE_NAME_PATTERN.formatted(engineType.getNumber(), orgId, userId);
-                rmqModule.getChannel().queueDeclare(recvQueue, userConfig.isAgentOptionDurable(), userConfig.isAgentOptionExclusive(), userConfig.isAgentOptionAutoDelete(), Map.of("x-queue-type", "stream"));
-                log.info("Queue Declared [{}]", recvQueue);
-                declaredQueues.add(recvQueue);
-                rmqModule.getChannel().queueDeclare(sendQueue, userConfig.isAgentOptionDurable(), userConfig.isAgentOptionExclusive(), userConfig.isAgentOptionAutoDelete(), Map.of("x-queue-type", "stream"));
-                log.info("Queue Declared [{}]", sendQueue);
-                declaredQueues.add(sendQueue);
+        Set<ErkEngineUtil.EngineMsgInfo> engineCreateMsgs = getEngineCreateMsgs(serviceType, orgId, userId);
 
-                ErkEngineInfo_s engineInfo = ErkEngineInfo_s.newBuilder().setEngineType(engineType)
-                        .setEngineCondition(EngineCondition_available) // TODO : 엔진 상태 확인 및 설정
-                        //.setIpAddr() // TODO : IP 주소 설정
-                        .setSendQueueName(sendQueue)
-                        .setReceiveQueueName(recvQueue)
-                        .build();
+        for (ErkEngineUtil.EngineMsgInfo engineCreateMsg : engineCreateMsgs) {
+            queueDeclare(engineCreateMsg.getRecvQueue());
+            queueDeclare(engineCreateMsg.getSendQueue());
 
-                ErkApiMsg engineCreateMsg = convertToErkApiMsg(erkEngineCreateRqBuilder
-                        .setErkInterMsgHead(ErkInterMsgHead_s.newBuilder()
-                                .setMsgType(ErkInterMsgType_e.ErkEngineCreateRQ)
-                                .setOrgId(orgId)
-                                .setUserId(userId))
-                        .setMsgTime(System.currentTimeMillis())
-                        .setServiceType(this.msg.getServiceType()).build());
-
-                switch (engineType) {
-                    case EngineType_physiology -> {
-                        erkEngineCreateRqBuilder.setPhysioEngineSendQueueName(sendQueue);
-                        erkEngineCreateRqBuilder.setPhysioEngineReceiveQueueName(recvQueue);
-                        emoServiceStartRpBuilder.setPhysioEngineInfo(engineInfo);
-                        RmqOutgoingHandler.send(engineCreateMsg, ENGINE_QUEUE_MAP.get(engineType));
-                    }
-                    case EngineType_speech -> {
-                        erkEngineCreateRqBuilder.setSpeechEngineSendQueueName(sendQueue);
-                        erkEngineCreateRqBuilder.setSpeechEngineReceiveQueueName(recvQueue);
-                        emoServiceStartRpBuilder.setSpeechEngineInfo(engineInfo);
-                        RmqOutgoingHandler.send(engineCreateMsg, ENGINE_QUEUE_MAP.get(engineType));
-                    }
-                    case EngineType_face -> {
-                        erkEngineCreateRqBuilder.setFaceEngineSendQueueName(sendQueue);
-                        erkEngineCreateRqBuilder.setFaceEngineReceiveQueueName(recvQueue);
-                        emoServiceStartRpBuilder.setFaceEngineInfo(engineInfo);
-                        RmqOutgoingHandler.send(engineCreateMsg, ENGINE_QUEUE_MAP.get(engineType));
-                    }
-                    case EngineType_knowledge -> {
-                        erkEngineCreateRqBuilder.setKnowledgeEngineSendQueueName(sendQueue);
-                        erkEngineCreateRqBuilder.setKnowledgeEngineReceiveQueueName(recvQueue);
-                        emoServiceStartRpBuilder.setKnowledgeEngineInfo(engineInfo);
-                        RmqOutgoingHandler.send(engineCreateMsg, ENGINE_QUEUE_MAP.get(engineType));
-                    }
-                }
-            } catch (Exception e) {
-                throw new RmqHandleException(0, "Fail to create queue", e);
-            }
+            RmqOutgoingHandler.send(engineCreateMsg.getErkApiMsg(), userConfig.getEngineQueueMap().get(engineCreateMsg.getEngineType()));
         }
 
-        promiseManager.createPromiseInfo(key,
+        connectionInfo.addPromise(
                 () -> {
                     try {
+                        EmoServiceStartRP_m.Builder emoServiceStartRpBuilder = EmoServiceStartRP_m.newBuilder();
+
+                        for (ErkEngineInfo_s engineInfo : connectionInfo.getEngineInfoMap().values()) {
+                            switch (engineInfo.getEngineType()) {
+                                case EngineType_physiology -> emoServiceStartRpBuilder.setPhysioEngineInfo(engineInfo);
+                                case EngineType_speech -> emoServiceStartRpBuilder.setSpeechEngineInfo(engineInfo);
+                                case EngineType_face -> emoServiceStartRpBuilder.setFaceEngineInfo(engineInfo);
+                                case EngineType_knowledge ->
+                                        emoServiceStartRpBuilder.setKnowledgeEngineInfo(engineInfo);
+                            }
+                        }
+
                         // Response 전송
                         EmoServiceStartRP_m res = emoServiceStartRpBuilder
                                 .setErkMsgHead(ErkMsgHead_s.newBuilder(msg.getErkMsgHead()).setMsgType(ErkMsgType_e.EmoServiceStartRP))
@@ -133,16 +64,22 @@ public class EmoServiceStartRQHandler extends RmqIncomingHandler<EmoServiceStart
                         reply(res);
                     } catch (Exception e) {
                         log.warn("Unexpected Exception Occurs", e);
-                        onFail(0, "Unexpected Exception");
+                        onFail(ReturnCode_unknown.getNumber(), "Unexpected Exception");
                     }
                 },
-                () -> onFail(0, "EmoServiceStart Fail"),
-                () -> onFail(0, "EmoServiceStart Timeout"), 5000);
+                () -> onFail(ReturnCode_unknown.getNumber(), "EmoServiceStart Fail"),
+                () -> {
+                    if (connectionManager.findConnectionInfo(orgId, userId).isPresent()) {
+                        onFail(ReturnCode_unknown.getNumber(), "EmoServiceStart Timeout");
+                    }
+                }, 5000, engineCreateMsgs.size()
+        );
     }
 
     @Override
     protected void onFail(int reasonCode, String reason) {
-        for (String declaredQueue : declaredQueues) {
+        // 실패 시 생성한 큐 삭제
+        for (String declaredQueue : connectionInfo.getDeclaredQueues()) {
             try {
                 rmqModule.getChannel().queueDelete(declaredQueue);
             } catch (Exception e) {
@@ -156,5 +93,16 @@ public class EmoServiceStartRQHandler extends RmqIncomingHandler<EmoServiceStart
                 .build();
 
         reply(res);
+    }
+
+    private void queueDeclare(String queueName) {
+        try {
+            rmqModule.getChannel().queueDeclare(queueName, userConfig.isAgentOptionDurable(), userConfig.isAgentOptionExclusive(), userConfig.isAgentOptionAutoDelete(), Map.of("x-queue-type", "stream"));
+            connectionInfo.getDeclaredQueues().add(queueName);
+            log.info("Queue Declared [{}]", queueName);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
     }
 }

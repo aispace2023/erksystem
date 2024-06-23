@@ -46,6 +46,7 @@ public class ServiceManager {
 
         // Config 초기화
         config.init(Path.of(configPath).resolve(CONFIG_FILE_NAME).toString());
+        config.startWatch();
 
         // RMQ 서버 연결 및 RMQ Consumer 등록
         RmqManager rmqManager = RmqManager.getInstance();
@@ -54,10 +55,9 @@ public class ServiceManager {
         rmqManager.addConsumer(config.getRmqIncomingQueueSubsystem(), ErkApiMsgRmqConsumer::consumeSubsystemApiMessage);
         RmqModule rmqModule = rmqManager.getRmqModule();
 
-        rmqModule.queueDeclare(config.getRmqOutgoingPerQueue());
-        rmqModule.queueDeclare(config.getRmqOutgoingSerQueue());
-        rmqModule.queueDeclare(config.getRmqOutgoingFerQueue());
-        rmqModule.queueDeclare(config.getRmqOutgoingEkmQueue());
+        for (String queueName : config.getEngineQueueMap().values()) {
+            rmqModule.queueDeclare(queueName);
+        }
 
         IntervalTaskManager.startAll();
         DBManager.getInstance().start();

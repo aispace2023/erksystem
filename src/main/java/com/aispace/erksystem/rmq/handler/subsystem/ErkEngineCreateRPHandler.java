@@ -1,14 +1,11 @@
 package com.aispace.erksystem.rmq.handler.subsystem;
 
+import com.aispace.erksystem.connection.ConnectionInfo;
 import com.aispace.erksystem.rmq.handler.base.RmqIncomingHandler;
-import com.aispace.erksystem.session.SessionInfo;
+import com.erksystem.protobuf.api.EngineType_e;
 import com.erksystem.protobuf.api.ErkEngineCreateRP_m;
 import com.erksystem.protobuf.api.ErkInterMsgHead_s;
 import lombok.extern.slf4j.Slf4j;
-
-import java.util.concurrent.atomic.AtomicInteger;
-
-import static com.erksystem.protobuf.api.ReturnCode_e.ReturnCode_ok;
 
 /**
  * Created by Ai_Space
@@ -18,25 +15,22 @@ public class ErkEngineCreateRPHandler extends RmqIncomingHandler<ErkEngineCreate
     @Override
     protected void handle() {
         ErkInterMsgHead_s erkMsgHead = msg.getErkInterMsgHead();
-        String key = erkMsgHead.getUserId() + "_" + erkMsgHead.getOrgId();
+        int orgId = erkMsgHead.getOrgId();
+        int userId = erkMsgHead.getUserId();
 
-        boolean sessionDelete = sessionManager.getSessionInfo(key)
-                .map(SessionInfo::getRemainingCount)
-                .map(AtomicInteger::decrementAndGet)
-                .map(o -> o == 0)
-                .orElse(false);
+        ConnectionInfo connectionInfo = connectionManager.findConnectionInfo(orgId, userId).orElseThrow();
 
-        if (sessionDelete) {
-            sessionManager.deleteSession(key);
-            promiseManager.findPromiseInfo(key).ifPresentOrElse(promiseInfo -> {
-                if (msg.getReturnCode() == ReturnCode_ok) {
-                    promiseInfo.procSuccess();
-                } else {
-                    log.warn("[{}] ErkEngineCreate Fail by [{}]", key, msg.getReturnCode());
-                    promiseInfo.procFail();
-                }
-            }, () -> log.warn("[{}] Can not find PromiseInfo", key));
+        if (msg.getPhysioEngineInfo().getEngineType() == EngineType_e.EngineType_physiology) {
+            connectionInfo.getEngineInfoMap().put(EngineType_e.EngineType_physiology, msg.getPhysioEngineInfo());
+        } else if (msg.getSpeechEngineInfo().getEngineType() == EngineType_e.EngineType_speech) {
+            connectionInfo.getEngineInfoMap().put(EngineType_e.EngineType_speech, msg.getSpeechEngineInfo());
+        } else if (msg.getFaceEngineInfo().getEngineType() == EngineType_e.EngineType_face) {
+            connectionInfo.getEngineInfoMap().put(EngineType_e.EngineType_face, msg.getFaceEngineInfo());
+        } else if (msg.getKnowledgeEngineInfo().getEngineType() == EngineType_e.EngineType_knowledge) {
+            connectionInfo.getEngineInfoMap().put(EngineType_e.EngineType_knowledge, msg.getKnowledgeEngineInfo());
         }
+
+        connectionInfo.countDownPromise();
     }
 
     @Override

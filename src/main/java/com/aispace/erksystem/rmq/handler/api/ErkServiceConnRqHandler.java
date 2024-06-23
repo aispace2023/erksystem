@@ -12,10 +12,16 @@ public class ErkServiceConnRqHandler extends RmqIncomingHandler<ErkServiceConnRQ
     @Override
     protected void handle() {
         // SERVICE_USER 가 SERVICE_PROVIDER 를 참조하므로 SERVICE_USER_TBL 만 조회해도 유효하다.
-        ServiceUser user = ServiceUserDAO.read(msg.getErkMsgHead().getUserId(), msg.getErkMsgHead().getOrgId());
+        int userId = msg.getErkMsgHead().getUserId();
+        int orgId = msg.getErkMsgHead().getOrgId();
+
+        ServiceUser user = ServiceUserDAO.read(userId, orgId);
         if (user == null) {
             throw new IllegalStateException("FAIL");
         }
+
+        connectionManager.createConnection(orgId, userId);
+
         ErkServiceConnRP_m res = ErkServiceConnRP_m.newBuilder()
                 .setErkMsgHead(ErkMsgHead_s.newBuilder(msg.getErkMsgHead()).setMsgType(ErkMsgType_e.ErkServiceConnRP))
                 .setMsgTime(System.currentTimeMillis())

@@ -1,7 +1,6 @@
 package com.aispace.erksystem.rmq.handler.api;
 
 import com.aispace.erksystem.rmq.handler.base.RmqIncomingHandler;
-import com.aispace.erksystem.rmq.handler.base.RmqOutgoingHandler;
 import com.erksystem.protobuf.api.ErkMsgHead_s;
 import com.erksystem.protobuf.api.HeartBeatRP_m;
 import com.erksystem.protobuf.api.HeartBeatRQ_m;
@@ -12,8 +11,17 @@ import com.erksystem.protobuf.api.HeartBeatRQ_m;
 public class HeartBeatRqHandler extends RmqIncomingHandler<HeartBeatRQ_m> {
     @Override
     protected void handle() {
-        throw new IllegalStateException("FAIL");
-        // TODO 개발 필요
+        ErkMsgHead_s erkMsgHead = msg.getErkMsgHead();
+        int orgId = erkMsgHead.getOrgId();
+        int userId = erkMsgHead.getUserId();
+
+        connectionManager.findConnectionInfo(orgId, userId).orElseThrow()
+                .updateAccessTime();
+
+        reply(HeartBeatRP_m.newBuilder()
+                .setErkMsgHead(ErkMsgHead_s.newBuilder(msg.getErkMsgHead()))
+                .setStatus(1)
+                .build());
     }
 
     @Override
