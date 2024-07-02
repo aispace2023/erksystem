@@ -79,11 +79,13 @@ public class EmoServiceStartRQHandler extends RmqIncomingHandler<EmoServiceStart
     @Override
     protected void onFail(int reasonCode, String reason) {
         // 실패 시 생성한 큐 삭제
-        for (String declaredQueue : connectionInfo.getDeclaredQueues()) {
-            try {
-                rmqModule.getChannel().queueDelete(declaredQueue);
-            } catch (Exception e) {
-                // Do Nothing
+        if (connectionInfo != null) {
+            for (String declaredQueue : connectionInfo.getDeclaredQueues()) {
+                try {
+                    rmqModule.getChannel().queueDelete(declaredQueue);
+                } catch (Exception e) {
+                    // Do Nothing
+                }
             }
         }
         EmoServiceStartRP_m res = EmoServiceStartRP_m.newBuilder()

@@ -4,7 +4,6 @@ import com.aispace.erksystem.service.DBManager;
 import com.aispace.erksystem.service.database.table.ServiceProvider;
 import lombok.extern.slf4j.Slf4j;
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
@@ -12,12 +11,12 @@ import java.sql.SQLDataException;
 
 @Slf4j
 public class ServiceProviderDAO {
-    private static final SessionFactory sessionFactory = DBManager.getInstance().getSessionFactory();
+    private static final DBManager dbManager = DBManager.getInstance();
 
     private ServiceProviderDAO() {}
 
     public static boolean create(ServiceProvider sp) {
-        Session session = sessionFactory.openSession();
+        Session session = dbManager.getSessionFactory().openSession();
         Transaction tx = null;
         try {
             tx = session.beginTransaction();
@@ -39,7 +38,7 @@ public class ServiceProviderDAO {
     }
 
     public static ServiceProvider read(int orgId) {
-        Session session = sessionFactory.openSession();
+        Session session = dbManager.getSessionFactory().openSession();
         try {
             return session.get(ServiceProvider.class, orgId);
         } catch (Exception e) {
@@ -52,7 +51,7 @@ public class ServiceProviderDAO {
     }
 
     public static ServiceProvider read(String orgName) {
-        Session session = sessionFactory.openSession();
+        Session session = dbManager.getSessionFactory().openSession();
         try {
             return session.bySimpleNaturalId(ServiceProvider.class).load(orgName);
         } catch (Exception e) {
@@ -65,7 +64,7 @@ public class ServiceProviderDAO {
     }
 
     public static boolean update(ServiceProvider sp) {
-        Session session = sessionFactory.openSession();
+        Session session = dbManager.getSessionFactory().openSession();
         Transaction tx = null;
         try {
             tx = session.beginTransaction();
@@ -83,7 +82,7 @@ public class ServiceProviderDAO {
     }
 
     public static boolean delete(int orgId) {
-        Session session = sessionFactory.openSession();
+        Session session = dbManager.getSessionFactory().openSession();
         Transaction tx = null;
         try {
             boolean result = false;

@@ -4,7 +4,6 @@ import com.aispace.erksystem.service.DBManager;
 import com.aispace.erksystem.service.database.table.ServiceUser;
 import lombok.extern.slf4j.Slf4j;
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.query.NativeQuery;
 import org.hibernate.type.StandardBasicTypes;
@@ -13,12 +12,12 @@ import java.sql.SQLDataException;
 
 @Slf4j
 public class ServiceUserDAO {
-    private static final SessionFactory sessionFactory = DBManager.getInstance().getSessionFactory();
+    private static final DBManager dbManager = DBManager.getInstance();
 
     private ServiceUserDAO() {}
 
     public static boolean create(ServiceUser su) {
-        Session session = sessionFactory.openSession();
+        Session session = dbManager.getSessionFactory().openSession();
         Transaction tx = null;
         try {
             tx = session.beginTransaction();
@@ -44,7 +43,7 @@ public class ServiceUserDAO {
     }
 
     public static ServiceUser read(int userId, int orgId) {
-        Session session = sessionFactory.openSession();
+        Session session = dbManager.getSessionFactory().openSession();
         try {
             // NaturalId 로 조회. using() 인자값은 Class 필드 이름과 일치해야 한다.
             return session.byNaturalId(ServiceUser.class)
@@ -61,7 +60,7 @@ public class ServiceUserDAO {
     }
 
     public static ServiceUser read(String userName) {
-        Session session = sessionFactory.openSession();
+        Session session = dbManager.getSessionFactory().openSession();
         try {
             return session.get(ServiceUser.class, userName);
         } catch (Exception e) {
@@ -74,7 +73,7 @@ public class ServiceUserDAO {
     }
 
     public static boolean update(ServiceUser su) {
-        Session session = sessionFactory.openSession();
+        Session session = dbManager.getSessionFactory().openSession();
         Transaction tx = null;
         try {
             tx = session.beginTransaction();
@@ -92,7 +91,7 @@ public class ServiceUserDAO {
     }
 
     public static boolean delete(String userName) {
-        Session session = sessionFactory.openSession();
+        Session session = dbManager.getSessionFactory().openSession();
         Transaction tx = null;
         try {
             boolean result = false;
