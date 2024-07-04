@@ -408,21 +408,40 @@ public class RmqMsgBuilder {
                 .setMsgTime(MsgTime)
                 .setReturnCode(ReturnCode);
 
-        if(PhysioEngineInfo != null){
+        if (PhysioEngineInfo != null) {
             builder.setPhysioEngineInfo(PhysioEngineInfo);
         }
-        if(SpeechEngineInfo != null){
+        if (SpeechEngineInfo != null) {
             builder.setSpeechEngineInfo(SpeechEngineInfo);
         }
-        if(FaceEngineInfo != null){
+        if (FaceEngineInfo != null) {
             builder.setFaceEngineInfo(FaceEngineInfo);
         }
-        if(KnowledgeEngineInfo != null){
+        if (KnowledgeEngineInfo != null) {
             builder.setKnowledgeEngineInfo(KnowledgeEngineInfo);
         }
-        if(ServiceEngineInfo != null){
+        if (ServiceEngineInfo != null) {
             builder.setServiceEngineInfo(ServiceEngineInfo);
         }
+        return getErkApiMsg(builder.build());
+    }
+
+    public static ErkApiMsg getErkEngineCreateRP(int OrgId, int UserId, long MsgTime, ReturnCode_e ReturnCode, EngineType_e engineType, ErkEngineInfo_s engineInfo) {
+        ErkEngineCreateRP_m.Builder builder = ErkEngineCreateRP_m.newBuilder()
+                .setErkInterMsgHead(getErkInterMsgHead(ErkInterMsgType_e.ErkEngineCreateRP, OrgId, UserId))
+                .setMsgTime(MsgTime)
+                .setReturnCode(ReturnCode);
+
+        if (engineType == EngineType_e.EngineType_physiology) {
+            builder.setPhysioEngineInfo(engineInfo);
+        } else if (engineType == EngineType_e.EngineType_speech) {
+            builder.setSpeechEngineInfo(engineInfo);
+        } else if (engineType == EngineType_e.EngineType_face) {
+            builder.setFaceEngineInfo(engineInfo);
+        } else if (engineType == EngineType_e.EngineType_knowledge) {
+            builder.setKnowledgeEngineInfo(engineInfo);
+        }
+
         return getErkApiMsg(builder.build());
     }
 

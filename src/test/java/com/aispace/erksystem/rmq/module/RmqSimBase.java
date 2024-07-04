@@ -3,7 +3,6 @@ package com.aispace.erksystem.rmq.module;
 import com.aispace.erksystem.config.UserConfig;
 import com.aispace.erksystem.rmq.RmqManager;
 import com.aispace.erksystem.service.AppInstance;
-import com.aispace.erksystem.service.DBManager;
 import com.erksystem.protobuf.api.ErkApiMsg;
 import com.rabbitmq.client.Channel;
 import lombok.extern.slf4j.Slf4j;
@@ -16,7 +15,6 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.function.Consumer;
 
-import static com.aispace.erksystem.rmq.module.RmqLogPrinter.proto2Json;
 import static org.mockito.ArgumentMatchers.*;
 import static org.mockito.Mockito.*;
 
@@ -52,8 +50,6 @@ public class RmqSimBase {
         } finally {
             rmqModuleField.setAccessible(false);
         }
-
-        DBManager.getInstance().start();
     }
 
     public static RmqModule getRmqModuleMock() throws IOException {
