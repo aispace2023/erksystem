@@ -1,17 +1,16 @@
 package com.aispace.erksystem.rmq;
 
 import com.aispace.erksystem.config.UserConfig;
+import com.aispace.erksystem.connection.ConnectionManager;
 import com.aispace.erksystem.rmq.module.DaoMockManager;
 import com.aispace.erksystem.rmq.module.RmqSimBase;
 import com.aispace.erksystem.service.AppInstance;
 import com.aispace.erksystem.service.database.ServiceProviderDAO;
 import com.aispace.erksystem.service.database.ServiceUserDAO;
-import com.aispace.erksystem.service.database.table.ServiceProvider;
 import com.erksystem.protobuf.api.*;
 import org.junit.jupiter.api.*;
 
 import java.io.IOException;
-import java.util.concurrent.TimeUnit;
 
 import static com.aispace.erksystem.rmq.module.RmqMsgBuilder.*;
 import static com.aispace.erksystem.rmq.module.RmqSimBase.*;
@@ -22,7 +21,8 @@ import static org.awaitility.Awaitility.await;
  * @author kangmoo Heo
  */
 class ServiceProviderTest {
-    private UserConfig userConfig = AppInstance.getInstance().getUserConfig();
+    private final UserConfig userConfig = AppInstance.getInstance().getUserConfig();
+    private final ConnectionManager connectionManager = ConnectionManager.getInstance();
 
     String orgName = "TEST_ORG_NAME";
     String orgPwd = "TEST_ORG_PWD";
@@ -42,6 +42,7 @@ class ServiceProviderTest {
     @AfterEach
     void tearDown() {
         DaoMockManager.getInstance().close();
+        connectionManager.findConnectionInfo(o -> true).forEach(o -> connectionManager.deleteConnection(o.getOrgId(), o.getUserId()));
     }
 
 
