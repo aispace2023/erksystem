@@ -26,6 +26,7 @@ public class ErkServiceConnRqHandler extends RmqIncomingHandler<ErkServiceConnRQ
                 .setErkMsgHead(ErkMsgHead_s.newBuilder(msg.getErkMsgHead()).setMsgType(ErkMsgType_e.ErkServiceConnRP))
                 .setMsgTime(System.currentTimeMillis())
                 .setReturnCode(ReturnCode_e.ReturnCode_ok)
+                .setServiceType(ServiceType_e.forNumber(user.getServiceType()))
                 .build();
 
         reply(res);
