@@ -28,6 +28,8 @@ public class ErkEngineCreateRPHandler extends RmqIncomingHandler<ErkEngineCreate
             connectionInfo.getEngineInfoMap().put(EngineType_e.EngineType_face, msg.getFaceEngineInfo());
         } else if (msg.getKnowledgeEngineInfo().getEngineType() == EngineType_e.EngineType_knowledge) {
             connectionInfo.getEngineInfoMap().put(EngineType_e.EngineType_knowledge, msg.getKnowledgeEngineInfo());
+        } else {
+            log.error("Unknown Engine Type");
         }
 
         connectionInfo.countDownPromise();

@@ -11,6 +11,7 @@ import lombok.extern.slf4j.Slf4j;
 import java.util.Set;
 
 import static com.aispace.erksystem.rmq.module.ErkEngineUtil.getEngineDeleteMsgs;
+import static com.erksystem.protobuf.api.ReturnCode_e.ReturnCode_ok;
 import static com.erksystem.protobuf.api.ReturnCode_e.ReturnCode_unknown;
 
 /**
@@ -57,6 +58,7 @@ public class EmoServiceStopRQHandler extends RmqIncomingHandler<EmoServiceStopRQ
                         EmoServiceStopRP_m res = emoServiceStopRpBuilder
                                 .setErkMsgHead(ErkMsgHead_s.newBuilder(msg.getErkMsgHead()).setMsgType(ErkMsgType_e.EmoServiceStopRP))
                                 .setMsgTime(System.currentTimeMillis())
+                                .setReturnCode(ReturnCode_ok)
                                 .build();
                         reply(res);
                     } catch (Exception e) {

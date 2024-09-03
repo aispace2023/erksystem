@@ -21,13 +21,13 @@ public class ErkEngineDeleteRPHandler extends RmqIncomingHandler<ErkEngineDelete
         ConnectionInfo connectionInfo = connectionManager.findConnectionInfo(orgId, userId).orElseThrow();
 
         if (msg.getPhysioEngineInfo().getEngineType() == EngineType_e.EngineType_physiology) {
-            connectionInfo.getEngineInfoMap().remove(EngineType_e.EngineType_physiology);
+            connectionInfo.getEngineInfoMap().put(EngineType_e.EngineType_physiology, msg.getPhysioEngineInfo());
         } else if (msg.getSpeechEngineInfo().getEngineType() == EngineType_e.EngineType_speech) {
-            connectionInfo.getEngineInfoMap().remove(EngineType_e.EngineType_speech);
+            connectionInfo.getEngineInfoMap().put(EngineType_e.EngineType_speech, msg.getSpeechEngineInfo());
         } else if (msg.getFaceEngineInfo().getEngineType() == EngineType_e.EngineType_face) {
-            connectionInfo.getEngineInfoMap().remove(EngineType_e.EngineType_face);
+            connectionInfo.getEngineInfoMap().put(EngineType_e.EngineType_face, msg.getFaceEngineInfo());
         } else if (msg.getKnowledgeEngineInfo().getEngineType() == EngineType_e.EngineType_knowledge) {
-            connectionInfo.getEngineInfoMap().remove(EngineType_e.EngineType_knowledge);
+            connectionInfo.getEngineInfoMap().put(EngineType_e.EngineType_knowledge, msg.getKnowledgeEngineInfo());
         } else {
             log.error("Unknown Engine Type");
         }

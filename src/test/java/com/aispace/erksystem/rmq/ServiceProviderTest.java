@@ -129,8 +129,10 @@ class ServiceProviderTest {
     }
 
     @Test
-    @DisplayName("EmoServiceStartRQ 테스트")
-    void emoServiceStartRqTest() {
+    @DisplayName("EmoService 생성 / 삭제 테스트")
+    void emoServiceTest() {
+
+        // 생성 테스트
         handleMessage(getAddServiceProviderInfoRQ(getQueueInfo(userConfig.getRmqIncomingQueueApi(), "API_QUEUE"), orgName, orgPwd, ProviderType_e.ProviderType_education, "22000101", 7777, ServiceType_e.ServiceType_physiology_speech));
         int orgId = lastSendRmqMsg.getAddServiceProviderInfoRP().getOrgId();
         handleMessage(getAddUserInfoRQ(getQueueInfo(userConfig.getRmqIncomingQueueApi(), "API_QUEUE"), orgName, userName, userPwd, "22000101", 30, SexType_e.SexType_unknown, UserType_e.UserType_unknown, ServiceType_e.ServiceType_unknown));
@@ -155,5 +157,16 @@ class ServiceProviderTest {
         assertThat(lastSendRmqMsg.getMsgCase()).isEqualTo(ErkApiMsg.MsgCase.EMOSERVICESTARTRP);
         assertThat(lastSendRmqMsg.getEmoServiceStartRP().getReturnCode()).isEqualTo(ReturnCode_e.ReturnCode_ok);
         assertThat(lastSendRmqMsg.getEmoServiceStartRP().getSpeechEngineInfo()).isEqualTo(engineInfo);
+
+        // 삭제 테스트
+        handleMessage(getEmoServiceStopRQ(getQueueInfo(userConfig.getRmqIncomingQueueApi(), "API_QUEUE"), orgId, userId, System.currentTimeMillis(), ServiceType_e.ServiceType_speech, "", "", "RECV_02_000_000", "SEND_02_000_000", "", "", "", ""));
+        assertThat(lastSendRmqMsg.getMsgCase()).isEqualTo(ErkApiMsg.MsgCase.ERKENGINEDELETERQ);
+
+        ErkEngineInfo_s emptyInfo = ErkEngineInfo_s.newBuilder().build();
+        handleMessage(getErkEngineDeleteRP(orgId, userId, System.currentTimeMillis(), ReturnCode_e.ReturnCode_ok, emptyInfo, engineInfo, emptyInfo, emptyInfo, emptyInfo));
+
+        assertThat(lastSendRmqMsg.getMsgCase()).isEqualTo(ErkApiMsg.MsgCase.EMOSERVICESTOPRP);
+        assertThat(lastSendRmqMsg.getEmoServiceStopRP().getReturnCode()).isEqualTo(ReturnCode_e.ReturnCode_ok);
+        assertThat(lastSendRmqMsg.getEmoServiceStopRP().getSpeechEngineInfo()).isEqualTo(engineInfo);
     }
 }
