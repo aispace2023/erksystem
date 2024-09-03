@@ -12,6 +12,7 @@ import java.util.Map;
 import java.util.Set;
 
 import static com.aispace.erksystem.rmq.module.ErkEngineUtil.getEngineCreateMsgs;
+import static com.erksystem.protobuf.api.ReturnCode_e.*;
 import static com.erksystem.protobuf.api.ReturnCode_e.ReturnCode_unknown;
 
 /**
@@ -50,8 +51,7 @@ public class EmoServiceStartRQHandler extends RmqIncomingHandler<EmoServiceStart
                                 case EngineType_physiology -> emoServiceStartRpBuilder.setPhysioEngineInfo(engineInfo);
                                 case EngineType_speech -> emoServiceStartRpBuilder.setSpeechEngineInfo(engineInfo);
                                 case EngineType_face -> emoServiceStartRpBuilder.setFaceEngineInfo(engineInfo);
-                                case EngineType_knowledge ->
-                                        emoServiceStartRpBuilder.setKnowledgeEngineInfo(engineInfo);
+                                case EngineType_knowledge -> emoServiceStartRpBuilder.setKnowledgeEngineInfo(engineInfo);
                             }
                         }
 
@@ -59,7 +59,7 @@ public class EmoServiceStartRQHandler extends RmqIncomingHandler<EmoServiceStart
                         EmoServiceStartRP_m res = emoServiceStartRpBuilder
                                 .setErkMsgHead(ErkMsgHead_s.newBuilder(msg.getErkMsgHead()).setMsgType(ErkMsgType_e.EmoServiceStartRP))
                                 .setMsgTime(System.currentTimeMillis())
-                                .setReturnCode(ReturnCode_e.ReturnCode_ok)
+                                .setReturnCode(ReturnCode_ok)
                                 .build();
                         reply(res);
                     } catch (Exception e) {
