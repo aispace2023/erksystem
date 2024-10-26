@@ -71,9 +71,9 @@ public abstract class RmqIncomingHandler<T extends GeneratedMessage> implements 
 
     private String getProperRmqKey() {
         String packageName = getClass().getPackageName();
-        if (packageName.endsWith("api")) {
+        if (packageName.contains(".api")) {
             return userConfig.getRmqIncomingQueueApi();
-        } else if (packageName.endsWith("subsystem")) {
+        } else if (packageName.endsWith(".subsystem")) {
             return userConfig.getRmqIncomingQueueSubsystem();
         } else {
             throw new IllegalStateException("Unexpected Package Name: " + packageName);
