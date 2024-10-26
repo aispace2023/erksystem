@@ -1,15 +1,14 @@
-package com.aispace.erksystem.rmq.handler.api;
+package com.aispace.erksystem.rmq.handler.api.engine;
 
 import com.aispace.erksystem.rmq.handler.base.RmqIncomingHandler;
-import com.aispace.erksystem.rmq.handler.base.RmqOutgoingHandler;
 import com.erksystem.protobuf.api.ErkMsgDataHead_s;
-import com.erksystem.protobuf.api.PhysioEmoRecogRP_m;
-import com.erksystem.protobuf.api.PhysioEmoRecogRQ_m;
+import com.erksystem.protobuf.api.SpeechEmoRecogRP_m;
+import com.erksystem.protobuf.api.SpeechEmoRecogRQ_m;
 
 /**
  * Created by Ai_Space
  */
-public class PhysioEmoRecogRqHandler extends RmqIncomingHandler<PhysioEmoRecogRQ_m> {
+public class SpeechEmoRecogRqHandler extends RmqIncomingHandler<SpeechEmoRecogRQ_m> {
     @Override
     protected void handle() {
         throw new IllegalStateException("FAIL");
@@ -18,7 +17,7 @@ public class PhysioEmoRecogRqHandler extends RmqIncomingHandler<PhysioEmoRecogRQ
 
     @Override
     protected void onFail(int reasonCode, String reason) {
-        PhysioEmoRecogRP_m res = PhysioEmoRecogRP_m.newBuilder()
+        SpeechEmoRecogRP_m res = SpeechEmoRecogRP_m.newBuilder()
                 .setErkMsgDataHead(ErkMsgDataHead_s.newBuilder(msg.getErkMsgDataHead()))
                 .setReturnCodeValue(reasonCode)
                 .build();

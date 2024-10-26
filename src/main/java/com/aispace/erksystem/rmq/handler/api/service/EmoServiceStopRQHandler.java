@@ -1,4 +1,4 @@
-package com.aispace.erksystem.rmq.handler.api;
+package com.aispace.erksystem.rmq.handler.api.service;
 
 import com.aispace.erksystem.connection.ConnectionInfo;
 import com.aispace.erksystem.rmq.handler.base.RmqIncomingHandler;

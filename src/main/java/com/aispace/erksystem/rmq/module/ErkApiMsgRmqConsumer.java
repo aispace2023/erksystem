@@ -1,8 +1,16 @@
 package com.aispace.erksystem.rmq.module;
 
 import com.aispace.erksystem.config.UserConfig;
-import com.aispace.erksystem.rmq.ErkMsgUtil;
-import com.aispace.erksystem.rmq.handler.api.*;
+import com.aispace.erksystem.rmq.handler.api.connection.ErkServiceConnRqHandler;
+import com.aispace.erksystem.rmq.handler.api.connection.ErkServiceDisConnRqHandler;
+import com.aispace.erksystem.rmq.handler.api.connection.HeartBeatRqHandler;
+import com.aispace.erksystem.rmq.handler.api.crud.*;
+import com.aispace.erksystem.rmq.handler.api.engine.EmoRecogRqHandler;
+import com.aispace.erksystem.rmq.handler.api.engine.FaceEmoRecogRqHandler;
+import com.aispace.erksystem.rmq.handler.api.engine.PhysioEmoRecogRqHandler;
+import com.aispace.erksystem.rmq.handler.api.engine.SpeechEmoRecogRqHandler;
+import com.aispace.erksystem.rmq.handler.api.service.EmoServiceStartRQHandler;
+import com.aispace.erksystem.rmq.handler.api.service.EmoServiceStopRQHandler;
 import com.aispace.erksystem.rmq.handler.subsystem.ErkEngineCreateRPHandler;
 import com.aispace.erksystem.rmq.handler.subsystem.ErkEngineDeleteRPHandler;
 import com.aispace.erksystem.service.AppInstance;

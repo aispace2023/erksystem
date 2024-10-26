@@ -5,22 +5,25 @@ option java_multiple_files = true;
 
 message ErkMsgHead_s{
   ErkMsgType_e MsgType = 1;
-  QueueInfo_s QueueInfo = 2;
-  int32 OrgId = 3;
-  int32 UserId = 4;
+  string TransactionId = 2;  //2024.10.25 추가
+  QueueInfo_s QueueInfo = 3;
+  int32 OrgId = 4;
+  int32 UserId = 5;
 }
 
 message ErkMsgDataHead_s{
   ErkMsgType_e MsgType = 1;
-  QueueInfo_s QueueInfo = 2;
-  int32 OrgId = 3;
-  int32 UserId = 4;
+  string TransactionId = 2;  //2024.10.25 추가
+  QueueInfo_s QueueInfo = 3;
+  int32 OrgId = 4;
+  int32 UserId = 5;
 }
 
 message ErkInterMsgHead_s{
   ErkInterMsgType_e MsgType = 1;
-  int32 OrgId = 2;
-  int32 UserId = 3;
+  string TransactionId = 2;  //2024.10.25 추가
+  int32 OrgId = 3;
+  int32 UserId = 4;
 }
 
 message QueueInfo_s{
@@ -36,32 +39,36 @@ enum ErkMsgType_e{
   DelServiceProviderInfoRP = 4;
   UpdServiceProviderInfoRQ = 5;
   UpdServiceProviderInfoRP = 6;
-  AddUserInfoRQ = 7;
-  AddUserInfoRP = 8;
-  DelUserInfoRQ = 9;
-  DelUserInfoRP = 10;
-  UpdUserInfoRQ = 11;
-  UpdUserInfoRP = 12;
-  ErkServiceConnRQ = 13;
-  ErkServiceConnRP = 14;
-  ErkServiceDisConnRQ = 15;
-  ErkServiceDisConnRP = 16;
-  EmoServiceStartRQ = 17;
-  EmoServiceStartRP = 18;
-  EmoServiceStopRQ = 19;
-  EmoServiceStopRP = 20;
-  PhysioEmoRecogRQ = 21;
-  SpeechEmoRecogRQ = 22;
-  FaceEmoRecogRQ = 23;
-  PhysioEmoRecogRP = 24;
-  SpeechEmoRecogRP = 25;
-  FaceEmoRecogRP = 26;
-  EmoRecogRQ = 27;
-  EmoRecogRP = 28;
-  HeartBeatRQ = 29;
-  HeartBeatRP = 30;
-  ErkMsgType_reserved1 = 31;
-  ErkMsgType_reserved2 = 32;
+  DisServiceProviderInfoRQ = 7; //2024.10.25 추가
+  DisServiceProviderInfoRP = 8; //2024.10.25 추가
+  AddUserInfoRQ = 9;
+  AddUserInfoRP = 10;
+  DelUserInfoRQ = 11;
+  DelUserInfoRP = 12;
+  UpdUserInfoRQ = 13;
+  UpdUserInfoRP = 14;
+  DisUserInfoRQ = 15; //2024.10.25 추가
+  DisUserInfoRP = 16; //2024.10.25 추가
+  ErkServiceConnRQ = 17;
+  ErkServiceConnRP = 18;
+  ErkServiceDisConnRQ = 19;
+  ErkServiceDisConnRP = 20;
+  EmoServiceStartRQ = 21;
+  EmoServiceStartRP = 22;
+  EmoServiceStopRQ = 23;
+  EmoServiceStopRP = 24;
+  PhysioEmoRecogRQ = 25;
+  PhysioEmoRecogRP = 26;
+  SpeechEmoRecogRQ = 27;
+  SpeechEmoRecogRP = 28;
+  FaceEmoRecogRQ = 29;
+  FaceEmoRecogRP = 30;
+  EmoRecogRQ = 31;
+  EmoRecogRP = 32;
+  HeartBeatRQ = 33;
+  HeartBeatRP = 34;
+  ErkMsgType_reserved1 = 35;
+  ErkMsgType_reserved2 = 36;
 }
 
 enum ErkInterMsgType_e{
@@ -122,6 +129,22 @@ enum ServiceType_e {
   ServiceType_reserved1 = 10;
   ServiceType_reserved2 = 11;
 }
+
+//2024.10.25 추가
+enum ServiceStatus_e {
+  ServiceStatus_unknown = 0;
+  ServiceStatus_physiology_active = 1;
+  ServiceStatus_speech_active = 2;
+  ServiceStatus_video_active = 3;
+  ServiceStatus_physiology_speech_active = 4;
+  ServiceStatus_physiology_video_active = 5;
+  ServiceStatus_speech_video_active = 6;
+  ServiceStatus_physiology_speech_video_active = 7;
+  ServiceStatus_knowledge_active = 8;
+  ServiceStatus_service_all_active = 9;
+  ServiceStatus_deactive = 10;
+}
+//2024.10.25 추가 종료
 
 enum EmotionType_e{
   EmotionType_unknown = 0;
@@ -238,6 +261,15 @@ enum MbtiType_e{
   MbtiType_reserved2 = 18;
 }
 
+//2024.10.25 추가
+enum EmoRecogType_e{
+  EmoRecogType_unknown = 0;
+  EmoRecogType_personal_emotion = 1;
+  EmoRecogType_social_emotion = 2;
+  EmoRecogType_reserved1 = 3;
+  EmoRecogType_reserved2 = 4;
+}
+//2024.10.25 추가 종료
 
 message ErkEngineInfo_s{
   EngineType_e EngineType = 1;
@@ -317,6 +349,28 @@ message DelServiceProviderInfoRP_m{
   string OrgName = 3;
   OrgProfileResult_e ResultType = 4;
 }
+
+//2024.10.25 추가
+message DisServiceProviderInfoRQ_m{
+  ErkMsgType_e MsgType = 1;
+  QueueInfo_s QueueInfo = 2;
+  string OrgName = 3;
+  string OrgPwd = 4;
+}
+
+message DisServiceProviderInfoRP_m{
+  ErkMsgType_e MsgType = 1;
+  QueueInfo_s QueueInfo = 2;
+  string OrgName = 3;
+  OrgProfileResult_e ResultType = 4;
+  int32 OrgId = 5;
+  string OrgPwd = 6;
+  ProviderType_e ProviderType = 7;
+  string ServiceDuration = 8;
+  int32 UserNumber = 9;
+  ServiceType_e ServiceType = 10;
+}
+//2024.10.25 추가 종료
 
 message AddUserInfoRQ_m{
   ErkMsgType_e MsgType = 1;
@@ -408,6 +462,33 @@ message DelUserInfoRP_m{
   string Return = 6;
 }
 
+//2024.10.25 추가
+message DisUserInfoRQ_m{
+  ErkMsgType_e MsgType = 1;
+  QueueInfo_s QueueInfo = 2;
+  string OrgName = 3;
+  string UserName = 4;
+  string UserPwd = 5;
+}
+
+message DisUserInfoRP_m{
+  ErkMsgType_e MsgType = 1;
+  QueueInfo_s QueueInfo = 2;
+  string OrgName = 3;
+  string UserName = 4;
+  UserProfileResult_e ResultType = 5;
+  int32 UserId = 6;
+  string UserPwd = 7;
+  string ServiceDuration = 8;
+  int32 Age = 9;
+  SexType_e Sex = 10;
+  MbtiType_e MbtiType = 11;
+  UserType_e UserType = 12;
+  ServiceType_e ServiceType = 13;
+  ServiceStatus_e ServiceStatus = 14;
+  int32 ServiceNumber = 15;
+}
+//2024.10.25 종료
 
 message ErkServiceConnRQ_m{
   ErkMsgHead_s ErkMsgHead = 1;
@@ -437,6 +518,7 @@ message EmoServiceStartRQ_m{
   ErkMsgHead_s ErkMsgHead = 1;
   int64 MsgTime = 2;
   ServiceType_e ServiceType = 3;
+  EmoRecogType_e EmoRecogType = 4; //2024.10.25 추가
 }
 
 message EmoServiceStartRP_m{
@@ -454,14 +536,15 @@ message EmoServiceStopRQ_m{
   ErkMsgHead_s ErkMsgHead = 1;
   int64 MsgTime = 2;
   ServiceType_e ServiceType = 3;
-  string PhysioEngine_ReceiveQueueName = 4;
-  string PhysioEngine_SendQueueName = 5;
-  string SpeechEngine_ReceiveQueueName = 6;
-  string SpeechEngine_SendQueueName = 7;
-  string FaceEngine_ReceiveQueueName = 8;
-  string FaceEngine_SendQueueName = 9;
-  string KnowledgeEngine_ReceiveQueueName = 10;
-  string KnowledgeEngine_SendQueueName = 11;
+  EmoRecogType_e EmoRecogType = 4; //2024.10.25 추가
+  string PhysioEngine_ReceiveQueueName = 5;
+  string PhysioEngine_SendQueueName = 6;
+  string SpeechEngine_ReceiveQueueName = 7;
+  string SpeechEngine_SendQueueName = 8;
+  string FaceEngine_ReceiveQueueName = 9;
+  string FaceEngine_SendQueueName = 10;
+  string KnowledgeEngine_ReceiveQueueName = 11;
+  string KnowledgeEngine_SendQueueName = 12;
 }
 
 message EmoServiceStopRP_m{
@@ -479,14 +562,15 @@ message ErkEngineCreateRQ_m{
   ErkInterMsgHead_s ErkInterMsgHead = 1;
   int64 MsgTime = 2;
   ServiceType_e ServiceType = 3;
-  string PhysioEngine_ReceiveQueueName = 4;
-  string PhysioEngine_SendQueueName = 5;
-  string SpeechEngine_ReceiveQueueName = 6;
-  string SpeechEngine_SendQueueName = 7;
-  string FaceEngine_ReceiveQueueName = 8;
-  string FaceEngine_SendQueueName = 9;
-  string KnowledgeEngine_ReceiveQueueName = 10;
-  string KnowledgeEngine_SendQueueName = 11;
+  EmoRecogType_e EmoRecogType = 4; //2024.10.25 추가
+  string PhysioEngine_ReceiveQueueName = 5;
+  string PhysioEngine_SendQueueName = 6;
+  string SpeechEngine_ReceiveQueueName = 7;
+  string SpeechEngine_SendQueueName = 8;
+  string FaceEngine_ReceiveQueueName = 9;
+  string FaceEngine_SendQueueName = 10;
+  string KnowledgeEngine_ReceiveQueueName = 11;
+  string KnowledgeEngine_SendQueueName = 12;
 }
 
 message ErkEngineCreateRP_m{
@@ -504,14 +588,15 @@ message ErkEngineDeleteRQ_m{
   ErkInterMsgHead_s ErkInterMsgHead = 1;
   int64 MsgTime = 2;
   ServiceType_e ServiceType = 3;
-  string PhysioEngine_ReceiveQueueName = 4;
-  string PhysioEngine_SendQueueName = 5;
-  string SpeechEngine_ReceiveQueueName = 6;
-  string SpeechEngine_SendQueueName = 7;
-  string FaceEngine_ReceiveQueueName = 8;
-  string FaceEngine_SendQueueName = 9;
-  string KnowledgeEngine_ReceiveQueueName = 10;
-  string KnowledgeEngine_SendQueueName = 11;
+  EmoRecogType_e EmoRecogType = 4; //2024.10.25 추가
+  string PhysioEngine_ReceiveQueueName = 5;
+  string PhysioEngine_SendQueueName = 6;
+  string SpeechEngine_ReceiveQueueName = 7;
+  string SpeechEngine_SendQueueName = 8;
+  string FaceEngine_ReceiveQueueName = 9;
+  string FaceEngine_SendQueueName = 10;
+  string KnowledgeEngine_ReceiveQueueName = 11;
+  string KnowledgeEngine_SendQueueName = 12;
 }
 
 
@@ -611,34 +696,38 @@ message ErkApiMsg{
     UpdateServiceProviderInfoRP_m UpdateServiceProviderInfoRP = 4;
     DelServiceProviderInfoRQ_m DelServiceProviderInfoRQ = 5;
     DelServiceProviderInfoRP_m DelServiceProviderInfoRP = 6;
-    AddUserInfoRQ_m AddUserInfoRQ = 7;
-    AddUserInfoRP_m AddUserInfoRP = 8;
-    UpdateUserInfoRQ_m UpdateUserInfoRQ = 9;
-    UpdateUserInfoRP_m UpdateUserInfoRP = 10;
-    DelUserInfoRQ_m DelUserInfoRQ = 11;
-    DelUserInfoRP_m DelUserInfoRP = 12;
-    ErkServiceConnRQ_m ErkServiceConnRQ = 13;
-    ErkServiceConnRP_m ErkServiceConnRP = 14;
-    ErkServiceDisConnRQ_m ErkServiceDisConnRQ = 15;
-    ErkServiceDisConnRP_m ErkServiceDisConnRP = 16;
-    EmoServiceStartRQ_m EmoServiceStartRQ = 17;
-    EmoServiceStartRP_m EmoServiceStartRP = 18;
-    EmoServiceStopRQ_m EmoServiceStopRQ = 19;
-    EmoServiceStopRP_m EmoServiceStopRP = 20;
-    ErkEngineCreateRQ_m ErkEngineCreateRQ = 21;
-    ErkEngineCreateRP_m ErkEngineCreateRP = 22;
-    ErkEngineDeleteRQ_m ErkEngineDeleteRQ = 23;
-    ErkEngineDeleteRP_m ErkEngineDeleteRP = 24;
-    HeartBeatRQ_m HeartBeatRQ = 25;
-    HeartBeatRP_m HeartBeatRP = 26;
-    EmoRecogRQ_m EmoRecogRQ = 27;
-    EmoRecogRP_m EmoRecogRP = 28;
-    PhysioEmoRecogRQ_m PhysioEmoRecogRQ = 29;
-    PhysioEmoRecogRP_m PhysioEmoRecogRP = 30;
-    SpeechEmoRecogRQ_m SpeechEmoRecogRQ = 31;
-    SpeechEmoRecogRP_m SpeechEmoRecogRP = 32;
-    FaceEmoRecogRQ_m FaceEmoRecogRQ = 33;
-    FaceEmoRecogRP_m FaceEmoRecogRP = 34;
-    EmoRecogNoti_m EmoRecogNoti = 35;
+    DisServiceProviderInfoRQ_m DisServiceProviderInfoRQ = 7; //2024.10.25 추가
+    DisServiceProviderInfoRP_m DisServiceProviderInfoRP = 8; //2024.10.25 추가
+    AddUserInfoRQ_m AddUserInfoRQ = 9;
+    AddUserInfoRP_m AddUserInfoRP = 10;
+    UpdateUserInfoRQ_m UpdateUserInfoRQ = 11;
+    UpdateUserInfoRP_m UpdateUserInfoRP = 12;
+    DelUserInfoRQ_m DelUserInfoRQ = 13;
+    DelUserInfoRP_m DelUserInfoRP = 14;
+    DisUserInfoRQ_m DisUserInfoRQ = 15; //2024.10.25 추가
+    DisUserInfoRP_m DisUserInfoRP = 16; //2024.10.25 추가
+    ErkServiceConnRQ_m ErkServiceConnRQ = 17;
+    ErkServiceConnRP_m ErkServiceConnRP = 18;
+    ErkServiceDisConnRQ_m ErkServiceDisConnRQ = 19;
+    ErkServiceDisConnRP_m ErkServiceDisConnRP = 20;
+    EmoServiceStartRQ_m EmoServiceStartRQ = 21;
+    EmoServiceStartRP_m EmoServiceStartRP = 22;
+    EmoServiceStopRQ_m EmoServiceStopRQ = 23;
+    EmoServiceStopRP_m EmoServiceStopRP = 24;
+    ErkEngineCreateRQ_m ErkEngineCreateRQ = 25;
+    ErkEngineCreateRP_m ErkEngineCreateRP = 26;
+    ErkEngineDeleteRQ_m ErkEngineDeleteRQ = 27;
+    ErkEngineDeleteRP_m ErkEngineDeleteRP = 28;
+    HeartBeatRQ_m HeartBeatRQ = 29;
+    HeartBeatRP_m HeartBeatRP = 30;
+    EmoRecogRQ_m EmoRecogRQ = 31;
+    EmoRecogRP_m EmoRecogRP = 32;
+    PhysioEmoRecogRQ_m PhysioEmoRecogRQ = 33;
+    PhysioEmoRecogRP_m PhysioEmoRecogRP = 34;
+    SpeechEmoRecogRQ_m SpeechEmoRecogRQ = 35;
+    SpeechEmoRecogRP_m SpeechEmoRecogRP = 36;
+    FaceEmoRecogRQ_m FaceEmoRecogRQ = 37;
+    FaceEmoRecogRP_m FaceEmoRecogRP = 38;
+    EmoRecogNoti_m EmoRecogNoti = 39;
   }
 }
