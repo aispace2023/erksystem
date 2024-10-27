@@ -1,19 +1,24 @@
 package com.aispace.erksystem.rmq.module;
 
 import com.erksystem.protobuf.api.*;
-import com.google.protobuf.ByteString;
 import com.google.protobuf.Message;
 
 import java.lang.reflect.Method;
 import java.util.Arrays;
+import java.util.UUID;
 
 /**
  * @author kangmoo Heo
  */
 public class RmqMsgBuilder {
     public static ErkMsgHead_s getErkMsgHead(ErkMsgType_e MsgType, QueueInfo_s QueueInfo, int OrgId, int UserId) {
+        return getErkMsgHead(MsgType, UUID.randomUUID().toString(), QueueInfo, OrgId, UserId);
+    }
+
+    public static ErkMsgHead_s getErkMsgHead(ErkMsgType_e MsgType, String TransactionId, QueueInfo_s QueueInfo, int OrgId, int UserId) {
         return ErkMsgHead_s.newBuilder()
                 .setMsgType(MsgType)
+                .setTransactionId(TransactionId)
                 .setQueueInfo(QueueInfo)
                 .setOrgId(OrgId)
                 .setUserId(UserId)
@@ -21,8 +26,13 @@ public class RmqMsgBuilder {
     }
 
     public static ErkMsgDataHead_s getErkMsgDataHead(ErkMsgType_e MsgType, QueueInfo_s QueueInfo, int OrgId, int UserId) {
+        return getErkMsgDataHead(MsgType, UUID.randomUUID().toString(), QueueInfo, OrgId, UserId);
+    }
+
+    public static ErkMsgDataHead_s getErkMsgDataHead(ErkMsgType_e MsgType, String TransactionId, QueueInfo_s QueueInfo, int OrgId, int UserId) {
         return ErkMsgDataHead_s.newBuilder()
                 .setMsgType(MsgType)
+                .setTransactionId(TransactionId)
                 .setQueueInfo(QueueInfo)
                 .setOrgId(OrgId)
                 .setUserId(UserId)
@@ -30,8 +40,13 @@ public class RmqMsgBuilder {
     }
 
     public static ErkInterMsgHead_s getErkInterMsgHead(ErkInterMsgType_e MsgType, int OrgId, int UserId) {
+        return getErkInterMsgHead(MsgType, UUID.randomUUID().toString(), OrgId, UserId);
+    }
+
+    public static ErkInterMsgHead_s getErkInterMsgHead(ErkInterMsgType_e MsgType, String TransactionId, int OrgId, int UserId) {
         return ErkInterMsgHead_s.newBuilder()
                 .setMsgType(MsgType)
+                .setTransactionId(TransactionId)
                 .setOrgId(OrgId)
                 .setUserId(UserId)
                 .build();

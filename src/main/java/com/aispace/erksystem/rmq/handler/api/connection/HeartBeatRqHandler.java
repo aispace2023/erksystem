@@ -2,6 +2,7 @@ package com.aispace.erksystem.rmq.handler.api.connection;
 
 import com.aispace.erksystem.rmq.handler.base.RmqIncomingHandler;
 import com.erksystem.protobuf.api.ErkMsgHead_s;
+import com.erksystem.protobuf.api.ErkMsgType_e;
 import com.erksystem.protobuf.api.HeartBeatRP_m;
 import com.erksystem.protobuf.api.HeartBeatRQ_m;
 
@@ -19,7 +20,7 @@ public class HeartBeatRqHandler extends RmqIncomingHandler<HeartBeatRQ_m> {
                 .updateAccessTime();
 
         reply(HeartBeatRP_m.newBuilder()
-                .setErkMsgHead(ErkMsgHead_s.newBuilder(msg.getErkMsgHead()))
+                .setErkMsgHead(ErkMsgHead_s.newBuilder(msg.getErkMsgHead()).setMsgType(ErkMsgType_e.HeartBeatRP))
                 .setStatus(1)
                 .build());
     }

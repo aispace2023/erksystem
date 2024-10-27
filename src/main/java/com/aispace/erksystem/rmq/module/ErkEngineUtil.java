@@ -10,6 +10,7 @@ import lombok.Data;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.UUID;
 
 import static com.aispace.erksystem.service.AppInstance.RECV_QUEUE_NAME_PATTERN;
 import static com.aispace.erksystem.service.AppInstance.SEND_QUEUE_NAME_PATTERN;
@@ -25,6 +26,7 @@ public class ErkEngineUtil {
     public static class EngineMsgInfo {
         ErkApiMsg erkApiMsg;
         EngineType_e engineType;
+        String transactionId;
         String sendQueue;
         String recvQueue;
     }
@@ -61,15 +63,17 @@ public class ErkEngineUtil {
                 }
             }
 
+            String transactionId = UUID.randomUUID().toString();
             ErkApiMsg msg = ErkMsgWrapper.wrap2ErkApiMsg(erkEngineCreateRqBuilder
                     .setErkInterMsgHead(ErkInterMsgHead_s.newBuilder()
                             .setMsgType(ErkInterMsgType_e.ErkEngineCreateRQ)
+                            .setTransactionId(transactionId)
                             .setOrgId(orgId)
                             .setUserId(userId))
                     .setMsgTime(System.currentTimeMillis())
                     .setServiceType(serviceType).build());
 
-            res.add(new EngineMsgInfo(msg, engineType, sendQueue, recvQueue));
+            res.add(new EngineMsgInfo(msg, engineType, transactionId, sendQueue, recvQueue));
         }
         return res;
     }
@@ -106,15 +110,17 @@ public class ErkEngineUtil {
                 }
             }
 
+            String transactionId = UUID.randomUUID().toString();
             ErkApiMsg msg = ErkMsgWrapper.wrap2ErkApiMsg(erkEngineDeleteRqBuilder
                     .setErkInterMsgHead(ErkInterMsgHead_s.newBuilder()
                             .setMsgType(ErkInterMsgType_e.ErkEngineDeleteRQ)
+                            .setTransactionId(transactionId)
                             .setOrgId(orgId)
                             .setUserId(userId))
                     .setMsgTime(System.currentTimeMillis())
                     .setServiceType(serviceType).build());
 
-            res.add(new EngineMsgInfo(msg, engineType, sendQueue, recvQueue));
+            res.add(new EngineMsgInfo(msg, engineType, transactionId, sendQueue, recvQueue));
         }
         return res;
     }
