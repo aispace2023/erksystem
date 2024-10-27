@@ -43,9 +43,11 @@ public class ErkApiMsgRmqConsumer {
                 case SPEECHEMORECOGRQ -> new SpeechEmoRecogRqHandler().proc(msg);
                 case FACEEMORECOGRQ -> new FaceEmoRecogRqHandler().proc(msg);
                 case ADDSERVICEPROVIDERINFORQ -> new AddServiceProviderInfoRQHandler().proc(msg);
+                case DISSERVICEPROVIDERINFORQ -> new DisServiceProviderInfoRQHandler().proc(msg);
                 case UPDATESERVICEPROVIDERINFORQ -> new UpdateServiceProviderInfoRQHandler().proc(msg);
                 case DELSERVICEPROVIDERINFORQ -> new DelServiceProviderInfoRQHandler().proc(msg);
                 case ADDUSERINFORQ -> new AddUserInfoRQHandler().proc(msg);
+                case DISUSERINFORQ -> new DisUserInfoRQHandler().proc(msg);
                 case UPDATEUSERINFORQ -> new UpdateUserInfoRQHandler().proc(msg);
                 case DELUSERINFORQ -> new DelUserInfoRQHandler().proc(msg);
                 case EMOSERVICESTARTRQ -> new EmoServiceStartRQHandler().proc(msg);
