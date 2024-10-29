@@ -2,36 +2,39 @@ package com.aispace.erksystem.connection;
 
 import com.aispace.erksystem.common.utils.PromiseInfo;
 import com.aispace.erksystem.common.utils.PromiseManager;
+import com.aispace.erksystem.config.UserConfig;
 import com.aispace.erksystem.rmq.RmqManager;
-import com.aispace.erksystem.rmq.module.RmqModule;
+import com.aispace.erksystem.service.AppInstance;
 import com.erksystem.protobuf.api.EngineType_e;
 import com.erksystem.protobuf.api.ErkEngineInfo_s;
-import com.erksystem.protobuf.api.ServiceType_e;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.Synchronized;
+import lombok.extern.slf4j.Slf4j;
 
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import static com.aispace.erksystem.common.SafeExecutor.tryRunSilent;
+
 /**
  * Created by Ai_Space
  */
 @Getter
 @Setter
+@Slf4j
 public class ConnectionInfo {
+    private static final UserConfig userConfig = AppInstance.getInstance().getUserConfig();
+    private static final RmqManager rmqManager = RmqManager.getInstance();
+
     final int orgId;
     final int userId;
     final String key;
 
     long createTime = System.currentTimeMillis();
     long lastAccessTime = System.currentTimeMillis();
-
-    ServiceType_e serviceType;
 
     Map<EngineType_e, ErkEngineInfo_s> engineInfoMap = new HashMap<>();
 
@@ -45,25 +48,8 @@ public class ConnectionInfo {
         this.key = orgId + ":" + userId;
     }
 
-    @Synchronized
-    public ConnectionInfo setServiceType(ServiceType_e serviceType) {
-        if (serviceType != null) {
-            throw new IllegalStateException("ServiceType is already set");
-        }
-        this.serviceType = serviceType;
-        return this;
-    }
-
     public void dealloc() {
-        RmqModule rmqModule = RmqManager.getInstance().getRmqModule();
-
-        for (String createdQueue : declaredQueues) {
-            try {
-                rmqModule.getChannel().queueDelete(createdQueue);
-            } catch (IOException e) {
-                // Do Nothing
-            }
-        }
+        tryRunSilent(this::deleteDeclaredQueues);
     }
 
     public void addPromise(Runnable onSuccess, Runnable onFail, Runnable onTimeout, long timeoutMs, int count) {
@@ -85,5 +71,38 @@ public class ConnectionInfo {
 
     public String getLogPrefix() {
         return "(" + this.key + ") ";
+    }
+
+    public void declareQueue(String... queueNames) {
+        for (String queueName : queueNames) {
+            try {
+                rmqManager.getRmqModule().getChannel().queueDeclare(queueName, userConfig.isAgentOptionDurable(), userConfig.isAgentOptionExclusive(), userConfig.isAgentOptionAutoDelete(), Map.of("x-queue-type", "stream"));
+                declaredQueues.add(queueName);
+                log.info("Queue Declared [{}]", queueName);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        }
+    }
+
+    public void deleteQueue(String... queueNames) {
+        for (String queueName : queueNames) {
+            try {
+                if (declaredQueues.remove(queueName)) {
+                    rmqManager.getRmqModule().getChannel().queueDelete(queueName);
+                    log.info("Queue Deleted [{}]", queueName);
+                } else {
+                    log.warn("Queue Not Declared [{}]", queueName);
+                }
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        }
+    }
+
+    public void deleteDeclaredQueues() {
+        for (String declaredQueue : declaredQueues) {
+            tryRunSilent(() -> deleteQueue(declaredQueue));
+        }
     }
 }

@@ -10,7 +10,7 @@ public class SafeExecutor {
     private SafeExecutor() {
     }
 
-    public static void tryRun(Runnable r) {
+    public static void tryRun(ThrowableRunnable r) {
         try {
             r.run();
         } catch (Exception e) {
@@ -18,19 +18,17 @@ public class SafeExecutor {
         }
     }
 
-    public static Runnable safeRunnable(Runnable r) {
-        return () -> tryRun(r);
+    public static void tryRunSilent(ThrowableRunnable r) {
+        try {
+            r.run();
+        } catch (Exception e) {
+            // Ignore
+        }
     }
 
-    public static void tryRunWithRetries(Runnable r, int retries) {
-        for (int i = 0; i < retries; i++) {
-            try {
-                r.run();
-                return;
-            } catch (Exception e) {
-                log.warn("Error occurs on try " + (i + 1), e);
-            }
-        }
+    @FunctionalInterface
+    public interface ThrowableRunnable {
+        void run() throws Exception;
     }
 
 }
