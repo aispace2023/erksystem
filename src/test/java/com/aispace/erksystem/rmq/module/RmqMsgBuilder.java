@@ -118,6 +118,17 @@ public class RmqMsgBuilder {
                         .build());
     }
 
+    public static ErkApiMsg getDisServiceProviderInfoRQ(QueueInfo_s QueueInfo, String OrgName, String OrgPwd) {
+        return getErkApiMsg(
+                DisServiceProviderInfoRQ_m.newBuilder()
+                        .setMsgType(ErkMsgType_e.DisServiceProviderInfoRQ)
+                        .setQueueInfo(QueueInfo)
+                        .setOrgName(OrgName)
+                        .setOrgPwd(OrgPwd)
+                        .build());
+    }
+
+
     public static ErkApiMsg getUpdateServiceProviderInfoRQ(QueueInfo_s QueueInfo, String OrgName, String
             Old_OrgPwd, String Old_ServiceDuration, int Old_UserNumber, ServiceType_e Old_ServiceType, String
                                                                    New_OrgPwd, String New_ServiceDuration, int New_UserNumber, ServiceType_e New_ServiceType) {
@@ -213,6 +224,17 @@ public class RmqMsgBuilder {
                         .setSex(Sex)
                         .setUserType(UserType)
                         .setServiceType(ServiceType)
+                        .build());
+    }
+
+    public static ErkApiMsg getDisUserInfoRQ(QueueInfo_s QueueInfo, String OrgName, String UserName, String UserPwd) {
+        return getErkApiMsg(
+                DisUserInfoRQ_m.newBuilder()
+                        .setMsgType(ErkMsgType_e.DisUserInfoRQ)
+                        .setQueueInfo(QueueInfo)
+                        .setOrgName(OrgName)
+                        .setUserName(UserName)
+                        .setUserPwd(UserPwd)
                         .build());
     }
 
@@ -441,9 +463,9 @@ public class RmqMsgBuilder {
         return getErkApiMsg(builder.build());
     }
 
-    public static ErkApiMsg getErkEngineCreateRP(int OrgId, int UserId, long MsgTime, ReturnCode_e ReturnCode, EngineType_e engineType, ErkEngineInfo_s engineInfo) {
+    public static ErkApiMsg getErkEngineCreateRP(String tId, int OrgId, int UserId, long MsgTime, ReturnCode_e ReturnCode, EngineType_e engineType, ErkEngineInfo_s engineInfo) {
         ErkEngineCreateRP_m.Builder builder = ErkEngineCreateRP_m.newBuilder()
-                .setErkInterMsgHead(getErkInterMsgHead(ErkInterMsgType_e.ErkEngineCreateRP, OrgId, UserId))
+                .setErkInterMsgHead(getErkInterMsgHead(ErkInterMsgType_e.ErkEngineCreateRP, tId, OrgId, UserId))
                 .setMsgTime(MsgTime)
                 .setReturnCode(ReturnCode);
 
@@ -480,12 +502,12 @@ public class RmqMsgBuilder {
                         .build());
     }
 
-    public static ErkApiMsg getErkEngineDeleteRP(int OrgId, int UserId, long MsgTime, ReturnCode_e
+    public static ErkApiMsg getErkEngineDeleteRP(String tId, int OrgId, int UserId, long MsgTime, ReturnCode_e
             ReturnCode, ErkEngineInfo_s PhysioEngineInfo, ErkEngineInfo_s SpeechEngineInfo, ErkEngineInfo_s
                                                          FaceEngineInfo, ErkEngineInfo_s KnowledgeEngineInfo, ErkEngineInfo_s ServiceEngineInfo) {
         return getErkApiMsg(
                 ErkEngineDeleteRP_m.newBuilder()
-                        .setErkInterMsgHead(getErkInterMsgHead(ErkInterMsgType_e.ErkEngineDeleteRP, OrgId, UserId))
+                        .setErkInterMsgHead(getErkInterMsgHead(ErkInterMsgType_e.ErkEngineDeleteRP, tId, OrgId, UserId))
                         .setMsgTime(MsgTime)
                         .setReturnCode(ReturnCode)
                         .setPhysioEngineInfo(PhysioEngineInfo)

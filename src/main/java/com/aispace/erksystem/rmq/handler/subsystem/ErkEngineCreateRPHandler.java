@@ -21,18 +21,16 @@ public class ErkEngineCreateRPHandler extends RmqIncomingHandler<ErkEngineCreate
         ConnectionInfo connectionInfo = connectionManager.findConnectionInfo(orgId, userId).orElseThrow();
 
         if (msg.getPhysioEngineInfo().getEngineType() == EngineType_e.EngineType_physiology) {
-            connectionInfo.getEngineInfoMap().put(EngineType_e.EngineType_physiology, msg.getPhysioEngineInfo());
+            connectionInfo.onEngineResponse(erkMsgHead.getTransactionId(), msg.getPhysioEngineInfo());
         } else if (msg.getSpeechEngineInfo().getEngineType() == EngineType_e.EngineType_speech) {
-            connectionInfo.getEngineInfoMap().put(EngineType_e.EngineType_speech, msg.getSpeechEngineInfo());
+            connectionInfo.onEngineResponse(erkMsgHead.getTransactionId(), msg.getSpeechEngineInfo());
         } else if (msg.getFaceEngineInfo().getEngineType() == EngineType_e.EngineType_face) {
-            connectionInfo.getEngineInfoMap().put(EngineType_e.EngineType_face, msg.getFaceEngineInfo());
+            connectionInfo.onEngineResponse(erkMsgHead.getTransactionId(), msg.getFaceEngineInfo());
         } else if (msg.getKnowledgeEngineInfo().getEngineType() == EngineType_e.EngineType_knowledge) {
-            connectionInfo.getEngineInfoMap().put(EngineType_e.EngineType_knowledge, msg.getKnowledgeEngineInfo());
+            connectionInfo.onEngineResponse(erkMsgHead.getTransactionId(), msg.getKnowledgeEngineInfo());
         } else {
             log.error("Unknown Engine Type");
         }
-
-        connectionInfo.countDownPromise();
     }
 
     @Override

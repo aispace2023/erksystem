@@ -1,23 +1,28 @@
 package com.aispace.erksystem.connection;
 
-import com.aispace.erksystem.common.utils.PromiseInfo;
-import com.aispace.erksystem.common.utils.PromiseManager;
 import com.aispace.erksystem.config.UserConfig;
 import com.aispace.erksystem.rmq.RmqManager;
+import com.aispace.erksystem.rmq.handler.base.RmqOutgoingHandler;
+import com.aispace.erksystem.rmq.module.ErkEngineUtil.EngineMsgInfo;
 import com.aispace.erksystem.service.AppInstance;
-import com.erksystem.protobuf.api.EngineType_e;
 import com.erksystem.protobuf.api.ErkEngineInfo_s;
+import com.erksystem.protobuf.api.ServiceType_e;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.Synchronized;
 import lombok.extern.slf4j.Slf4j;
 
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.atomic.AtomicReference;
 
 import static com.aispace.erksystem.common.SafeExecutor.tryRunSilent;
+import static com.aispace.erksystem.connection.ConnectionInfo.State.IDLE;
+import static com.aispace.erksystem.connection.ConnectionInfo.State.WAITING_ENGINE_RESPONSE;
+import static com.aispace.erksystem.rmq.module.ErkEngineUtil.getEngineCreateMsgs;
+import static com.aispace.erksystem.rmq.module.ErkEngineUtil.getEngineDeleteMsgs;
 
 /**
  * Created by Ai_Space
@@ -36,11 +41,13 @@ public class ConnectionInfo {
     long createTime = System.currentTimeMillis();
     long lastAccessTime = System.currentTimeMillis();
 
-    Map<EngineType_e, ErkEngineInfo_s> engineInfoMap = new HashMap<>();
+    AtomicReference<State> state = new AtomicReference<>(IDLE);
+
+    CompletableFuture<Set<ErkEngineInfo_s>> cf = new CompletableFuture<>();
+    Set<String> leftEngineList = new HashSet<>();
+    Set<ErkEngineInfo_s> engineInfos = new HashSet<>();
 
     Set<String> declaredQueues = new HashSet<>();
-    AtomicInteger promiseCountdown = new AtomicInteger();
-    PromiseInfo promiseInfo = null;
 
     public ConnectionInfo(int orgId, int userId) {
         this.orgId = orgId;
@@ -52,16 +59,80 @@ public class ConnectionInfo {
         tryRunSilent(this::deleteDeclaredQueues);
     }
 
-    public void addPromise(Runnable onSuccess, Runnable onFail, Runnable onTimeout, long timeoutMs, int count) {
-        if (!promiseCountdown.compareAndSet(0, count)) {
-            throw new IllegalStateException("Current promiseCountdown is not 0");
+    public CompletableFuture<Set<ErkEngineInfo_s>> procEmoStart(ServiceType_e serviceType) {
+        if (!state.compareAndSet(IDLE, WAITING_ENGINE_RESPONSE)) {
+            throw new IllegalStateException("Illegal State");
         }
-        promiseInfo = PromiseManager.getInstance().createPromiseInfo(this.key, onSuccess, onFail, onTimeout, timeoutMs);
+
+        leftEngineList.clear();
+        engineInfos.clear();
+
+        try {
+            Set<EngineMsgInfo> engineCreateMsgs = getEngineCreateMsgs(serviceType, orgId, userId);
+
+            for (EngineMsgInfo engineCreateMsg : engineCreateMsgs) {
+                declareQueue(engineCreateMsg.getRecvQueue(), engineCreateMsg.getSendQueue());
+                leftEngineList.add(engineCreateMsg.getTransactionId());
+            }
+
+            cf = new CompletableFuture<>();
+
+            for (EngineMsgInfo engineCreateMsg : engineCreateMsgs) {
+                RmqOutgoingHandler.send(engineCreateMsg.getErkApiMsg(), userConfig.getEngineQueueMap().get(engineCreateMsg.getEngineType()));
+            }
+
+            return cf;
+        } catch (Exception e) {
+            deleteDeclaredQueues();
+            state.set(IDLE);
+            throw e;
+        }
     }
 
-    public void countDownPromise() {
-        if (promiseCountdown.decrementAndGet() == 0) {
-            promiseInfo.procSuccess();
+    public CompletableFuture<Set<ErkEngineInfo_s>> procEmoStop(ServiceType_e serviceType) {
+        if (!state.compareAndSet(IDLE, WAITING_ENGINE_RESPONSE)) {
+            throw new IllegalStateException("Illegal State");
+        }
+
+        leftEngineList.clear();
+        engineInfos.clear();
+
+        try {
+            Set<EngineMsgInfo> engineDeleteMsgs = getEngineDeleteMsgs(serviceType, orgId, userId);
+
+            for (EngineMsgInfo engineDeleteMsg : engineDeleteMsgs) {
+                deleteQueue(engineDeleteMsg.getRecvQueue(), engineDeleteMsg.getSendQueue());
+                leftEngineList.add(engineDeleteMsg.getTransactionId());
+            }
+
+            cf = new CompletableFuture<>();
+
+            for (EngineMsgInfo engineDeleteMsg : engineDeleteMsgs) {
+                RmqOutgoingHandler.send(engineDeleteMsg.getErkApiMsg(), userConfig.getEngineQueueMap().get(engineDeleteMsg.getEngineType()));
+            }
+
+            return cf;
+        } catch (Exception e) {
+            state.set(IDLE);
+            throw e;
+        }
+    }
+
+    @Synchronized
+    public void onEngineResponse(String transactionId, ErkEngineInfo_s erkEngineInfo) {
+        if (state.get() != WAITING_ENGINE_RESPONSE) {
+            throw new IllegalStateException("Illegal State");
+        }
+
+        if (!leftEngineList.remove(transactionId)) {
+            throw new IllegalStateException("Unexpected Engine Response");
+        }
+
+        engineInfos.add(erkEngineInfo);
+
+        if (leftEngineList.isEmpty()) {
+            cf.complete(new HashSet<>(engineInfos));
+            state.set(IDLE);
         }
     }
 
@@ -101,8 +172,14 @@ public class ConnectionInfo {
     }
 
     public void deleteDeclaredQueues() {
-        for (String declaredQueue : declaredQueues) {
-            tryRunSilent(() -> deleteQueue(declaredQueue));
+        Set<String> queueNames = new HashSet<>(declaredQueues);
+        for (String queueName : queueNames) {
+            tryRunSilent(() -> deleteQueue(queueName));
         }
+    }
+
+    enum State {
+        IDLE,
+        WAITING_ENGINE_RESPONSE,
     }
 }

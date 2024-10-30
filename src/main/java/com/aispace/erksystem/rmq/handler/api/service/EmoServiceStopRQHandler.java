@@ -2,14 +2,15 @@ package com.aispace.erksystem.rmq.handler.api.service;
 
 import com.aispace.erksystem.connection.ConnectionInfo;
 import com.aispace.erksystem.rmq.handler.base.RmqIncomingHandler;
-import com.aispace.erksystem.rmq.handler.base.RmqOutgoingHandler;
-import com.aispace.erksystem.rmq.module.ErkEngineUtil;
+import com.aispace.erksystem.rmq.handler.base.exception.RmqHandleException;
 import com.erksystem.protobuf.api.*;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.Set;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
-import static com.aispace.erksystem.rmq.module.ErkEngineUtil.getEngineDeleteMsgs;
 import static com.erksystem.protobuf.api.ReturnCode_e.ReturnCode_ok;
 import static com.erksystem.protobuf.api.ReturnCode_e.ReturnCode_unknown;
 
@@ -29,26 +30,15 @@ public class EmoServiceStopRQHandler extends RmqIncomingHandler<EmoServiceStopRQ
 
         connectionInfo = connectionManager.findConnectionInfo(orgId, userId).orElseThrow();
 
-        Set<ErkEngineUtil.EngineMsgInfo> engineDeleteMsgs = getEngineDeleteMsgs(serviceType, orgId, userId);
+        CompletableFuture<Set<ErkEngineInfo_s>> completableFuture = connectionInfo.procEmoStop(serviceType);
 
-        if (engineDeleteMsgs.isEmpty()) {
-            onFail(ReturnCode_unknown.getNumber(), "No Engine Type");
-            return;
-        }
-
-        connectionInfo.addPromise(
-                this::onSuccess,
-                () -> onFail(ReturnCode_unknown.getNumber(), "EmoServiceStart Fail"),
-                () -> {
-                    if (connectionManager.findConnectionInfo(orgId, userId).isPresent()) {
-                        onFail(ReturnCode_unknown.getNumber(), "EmoServiceStart Timeout");
-                    }
-                }, 5000, engineDeleteMsgs.size());
-
-        for (ErkEngineUtil.EngineMsgInfo engineDeleteMsg : engineDeleteMsgs) {
-            connectionInfo.deleteQueue(engineDeleteMsg.getRecvQueue(), engineDeleteMsg.getSendQueue());
-
-            RmqOutgoingHandler.send(engineDeleteMsg.getErkApiMsg(), userConfig.getEngineQueueMap().get(engineDeleteMsg.getEngineType()));
+        try {
+            Set<ErkEngineInfo_s> erkEngineInfos = completableFuture.get(5000, TimeUnit.MILLISECONDS);
+            onSuccess(erkEngineInfos);
+        } catch (TimeoutException e) {
+            throw new RmqHandleException(ReturnCode_unknown.getNumber(), "Engine not responding", e);
+        } catch (Exception e) {
+            throw new RmqHandleException(ReturnCode_unknown.getNumber(), "Fail to Start EmoService", e);
         }
     }
 
@@ -63,11 +53,11 @@ public class EmoServiceStopRQHandler extends RmqIncomingHandler<EmoServiceStopRQ
         reply(res);
     }
 
-    private void onSuccess() {
+    private void onSuccess(Set<ErkEngineInfo_s> engineInfos) {
         try {
             EmoServiceStopRP_m.Builder emoServiceStopRpBuilder = EmoServiceStopRP_m.newBuilder();
 
-            for (ErkEngineInfo_s engineInfo : connectionInfo.getEngineInfoMap().values()) {
+            for (ErkEngineInfo_s engineInfo : engineInfos) {
                 switch (engineInfo.getEngineType()) {
                     case EngineType_physiology -> emoServiceStopRpBuilder.setPhysioEngineInfo(engineInfo);
                     case EngineType_speech -> emoServiceStopRpBuilder.setSpeechEngineInfo(engineInfo);

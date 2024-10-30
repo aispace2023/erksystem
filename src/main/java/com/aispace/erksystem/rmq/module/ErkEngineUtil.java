@@ -2,6 +2,7 @@ package com.aispace.erksystem.rmq.module;
 
 import com.aispace.erksystem.config.UserConfig;
 import com.aispace.erksystem.rmq.handler.base.ErkMsgWrapper;
+import com.aispace.erksystem.rmq.handler.base.exception.RmqHandleException;
 import com.aispace.erksystem.service.AppInstance;
 import com.erksystem.protobuf.api.*;
 import lombok.AllArgsConstructor;
@@ -36,7 +37,7 @@ public class ErkEngineUtil {
 
         List<EngineType_e> engineTypeEs = userConfig.getServiceTypeMap().get(serviceType);
         if (engineTypeEs == null)
-            return res;
+            throw new RmqHandleException(ReturnCode_e.ReturnCode_unknown.getNumber(), "Wrong Engine Type");
 
         for (EngineType_e engineType : engineTypeEs) {
             ErkEngineCreateRQ_m.Builder erkEngineCreateRqBuilder = ErkEngineCreateRQ_m.newBuilder();

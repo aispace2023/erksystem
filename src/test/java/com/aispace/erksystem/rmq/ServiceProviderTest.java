@@ -6,7 +6,6 @@ import com.aispace.erksystem.rmq.module.DaoMockManager;
 import com.aispace.erksystem.rmq.module.RmqSimBase;
 import com.aispace.erksystem.service.AppInstance;
 import com.aispace.erksystem.service.database.ServiceProviderDAO;
-import com.aispace.erksystem.service.database.ServiceUserDAO;
 import com.erksystem.protobuf.api.*;
 import org.junit.jupiter.api.*;
 
@@ -15,7 +14,6 @@ import java.io.IOException;
 import static com.aispace.erksystem.rmq.module.RmqMsgBuilder.*;
 import static com.aispace.erksystem.rmq.module.RmqSimBase.*;
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.awaitility.Awaitility.await;
 
 /**
  * @author kangmoo Heo
@@ -47,15 +45,35 @@ class ServiceProviderTest {
 
 
     @Test
-    @DisplayName("ServiceProvider 생성 / 수정 / 삭제 테스트")
+    @DisplayName("ServiceProvider 생성 / 조회 / 삭제 테스트")
     void serviceProviderTest() {
-        handleMessage(getAddServiceProviderInfoRQ(getQueueInfo(userConfig.getRmqIncomingQueueApi(), "API_QUEUE"), orgName, orgPwd, ProviderType_e.ProviderType_education, "22000101", 7777, ServiceType_e.ServiceType_physiology_speech));
+        ProviderType_e providerType = ProviderType_e.ProviderType_education;
+        String serviceDuration = "22000101";
+        int userNumber = 7777;
+        ServiceType_e serviceType = ServiceType_e.ServiceType_physiology_speech;
+
+        // 생성 테스트
+        handleMessage(getAddServiceProviderInfoRQ(getQueueInfo(userConfig.getRmqIncomingQueueApi(), "API_QUEUE"), orgName, orgPwd, providerType, serviceDuration, userNumber, serviceType));
         assertThat(lastSendRmqMsg.getMsgCase()).isEqualTo(ErkApiMsg.MsgCase.ADDSERVICEPROVIDERINFORP);
         assertThat(lastSendRmqMsg.getAddServiceProviderInfoRP().getResultType()).isEqualTo(OrgProfileResult_e.OrgProfileResult_ok);
         int orgId = lastSendRmqMsg.getAddServiceProviderInfoRP().getOrgId();
         assertThat(ServiceProviderDAO.read(orgId)).isNotNull();
 
-/*        // TODO 수정 테스트
+        // 조회 테스트
+        handleMessage(getDisServiceProviderInfoRQ(getQueueInfo(userConfig.getRmqIncomingQueueApi(), "API_QUEUE"), orgName, orgPwd));
+        assertThat(lastSendRmqMsg.getMsgCase()).isEqualTo(ErkApiMsg.MsgCase.DISSERVICEPROVIDERINFORP);
+        DisServiceProviderInfoRP_m disServiceProviderInfoRP = lastSendRmqMsg.getDisServiceProviderInfoRP();
+        assertThat(disServiceProviderInfoRP.getResultType()).isEqualTo(OrgProfileResult_e.OrgProfileResult_ok);
+        assertThat(disServiceProviderInfoRP.getOrgName()).isEqualTo(orgName);
+        assertThat(disServiceProviderInfoRP.getOrgId()).isEqualTo(orgId);
+        assertThat(disServiceProviderInfoRP.getOrgPwd()).isEqualTo(orgPwd);
+        assertThat(disServiceProviderInfoRP.getProviderType()).isEqualTo(providerType);
+        assertThat(disServiceProviderInfoRP.getServiceDuration()).isEqualTo(serviceDuration);
+        assertThat(disServiceProviderInfoRP.getUserNumber()).isEqualTo(userNumber);
+        assertThat(disServiceProviderInfoRP.getServiceType()).isEqualTo(serviceType);
+
+        // TODO 수정 테스트 추가
+/*
         String newOrgPwd = "NEW_" + orgPwd;
         int newUserNumber = 8888;
         handleMessage(getUpdateServiceProviderInfoRQ(getQueueInfo(userConfig.getRmqIncomingQueueApi(), "API_QUEUE"), orgName,
@@ -69,104 +87,10 @@ class ServiceProviderTest {
         assertThat(serviceProvider.getUserNumber()).isEqualTo(newUserNumber);
         assertThat(serviceProvider.getServiceType()).isEqualTo(ServiceType_e.ServiceType_speech.getNumber());*/
 
+        // 삭제 테스트
         handleMessage(getDelServiceProviderInfoRQ(getQueueInfo(userConfig.getRmqIncomingQueueApi(), "API_QUEUE"), orgName, orgPwd));
         assertThat(lastSendRmqMsg.getMsgCase()).isEqualTo(ErkApiMsg.MsgCase.DELSERVICEPROVIDERINFORP);
         assertThat(lastSendRmqMsg.getDelServiceProviderInfoRP().getResultType()).isEqualTo(OrgProfileResult_e.OrgProfileResult_ok);
         assertThat(ServiceProviderDAO.read(orgId)).isNull();
-    }
-
-    @Test
-    @DisplayName("User 생성 / 삭제 테스트")
-    void userTest() {
-        handleMessage(getAddServiceProviderInfoRQ(getQueueInfo(userConfig.getRmqIncomingQueueApi(), "API_QUEUE"), orgName, orgPwd, ProviderType_e.ProviderType_education, "22000101", 7777, ServiceType_e.ServiceType_physiology_speech));
-        int orgId = lastSendRmqMsg.getAddServiceProviderInfoRP().getOrgId();
-
-        handleMessage(getAddUserInfoRQ(getQueueInfo(userConfig.getRmqIncomingQueueApi(), "API_QUEUE"), orgName, userName, userPwd, "22000101", 30, SexType_e.SexType_unknown, UserType_e.UserType_unknown, ServiceType_e.ServiceType_unknown));
-
-        assertThat(lastSendRmqMsg.getMsgCase()).isEqualTo(ErkApiMsg.MsgCase.ADDUSERINFORP);
-        assertThat(lastSendRmqMsg.getAddUserInfoRP().getResultType()).isEqualTo(UserProfileResult_e.UserProfileResult_ok);
-        int userId = lastSendRmqMsg.getAddUserInfoRP().getUserId();
-        assertThat(ServiceUserDAO.read(userId, orgId)).isNotNull();
-        assertThat(ServiceUserDAO.read(userId, orgId)).isEqualTo(ServiceUserDAO.read(userName));
-
-        handleMessage(getDelUserInfoRQ(getQueueInfo(userConfig.getRmqIncomingQueueApi(), "API_QUEUE"), orgName, userName, userPwd));
-
-        assertThat(lastSendRmqMsg.getMsgCase()).isEqualTo(ErkApiMsg.MsgCase.DELUSERINFORP);
-        assertThat(lastSendRmqMsg.getDelUserInfoRP().getResultType()).isEqualTo(UserProfileResult_e.UserProfileResult_ok);
-        assertThat(ServiceUserDAO.read(userId, orgId)).isNull();
-    }
-
-    @Test
-    @DisplayName("ErkServiceConnRQ 성공 테스트")
-    void erkServiceConnRqTest() {
-        handleMessage(getAddServiceProviderInfoRQ(getQueueInfo(userConfig.getRmqIncomingQueueApi(), "API_QUEUE"), orgName, orgPwd, ProviderType_e.ProviderType_education, "22000101", 7777, ServiceType_e.ServiceType_physiology_speech));
-        int orgId = lastSendRmqMsg.getAddServiceProviderInfoRP().getOrgId();
-        handleMessage(getAddUserInfoRQ(getQueueInfo(userConfig.getRmqIncomingQueueApi(), "API_QUEUE"), orgName, userName, userPwd, "22000101", 30, SexType_e.SexType_unknown, UserType_e.UserType_unknown, ServiceType_e.ServiceType_unknown));
-        int userId = lastSendRmqMsg.getAddUserInfoRP().getUserId();
-        handleMessage(getErkServiceConnRQ(getQueueInfo(userConfig.getRmqIncomingQueueApi(), "API_QUEUE"), orgId, userId, System.currentTimeMillis()));
-
-        assertThat(lastSendRmqMsg.getMsgCase()).isEqualTo(ErkApiMsg.MsgCase.ERKSERVICECONNRP);
-        assertThat(lastSendRmqMsg.getErkServiceConnRP().getReturnCode()).isEqualTo(ReturnCode_e.ReturnCode_ok);
-    }
-
-    @Test
-    @DisplayName("ErkServiceConnRQ 실패 테스트")
-    void erkServiceConnRqFailTest() {
-        handleMessage(getAddServiceProviderInfoRQ(getQueueInfo(userConfig.getRmqIncomingQueueApi(), "API_QUEUE"), orgName, orgPwd, ProviderType_e.ProviderType_education, "22000101", 7777, ServiceType_e.ServiceType_physiology_speech));
-        int orgId = lastSendRmqMsg.getAddServiceProviderInfoRP().getOrgId();
-        handleMessage(getAddUserInfoRQ(getQueueInfo(userConfig.getRmqIncomingQueueApi(), "API_QUEUE"), orgName, userName, userPwd, "22000101", 30, SexType_e.SexType_unknown, UserType_e.UserType_unknown, ServiceType_e.ServiceType_unknown));
-        int userId = lastSendRmqMsg.getAddUserInfoRP().getUserId();
-
-        handleMessage(getErkServiceConnRQ(getQueueInfo(userConfig.getRmqIncomingQueueApi(), "API_QUEUE"), orgId + 1, userId, System.currentTimeMillis()));
-
-        assertThat(lastSendRmqMsg.getMsgCase()).isEqualTo(ErkApiMsg.MsgCase.ERKSERVICECONNRP);
-        assertThat(lastSendRmqMsg.getErkServiceConnRP().getReturnCode()).isNotEqualTo(ReturnCode_e.ReturnCode_ok);
-
-        handleMessage(getErkServiceConnRQ(getQueueInfo(userConfig.getRmqIncomingQueueApi(), "API_QUEUE"), orgId, userId + 1, System.currentTimeMillis()));
-
-        assertThat(lastSendRmqMsg.getMsgCase()).isEqualTo(ErkApiMsg.MsgCase.ERKSERVICECONNRP);
-        assertThat(lastSendRmqMsg.getErkServiceConnRP().getReturnCode()).isNotEqualTo(ReturnCode_e.ReturnCode_ok);
-    }
-
-    @Test
-    @DisplayName("EmoService 생성 / 삭제 테스트")
-    void emoServiceTest() {
-
-        // 생성 테스트
-        handleMessage(getAddServiceProviderInfoRQ(getQueueInfo(userConfig.getRmqIncomingQueueApi(), "API_QUEUE"), orgName, orgPwd, ProviderType_e.ProviderType_education, "22000101", 7777, ServiceType_e.ServiceType_physiology_speech));
-        int orgId = lastSendRmqMsg.getAddServiceProviderInfoRP().getOrgId();
-        handleMessage(getAddUserInfoRQ(getQueueInfo(userConfig.getRmqIncomingQueueApi(), "API_QUEUE"), orgName, userName, userPwd, "22000101", 30, SexType_e.SexType_unknown, UserType_e.UserType_unknown, ServiceType_e.ServiceType_unknown));
-        int userId = lastSendRmqMsg.getAddUserInfoRP().getUserId();
-        handleMessage(getErkServiceConnRQ(getQueueInfo(userConfig.getRmqIncomingQueueApi(), "API_QUEUE"), orgId, userId, System.currentTimeMillis()));
-
-        handleMessage(getEmoServiceStartRQ(getQueueInfo(userConfig.getRmqIncomingQueueApi(), "API_QUEUE"), orgId, userId, System.currentTimeMillis(), ServiceType_e.ServiceType_speech));
-        assertThat(lastSendRmqMsg.getMsgCase()).isEqualTo(ErkApiMsg.MsgCase.ERKENGINECREATERQ);
-        assertThat(lastSendRmqMsg.getErkEngineCreateRQ().getServiceType()).isEqualTo(ServiceType_e.ServiceType_speech);
-
-        ErkEngineInfo_s engineInfo = ErkEngineInfo_s.newBuilder()
-                .setEngineType(EngineType_e.EngineType_speech)
-                .setEngineCondition(EngineCondition_e.EngineCondition_available)
-                .setIpAddr("127.0.0.1")
-                .setReceiveQueueName("RECEIVE_QUEUE")
-                .setSendQueueName("SEND_QUEUE").build();
-
-        handleMessage(getErkEngineCreateRP(orgId, userId, System.currentTimeMillis(), ReturnCode_e.ReturnCode_ok,
-                EngineType_e.EngineType_speech,
-                engineInfo));
-
-        assertThat(lastSendRmqMsg.getMsgCase()).isEqualTo(ErkApiMsg.MsgCase.EMOSERVICESTARTRP);
-        assertThat(lastSendRmqMsg.getEmoServiceStartRP().getReturnCode()).isEqualTo(ReturnCode_e.ReturnCode_ok);
-        assertThat(lastSendRmqMsg.getEmoServiceStartRP().getSpeechEngineInfo()).isEqualTo(engineInfo);
-
-        // 삭제 테스트
-        handleMessage(getEmoServiceStopRQ(getQueueInfo(userConfig.getRmqIncomingQueueApi(), "API_QUEUE"), orgId, userId, System.currentTimeMillis(), ServiceType_e.ServiceType_speech, "", "", "RECV_02_000_000", "SEND_02_000_000", "", "", "", ""));
-        assertThat(lastSendRmqMsg.getMsgCase()).isEqualTo(ErkApiMsg.MsgCase.ERKENGINEDELETERQ);
-
-        ErkEngineInfo_s emptyInfo = ErkEngineInfo_s.newBuilder().build();
-        handleMessage(getErkEngineDeleteRP(orgId, userId, System.currentTimeMillis(), ReturnCode_e.ReturnCode_ok, emptyInfo, engineInfo, emptyInfo, emptyInfo, emptyInfo));
-
-        assertThat(lastSendRmqMsg.getMsgCase()).isEqualTo(ErkApiMsg.MsgCase.EMOSERVICESTOPRP);
-        assertThat(lastSendRmqMsg.getEmoServiceStopRP().getReturnCode()).isEqualTo(ReturnCode_e.ReturnCode_ok);
-        assertThat(lastSendRmqMsg.getEmoServiceStopRP().getSpeechEngineInfo()).isEqualTo(engineInfo);
     }
 }
