@@ -67,11 +67,11 @@ class ErkServiceTest {
         handleMessage(getErkServiceConnRQ(getQueueInfo(userConfig.getRmqIncomingQueueApi(), "API_QUEUE"), orgId + 1, userId, System.currentTimeMillis()));
 
         assertThat(lastSendRmqMsg.getMsgCase()).isEqualTo(ErkApiMsg.MsgCase.ERKSERVICECONNRP);
-        assertThat(lastSendRmqMsg.getErkServiceConnRP().getReturnCode()).isNotEqualTo(ReturnCode_e.ReturnCode_ok);
+        assertThat(lastSendRmqMsg.getErkServiceConnRP().getReturnCode()).isEqualTo(ReturnCode_e.ReturnCode_nok_Org);
 
         handleMessage(getErkServiceConnRQ(getQueueInfo(userConfig.getRmqIncomingQueueApi(), "API_QUEUE"), orgId, userId + 1, System.currentTimeMillis()));
 
         assertThat(lastSendRmqMsg.getMsgCase()).isEqualTo(ErkApiMsg.MsgCase.ERKSERVICECONNRP);
-        assertThat(lastSendRmqMsg.getErkServiceConnRP().getReturnCode()).isNotEqualTo(ReturnCode_e.ReturnCode_ok);
+        assertThat(lastSendRmqMsg.getErkServiceConnRP().getReturnCode()).isEqualTo(ReturnCode_e.ReturnCode_nok_User);
     }
 }

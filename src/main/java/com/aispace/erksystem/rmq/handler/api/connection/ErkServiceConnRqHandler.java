@@ -1,6 +1,8 @@
 package com.aispace.erksystem.rmq.handler.api.connection;
 
 import com.aispace.erksystem.rmq.handler.base.RmqIncomingHandler;
+import com.aispace.erksystem.rmq.handler.base.exception.RmqHandleException;
+import com.aispace.erksystem.service.database.ServiceProviderDAO;
 import com.aispace.erksystem.service.database.ServiceUserDAO;
 import com.aispace.erksystem.service.database.table.ServiceUser;
 import com.erksystem.protobuf.api.*;
@@ -15,9 +17,13 @@ public class ErkServiceConnRqHandler extends RmqIncomingHandler<ErkServiceConnRQ
         int userId = msg.getErkMsgHead().getUserId();
         int orgId = msg.getErkMsgHead().getOrgId();
 
+        if (ServiceProviderDAO.read(orgId) == null) {
+            throw new RmqHandleException(ReturnCode_e.ReturnCode_nok_Org.getNumber(), "Org not found");
+        }
+
         ServiceUser user = ServiceUserDAO.read(userId, orgId);
         if (user == null) {
-            throw new IllegalStateException("FAIL");
+            throw new RmqHandleException(ReturnCode_e.ReturnCode_nok_User.getNumber(), "User not found");
         }
 
         connectionManager.createConnection(orgId, userId);

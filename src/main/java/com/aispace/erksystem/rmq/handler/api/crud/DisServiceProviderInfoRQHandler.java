@@ -7,8 +7,6 @@ import com.aispace.erksystem.service.database.ServiceProviderDAO;
 import com.aispace.erksystem.service.database.table.ServiceProvider;
 import com.erksystem.protobuf.api.*;
 
-import static com.erksystem.protobuf.api.OrgProfileResult_e.OrgProfileResult_unknown;
-
 
 /**
  * Created by Ai_Space
@@ -17,8 +15,11 @@ public class DisServiceProviderInfoRQHandler extends RmqIncomingHandler<DisServi
     @Override
     protected void handle() {
         ServiceProvider sp = ServiceProviderDAO.read(msg.getOrgName());
-        if (sp == null || !sp.getOrgPwd().equals(msg.getOrgPwd())) {
-            throw new RmqHandleException(OrgProfileResult_unknown.getNumber(), "Invalid Info");
+
+        if (sp == null) {
+            throw new RmqHandleException(OrgProfileResult_e.OrgProfileResult_nok_OrgName.getNumber(), "Org not found");
+        } else if (!sp.getOrgPwd().equals(msg.getOrgPwd())) {
+            throw new RmqHandleException(OrgProfileResult_e.OrgProfileResult_nok_OrgPwd.getNumber(), "Invalid Info");
         }
 
         DisServiceProviderInfoRP_m res = DisServiceProviderInfoRP_m.newBuilder()

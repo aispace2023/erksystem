@@ -8,7 +8,6 @@ import com.aispace.erksystem.service.database.table.ServiceProvider;
 import com.aispace.erksystem.service.database.table.ServiceUser;
 import com.erksystem.protobuf.api.*;
 
-import static com.erksystem.protobuf.api.UserProfileResult_e.*;
 
 /**
  * Created by Ai_Space
@@ -18,19 +17,21 @@ public class DisUserInfoRQHandler extends RmqIncomingHandler<DisUserInfoRQ_m> {
     protected void handle() {
         ServiceProvider sp = ServiceProviderDAO.read(msg.getOrgName());
         if (sp == null) {
-            throw new RmqHandleException(UserProfileResult_unknown.getNumber(), "Invalid Info");
+            throw new RmqHandleException(UserProfileResult_e.UserProfileResult_nok_OrgName.getNumber(), "Org not found");
         }
 
         ServiceUser userInfo = ServiceUserDAO.read(msg.getUserName());
-        if (userInfo == null || !userInfo.getUserPwd().equals(msg.getUserPwd())) {
-            throw new RmqHandleException(UserProfileResult_unknown.getNumber(), "Invalid Info");
+        if (userInfo == null) {
+            throw new RmqHandleException(UserProfileResult_e.UserProfileResult_nok_UserName.getNumber(), "User not found");
+        } else if (!userInfo.getUserPwd().equals(msg.getUserPwd())) {
+            throw new RmqHandleException(UserProfileResult_e.UserProfileResult_nok_UserPwd.getNumber(), "Invalid Info");
         }
 
         DisUserInfoRP_m res = DisUserInfoRP_m.newBuilder()
                 .setMsgType(ErkMsgType_e.DisUserInfoRP)
                 .setOrgName(msg.getOrgName())
                 .setUserName(userInfo.getUserName())
-                .setResultType(UserProfileResult_ok)
+                .setResultType(UserProfileResult_e.UserProfileResult_ok)
                 .setUserId(userInfo.getUserId())
                 .setUserPwd(userInfo.getUserPwd())
                 .setServiceDuration(userInfo.getServiceDuration())
