@@ -2,7 +2,6 @@ package com.aispace.erksystem.rmq.handler.api.service;
 
 import com.aispace.erksystem.connection.ConnectionInfo;
 import com.aispace.erksystem.rmq.handler.base.RmqIncomingHandler;
-import com.aispace.erksystem.rmq.handler.base.exception.RmqHandleException;
 import com.erksystem.protobuf.api.*;
 import lombok.extern.slf4j.Slf4j;
 
@@ -32,14 +31,18 @@ public class EmoServiceStartRQHandler extends RmqIncomingHandler<EmoServiceStart
 
         CompletableFuture<Set<ErkEngineInfo_s>> completableFuture = connectionInfo.procEmoStart(serviceType);
 
-        try {
-            Set<ErkEngineInfo_s> erkEngineInfos = completableFuture.get(5000, TimeUnit.MILLISECONDS);
-            onSuccess(erkEngineInfos);
-        } catch (TimeoutException e) {
-            throw new RmqHandleException(ReturnCode_unknown.getNumber(), "Engine not responding", e);
-        } catch (Exception e) {
-            throw new RmqHandleException(ReturnCode_unknown.getNumber(), "Fail to Start EmoService", e);
-        }
+        completableFuture
+                .orTimeout(5000, TimeUnit.MILLISECONDS)
+                .thenAccept(this::onSuccess)
+                .exceptionally(e -> {
+                    log.warn("Fail to Start EmoService", e);
+                    if (e instanceof TimeoutException) {
+                        onFail(ReturnCode_unknown.getNumber(), "Engine not responding");
+                    } else {
+                        onFail(ReturnCode_unknown.getNumber(), "Fail to Start EmoService");
+                    }
+                    return null;
+                });
     }
 
     @Override

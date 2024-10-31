@@ -36,6 +36,8 @@ public class UserConfig extends YamlConfig {
     int rmqPort;
     @ConfigValue("rmq.buffer-count")
     int bufferCount = 1024;
+    @ConfigValue("rmq.thread-count")
+    int thread = Runtime.getRuntime().availableProcessors() / 4 + 1;
     @ConfigValue("rmq.incoming-queue.api")
     String rmqIncomingQueueApi;
     @ConfigValue("rmq.incoming-queue.subsystem")

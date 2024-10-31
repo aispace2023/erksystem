@@ -3,17 +3,21 @@ package com.aispace.erksystem.service;
 import com.aispace.erksystem.common.SystemLock;
 import com.aispace.erksystem.config.UserConfig;
 import com.aispace.erksystem.rmq.RmqManager;
-import com.aispace.erksystem.rmq.module.ErkApiMsgRmqConsumer;
 import com.aispace.erksystem.rmq.module.RmqModule;
 import com.aispace.erksystem.service.scheduler.IntervalTaskManager;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.concurrent.BasicThreadFactory;
 
 import java.io.IOException;
 import java.nio.file.Path;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.concurrent.TimeoutException;
 
+import static com.aispace.erksystem.rmq.module.ErkApiMsgRmqConsumer.consumeApiMessage;
+import static com.aispace.erksystem.rmq.module.ErkApiMsgRmqConsumer.consumeSubsystemApiMessage;
 import static spark.Spark.get;
 import static spark.Spark.port;
 
@@ -22,7 +26,6 @@ import static spark.Spark.port;
  */
 @Slf4j
 public class ServiceManager {
-    private static final ServiceManager INSTANCE = new ServiceManager();
     private static final String CONFIG_FILE_NAME = "user_config.yaml";
     private static final String PROCESS_NAME = "erk_service";
     private static final AppInstance appInstance = AppInstance.getInstance();
@@ -50,9 +53,10 @@ public class ServiceManager {
 
         // RMQ 서버 연결 및 RMQ Consumer 등록
         RmqManager rmqManager = RmqManager.getInstance();
+        ExecutorService executors = Executors.newFixedThreadPool(config.getThread(), new BasicThreadFactory.Builder().namingPattern("RMQ_HANDLER-%d").build());
         rmqManager.init(config.getRmqHost(), config.getRmqUser(), config.getRmqPassword(), config.getRmqPort(), config.getBufferCount());
-        rmqManager.addConsumer(config.getRmqIncomingQueueApi(), ErkApiMsgRmqConsumer::consumeApiMessage);
-        rmqManager.addConsumer(config.getRmqIncomingQueueSubsystem(), ErkApiMsgRmqConsumer::consumeSubsystemApiMessage);
+        rmqManager.addConsumer(config.getRmqIncomingQueueApi(), o -> executors.execute(() -> consumeApiMessage(o)));
+        rmqManager.addConsumer(config.getRmqIncomingQueueSubsystem(), o -> executors.execute(() -> consumeSubsystemApiMessage(o)));
         RmqModule rmqModule = rmqManager.getRmqModule();
 
         for (String queueName : config.getEngineQueueMap().values()) {
