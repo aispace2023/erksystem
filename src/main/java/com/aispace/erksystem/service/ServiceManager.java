@@ -4,6 +4,7 @@ import com.aispace.erksystem.common.SystemLock;
 import com.aispace.erksystem.config.UserConfig;
 import com.aispace.erksystem.rmq.RmqManager;
 import com.aispace.erksystem.rmq.module.RmqModule;
+import com.aispace.erksystem.service.prometheus.PrometheusManager;
 import com.aispace.erksystem.service.scheduler.IntervalTaskManager;
 import lombok.Getter;
 import lombok.Setter;
@@ -18,8 +19,6 @@ import java.util.concurrent.TimeoutException;
 
 import static com.aispace.erksystem.rmq.module.ErkApiMsgRmqConsumer.consumeApiMessage;
 import static com.aispace.erksystem.rmq.module.ErkApiMsgRmqConsumer.consumeSubsystemApiMessage;
-import static spark.Spark.get;
-import static spark.Spark.port;
 
 /**
  * Created by Ai_Space
@@ -68,8 +67,7 @@ public class ServiceManager {
 
         // Prometheus 연동
         if (config.isPrometheusActivate()) {
-            port(config.getPrometheusPort());
-            get(config.getPrometheusMetricsPath(), (req, res) -> PrometheusManager.getInstance().registry.scrape());
+            PrometheusManager.getInstance().initialize(config.getPrometheusPort());
         }
 
         isQuit = false;

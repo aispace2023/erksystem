@@ -17,9 +17,8 @@ performance:
   rmq-consumer-count: 8
 
 prometheus:
-  activate: false
+  activate: true
   port: 8080
-  metrics_path: /metrics/prometheus
 
 timeout:
   erk-hb-timeout: 5000

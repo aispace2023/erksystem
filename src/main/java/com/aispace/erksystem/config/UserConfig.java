@@ -72,8 +72,6 @@ public class UserConfig extends YamlConfig {
     boolean prometheusActivate = false;
     @ConfigValue("prometheus.port")
     Integer prometheusPort;
-    @ConfigValue("prometheus.metrics_path")
-    String prometheusMetricsPath;
 
     @ConfigValue("timeout.erk-hb-timeout")
     long erkHbTimeout = 5000;
@@ -95,9 +93,6 @@ public class UserConfig extends YamlConfig {
     @Override
     public void afterFieldSetting() {
         rmqPassword = PasswdUtil.decrypt(rmqPassword);
-        if (prometheusMetricsPath != null && !prometheusMetricsPath.startsWith("/")) {
-            prometheusMetricsPath = "/" + prometheusMetricsPath;
-        }
 
         engineQueueMap = Map.of(
                 EngineType_e.EngineType_physiology, rmqOutgoingPerQueue,
