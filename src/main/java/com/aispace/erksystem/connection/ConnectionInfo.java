@@ -42,7 +42,7 @@ public class ConnectionInfo {
     long lastAccessTime = System.currentTimeMillis();
 
     AtomicReference<State> state = new AtomicReference<>(IDLE);
-
+    AtomicReference<ServiceType_e> serviceType = new AtomicReference<>(ServiceType_e.ServiceType_unknown);
     CompletableFuture<Set<ErkEngineInfo_s>> cf = new CompletableFuture<>();
     Set<String> leftEngineList = new HashSet<>();
     Set<ErkEngineInfo_s> engineInfos = new HashSet<>();

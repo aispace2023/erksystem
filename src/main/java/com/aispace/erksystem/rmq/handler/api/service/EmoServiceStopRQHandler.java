@@ -28,6 +28,10 @@ public class EmoServiceStopRQHandler extends RmqIncomingHandler<EmoServiceStopRQ
         ServiceType_e serviceType = msg.getServiceType();
 
         connectionInfo = connectionManager.findConnectionInfo(orgId, userId).orElseThrow();
+        ServiceType_e currentServiceType = connectionInfo.getServiceType().get();
+        if (currentServiceType != serviceType) {
+            throw new IllegalArgumentException("ServiceType not matched. Expected [" + currentServiceType + "] but got [" + serviceType + "]");
+        }
 
         CompletableFuture<Set<ErkEngineInfo_s>> completableFuture = connectionInfo.procEmoStop(serviceType);
 

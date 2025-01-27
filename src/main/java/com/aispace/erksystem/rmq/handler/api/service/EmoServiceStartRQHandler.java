@@ -28,6 +28,9 @@ public class EmoServiceStartRQHandler extends RmqIncomingHandler<EmoServiceStart
         ServiceType_e serviceType = msg.getServiceType();
 
         connectionInfo = connectionManager.findConnectionInfo(orgId, userId).orElseThrow();
+        if (!connectionInfo.getServiceType().compareAndSet(ServiceType_e.ServiceType_unknown, serviceType)) {
+            throw new IllegalArgumentException("ServiceType Already Set [" + serviceType + "]");
+        }
 
         CompletableFuture<Set<ErkEngineInfo_s>> completableFuture = connectionInfo.procEmoStart(serviceType);
 
